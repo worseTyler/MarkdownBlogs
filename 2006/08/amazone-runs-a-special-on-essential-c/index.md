@@ -1,0 +1,15 @@
+---
+title: "Amazone Runs a Special on Essential C#"
+date: "2006-08-15"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
+
+Curt Johnson from AW pointed out to me that Amazon is running a 37% special on my book:
+
+> <table class="MsoNormalTable" border="0" cellpadding="0"><tbody><tr><td style="padding: 0.75pt;" valign="top"><p class="MsoNormal"><span style="font-family: Times New Roman; color: black; font-size: small;"><span style="font-size: 12pt;"><a href="https://www.amazon.com/gp/product/0321150775/ref=pe_5400_2665720_pe_snp_775/104-4114658-3100755?n=283155" target="_blank" rel="noopener noreferrer"><span style="text-decoration: none;"><img id="_x0000_i1030" src="images/0321150775.01.37TRZZZZ.jpg" border="0" alt="" width="91" height="121"></span></a></span></span></p></td><td style="padding: 0.75pt;" valign="top"><p class="MsoNormal"><span style="font-family: Verdana; color: black; font-size: x-small;"><span style="font-size: 10pt; font-family: Verdana;"><a href="https://www.amazon.com/gp/product/0321150775/ref=pe_5400_2665720_pe_snp_775/104-4114658-3100755?n=283155" target="_blank" rel="noopener noreferrer"><span style="color: #003399; font-size: xx-small;"><strong>Essential C# 2.0 (Microsoft .Net Development Series)</strong></span></a> Mark Michaelis</span></span></p><div></div><table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td style="padding: 0in;" valign="top"><p class="MsoNormal" style="text-align: right;"><strong><span style="font-family: Times New Roman; color: black; font-size: small;"><span style="font-weight: bold; font-size: 12pt;">Price:</span></span></strong></p></td><td style="padding: 0in;"><p class="MsoNormal"><span style="font-family: Times New Roman; color: black; font-size: small;"></span></p></td><td style="padding: 0in;"><p class="MsoNormal"><strong><span style="font-family: Times New Roman; color: black; font-size: small;"><span style="font-weight: bold; font-size: 12pt;">$31.49</span></span></strong></p></td></tr><tr><td style="padding: 0in;" valign="top"><p class="MsoNormal" style="text-align: right;"><strong><span style="font-family: Times New Roman; color: black; font-size: small;"><span style="font-weight: bold; font-size: 12pt;">You Save:</span></span></strong></p></td><td style="padding: 0in;"><p class="MsoNormal"><span style="font-family: Times New Roman; color: black; font-size: small;"></span></p></td><td style="padding: 0in;"><p class="MsoNormal"><span class="price"><span style="font-family: Times New Roman; color: black; font-size: small;"><span style="font-size: 12pt;">$18.50(37%)</span></span></span></p></td></tr></tbody></table><p class="MsoNormal"><span style="font-family: Verdana; color: black; font-size: x-small;"><span style="font-size: 10pt; font-family: Verdana;">(</span></span><span style="font-family: Verdana; font-size: x-small;"><span style="font-size: 10pt; font-family: Verdana;">July 13, 2006</span></span><span style="font-family: Verdana; font-size: x-small;"><span style="font-size: 10pt; font-family: Verdana;">)</span></span></p></td></tr></tbody></table>
+
+Nice!
