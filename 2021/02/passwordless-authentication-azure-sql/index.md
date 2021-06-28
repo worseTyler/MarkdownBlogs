@@ -1,13 +1,3 @@
----
-title: "Fully-managed Passwordless Authentication for Azure SQL Database"
-date: "2021-02-09"
-categories: 
-  - "blog"
-tags: 
-  - "azure"
-  - "azure-devops"
-  - "microsoft"
----
 
 ## Six Steps to Eliminate Password Storage
 
@@ -48,7 +38,7 @@ services.AddHangfire(config => config
 
 Open your App Service in the Azure Portal. Then, navigate to the “Identity” tab in the sidebar. Under the “System assigned” tab, flip the Status to “On” and save. Click Yes to any confirmation prompt that appears.
 
-![Flipping System assigned tab to On in App Service in Azure Portal](images/image.png)
+![Flipping System assigned tab to On in App Service in Azure Portal](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/02/passwordless-authentication-azure-sql/images/image.png)
 
 Now, your App Service is running with access to the credentials of an AAD Service Principal. This Service Principal has the same name as the app service and can be assigned to any access group that you need.
 
@@ -56,7 +46,7 @@ Now, your App Service is running with access to the credentials of an AAD Servic
 
 Next, navigate to your organization’s Azure Active Directory (AAD) resource in the Azure Portal. Open the “Groups” page under the “Manage” heading in the sidebar.
 
-![Opening Groups in AAD in Azure Portal](images/image-1.png)
+![Opening Groups in AAD in Azure Portal](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/02/passwordless-authentication-azure-sql/images/image-1.png)
 
 Navigating to the Group administration area in the Azure Portal
 
@@ -64,7 +54,7 @@ On the Groups page, click “New group” to create a new group. Use this group 
 
 _Note that creating a new group in AAD requires specific permissions. If you do not have such permissions, ask an administrator to make the group for you and to assign you as an owner of that group. As an owner, you will then be able to manage membership._
 
-![Naming group in AAD](images/image-2.png)
+![Naming group in AAD](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/02/passwordless-authentication-azure-sql/images/image-2.png)
 
 Adding a new group to an AAD tenant
 
@@ -72,7 +62,7 @@ Next, create an appropriate name and description for the group. Assign group own
 
 Following, under "Members" click the hyperlink. Then, search for and select the system-assigned identity created for your App Service in Step 2. This identity has the same name as your App Service resource – in this example, “`my-app-service-group-db-auth`”.
 
-![Adding members to the group in AAD](images/image-4.png)
+![Adding members to the group in AAD](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/02/passwordless-authentication-azure-sql/images/image-4.png)
 
 Adding your app service's identity to the new AAD group.
 
@@ -80,7 +70,7 @@ Adding your app service's identity to the new AAD group.
 
 Additionally, you can search for and add any other users you want to have server-level admin access to your database. These users will be able to log into the database using SQL Server Management Studio (SSMS) by selecting the “Azure Active Directory – Universal with MFA” authentication method. Ensure that all users with access to your databases – production or not – have multi-factor authentication enabled and enforced by your organization.
 
-![SQL Server multi-factor authentication in a Database Engine](images/image-5.png)
+![SQL Server multi-factor authentication in a Database Engine](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/02/passwordless-authentication-azure-sql/images/image-5.png)
 
 Connecting to the database using your own user account in SSMS
 
@@ -91,7 +81,7 @@ After selecting users, click “Create” on the new group page.
 
 Navigate to your SQL Server resource in Azure (this is the server that contains your database, not the database resource itself). Open the “Active Directory admin” section. Then, set the admin to your AAD group we created earlier that already includes the App Service System-assigned identity.
 
-![Assigning an AAD admin to an Azure SQL Server](images/image-6.png)
+![Assigning an AAD admin to an Azure SQL Server](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/02/passwordless-authentication-azure-sql/images/image-6.png)
 
 Assigning an AAD admin to an Azure SQL Server
 

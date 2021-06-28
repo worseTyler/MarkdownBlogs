@@ -1,13 +1,3 @@
----
-title: "DevOps Metrics"
-date: "2015-10-20"
-categories: 
-  - "alm"
-  - "blog"
-  - "devops"
-tags: 
-  - "devops"
----
 
 For the past several months, I have been participating with the DevOps Metrics team following the DevOps Forum 2015 earlier this year. The topic of discussion was Metrics related to DevOps and today I presented on the topic at the 2015 DevOps Enterprise Summit in San Francisco in a talk entitled Metrics that Matter.  The slides for this can be downloaded here:
 
@@ -37,12 +27,12 @@ Time per story point Time to communicate Time to complete automated tests Time t
 
 This results in a multitude of taxonomy options, pivoting across a number of dimensions:
 
-\[caption id="attachment\_21161" align="aligncenter" width="600"\][![DevOps Metrics Taxonomy](images/DevOpsMetricsTaxonomy-1024x494.png)](/wp-content/uploads/2015/10/DevOpsMetricsTaxonomy.png) Choosing a taxonomy for DevOps metrics is challenging.\[/caption\]
+\[caption id="attachment\_21161" align="aligncenter" width="600"\][![DevOps Metrics Taxonomy](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/10/devops-metrics/images/DevOpsMetricsTaxonomy-1024x494.png)](/wp-content/uploads/2015/10/DevOpsMetricsTaxonomy.png) Choosing a taxonomy for DevOps metrics is challenging.\[/caption\]
 
 A core problem with metrics, is that their importance is relevant to your perspective.  What the CXO believes to be important is likely very different from what that nerd writing the code sees as important.  And, in fact, on occasion one metric that seems important, depends on the values of other metrics:
 
-\[caption id="attachment\_21191" align="aligncenter" width="599"\][![](images/MetricsAreAMatterOfPerspective-1024x581.png)](/wp-content/uploads/2015/10/MetricsAreAMatterOfPerspective.png) Which metrics that matter are relative to the observer's perspective and even relative to other metrics.\[/caption\]
+\[caption id="attachment\_21191" align="aligncenter" width="599"\][![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/10/devops-metrics/images/MetricsAreAMatterOfPerspective-1024x581.png)](/wp-content/uploads/2015/10/MetricsAreAMatterOfPerspective.png) Which metrics that matter are relative to the observer's perspective and even relative to other metrics.\[/caption\]
 
 Ultimately, I find it useful to review all the possible metrics you can get your hands on and consider each one as a potential option, weighing the work required to gather the metric with the value that it provides.  In evaluating the possible metrics, consider whether a measurement is transparent, relevant, automated, comparative, and whether it will be examined:
 
-[![](images/Principles-of-Measurement-1024x487.png)](/wp-content/uploads/2015/10/Principles-of-Measurement.png)
+[![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/10/devops-metrics/images/Principles-of-Measurement-1024x487.png)](/wp-content/uploads/2015/10/Principles-of-Measurement.png)

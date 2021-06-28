@@ -1,13 +1,3 @@
----
-title: "JSON serializer that doesn’t serialize other properties if Deleted is true"
-date: "2016-05-13"
-categories: 
-  - "net"
-  - "azure"
-  - "blog"
-  - "c"
-  - "cloud"
----
 
 I was recently working on a project using Azure Mobile Services (AMS) as the backend for our Android and iOS mobile apps. Using the built-in offline sync feature of AMS, you can delete records on the backend and when the mobile app synchronizes its data, the record will be deleted from the mobile device. While taking a look at some performance issues with our implementation, I discovered that the mechanism to delete a record actually sends the entire record back with the Deleted flag set to true.
 
@@ -166,6 +156,6 @@ To see this in action, you can run the project from github, use the built-in ‘
 
 > tables/TodoItem?\_\_includeDeleted=true&\_\_systemproperties=\*
 
-[![headers_deleteditems](images/headers_deleteditems.png)](/wp-content/uploads/2016/05/headers_deleteditems.png)
+[![headers_deleteditems](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/05/json-serializer-that-doesnt-serialize-other-properties-if-deleted-is-true/images/headers_deleteditems.png)](/wp-content/uploads/2016/05/headers_deleteditems.png)
 
 https://github.com/creasewp/BlogSamples/tree/master/AMSDelete

@@ -1,12 +1,3 @@
----
-title: "Creating a Fody Add-in"
-date: "2016-09-23"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-  - "visual-studio"
----
 
 [Fody](https://github.com/Fody/Fody) is a fantastic framework for creating IL weavers. For those who are unfamiliar with IL weaving, it is the art (and at times a seemingly magical incantation) of modifying an assembly _post-compile_. In this article we will walk through creating a library that can modify an existing .NET assembly.
 
@@ -46,7 +37,7 @@ Create a new ModuleWeaver.cs file. This class will be instantiated and invoked b
 
 This forms the basic weaver project, it should look like this:
 
-![image01](images/image01-232x300.png)
+![image01](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/09/creating-fody-addin/images/image01-232x300.png)
 
 We will start by determining exactly what we want our method to look like when we are done.
 

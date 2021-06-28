@@ -1,12 +1,3 @@
----
-title: "My Favorite Windows 7 Features"
-date: "2008-10-28"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 I am a pretty tough critique when it comes to Microsoft Software announcements (perhaps because in many cases I hear about what is happening before it goes public).  However, there are some cool Windows 7 features that I am very excited about:
 

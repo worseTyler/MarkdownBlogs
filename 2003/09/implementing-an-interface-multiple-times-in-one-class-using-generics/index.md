@@ -1,12 +1,3 @@
----
-title: "Implementing an Interface Multiple Times in One Class Using Generics"
-date: "2003-09-01"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 With the C# generics implementation that is currently under proposal is will be possible to declare generic interfaces, not just generic classes.  This is really cool as it avoids the ambiguity associated with returning an object such as in the System.Collections.IEnumerable interface.  In place of the non-generic interface we would use the generic System.Collections.Generics.IEnuerable version:
 

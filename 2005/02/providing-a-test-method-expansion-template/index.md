@@ -1,12 +1,3 @@
----
-title: "Providing a Test Method Expansion Template"
-date: "2005-02-16"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 Another expansion template I use frequently is a test method template (test driven development and all that).  It does extremely little but when you write lots of tests it is a nice to have.
 

@@ -1,15 +1,3 @@
----
-title: "Timers Prior to Async/Await Pattern of C# 5.0"
-date: "2017-10-09"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-tags: 
-  - "net"
-  - "c"
-  - "csharp"
----
 
 ## There Are Multiple Ways to Use `Task.Delay()` When a Timer is Required
 
@@ -294,4 +282,4 @@ You can change the interval or time due after instantiation on `System.Threading
 
 Leave your comments and questions below! Watch this [video](/video-essential-c-sharp-9/) to learn about the newest features of C#.
 
-![](images/blog-job-ad-2-1024x129.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/10/timers-prior-to-async-await/images/blog-job-ad-2-1024x129.png)

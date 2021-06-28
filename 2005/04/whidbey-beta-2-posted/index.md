@@ -1,12 +1,3 @@
----
-title: "Whidbey Beta 2 Posted"
-date: "2005-04-18"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 Beta 2 is posted to MSDN Subscriber Downloads.  The RSS feed has not yet been updated, however.
 

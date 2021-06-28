@@ -1,9 +1,3 @@
----
-title: "Communication"
-date: "2015-08-13"
-categories: 
-  - "blog"
----
 
 As a web designer, my tendency is to be a bit more introverted and I often want to immediately start working on a project, as opposed to meeting in person with a client and brainstorming. I try to fight this inclination as much as possible. But often what happens is that the vision I have for the project completely changes after meeting with the client. That’s a good thing. You want your clients influence, opinions, and feedback as much as possible.
 

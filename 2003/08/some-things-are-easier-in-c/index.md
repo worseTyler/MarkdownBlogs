@@ -1,12 +1,3 @@
----
-title: "Some things are easier in C++"
-date: "2003-08-12"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 While porting a C/C++ console application to C# I came across a construct that there doesn't seem to be any C# equivalent for.  Here is the C++ code:
 

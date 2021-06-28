@@ -1,19 +1,3 @@
----
-title: "5 Steps to Getting Started with Material Design In XAML"
-date: "2018-07-02"
-categories: 
-  - "blog"
-  - "c"
-  - "mdix"
-  - "windows-blog"
-  - "wpf"
-tags: 
-  - "material-design"
-  - "material-design-in-xaml"
-  - "mdix"
-  - "wpf"
-  - "xaml"
----
 
 ## Add Aesthetically Appealing Material Design to Your Windows Presentation Framework Applications
 
@@ -121,7 +105,7 @@ Many of the controls in the MDIX library have additional styles beyond the defau
 
 Let’s use a button as an example. By default, buttons use the primary color theme for display. We can quickly change it to use one of the other theme colors.
 
-![Material Design in XAML button styles](images/MDIXButtonPreviews.png)
+![Material Design in XAML button styles](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/getting-started-material-design-in-xaml/images/MDIXButtonPreviews.png)
 
 Style keys from left to right: MaterialDesignRaisedLightButton, MaterialDesignRaisedButton, MaterialDesignRaisedDarkButton, MaterialDesignRaisedAccentButton.
 
@@ -146,7 +130,7 @@ Now we can set the style of the button to use the MaterialDesignRaisedAccentButt
     Width="100"
     Content="ACCENT"/>
 
-![Including Material Design in XAML button style in WPF application.](images/MDIXUsingStyleExample.gif)
+![Including Material Design in XAML button style in WPF application.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/getting-started-material-design-in-xaml/images/MDIXUsingStyleExample.gif)
 
 In this tutorial, we saw how easy it is to integrate Material Design in XAML into a WPF application. I have been working with, and contributing to this library for over a year and have loved the results.
 
@@ -168,4 +152,4 @@ There are several resources available. There is a [wiki](https://github.com/Butc
 
 Check out my blog _[Material Design in XAML - How to make sense of the Dialog Host](/material-design-in-xaml-dialog-host/)_.
 
-![](images/blog-job-ad-2-1024x129.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/getting-started-material-design-in-xaml/images/blog-job-ad-2-1024x129.png)

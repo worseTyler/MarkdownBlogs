@@ -1,22 +1,3 @@
----
-title: "Video: What's New in ASP.NET Core 2.2"
-date: "2019-04-24"
-categories: 
-  - "net-core"
-  - "blog"
-tags: 
-  - "net"
-  - "asp-net"
-  - "asp-net-core"
-  - "authentication"
-  - "c-sharp"
-  - "csharp"
-  - "development"
-  - "identity-server"
-  - "michael-stokesbary"
-  - "stokes"
-  - "web-api"
----
 
 ## Who doesn't like new features?
 

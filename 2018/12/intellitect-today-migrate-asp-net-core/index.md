@@ -1,22 +1,9 @@
----
-title: "IntelliTect Today: Mark Michaelis’ Five Vital Reasons to Migrate to ASP.NET Core"
-date: "2018-12-10"
-categories: 
-  - "blog"
-  - "leadership"
-  - "team-culture"
-tags: 
-  - "asp-net-core"
-  - "cross-platform"
-  - "frameworks"
-  - "open-source"
----
 
 ### Microsoft’s ASP.NET Core provides an open-source platform for efficiently building high-performance websites with cross-platform capabilities.
 
 Mark Michaelis, CEO of IntelliTect, has traveled throughout the US teaching developers how to take their existing code and upgrade it to the efficient ASP.NET Core framework that requires users to install only what they need to host websites.
 
-![Mark at Visual Studo Live in Chicago](images/Mark-VS-Live-Chicago-2018-1024x768.jpeg)
+![Mark at Visual Studo Live in Chicago](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/12/intellitect-today-migrate-asp-net-core/images/Mark-VS-Live-Chicago-2018-1024x768.jpeg)
 
 Mark Michaelis is presenting at Visual Studio Live in Chicago, Illinois, on September 18, 2018.
 

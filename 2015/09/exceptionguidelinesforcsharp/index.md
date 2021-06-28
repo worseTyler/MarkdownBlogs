@@ -1,16 +1,3 @@
----
-title: "Guidelines for Exception Handling in C#"
-date: "2015-09-14"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-tags: 
-  - "c"
-  - "csharp"
-  - "csharp6"
-  - "programming-guidelines"
----
 
 The following is a list of C# Exceptions Handling Guidelines taken from [Essential C#](/essentialcsharp/) by [Mark Michaelis](/mark).
 

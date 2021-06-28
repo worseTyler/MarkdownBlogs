@@ -1,12 +1,3 @@
----
-title: "BizTalk - fatal error X1001: unknown system exception"
-date: "2007-08-07"
-categories: 
-  - "biztalk"
-  - "blog"
-tags: 
-  - "biztalk"
----
 
 The other day I ran across a very puzzling error: fatal error X1001: unknown system exception
 

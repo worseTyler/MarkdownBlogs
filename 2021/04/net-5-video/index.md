@@ -1,22 +1,9 @@
----
-title: ".NET 5 VIDEO: A New Era in .NET"
-date: "2021-04-20"
-categories: 
-  - "net"
-  - "net-core"
-  - "asp-net"
-  - "blog"
-tags: 
-  - "net-5"
-  - "net-core"
-  - "microsoft"
----
 
 ## Developers, Start Your Migrations! .NET 5 Paves the Way for a Great Development Experience!
 
 For the past several years, Microsoft has invested heavily in .NET Core, their open-source, cross-platform development solution. As a result, those working with the original .NET Framework have been receiving fewer updates. While .NET Core and .NET Framework are language compatible, there have been significant gaps in Core’s feature set. With .NET 5, Microsoft unified these frameworks and charted a clear path ahead for developers.
 
-![Graphic showing the evolution of Microsoft's various .NET frameworks, including .NET 5.](images/dotnet5.png)
+![Graphic showing the evolution of Microsoft's various .NET frameworks, including .NET 5.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/04/net-5-video/images/dotnet5.png)
 
 This diagram shows how .NET Framework, .NET Standard, C#, and .NET Core align and how .NET Core has evolved through three versions to .NET 5 and beyond. During this time, .NET Standard provided a compatibility layer between .NET Framework and .NET Core. Note that .NET 4 was skipped to avoid confusion with the current .NET Framework 4.x versions.
 
@@ -57,4 +44,4 @@ If you are in an unsupported case like Web Forms, you have two options. One, mig
 
 If you have been waiting to migrate to .NET 5, the time is now! Check out [Mark Michaelis’ article on reasons to migrate to ASP.NET Core.](/intellitect-today-migrate-asp-net-core/)
 
-[![](images/blog-job-ad-2-1024x129.png)](/join-our-team/)
+[![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/04/net-5-video/images/blog-job-ad-2-1024x129.png)](/join-our-team/)

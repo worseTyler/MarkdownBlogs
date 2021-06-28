@@ -1,19 +1,3 @@
----
-title: "Docker: Adding PostgreSQL to .Net Core - Part 2"
-date: "2019-03-06"
-categories: 
-  - "blog"
-tags: 
-  - "net-core"
-  - "angular"
-  - "c-sharp"
-  - "c"
-  - "docker-dockerize"
-  - "dot-net"
-  - "dot-net-core"
-  - "postgres"
-  - "postgresql"
----
 
 ## Add Postgres To .NET Core
 
@@ -375,4 +359,4 @@ Watch as all your services network together and spring to life in a cozy, contai
 
 In our first [blog](https://intellitect.com/docker-scaffold/) in our series, we dug deep into all things Docker and learned how to scaffold our app. Make sure to check it out if you need a refresher!
 
-![](images/Blog-job-ad-1024x127.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/03/docker-postgresql/images/Blog-job-ad-1024x127.png)

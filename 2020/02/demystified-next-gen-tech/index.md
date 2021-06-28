@@ -1,14 +1,3 @@
----
-title: "Next-gen Tech Demystified"
-date: "2020-02-25"
-categories: 
-  - "blog"
-  - "demystified"
-tags: 
-  - "3d-metal-printing"
-  - "next-gen-tech"
-  - "vr"
----
 
 ## The Future Looks Grand
 
@@ -16,7 +5,7 @@ There are several future lines of development I am looking forward to coming to 
 
 ### 3D Metal Printing
 
-![](images/3D-Metal-copy.jpeg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/02/demystified-next-gen-tech/images/3D-Metal-copy.jpeg)
 
 Sintered-metal casting and other computer-controlled additive metal fabrication methods have been around for several years now, but the cost and efficiency of being able to print custom metal parts is rapidly improving. Companies like [Rapidia](https://www.rapidia.com) have developed systems that are fast and flexible and meet economic price points.
 
@@ -30,7 +19,7 @@ As the technical hurdles and price points of VR systems have fallen, I think we 
 
 One of the greatest balancing acts in the field of computer science is managing the trade-off between slow, persistent, long-term data storage and fast, volatile RAM. Even with the modern innovations of solid-state drives and fast buses like PCIe, reading and writing data from storage that will persist between system reboots is still orders of magnitude slower than reading or writing from cache or main memory. As a consequence, computers spend a lot of time re-hydrating system state between reboots or power-offs.
 
-![](images/Nanotech.jpeg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/02/demystified-next-gen-tech/images/Nanotech.jpeg)
 
 Imagine when all storage will be as fast as main memory, and still as permanent as disk storage. Carbon nanotube nonvolatile NRAM from [Nantero](https://www.nantero.com) is making those promises. This technology is becoming widespread and will usher in vast changes in systems design from back end servers to PCs and mobile devices. Operating systems and applications alike will see amazing performance and reliability improvements.
 

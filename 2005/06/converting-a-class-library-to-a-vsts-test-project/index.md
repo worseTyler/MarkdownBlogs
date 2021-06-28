@@ -1,12 +1,3 @@
----
-title: "Converting a class library to a VSTS Test Project"
-date: "2005-06-06"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 I recently wanted to convert a NUnit test project to a VSTS Test Project.  The steps are relatively simple but I did come across one un-intuitive point #4 below:
 

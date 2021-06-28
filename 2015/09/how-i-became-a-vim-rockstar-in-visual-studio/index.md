@@ -1,17 +1,9 @@
----
-title: "How I Became A Vim Rockstar In Visual Studio"
-date: "2015-09-23"
-categories: 
-  - "blog"
-  - "c"
-  - "visual-studio"
----
 
 # A Brief History Lesson
 
 As a software developer, we spend a lot of our time using text editors. Most text editors follow the Emacs standard that [harkens all the way back to the 1970s](https://en.wikipedia.org/wiki/Emacs#History) and the venerable [PDP-10](https://en.wikipedia.org/wiki/PDP-10). Emacs’ WYSIWYG style of editing is best suited to a stream-of-consciousness and linear style of editing. The focus is, foremost, on being able to type all the letters and punctuation needed to capture your thoughts. Cursor movement, block selection and copy/paste all rely on either moving your hands off the home row or using modifier [keys like CTRL and ALT](https://www.catb.org/jargon/html/Q/quadruple-bucky.html). After all, the [keyboards](https://www.catb.org/jargon/html/S/space-cadet-keyboard.html) on the MIT LISP machines that Emacs was designed for allowed the user to type an astonishing 8000 different characters.
 
-[![Screen Shot 2015-09-23 at 3.17.38 PM](images/Screen-Shot-2015-09-23-at-3.17.38-PM.png)](/wp-content/uploads/2015/09/Screen-Shot-2015-09-23-at-3.17.38-PM.png)
+[![Screen Shot 2015-09-23 at 3.17.38 PM](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/09/how-i-became-a-vim-rockstar-in-visual-studio/images/Screen-Shot-2015-09-23-at-3.17.38-PM.png)](/wp-content/uploads/2015/09/Screen-Shot-2015-09-23-at-3.17.38-PM.png)
 
 Vim is a contraction of Vi IMproved, as it improves upon the visual mode of a screen-oriented text editor called **vi**, [written by Bill Joy in 1976](https://en.wikipedia.org/wiki/Vi), that first showed up in [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution).  **vi** itself was a derivative of the visual mode of an older line editor called **ex** that Bill Joy had written with Chuck Haley while attending Berkeley. The economy of keys on the Lear Siegler ADM-3A terminal that Joy used greatly influenced the commands that **ex** and **vi** used in their operation. [First released in 1991 by Bram Moolenaar](https://en.wikipedia.org/wiki/Vim_(text_editor)#History) for the Amiga, Vim’s customization and portability have been widely adopted in the Linux community. Vi/Vim greatly emphasizes text _editing_ over creation and economy of movement over modifier keys or using the mouse. As software developers, you will quickly recognize that most of the work we do with source code files is editing or changing of text; not prosaic writing. Considering the number of keystrokes you have left in your hands, why not use them more efficiently?
 
@@ -29,7 +21,7 @@ For an initial foray into learning Vim within Visual Studio, pick an easy projec
 
 Remember, VsVim provides an escape hatch: “Ctrl-Shift-F12”, if you get yourself really bound around the axle.
 
-# [![Screen Shot 2015-09-23 at 3.18.06 PM](images/Screen-Shot-2015-09-23-at-3.18.06-PM.png)](/wp-content/uploads/2015/09/Screen-Shot-2015-09-23-at-3.18.06-PM.png)
+# [![Screen Shot 2015-09-23 at 3.18.06 PM](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/09/how-i-became-a-vim-rockstar-in-visual-studio/images/Screen-Shot-2015-09-23-at-3.18.06-PM.png)](/wp-content/uploads/2015/09/Screen-Shot-2015-09-23-at-3.18.06-PM.png)
 
 During this steep part of the learning curve, try to set small, easily accomplished, goals for yourself and then celebrate when you meet them. Internal positive reinforcement here will yield huge dividends later as you start to feel yourself surpassing your previous, non-Vim, productivity.
 
@@ -57,7 +49,7 @@ You can also flex your RegEx prowess by using the native regular expression base
 
 # When You Can Snatch The Pebble From Master Po
 
-[![Screen Shot 2015-09-23 at 3.18.32 PM](images/Screen-Shot-2015-09-23-at-3.18.32-PM.png)](/wp-content/uploads/2015/09/Screen-Shot-2015-09-23-at-3.18.32-PM.png)
+[![Screen Shot 2015-09-23 at 3.18.32 PM](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/09/how-i-became-a-vim-rockstar-in-visual-studio/images/Screen-Shot-2015-09-23-at-3.18.32-PM.png)](/wp-content/uploads/2015/09/Screen-Shot-2015-09-23-at-3.18.32-PM.png)
 
 In addition to the normal rotating clipboard built into Visual Studio, VIM provides its own storage location for bits of text you yank or d elete called registers. Type :reg  to get a list of everything currently stored in the registers. There are numbered registers that function like the rotating clipboard, and these line up with the numeric row on the keyboard. To paste or manipulate with what’s stored in a register, just use “  and the numeric identifier before your command. For example, “1p  pastes the contents of register 1 after the current position. Additionally, all the other keys on the keyboard can be used as named registers (and won’t be overwritten as more things get added to the clipboard). This is useful if you want to stash a bit of oft-used code, but don’t want to make a snippet. For example, “aY  will yank the entire line into register ‘a’. Being able to push and pop bits of code into the editor with nothing more than the keyboard is tremendously useful when coding.
 

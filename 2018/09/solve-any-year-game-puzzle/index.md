@@ -1,13 +1,5 @@
----
-title: "Solve Any \"Year Game\" Puzzle in Seconds"
-date: "2018-09-13"
-categories: 
-  - "blog"
-tags: 
-  - "year-game"
----
 
-## ![](images/year-game.jpg)Ever try to write expressions for all the numbers from 1 to 100 using only the digits in the current year?
+## ![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/09/solve-any-year-game-puzzle/images/year-game.jpg)Ever try to write expressions for all the numbers from 1 to 100 using only the digits in the current year?
 
 In 2017, I wrote a code to write these expressions for any year provided. [Click here](https://github.com/GrantErickson/Solve2017) for the Github link. Try it for yourself. [Click here](https://repl.it/@ericksong/solve2017) to see how many expressions can be found for your favorite year.
 

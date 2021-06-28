@@ -1,15 +1,3 @@
----
-title: "Getting Started with Model-View-ViewModel (MVVM) Pattern using Windows Presentation Framework (WPF)"
-date: "2017-09-19"
-categories: 
-  - "blog"
-  - "c"
-  - "wpf"
-tags: 
-  - "net"
-  - "c"
-  - "wpf"
----
 
 ## Master the Basics of MVVM to Simplify Building WPF Applications
 
@@ -217,7 +205,7 @@ public class ViewModel : ViewModelBase
 
 Running our simple application we can see that clicking the button does change the name.
 
-![](images/learn-mvvm-image2.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/09/getting-started-model-view-viewmodel-mvvm-pattern-using-windows-presentation-framework-wpf/images/learn-mvvm-image2.png)
 
 Next, let’s go back and implement the CanExecute portions of the ICommand interface.
 
@@ -265,7 +253,7 @@ CanChangeName is invoked to determine if the command can be executed. In this ca
 
 Running the application we can see that the button properly disables after the name changes.
 
-![](images/learn-mvvm-image1.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/09/getting-started-model-view-viewmodel-mvvm-pattern-using-windows-presentation-framework-wpf/images/learn-mvvm-image1.png)
 
 #### Related concepts for further reading
 
@@ -281,4 +269,4 @@ You can see the complete solution [here](https://github.com/Keboo/MaterialDesign
 
 Check out my blog _[Material Design in XAML – How to make sense of the Dialog Host](/material-design-in-xaml-dialog-host/)_.
 
-![](images/Blog-job-ad-1024x127.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/09/getting-started-model-view-viewmodel-mvvm-pattern-using-windows-presentation-framework-wpf/images/Blog-job-ad-1024x127.png)

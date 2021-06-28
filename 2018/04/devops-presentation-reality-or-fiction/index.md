@@ -1,14 +1,5 @@
----
-title: "DevOps Presentation: Reality or Fiction"
-date: "2018-04-24"
-categories: 
-  - "blog"
-  - "devops"
-tags: 
-  - "devops"
----
 
-![](images/2018-04-24_13-20-01-1024x552.png)Today I did an online presentation to Sierra Systems on the Topic of DevOps.  We had some great discussions regarding:
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/04/devops-presentation-reality-or-fiction/images/2018-04-24_13-20-01-1024x552.png)Today I did an online presentation to Sierra Systems on the Topic of DevOps.  We had some great discussions regarding:
 
 - How do you move to DevOps from when you are starting with an immature team?
 - What are the biggest obstacles to successful DevOps

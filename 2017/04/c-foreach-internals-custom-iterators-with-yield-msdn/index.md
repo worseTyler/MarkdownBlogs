@@ -1,11 +1,3 @@
----
-title: "Essential .NET: Understanding C# foreach Internals and Custom Iterators with yield (MSDN)"
-date: "2017-04-01"
-categories: 
-  - "net"
-  - "blog"
-  - "msdn-essential-net"
----
 
 This month I’m going to explore the internals of a core construct of C# that we all program with frequently—the foreach statement. Given an understanding of the foreach internal behavior, you can then explore implementing the foreach collection interfaces using the yield statement, as I’ll explain.
 

@@ -1,13 +1,3 @@
----
-title: "Digging for Data in an Oracle SQL Database"
-date: "2020-06-30"
-categories: 
-  - "blog"
-  - "sql"
-tags: 
-  - "oracle-sql-database"
-  - "sql-syntax"
----
 
 ## How to find columns and tables in an Oracle SQL Database when you don’t know the schema.
 

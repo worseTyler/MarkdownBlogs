@@ -1,14 +1,3 @@
----
-title: "Parallel.For where i does not go to i++"
-date: "2010-04-25"
-categories: 
-  - "net"
-  - "blog"
-  - "linq"
-tags: 
-  - "c"
-  - "pfx"
----
 
 A problem was recent posed that I hadn't thought to do using `Parallel.For` in C#. How do you parallelize: \[code language="csharp"\]for(int i = min + offset; i < max; i+=increment) { DoSomething(i); }\[/code\]
 

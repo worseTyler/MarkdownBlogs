@@ -1,12 +1,3 @@
----
-title: "Notes on some C# 3.0 features that make LINQ possible"
-date: "2005-09-13"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 **Implicit Type Declarations**
 

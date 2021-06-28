@@ -1,14 +1,3 @@
----
-title: "FTP, PGP, and Me"
-date: "2007-08-07"
-categories: 
-  - "biztalk"
-  - "blog"
-  - "pipeline-components"
-tags: 
-  - "biztalk"
-  - "pipeline-components"
----
 
 So let me break this down for you...
 
@@ -27,7 +16,7 @@ Here is how I did it.  Please let me know if you have any other recommendations
 
 **2 - Decrypt the PGP file** Once the PGP file is stored locally, I used some code ([courtesy of MSDN](https://msdn2.microsoft.com/en-us/library/aa995576.aspx)) to load the file in to an XLANGMessage.  With my PGP file now safely tucked away in a BizTalk message (of type XmlDocument of course), I can use the ExecuteReceivePipeline method to disassemble the encrypted message in to plain text.
 
-[![clip_image0012_thumb](images/clip_image0012_thumb.png "clip_image0012_thumb")](/wp-content/uploads/2009/07/clip_image00122.png)
+[![clip_image0012_thumb](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2007/08/ftp-pgp-and-me/images/clip_image0012_thumb.png "clip_image0012_thumb")](/wp-content/uploads/2009/07/clip_image00122.png)
 
 Note:  This must be done within an Atomic scope.
 
@@ -45,7 +34,7 @@ Now I have a decrypted version of the file.
 
 **3 - Re-Encrypt the decrypted file** Since I have a message containing the decrypted version of the file, I can use the ExecuteSendPipeline method to encrypt the file for Company C.
 
-[![clip_image0013_thumb[4]](images/clip_image0013_thumb4.png "clip_image0013_thumb[4]")](/wp-content/uploads/2009/07/clip_image00132.png)
+[![clip_image0013_thumb[4]](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2007/08/ftp-pgp-and-me/images/clip_image0013_thumb4.png "clip_image0013_thumb[4]")](/wp-content/uploads/2009/07/clip_image00132.png)
 
 Note:  This must be done within an Atomic scope.
 

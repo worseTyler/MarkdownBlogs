@@ -1,9 +1,3 @@
----
-title: "Changing Short File Names"
-date: "2003-12-29"
-categories: 
-  - "blog"
----
 
 I find "Documents and Settings" and "Program Files" extremely cumbersome names that the OS creates by default.  I am reluctant to change the names (by changing the HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProfileList\\ProfilesDirectory string for example) because some programs my hard code these paths.  Instead, what I would like is to change the short file name from something like "Docume~1" to "Data" or the like.  I located the setsfn.exe program that is able to set short file names.  The command line is as follows:
 

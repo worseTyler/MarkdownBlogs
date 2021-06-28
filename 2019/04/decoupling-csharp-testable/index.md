@@ -1,15 +1,3 @@
----
-title: "Decoupling – Making Your C# Program More Testable"
-date: "2019-04-23"
-categories: 
-  - "blog"
-  - "c"
-tags: 
-  - "c-sharp"
-  - "c"
-  - "csharp"
-  - "decoupling"
----
 
 ## How and Why to Implement Decoupling Classes in Your Code
 
@@ -249,4 +237,4 @@ Now head into the world with the power of decoupled classes and change your code
 
 Ask a question about decoupling or comment below.
 
-![](images/blog-job-ad-2-1024x129.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/04/decoupling-csharp-testable/images/blog-job-ad-2-1024x129.png)

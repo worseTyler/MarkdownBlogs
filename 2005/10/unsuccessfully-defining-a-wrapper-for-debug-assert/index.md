@@ -1,12 +1,3 @@
----
-title: "Unsuccessfully Defining a Wrapper for Debug.Assert()"
-date: "2005-10-23"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 In my previous post, I mentioned how Debug.Assert() is nice in debug builds but that in release builds it should be replaced by throwing an exception if the conditional is false.  It seems fairly obvious to define a wrapper around Debug.Assert() as follows:
 

@@ -1,14 +1,3 @@
----
-title: "Maintaining Impactful Leadership During The COVID-19 Crisis"
-date: "2020-05-12"
-categories: 
-  - "blog"
-  - "leadership"
-tags: 
-  - "crisis"
-  - "leadership"
-  - "quarantine"
----
 
 ### All industries around the globe are impacted by the COVID-19 Pandemic. This isn’t a new or shocking statement. Some businesses, like Netflix, are thriving. Others, like our favorite local restaurants, aren’t all so lucky. But, how do we lead during the crisis?
 

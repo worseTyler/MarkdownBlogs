@@ -1,14 +1,3 @@
----
-title: "A Guide to Practical Unit Testing – Shift Left"
-date: "2021-02-17"
-categories: 
-  - "blog"
-tags: 
-  - "shifting-left"
-  - "software-development"
-  - "software-development-engineer-in-test"
-  - "testing"
----
 
 ## Testing Early to Reduce the Cost of Bugs 
 
@@ -20,7 +9,7 @@ At its most basic, shifting left simply means testing should be performed as 
 
 Rather than dictating firm rules, this guide aims to explain the “why” behind various testing strategies and provide guidance on when each should be used. For our purposes, it is helpful to think of different testing strategies as existing Io a spectrum rather than existing as fixed buckets. Often testing can be less than ideal and some flexibility of the boundaries is necessary.  
 
-![Spectrum of testing methods ](images/image-24.png)
+![Spectrum of testing methods ](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/02/unit-testing-shift-left/images/image-24.png)
 
 ### The Software Life Cycle 
 

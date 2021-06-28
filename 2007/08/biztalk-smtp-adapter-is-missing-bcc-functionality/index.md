@@ -1,14 +1,3 @@
----
-title: "BizTalk SMTP Adapter is Missing BCC Functionality"
-date: "2007-08-07"
-categories: 
-  - "adapters"
-  - "biztalk"
-  - "blog"
-tags: 
-  - "adapters"
-  - "biztalk"
----
 
 Ok, so this probably comes to no surprise to many of you.  I remember running in to this problem when I was using BTS 2004.  However, I thought that the community's cries would be answered with BTS 2006.  I have not had a need for it until now, so I never checked, but again the ability to BCC using the SMTP Adapter does not exist.  Fortunately, there are many ways to skin this cat.  The first 2 that come to mind are:
 

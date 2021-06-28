@@ -1,12 +1,3 @@
----
-title: "Xamarin Forms EnumBindablePicker"
-date: "2016-04-05"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-  - "xamarin"
----
 
 One of the controls missing from Xamarin Forms is a “BindablePicker” that allows you to dynamically bind an ItemsSource and SelectedItem from your view model. Fortunately, the Xamarin forums provide a solution to this problem found here:
 
@@ -86,7 +77,7 @@ In your XAML, you must specify the enum type as a parameter to the generic class
 
 I also added a Label below the EnumBindablePicker to verify that the user selected value is updating properly in the associated view model.
 
-![EnumBindablePicker - Sample Page](images/EnumBindablePicker-Sample-Page.png)
+![EnumBindablePicker - Sample Page](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/04/xamarin-forms-enumbindablepicker/images/EnumBindablePicker-Sample-Page.png)
 
 # Enums with user friendly descriptions
 
@@ -182,7 +173,7 @@ public class EnumBindablePicker<T> : Picker where T : struct
 
 This now displays the proper DisplayAttribute information to the user in the picker control:
 
-![EnumBindablePick - Sample Page 2](images/EnumBindablePick-Sample-Page-2.png)
+![EnumBindablePick - Sample Page 2](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/04/xamarin-forms-enumbindablepicker/images/EnumBindablePick-Sample-Page-2.png)
 
 # Localized Enum Strings
 
@@ -190,7 +181,7 @@ Again, this is great if you only have one language to support. But what about an
 
 There are several ways to solve the problem of retrieving the proper localized string. For purposes of this sample, I chose to put my localized strings in a resx file and use a convention {EnumType}\_{EnumValue} to find the correct value.
 
-![EnumBindablePick - Enums](images/EnumBindablePick-Enums.png)
+![EnumBindablePick - Enums](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/04/xamarin-forms-enumbindablepicker/images/EnumBindablePick-Enums.png)
 
 With a slight modification to the EnumBindablePicker, we can support this functionality as well as looking for the DisplayAttribute.
 
@@ -211,7 +202,7 @@ private static string GetEnumDescription(object value)
    return result;
 }
 
-![EnumBindablePick - Sample Page 3](images/EnumBindablePick-Sample-Page-3.png)
+![EnumBindablePick - Sample Page 3](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/04/xamarin-forms-enumbindablepicker/images/EnumBindablePick-Sample-Page-3.png)
 
 Now we have a Bindable Picker control that works natively with enums and can display a user-friendly description based on attributes or strings in a resource file.
 

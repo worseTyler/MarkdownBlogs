@@ -1,10 +1,3 @@
----
-title: "MultiBinding in Xamarin.Forms"
-date: "2016-03-15"
-categories: 
-  - "net"
-  - "blog"
----
 
 The current release of Xamarin.Forms does not contain an implementation for a MultiBinding object. For those of us who have a strong WPF background, this is a feature that would be very beneficial. With a little work, it is possible for us to implement our own MultiBinding class using the current Xamarin.Forms framework.
 
@@ -280,7 +273,7 @@ This case is much more complicated. Because multiple elements can share a single
 
 We can create our own proxy PCL project that has an Assembly name of “Xamarin.Forms.Core.UnitTests”. This project can be referenced by our main PCL project, and will have access to all of the internal members of the Xamarin.Forms.Core assembly.
 
-![Screen Shot 2016-03-15 at 11.40.37 AM](images/Screen-Shot-2016-03-15-at-11.40.37-AM.png)
+![Screen Shot 2016-03-15 at 11.40.37 AM](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/03/multibinding-in-xamarin-forms/images/Screen-Shot-2016-03-15-at-11.40.37-AM.png)
 
 This now allows us to derive from [BindingBase](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingBase/) and implement a true MultiBindings class.
 

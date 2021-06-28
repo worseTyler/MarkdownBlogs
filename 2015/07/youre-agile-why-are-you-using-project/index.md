@@ -1,9 +1,3 @@
----
-title: "“You’re agile, why are you using Project?”"
-date: "2015-07-30"
-categories: 
-  - "blog"
----
 
 Recently, as I was putting together an enterprise scale SharePoint migration plan for a client, a colleague asked “Why are you using Microsoft Project? Why don’t you use a Scrum style Product Backlog instead?”
 

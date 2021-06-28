@@ -1,18 +1,5 @@
----
-title: "Scrum Master Check-In: The Sprint Retrospective"
-date: "2019-05-21"
-categories: 
-  - "blog"
-  - "devops"
-tags: 
-  - "agile"
-  - "scrum"
-  - "scrum-master"
-  - "scrum-process"
-  - "scrum-team"
----
 
-## ![](images/Scrum-master-checkin-1024x768.jpg)
+## ![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/scrum-master-check-in/images/Scrum-master-checkin-1024x768.jpg)
 
 ## Simple tricks to improve the Sprint retrospective.
 

@@ -1,13 +1,3 @@
----
-title: "Demystifying the Requirements-Gathering Environment"
-date: "2021-04-20"
-categories: 
-  - "blog"
-  - "demystified"
-tags: 
-  - "demystified"
-  - "intellovations"
----
 
 ## Define the Problem and Voice Client-Clarifying Questions with Confidence
 
@@ -33,7 +23,7 @@ I find the initial meeting is critical in setting the tone to help maximize your
 
 Surprisingly, I found there’s not much to it.
 
-![requirements-gathering](images/chris-has-no-legs-1024x717.jpeg)
+![requirements-gathering](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/04/demystifying-requirements-gathering/images/chris-has-no-legs-1024x717.jpeg)
 
 Chris Finlayson, senior software architect, practices creating a requirements-gathering environment while on a call with a client.
 
@@ -59,4 +49,4 @@ Additionally, when you use these takeaways, the audience will generally be more 
 
 Feel free to leave any questions or comments below! Check out _[Agile Demystified: 7 Metrics to Assess Your Agile Practices](/demystified-agile/)_ or _[Software Solutions Demystified: Buy or Build with Confidence](/demystified-buy-or-build/)_.
 
-[![](images/Blog-job-ad-1024x127.png)](/join-our-team/)
+[![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/04/demystifying-requirements-gathering/images/Blog-job-ad-1024x127.png)](/join-our-team/)

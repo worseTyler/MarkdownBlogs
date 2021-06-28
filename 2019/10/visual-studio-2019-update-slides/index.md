@@ -1,17 +1,9 @@
----
-title: "What's New in Visual Studio 2019 (Slides)"
-date: "2019-10-09"
-categories: 
-  - "blog"
-tags: 
-  - "visual-studio"
----
 
 ### Curious about the new features in Visual Studio 2019?
 
 I recently gave a talk that has the answers you need.
 
-![](images/Techorama-Mark-4-1024x684.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/10/visual-studio-2019-update-slides/images/Techorama-Mark-4-1024x684.jpg)
 
 I break down the new features of Visual Studio at Techorama, 2019.
 
@@ -32,4 +24,4 @@ This session helped developers learn about the new projects that come with .NET 
 
 In addition to reviewing the slides, consider joining our upcoming tech event in Spokane, Washington. [Click here](https://www.eventbrite.com/e/intellitect-presents-visual-studio-2019-net-core-3-xamarin-and-azure-tickets-72726483871?aff=Website) for more info or to register. I will present a lot of the same information there, just in case you were not able to make it out to Techorama, Netherlands.
 
-[![Invite graphic for our 2019 Visual Studio event.](images/2-weeks-1024x768.jpg)](https://www.eventbrite.com/e/intellitect-presents-visual-studio-2019-net-core-3-xamarin-and-azure-tickets-72726483871?aff=Website)
+[![Invite graphic for our 2019 Visual Studio event.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/10/visual-studio-2019-update-slides/images/2-weeks-1024x768.jpg)](https://www.eventbrite.com/e/intellitect-presents-visual-studio-2019-net-core-3-xamarin-and-azure-tickets-72726483871?aff=Website)

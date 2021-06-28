@@ -1,24 +1,9 @@
----
-title: "Employee Spotlight: Andrew Scott"
-date: "2018-12-10"
-categories: 
-  - "blog"
-  - "team-culture"
-tags: 
-  - "andrew-scott"
-  - "employee-spotlight"
-  - "fall-2018-newsletter"
-  - "innovative-solutions"
-  - "intellitect-newsletter"
-  - "intellovations"
-  - "wow"
----
 
 ## An Analytical Thinker Who Crafts Innovative Solutions
 
 **_Whether you’ve worked with them for years or have never met our_ _featured employee, this column will continue to introduce you to the many faces of IntelliTect. For this issue, we featured a bright innovator who caught the coding bug as a sophomore in high school: Andrew Scott._**
 
-![](images/Andrew-SWR.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/12/employee-spotlight-andrew-scott/images/Andrew-SWR.jpg)
 
 “Maybe the solution is infeasible, but we won’t know until we really dig deep into the problem space,” Andrew said when explaining his views on innovation.
 
@@ -32,7 +17,7 @@ Andrew admits that he just happened upon programming by coincidence through play
 
 > “Andrew has the unique ability to not only learn new concepts rapidly but also to identify the best architecture to solve a challenge. He continues to surprise me with his keen observations and unique solutions to difficult problems. If skill and speed are a necessity for your project, you definitely want Andrew.” Grant Erickson, CTO
 
-\[caption id="attachment\_34679" align="aligncenter" width="294"\]![](images/Spotlight-second-pic-294x300.jpg) Andrew and his cat relax at home.\[/caption\]
+\[caption id="attachment\_34679" align="aligncenter" width="294"\]![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/12/employee-spotlight-andrew-scott/images/Spotlight-second-pic-294x300.jpg) Andrew and his cat relax at home.\[/caption\]
 
 Andrew likes what he likes, owns more cat t-shirts than the entire IntelliTect team combined, and enjoys spending time with his beloved cat.
 
@@ -46,4 +31,4 @@ An extremely analytical engineer, Andrew loves unraveling tricky problems but kn
 
 Want to check out Andrew’s _TellMeWhen_ addon? [Click here](https://wow.curseforge.com/projects/tellmewhen)!
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/12/employee-spotlight-andrew-scott/images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)

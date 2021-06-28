@@ -1,16 +1,3 @@
----
-title: "Selenium: Attach to an existing Chrome browser with C#"
-date: "2019-07-23"
-categories: 
-  - "blog"
-tags: 
-  - "automated-test"
-  - "c"
-  - "chrome"
-  - "qa"
-  - "selenium"
-  - "testing"
----
 
 ## You're testing a desktop application with Selenium. How do you verify an item on the page after the browser launches?
 

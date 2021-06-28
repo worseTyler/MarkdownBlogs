@@ -1,12 +1,3 @@
----
-title: "Creating a TFS Work Item from PowerShell"
-date: "2006-09-26"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 I came across a [PowerShell script for creating TFS Work Items](https://netcave.org/PermaLink,guid,f1840c93-fc6f-4673-bdde-0af89add5ab9.aspx) from [Alan Stevens](https://netcave.org/) today.  There are a couple more thougts and ideas I would add.  Here is the output from my interactive PowerShell session (notice that I start with Alan's code to load the TFS assemblies.  However, I begin to vary shortly after that.
 

@@ -1,18 +1,5 @@
----
-title: "Debugging like a Pro in Visual Studio"
-date: "2018-09-06"
-categories: 
-  - "blog"
-  - "c"
-  - "linq"
-  - "visual-studio"
-tags: 
-  - "debugging"
-  - "linq"
-  - "visual-studio"
----
 
-## ![Debugging like a Pro in Visual Studio](images/HeaderDebuggingLocalsWindow-1024x768.png)
+## ![Debugging like a Pro in Visual Studio](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/09/debugging-method-return-values/images/HeaderDebuggingLocalsWindow-1024x768.png)
 
 ## Viewing method return values in the Locals/Autos windows in Visual Studio
 
@@ -60,6 +47,6 @@ private static IEnumerable<int> Fibonacci()
 
 In the Locals (CTRL+ALT+V, L or Debug >> Windows >> Locals) and Auto (CTRL+ALT+V, A or Debug >> Windows >> Autos) windows, you will see the returned values from each of the function calls when you [step over statements](https://docs.microsoft.com/en-us/visualstudio/debugger/navigating-through-code-with-the-debugger?view=vs-2015#BKMK_Step_over_Step_out) while debugging. You can then inspect these values individually just like any other variable.
 
-![Debugging method return values in locals window](images/DebuggingLocals2.gif)
+![Debugging method return values in locals window](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/09/debugging-method-return-values/images/DebuggingLocals2.gif)
 
 It is important to note, that you will only see these when stepping through code. If you [run to a particular location](https://docs.microsoft.com/en-us/visualstudio/debugger/navigating-through-code-with-the-debugger?view=vs-2015#BKMK_Break_into_code_by_using_breakpoints_or_Break_All),you will not see the individual method return values.

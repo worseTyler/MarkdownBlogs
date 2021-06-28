@@ -1,16 +1,3 @@
----
-title: "Essential .NET: C# 7.0- Tuples Explained (MSDN)"
-date: "2017-07-27"
-categories: 
-  - "blog"
-  - "c"
-  - "msdn-essential-net"
-tags: 
-  - "c"
-  - "csharp7"
-  - "system-value-tuples"
-  - "tuples"
----
 
 Back in November, in the [Connect() special issue of MSDN Magazine](https://msdn.microsoft.com/magazine/mt790178), I provided an overview of C# 7.0 in which I introduced tuples. [Click here](https://msdn.microsoft.com/magazine/mt790184) for the overview. In this blog I delve into tuples again, covering the full breadth of the syntax options.
 
@@ -33,7 +20,7 @@ However, tuples have several other additional syntax possibilities, each shown i
 
 ## **Sample Code for Tuple Declaration and Assignment**
 
-![](images/Figure-1.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/07/csharp7-tuples-explained/images/Figure-1.jpg)
 
 In the first four examples, and although the right-hand side represents a tuple, the left-hand side still represents individual variables that are assigned together using _tuple syntax_, which involves two or more elements separated by commas and associated with parentheses. (I use the term tuple syntax because the underlying data type the compiler generates on the left-hand side isn't technically a tuple.) The result is that although I start with values combined as a tuple on the right, the assignment to the left deconstructs the tuple into its constituent parts. In example 2, the left-hand-side assignment is to pre-declared variables. However, in examples 1, 3, and 4, the variables are declared within the tuple syntax. Given that I'm only declaring variables, the naming and casing convention follows the generally accepted Framework Design Guidelines—"DO use camelCase for local variable names," for example.
 

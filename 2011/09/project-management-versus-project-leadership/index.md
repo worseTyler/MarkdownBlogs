@@ -1,12 +1,3 @@
----
-title: "Project Management Versus Project Leadership"
-date: "2011-09-20"
-categories: 
-  - "blog"
-  - "leadership"
-tags: 
-  - "leadership"
----
 
 On **Tuesday, September 20, 2011** I (Mark Michaelis) will be at the Inland Northwest Project Management Institute:
 

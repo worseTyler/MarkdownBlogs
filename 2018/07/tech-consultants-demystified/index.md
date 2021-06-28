@@ -1,15 +1,7 @@
----
-title: "Tech Consultants Demystified"
-date: "2018-07-19"
-categories: 
-  - "blog"
-  - "demystified"
-  - "leadership"
----
 
 ## How do you pick the best development team?
 
-\[caption id="attachment\_33737" align="alignleft" width="450"\]![](images/Demystified-Build-2018-w-rob-reynolds-300x225.jpg) We love all well-crafted technologies. Here are some of our developers at Build 2018 with Rob Reynolds, founder of Chocolatey.\[/caption\]
+\[caption id="attachment\_33737" align="alignleft" width="450"\]![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/tech-consultants-demystified/images/Demystified-Build-2018-w-rob-reynolds-300x225.jpg) We love all well-crafted technologies. Here are some of our developers at Build 2018 with Rob Reynolds, founder of Chocolatey.\[/caption\]
 
 Developers use languages and technologies that most of the general population have never heard of. What should a company look for when searching for the perfect team to help create their next project?
 
@@ -47,4 +39,4 @@ We’re experts in this stack. Mark is more than a Regional Director with Micros
 
 Do you agree? Comment below.
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/tech-consultants-demystified/images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)

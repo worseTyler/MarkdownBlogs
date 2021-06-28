@@ -1,17 +1,5 @@
----
-title: "Painless Bug Testing through the Isolation of Variables"
-date: "2019-03-09"
-categories: 
-  - "blog"
-tags: 
-  - "bug-testing"
-  - "debugging"
-  - "devops"
-  - "qa"
-  - "testing"
----
 
-## ![Painless Bug Testing through the Isolation of Variables. Graphic with bugs behind it.](images/IsolatingVariablesMain-300x225.png)
+## ![Painless Bug Testing through the Isolation of Variables. Graphic with bugs behind it.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/03/bug-testing-isolation-variables/images/IsolatingVariablesMain-300x225.png)
 
 ## Do you know why it’s crucial to catch your broken functionality before sending it to production?
 
@@ -37,10 +25,10 @@ Find some excellent concrete examples [here](https://martinfowler.com/articles/p
 
 One benefit to isolating these various systems is that, should a defect occur, we can provide better results (whether it be a bug report or something else) because we can identify the layers affected by a defect. If we think of bug testing and bug reports in a progression of least informational to most, teams tend to fall into one of the following categories:
 
-1. **No testing/No bug reports:** Either the team doesn’t test, or there is a critical disconnect between developers and defect reports.![Screenshot showing repo steps used when there's no testing.](images/1-NoTesting-1024x616.png)
-2. **Unfocused testing/Inaccurate bug reports:** In this case, bug reports aren’t indicative of the actual problem. These tests and bug reports are prone to producing red herrings and require the developer to spend inordinate amounts of time investigating issues that end up either not being issues or take more time to reproduce than they do to fix.![Screenshot showing repo steps used when the testing is unfocused..](images/2-UnfocusedTesting-1024x616.png)
-3. **Good testing/Good bug reports:** Tests are focused on fulfilling a need (testing for a business requirement, testing for a functional requirement, etc.) and bug reports have accurate reproduction steps for how the issue occurred and approximately when the problem started.![Screenshot showing repo steps used when the testing is good.](images/3-GoodTesting-1024x617.png)
-4. **Great testing:** Tests effectively isolate different functionality in the application, and as a result, bug reports can isolate the exact layer that failed, when the failure started, and list accurate reproduction steps.![Screenshot showing repo steps used when the testing is great..](images/4-GreatTesting-1024x616.png)
+1. **No testing/No bug reports:** Either the team doesn’t test, or there is a critical disconnect between developers and defect reports.![Screenshot showing repo steps used when there's no testing.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/03/bug-testing-isolation-variables/images/1-NoTesting-1024x616.png)
+2. **Unfocused testing/Inaccurate bug reports:** In this case, bug reports aren’t indicative of the actual problem. These tests and bug reports are prone to producing red herrings and require the developer to spend inordinate amounts of time investigating issues that end up either not being issues or take more time to reproduce than they do to fix.![Screenshot showing repo steps used when the testing is unfocused..](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/03/bug-testing-isolation-variables/images/2-UnfocusedTesting-1024x616.png)
+3. **Good testing/Good bug reports:** Tests are focused on fulfilling a need (testing for a business requirement, testing for a functional requirement, etc.) and bug reports have accurate reproduction steps for how the issue occurred and approximately when the problem started.![Screenshot showing repo steps used when the testing is good.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/03/bug-testing-isolation-variables/images/3-GoodTesting-1024x617.png)
+4. **Great testing:** Tests effectively isolate different functionality in the application, and as a result, bug reports can isolate the exact layer that failed, when the failure started, and list accurate reproduction steps.![Screenshot showing repo steps used when the testing is great..](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/03/bug-testing-isolation-variables/images/4-GreatTesting-1024x616.png)
 
 ### Strive for good testing or great testing.
 

@@ -1,17 +1,9 @@
----
-title: "We Collected Over Five Gallons of Blood!"
-date: "2020-09-10"
-categories: 
-  - "blog"
-  - "philanthropy"
-  - "team-culture"
----
 
 ## 
 
 Wow, what an amazing event – thanks to YOU!  
 
-![CEO donating blood over five gallons - philanthropy](images/Blood-Drive-Mark-768x935.jpg)
+![CEO donating blood over five gallons - philanthropy](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/09/over-five-gallons-of-blood/images/Blood-Drive-Mark-768x935.jpg)
 
 Our CEO, Mark, steps in to donate when we had an opening and helped ensure all spots stayed filled.
 
@@ -19,7 +11,7 @@ IntelliTect was a first-time blood drive host, and while we were told collecting
 
 I’m so thrilled to tell you that volunteers from the [Red Cross](https://www.redcross.org) were in awe of our turnout. They recounted the units of blood and looked at each other in disbelief. We had collected over five gallons! The volunteers had never seen that much from a first-time donor.
 
-![Friends donating blood over five gallons - philanthropy](images/blood-drive-Ashlie-and-Derek-1024x768.jpg)
+![Friends donating blood over five gallons - philanthropy](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/09/over-five-gallons-of-blood/images/blood-drive-Ashlie-and-Derek-1024x768.jpg)
 
 Ashlie and Derek came to the intellitect office for the first time to donate on behalf of Stephanie's dad, Howard.
 
@@ -31,15 +23,15 @@ We had 46 donor reservation spots, with all of those spots filled the morning we
 
 ### A Family Affair
 
-![Team and family donating blood over five gallons- philanthropy](images/Blood-Drive-Phil-and-Emily-1024x768.jpg)
+![Team and family donating blood over five gallons- philanthropy](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/09/over-five-gallons-of-blood/images/Blood-Drive-Phil-and-Emily-1024x768.jpg)
 
 Phil chats with his daughter, Emily, while she donates.
 
-![Team and family donating blood - philanthropy](images/Blood-Drive-Brian-and-Brady-1024x768.jpg)
+![Team and family donating blood - philanthropy](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/09/over-five-gallons-of-blood/images/Blood-Drive-Brian-and-Brady-1024x768.jpg)
 
 Brian and his son, Brady, donate together.
 
-![Family donating blood over five gallons - philanthropy](images/Blood-drive-Hanna-768x1024.jpg)
+![Family donating blood over five gallons - philanthropy](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/09/over-five-gallons-of-blood/images/Blood-drive-Hanna-768x1024.jpg)
 
 Hanna, Mark and Elisabeth's daughter, relaxes with a good book while she donates.
 

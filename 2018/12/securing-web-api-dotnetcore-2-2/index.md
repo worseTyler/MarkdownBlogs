@@ -1,22 +1,3 @@
----
-title: "Securing Web APIs in .NET Core 2.2"
-date: "2018-12-10"
-categories: 
-  - "net"
-  - "net-core"
-  - "blog"
-tags: 
-  - "net"
-  - "asp-net"
-  - "asp-net-core"
-  - "authentication"
-  - "c-sharp"
-  - "c"
-  - "csharp"
-  - "development"
-  - "identity-server"
-  - "web-api"
----
 
 ## **Microsoft will simplify Web API authentication in a soon-to-be-released update!**
 
@@ -32,11 +13,11 @@ Individual user accounts (or forms-based authentication) have also received spec
 
 In the ASP.Net Core 2.1 release, users can click the “Change Authentication” button when creating a Web API project in Visual Studio and select “Individual User Accounts” as an option, but then they were presented with a screen to connect to an existing Azure AD B2C application (see screenshot).
 
-![](images/Stokes-Screenshot1.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/12/securing-web-api-dotnetcore-2-2/images/Stokes-Screenshot1.png)
 
 These steps added the following line to the existing code and required extra configuration to get things working. In particular, it needed an Azure Service to be created/configured.
 
-![](images/Stokes-Code-2.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/12/securing-web-api-dotnetcore-2-2/images/Stokes-Code-2.png)
 
 The code created also didn’t allow developers to use the same model for Web API authentication as they could use for current web applications (using the forms-based authentication). This paradigm also prevented user credentials from being stored in a local database. Previously, if the developer wanted to store credentials locally on their server, they had to implement some type of OpenID Connect Server to handle authentication so the Web API could be secured by bearer tokens. The process could have been completed through third-party libraries like [IdentityServer](https://identityserver.io/) or [OpenIDDict](https://github.com/openiddict/openiddict-core), but the developer would still have been required to set up and configure it correctly. There were not “turn-key ready” ways of doing authentication.
 
@@ -48,7 +29,7 @@ Once updated, instead of creating a separate web application and making it a ded
 
 Although ASP.NET Core 2.2 has been released, the future out of band update will have a new package called \`Microsoft.AspNetCore.ApiAuthorization.IdentityServer\`. After taking a dependency on this package, one can secure their API by adding the following simple code to the ConfigureServices method (Note: it should be added after the `AddDbContext` and `AddDefaultIdentity` calls):
 
-![](images/Stokes-Code3.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/12/securing-web-api-dotnetcore-2-2/images/Stokes-Code3.png)
 
 ### **Beginner notes:**
 
@@ -75,7 +56,7 @@ The `AddIdentityServerJwt` method will configure the necessary pieces so that th
 
 After configuring the application, you will need to use the services you added, which means you will need to add the following line in your Configure method (below the `UseStaticFiles` method):
 
-![](images/Stokes-code4.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/12/securing-web-api-dotnetcore-2-2/images/Stokes-code4.png)
 
 Once complete, the developer will be able to run their application to launch a Web API application and have it backed by a configured instance of IdentityServer. Bearer token authentication will be able to be used for making secure calls to their Web API methods.
 

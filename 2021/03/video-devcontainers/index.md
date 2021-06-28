@@ -1,12 +1,3 @@
----
-title: "Video: Developing with DevContainers"
-date: "2021-03-17"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "devcontainers"
----
 
 ## Quickly Create a Development Environment with DevContainers
 

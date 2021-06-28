@@ -1,11 +1,3 @@
----
-title: "4-Steps to Successful Online Presentation Prep"
-date: "2020-05-12"
-categories: 
-  - "blog"
-tags: 
-  - "twitch"
----
 
 ### With so many in-person events being canceled or moved online, there is a growing need for all of us to master the art of online presentations.
 
@@ -15,7 +7,7 @@ For many of us, giving an online presentation can be nerve-wracking. At least on
 
 This one is straight forward. You don’t want your presentation interrupted. Built directly into the Windows 10 notification system is the ability to suppress those notifications using the [Focus Assist](https://blogs.windows.com/windowsexperience/2018/05/09/windows-10-tip-how-to-enable-focus-assist-in-the-windows-10-april-2018-update/) feature. It only takes a few clicks to turn on and can save you from most interruptions.
 
-![](images/image1.gif)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/05/demystifyed-online-presentation/images/image1.gif)
 
 Though Focus Assist handles most things, some software programs use their own notification system. When in doubt, if the program is not needed as part of the presentation, turn it off. Typically, the biggest offenders are communication and messaging applications; Slack, Microsoft Teams, Discord, etc. I would also suggest making sure irrelevant web sites are closed as well.
 
@@ -23,12 +15,12 @@ Though Focus Assist handles most things, some software programs use their own no
 
 It is always best to keep your screen clean and focused on what you are presenting. If you must switch between multiple applications, there is a good chance you show your desktop at some point. To keep it clean, you can [hide your desktop](https://support.microsoft.com/en-us/help/15058/windows-10-show-hide-resize-desktop-icons) icons to keep your desktop looking neat and tidy.
 
-![](images/image2.gif)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/05/demystifyed-online-presentation/images/image2.gif)
 
 While you are there, this is probably a good time to consider if your desktop background is appropriate for the presentation or if you should select a different one.  
 Finally, consider hiding the taskbar to help keep your screen free of distractions. To do this, right-click on the taskbar, select Taskbar settings, and then turn on the toggle to automatically hide the taskbar in desktop mode.
 
-![](images/image3-1024x837.gif)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/05/demystifyed-online-presentation/images/image3-1024x837.gif)
 
 You can also use a [separate desktop](https://support.microsoft.com/en-us/help/4028538/windows-10-multiple-desktops) to help segregate your virtual presentation space from your regular activity.
 

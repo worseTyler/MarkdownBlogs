@@ -1,10 +1,3 @@
----
-title: "Migrating an Existing Application to ASP.NET Core 3.1 (VIDEO)"
-date: "2020-02-06"
-categories: 
-  - "net-core"
-  - "blog"
----
 
 ### Discover how to get from an ASP.NET Core 2.1 project to the newest version of ASP.NET Core 3 in this video from the November 2019 Spokane .NET Users Group meetup.
 

@@ -1,21 +1,5 @@
----
-title: "Video: Is Xamarin Forms the Right Choice for Your Next App?"
-date: "2018-11-29"
-categories: 
-  - "blog"
-  - "xamarin"
-tags: 
-  - "android"
-  - "c-sharp"
-  - "c"
-  - "ios"
-  - "kevin-bost"
-  - "ui"
-  - "xamarin"
-  - "xamarin-forms"
----
 
-## ![](images/XamarinForms-1.jpg)
+## ![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/11/xamarin-forms-video/images/XamarinForms-1.jpg)
 
 Using Xamarin Forms is a quick win according to [Kevin Bost](/kevin-bost/), Xamarin certified senior developer at IntelliTect and C# instructor at Eastern Washington University.
 

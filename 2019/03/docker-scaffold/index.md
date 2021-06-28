@@ -1,23 +1,7 @@
----
-title: "Effortlessly Scaffold Your App with Docker - Part 1"
-date: "2019-03-05"
-categories: 
-  - "blog"
-tags: 
-  - "net"
-  - "net-core"
-  - "angular"
-  - "c-sharp"
-  - "c"
-  - "docker"
-  - "dockerize"
-  - "dot-net"
-  - "postgres"
----
 
 ## 
 
-![Effortlessly Scaffold Your App With Docker Part one graphic](images/Scaffold-your-App-wDocker_pt1-e1551822522344-1024x761.png)
+![Effortlessly Scaffold Your App With Docker Part one graphic](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/03/docker-scaffold/images/Scaffold-your-App-wDocker_pt1-e1551822522344-1024x761.png)
 
 Dockerize your next ASP.NET Core, Postgres and Angular app to easily get up and running.
 

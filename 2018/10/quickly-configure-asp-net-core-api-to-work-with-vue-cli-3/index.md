@@ -1,21 +1,5 @@
----
-title: "Quickly Configure ASP.NET Core API to work with Vue CLI 3!"
-date: "2018-10-26"
-categories: 
-  - "net"
-  - "net-core"
-  - "asp-net"
-  - "blog"
-  - "vue-cli"
-tags: 
-  - "asp-net"
-  - "asp-net-core"
-  - "vue-cli"
-  - "vue-cli-3"
-  - "webapi"
----
 
-![" "](images/Aspdotnet-1024x768.jpg)
+![" "](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/10/quickly-configure-asp-net-core-api-to-work-with-vue-cli-3/images/Aspdotnet-1024x768.jpg)
 
 ## Use Vue CLI 3 with all the functionality of ASP.NET Core.
 

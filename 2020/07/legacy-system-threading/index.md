@@ -1,10 +1,3 @@
----
-title: "LEGACY: Manipulate Threads with System.Threading"
-date: "2020-07-07"
-categories: 
-  - "blog"
-  - "c"
----
 
 ## Using an older .NET framework? Check out these system.threading tips to directly manipulate threads without the task abstraction.
 

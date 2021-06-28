@@ -1,19 +1,7 @@
----
-title: "IntelliTect Today: Smart Meters for the Inland Northwest"
-date: "2018-01-12"
-categories: 
-  - "blog"
-  - "team-culture"
-tags: 
-  - "avista"
-  - "intellitect-today"
-  - "intellovations"
-  - "newsletter"
----
 
 Since 2006, IntelliTect has been a custom development partner for Avista Utilities. We have been a strategic collaborator in the development and project management of a long-awaited customer portal that will bridge the communication gap between Avista, their customers, and the community they serve.
 
-\[caption id="attachment\_33019" align="alignnone" width="1996"\]![](images/2.-MDM-GL-Group-Pic-clear-e1515792648770.jpg) The integrated Avista team celebrates a successful “Go Live” event in October.  
+\[caption id="attachment\_33019" align="alignnone" width="1996"\]![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/01/intellitect-today-smart-meters/images/2.-MDM-GL-Group-Pic-clear-e1515792648770.jpg) The integrated Avista team celebrates a successful “Go Live” event in October.  
 Photo Credit: Heads and Tails Photography.\[/caption\]
 
 Avista's most recent project was a joint effort with their contract companies – IntelliTect being one of them. It spanned over two years and involved over 125 employees across 20 integrated teams. The project was centered around meter data management (MDM) and laid the groundwork for the larger initiative to leverage technology for smart meters.
@@ -24,7 +12,7 @@ Early on in the project, the integrated team was struggling with the management 
 
  
 
-![](images/Myriad-Graphic-2-e1515792825555.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/01/intellitect-today-smart-meters/images/Myriad-Graphic-2-e1515792825555.jpg)
 
  
 
@@ -45,4 +33,4 @@ We were fortunate to work with several brilliant minds at Avista and were thankf
 
 Next year, Avista will begin replacing over 400,000 meters with smart meters. We look forward to continuing to provide technical leadership, architecture, and integration services for Avista over the coming years.
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/01/intellitect-today-smart-meters/images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)

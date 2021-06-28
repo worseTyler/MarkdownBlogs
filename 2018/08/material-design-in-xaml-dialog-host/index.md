@@ -1,17 +1,3 @@
----
-title: "Material Design in XAML - How to Make Sense of the DialogHost"
-date: "2018-08-17"
-categories: 
-  - "blog"
-  - "c"
-  - "mdix"
-  - "wpf"
-tags: 
-  - "dialogs"
-  - "material-design"
-  - "material-design-in-xaml"
-  - "wpf"
----
 
 Estimated reading time: 6 minutes
 
@@ -60,7 +46,7 @@ We will start with a very simple example.
 
 Running application then looks like this:
 
-![](images/image3.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/08/material-design-in-xaml-dialog-host/images/image3.png)
 
 Figure 1: Simple dialog host application.
 
@@ -68,7 +54,7 @@ The DialogHost consists of three individual UI components: the host control, the
 
 MaterialDesignEmbeddedDialogHost is [new in version 2.5.0](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit/pull/760) which is currently in beta.
 
-![Figure 2: The layers of a DialogHost. 1. The host control wrapping the rest of the content. 2. The overlay. 3. The dialog content.](images/image2.png)
+![Figure 2: The layers of a DialogHost. 1. The host control wrapping the rest of the content. 2. The overlay. 3. The dialog content.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/08/material-design-in-xaml-dialog-host/images/image2.png)
 
 Figure 2: The layers of a DialogHost. 1. The host control wrapping the rest of the content. 2. The overlay. 3. The dialog content.
 
@@ -156,7 +142,7 @@ var dialogContent = new TextBlock
 };
 await MaterialDesignThemes.Wpf.DialogHost.Show(dialogContent);
 
-![Figure 3: A dynamic dialog](images/image5.png)
+![Figure 3: A dynamic dialog](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/08/material-design-in-xaml-dialog-host/images/image5.png)
 
 Figure 3: A dynamic dialog
 
@@ -180,7 +166,7 @@ var person = new Person
 };
 await MaterialDesignThemes.Wpf.DialogHost.Show(person);
 
-![Figure 4: A dialog created from a DataTemplate](images/image1.png)
+![Figure 4: A dialog created from a DataTemplate](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/08/material-design-in-xaml-dialog-host/images/image1.png)
 
 Figure 4: A dialog created from a DataTemplate
 
@@ -233,4 +219,4 @@ At time of writing, the current release of Material Design in XAML is version 2.
 
 Check out my other blog on [XAML](http://intellitect.com/getting-started-material-design-in-xaml/) and make sure to leave any questions in the comments below!
 
-![](images/blog-job-ad-2-1024x129.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/08/material-design-in-xaml-dialog-host/images/blog-job-ad-2-1024x129.png)

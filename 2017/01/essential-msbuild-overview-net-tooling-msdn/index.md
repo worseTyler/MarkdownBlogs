@@ -1,12 +1,3 @@
----
-title: "Essential .NET: Essential MSBuild - A Build Engine Overview for .NET Tooling (MSDN)"
-date: "2017-01-01"
-categories: 
-  - "net"
-  - "blog"
-  - "msbuild"
-  - "msdn-essential-net"
----
 
 Those of you who have been following .NET Core over the past few years (has it been that long?) know all too well that the “build system” has experienced a significant amount of flux, whether it be dropping built-in support for gulp or the demise of Project.json. For me as a columnist, these changes have been challenging as I didn’t want you, my dear readers, to spend too much time learning about features and details that ultimately were only going to be around for a few months. This is why, for example, all my .NET Core-related articles were built on Visual Studio .NET 4.6-based _._CSPROJ files that referenced NuGet packages from .NET Core rather than actually compiled .NET Core projects.
 
@@ -103,7 +94,7 @@ No Project Type GUIDs: Note that it’s no longer necessary to include a project
 
 When it comes to Visual Studio 2017, Microsoft continues to provide a rich UI for editing the CSPROJ/MSBuild project file. **Figure 2**, for example, shows Visual Studio 2017 loaded with a CSPROJ file listing, slightly modified from **Figure 1**, that includes target framework elements for netcoreapp1.0 and net45, along with package references for Microsoft.Extensions.Configuration, Microsoft.NETCore.App, and Microsoft.NET.Sdk, plus an assembly reference to MSBuild, and a project reference to SampleLib.
 
-![ Figure 2 Solution Explorer is a Rich UI on Top of a CSProj File](images/Figure-2-1.png)
+![ Figure 2 Solution Explorer is a Rich UI on Top of a CSProj File](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/01/essential-msbuild-overview-net-tooling-msdn/images/Figure-2-1.png)
 
 Figure 2 Solution Explorer is a Rich UI on Top of a CSProj File
 

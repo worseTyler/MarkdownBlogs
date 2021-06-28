@@ -1,14 +1,3 @@
----
-title: "C# 9 VIDEO: Improvements and Features"
-date: "2021-03-04"
-categories: 
-  - "blog"
-  - "c"
-tags: 
-  - "net-users-group"
-  - "c-9"
-  - "dotnet"
----
 
 ## C# 9 released in November of 2020 and is packed with features to improve your development experience.
 

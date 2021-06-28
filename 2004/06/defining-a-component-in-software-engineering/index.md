@@ -1,12 +1,3 @@
----
-title: "Defining a Component in Software Engineering"
-date: "2004-06-03"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 When .NET was first released I was disappointed by the fact that they had not provided a definition for the term "component."  The term was common in the COM days but it was never clearly defined as referring to a particular COM object or the DLL in which the COM object was implemented.
 

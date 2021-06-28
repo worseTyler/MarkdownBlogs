@@ -1,12 +1,3 @@
----
-title: "Don&#039;t use generics simply to bury a cast operation"
-date: "2003-09-07"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 I glanced briefly at Eric Gunnerson's post entitled Hangin' with generics.  I think it is worth pointing out that using a cast within a generic method should be done with caution.  At first it is appealing may seem appealing but in cases such as Eric's, where there is not way to specify a constraint on the cast, developers should be careful.
 

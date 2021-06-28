@@ -1,12 +1,3 @@
----
-title: "Using Enter-VsDevShell in PowerShell Consoles"
-date: "2019-09-04"
-categories: 
-  - "blog"
-tags: 
-  - "enter-vsdevshell"
-  - "powershell"
----
 
 ## A New Way to Add Visual Studio Tools to Your PowerShell Environment with Enter-VsDevShell
 
@@ -48,7 +39,7 @@ The relative path to the module works because the “Start in” value of the sh
 
 At this point, I was getting MSBuild in my path, and things were working again. I had previously noticed that new PowerShell consoles ended up in my “Projects location” folder in Visual Studio options, as seen in the screenshot below:
 
-![](images/devenv_2019-08-28_08-36-27-1024x211.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/09/enter-vsdevshell-powershell/images/devenv_2019-08-28_08-36-27-1024x211.png)
 
 Visual Studio 2019 Options dialog
 
@@ -130,4 +121,4 @@ The `Enter-VsDevShell` cmdlet in the Microsoft module does not yet work with Pow
 
 Check out this [video](https://intellitect.com/powershell-dsc/) on Desired State Configuration (DSC) in PowerShell!
 
-![](images/blog-job-ad-2-768x97.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/09/enter-vsdevshell-powershell/images/blog-job-ad-2-768x97.png)

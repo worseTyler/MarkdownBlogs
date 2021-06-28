@@ -1,9 +1,3 @@
----
-title: "ARRGHHH!!!  The Overwhelming Differentiator Between Web and Rich Clients"
-date: "2005-01-21"
-categories: 
-  - "blog"
----
 
 Arghhhh!!!  I just lost a blog post and don't feel like re-typing what I was actually planning on posting so here's my substitute:
 

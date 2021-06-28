@@ -1,9 +1,3 @@
----
-title: "Retrieving the short name of a file"
-date: "2005-06-17"
-categories: 
-  - "blog"
----
 
 I recently came across the Delay.exe Console program listed here.  I wanted to use the program to delay the loading of some of the auto-run applications that started when I logged in.  (I like to have start-up be as fast as possible and, although I want the some programs to start at some point, I wanted to delay a little until I got started with whatever.)  The problem is that some of the programs that I was delay-starting took parameters and delay didn't seem to accommodate this when the application path contained spaces.  Dir can give you a files short name, but not the short name for the entire path.  I decided to quickly build a [ShortName.exe](/wp-content/uploads/binary/7e8537f6-6d57-4f3e-8f92-4e5dad5f6db3/ShortName.zip) utility.
 

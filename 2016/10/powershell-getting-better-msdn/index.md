@@ -1,67 +1,3 @@
----
-title: "Essential .NET: PowerShell Just Keeps Getting Better (MSDN)"
-date: "2016-10-01"
-categories: 
-  - "net-core"
-  - "blog"
-  - "msdn-essential-net"
-  - "powershell"
----
-
-In a departure from my recent focus on .NET Core, in this month’s Essential .NET Column I’m going to focus on a host of new features that significantly increase the power of Windows PowerShell. To me, the most significant improvements are in the area of cross-platform support—yes, really, PowerShell now runs on Linux. Not only that, but it has also moved to open source on GitHub ([github.com/PowerShell/PowerShell](https://github.com/PowerShell/PowerShell)) so that the community at large can begin to bolster its features. Cool!!
-
-But the most recent announcements don’t tell the whole story. Back in February, PowerShell 5.0 was released and it includes new or improved support for class and enum declarations, module and script discovery, package management and installation, OData endpoint access, enhanced transcription and logging, and more. In this article I’m going to review each of these features and provide examples.
-
-### PowerShell Goes Cross-Platform
-
-To begin, take a look at the following command script, which installs PowerShell on Ubuntu 14.04 from Windows PowerShell Host, along with a screenshot of the execution session from Windows Bash in **Figure 1** (For those of you not familiar with Bash running Ubuntu on Windows 10 Anniversary Update see “Installing Bash on Windows 10.”):
-
-wget -O powershell.deb https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-alpha.9/powershell\_6.0.0-alpha.9-1ubuntu1.14.04.1\_amd64.deb
-sudo apt-get install libunwind8 libicu52
-sudo dpkg -i powershell.deb
-powershell
-
-![ Figure 1 Installing and Running Windows PowerShell on Ubuntu 14.04 from Bash on Ubuntu on Windows](images/Figure-1-2.png)
-
-Figure 1 Installing and Running Windows PowerShell on Ubuntu 14.04 from Bash on Ubuntu on Windows
-
-Note that the command script specifically targets Ubuntu 14.04. For other platforms, the deb package URL and the prerequisite versions will vary. See [bit.ly/2bjAJ3H](https://bit.ly/2bjAJ3H) for instructions on your specific platform.
-
-Many years ago now Jeffrey Snover tweeted that PowerShell could reasonably be expected to appear on Linux, but it has taken so long and there have been so few progress reports that even today as I use it I’m amazed. I mean, really? I’m running Bash on top of Ubuntu running on Windows (without leveraging any virtualization technology) and (assuming I don’t want to install PowerShell directly into the same Bash instance) using SSH to connect to a remote Bash session where I can install PowerShell and pipe .NET objects between commands within the Bash shell.
-
-If I had suggested this would be possible a couple of years ago I doubt many would have believed me.
-
-### Installing Bash on Windows 10
-
-Starting with Windows 10 Anniversary Edition, you can install Bash natively onto Windows with the following Windows PowerShell command:
-
-Get-WindowsOptionalFeature -Online -FeatureName \*linux\* | Enable-WindowsOptionalFeature -NoRestart -all –online
-
-Note, however, that this is still in beta and, therefore, only enabled in developer mode (use “Get-Help WindowsDeveloper” to see how to explore developer mode).
-
-Unfortunately, this feature does require a restart, but I include the -NoRestart option so that enabling the feature doesn’t directly trigger the restart.
-
-### PowerShell Repositories and the PowerShell Gallery
-
-While it’s great that you can write your own scripts and libraries, it’s likely that someone else in the community has already done something similar that you can leverage and improve upon. Until the advent of the PowerShell Gallery ([PowerShellGallery.com](https://PowerShellGallery.com)), however, you had to comb the Internet to find scripts and modules that might be useful—whether they were community contributions or official PowerShell product releases like Pscx or the Posh-Git module. One of the more recent PowerShell improvements (part of PowerShell 5.0) I’ve become completely dependent on is the new repository support, specifically the PowerShell Gallery. Imagine, for example, that you’ve been writing PowerShell for some time and, in so doing, you’ve become aware that there are many pitfalls to be avoided, if only there was a way to analyze your code and find them. With this in mind, you could browse to the PowerShell Gallery and search for an analyze module to install. Or, even better (because you presumably already have a PowerShell window open), you can leverage the PowerShellGet module’s Find-Module command (included with PowerShell 5.0):
-
-Find-Module \*Analyze\* | Select-Object Name,Description
-
-The output of which is shown in **Figure 2**.
-
-![ Figure 2 Output of Find-Module Command](images/Figure-2-2.png)
-
-Figure 2 Output of Find-Module Command
-
-Note that if you don’t have a sufficiently modern version of NuGet installed, leveraging the PowerShellGet module will trigger a NuGet package update.
-
-Assuming you find the module you want, you can view its contents via the Save-Module command. To install the module, use the Install-Module (in this case, Install-Module PSScriptAnalyzer) command. This will download the module and install it for you, making all the functions included in the module available. After installing the PSScriptAnalyzer module, you can invoke Invoke-ScriptAnalyzer $profile to scan your profile and identify concerns that the analyzer considers suboptimal. (Note that it’s no longer necessary to import a module in order to access it. Module functions are automatically indexed such that when you invoke a module function, the module will automatically import and be accessible on demand.)
-
-Note that the PowerShell Gallery is configured as a repository by default:
-
-\>Get-PSRepository
-Name         InstallationPolicy   SourceLocation
----- ------------------ --------------
 PSGallery    Untrusted            https://www.powershellgallery.com/api/v2/
 
 As a result, Find-Module works without issue. However, Install-Module will prompt you with an untrusted repository warning. To avoid this, assuming you do indeed trust the repository, you can set it to trusted with the command:
@@ -82,7 +18,7 @@ As shown, wild cards are supported. Other Package commands to be familiar with a
 
 Get-Help "-package" | Select-Object Name,Synopsis
 
-![ Figure 3 Available Windows PowerShell Package Commands](images/Figure-3.png)
+![ Figure 3 Available Windows PowerShell Package Commands](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/10/powershell-getting-better-msdn/images/Figure-3.png)
 
 Figure 3 Available Windows PowerShell Package Commands
 
@@ -98,7 +34,7 @@ One thing to consider is that not only can the Chocolatey repos­itory be access
 
 Another PowerShell 5.0 feature that’s worth mentioning is the ability to generate a set of methods that access an OData data source such as Visual Studio Team Services (VSTS). **Figure 4** demonstrates running the Export-ODataEndpointProxy on an OData service, a public sample Northwind OData service in this case.
 
-![ Figure 4 Generating and Invoking an OData Proxy](images/Figure-4.png)
+![ Figure 4 Generating and Invoking an OData Proxy](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/10/powershell-getting-better-msdn/images/Figure-4.png)
 
 Figure 4 Generating and Invoking an OData Proxy
 
@@ -110,7 +46,7 @@ Another new command to appear in PowerShell 5.0 is ConvertFrom-String. It’s de
 
 Consider, for example, SysInternal’s handle.exe program, (which you can install using the Install-Package Handle command—­leveraging package management as discussed in the previous section). As you’d expect from a command-line utility, it writes out text to stdout—in this case a list of open handles associated with a name. In PowerShell, however, you’ve grown accustomed to working with objects. And, to convert the text output into an object, you use the ConvertFrom-String function, as shown in **Figure 5**.
 
-![ Figure 5 Utilizing ConvertFrom-String to Parse stdout into an Object](images/Figure-5.png)
+![ Figure 5 Utilizing ConvertFrom-String to Parse stdout into an Object](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/10/powershell-getting-better-msdn/images/Figure-5.png)
 
 Figure 5 Utilizing ConvertFrom-String to Parse stdout into an Object
 

@@ -1,9 +1,3 @@
----
-title: "Building Single Page Applications (SPA) with the Journey Framework"
-date: "2016-03-17"
-categories: 
-  - "blog"
----
 
 The Journey Framework is a great way for an MVC team to leverage their knowledge base for more dynamic applications and ease into the world of SPAs and JavaScript.
 

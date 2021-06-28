@@ -1,15 +1,3 @@
----
-title: "Architecting a Cyber-Physical Office Space"
-date: "2019-08-20"
-categories: 
-  - "blog"
-  - "team-culture"
-tags: 
-  - "4th-industrial-revolution"
-  - "cps"
-  - "cyber-physical"
-  - "industrial-revolution-4-0"
----
 
 ### Implementing an integrated Cyber-Physical system utilizing open standards and inexpensive components
 

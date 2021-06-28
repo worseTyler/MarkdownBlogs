@@ -1,14 +1,3 @@
----
-title: "BizTalk LOB Whitepapers"
-date: "2007-08-07"
-categories: 
-  - "adapters"
-  - "biztalk"
-  - "blog"
-tags: 
-  - "adapters"
-  - "biztalk"
----
 
 Earlier in the year, I published a couple of Whitepapers for Microsoft on the topic of using the BizTalk PeopleSoft and Siebel LOB Adapters. Since then, I have run across a few other helpful pieces of information that I thought I might share in future posts. For now, here are the links to the papers.
 

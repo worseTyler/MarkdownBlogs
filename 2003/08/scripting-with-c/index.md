@@ -1,12 +1,3 @@
----
-title: "Scripting with C#"
-date: "2003-08-06"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 As part of a writing project I am involved in at the moment I was looking for a C# scripting tool that would allow me to execute C# as a script rather than compiling it.  I looked at 3 different options:  1) [Alintex Script host](https://www.alintex.com/) 2) nsh and 3) NScript.  There are also two MSDN articles on this called [Script Happens](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnclinic/html/scripting06112001.asp).
 

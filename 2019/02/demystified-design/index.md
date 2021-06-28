@@ -1,20 +1,7 @@
----
-title: "Design Demystified"
-date: "2019-02-14"
-categories: 
-  - "blog"
-  - "demystified"
-tags: 
-  - "client"
-  - "customer"
-  - "design"
-  - "user-experience"
-  - "ux"
----
 
 ## Why A Beautiful User Experience (UX) Shouldn’t Be Our Primary Focus
 
-## ![](images/Design-Demystifyed-graphic-300x200.jpg)
+## ![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/02/demystified-design/images/Design-Demystifyed-graphic-300x200.jpg)
 
 I’m passionate about creating functional designs, and I love what I do. More and more I believe that the methodology of sticking to initial design comps exactly is fatally flawed. Executing a smooth plan and receiving positive internal feedback is excellent, but ultimately, if a design doesn’t improve the end user’s experience in some meaningful way, the project will fail.
 
@@ -26,4 +13,4 @@ When I made the shift in my thinking from just creating something aesthetically 
 
 ###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T)
 
-[![](images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)
+[![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/02/demystified-design/images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)

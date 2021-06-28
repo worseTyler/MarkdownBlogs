@@ -1,15 +1,3 @@
----
-title: "ASP.NET Core Dynamic Routing with Constraints"
-date: "2018-04-19"
-categories: 
-  - "net"
-  - "net-core"
-  - "blog"
-  - "c"
-tags: 
-  - "asp-net-core"
-  - "constraints"
----
 
 ## Need to do more complex routing with ASP.NET Core? Try Constraints.
 

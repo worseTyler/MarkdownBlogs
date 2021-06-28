@@ -1,20 +1,9 @@
----
-title: "Employee Spotlight: Kevin Bost"
-date: "2020-11-11"
-categories: 
-  - "blog"
-  - "team-culture"
-tags: 
-  - "employee-spotlight"
-  - "kevin"
-  - "kevin-bost"
----
 
 ## A Biker with an Affinity for Mentoring
 
 "Thirty miles per hour – it turns out at that speed, you don't hit pavement," Kevin said. "You get launched into the park."
 
-![Kevin on a motorcycle with his wife](images/Kevin-motorcycle-1-1024x794.jpg)
+![Kevin on a motorcycle with his wife](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/11/employee-spotlight-kevin-bost/images/Kevin-motorcycle-1-1024x794.jpg)
 
 Kevin and his wife, Heather, love taking motorcycle trips.
 
@@ -28,7 +17,7 @@ I had the same question when Erin Wissing and I sat down to chat with Kevin Bost
 
 Kevin's programming journey started back in high school. In his free time, he picked up the Java programming language, even going so far as to list it as a "foreign language" on his high school transcript, a requirement for graduation in Washington state. Coincidentally, it turns out "Javanese" [is a](https://en.wikipedia.org/wiki/Javanese_language) [language](https://en.wikipedia.org/wiki/Javanese_language) used by natives of Java's island in Indonesia.
 
-![](images/Kevins-family.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/11/employee-spotlight-kevin-bost/images/Kevins-family.png)
 
 Kevin enjoys hiking with Heather and their wonderful children, Sophie and Josh.
 
@@ -48,7 +37,7 @@ Years later, Kevin once again partnered with Olive Tree, but this time as an Int
 
 Today, Kevin works on multiple projects, with his primary role being a mentor for several teams. One team member even referred to Kevin as the "grease in the cog of their team." He is also the architect on a forensic video project for Occam Solutions, whose software was recently featured on the Netflix series _Exhibit A_.
 
-![Netflix Exhibit A graphic](images/Netflix-client.png)
+![Netflix Exhibit A graphic](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/11/employee-spotlight-kevin-bost/images/Netflix-client.png)
 
 Kevin recently became a Microsoft MVP, primarily because of his growing mentorship capabilities. A consistent source of knowledge for clients and fellow IntelliTect engineers, Kevin has also become an adjunct professor at his alma mater, EWU. When the opportunity to teach a class at EWU through IntelliTect arose, Kevin jumped at the chance to spend more time mentoring. He loves to see the light bulb moment in his students' eyes, whether they are his colleagues, clients, or students.
 

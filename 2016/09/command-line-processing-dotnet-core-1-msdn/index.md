@@ -1,12 +1,3 @@
----
-title: "Essential .NET: Command-Line Processing with .NET Core 1.0 (MSDN)"
-date: "2016-09-01"
-categories: 
-  - "net"
-  - "net-core"
-  - "blog"
-  - "msdn-essential-net"
----
 
 In this month’s Essential .NET column, I continue my investigation into the various features of .NET Core, this time with a fully released version (no longer in beta or a euphemistic release candidate). Specifically, I’m going to focus on its command-line utilities (which are found within the .NET Core Common library at [github.com/aspnet/Common](https://github.com/aspnet/Common)) and how to leverage them for parsing a command line. I confess I’m particularly excited to finally see command-line parsing support built into .NET Core as it’s something I’ve wished for since the .NET Framework 1.0. I’m hoping that a .NET Core built-in library might help standardize, even if only a little, the command-line format/structure between programs. It isn’t so important to me what the standard is as much as there be a convention that people default to, rather than everyone creating their own.
 
@@ -16,7 +7,7 @@ The bulk of the command-line functionality is found within the Microsoft.Extensi
 
 **Figure 1 Sample Command Lines**
 
-![](images/Figure-1-3.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/09/command-line-processing-dotnet-core-1-msdn/images/Figure-1-3.png)
 
 As described next, there are multiple argument types, one of which is called an “Argument.” The overloading of the term argument to refer to the values specified on the command line versus the command-line configuration data can lead to significant ambiguity. Therefore, for the remainder of the article, I’ll distinguish between a generic argument of any kind—specified after the executable name—and the argument type called “Argument” (title case) by the casing. Similarly, I’ll distinguish the other argument types, Option and Command, using title case rather than the lowercase terms that generically refer to the argument. Please take note of this as it will be important throughout the remainder of the article.
 

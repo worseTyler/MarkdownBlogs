@@ -1,12 +1,3 @@
----
-title: "Essential .NET - Logging with .NET Core (MSDN)"
-date: "2016-04-07"
-categories: 
-  - "net"
-  - "net-core"
-  - "blog"
-  - "msdn-essential-net"
----
 
 In the February issue, I delved into the new configuration API included in the newly named .NET Core 1.0 platform (see [bit.ly/1OoqmkJ](https://bit.ly/1OoqmkJ)). (I assume most readers have heard about the recently renamed .NET Core 1.0, which was formerly referred to as .NET Core 5 and part of the ASP.NET 5 platform \[see [bit.ly/1Ooq7WI](https://bit.ly/1Ooq7WI)\].) In that article I used unit testing in order to explore the Microsoft.Extensions.Configuration API. In this article I take a similar approach, except with Microsoft.Extensions.Logging. The key difference in my approach is that I’m testing it from a .NET 4.6 CSPROJ file rather than an ASP.NET Core project. This emphasizes the fact that .NET Core is available for you to consider using immediately—even if you haven’t migrated to ASP.NET Core projects.
 

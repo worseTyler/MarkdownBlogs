@@ -1,9 +1,3 @@
----
-title: "Creating a Toggle Anchor Lock macro for images in word"
-date: "2004-06-01"
-categories: 
-  - "blog"
----
 
 I recently wanted a button or keystroke that could automatically toggle the Lock Anchor state for shapes in Microsoft Word.  Unfortunately, there didn't seem to be a built-in Word action for doing this.  Using a tip from Cindy Meister I created the following macro that does the trick nicely:
 

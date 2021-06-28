@@ -1,12 +1,3 @@
----
-title: "Dare to Lead: Leadership Without Armor"
-date: "2020-08-10"
-categories: 
-  - "blog"
-  - "leadership"
-tags: 
-  - "daring-leadership"
----
 
 ## **Are you causing your team harm by following outdated advice?**
 
@@ -90,4 +81,4 @@ Already read it? Let us know what you think about the book in the comments.
 
 Consider our previous blog, _[Agile Demystified: 7 Metrics to Assess Your Agile Practices](/demystified-agile/)_.
 
-[![click here to sign up for Intellovations, our quarterly newsletter so you never miss out!](images/Click-here-to-sign-up-1-1024x235.jpg)](https://bit.ly/2Nhro9T)
+[![click here to sign up for Intellovations, our quarterly newsletter so you never miss out!](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/08/dare-to-lead/images/Click-here-to-sign-up-1-1024x235.jpg)](https://bit.ly/2Nhro9T)

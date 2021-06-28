@@ -1,12 +1,3 @@
----
-title: "VIDEO: Building Modern Tools with System.CommandLine"
-date: "2021-05-12"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net-interactive-notebooks"
----
 
 ## Learn How the System.CommandLine Library Can Improve the Tools You Build
 

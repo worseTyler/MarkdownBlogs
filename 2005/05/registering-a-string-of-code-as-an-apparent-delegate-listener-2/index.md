@@ -1,12 +1,3 @@
----
-title: "Registering a string of code as an apparent \"delegate\" listener"
-date: "2005-05-11"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 In my previous post I described how to provide custom validation code at runtime.  I register the code through a call to RegisterNameValidationCode().  One variation on this is to provide a += operator to register the code so that it looks as though I am registering a delegate.
 

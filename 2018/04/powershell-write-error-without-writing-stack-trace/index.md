@@ -1,17 +1,7 @@
----
-title: "PowerShell Write-Error Without Writing Stack Trace"
-date: "2018-04-17"
-categories: 
-  - "net"
-  - "blog"
-  - "powershell"
-tags: 
-  - "powershell"
----
 
 Recently, I was trying to display the errors and warning from a DotNet Build. While the warnings all displayed correctly, the errors always included the stack trace:
 
-![](images/2018-04-16_21-25-30-1024x226.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/04/powershell-write-error-without-writing-stack-trace/images/2018-04-16_21-25-30-1024x226.png)
 
 I was able to control the error output slightly by varying the global $ErrorView variable, but the only two options were NormalView or CategoryView, neither of which gave me the clean, message-only, look I desired.
 

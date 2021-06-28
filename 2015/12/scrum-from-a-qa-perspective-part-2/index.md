@@ -1,21 +1,3 @@
----
-title: "Scrum – from a QA Perspective - Part 2"
-date: "2015-12-17"
-categories: 
-  - "blog"
----
-
-In a previous blog I talked about the benefits of being part of a scrum development team in a QA role. I also mentioned some of the pitfalls and bad habits I noticed were easy to fall into.
-
-There's another problem, though; one originating from outside the team. That problem is one of expectations, adherence (or lack of adherence) to the scrum methodology,  and a general misunderstanding of an agile team. This results in a series of shifting priorities, unclear request, and a development environment bogged down in churn and technical debt. The cost ends up being just as heavy as other development methodologies.
-
-I want to address a few points right off the bat, so my stance and where I'm coming from are clear:
-
-1. I'm a firm believer that no software development methodology can make up for a poor team, or poor management. A good team that is allowed to excel can produce good software no matter the development style (the people who write software for the NASA shuttle [appear to use a very rigorous form of waterfall](https://www.fastcompany.com/28121/they-write-right-stuff), for example--or at least did at one point in their history. I'll be coming back to this later.)
-2. I also advocate software development with a holistic approach. Siloing off teams with different specialties, and completely removing design from development, and development from QA, can lead to a very disconnected and costly approach. I'm not saying I think everyone should have the same skillset, but the process and teams should be less segregated than what I've traditionally seen.
-3. When I talk about the "cost" of development, I don't just mean dollars. I mean people performing sub-optimally, getting burnt out, or flat being uncooperative.
-
-\---
 
 There is an [excellent blog](https://www.stilldrinking.org/programming-sucks) that describes software development as engineering a bridge:
 

@@ -1,12 +1,3 @@
----
-title: "Security Library"
-date: "2003-08-13"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 As reported by .NETWire
 

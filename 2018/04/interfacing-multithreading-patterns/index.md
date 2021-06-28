@@ -1,16 +1,3 @@
----
-title: "Interfacing with Multithreading Patterns prior to TPL and C# 5.0"
-date: "2018-04-09"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-tags: 
-  - "apm"
-  - "c"
-  - "multithreading"
-  - "tpl"
----
 
 ## Legacy Blog - Pre C# 5.0
 
@@ -170,7 +157,7 @@ The parameters map from the synchronous method to the APM methods, as shown in F
 ### **Figure 1: APM Parameter Distribution  
 **
 
-# ![](images/Figure-c.1.jpg)
+# ![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/04/interfacing-multithreading-patterns/images/Figure-c.1.jpg)
 
 All input parameters map to the `BeginX` method. Similarly, the return parameter maps to the `EndX` return parameter. Also, notice that since the ref and out parameters return results, they are included in the `EndX` method signature. In contrast, url is just an input parameter, so it is not included in the `EndX` method.
 
@@ -962,7 +949,7 @@ The example in Listing 5 passed an integer and received a `string—the` signatu
 
 ### Figure 2: Delegate Parameter Distribution to `BeginInvoke()` and `EndInvoke()`
 
-![](images/Figure-c.2.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/04/interfacing-multithreading-patterns/images/Figure-c.2.jpg)
 
 _(Although commonly encountered, this example intentionally doesn’t use Func or Action because generics don’t allow ref and out modifiers on type parameters.)_
 

@@ -1,9 +1,3 @@
----
-title: "Validating a Business Idea"
-date: "2015-08-10"
-categories: 
-  - "blog"
----
 
 Let's say you come up with a great idea; the next big product or service. **How do you know what the next steps should be? What should you do?**
 

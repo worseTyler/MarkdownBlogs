@@ -1,11 +1,3 @@
----
-title: "Making unit testing easier"
-date: "2016-08-04"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
----
 
 I love [unit tests](https://intellitect.com/improving-unit-tests-with-automocker/). Specifically, I love unit tests that are easy to maintain. When I spend more time setting up a test then doing actual testing, it is a very strong code smell. Sloppy unmaintainable code has no place in your projects, especially not in your unit test project.  
    

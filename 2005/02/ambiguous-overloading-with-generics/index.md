@@ -1,12 +1,3 @@
----
-title: "Ambiguous Overloading With Generics"
-date: "2005-02-11"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 While attending the Whidbey Compiler Development lab earlier this week, Jim Miller posed the following problem:
 

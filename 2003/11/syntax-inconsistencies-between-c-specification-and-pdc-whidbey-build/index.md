@@ -1,12 +1,3 @@
----
-title: "Syntax Inconsistencies between C# Specification and PDC-Whidbey Build"
-date: "2003-11-05"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 The C# 2.0 draft specification was published by Microsoft shortly before the PDC.  Then, at the PDC developers received a copy of Whidbey, which included the C# 2.0 compiler.  However, there are a three noticeable inconsistencies between the C# 2.0 specification and the compiler itself that deserve mentioning:  Some of the mismatches are not actually in the draft specification but they can be gleaned from Anders Hejlsberg's presentation on C# Language Enhancements at the PDC.  Obviously updates will be made but the specification is a moving target and until it is approved, there are no guarantee of compliance.
 

@@ -1,12 +1,3 @@
----
-title: "Essential .NET: Designing C# 7 (MSDN)"
-date: "2015-12-09"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-  - "msdn-essential-net"
----
 
 By the time you read this, the C# 7 design team will have been discussing, planning, experimenting and programming for about a year. In this installment, I’ll sample some of the ideas they’ve been exploring.
 

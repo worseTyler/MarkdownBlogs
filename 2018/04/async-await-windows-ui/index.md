@@ -1,14 +1,3 @@
----
-title: "Ensure Continuation Using Async/Await with the Windows UI"
-date: "2018-04-06"
-categories: 
-  - "blog"
-tags: 
-  - "async"
-  - "async-await"
-  - "await"
-  - "windows-ui"
----
 
 ## The async/await pattern ensures that continuation works without switching back to the UI thread to update a control.
 

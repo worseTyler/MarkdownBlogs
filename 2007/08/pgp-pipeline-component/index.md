@@ -1,14 +1,3 @@
----
-title: "PGP Pipeline Component"
-date: "2007-08-07"
-categories: 
-  - "biztalk"
-  - "blog"
-  - "pipeline-components"
-tags: 
-  - "biztalk"
-  - "pipeline-components"
----
 
 **UPDATE - Check out [my blog](/pgp-pipeline-component-v1-1/) covering V1.1 updates.**
 

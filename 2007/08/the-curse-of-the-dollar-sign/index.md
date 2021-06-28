@@ -1,12 +1,3 @@
----
-title: "The Curse of the Dollar Sign ($)"
-date: "2007-08-07"
-categories: 
-  - "biztalk"
-  - "blog"
-tags: 
-  - "biztalk"
----
 
 Recently, I was working on a project that inserted records from a flat file in to a SQL table. For the most part, this was pretty simple and straight forward.
 

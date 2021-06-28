@@ -1,14 +1,3 @@
----
-title: "PGP Pipeline Component v1.1"
-date: "2007-08-07"
-categories: 
-  - "biztalk"
-  - "blog"
-  - "pipeline-components"
-tags: 
-  - "biztalk"
-  - "pipeline-components"
----
 
 ## Why pay for something you can write yourself?
 

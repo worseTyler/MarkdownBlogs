@@ -1,12 +1,3 @@
----
-title: "Comparison Operators not Behaving Equally"
-date: "2004-06-01"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 The current C# 2.0 specification includes the following quote:
 

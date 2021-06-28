@@ -1,12 +1,3 @@
----
-title: "Mutating the Immutable String"
-date: "2005-11-20"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 During my .NET Internals presentation at the Seattle code camp and again the [Spokane .NET User Group](https://www.meetup.com/Spokane-NET-User-Group/), I presented attendees with the following question:
 

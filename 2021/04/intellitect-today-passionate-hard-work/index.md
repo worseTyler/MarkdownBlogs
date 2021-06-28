@@ -1,21 +1,9 @@
----
-title: "IntelliTect Today: Passionate Hard Work During the Pandemic"
-date: "2021-04-20"
-categories: 
-  - "blog"
-  - "team-culture"
-tags: 
-  - "intellitect-newsletter"
-  - "intellitect-today"
-  - "intellovations"
-  - "spokane"
----
 
 ## Springing Past the Pandemic Winter into the Future. Discover Our New Team, Our Scholarship Program, and Our Coding Classes!
 
 We are starting to see signs of spring in Spokane, Washington, not only in the climate but perhaps more importantly, as we emerge from the pandemic winter. To our team, the end of this long year means a return to all the aspects of IntelliTect that make our company culture so strong. Cheers to team lunches, parties, ideation sessions, and mid-day ping-pong matches!
 
-![](images/Mark-Ping-Pong-1024x768.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/04/intellitect-today-passionate-hard-work/images/Mark-Ping-Pong-1024x768.jpg)
 
 Yuriy Kravstov (left) and Mark Michaelis (right) play ping pong during a lunch break.
 
@@ -39,7 +27,7 @@ Over the summer, we are considering the same class regiment in a guerilla format
 
 Despite the pandemic, we are still hiring. Over the past quarter, three new employees joined the team, with thirteen total new hires over the past year! We expect a couple more to join the team over the coming months.
 
-![Launching the Drone](images/Austen-Drone.jpg)
+![Launching the Drone](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/04/intellitect-today-passionate-hard-work/images/Austen-Drone.jpg)
 
 Austen Frostad, a new full-time team member, holds a model plane he programmed via a virtual network that allows it to receive controls from his laptop. [Click here](https://intellitect.com/delivery-drone/) for a blog about how Austen constructed a plane to deliver snacks to him while jogging.
 
@@ -49,4 +37,4 @@ We are excited about the new team members and all they are bringing to make Inte
 
 Check out previous columns, including [Creating IntelliWiki](/intellitect-today-creating-intelliwiki), [IntelliTect's New Normal](/intellitects-new-normal-pandemic/), or [Maintaining Impactful Leadership During The COVID-19 Crisis](/intellitects-new-normal-pandemic/).
 
-[![](images/Blog-job-ad-1024x127.png)](join-our-team)
+[![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/04/intellitect-today-passionate-hard-work/images/Blog-job-ad-1024x127.png)](join-our-team)

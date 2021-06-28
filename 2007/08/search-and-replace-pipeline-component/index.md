@@ -1,14 +1,3 @@
----
-title: "Search and Replace Pipeline Component"
-date: "2007-08-07"
-categories: 
-  - "biztalk"
-  - "blog"
-  - "pipeline-components"
-tags: 
-  - "biztalk"
-  - "pipeline-components"
----
 
 Ok. So this isn't the fanciest of things, but it really saved my bacon.
 

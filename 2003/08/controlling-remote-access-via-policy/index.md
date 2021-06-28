@@ -1,9 +1,3 @@
----
-title: "Controlling Remote Access via Policy"
-date: "2003-08-13"
-categories: 
-  - "blog"
----
 
 While trying to set up a VPN Server using Windows 2003 I wanted to assign users access based on policy rather then individually selecting the dial-in or deny privilege on the user properties.  Unfortunately, the "Control access through Remote Access Policy" option was disabled.
 

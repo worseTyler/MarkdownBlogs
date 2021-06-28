@@ -1,9 +1,3 @@
----
-title: "Dual Monitors for my Laptop"
-date: "2003-08-22"
-categories: 
-  - "blog"
----
 
 With my last laptop I had two monitors connect by adding a PCI video card to the docking station.  The problem, however, was that the two video cards I tried prevented me from undocking the laptop even when I hibernated.  The only way I could remove the laptop was if I shut down the laptop entirely.  This was very aggravating (especially when running late for a meeting), so much so that I now just doing the single monitor thing.  [There are several ways to get dual monitor support for a laptop](https://www.realtimesoft.com/multimon/faq.asp#Laptops), however, so I decided to investigate another.
 

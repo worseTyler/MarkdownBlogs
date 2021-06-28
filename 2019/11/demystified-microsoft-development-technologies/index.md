@@ -1,24 +1,7 @@
----
-title: "Microsoft Development Technologies Demystified"
-date: "2019-11-20"
-categories: 
-  - "net"
-  - "net-core"
-  - "azure"
-  - "blog"
-  - "c"
-  - "cloud"
-  - "demystified"
-  - "visual-studio"
-  - "wpf"
-  - "xamarin"
-tags: 
-  - "microsoft"
----
 
 ### Watch our free videos for a crash course on current development technologies.
 
-![Picture of Mark Michaelis speaking at IntelliTect's 2019 Visual Studio event.](images/VS2019-event-1024x768.jpg)
+![Picture of Mark Michaelis speaking at IntelliTect's 2019 Visual Studio event.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/demystified-microsoft-development-technologies/images/VS2019-event-1024x768.jpg)
 
 Mark Michaelis speaks at IntelliTect's recent Visual Studio 2019 event.
 
@@ -46,4 +29,4 @@ It has never been easier to build apps for Azure. Check out [this video](https:/
 
 Or, [click here](/exiftool-people-tag-recovery/) for a solution designed to recover your Windows Photo Gallery metadata so that you can easily sort all your photos, including rotated photos.
 
-[![](images/Click-here-to-sign-up-1-1024x235.jpg)](https://bit.ly/2Nhro9T)
+[![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/demystified-microsoft-development-technologies/images/Click-here-to-sign-up-1-1024x235.jpg)](https://bit.ly/2Nhro9T)

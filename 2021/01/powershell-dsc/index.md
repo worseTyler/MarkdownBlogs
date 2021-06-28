@@ -1,14 +1,3 @@
----
-title: "PowerShell Video:  Desired State Configuration (DSC)"
-date: "2021-01-28"
-categories: 
-  - "blog"
-  - "powershell"
-tags: 
-  - "desired-state"
-  - "powershell"
-  - "windows-powershell"
----
 
 ## Learn to configure computers using PowerShell but with better syntax, less effort, and fewer errors.
 

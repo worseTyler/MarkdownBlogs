@@ -1,14 +1,5 @@
----
-title: "Self-Hosted Integration Testing Of OData and WebApi"
-date: "2016-01-15"
-categories: 
-  - "net"
-  - "asp-net"
-  - "blog"
-  - "c"
----
 
-# Full-stack testing of OData 4.0 and Web API 2.2 ASP.Net MVC controllers![image02](images/image02-1024x576.jpg)
+# Full-stack testing of OData 4.0 and Web API 2.2 ASP.Net MVC controllers![image02](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/01/self-hosted-integration-testing-of-odata-and-webapi/images/image02-1024x576.jpg)
 
 ## Why Are Unit Tests of OData Web API Controllers Insufficient?
 
@@ -33,7 +24,7 @@ The OData query syntax is very verbose and highly structured. A developer can ge
 
 After the VSIX is installed, in the Add New Item dialog, you will have the ability to add an OData Client:
 
-![image05](images/image05.png)
+![image05](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/01/self-hosted-integration-testing-of-odata-and-webapi/images/image05.png)
 
 Once added, open the .tt file and edit the MetadataDocumentUri constant to point at a running instance of your web API. You can also specify a root namespace for your client as well as some other settings, including some methods to customize the naming. Run the T4 template and a complete proxy for your OData v4 web API controllers will be generated.
 
@@ -45,7 +36,7 @@ The Microsoft.Owin.Hosting NuGet package provides a simple static WebApp.Start m
 
 public static IDisposable Start(string url, Action startup);
 
-![image00](images/image00-300x208.png)
+![image00](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/01/self-hosted-integration-testing-of-odata-and-webapi/images/image00-300x208.png)
 
 We can take advantage of injecting a `Action`  that has a Ninject kernel of our own making so that controllers created in this instance of our web app will get whatever mock objects we want to pass in. This also allows us to configure the OData service route to our liking (without security, for example). In the Tests project, there is a simple static TestHelpers class with a method for wiring this up to a passed in Ninject kernel:
 
@@ -78,7 +69,7 @@ In the example code in GitHub, the ConfigureWebApi method also has an overload t
 
 ## Writing Useful Integration Tests
 
-![image01](images/image01-300x225.jpg)
+![image01](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/01/self-hosted-integration-testing-of-odata-and-webapi/images/image01-300x225.jpg)
 
 Now that we have the ability to encapsulate the web API inside of a unit test and make full-stack calls all the way down to the persistence layer, the tendency will be to write tests for everything. Initially, this will seem like you are increasing quality, but quickly you will realize that you have a fragile rat’s nest of deterministic tests that randomly fail if not run in the right order and you are spending more time tracing broken tests than actually writing new code. This is not a good place to be in. Instead, assume that your data persistence layer is solid (or just include some broad read-only smoke tests to make the bosses happy), and test against mock data service objects that are isolated and always return predictable results.
 

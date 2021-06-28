@@ -1,18 +1,7 @@
----
-title: "Video: Machine Learning including Agile Machine Learning"
-date: "2019-04-26"
-categories: 
-  - "blog"
-tags: 
-  - "azure-machine-learning"
-  - "machine-learning"
-  - "meetup"
-  - "users-group"
----
 
 ## Get ready for a high-level primer on machine learning, including Azure Machine Learning.
 
-![](images/meetup-pic.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/04/video-machine-learning-including-agile-machine-learning/images/meetup-pic.jpg)
 
 [Brian Uptagrafft](/brian-uptagrafft/), senior software engineer at IntelliTect, recently finished a project where he used machine learning to teach computers to accurately read electric meters. The task was tricky and required a lot of data, some creative problem-solving and a multi-faceted approach. He was intrigued by the time saved on the project and decided to share his experiences and insights with the [Spokane .Net Users Group](https://www.meetup.com/Spokane-NET-User-Group/) on April 9th, 2019.
 

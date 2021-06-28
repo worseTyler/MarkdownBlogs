@@ -1,11 +1,2 @@
----
-title: "Marking items in shared libraries as obsolete"
-date: "2004-05-14"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 My primary responsibility at work over the past year has been to be lead a team of developers that is responsible for building a Framework on top of the .NET Framework that fills in all the holes the Microsoft left and defines best patterns and practices for my companies .NET development.  I admit that unfortunately sometimes we don't always get everything completed perfectly due to various constraints and then we have to go back in a later release and "fix" the problems we introduced.  The Making AP Is Obsolete practices documented here provide good guidelines on how to make changes to APIs in future releases.  Note that to depricate an API one decorates it with the ObsoleteAttribute attribute.

@@ -1,23 +1,5 @@
----
-title: "When Ropes Snap - Our Core Values at Work"
-date: "2018-07-19"
-categories: 
-  - "blog"
-  - "team-culture"
-tags: 
-  - "core-values"
-  - "courageous-honesty"
-  - "innovation"
-  - "innovative-excellence"
-  - "passionate-hard-work"
-  - "rope"
-  - "software-design"
-  - "software-development"
-  - "tug-of-war"
-  - "values"
----
 
-![](images/Twitter-Quotes-300x150.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/core-values/images/Twitter-Quotes-300x150.png)
 
 Our core values drive how we do business.
 
@@ -37,4 +19,4 @@ We’re passionate about solving problems, and that means we strive to deliver t
 
 Just like the strongest rope available for tug of war, we strive to give our clients the greatest level of confidence in their product and our skill.
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/core-values/images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)

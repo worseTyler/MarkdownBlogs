@@ -1,9 +1,3 @@
----
-title: "Quick Fix for the NETSDK1004 Compile Error"
-date: "2020-01-10"
-categories: 
-  - "blog"
----
 
 ## What Does the NETSDK1004 Message Mean?
 
@@ -38,4 +32,4 @@ If you are working with a solution and all projects are C# 8.0, I recommend you 
 
 Check out our blog _[How to Publish NuGets with Azure DevOps](https://intellitect.com/azure-devops-nugets/)_ for more information on NuGet packages!
 
-![](images/blog-job-ad-2-1024x129.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/01/netsdk1004-compile-error/images/blog-job-ad-2-1024x129.png)

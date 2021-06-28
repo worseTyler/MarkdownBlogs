@@ -1,10 +1,3 @@
----
-title: "Windows 7 Boots to Black?"
-date: "2008-11-12"
-categories: 
-  - "blog"
-  - "windows-blog"
----
 
 I recently took the plunge and decided to load Windows7 (pre-beta 6801) on my laptop.  While I have been very satisfied with the performance and how stable it appears to be, it is not without its quirks.
 

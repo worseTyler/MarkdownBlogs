@@ -1,10 +1,3 @@
----
-title: "Essential .NET: How to Contribute to Microsoft Open Source Software Projects (MSDN)"
-date: "2018-10-01"
-categories: 
-  - "blog"
-  - "msdn-essential-net"
----
 
 Here’s a fact: Microsoft hosts around 2,000 open source software (OSS) repositories on GitHub, including some rather large ones like the .NET Compiler Platform, also known as “Roslyn,” which has as many as 4 million lines of code. For many developers, the prospect of submitting code changes to a project that runs on millions of computers might seem daunting. Fortunately, you don’t need a Ph.D. in programming languages and compilers to make your mark on Microsoft OSS projects. There are opportunities to contribute that span a broad spectrum of difficulty and experience, from beginner to expert.
 
@@ -14,7 +7,7 @@ I got my start in March of 2018 working with the .NET Core team to add a new set
 
 Perhaps the best place to begin is with documentation. If you navigate to any of the .NET documentation pages (for example, [bit.ly/2LAv7hA](https://bit.ly/2LAv7hA)) you’ll notice at the bottom of each page that there’s a footer soliciting feedback, as shown in **Figure 1**.
 
-![Picture of footer soliciting feedback](images/Figure-1.png)
+![Picture of footer soliciting feedback](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/10/how-to-contribute-to-microsoft-open-source-software-projects-msdn/images/Figure-1.png)
 
 Figure 1 Submitting Suggestions and Changes to Documentation
 

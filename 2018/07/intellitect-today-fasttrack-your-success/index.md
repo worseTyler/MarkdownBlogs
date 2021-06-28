@@ -1,14 +1,7 @@
----
-title: "IntelliTect Today - FastTrack Your Success"
-date: "2018-07-19"
-categories: 
-  - "blog"
-  - "leadership"
----
 
 ## Need a FastTrack to get Your Team Up-to-Speed on Microsoft Products?
 
-![](images/Intellitect-today-graphic-e1532037296148.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/intellitect-today-fasttrack-your-success/images/Intellitect-today-graphic-e1532037296148.jpg)
 
 This past September, IntelliTect was selected by Microsoft to participate in the “DevOps FastTrack Airlift 2017” given by the Visual Studio Team Services (VSTS) team. We received updates on the VSTS products as well as details behind Microsoft’s own DevOps journey. Now, we conduct Migration and Lighthouse FastTrack engagements for Microsoft to bring their knowledge and insight to our clients.
 
@@ -32,4 +25,4 @@ Not sure if your team is ready for DevOps? [Click here](https://intellitect.com/
 
 Questions? Ask in the comments.
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/intellitect-today-fasttrack-your-success/images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)

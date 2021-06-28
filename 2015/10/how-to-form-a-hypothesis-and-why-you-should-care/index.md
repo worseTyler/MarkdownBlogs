@@ -1,9 +1,3 @@
----
-title: "How to Form a Hypothesis (and why you should care)"
-date: "2015-10-13"
-categories: 
-  - "blog"
----
 
 **Hypotheses are \*not\* just for scientists**.
 

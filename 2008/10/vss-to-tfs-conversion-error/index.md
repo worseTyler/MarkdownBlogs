@@ -1,12 +1,3 @@
----
-title: "VSS to TFS Conversion Error"
-date: "2008-10-18"
-categories: 
-  - "blog"
-  - "tfs"
-tags: 
-  - "tfs"
----
 
 Recently I had the pleasure of migrating several VSS databases to Team Foundation Server 2008.  One of the databases was pretty large (90k+ files) and took between 12 - 16 hours to migrate.  However, about 6 hours in to the migration, I kept running across an error that would halt the migration process.
 

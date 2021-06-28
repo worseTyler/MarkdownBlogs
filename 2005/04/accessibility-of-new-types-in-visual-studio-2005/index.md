@@ -1,12 +1,3 @@
----
-title: "Accessibility of new types in Visual Studio 2005"
-date: "2005-04-26"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 One subtle but noteworthy change in Visual Studio 2005 from Visual Studio 2003 is the accessibility modifier on new types.  In Visual Studio 2005, the default accessibility is internal rather than public.  (This is true from the Add Item menu but not from the Add File menu because they are generated from different templates.)  For example, when defining a new class or interface (yes, Visual Studio provides an Add Item option for interfaces) there is no accessibility modifier.  Rather, it looks like this:
 

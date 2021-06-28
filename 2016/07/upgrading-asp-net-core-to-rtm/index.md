@@ -1,13 +1,3 @@
----
-title: "Upgrading ASP.NET Core to RTM"
-date: "2016-07-20"
-categories: 
-  - "net"
-  - "net-core"
-  - "asp-net"
-  - "blog"
-  - "entityframework"
----
 
 Here are the steps I followed to get an ASP.NET Core project upgraded from an RC1 with some RC2 beta bits up to RTM. 
 

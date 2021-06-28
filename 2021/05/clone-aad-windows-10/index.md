@@ -1,13 +1,3 @@
----
-title: "AAD: How to Clone/Copy a Local Windows 10 Account to an Azure Active Directory Account"
-date: "2021-05-25"
-categories: 
-  - "blog"
-tags: 
-  - "aad"
-  - "azure-active-directory"
-  - "office-365"
----
 
 ## Reduce Friction: Migrate to Azure Active Directory (AAD) and Keep Your Previous Accounts’ Data and Profiles
 
@@ -27,11 +17,11 @@ Sign in to an AAD account and use the User Profile Wizard tool to do the followi
 
 1. Select the local account you wish to clone. Click “Next.”
 
-![](images/Step-1.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/05/clone-aad-windows-10/images/Step-1.jpg)
 
 2\. Make sure the domain is correct in the “Enter the domain…” field. This field should be correctly auto-filled from the start.
 
-![Windows 10 and AAD: Make sure the domain is correct](images/Step-2.jpg)
+![Windows 10 and AAD: Make sure the domain is correct](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/05/clone-aad-windows-10/images/Step-2.jpg)
 
 3\. Enter in the email of the Active Directory Account that you want to clone. Click “Next.”
 

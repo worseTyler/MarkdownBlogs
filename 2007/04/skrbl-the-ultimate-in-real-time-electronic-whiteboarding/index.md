@@ -1,16 +1,7 @@
----
-title: "Skrbl - The Ultimate in Real Time Electronic Whiteboarding"
-date: "2007-04-10"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 I came across this some time ago and immediately took a fancy.  Tonight I needed it again for some collaboration and again I was amazed.  The figure below is my real-time collaboration with Prashant tonight.
 
-![](images/skrbl.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2007/04/skrbl-the-ultimate-in-real-time-electronic-whiteboarding/images/skrbl.jpg)
 
 Multiple users can "collaborate" by posting and editing content in real time onto the whiteboard.  What is most incredible about it is the fact that there is no install - none!  Nada... it appears to use Java Script entirely.
 

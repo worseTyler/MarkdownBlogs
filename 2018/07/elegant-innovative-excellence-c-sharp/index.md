@@ -1,14 +1,7 @@
----
-title: "The 'Elegant-Innovative-Excellence' of C#"
-date: "2018-07-24"
-categories: 
-  - "blog"
-  - "c"
----
 
 ## Why C# should be part of your tooling arsenal
 
-![ElegantInnovativeExcellence of C#](images/Twitter-Quotes-1-1024x512.png)
+![ElegantInnovativeExcellence of C#](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/elegant-innovative-excellence-c-sharp/images/Twitter-Quotes-1-1024x512.png)
 
  
 
@@ -38,7 +31,7 @@ For those new to the C# language, a tuple provides a syntax that allows you to c
 
 ## Learn More from Mark's Book
 
-[![](images/book-cover-distorted-2-1-230x300.jpg)](https://amzn.to/2JFCEMh)The [sixth edition of Essential C# 7.0](/essentialcsharp/) was recently released. [Click to purchase](https://amzn.to/2JFCEMh). Among other things that won’t be found in previous editions, this updated version goes in-depth on the changes in C# 7.0 Tuples.
+[![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/elegant-innovative-excellence-c-sharp/images/book-cover-distorted-2-1-230x300.jpg)](https://amzn.to/2JFCEMh)The [sixth edition of Essential C# 7.0](/essentialcsharp/) was recently released. [Click to purchase](https://amzn.to/2JFCEMh). Among other things that won’t be found in previous editions, this updated version goes in-depth on the changes in C# 7.0 Tuples.
 
 “Tuples change the way you program,” Mark said. “Sure, you can use them to return multiple values from a function, but more than that, they replace most instances where you would previously have used anonymous types - so it affects the way you use LINQ. Furthermore, tuples are strongly typed in such a way that they enable IntelliSense on the item names. This replaces almost all instances where .NET Framework 4.0’s System.Tuple might have been used in the past.”
 

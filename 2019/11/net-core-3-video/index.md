@@ -1,16 +1,7 @@
----
-title: "The Evolutionary Changes of .NET Core 3 (Video)"
-date: "2019-11-12"
-categories: 
-  - "blog"
-tags: 
-  - "net-core-3"
-  - "dotnet-core"
----
 
 As developers, our "cheese" is constantly moving. Everything is expanding outward, and we must continually study and dissect subjects like .NET Core 3 and C# 8.0, so we aren't left behind.
 
-![Picture of an Atari 800](images/Atari-800.png)
+![Picture of an Atari 800](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/net-core-3-video/images/Atari-800.png)
 
 I discovered my love for writing software on an Atari 800 computer. At the time, the entire system was knowable. I thought that if I studied long enough then I'd know everything I needed to know.
 
@@ -44,7 +35,7 @@ Here are some highlights of what we're going to cover:
 
 It comes in two flavors - your Core Runtime and your SDK.
 
-![](images/Versioning.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/net-core-3-video/images/Versioning.png)
 
 **Major**: Significant changes occur to the product or a new product direction. Breaking changes were taken.
 

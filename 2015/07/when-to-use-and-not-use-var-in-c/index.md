@@ -1,15 +1,3 @@
----
-title: "When to Use and Not Use Variable Type var in C#"
-date: "2015-07-09"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-tags: 
-  - "net"
-  - "c"
-  - "var"
----
 
 ## Settling the Debate Surrounding `var` and C#
 
@@ -65,4 +53,4 @@ Michael Brennan, in his blog post [Why You Should Always Use the 'var' Keyword i
 
 Curious about how else variables are utilized? Check out our blog _[Painless Bug Testing through the Isolation of Variables](/bug-testing-isolation-variables/)_!
 
-![](images/blog-job-ad-2-1024x129.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/07/when-to-use-and-not-use-var-in-c/images/blog-job-ad-2-1024x129.png)

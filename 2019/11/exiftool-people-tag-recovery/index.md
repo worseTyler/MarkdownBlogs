@@ -1,15 +1,3 @@
----
-title: "ExifTool: Recovering All Microsoft People Tag Metadata"
-date: "2019-11-19"
-categories: 
-  - "blog"
-tags: 
-  - "exiftool"
-  - "face-tags"
-  - "jpg"
-  - "microsoft"
-  - "microsoft-people-tag"
----
 
 ### Need to recover your Windows Photo Gallery metadata so that you can easily sort your photos in current editing software? Find out why you need ExifTool.
 
@@ -27,11 +15,11 @@ The face tag does not line up on photos where the camera was rotated. Either Exi
 
 Here is an example photo to demonstrate this issue, viewed first with Windows Photo Gallery (before using the tool) and then with Lightroom Classic (after using the tool):
 
-![Original photo with correct people tag.](images/GrantW-Blog-GalleryImageWithMP.png)
+![Original photo with correct people tag.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/exiftool-people-tag-recovery/images/GrantW-Blog-GalleryImageWithMP.png)
 
 This photo shows the original photo with the People Tag lining up correctly.
 
-![Photo after using the tool. People tag is in the wrong location.](images/GrantW-Blog-LighroomImageWithMWG.png)
+![Photo after using the tool. People tag is in the wrong location.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/exiftool-people-tag-recovery/images/GrantW-Blog-LighroomImageWithMWG.png)
 
 This photo shows the photo after it had been altered with the tool. The People Tag, while still there, is now in the wrong position on the photo.
 

@@ -1,11 +1,3 @@
----
-title: "The Microsoft .NET Framework Software Architecture"
-date: "2010-02-24"
-categories: 
-  - "blog"
-tags: 
-  - "services"
----
 
 IntelliTect enables companies to achieve efficient and effective collaboration, corporate publishing and enterprise content management (ECM).
 

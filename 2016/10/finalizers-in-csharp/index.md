@@ -1,11 +1,3 @@
----
-title: "Finalizers in C#"
-date: "2016-10-14"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
----
 
 The following is an excerpt from Chapter 9 of [Essential C# 6](https://IntelliTect.com/EssentialCSharp6/).
 

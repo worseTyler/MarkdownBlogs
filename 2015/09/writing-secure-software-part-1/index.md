@@ -1,9 +1,3 @@
----
-title: "Writing Secure Software - Part 1"
-date: "2015-09-10"
-categories: 
-  - "blog"
----
 
 In today’s world of online theft and cyber attacks, writing secure software is more important than ever. For many developers, however, security is typically an afterthought, if it is considered at all. In the next few blogs, I’m going to walk through one possible process for developing secure software in an attempt to demystify the process.
 
@@ -35,13 +29,13 @@ The first step to properly analyze security threats to your software is to under
 
 Keeping the 6 classifications of STRIDE in mind, you can then evaluate your system architecture looking for potential risks. A good way to visualize this is to develop a threat model. The intent behind the threat model diagram is to create a visual representation of the components of your system and the interactions between them. Let’s take a look at a simple example.
 
-\[caption id="attachment\_19641" align="alignnone" width="612"\][![Figure 1](images/Trust-Boundaries.png)](/wp-content/uploads/2015/09/Trust-Boundaries.png) Figure 1\[/caption\]
+\[caption id="attachment\_19641" align="alignnone" width="612"\][![Figure 1](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/09/writing-secure-software-part-1/images/Trust-Boundaries.png)](/wp-content/uploads/2015/09/Trust-Boundaries.png) Figure 1\[/caption\]
 
 This system is composed of a web service, a client that interacts with the service and a database from which the web service serves data.. For this example, I’ve specified a Windows Communication Foundation (WCF) service although you could think of this as any web service. The lines between each component represent the interactions between components. The dashed red lines represent trust boundaries. The trust boundaries indicate which processes can trust each other. Any line that crosses a trust boundary must be analyzed as a potential security vulnerability.
 
 Obviously, this is a very high level diagram. For each of the components, you should create additional diagrams with more detail. Figure 2 is an example of a more detailed diagram of the WCF Service component.
 
-\[caption id="attachment\_19651" align="alignnone" width="327"\][![Figure 2](images/WCF-Trust-Boundary.png)](/wp-content/uploads/2015/09/WCF-Trust-Boundary.png) Figure 2\[/caption\]
+\[caption id="attachment\_19651" align="alignnone" width="327"\][![Figure 2](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/09/writing-secure-software-part-1/images/WCF-Trust-Boundary.png)](/wp-content/uploads/2015/09/WCF-Trust-Boundary.png) Figure 2\[/caption\]
 
 In this case, you can see that I chose to draw a trust boundary between the service and its configuration file because the configuration file is outside of the compiled code. We may decide later that this is a low risk area, but it is important to include it on the initial diagram to enumerate as many potential threats as possible.
 

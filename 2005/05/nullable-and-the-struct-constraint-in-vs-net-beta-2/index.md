@@ -1,12 +1,3 @@
----
-title: "Nullable and the struct constraint in VS.NET Beta 2"
-date: "2005-05-12"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 In VS.NET 2005 Beta 1 it was possible to define a variable of type
 

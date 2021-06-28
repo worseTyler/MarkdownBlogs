@@ -1,12 +1,3 @@
----
-title: "Azure Serverless Simplifies Cloud Migrations (Video)"
-date: "2019-11-15"
-categories: 
-  - "azure"
-  - "blog"
-tags: 
-  - "azure-sql"
----
 
 ### Hybrid and multi-cloud scenarios are present in all companies to some degree, so consider utilizing Azure serverless technologies within Azure to migrate simple to complex projects to the cloud.
 
@@ -36,7 +27,7 @@ Let's see what we can accomplish with some demos! Here's the **full video** from
 
 In this talk, we'll cover serverless functionality via demos as well as some new Azure capabilities. We'll quickly build a simple microservices-based solution leveraging Azure features.
 
-![](images/Serverless-Microservice-1024x562.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/azure-serverless-video/images/Serverless-Microservice-1024x562.png)
 
 #### Service Bus
 

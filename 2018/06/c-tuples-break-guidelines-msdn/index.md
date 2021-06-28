@@ -1,12 +1,3 @@
----
-title: "Essential .NET: Tuple Trouble - Why C# Tuples Get to Break the Guidelines (MSDN)"
-date: "2018-06-01"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-  - "msdn-essential-net"
----
 
 Back in the August 2017 issue of MSDN Magazine I wrote an in-depth article on C# 7.0 and its support for tuples (msdn.com/magazine/mt493248). At the time I glossed over the fact that the tuple type introduced with C# 7.0 (internally of type ValueTuple<…>) breaks several guidelines of a well-structured value type, namely:
 

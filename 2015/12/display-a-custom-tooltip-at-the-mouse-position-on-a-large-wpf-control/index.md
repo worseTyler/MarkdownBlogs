@@ -1,11 +1,3 @@
----
-title: "Display a Custom Tooltip at the Mouse Position on a Large WPF Control"
-date: "2015-12-16"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
----
 
 In my work for an electric utility, we have a WPF based map control used to show the location of power lines, along with other devices such as transformers and points of service. We wanted to show a tooltip when a user clicks on one of the power lines to identify what is called the “feeder”, which essentially defines the source of power for the line. Although WPF controls support the use of a tooltip, in this case if we used the built-in tooltip it would display any time the mouse cursor is moved over the map. We only want to see it when the user clicks on a particular power line. Then we want to display a custom value in the tooltip-like popup at that point. The solution for this was two-fold.
 
@@ -84,7 +76,7 @@ public Visibility FeederTooltipVisibility
 
 Here is the result.
 
-[![custom_tooltip_mouse_position_WPF](images/custom_tooltip_mouse_position_WPF.png)](/wp-content/uploads/2015/12/custom_tooltip_mouse_position_WPF.png)
+[![custom_tooltip_mouse_position_WPF](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/12/display-a-custom-tooltip-at-the-mouse-position-on-a-large-wpf-control/images/custom_tooltip_mouse_position_WPF.png)](/wp-content/uploads/2015/12/custom_tooltip_mouse_position_WPF.png)
 
 And here is the MouseTrackerDecorator class.
 

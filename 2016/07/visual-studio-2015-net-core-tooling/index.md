@@ -1,12 +1,3 @@
----
-title: "Essential .NET: Visual Studio 2015 with .NET Core Tooling (MSDN)"
-date: "2016-07-01"
-categories: 
-  - "net-core"
-  - "blog"
-  - "msdn-essential-net"
-  - "visual-studio"
----
 
 .NET Core RC2 is finally here, and this time it is, in fact, a true “Release Candidate” rather than an RC1 Beta masquerading as a release candidate (if that, considering all the changes that happened after it came out). Much of the development focus and press surrounding .NET Core is, of course, about its cross-platform capabilities. This focus on supporting Linux and Mac OS X has led not only to a new .NET API, but also to an accompanying runtime and even a toolset. Tools such as DOTNET.EXE (formerly DNX, DNVM and DNU), not to mention Visual Studio Code, are all about giving non-Microsoft developers an opportunity to leverage .NET, and even more, a first-class developer experience.
 
@@ -25,13 +16,13 @@ I’m assuming you have Visual Studio 2015 installed already, but if not, Visual
 
 Once all the Visual Studio tooling is installed you can use the New Project wizard to create your project (**see Figure 1**).
 
-![ Figure 1 Visual Studio .NET Core Project Templates](images/Figure-1-4.png)
+![ Figure 1 Visual Studio .NET Core Project Templates](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/07/visual-studio-2015-net-core-tooling/images/Figure-1-4.png)
 
 Figure 1 Visual Studio .NET Core Project Templates
 
 As you can see, there are four project types (one appears twice as it resides in both the Visual C#\\Web and Visual C#.NET Core folders). Obviously, each project type generates a different set of files, as shown in **Figure 2**.
 
-![Figure 2 The Files Included in Each Visual Studio Project Type](images/Figure-2-3.png)
+![Figure 2 The Files Included in Each Visual Studio Project Type](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/07/visual-studio-2015-net-core-tooling/images/Figure-2-3.png)
 
 Figure 2 The Files Included in Each Visual Studio Project Type
 
@@ -51,7 +42,7 @@ Global.json is generated automatically as long as you select “Create a directo
 
 LaunchSettings.json identifies the various Web hosting configuration settings, including an application URL for debugging; an IIS host (such as IIS Express) if any; environment variables to set before launching, used, for example, by .NET Core Configuration to identify the environment (development, test or production); and SSL and authentication. Changes made from the Debug tab on Project Properties Window of Visual Studio provide a UI for editing the launchSettings.json file, as shown in **Figure 3**.
 
-![ Figure 3 Debug Tab on the Project Properties Window of Visual Studio](images/Figure-3-1.png)
+![ Figure 3 Debug Tab on the Project Properties Window of Visual Studio](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/07/visual-studio-2015-net-core-tooling/images/Figure-3-1.png)
 
 Figure 3 Debug Tab on the Project Properties Window of Visual Studio
 
@@ -128,7 +119,7 @@ These three tasks are spread across four main sections within project.json (I co
 
 Dependencies: This section lists each of the NuGet packages on which your project depends, including the version number of said dependencies. Version numbers can be specified with wild cards so you can allow “the most recent version” that matches the wild card to be downloaded automatically by the NuGet Package Manager restore. A pair of empty quotes for the version number says, “Use the latest available.” Furthermore, while you can add references via the Visual Studio NuGet Package Manager window, you can also rely on the way Visual Studio asynchronously loads IntelliSense with the packages available from your configured package source or feed (see **Figure 5**). The IntelliSense works for both the package name and the version number.
 
-![ Figure 5 IntelliSense Dynamically Loads with the List of Available Packages and Versions](images/Figure-5-1.png)
+![ Figure 5 IntelliSense Dynamically Loads with the List of Available Packages and Versions](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/07/visual-studio-2015-net-core-tooling/images/Figure-5-1.png)
 
 Figure 5 IntelliSense Dynamically Loads with the List of Available Packages and Versions
 

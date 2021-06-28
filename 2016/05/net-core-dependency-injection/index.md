@@ -1,12 +1,3 @@
----
-title: "Essential .NET: .NET Core Dependency Injection (MSDN)"
-date: "2016-05-04"
-categories: 
-  - "net"
-  - "net-core"
-  - "blog"
-  - "msdn-essential-net"
----
 
 In my last two articles, Logging with .NET Core ([bit.ly/1Vv3Q39](https://bit.ly/1Vv3Q39)) and Configuration with .NET Core ([bit.ly/1OoqmkJ](https://bit.ly/1OoqmkJ)), I demonstrated how .NET Core functionality can be leveraged from both an ASP.NET Core project (project.json) as well as the more common .NET 4.6 C# project (\*.csproj).  In other words, taking advantage of the new framework is not limited to those who are writing ASP.NET Core projects.  In this column I’m going to continue to delve into .NET Core, this time with a focus on .NET Core dependency injection capabilities and how they enable an inversion of control (IoC) pattern.  As before, leveraging .NET Core functionality is possible from both “traditional” CSPROJ files and the emerging project.json type projects.  For the sample code, this time I’ll be using XUnit from a project.json project.
 
@@ -14,19 +5,19 @@ In my last two articles, Logging with .NET Core ([bit.ly/1Vv3Q39](https://bit.ly
 
 With .NET, instantiating an object is trivial with a call to the constructor via the new operator (that is, new MyService or whatever the object type is you wish to instantiate).  Unfortunately, an invocation like this forces a tightly coupled connection (a hard-coded reference) of the client (or application) code to the object instantiated, along with a reference to its assembly/NuGet package.  For common .NET types this isn’t a problem.  However, for types offering a “service,” such as logging, configuration, payment, notification, or even dependency injection, the dependency may be unwanted if you want to switch the implementation of the service you use.  For example, in one scenario a client might use NLog for logging, while in another they might choose Log4Net or Serilog.  And, the client using NLog might prefer not to dirty up their project with Serilog, so a reference to both logging services would be undesirable (see **Figure 1**).
 
-[![Figure 1 Strongly Coupling the Client to the Logging Service Implementation](images/di-host.png)](/wp-content/uploads/2016/05/di-host.png)
+[![Figure 1 Strongly Coupling the Client to the Logging Service Implementation](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/05/net-core-dependency-injection/images/di-host.png)](/wp-content/uploads/2016/05/di-host.png)
 
 Figure 1 Strongly Coupling the Client to the Logging Service Implementation
 
 To solve the problem of hard- coding a reference to the service implementation, dependency injection provides a level of indirection such that rather than instantiating the service directly with the new operator, the client (or application) will instead ask a service collection or “factory” for the instance, as shown in **Figure 2**. Furthermore, rather than asking the service collection for a specific type (thus creating a tightly coupled reference), you ask for an interface (such as ILoggerFactory) with the expectation that the service provider (in this case, NLog, Log4Net, or Serilog) will implement the interface.
 
-[![Figure 2 Sequence Diagram Demonstrating Dependency Injection and IoC](images/di-sequence-diagram-300x195.png)](/wp-content/uploads/2016/05/di-sequence-diagram.png)
+[![Figure 2 Sequence Diagram Demonstrating Dependency Injection and IoC](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/05/net-core-dependency-injection/images/di-sequence-diagram-300x195.png)](/wp-content/uploads/2016/05/di-sequence-diagram.png)
 
 Figure 2 Sequence Diagram Demonstrating Dependency Injection and IoC
 
 The result is that while the client will directly reference the abstract assembly (Logging.Abstractions), defining the service interface, no references to the direct implementation will be needed, as shown in **Figure 3**.
 
-[![Figure 3 Decoupling the Client/Library from the Specific Logging Implementaiton via Dependency Injection](images/di-host-2.png)](/wp-content/uploads/2016/05/di-host-2.png)
+[![Figure 3 Decoupling the Client/Library from the Specific Logging Implementaiton via Dependency Injection](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/05/net-core-dependency-injection/images/di-host-2.png)](/wp-content/uploads/2016/05/di-host-2.png)
 
 Figure 3 Decoupling the Client/Library from the Specific Logging Implementation via Dependency Injection
 
@@ -34,13 +25,13 @@ We call the pattern of decoupling the actual instance returned to the client inv
 
 One especially common need for dependency injection is in unit tests.  Consider a shopping cart service that, in turn, depends on a payment service.  Imagine writing the shopping cart service that leverages the payment service and trying to unit test the shopping cart service without actually invoking a real payment service.  What you want to invoke instead is a mock payment service.  To achieve this with dependency injection, your code would request an instance of the payment service interface from the dependency injection framework rather than calling, for example, new PaymentService.  Then, all that’s needed is for the unit test to “configure” the framework to return a mock payment service, as shown in **Figure 4**.
 
-[![Figure 4 Unit Testing with Dependency Injection](images/di-unit-testing.png)](/wp-content/uploads/2016/05/di-unit-testing.png)
+[![Figure 4 Unit Testing with Dependency Injection](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/05/net-core-dependency-injection/images/di-unit-testing.png)](/wp-content/uploads/2016/05/di-unit-testing.png)
 
 Figure 4 Unit Testing with Dependency Injection
 
 In contrast, the production host could configure the shopping cart to use one of the (possibly many) payment service options. And, perhaps most importantly, the references would be only to the payment abstraction, rather than to each specific implementation (see **Figure 5**).
 
-[![Figure 5 Unit Testing with Dependency Injection so a Mock Type Instance Can Be Used](images/di-unit-tests-host.png)](/wp-content/uploads/2016/05/di-unit-tests-host.png)
+[![Figure 5 Unit Testing with Dependency Injection so a Mock Type Instance Can Be Used](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/05/net-core-dependency-injection/images/di-unit-tests-host.png)](/wp-content/uploads/2016/05/di-unit-tests-host.png)
 
 Figure 5 Unit Testing with Dependency Injection so a Mock Type Instance Can Be Used
 

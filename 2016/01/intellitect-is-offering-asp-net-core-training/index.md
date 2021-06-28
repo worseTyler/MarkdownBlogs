@@ -1,10 +1,3 @@
----
-title: "IntelliTect is offering ASP.NET Core Training"
-date: "2016-01-26"
-categories: 
-  - "asp-net"
-  - "blog"
----
 
 ## Why ASP.NET Core? _(Formally ASP.NET 5)_
 

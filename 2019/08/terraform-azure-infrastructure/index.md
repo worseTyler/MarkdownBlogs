@@ -1,12 +1,3 @@
----
-title: "Managing Infrastructure on Azure with Terraform"
-date: "2019-08-20"
-categories: 
-  - "blog"
-tags: 
-  - "azure"
-  - "terraform"
----
 
 ### Learn to use Terraform to manage and scale up architecture of your growing project.
 
@@ -32,7 +23,7 @@ For this example, let’s assume your architecture has a single SQL server and y
 
 From the root of the repository, create “env” and “modules” folders, then create a “sql” folder underneath the module’s folder. Underneath the env folder, create folders for each of the environments: dev, test, and prod. Create a “region” folder in each environment’s folder.
 
-![](images/Terraform-Project-Structure-Image-1.gif)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/08/terraform-azure-infrastructure/images/Terraform-Project-Structure-Image-1.gif)
 
 Environment folders contain the script files that are unique to each environment. Reference global resources (such as a traffic manager) at this level. Reference resources that are specific to a particular region from within the region module.
 

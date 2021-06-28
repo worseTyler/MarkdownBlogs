@@ -1,9 +1,3 @@
----
-title: "Should Your SCRUM Team Assign Story Points to a Spike?"
-date: "2015-08-17"
-categories: 
-  - "blog"
----
 
 Estimated reading time: 3 minutes
 
@@ -34,4 +28,4 @@ I believe that Spikes should have story-point estimates. I also think it’s imp
 
 Please leave your questions in the comments below, and check out our [blog on assessing your Agile processes](https://intellitect.com/demystified-agile/)!
 
-![](images/blog-job-ad-2-1024x129.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/08/should-your-scrum-team-assign-story-points-to-a-spike/images/blog-job-ad-2-1024x129.png)

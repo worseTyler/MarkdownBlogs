@@ -1,12 +1,3 @@
----
-title: "MSH (Monad):  The Good, the Bad, and the Ugly"
-date: "2005-06-21"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 **The Good**
 

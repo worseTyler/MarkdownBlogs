@@ -1,15 +1,3 @@
----
-title: "IntelliTect Today: Creating IntelliWiki"
-date: "2020-11-11"
-categories: 
-  - "blog"
-  - "team-culture"
-tags: 
-  - "intelliwiki"
-  - "microsoft-teams"
-  - "team"
-  - "wiki"
----
 
 ## Becoming a Stronger Team While Designing Our First App Coming Soon to the Microsoft Teams App Store
 
@@ -23,7 +11,7 @@ Not long before the pandemic, our team members used their own forms of online co
 
 Teams helped clarify which tool to use for various communications and where to store documents. However, it didn’t have a wiki that met our team’s needs. None of our previous tools for communicating had satisfied this demand either. Our CEO, Mark Michaelis, reached out to Microsoft and discovered they weren’t planning to improve or grow their current wiki.
 
-![Graphic outlining the IntelliWiki and Default Teams Wiki features](images/Intelliwiki-VS-Teams-Wiki-Features.jpg)
+![Graphic outlining the IntelliWiki and Default Teams Wiki features](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/11/intellitect-today-creating-intelliwiki/images/Intelliwiki-VS-Teams-Wiki-Features.jpg)
 
 So, we decided to invest in us. Several of our team members met and began to dream big about what features to build into IntelliTect’s wiki. A wiki is a way to organize knowledge so that it can be easily entered and consumed. There were several great ideas, and in the end, we created a collaborative text editor for Teams. The editor is effective at helping us to manage the knowledge in our organization.
 
@@ -39,7 +27,7 @@ Version one of IntelliWiki will soon be available in the Microsoft Teams App Sto
 
 There will be a free version with some basic features and an Enterprise version with extended functionality.
 
-![Benefits of IntelliWiki a Microsoft Teams App designed by IntelliTect](images/IntelliWiki-Pricing-Graphic-Free-VS-Enterprise-1-1024x956.jpg)
+![Benefits of IntelliWiki a Microsoft Teams App designed by IntelliTect](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/11/intellitect-today-creating-intelliwiki/images/IntelliWiki-Pricing-Graphic-Free-VS-Enterprise-1-1024x956.jpg)
 
 As shown in the above chart, the app allows for collaborative editing, revision history, page and @mentions, and wiki page searching within Teams, among other features. It also has all of the basic features available in the default Teams wiki, including adding user @mentions, markdown support, and rich-text editing.
 

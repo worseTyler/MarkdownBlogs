@@ -1,20 +1,7 @@
----
-title: "Software Solutions Demystified: Buy or Build with Confidence"
-date: "2018-12-10"
-categories: 
-  - "blog"
-  - "demystified"
-tags: 
-  - "build"
-  - "buy"
-  - "cots"
-  - "requirements"
-  - "software"
----
 
 Over the years, I’ve had the opportunity to make the important ‘buy or build’ decision many times. In retrospect, some commercial off-the-shelf (COTS) products have worked out wonderfully. Others have been less than stellar. I use the following matrix to help make my decision.
 
-![](images/COTS-Graphic.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/12/demystified-buy-or-build/images/COTS-Graphic.png)
 
 ## Here are some key points to consider for your decision.
 
@@ -56,4 +43,4 @@ The perfect peach is never ripe when you pick it, neither is software. With a go
 
 Still have questions? Ask in the comments.
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/12/demystified-buy-or-build/images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)

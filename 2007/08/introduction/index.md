@@ -1,12 +1,3 @@
----
-title: "Introduction"
-date: "2007-08-07"
-categories: 
-  - "biztalk"
-  - "blog"
-tags: 
-  - "biztalk"
----
 
 **_Greetings and welcome to my BLOG._**
 

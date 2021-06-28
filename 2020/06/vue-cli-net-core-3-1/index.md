@@ -1,13 +1,3 @@
----
-title: "Quickly Configure ASP.NET Core 3.1 with Vue CLI"
-date: "2020-06-29"
-categories: 
-  - "net-core"
-  - "blog"
-  - "vue-cli"
-tags: 
-  - "vue-cli"
----
 
 Estimated reading time: 2 minutes
 
@@ -95,4 +85,4 @@ Now, you can enjoy the Vue.
 
 Check out [my blog](https://intellitect.com/vue-cli-net-core-3-1/) for the steps to connect .NET Core 2.1 SDK to Vue.
 
-![](images/Blog-job-ad-1024x127.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/06/vue-cli-net-core-3-1/images/Blog-job-ad-1024x127.png)

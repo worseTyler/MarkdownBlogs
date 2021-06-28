@@ -1,15 +1,3 @@
----
-title: "Employee Spotlight: Meg Woodford"
-date: "2021-04-20"
-categories: 
-  - "blog"
-  - "team-culture"
-tags: 
-  - "employee-spotlight"
-  - "intellitect-newsletter"
-  - "intellovations"
-  - "meg-woodford"
----
 
 ## A Plant-tastic Software Engineer
 
@@ -17,7 +5,7 @@ Meg Woodford radiates positivity and warmth. Her sunny disposition and bright la
 
 "I've recently become interested in being a plant mom," Meg said. "I've killed two of my plants, so that's not going so well."
 
-![](images/meg-plants-1024x576.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/04/employee-spotlight-meg-woodford/images/meg-plants-1024x576.jpg)
 
 Meg Woodford with a selection of her house plants. She's successfully grown an umbrella plant, spider plant, snake plant, and peace lily.
 
@@ -39,7 +27,7 @@ Meg's proficiency in drawing and background in computers left her with too many 
 
 "I didn't really know what I wanted to do for college, and I figured 'well I can draw stick figures pretty well, so I guess I'll go do graphic design,'" Meg said. "After my first year, somebody convinced me that I should really go into something that wasn't graphic design because I have better skills than that. So, I thought, 'well, maybe I want to go to college for something I don't know how to do.'"
 
-![meg graduation](images/Meg-graduation-1-683x1024.jpg)
+![meg graduation](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/04/employee-spotlight-meg-woodford/images/Meg-graduation-1-683x1024.jpg)
 
 Meg Woodford brings the sun from her graduation day to the IntelliTect office every day.
 
@@ -77,7 +65,7 @@ Meg quickly integrated herself into the company culture and new projects such as
 
 "The culture at IntelliTect and the want to make everyone feel included stands out the most to me," Meg said. "When everyone gets together for lunches, I think that's really cool."
 
-![](images/20210217_201918072_iOS-1024x576.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/04/employee-spotlight-meg-woodford/images/20210217_201918072_iOS-1024x576.jpg)
 
 (From left to right) Kenny White, Stephanie Perko, Meg Woodford, and Clayton Gravatt enjoy waffles during a team lunch.
 
@@ -96,4 +84,4 @@ Check out previous Employee Spotlights on:
 - [Kelly Adams](/employee-spotlight-kelly-adams/), An Engineer with a Fanatical Devotion to Quality
 - [Brian Jones](/employee-spotlight-brian-jones/), an employee who's been with IntelliTect long enough to accidentally call it "IntelliTechture"
 
-[![](images/blog-job-ad-2-1024x129.png)](/join-our-team/)
+[![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/04/employee-spotlight-meg-woodford/images/blog-job-ad-2-1024x129.png)](/join-our-team/)

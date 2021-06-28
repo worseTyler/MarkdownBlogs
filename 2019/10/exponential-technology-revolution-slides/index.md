@@ -1,13 +1,7 @@
----
-title: "The Exponential Technology Revolution (Slides)"
-date: "2019-10-09"
-categories: 
-  - "blog"
----
 
 The next technology revolution is coming? No. It's here. And it is transforming the world as we know it.
 
-![](images/Techorama-Mark-3-1024x683.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/10/exponential-technology-revolution-slides/images/Techorama-Mark-3-1024x683.jpg)
 
 I discuss the importance of "future focus" at Technorama, 2019.
 

@@ -1,12 +1,3 @@
----
-title: "Role Access Security in .NET"
-date: "2003-08-15"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 First of all let me say I am very disappointed with the Role Access Security in .NET.  I am probably missing something but it appears Microsoft entirely missed my requirements on this one.  With Role Access security you essentially hard wire what roles are in your application (Administrators, OfficeWorkers, FieldWorkers, etc) and then check whether the current user is in one of these roles before granting them access.  My requirements force me to allow new roles to be defined by my users and that operations be assigned to each role indicating whether a user assigned to that role is allowed to perform the operation.
 

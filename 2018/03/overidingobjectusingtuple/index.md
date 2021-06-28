@@ -1,17 +1,3 @@
----
-title: "Using Tuples for overriding Equality() and GetHashCode()"
-date: "2018-03-28"
-categories: 
-  - "blog"
-  - "c"
-tags: 
-  - "c"
-  - "csharp"
-  - "csharp7"
-  - "system-value-tuples"
-  - "system-valuetuple"
-  - "tuples"
----
 
 The implementation of Equals() and GetHashCode() used to be complex, but with C# 7.0 Tuples, the actual code is boilerplate.
 

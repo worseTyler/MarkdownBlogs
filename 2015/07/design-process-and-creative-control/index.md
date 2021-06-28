@@ -1,9 +1,3 @@
----
-title: "Design Process and Creative Control"
-date: "2015-07-09"
-categories: 
-  - "blog"
----
 
 As a UX designer when starting a project it’s not uncommon for me to hear the client say they know exactly what kind of design they want. At first when this happened, it seemed great because I felt like I had a clear vision of what the client wanted and thought I could probably create something quickly and efficiently that will meet the client’s needs. I felt that I could almost go straight to designing the project without having to mock up comps or meet in person to further discuss the ‘vision’.
 

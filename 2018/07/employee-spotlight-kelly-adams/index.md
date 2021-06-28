@@ -1,26 +1,19 @@
----
-title: "Employee Spotlight: Kelly Adams"
-date: "2018-07-19"
-categories: 
-  - "blog"
-  - "team-culture"
----
 
 ## An Engineer with a Fanatical Devotion to Quality
 
 _**Whether you’ve worked with them for years or have never met our featured employee, this column will continue to introduce you to the many faces of IntelliTect. For this issue, we featured a skilled engineer who enjoys coding in the deep-end: Kelly Adams.**_
 
-\[caption id="attachment\_33261" align="alignleft" width="300"\]![](images/Kelly-SWR.jpg) Kelly Adams, senior code ninja.\[/caption\]
+\[caption id="attachment\_33261" align="alignleft" width="300"\]![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/employee-spotlight-kelly-adams/images/Kelly-SWR.jpg) Kelly Adams, senior code ninja.\[/caption\]
 
 The world of computer engineering took Kelly Adams by surprise when he landed a job in lingerie product development for Nordstrom because he could translate “computerese” to the people in his department that only spoke “fashionista.” Since then, Kelly has created websites for Beanie Baby collectors that wanted to pay him in stuffed animals (he declined), has been a field engineer in South Korea, Taiwan and China, and has helped a bank update their computers in anticipation of Y2K.
 
-Along his journey, Kelly’s health threw him into the deep-end of the pool when he got a gallstone and was in the hospital for four months. He contracted MRSA twice, was in a coma, had a fever of 108, had to learn to walk again and is now missing several organs—but that couldn’t hold back his unyielding drive for success. After dealing with his health challenges, he built one of the early website apps for online payments— when paying over the Internet was still considered “legal forging of checks.”![](images/Picture1.png)
+Along his journey, Kelly’s health threw him into the deep-end of the pool when he got a gallstone and was in the hospital for four months. He contracted MRSA twice, was in a coma, had a fever of 108, had to learn to walk again and is now missing several organs—but that couldn’t hold back his unyielding drive for success. After dealing with his health challenges, he built one of the early website apps for online payments— when paying over the Internet was still considered “legal forging of checks.”![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/employee-spotlight-kelly-adams/images/Picture1.png)
 
 Building software is a fun thing for Kelly. He’d be coding even if it wasn’t his job. When not on his computer, he keeps himself busy playing bass guitar, cooking, playing board games with his wife, Jakki, and spending time with their precious daughter, SadieBelle, who starts Kindergarten in the fall.
 
 Kelly met Mark Michaelis at Microsoft Build in 2012 and was impressed by the challenges offered at IntelliTect. Since then, he’s been working on all sorts of projects—some bleeding-edge, some legacy maintenance—as a team member or lead. Kelly loves the variability of the landscape. “I can grow both breadth-wise and depth-wise at IntelliTect. If I mention to Mark that I’m interested in something, then he’s pretty good about matching it to some new project and throwing me in the deep-end where I’ll learn it.”
 
-\[caption id="attachment\_33745" align="alignleft" width="300"\]![](images/IMG_0485-1-300x250.jpg) Kelly and band member, Paul, playing at a gig on Saint Patrick’s Day.\[/caption\]
+\[caption id="attachment\_33745" align="alignleft" width="300"\]![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/employee-spotlight-kelly-adams/images/IMG_0485-1-300x250.jpg) Kelly and band member, Paul, playing at a gig on Saint Patrick’s Day.\[/caption\]
 
 This past March, Kelly was involved in a Microsoft Azure Hackfest where he helped build a proof of concept involving real-time GPS tracking of workers inspecting natural gas lines.
 
@@ -28,4 +21,4 @@ In addition to providing a high-quality end-product that’s maintainable and ea
 
 Who should be our next Spotlight Employee? Comment below.
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/employee-spotlight-kelly-adams/images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)

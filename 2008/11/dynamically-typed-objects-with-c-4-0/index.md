@@ -1,12 +1,3 @@
----
-title: "Dynamically Typed Objects with C# 4.0"
-date: "2008-11-04"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 One of the announcements that emerged from the PDC is C# 4.0's support for dynamically typed objects.Â  These are objects whose type is not determined until runtime.Â  Variables that point to such types are declared with a new contextual keyword, dynamic.Â  Support was added so that API calls into dynamically type languages (such as scripting languages) could be supported.Â  Another example where dynamically typed object support is useful is calling into IDispatch objects (something supported by VB but not C# until now).
 

@@ -1,21 +1,5 @@
----
-title: "Potential New Features of C# 8.0 Exposed"
-date: "2018-11-07"
-categories: 
-  - "blog"
-  - "c"
-tags: 
-  - "net"
-  - "async-streams"
-  - "c-sharp"
-  - "c-sharp-8-0"
-  - "c"
-  - "c-8"
-  - "nullable-reference-types"
-  - "nullreference-exceptions"
----
 
-### ![Mark at Visual Studio Live, Chicago. ](images/Mark-VS-Live-Chicago-2018-300x225.jpeg)Can't satisfy your thirst for C# knowledge?
+### ![Mark at Visual Studio Live, Chicago. ](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/11/c-sharp-8-video/images/Mark-VS-Live-Chicago-2018-300x225.jpeg)Can't satisfy your thirst for C# knowledge?
 
 ### Hang around Mark Michaelis long enough and you'll get up to speed in no time!
 

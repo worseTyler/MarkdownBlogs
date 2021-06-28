@@ -1,9 +1,3 @@
----
-title: "A Great Windows Tip Site"
-date: "2003-11-25"
-categories: 
-  - "blog"
----
 
 I noticed a comment on my blog today that I never noticed before.  It pointed me to the JSI FAQ and I browsed around (thinking I could read all the FAQs until I realized that the one I stumbled on was number 6000 something...).  Anyway, great site!  Here are a couple tips I found useful immediately:
 

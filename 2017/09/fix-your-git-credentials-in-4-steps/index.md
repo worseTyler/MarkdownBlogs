@@ -1,13 +1,3 @@
----
-title: "Fix your Git Credential Nightmare in 4 Basic Steps"
-date: "2017-09-13"
-categories: 
-  - "blog"
-  - "demystified"
-tags: 
-  - "git"
-  - "visual-studio-2015-vs2015"
----
 
 # Struggling to get Git to connect to VisualStudio.com? Here's a possible solution.
 
@@ -51,4 +41,4 @@ Note: You may have to periodically clean these items out if things stop working 
 
 _What other issues would you like the IntelliTect team to break down for you?_
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/09/fix-your-git-credentials-in-4-steps/images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)

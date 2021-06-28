@@ -1,11 +1,3 @@
----
-title: "Essential .NET: Configuration in .NET Core (MSDN)"
-date: "2016-02-04"
-categories: 
-  - "net"
-  - "blog"
-  - "msdn-essential-net"
----
 
 > _Note: Just prior to press time, Microsoft announced name changes to ASP.NET 5 and related stacks. ASP.NET 5 is now ASP.NET Core 1.0. Entity Framework (EF) 7 is now Entity Framework (EF) Core 1.0. The ASP.NET 5 and EF7 packages and namespaces will change, but otherwise the new nomenclature has no impact on the lessons of this article._
 
@@ -188,7 +180,7 @@ Before finishing off the configuration basics, here are a few additional points 
 
 Both the modularity and the object-oriented structure of the configuration API are well thought out—providing discoverable, modular and easily extensible classes and interfaces with which to work (see **Figure 5**).
 
-![Figure 5 Configuration Provider Class Model](images/Figure-5-2.png)
+![Figure 5 Configuration Provider Class Model](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/02/essential-net-configuration-in-net-core-msdn/images/Figure-5-2.png)
 
 Figure 5 Configuration Provider Class Model
 

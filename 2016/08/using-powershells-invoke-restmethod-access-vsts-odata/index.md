@@ -1,12 +1,3 @@
----
-title: "Using PowerShell's Invoke-RestMethod to Access VSTS OData"
-date: "2016-08-24"
-categories: 
-  - "net"
-  - "blog"
-  - "powershell"
-  - "tfs"
----
 
 Given that Microsoft has abandoned their TFS CmdLets, one alternative is to access VSTS data is through the OData interface using the Invoke-RestMethod.
 

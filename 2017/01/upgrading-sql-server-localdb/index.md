@@ -1,18 +1,3 @@
----
-title: "Upgrading SQL Server LocalDb"
-date: "2017-01-14"
-categories: 
-  - "blog"
-  - "sql"
-tags: 
-  - "instance"
-  - "localdb"
-  - "migrate"
-  - "sql"
-  - "sql-express"
-  - "sql-server"
-  - "upgrade"
----
 
 Estimated reading time: 3 minutes
 
@@ -74,4 +59,4 @@ Note: the create command will create a new instance of LocalDb with the latest v
 
 Learn more about SQL and read about updating your SQL database [here](/updating-sql-database-use-temporal-tables-entity-framework-migration/)!
 
-![](images/blog-job-ad-2-1024x129.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/01/upgrading-sql-server-localdb/images/blog-job-ad-2-1024x129.png)

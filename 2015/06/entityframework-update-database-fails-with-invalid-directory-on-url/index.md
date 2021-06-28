@@ -1,14 +1,3 @@
----
-title: "EntityFramework's Update-Database Fails with \"Invalid directory on URL.\""
-date: "2015-06-12"
-categories: 
-  - "net"
-  - "blog"
-  - "entityframework"
-tags: 
-  - "entityframework"
-  - "visual-studio-2015-vs2015"
----
 
 While running **Visual Studio 2015** RC (VS2015) you may encounter an error when referencing the **EntityFramework** Nuget package (at least on v6.1.3) stating the following:
 

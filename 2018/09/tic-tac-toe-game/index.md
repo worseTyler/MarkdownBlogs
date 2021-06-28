@@ -1,11 +1,5 @@
----
-title: "A Simple Tic Tac Toe Game that Learns To Play"
-date: "2018-09-04"
-categories: 
-  - "blog"
----
 
-![](images/tictactoe.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/09/tic-tac-toe-game/images/tictactoe.jpg)
 
 ## Have you ever needed to complete a sample project during an interview process?
 

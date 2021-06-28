@@ -1,10 +1,3 @@
----
-title: "Custom Model Binding in ASP.Net Core"
-date: "2016-01-28"
-categories: 
-  - "asp-net"
-  - "blog"
----
 
 Early on in my career I was an accountant, which meant a lot of dollar signs and commas in the numbers I worked with in my daily tasks. The typical website or application I used, if built according to normal expectations, gave a nice message telling me what I’d done wrong when I accidentally entered a currency formatted value in a text input expecting a decimal. That was frustrating when I might be copy/pasting a value into the input from another system, or simply entering a value and absent-mindedly adding a dollar sign and comma. How smart is that software if it can’t understand that $1,340.12 == 1340.12?
 
@@ -29,7 +22,7 @@ public class Account
 
 At this point if you attempt to enter $1,340.12 in the Balance field you will receive this message, which is returned when the SimpleTypeModelBinder fails to convert the string "$1,340.12" to a decimal.
 
-![not_valid_value_currency](images/not_valid_value_currency.png)
+![not_valid_value_currency](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/01/custom-model-binding-in-asp-net-core-1-0/images/not_valid_value_currency.png)
 
 The result we are looking for is to validate the input as currency rather than a decimal, but we may have other needs for scrubbing input before model binding takes place so we’ll use an interface that describes our Scrub action.
 

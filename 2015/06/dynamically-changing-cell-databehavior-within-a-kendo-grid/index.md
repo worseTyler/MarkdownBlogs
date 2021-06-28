@@ -1,9 +1,3 @@
----
-title: "Dynamically Changing Cell Data/Behavior Within a Kendo Grid"
-date: "2015-06-17"
-categories: 
-  - "blog"
----
 
 Estimated reading time: 3 minutes
 
@@ -11,7 +5,7 @@ I was recently on a project that required various dynamic client-side behavior o
 
 An equivalent example for demonstration purposes is the following grid.
 
-![](images/Kendo-Grid-1.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/06/dynamically-changing-cell-databehavior-within-a-kendo-grid/images/Kendo-Grid-1.jpg)
 
 Assume the grid has the following rules:
 
@@ -24,7 +18,7 @@ I found many solutions to the first requirement centering around making a check,
 
 As for the second requirement, the trick is to leverage the grid’s Save event handler with the appropriate javascript. The C# and Typescript are below.
 
-![](images/Kendo-Grid-2.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/06/dynamically-changing-cell-databehavior-within-a-kendo-grid/images/Kendo-Grid-2.jpg)
 
 ### Typescript
 
@@ -129,4 +123,4 @@ function mySaveHandler(e) {
 
 Check out some of my other blogs _[Using the Kendo Grid in an Unorthodox Manner](/using-the-kendo-grid-in-an-unorthodox-manner/)_ and _[Demystifying the Requirements-Gathering Environment](/demystifying-requirements-gathering/)_.
 
-![](images/Blog-job-ad-1024x127.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/06/dynamically-changing-cell-databehavior-within-a-kendo-grid/images/Blog-job-ad-1024x127.png)

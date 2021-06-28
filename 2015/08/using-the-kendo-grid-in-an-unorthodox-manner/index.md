@@ -1,9 +1,3 @@
----
-title: "Using the Kendo Grid in an Unorthodox Manner"
-date: "2015-08-12"
-categories: 
-  - "blog"
----
 
 Recently I worked with a business requirement in which I wanted to leverage the Kendo Grid in an unorthodox manner. In particular, I wanted:
 
@@ -15,7 +9,7 @@ Each of the above scenarios are not (as of the time of this writing) straightfor
 
 The requirement is to support a user account creation/management screen for pharmacist login accounts as shown in figure 1. Each pharmacist is associated with a particular clinic (e.g. Walgreens, CVS) and specific locations (e.g. CVS store #1, CVS store #2). When setting up a user account, selecting the clinic refreshes the grid of clinic locations.
 
-[![Figure 1: User Management Screen with a Grid](images/Screen-Shot-2015-08-12-at-12.55.41-PM.png)](/wp-content/uploads/2015/08/Screen-Shot-2015-08-12-at-12.55.41-PM.png)
+[![Figure 1: User Management Screen with a Grid](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/08/using-the-kendo-grid-in-an-unorthodox-manner/images/Screen-Shot-2015-08-12-at-12.55.41-PM.png)](/wp-content/uploads/2015/08/Screen-Shot-2015-08-12-at-12.55.41-PM.png)
 
 Figure 1: User Management Screen with a Grid
 

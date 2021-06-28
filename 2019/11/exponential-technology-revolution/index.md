@@ -1,12 +1,3 @@
----
-title: "Today’s Exponential Tech Revolution - Thriving in Industry 5.0?"
-date: "2019-11-19"
-categories: 
-  - "blog"
-  - "leadership"
-tags: 
-  - "industry-4-0"
----
 
 ## The World is Changing in Profound and Radical Ways. Where do you sit in the technology curve? 
 
@@ -24,7 +15,7 @@ To grasp the technology revolution, consider the relatively recent exponential t
 
 #### Figure 1 The Exponential Growth of Photography
 
-![Industry 5.0 is full of exponential growth!](images/Photo-Growth-Charts-1024x576.jpg)
+![Industry 5.0 is full of exponential growth!](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/exponential-technology-revolution/images/Photo-Growth-Charts-1024x576.jpg)
 
 The problem with charts like this, and the numbers underlying them, is that they illuminate exponential trends in hindsight, only after they’ve already happened. Forecasting exponential growth is difficult because we’re hard-wired to think linearly—we struggle to grasp the magnitude of exponential trends. 
 
@@ -46,7 +37,7 @@ The breadth of even the shortlist in **Figure 2** is almost shocking. And when y
 
 Historically, industrial revolutions are characterized by changes in labor—the way we work. Electricity was the crucial invention required for both the second and third industrial revolutions—and without it, we wouldn’t have a fourth revolution either. But, what electricity enabled in the second and third industrial revolutions pales in comparison to what data, cloud computing, AI, ML, IoT, Big Data, nanotechnology, and quantum computing generated in the Fourth Industrial Revolution. In Industry 5.0, people work alongside robots and smart machines, enhancing productivity and merging technical computing abilities with human resourcefulness and intelligence. Each new revolution has involved a radical change in labor. 
 
-![The industrial revolutions and exponential technology - Now we're in Industry 4.0 to Industry 5.0.](images/Industry-4-5-1024x765.jpg)
+![The industrial revolutions and exponential technology - Now we're in Industry 4.0 to Industry 5.0.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/exponential-technology-revolution/images/Industry-4-5-1024x765.jpg)
 
 The proliferation of the Internet radically changed the speed of technological advancement starting in the 1990s. Still, the real gain is upon us as devices start collecting vast amounts of behavioral data and analyzing it with AI.
 

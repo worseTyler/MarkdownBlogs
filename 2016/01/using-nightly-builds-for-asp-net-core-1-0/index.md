@@ -1,9 +1,3 @@
----
-title: "Using Nightly Builds for ASP.NET Core 1.0"
-date: "2016-01-27"
-categories: 
-  - "blog"
----
 
 > _Note: ASP.NET Core 1.0 is Microsoft's official branding of ASP.NET 5 (vNext). The renaming is not complete and thus the exact version numbers below in the examples reflect RC2 before the transition. However, the process should still be accurate. This page will be updated once the rename is complete._
 

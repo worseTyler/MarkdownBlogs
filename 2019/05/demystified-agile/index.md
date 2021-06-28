@@ -1,61 +1,47 @@
----
-title: "Agile Demystified: 7 Metrics to Assess Your Agile Practices"
-date: "2019-05-21"
-categories: 
-  - "blog"
-  - "demystified"
-tags: 
-  - "agile"
-  - "quiz"
-  - "scrum"
-  - "scrum-master"
-  - "scrum-process"
-  - "sprint"
----
 
 Agile development has evolved to become the norm for software projects. Many organizations are practicing agile with fantastic results. However, sometimes results are less than stellar. Assess your company’s agile practices with this quick checklist. Score 1 point for every answer you agree with.
 
-## **![](images/Agile-1.png)**
+## **![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Agile-1.png)**
 
-### **1 Number of unit tests: Increasing![](images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)**
+### **1 Number of unit tests: Increasing![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)**
 
 Your team is checking for more and more bugs during the build. Unit tests are the best way to shift finding bugs to the left.
 
-## **![](images/Agile-2.png)**
+## **![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Agile-2.png)**
 
-### **2 Number of releases equals number** **of sprints![](images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)**
+### **2 Number of releases equals number** **of sprints![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)**
 
 In agile, the goal is to have a releasable product every sprint. Your team knows their definition of done and is acting on it.
 
-## **![](images/Agile-3.png)**
+## **![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Agile-3.png)**
 
-### **3 Work In Progress (WIP) is decreasing or low![](images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)**
+### **3 Work In Progress (WIP) is decreasing or low![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)**
 
 Your team rarely carries work items over from sprint to sprint and is rarely paralyzed by WIP. You know that context switches and blocked items require work that produces no business value.
 
-## **![](images/Agile-4.png)**
+## **![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Agile-4.png)**
 
 ### **4 Plan for the short term**
 
-![](images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)
 
 Your team stays in the moment, avoids planning months ahead and doesn’t waste time on unnecessary features, planning and meetings. You work with your Product Owner to sequence work in iterations and use agile estimating.
 
-## **![](images/Agile-5.png)**
+## **![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Agile-5.png)**
 
 ### **5 Definition of done is improving**
 
-### ![](images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)
+### ![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)
 
 You know that the measure for good, complete code should always be improving. Validating features in production, additional automation, better reviews and thorough testing are among a few things that will help to drive-up your code quality, and your team knows it.
 
-## **![](images/Agile-6.png)**
+## **![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Agile-6.png)**
 
-### **6 Technical debt is decreasing![](images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)**
+### **6 Technical debt is decreasing![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)**
 
 Your team is spending time in every sprint working off technical debt to ensure a clutter-free code base. A little work along the way in each sprint pays great dividends, and it takes significant team discipline to not create tech debt in the first place.
 
-### **![](images/Agile-7.png)7  Retrospectives result in meaningful improvements![](images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)**
+### **![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Agile-7.png)7  Retrospectives result in meaningful improvements![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Screen-Shot-2019-05-10-at-7.03.00-PM.png)**
 
 Team members feel comfortable commenting about the successes and failures of the team. You actively identify areas to improve and take the necessary actions.
 
@@ -67,4 +53,4 @@ Want more? Check out our [Scrum Master Check-In](/scrum-master-check-in/) series
 
 Keep delivering greatness!
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/05/demystified-agile/images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)

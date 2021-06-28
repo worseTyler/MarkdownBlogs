@@ -1,13 +1,3 @@
----
-title: "How to publish NuGets with Azure DevOps"
-date: "2020-02-25"
-categories: 
-  - "azure"
-  - "blog"
-tags: 
-  - "azure-devops"
-  - "nuget"
----
 
 ## Successfully manage version numbers and CI/CD pipelines with this tutorial on how to publish NuGets with Azure DevOps.
 
@@ -15,11 +5,11 @@ Azure DevOps is an amazing platform for managing the software development lifecy
 
 In Azure DevOps there are two types of pipelines - [Build pipelines, and Release pipelines](https://docs.microsoft.com/azure/devops/pipelines/).
 
-![Two types of pipelines visual.](images/nuget-1.png)
+![Two types of pipelines visual.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/02/azure-devops-nugets/images/nuget-1.png)
 
 _Note: If you have the Multi-stage pipelines preview feature turned on then these will display as “[Pipelines (Build) and Release](https://docs.microsoft.com/azure/devops/project/navigation/preview-features)”._
 
-![Pic of what the multi-stage pipeline feature looks like](images/nuget-2.png)
+![Pic of what the multi-stage pipeline feature looks like](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/02/azure-devops-nugets/images/nuget-2.png)
 
 It is important to understand that the build pipeline is responsible for compiling your code, running tests, and eventually producing a NuGet package. The release pipeline is responsible for taking that NuGet package and pushing it out to various hosting providers such as [nuget.org](https://www.nuget.org/). 
 
@@ -115,17 +105,17 @@ You can see the completed pipeline [here](https://github.com/IntelliTect/CodingS
 
 The release is composed of [stages](https://docs.microsoft.com/azure/devops/pipelines/process/stages), where each stage distributes the NuGet package created by the build pipeline to a NuGet repository. For our purposes, we’ll use two: [Azure DevOps Artifacts](https://docs.microsoft.com/azure/devops/artifacts) and [NuGet.org](https://www.nuget.org/). Let’s look at the configuration for each piece.
 
-![Configuration of ADO and NuGet artifacts](images/nuget-3.png)
+![Configuration of ADO and NuGet artifacts](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/02/azure-devops-nugets/images/nuget-3.png)
 
 #### Artifacts
 
 The release pipeline Artifacts are the NuGet package(s) that we created (published) in the build pipeline. The key setting is the Continuous deployment trigger.
 
-![Pic showing the continuous deployment trigger.](images/nuget-4.gif)
+![Pic showing the continuous deployment trigger.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/02/azure-devops-nugets/images/nuget-4.gif)
 
 It is important to make sure that you are not triggering releases on all builds, as this could accidentally distribute builds created from pull requests. A common setup is to only trigger releases on builds from a particular branch (such as master) and restrict direct access to this branch so changes must go through a code review process.
 
-![](images/nuget-5.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/02/azure-devops-nugets/images/nuget-5.png)
 
 #### Azure DevOps Artifacts
 
@@ -133,17 +123,17 @@ The first release stage pushes out the NuGet package to Azure DevOps Artifacts (
 
 This stage only has a single job with a single NuGet task that pushes the NuGet package to the feed.
 
-![Screenshot of enabled and disabled triggers](images/nuget-6.png)
+![Screenshot of enabled and disabled triggers](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/02/azure-devops-nugets/images/nuget-6.png)
 
 #### NuGet.org
 
 Now we need to publish our NuGet package to a public feed for others to consume. Because this is a public feed, it is best practice to require manual approval on this stage before allowing it to continue and publish to NuGet.org. To do this, we add a pre-deployment approval condition as pictured below.
 
-![NuGet Push screenshot](images/nuget-7.gif)
+![NuGet Push screenshot](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/02/azure-devops-nugets/images/nuget-7.gif)
 
 Depending on your process you may have several pre-releases published to Azure DevOps Artifacts. Each of these will be queued, pending approval, on the next stage (NuGet.org). To release the latest version, and avoid the need to cancel older releases, set the “Deployment queue settings” option to “Deploy latest and cancel the others”. 
 
-![Gif of NuGet.org screenshots](images/nuget-8.gif)
+![Gif of NuGet.org screenshots](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/02/azure-devops-nugets/images/nuget-8.gif)
 
 Remember that our build process is producing [pre-release NuGet packages](https://docs.microsoft.com/nuget/create-packages/prerelease-packages). Before we publish the NuGet package, we need to change the version number to make a release NuGet package. To do this, we’ll use a [dotnet global tool](https://docs.microsoft.com/dotnet/core/tools/global-tools) called [nupkgwrench](https://github.com/emgarten/NupkgWrench) (NuGet Package Wrench). This tool has lots of useful commands and utilities for manipulating NuGet packages.
 
@@ -155,7 +145,7 @@ nupkgwrench release \*_/_.nupkg
 
 Finally, our last step will push the full release package to NuGet.org.
 
-![Gif displaying deployment cue settings](images/nuget-9.gif)
+![Gif displaying deployment cue settings](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/02/azure-devops-nugets/images/nuget-9.gif)
 
 ### Conclusion
 

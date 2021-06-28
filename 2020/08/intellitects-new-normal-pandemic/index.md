@@ -1,10 +1,3 @@
----
-title: "IntelliTect's New Normal During the Pandemic"
-date: "2020-08-10"
-categories: 
-  - "blog"
-  - "team-culture"
----
 
 ## The pandemic is redefining normal, forcing us to move out of our comfort zones, look for potential pivots, and optimize the circumstances into an opportunity.
 
@@ -14,7 +7,7 @@ This response to the pandemic takes on several forms for us.
 
 While most of our team continues to work from home, we’ve begun construction in the basement of IntelliTect. Once everyone returns to the office, we’ll be beyond capacity, so this work-from-home season seems the most appropriate time.
 
-![Remodeling the basement during the pandemic](images/window-work-scaled.jpg)
+![Remodeling the basement during the pandemic](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/08/intellitects-new-normal-pandemic/images/window-work-scaled.jpg)
 
 Contractors Mike (left) and Robert (right) cut into layers of brick to help bring some light into the basement.
 
@@ -34,7 +27,7 @@ While we miss our ‘hallway conversations,’ our team is finding ways to foste
 
 At IntelliTect, I have been impressed with how well our team is working via Microsoft Teams and Zoom. It goes to show we’re adaptable.
 
-![team meeting during COVID-19](images/Pizza-party.jpg)
+![team meeting during COVID-19](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/08/intellitects-new-normal-pandemic/images/Pizza-party.jpg)
 
 Senior Software Engineer, John Leach, cooks pizza for our first ever socially-distanced pizza lunch.
 
@@ -52,7 +45,7 @@ In Spokane, multiple organizations have found ways to stay connected.
 
 #### Spokane Hoopfest
 
-![Hoopfest pandemic](images/stephanie-hoopfest-1024x683.jpg)
+![Hoopfest pandemic](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/08/intellitects-new-normal-pandemic/images/stephanie-hoopfest-1024x683.jpg)
 
 Our office manager, Stephanie Perko, smiles with her Hoopfest team, 2legit2quit.
 
@@ -60,7 +53,7 @@ Our office manager, Stephanie Perko, smiles with her Hoopfest team, 2legit2quit.
 
 #### Bloomsday
 
-![Running Bloomsday](images/chris-bloomsday-1024x735.jpg)
+![Running Bloomsday](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/08/intellitects-new-normal-pandemic/images/chris-bloomsday-1024x735.jpg)
 
 One of our architects, Chris Finlayson, is getting ready to run Bloomsday with a couple of block-heads.
 
@@ -68,7 +61,7 @@ One of our architects, Chris Finlayson, is getting ready to run Bloomsday with a
 
 #### Spokane Civic Theatre
 
-![Spokane Civic Theatre artwork](images/Zac-and-season-art.jpg)
+![Spokane Civic Theatre artwork](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/08/intellitects-new-normal-pandemic/images/Zac-and-season-art.jpg)
 
 Zac Jones, our Senior UI Architect, stands in front of some of the Civic's season art that he designed for the 2016-2017 season.
 
@@ -84,4 +77,4 @@ Alas, this is going to be the new norm for a while.  Even so, I’m thankful to
 
 \- Mark Michaelis, President and CEO, IntelliTect
 
-![click here to sign up for Intellovations, our quarterly newsletter so you never miss out!](images/Click-here-to-sign-up-1-1024x235.jpg)
+![click here to sign up for Intellovations, our quarterly newsletter so you never miss out!](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/08/intellitects-new-normal-pandemic/images/Click-here-to-sign-up-1-1024x235.jpg)

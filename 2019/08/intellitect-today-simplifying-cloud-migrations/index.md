@@ -1,15 +1,3 @@
----
-title: "IntelliTect Today – Simplifying Your Cloud Migration"
-date: "2019-08-20"
-categories: 
-  - "blog"
-  - "team-culture"
-tags: 
-  - "azure"
-  - "cloud"
-  - "devops"
-  - "microsoft-fasttrack"
----
 
 ### Helping Clients Reach Their Goals, One Airline Mile at a Time.
 

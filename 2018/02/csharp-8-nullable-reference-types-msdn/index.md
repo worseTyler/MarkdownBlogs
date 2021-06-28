@@ -1,11 +1,3 @@
----
-title: "Essential .NET: C# 8.0 and Nullable Reference Types (MSDN)"
-date: "2018-02-01"
-categories: 
-  - "net"
-  - "blog"
-  - "msdn-essential-net"
----
 
 Nullable reference types—what? Aren’t all reference types nullable?
 

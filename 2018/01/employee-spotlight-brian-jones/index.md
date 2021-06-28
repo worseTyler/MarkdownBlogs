@@ -1,16 +1,9 @@
----
-title: "Employee Spotlight: Brian Jones"
-date: "2018-01-10"
-categories: 
-  - "blog"
-  - "team-culture"
----
 
 _Welcome to our first Employee Spotlight! Each issue will feature an employee of IntelliTect. Whether you've worked with them for years or have never met our featured employee, I hope this column will continue to introduce you to the many faces of IntelliTect._
 
 _For this issue, we featured someone who's been with IntelliTect long enough to accidentally call it "IntelliTechture" during our interview: Brian Jones._
 
-\[caption id="attachment\_33016" align="alignleft" width="298"\]![](images/IMG_20171205_180613276_BURST000_COVER_TOP.jpg) Brian Jones at the IntelliTect holiday party.\[/caption\]
+\[caption id="attachment\_33016" align="alignleft" width="298"\]![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/01/employee-spotlight-brian-jones/images/IMG_20171205_180613276_BURST000_COVER_TOP.jpg) Brian Jones at the IntelliTect holiday party.\[/caption\]
 
 Somewhere in the back of Brian Jones' closet is a decade old IntelliTechture polo shirt that was embroidered by his mother. Brian was a contractor back then; attending conferences and working on Hoopfest and other various projects. He was there when IntelliTechture became IntelliTect and has been a full-time employee since 2013. Currently, Brian is the Chief Integrations Architect at IntelliTect and is under contract with Avista. Brian's most recent project at Avista was the AMI MDM deployment (see IntelliTect Today for info about this massive project).
 
@@ -22,7 +15,7 @@ If Brian could convey one thing to future customers about IntelliTect, it would 
 
 On a personal side, Brian considers himself a movie junkie – not an uber-nerd, but he loves movies. He can't help but watch _The Martian_ with Matt Damon whenever it's on TV. Seeing the humor that Matt's character portrays, despite being in the worst situation someone could be in, is always a lure to Brian.
 
-\[caption id="attachment\_33024" align="alignnone" width="1152"\]![](images/star-wars-2-e1515793244842.jpg) Brian, along with several other IntelliTect staffers, leave work early to watch Star Wars: The Last Jedi on opening day.\[/caption\]
+\[caption id="attachment\_33024" align="alignnone" width="1152"\]![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/01/employee-spotlight-brian-jones/images/star-wars-2-e1515793244842.jpg) Brian, along with several other IntelliTect staffers, leave work early to watch Star Wars: The Last Jedi on opening day.\[/caption\]
 
 Born in California, Brian moved to Spokane at the age of four. He joined the Air Force and moved to Montgomery, Alabama where he worked as a computer programmer in Air Force Communications. When his tour was up, Brian continued in his previous position with the Air Force as a private contractor. In early 2000, he formed a web-based project management company with the assistance of two partners. Eventually, Brian took another job in Birmingham, Alabama, and this is where he first began working with integrations. He returned to Spokane in 2006.
 
@@ -30,4 +23,4 @@ Brian and his wife, Kristin, were married in Spokane, WA in 1995. They have thre
 
 If you'd like to get to know Brian more, grab a soccer ball, head to the nearest indoor field, and wait. He'll be there soon.
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/01/employee-spotlight-brian-jones/images/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T)

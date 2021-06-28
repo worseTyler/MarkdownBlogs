@@ -1,14 +1,3 @@
----
-title: "Smoothly Deploying Your App with Squirrel"
-date: "2017-07-18"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-  - "devops"
-  - "nuget"
-  - "windows-blog"
----
 
 ## Application Deployment Made Easy
 
@@ -129,7 +118,7 @@ Note: If this process fails, you may need to restart Visual Studio to get the Pa
 
 The output directory now contains four files:
 
-![](images/DeployingYourAppWithSquirel-3.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/07/deploying-app-squirrel/images/DeployingYourAppWithSquirel-3.png)
 
 The Setup.exe contains a full copy of the NuGet package. So distributing this one file will be enough to install the application. The name of the file is not significant, and you can rename it to whatever you like.
 
@@ -143,7 +132,7 @@ There is also a Setup.msi that gets created for [doing machine wide installs](ht
 
 Running the Setup.exe file allows the application to get installed and launched.
 
-![](images/DeployingYourAppWithSquirel-2-300x201.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/07/deploying-app-squirrel/images/DeployingYourAppWithSquirel-2-300x201.png)
 
 ### Update Simulation
 
@@ -155,7 +144,7 @@ Now let’s simulate an update to see Squirrel at work
 
 The output directory now contains a few additional files.
 
-![](images/DeployingYourAppWithSquirel-1.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/07/deploying-app-squirrel/images/DeployingYourAppWithSquirel-1.png)
 
 The Setup.exe is updated to contain the latest full NuGet package. Anyone who runs it will get the latest version (in this case 1.0.1) of the application. If you need to keep old Setup.exe files around to install older versions quickly, be sure to rename your existing Setup.exe file before running the Squirrel releasify command.
 
@@ -171,11 +160,11 @@ The _UpdateApp_ extension method that we used in this application always downloa
 
 Re-running the application verifies that an update has been applied.
 
-![](images/DeployingYourAppWithSquirel-5-300x201.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/07/deploying-app-squirrel/images/DeployingYourAppWithSquirel-5-300x201.png)
 
 Re-launching the application one more time shows that we are now running the latest version.
 
-![](images/DeployingYourAppWithSquirel-4-300x201.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/07/deploying-app-squirrel/images/DeployingYourAppWithSquirel-4-300x201.png)
 
 ### Highlights of Squirrel
 
@@ -191,4 +180,4 @@ Squirrel also comes with lots of little features (many to alleviate some of the 
 
 Check out my blog on [how to publish NuGets with Azure DevOps](/azure-devops-nugets/) for more information on the uses of NuGet packages.
 
-![](images/Blog-job-ad-1024x127.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/07/deploying-app-squirrel/images/Blog-job-ad-1024x127.png)

@@ -1,9 +1,3 @@
----
-title: "Muti-Monitor Support Tools"
-date: "2004-02-08"
-categories: 
-  - "blog"
----
 
 Here are two interesting links for those addicted to dual monitors.
 

@@ -1,11 +1,3 @@
----
-title: "Essential .NET: Parse the Command Line with System.CommandLine (MSDN)"
-date: "2019-03-01"
-categories: 
-  - "net"
-  - "blog"
-  - "msdn-essential-net"
----
 
 Going all the way back to. NET Framework 1.0, I’ve been astounded that there’s been no simple way for developers to parse the command line of their applications. Applications start execution from the Main method, but the arguments are passed in as an array (string\[\] args) with no differentiation between which items in the array are commands, options, arguments and the like.
 
@@ -114,7 +106,7 @@ Using the Main method as the specification for the command line is just one of s
 
 System.CommandLine is architected around a core assembly that includes an API for configuring the command line and a parser that resolves the command-line arguments into a data structure. All the features listed in the previous section can be enabled via the core assembly, except for enabling a different method signature for Main. However, support for configuring the command line, specifically using a domain-specific language (such as a Main like method) is enabled by an app model. (The app model used for the Main like method implementation described earlier is code-named “DragonFruit.”) However, the System.CommandLine architecture enables support for additional app models (as shown in **Figure 3**).
 
-![](images/parse-commandline-figure-3.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/03/parse-command-line/images/parse-commandline-figure-3.png)
 
 **Figure 3 System.CommandLine Architecture**
 

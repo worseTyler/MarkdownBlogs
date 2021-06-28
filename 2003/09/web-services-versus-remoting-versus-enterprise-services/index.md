@@ -1,12 +1,3 @@
----
-title: "Web Services versus Remoting versus Enterprise Services"
-date: "2003-09-19"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 OK, it is about time I wrote my thoughts down on this topic so here goes:
 

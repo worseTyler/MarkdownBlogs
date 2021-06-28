@@ -1,9 +1,3 @@
----
-title: "Removing Adds from Internet Explorer"
-date: "2005-06-21"
-categories: 
-  - "blog"
----
 
 For many moons now Mozilla has supported a plug-in that removes adds from appearing in the pages you browse.  There are probably plug-in solutions for this with IE but Dylan Pegoraro sent me a link to [one of the simplest](https://www.everythingisnt.com/hosts.html) that works for all browsers.  All it does is load your hosts file with all the DNS entries for the various advertisement consolidators and set them all to point to 127.0.0.1.  How simple is that?
 

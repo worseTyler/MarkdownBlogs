@@ -1,9 +1,3 @@
----
-title: "Troubleshooting ASP.NET 5, DNX, Bower, NPM, Gulp, and related tools."
-date: "2016-01-15"
-categories: 
-  - "blog"
----
 
 ### **Overview**
 

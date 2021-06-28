@@ -1,18 +1,3 @@
----
-title: "Locking a Block of Code With an Integer"
-date: "2016-06-27"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-tags: 
-  - "net"
-  - "c"
-  - "development"
-  - "integer"
-  - "lock"
-  - "object"
----
 
 I was talking with a developer recently who was convinced that you could use a static integer variable to lock a block of code merely by casting it to an object, like this
 

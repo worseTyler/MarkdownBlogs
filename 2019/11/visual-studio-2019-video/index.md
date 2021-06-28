@@ -1,15 +1,3 @@
----
-title: "Visual Studio 2019 Refactoring Galore (Video)"
-date: "2019-11-12"
-categories: 
-  - "blog"
-  - "visual-studio"
-tags: 
-  - "c-8"
-  - "visual-studio"
-  - "visual-studio-2019"
-  - "vs-2019"
----
 
 ## Now's the time to switch to Visual Studio 2019 (VS 2019).
 
@@ -23,7 +11,7 @@ I recommend watching the full video (above) for an in-depth explanation of Visua
 
 #### Convert to Interpolated String
 
-![Screenshot showing how to convert to interpolated string](images/Convert-to-Interpolated-string.jpeg)
+![Screenshot showing how to convert to interpolated string](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/visual-studio-2019-video/images/Convert-to-Interpolated-string.jpeg)
 
 You can right-click (Ctrl+.) on the format method and convert it to interpolated string because it's easier to read, assuming you're not doing localization.
 
@@ -39,13 +27,13 @@ _\*Note - It does not update resource files either. All other namespaces stay th
 
 #### Document Health Indicator
 
-![Screenshot showing the locations of the document health indicator.](images/Document-Health-Indicator.png)
+![Screenshot showing the locations of the document health indicator.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/visual-studio-2019-video/images/Document-Health-Indicator.png)
 
 There's now an indicator of how good your source code is doing. It appears in a couple of places, and you can navigate between the warnings.
 
 #### Code cleanup
 
-![Screenshot showing code cleanup options](images/Code-Cleanup.jpeg)
+![Screenshot showing code cleanup options](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/visual-studio-2019-video/images/Code-Cleanup.jpeg)
 
 There's a new dropdown for code cleanup that you can configure. You would think that it would be extensible. It will be, but it isn't available right now.
 
@@ -107,17 +95,17 @@ Instead, I recommend installing the code analysis packages. Be careful when you 
 
 Interaction with Git has been improved.
 
-![Screenshot of new Pull request page.](images/Pull-requests-github-integration.png)
+![Screenshot of new Pull request page.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/visual-studio-2019-video/images/Pull-requests-github-integration.png)
 
 Emojis can now be embedded in your source code.
 
-![Screenshot showing emoji functionality.](images/Review-Pull-requests.png)
+![Screenshot showing emoji functionality.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/visual-studio-2019-video/images/Review-Pull-requests.png)
 
 Check out [this blog](https://devblogs.microsoft.com/visualstudio/code-reviews-using-the-visual-studio-pull-requests-extension/) for a deeper dive into pull requests.
 
 #### Time Travel Debugging (TTD)
 
-![Screenshots showing time travel debugging setup.](images/Time-Travel-Debugging.png)
+![Screenshots showing time travel debugging setup.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/visual-studio-2019-video/images/Time-Travel-Debugging.png)
 
 If you run windbg, it will launch TTD that will allow you to debug unmanaged code on your machine and will save the entire dump of the file. It's a great feature if you have a hard to find bug.
 
@@ -144,7 +132,7 @@ In C# 8, a string type can be configured to not null by default unless it's deco
 
 To avoid such broken code, you need to opt in to the nullability feature by setting a Nullability element to "enable" within your csproj.
 
-![](images/EnablingNullability-1024x405.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/visual-studio-2019-video/images/EnablingNullability-1024x405.png)
 
 Rather than enabling your entire project for nullability, you can also pinpoint the functionality to a block of code.
 

@@ -1,11 +1,3 @@
----
-title: "Essential .NET: Custom Iterators with Yield (MSDN)"
-date: "2017-06-01"
-categories: 
-  - "net"
-  - "blog"
-  - "msdn-essential-net"
----
 
 In my last column ([msdn.com/magazine/mt797654](https://www.msdn.com/magazine/mt797654)), I delved into the details of how the C# foreach statement works under the covers, explaining how the C# compiler implements the foreach capabilities in Common Intermediate Language (CIL). I also briefly touched on the yield keyword with an example (see **Figure 1**), but little to no explanation.
 
@@ -62,7 +54,7 @@ By placing a break point at the start of the GetEnumerator method in **Figure 1*
 
 In **Figure 2**, the foreach statement at the call site initiates a call to GetEnumerator on the CSharpBuiltInTypes instance called keywords. As you can see, it’s always safe to call GetEnumerator again; “fresh” enumerator objects will be created when necessary. Given the iterator instance (referenced by iterator), foreach begins each iteration with a call to MoveNext. Within the iterator, you yield a value back to the foreach statement at the call site. After the yield return statement, the GetEnumerator method seemingly pauses until the next MoveNext request. Back at the loop body, the foreach statement displays the yielded value on the screen. It then loops back around and calls MoveNext on the iterator again. Notice that the second time, control picks up at the second yield return statement. Once again, the foreach displays on the screen what CSharpBuiltInTypes yielded and starts the loop again. This process continues until there are no more yield return statements within the iterator. At that point, the foreach loop at the call site terminates because MoveNext returns false.
 
-![Sequence Diagram with Yield Return](images/Figure-2.png)
+![Sequence Diagram with Yield Return](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/06/custom-iterators-with-yield-msdn/images/Figure-2.png)
 
 Figure 2 Sequence Diagram with Yield Return
 

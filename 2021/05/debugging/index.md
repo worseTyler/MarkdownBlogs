@@ -1,12 +1,3 @@
----
-title: "Debugging Frustrations: A Senior Developer's Story"
-date: "2021-05-12"
-categories: 
-  - "blog"
-tags: 
-  - "ci"
-  - "continuous-integration"
----
 
 ## Don't Think Senior Developers Struggle? Think Again.
 
@@ -86,7 +77,7 @@ I added more logging statements and ran more pipeline builds. Sure enough, when 
 
 I target both .NET Core 3.1 and .NET 5, so I knew I had at least two SDKs installed.
 
-![SDKs](images/Screenshot-31.png)
+![SDKs](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2021/05/debugging/images/Screenshot-31.png)
 
 I also noted that I had a 3.0.0 version of .NET Core and a preview version of 5.0.2 installed.
 

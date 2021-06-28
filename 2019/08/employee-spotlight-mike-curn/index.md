@@ -1,19 +1,7 @@
----
-title: "Employee Spotlight - Mike Curn"
-date: "2019-08-20"
-categories: 
-  - "blog"
-  - "team-culture"
-tags: 
-  - "intellovations"
-  - "mike-curn"
-  - "newsletter"
-  - "summer-2019-edition"
----
 
 ### Enterprising SDET with a Passion for Improving
 
-![](images/Mike-SWR.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/08/employee-spotlight-mike-curn/images/Mike-SWR.jpg)
 
 Mike Curn, senior SDET at IntelliTect
 
@@ -35,7 +23,7 @@ Over half of Mike’s core team at Avista is made up of IntelliTect team mem­be
 
 #### Mike's personal side...
 
-![](images/IMG_20180506_115637726-1024x768.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/08/employee-spotlight-mike-curn/images/IMG_20180506_115637726-1024x768.jpg)
 
 Mike and Anna-Marie take a selfie at the Spartan race in Bigfork, MT.
 

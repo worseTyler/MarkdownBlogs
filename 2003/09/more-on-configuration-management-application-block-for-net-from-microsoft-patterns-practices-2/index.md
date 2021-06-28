@@ -1,12 +1,3 @@
----
-title: "More on Configuration Management Application Block for .NET  - from Microsoft Patterns & Practices"
-date: "2003-09-18"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 I wrote on Configuration Management Application Block for .NET  - from Microsoft Patterns & Practices a few weeks ago.  Since then my team and I have investigated it further.  Here are the reasons we decided to go with our own implementation, one that we had already written.
 

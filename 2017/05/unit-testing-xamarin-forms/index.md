@@ -1,12 +1,3 @@
----
-title: "Unit Testing with Xamarin Forms"
-date: "2017-05-30"
-categories: 
-  - "blog"
-  - "c"
-  - "test"
-  - "xamarin"
----
 
 In a recent application that Intellitect developed for a client, we were tasked with building a Xamarin forms application that supported Windows, Android, and iOS.  Due to the cross-platform support inherent with using Xamarin, a large majority of our code was common amongst all three implementations.  As with most cross-platform projects, however, a small amount of code needed to be customized for each individual platform.  While our common code was generally straightforward to unit test, it became clear that we needed a solution for unit testing the platform specific pieces of code that we were writing (in the [PCL](https://developer.xamarin.com/guides/cross-platform/application_fundamentals/pcl/introduction_to_portable_class_libraries/) code). This article will demonstrate the approach we took to tackle this problem.
 

@@ -1,10 +1,3 @@
----
-title: "Power BI: A Detailed Examination of Data Importation"
-date: "2020-12-14"
-categories: 
-  - "blog"
-  - "power-bi"
----
 
 ## Clarifying the Use of Queries and Methods for Data Importation with Power BI
 
@@ -57,7 +50,7 @@ Select \[$Ordered\].\[SalesOrderID\], \[$Ordered\].\[RevisionNumber\], \[$Ordere
 
 Metrics: Database-Throughput-Unit (DTU) utilization graph on SQL database. DTU measures are a combination of CPU, I/O, and log flushes/second.
 
-![](images/image001.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/12/power-bi-data-importation/images/image001.png)
 
 Chart of DTU by Stage
 
@@ -74,7 +67,7 @@ Explored methods of importing data into Power BI:
 
 #### DTI Utilization vs Methods of Import
 
-![](images/image002-1024x688.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/12/power-bi-data-importation/images/image002-1024x688.png)
 
 Chart of DTU Utilization vs Methods of Import
 
@@ -88,14 +81,14 @@ This behavior is consistent with what we found earlier, because Power BI skips t
 
 Query folding is the process used by Power Query to send transformations to the source database. First, the database performs these transformations, then data is imported into Power BI. These transformations, where applicable, can be viewed in Power Query under “View Native Query.” Query folding is important for performance because it can drastically decrease the amount of data that is imported into Power BI.
 
-![Query folding: screenshot showing view native query.](images/image003.png)
+![Query folding: screenshot showing view native query.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/12/power-bi-data-importation/images/image003.png)
 
 Query folding will be disabled and as a result “View Native Query” will no longer be an option under two conditions:
 
 1. It is disabled when using unsupported sources, such as flat files.
 2. It is disabled when applying certain transformations, such as “removing rows with errors.”
 
-![screenshot showing query folding options.](images/image004.png)
+![screenshot showing query folding options.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/12/power-bi-data-importation/images/image004.png)
 
 It’s important to point out that using a custom SQL import statement **will prevent folding**. In his blog, [_Query Folding in Power Query to Improve Performance_](https://www.mssqltips.com/sqlservertip/3635/query-folding-in-power-query-to-improve-performance/), Koen Verbeeck, writes, “If you write your own SQL statement to fetch the data, any subsequent transformation on that data will not use query folding.”
 

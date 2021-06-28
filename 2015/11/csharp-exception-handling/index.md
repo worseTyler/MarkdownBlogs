@@ -1,12 +1,3 @@
----
-title: "Essential .NET: C# Exception Handling (MSDN)"
-date: "2015-11-09"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-  - "msdn-essential-net"
----
 
 Welcome to the inaugural Essential .NET column. It’s here where you’ll be able to follow all that is happening in the Microsoft .NET Framework world, whether it’s advances in C# vNext (currently C# 7.0), improved .NET internals, or happenings on the Roslyn and .NET Core front (such as MSBuild moving to open source).
 

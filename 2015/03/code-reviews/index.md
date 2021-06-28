@@ -1,13 +1,3 @@
----
-title: "Code Reviews"
-date: "2015-03-14"
-categories: 
-  - "blog"
-  - "tfs"
-tags: 
-  - "reviews"
-  - "tfs"
----
 
 I absolutely love code reviews. My team uses a very informal asynchronous method for doing code reviews. When changes are made, a code review request is sent to the other members of the team. As people have time, they will look over the code review requests and provide feedback. Pretty painless; the way a code review should be.
 

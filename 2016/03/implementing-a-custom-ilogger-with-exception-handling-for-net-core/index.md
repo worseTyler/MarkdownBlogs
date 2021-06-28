@@ -1,14 +1,3 @@
----
-title: "Implementing a Custom ILogger with Exception Handling for .NET Core"
-date: "2016-03-04"
-categories: 
-  - "net"
-  - "net-core"
-  - "blog"
-  - "c"
-tags: 
-  - "net-core"
----
 
 Estimated reading time: 2 minutes
 
@@ -128,4 +117,4 @@ One uses the ApplicationLogging static class to set up the custom logger with th
 
 Check out my other [tutorials](/configuring-windows-smtp-server-on-windows-2008-for-relay/) and leave any questions in the comment section below!
 
-![](images/blog-job-ad-2-1024x129.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2016/03/implementing-a-custom-ilogger-with-exception-handling-for-net-core/images/blog-job-ad-2-1024x129.png)

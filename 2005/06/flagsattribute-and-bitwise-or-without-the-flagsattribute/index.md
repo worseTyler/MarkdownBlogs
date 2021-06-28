@@ -1,12 +1,3 @@
----
-title: "FlagsAttribute, and bitwise OR without the FlagsAttribute"
-date: "2005-06-20"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 I read recently in the remarks on the FlagsAttribute of the MSDN documentation that,
 

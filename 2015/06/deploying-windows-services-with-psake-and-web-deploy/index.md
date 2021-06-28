@@ -1,25 +1,11 @@
----
-title: "Deploying Windows Services With Psake and Web Deploy"
-date: "2015-06-29"
-categories: 
-  - "blog"
-  - "powershell"
-tags: 
-  - "iis"
-  - "powershell"
-  - "psake"
-  - "quartz"
-  - "topshelf"
-  - "webdeploy"
----
 
-![Robot and human fist bump](images/robot-300x203.jpg)
+![Robot and human fist bump](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/06/deploying-windows-services-with-psake-and-web-deploy/images/robot-300x203.jpg)
 
 At IntelliTect, a common pattern of our client solutions are windows services that process work on either a scheduled basis or watch a file location. We often use a combination of the [Topshelf framework](https://topshelf-project.com/) with the [TopShelf.Quartz](https://www.nuget.org/packages/Topshelf.Quartz/) job scheduling package to solve these problems. These packages expose a useful fluent interface to schedule multiple jobs in a service instance and take care of the service events-- including installation on the command line. While this is helpful from a code perspective in reducing boilerplate and increasing simplicity, this design lacks an easy way to deploy new releases.
 
 Since working for IntelliTect (and specifically working with [Mark Michaelis](/mark-michaelis/) and [Kevin Bost](/kevin-bost/)), I've become a big fan of both PowerShell and the [psake build automation tool](https://github.com/psake/psake). Now that Nuget supports [solution-level packages](https://docs.nuget.org/release-notes/nuget-1.7#add-solution-level-packages.config-file), adding psake to a project couldn't be easier. Similar to the Ruby on Rails automation tool "rake", psake augments the PowerShell language with a simple task notation and immutable properties. Tasks are chained together to form dependency trees, and if a task fails, subsequent tasks are not run. Psake also provides helpful wrappers around msbuild and other result-code-returning command line executibles.
 
-![Two workers lower a cement girder into position](images/6946761849_710befb078_z-300x199.jpg)
+![Two workers lower a cement girder into position](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/06/deploying-windows-services-with-psake-and-web-deploy/images/6946761849_710befb078_z-300x199.jpg)
 
 Generally, the Topshelf service solutions we design also include a web app project that acts as a job status monitor and configuration tool. This means that these Topshelf windows services are deployed to a server with IIS already installed. The "right-click Publish" functionality that [Web Deploy](https://www.iis.net/downloads/microsoft/web-deploy) (also referred to as msdeploy) affords us in the Visual Studio IDE is a great experience, so I sought to leverage that in deploying Topshelf windows services.  With a small amount of configuration, a vanilla Windows Server with IIS can be used to stop, deploy (leaving behind things like logs or config files), and restart a windows service.
 
@@ -28,7 +14,7 @@ Generally, the Topshelf service solutions we design also include a web app proje
 1. I think installing msdeploy via the Web Platform Installer is easiest, so start there with [this link](https://go.microsoft.com/?linkid=9684518).
 2. If it's not already installed, install the server Role "Web Management Service" (wmsvc) using the server manager (see Figure 1).
 
-[![Web Management Service in Add Roles screenshot](images/Web-Management-Service_1-150x150.jpg)](/wp-content/uploads/2015/06/Web-Management-Service_1.jpg)
+[![Web Management Service in Add Roles screenshot](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/06/deploying-windows-services-with-psake-and-web-deploy/images/Web-Management-Service_1-150x150.jpg)](/wp-content/uploads/2015/06/Web-Management-Service_1.jpg)
 
 Figure 1
 
@@ -36,7 +22,7 @@ Figure 1
 
 - Grant AD group access to those who will be allowed deploy in "IIS Manager Permissions" (see Figure 2).
 
-![IIS Manager Permissions screenshot](images/IIS-Manager-Permissions-300x65.png)
+![IIS Manager Permissions screenshot](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/06/deploying-windows-services-with-psake-and-web-deploy/images/IIS-Manager-Permissions-300x65.png)
 
 Figure 2
 
@@ -47,7 +33,7 @@ Figure 2
     - A Path that points at the root directory of your windows service instance.
     - An Identity Type of "CurrentUser", specifying the AD group above you granted deployment rights to in Step 2.
 
-[![Figure 3](images/2015-05-22-09_40_02-h1414.corp_.com-Remote-Desktop-Connection-300x123.png)](/wp-content/uploads/2015/06/2015-05-22-09_40_02-h1414.corp_.com-Remote-Desktop-Connection.png)
+[![Figure 3](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/06/deploying-windows-services-with-psake-and-web-deploy/images/2015-05-22-09_40_02-h1414.corp_.com-Remote-Desktop-Connection-300x123.png)](/wp-content/uploads/2015/06/2015-05-22-09_40_02-h1414.corp_.com-Remote-Desktop-Connection.png)
 
 Figure 3
 
@@ -56,7 +42,7 @@ Figure 3
 
 ## Build Your Psake Script
 
-![Tesla Model S assembly line](images/tesla-model-s-assembly-line-300x188.jpeg)
+![Tesla Model S assembly line](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2015/06/deploying-windows-services-with-psake-and-web-deploy/images/tesla-model-s-assembly-line-300x188.jpeg)
 
 In general, I like to pass in the environment (dev/test/staging/production) to my build script, so I will add that as a Property in my psake script, but pass it in via my psake bootstrapper. The bootstrap script's job is to load the psake module, and invoke it. I set up the solution to have build configurations that match the names of the environments. Building on the script that comes with the psake Nuget, my bootstrapper looks like this:
 

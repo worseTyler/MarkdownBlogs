@@ -1,20 +1,7 @@
----
-title: "Starting the DevOps Journey"
-date: "2018-07-19"
-categories: 
-  - "blog"
-  - "devops"
-  - "leadership"
-tags: 
-  - "agile"
-  - "development"
-  - "devops"
-  - "operations"
----
 
 ## Is your team ready for DevOps?
 
-## ![](images/DevOps-infinity-graphic.png)
+## ![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/07/start-devops-journey/images/DevOps-infinity-graphic.png)
 
 DevOps, or Development and Operations, is the integration of the people, process and tools required to deliver high-quality software in an agile manner from concept all the way to production.
 

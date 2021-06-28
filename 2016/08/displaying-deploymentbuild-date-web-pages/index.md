@@ -1,13 +1,3 @@
----
-title: "Displaying the Build Date on your Web Pages"
-date: "2016-08-26"
-categories: 
-  - "net"
-  - "net-core"
-  - "asp-net"
-  - "blog"
-  - "c"
----
 
 ## The Build Date Problem
 

@@ -1,12 +1,3 @@
----
-title: "Modifying prop, a Visual Studio 2005 IDE Expansions Template"
-date: "2005-02-16"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 I love the VS 2005 Expansion.  In fact, even before I saw it in VS 2005 my team had implemented a VS 2003 add-in that provided very similar functionality (significantly more in fact).
 

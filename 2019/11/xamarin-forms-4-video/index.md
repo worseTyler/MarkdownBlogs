@@ -1,16 +1,3 @@
----
-title: "Xamarin.Forms 4 and Its Time-saving New Features (Video)"
-date: "2019-11-15"
-categories: 
-  - "blog"
-  - "xamarin"
-tags: 
-  - "shell"
-  - "visual"
-  - "wpf"
-  - "xamarin-forms-4"
-  - "xaml"
----
 
 ### What's new and available for mobile applications like Xamarin.Forms 4? Oh, so much!
 
@@ -24,7 +11,7 @@ Check out my **full talk** on Xamarin at IntelliTect's 2019 event.
 
 [Xamarin.Forms](https://docs.microsoft.com/en-us/xamarin/get-started/what-is-xamarin-forms) is all about sharing the code across a common UI. Anyone can write a class library. Xamarin.Forms shares the UI code and logic but the UI is native to each platform.
 
-![An infographic on how Xamarin.Forms works taken from https://docs.microsoft.com/en-us/xamarin/get-started/what-is-xamarin-forms.](images/xamarin-forms-architecture.png)
+![An infographic on how Xamarin.Forms works taken from https://docs.microsoft.com/en-us/xamarin/get-started/what-is-xamarin-forms.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/xamarin-forms-4-video/images/xamarin-forms-architecture.png)
 
 This [Microsoft](https://docs.microsoft.com/en-us/xamarin/get-started/what-is-xamarin-forms) infographic breaks down how Xamarin.Forms works.
 

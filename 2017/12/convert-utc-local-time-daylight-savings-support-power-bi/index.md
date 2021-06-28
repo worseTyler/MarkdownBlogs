@@ -1,12 +1,3 @@
----
-title: "Convert UTC to Local Time in Power BI"
-date: "2017-12-20"
-categories: 
-  - "blog"
-  - "cloud"
-  - "data-analytics"
-  - "power-bi"
----
 
 Estimated reading time: 5 minutes
 
@@ -36,7 +27,7 @@ To resolve the Daylight Savings Time issue, we need to determine if a date is in
 
 My table of Daylight Savings Times:
 
-![Table of US Daylight Savings Times](images/dst-table-1024x342.png "Table of US Daylight Savings Times")
+![Table of US Daylight Savings Times](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/12/convert-utc-local-time-daylight-savings-support-power-bi/images/dst-table-1024x342.png "Table of US Daylight Savings Times")
 
 The Power Query function:
 
@@ -85,4 +76,4 @@ There are other approaches I’ve seen from [implementing an Azure Function](htt
 
 If you’d like my code, have other approaches, or questions or feedback on this approach, please post a comment.
 
-![](images/Blog-job-ad-1024x127.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/12/convert-utc-local-time-daylight-savings-support-power-bi/images/Blog-job-ad-1024x127.png)

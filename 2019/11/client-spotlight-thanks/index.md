@@ -1,18 +1,9 @@
----
-title: "Thank You!"
-date: "2019-11-15"
-categories: 
-  - "blog"
-  - "team-culture"
-tags: 
-  - "clients"
----
 
 As we approach Thanksgiving at IntelliTect, we’re thankful for our new corporate headquarters and a growing IntelliTect team. We are grateful for all of our new business across the country and our ongoing clients that we’ve partnered with for years.
 
 Often, our individual team members are appreciative for the client teams they work with on a daily basis. Here are just a few team members bragging about the clients and teams they work with:
 
-![Phil Spokas](images/Phil-SWR.jpg)
+![Phil Spokas](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/client-spotlight-thanks/images/Phil-SWR.jpg)
 
 > I really appreciate the Microsoft Azure DevOps CAT team support. Ricardo, Dylan, Paul and Mickey in particular. They are very professional and are actively engaged in improving customer practices with or without Azure DevOps.
 > 
@@ -22,7 +13,7 @@ Often, our individual team members are appreciative for the client teams they wo
 > 
 > Sean Scura, SDET
 
-![IntelliTect employee Sean Scura](images/Sean-SWR-1024x1024.jpg) ![Allen Monroe](images/Allen-SWR.jpg)
+![IntelliTect employee Sean Scura](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/client-spotlight-thanks/images/Sean-SWR-1024x1024.jpg) ![Allen Monroe](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/client-spotlight-thanks/images/Allen-SWR.jpg)
 
 > I’m so thankful for my client’s team because I have complete trust that we will execute and support each other, over and over.
 > 
@@ -32,7 +23,7 @@ Often, our individual team members are appreciative for the client teams they wo
 > 
 > Cameron Osborn, software engineer
 
-![IntelliTect employee Cameron Osborn](images/Cameron-SWR-1024x1024.jpg) ![IntelliTect employee Brian Uptagrafft](images/Brian-U-SWR-1024x1024.jpg)
+![IntelliTect employee Cameron Osborn](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/client-spotlight-thanks/images/Cameron-SWR-1024x1024.jpg) ![IntelliTect employee Brian Uptagrafft](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/client-spotlight-thanks/images/Brian-U-SWR-1024x1024.jpg)
 
 > The team at n2y is very genuine, affable and quick to help each other out. Victoria goes above and beyond. She’s knowledgeable, friendly and always eager to assist with anything the team needs to keep moving forward.
 > 
@@ -42,4 +33,4 @@ Often, our individual team members are appreciative for the client teams they wo
 > 
 > Chris Finlayson, senior software architect
 
-![Chris Finlayson](images/Chris-SWR.jpg) [![click here to sign up for Intellovations, our quarterly newsletter so you never miss out!](images/Click-here-to-sign-up-1-768x176.jpg)](https://bit.ly/2Nhro9T)
+![Chris Finlayson](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/client-spotlight-thanks/images/Chris-SWR.jpg) [![click here to sign up for Intellovations, our quarterly newsletter so you never miss out!](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/11/client-spotlight-thanks/images/Click-here-to-sign-up-1-768x176.jpg)](https://bit.ly/2Nhro9T)

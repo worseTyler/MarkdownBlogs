@@ -1,9 +1,3 @@
----
-title: "Unit Testing with Mocks"
-date: "2015-09-10"
-categories: 
-  - "blog"
----
 
 Unit testing is an integral part of the development process. However, when a class has several dependencies it can be tiring and cumbersome to create mock implementations for all of them. Leveraging a mocking library can save large amounts of time and make for better unit tests. Though there are many mocking libraries available for C#, I will be using my personal favorite [Moq](https://github.com/Moq/moq4) v4.2.x (pronounced “mock” or “mock-you”).
 

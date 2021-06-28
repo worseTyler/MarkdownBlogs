@@ -1,13 +1,7 @@
----
-title: "Machine Learning Can Save Lives In Spokane"
-date: "2018-04-17"
-categories: 
-  - "blog"
----
 
 ## Examine medical data and cure problems using computer algorithms without violating HIPPA.
 
-\[caption id="attachment\_33204" align="alignnone" width="960"\]![](images/machine-learning.jpg) Image: Creative Commons\[/caption\]
+\[caption id="attachment\_33204" align="alignnone" width="960"\]![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/04/machine-learning-can-save-lives/images/machine-learning.jpg) Image: Creative Commons\[/caption\]
 
 Machine learning is an area of quantitative science that allows computers to run algorithms to create predictions or disentangle causality. We are no longer limited by the ideas that the human brain can formulate because machine learning can uncover unconsidered possibilities. Medical breakthroughs are happening by data mining vast quantities of information and relying on computers to determine correlation. If the medical community partners with business intelligence architects, we can unlock medical knowledge in such a way that lives can be saved and cures can be found.
 

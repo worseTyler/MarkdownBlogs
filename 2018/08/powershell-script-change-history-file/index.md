@@ -1,16 +1,5 @@
----
-title: "PowerShell Script Provides Simple Change History File"
-date: "2018-08-30"
-categories: 
-  - "blog"
-  - "powershell"
-tags: 
-  - "code-audit"
-  - "powershell"
-  - "tfs"
----
 
-![](images/Powershell-blog.jpg)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2018/08/powershell-script-change-history-file/images/Powershell-blog.jpg)
 
 ## External code audit? Need a list of TFS file changes during a specific time frame?
 

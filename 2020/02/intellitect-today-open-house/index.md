@@ -1,14 +1,5 @@
----
-title: "POSTPONED: You're Invited to Our Open House"
-date: "2020-02-25"
-categories: 
-  - "blog"
-  - "team-culture"
-tags: 
-  - "new-office"
----
 
-![Come to our open house on Friday March 27th from 11:30am to 1:30 pm at 1720 W. 4th Ave in Spokane](images/Open-House-wide-date-1024x307.jpg)
+![Come to our open house on Friday March 27th from 11:30am to 1:30 pm at 1720 W. 4th Ave in Spokane](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2020/02/intellitect-today-open-house/images/Open-House-wide-date-1024x307.jpg)
 
 **\*\*\* Due to new government mandates and considering the safety of our team and our guests, we are postponing our celebration until it is safe to gather together.**
 

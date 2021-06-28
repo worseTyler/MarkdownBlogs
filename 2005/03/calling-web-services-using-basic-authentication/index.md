@@ -1,12 +1,3 @@
----
-title: "Calling Web Services Using Basic Authentication"
-date: "2005-03-24"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
 Estimated reading time: 3 minutes
 
@@ -109,4 +100,4 @@ By the way, the tool I use for tracing HTTP is [YATT](https://www.pocketsoap.com
 
 Check out this blog on fully-managed [passwordless authentication](http://intellitect.com/passwordless-authentication-azure-sql/)!
 
-![](images/Blog-job-ad-1024x127.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2005/03/calling-web-services-using-basic-authentication/images/Blog-job-ad-1024x127.png)

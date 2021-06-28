@@ -1,12 +1,3 @@
----
-title: "ILDasm with .Net Core"
-date: "2018-03-20"
-categories: 
-  - "blog"
-tags: 
-  - "net-core"
-  - "ildasm"
----
 
 ## Need to Convert CIL Code into Text? Try ILDasm!
 

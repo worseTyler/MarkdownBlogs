@@ -1,17 +1,5 @@
----
-title: "Moving Quickly Among Branches With PowerShell Dynamic Parameters"
-date: "2017-02-07"
-categories: 
-  - "blog"
-  - "powershell"
-tags: 
-  - "dynamicparam"
-  - "everything"
-  - "invoke-restmethod"
-  - "powershell"
----
 
-![Tree branches](images/tree-439171_640-300x225.jpg)
+![Tree branches](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/02/moving-quickly-among-branches-with-powershell-dynamic-parameters/images/tree-439171_640-300x225.jpg)
 
 Branches, anyone?
 
@@ -27,13 +15,13 @@ PS> choco install everything
 
 Second, configure it to run as a service (so you don't get a UAC popup every time you log on).
 
-![Run As A Service](images/2016-10-17-17_09_44-h1860-biztalk-dev-H1860-Remote-Desktop-Connection-300x292.png)
+![Run As A Service](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/02/moving-quickly-among-branches-with-powershell-dynamic-parameters/images/2016-10-17-17_09_44-h1860-biztalk-dev-H1860-Remote-Desktop-Connection-300x292.png)
 
 Run As A Service
 
 Also configure it to expose its web interface on a local port.
 
-![](images/2016-10-17-17_09_20-h1860-biztalk-dev-H1860-Remote-Desktop-Connection-300x292.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2017/02/moving-quickly-among-branches-with-powershell-dynamic-parameters/images/2016-10-17-17_09_20-h1860-biztalk-dev-H1860-Remote-Desktop-Connection-300x292.png)
 
 Activate HTTP server
 

@@ -1,16 +1,3 @@
----
-title: "How I Installed Software on a Server using PowerShell"
-date: "2017-05-02"
-categories: 
-  - "blog"
-  - "devops"
-  - "powershell"
-  - "sql"
-  - "test"
-tags: 
-  - "powershell"
-  - "sql"
----
 
 ##### I was tasked with installing custom and generic software on a dozen new servers. As an SDET, I have never done this type of task before, so I googled some methods for automating this process since manually installing each server was time-consuming. PowerShell seemed to be the logical tool for running through my list of tasks. I was able to install all the necessary programs in under three hours per server. Before this process, it took almost a whole day per server. The only requirement for the code below is PowerShell version 3.0 or later.
 

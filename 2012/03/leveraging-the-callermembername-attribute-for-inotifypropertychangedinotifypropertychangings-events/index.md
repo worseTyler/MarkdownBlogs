@@ -1,13 +1,3 @@
----
-title: "Leveraging the CallerMemberName Attribute for INotifyPropertyChanged/INotifyPropertyChanging's Events"
-date: "2012-03-17"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-tags: 
-  - "csharp5"
----
 
  
 

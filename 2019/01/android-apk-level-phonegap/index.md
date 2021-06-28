@@ -1,18 +1,5 @@
----
-title: "How To Set the Android Target APK Level for PhoneGap"
-date: "2019-01-22"
-categories: 
-  - "blog"
-tags: 
-  - "android"
-  - "apk-level"
-  - "google-play"
-  - "javascript"
-  - "phonegap"
-  - "time-out-date"
----
 
-![](images/AndroidTargetAPK-300x225.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/01/android-apk-level-phonegap/images/AndroidTargetAPK-300x225.png)
 
 ## Attain Hassle-Free Acceptance of Your Google Play Application with PhoneGap.
 
@@ -26,13 +13,13 @@ This particular app was written using TypeScript with PhoneGap. PhoneGap is a se
 
 The reason Google would not accept the app is because I hadn't specified a minimum target APK level yet. I double-clicked the config file in the application to open the settings dialog. As you can see (below), it fields for minimum, maximum and target _API_ levels but no settings for the _APK_ level.
 
-![](images/Tom5.png) As I was searching the web for a way to set the target APK level, I found a number of articles that said to create a preference called `android-targetSdkVersion` with a value of 26. To do this, I right-clicked the `config.xml` file and selected View Code from the context menu.
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/01/android-apk-level-phonegap/images/Tom5.png) As I was searching the web for a way to set the target APK level, I found a number of articles that said to create a preference called `android-targetSdkVersion` with a value of 26. To do this, I right-clicked the `config.xml` file and selected View Code from the context menu.
 
-![](images/2.config_api_menu-.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/01/android-apk-level-phonegap/images/2.config_api_menu-.png)
 
 I added the new preference alongside other preferences in the config file, as shown below.
 
-![](images/3.config_api_2.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/01/android-apk-level-phonegap/images/3.config_api_2.png)
 
 After doing so, PhoneGap happily built the application with the same incorrect target APK level of 14 that it had before I set the preference. Since it was less than the minimum requirement of 26, Google still would not accept the build. For a while, this was quite confusing because the target APK level was correct (as you can see in the illustration above).
 
@@ -40,11 +27,11 @@ After doing so, PhoneGap happily built the application with the same incorrect t
 
 It turned out, there was a second `config.xml` file located in the www folder.
 
-![](images/4.www_menu.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/01/android-apk-level-phonegap/images/4.www_menu.png)
 
 This `config.xml` file contained just a few settings, and when I added the preference here, PhoneGap finally used it to build the application correctly for Android.
 
-![](images/5.config_apk.png)
+![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2019/01/android-apk-level-phonegap/images/5.config_apk.png)
 
 The bottom-line is that when you need to set the target APK level for PhoneGap, make sure that you modify the correct config file which is the one located in the www folder.
 
