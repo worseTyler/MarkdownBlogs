@@ -1,3 +1,14 @@
+---
+title: "Exception Handling Improvements in C# 6.0"
+date: "2014-08-29"
+categories: 
+  - "net"
+  - "blog"
+  - "c"
+tags: 
+  - "csharp"
+  - "csharp6"
+---
 
 There are two new exception-handling features in C# 6.0.  The first is an improvement in the async and await syntax and the second is support for exception filtering.
 

@@ -1,3 +1,14 @@
+---
+title: "Configuring Windows SMTP Server on Windows 2008 for Relay"
+date: "2010-10-23"
+categories: 
+  - "net"
+  - "blog"
+  - "tfs"
+tags: 
+  - "powershell"
+  - "team-foundation-server"
+---
 
 Estimated reading time: 6 minutes
 
@@ -17,11 +28,11 @@ My SMTP mail server requires that email be sent with TLS encryption and on port 
 
 To begin, launch Server Manager and add the **SMTP Server** feature.
 
-> [![image](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2010/10/configuring-windows-smtp-server-on-windows-2008-for-relay/images/image_thumb1.png "image")](/wp-content/uploads/2010/10/image.png)
+> [![image](/wp-content/uploads/2010/10/image_thumb1.png "image")](/wp-content/uploads/2010/10/image.png)
 
 This includes a dialog to add some additional items.
 
-> [![image](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2010/10/configuring-windows-smtp-server-on-windows-2008-for-relay/images/image_thumb2.png "image")](/wp-content/uploads/2010/10/image1.png)
+> [![image](/wp-content/uploads/2010/10/image_thumb2.png "image")](/wp-content/uploads/2010/10/image1.png)
 
 Click **Add Required Features** and, after the dialog closes, click **Next >** followed by **Install**.
 
@@ -34,7 +45,7 @@ The same can be done from the command line using:
 
 Unfortunately, the service is not configured to auto-start by default so you need to go into the services to change this:
 
-> [![image](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2010/10/configuring-windows-smtp-server-on-windows-2008-for-relay/images/image_thumb3.png "image")](/wp-content/uploads/2010/10/image2.png)
+> [![image](/wp-content/uploads/2010/10/image_thumb3.png "image")](/wp-content/uploads/2010/10/image2.png)
 
 To perform the same action from the command line use the following PowerShell commands:
 
@@ -49,9 +60,9 @@ Finally, you need to configure the SMTP Server to redirect to an alternate SMTP 
 ### Internet Information Services (IIS) Manager (IIS 7.0)
 
 1. From inside **Internet Information Services (IIS) Manager**, browse to the server’s **SMTP E-mail** feature and open it.  
-    [![image](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2010/10/configuring-windows-smtp-server-on-windows-2008-for-relay/images/image_thumb4.png "image")](/wp-content/uploads/2010/10/image3.png)
+    [![image](/wp-content/uploads/2010/10/image_thumb4.png "image")](/wp-content/uploads/2010/10/image3.png)
 2. Inside the **SMTP E-mail** windows, enter in the “send from” email address, the remote SMTP server DNS name (or IP address) and the remote server port.  In addition, select **Specify credentials** and enter the credentials required to connect to the remote SMTP server.  
-    [![image](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2010/10/configuring-windows-smtp-server-on-windows-2008-for-relay/images/image_thumb5.png "image")](/wp-content/uploads/2010/10/image5.png)
+    [![image](/wp-content/uploads/2010/10/image_thumb5.png "image")](/wp-content/uploads/2010/10/image5.png)
 
 To perform the same action from the command line use the following commands (Powershell is optional):
 
@@ -62,16 +73,16 @@ To perform the same action from the command line use the following commands (Pow
 ### Internet Information Services (IIS) 6.0 Manager
 
 1. Launch **Internet Information Services (IIS) 6.0 Manager** locate the **\[SMTP Virtual Server #\]** node and open up the **Properties** dialog.  
-    [![image](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2010/10/configuring-windows-smtp-server-on-windows-2008-for-relay/images/image_thumb6.png "image")](/wp-content/uploads/2010/10/image8.png)  
+    [![image](/wp-content/uploads/2010/10/image_thumb6.png "image")](/wp-content/uploads/2010/10/image8.png)  
     As shows, I just added **127.0.0.1** so that I was only enabling the current box to send via this SMTP Server but you can also add a group of computers by subnet or an entire domain.
 2. Next, navigate to the **Delivery** tab and modify the settings for all three buttons, **Outbound Security…**, **Outbound connections…**, and **Advanced…**.  
-    [![image](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2010/10/configuring-windows-smtp-server-on-windows-2008-for-relay/images/image_thumb7.png "image")](/wp-content/uploads/2010/10/image9.png)
+    [![image](/wp-content/uploads/2010/10/image_thumb7.png "image")](/wp-content/uploads/2010/10/image9.png)
 3. For **Outbound Security**, switch to **Basic Authentication** and enter the remote SMTP Server credentials in addition to checking **TLS encryption**.  
-    [![image](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2010/10/configuring-windows-smtp-server-on-windows-2008-for-relay/images/image_thumb8.png "image")](/wp-content/uploads/2010/10/image10.png)
+    [![image](/wp-content/uploads/2010/10/image_thumb8.png "image")](/wp-content/uploads/2010/10/image10.png)
 4. On the **Outbound Connections** tab, switch the TCP port to **587** (or whatever port you need).  
-    [![image](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2010/10/configuring-windows-smtp-server-on-windows-2008-for-relay/images/image_thumb9.png "image")](/wp-content/uploads/2010/10/image11.png)
+    [![image](/wp-content/uploads/2010/10/image_thumb9.png "image")](/wp-content/uploads/2010/10/image11.png)
 5. Finally, on the **Advanced Delivery** tab, identify the **Smart host** as the DNS (or IP address) of the remote SMTP server.  
-    [![image](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2010/10/configuring-windows-smtp-server-on-windows-2008-for-relay/images/image_thumb10.png "image")](/wp-content/uploads/2010/10/image12.png)  
+    [![image](/wp-content/uploads/2010/10/image_thumb10.png "image")](/wp-content/uploads/2010/10/image12.png)  
     For the **Fully-qualified domain name** refers to the server you are configuring, the one the SMTP-Service is being configure on.
 
 Unfortunately, I didn’t come up with the command line for this particular action.  I did find two leads as to where there may be a command line solution, however:
@@ -101,4 +112,4 @@ Note: If you are forwarding to gmail’s SMTP server, here are the settings you 
 
 Curious about what else you can do with Windows? Check out _[AAD: How to Clone/Copy a Local Windows 10 Account to an Azure Active Directory Account](https://intellitect.com/clone-aad-windows-10/)_!
 
-![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2010/10/configuring-windows-smtp-server-on-windows-2008-for-relay/images/blog-job-ad-2-1024x129.png)
+![](https://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.png)

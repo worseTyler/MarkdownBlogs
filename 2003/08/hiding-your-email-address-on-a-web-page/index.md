@@ -1,2 +1,8 @@
+---
+title: "Hiding your Email Address on a Web Page"
+date: "2003-08-23"
+categories: 
+  - "blog"
+---
 
 With the help of other Source Safe MVPs for years I have maintained a Visual Source Safe Faq and included an email address for readers to send in comments.  I finally got tired of the spam (although most of it is actually filtered) and removed the email address and replaced it with an image (and a new address of course).  I created the image using the website [here](https://chxo.com/labelgen/).  I was going to use some type of pseudo encryption of the email address but doubted it would work so decided not to.  One interesting side effect that I confess I hadn't considered (until reading [Robert Vaessen's](https://www.robsworld.org/self.html) [write-up](https://www.robsworld.org/pbmtopng.html)) was the fact that this makes the address inaccessible to the blind as the readers they use can't interpret the text.  Another cool item the write-up revealed was this [test for email address harvest vulnerability](https://www.dreamweaverfever.com/experiments/spam/).  You can use this site to test whether your email address can be (trivially) harvested from a page.

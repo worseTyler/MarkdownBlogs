@@ -1,3 +1,12 @@
+---
+title: "Management Verses Leadership"
+date: "2011-09-28"
+categories: 
+  - "blog"
+  - "leadership"
+tags: 
+  - "leadership"
+---
 
 Here are the video and slides from my talk at the [Inland Northwest Chapter of the Project Management Institute](https://pmiinw.org/).
 

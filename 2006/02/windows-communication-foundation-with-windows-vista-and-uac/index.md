@@ -1,3 +1,12 @@
+---
+title: "Windows Communication Foundation with Windows Vista and UAC"
+date: "2006-02-08"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
 
 If you log into Windows Vista as anything other than the Built-in Administrator and create a Windows Communication Foundation (WCF) service, running the service will result in the following exception:
 
@@ -7,7 +16,7 @@ The issue is User Access Control (UAC), a new feature of Windows Vista that caus
 
 To handle this error it is necessary to cause a Permit/Deny dialog to appear.  The same dialog appears when running administrative tools like Computer Management.
 
-![Windows Vista Permit/Deny Dialog](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2006/02/windows-communication-foundation-with-windows-vista-and-uac/images/WindowsVistaPermitDenyDialog.JPG)
+![Windows Vista Permit/Deny Dialog](/wp-content/uploads/binary/WindowsCommunicationFoundationWCFWithWindowsVistaAndUAC/WindowsVistaPermitDenyDialog.JPG)
 
 Clicking the Permit button elevates the process, assuming the logged on user has the necessary permissions for the action.
 

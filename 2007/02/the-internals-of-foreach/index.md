@@ -1,3 +1,12 @@
+---
+title: "The Internals of foreach"
+date: "2007-02-02"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
 
 Many moons ago I discussed the foreach loop.  I expand on that post here as I continue my series for the MSDN C# Developer Center.
 
@@ -33,7 +42,7 @@ The MoveNext() method in this listing returns false when it moves past the end o
 
 The problem with is that if there are two (or more) interleaving loops over the same collection, one foreach inside another, then the collection must maintain a state indicator of the current element so that when MoveNext() is called, the next element can be determined. The problem is that one interleaving loop can affect the other. (The same is true of loops executed by multiple threads.)
 
-![C:\Dev\Projects\Books\EssentialC#\12-08.IEnumeratorAndIEnumeratorInterfaces.png](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2007/02/the-internals-of-foreach/images/clip_image0022.gif)
+![C:\Dev\Projects\Books\EssentialC#\12-08.IEnumeratorAndIEnumeratorInterfaces.png](/wp-content/uploads/binary/TheInternalsofforeach_D7D/clip_image0022.gif)
 
 Figure 1: IEnumerable class diagram
 

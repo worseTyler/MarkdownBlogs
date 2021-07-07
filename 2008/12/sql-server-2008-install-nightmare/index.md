@@ -1,3 +1,12 @@
+---
+title: "SQL Server 2008 Install Nightmare"
+date: "2008-12-09"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
 
 It all started with an installation of Visual Studio 2008 SP1, which included SQL Server Express 2005.  From there I wished to install SQL Server 2008 Standard on the default port and upgrade SQL Server 2005 Express to SQL Server 2008 express.  Unfortunately, this proved to be a troublesome desire.  I have no idea what the cause is exactly, except that I was not the only one on my team to have issues.
 
@@ -38,7 +47,7 @@ Pheww, now that we have completely uninstalled, lets review potential errors you
 
 **Error:** The following error has occurred: Could not open key: UNKNOWN\\Components\\CBFF54E0ED12B0946A1C52E5E82ABC38\\E7BEEF5F746F8AB9076051A5574.  Verify that you have sufficient access to that key, or contact your support personnel. (Errors could be for other GUIDs as well)
 
-**![The following error has occurred: Could not open key: UNKNOWN\Components\CBFF54E0ED12B0946A1C52E5E82ABC38\E7BEEF5F746F8AB9076051A5574. Verify that you have sufficient access to that key, or contact your support personnel.](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2008/12/sql-server-2008-install-nightmare/images/image23.png)**
+**![The following error has occurred: Could not open key: UNKNOWN\Components\CBFF54E0ED12B0946A1C52E5E82ABC38\E7BEEF5F746F8AB9076051A5574. Verify that you have sufficient access to that key, or contact your support personnel.](/wp-content/uploads/binary/SQLServer2008InstallNightmare_F264/image23.png)**
 
 Errors could be for other GUIDs as well including UNKNOWN\\Components\\493032C95B52CBD448DD2B5A52C50E9A\\3EC761FD7E06AE4499CE52705CF173EA.
 
@@ -50,7 +59,7 @@ Errors could be for other GUIDs as well including UNKNOWN\\Components\\493032C95
 > 
 > 2\. Edit the permission of the parent key(HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\<user SID>\\Components) and click the **Advanced** button. (Optionally, you could edit the permissions on the parent GUID (CBFF54E0ED12B0946A1C52E5E82ABC38 in my example) but the same problem is likely to exist with other keys so you may as well deal with this in mass.)
 > 
-> [![image](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2008/12/sql-server-2008-install-nightmare/images/image_thumb.png)](/wp-content/uploads/binary/SQLServer2008InstallNightmare_F264/image.png)
+> [![image](/wp-content/uploads/binary/SQLServer2008InstallNightmare_F264/image_thumb.png)](/wp-content/uploads/binary/SQLServer2008InstallNightmare_F264/image.png)
 > 
 > 3.  From the Advanced dialog, select the **Owner** tab and check the **Replace owner on subcontainers and objects** check box.  Also, verify that System is the owner (else add System and be sure to select it so it will become the owner).
 > 

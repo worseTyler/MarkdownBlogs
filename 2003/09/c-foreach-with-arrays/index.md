@@ -1,3 +1,12 @@
+---
+title: "C# foreach with arrays"
+date: "2003-09-11"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
 
 It is commonly shown that a foreach loop compiles into the CIL (Common Intermediate Language) equivalent of the enmerator pattern.  In other words, the code snippet shown here:
 

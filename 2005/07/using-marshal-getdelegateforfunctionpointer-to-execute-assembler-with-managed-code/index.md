@@ -1,3 +1,12 @@
+---
+title: "Using Marshal.GetDelegateForFunctionPointer() to Execute Assembler with Managed Code"
+date: "2005-07-15"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
 
 I never noticed the [Marshal.GetDelegateForFunctionPointer()](https://msdn2.microsoft.com/library/zdx6dyyh(en-us,vs.80).aspx) function in the .NET Framework 2.0 until Devin Jenson posted about using it to run native assembly code from C#.  This was a wonderfully timed post for me as I was just putting together the finishing touches on the code for my how to detect virtual machine execution.  What Marshal.GetDelegateForFunctionPointer() enables is certainly impressive.
 

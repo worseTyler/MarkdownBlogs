@@ -1,3 +1,9 @@
+---
+title: "Turning Off IE Enhanced Security from the Command Line"
+date: "2008-09-12"
+categories: 
+  - "blog"
+---
 
 For the most part I have much of the install for Windows 2008 operating system and programs automated (unattended).  However, one thing that I found a little more difficult to find was a command line way to turn off IE's Enhanced Security (manually turned off from **Server Manager -> Configure IE ESC**.
 

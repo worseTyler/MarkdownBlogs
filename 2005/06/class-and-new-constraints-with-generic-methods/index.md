@@ -1,3 +1,12 @@
+---
+title: "Class and new constraints with generic methods"
+date: "2005-06-24"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
 
 Consider a CommandLineHandler class that parses a command line string and populates an arbitrary object with the command line data.  Each property on the arbitrary object would correspond to a switch on the command line and, using reflection, the idea would be to initialize the data with the data on the command line.  For example, "Program.exe /help" would set a Boolean Help property to true and "Compress /Files:file1.bin file2.bin" would populate a string\[\] Files property with the two specified files.  (Attributes could be used for alias switches like "/?.")
 

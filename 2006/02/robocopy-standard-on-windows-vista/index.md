@@ -1,3 +1,13 @@
+---
+title: "Robocopy Standard on Windows Vista"
+date: "2006-02-11"
+categories: 
+  - "blog"
+---
+
+It appears that RoboCopy.exe is a standard command line tool in Windows Vista and it includes additional options.  Previously this was only available via the windows resource kit.  The help command from the Windows Vista Robocopy returns:
+
+> \------------------------------------------------------------------------------- ROBOCOPY     ::     Robust File Copy for Windows     ::     Version XP027 -------------------------------------------------------------------------------
 > 
 > Started : Fri Feb 10 15:53:25 2006
 > 

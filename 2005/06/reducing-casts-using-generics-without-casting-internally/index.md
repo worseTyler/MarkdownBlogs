@@ -1,3 +1,12 @@
+---
+title: "Reducing casts using generics without casting internally"
+date: "2005-06-14"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
 
 I recently wrote the following code:
 

@@ -1,3 +1,11 @@
+---
+title: "SQL Server 2008 SP2 Uninstall Fails"
+date: "2011-09-06"
+categories: 
+  - "blog"
+tags: 
+  - "sql-server"
+---
 
 Recently, I tried opening an MDF file from my SQL Server Express instance only to discover be prompted with the following error:
 

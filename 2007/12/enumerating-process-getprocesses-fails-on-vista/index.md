@@ -1,3 +1,12 @@
+---
+title: "Enumerating Process.GetProcesses() fails on Vista"
+date: "2007-12-05"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
 
 It is hard to believe something as common as this could fail but it appears that enumerating System.Diagnostics.Process.GetProcesses() and calling a Process property fails on Vista.  Here is the test demonstrating the issue:
 

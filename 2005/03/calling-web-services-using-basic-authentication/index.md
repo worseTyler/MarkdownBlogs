@@ -1,3 +1,12 @@
+---
+title: "Calling Web Services Using Basic Authentication"
+date: "2005-03-24"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
 
 Estimated reading time: 3 minutes
 
@@ -5,6 +14,7 @@ I recently made a web services call into WebMethods using basic authentication.
 
 Here's how it works.  I add a reference to the Web Service (Visual Studio generates the client code for calling the web service).  Then, to this generated class I need to add the following method:
 
+```
 protected override System.Net.WebRequest GetWebRequest(Uri uri)
 {
     HttpWebRequest request;
@@ -30,6 +40,7 @@ protected override System.Net.WebRequest GetWebRequest(Uri uri)
     }
     return request;
 }
+```
 
 This overrides the GetWebRequest() method of the System.Web.Services.Protocols.SoapHttpClientProtocol class that the web service client code derived from.
 
@@ -37,6 +48,7 @@ With [Visual Studio 2005](https://intellitect.com/accessibility-of-new-types-in
 
 Regardless of using Visual Studio.NET 2005 or earlier, the client code requires that the network credentials are set and the PreAuthenticate property is assigned true.  Here is a sample client call:
 
+```
 Michaelis.MockService service = new Michaelis.MockService();
 
 // Create the network credentials and assign
@@ -52,6 +64,7 @@ service.PreAuthenticate = true;
 
 // Make the web service call.
 service.Method();
+```
 
 ### UPDATE for Calling Web Services - 4/14/2005
 
@@ -100,4 +113,4 @@ By the way, the tool I use for tracing HTTP is [YATT](https://www.pocketsoap.com
 
 Check out this blog on fully-managed [passwordless authentication](http://intellitect.com/passwordless-authentication-azure-sql/)!
 
-![](https://raw.githubusercontent.com/worseTyler/MarkdownBlogs/main/2005/03/calling-web-services-using-basic-authentication/images/Blog-job-ad-1024x127.png)
+![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)

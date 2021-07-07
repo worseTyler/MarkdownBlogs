@@ -1,3 +1,14 @@
+---
+title: "Declaration Expressions in C# 6.0"
+date: "2014-08-29"
+categories: 
+  - "net"
+  - "blog"
+  - "c"
+tags: 
+  - "csharp"
+  - "csharp6"
+---
 
 It’s not uncommon that in the midst of writing a statement, you find you need to declare a variable specifically for that statement.  Consider two examples:
 

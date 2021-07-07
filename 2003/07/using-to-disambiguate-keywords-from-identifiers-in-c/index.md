@@ -1,3 +1,12 @@
+---
+title: "Using @ to Disambiguate Keywords from Identifiers in C#"
+date: "2003-07-28"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
 
 While reading the C# Language Specification today I noticed the use of the @ sign to disambiguate a keyword from an identifier.  When you do this the identifier is called a _verbatim identifier_.  So, for example, you could write code as follows:
 

@@ -1,3 +1,12 @@
+---
+title: "Converting Command Line String to Args[] using CommandLineToArgvW() API"
+date: "2005-02-16"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
 
 In testing a command line I recently wanted to verify that the string passed on the command line was converted to the args\[\] array that was passed to Main(string\[\] args).  For example, given the command line
 

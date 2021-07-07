@@ -1,0 +1,10 @@
+---
+title: "Supporting Refugees through Education in the Horn of Africa"
+date: "2013-02-03"
+categories: 
+  - "philanthropy"
+---
+
+[![partners international.png web](/wp-content/uploads/2010/10/partners-international.png-web.png "Partners International")](https://www.partnersintl.org/)[Partners International](https://www.partnersintl.org/ "Partners International") is a unique Christian aid organization dedicated to giving assistance to local aid groups around the world. Rather than sending people from the US to areas struggling with poverty, Partners International provides strategic and tactical planning assistance to local leaders. IntelliTect has joined with Partners International to provide basic needs kits to aid groups in difficult to serve regions like the Horn of Africa. The local aid workers are able to distribute basic life needs like food, drinking water, tents, immunizations and medical attention. These local groups are able to bring help even in regions inaccessible to international aid groups because of unstable governments or threats of terrorism. Starting in 2013, IntelliTect has begun to fund a long term effort to build schools serving the returning refugee families in South Sudan and Kenya.  These refugees fled their homes and villages during the Sudanese Civil War and are now returning to begin rebuilding their lives.  Local organizations using the money and assistance to build schools, hire teachers and develop curriculum used in these schools. As they learn, students will use their education to rebuild their homes and communities. Eventually, we hope these students become leaders in their country and prevent the terrible wars and famines of the recent decades.
+
+Our collaboration with Partners also led to IntelliTect developers building the Partners International [Harvest of Hope](https://www.partnersintl.org/harvestofhope/ "Harvest of Hope") website and digital catalog.  This website has generated tens of thousands of dollars in giving and is an important part of Partners International's fundraising strategy.

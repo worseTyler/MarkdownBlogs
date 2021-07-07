@@ -1,3 +1,12 @@
+---
+title: "Fun Overloading with Generics"
+date: "2005-02-18"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
 
 Questions have to be answered before moving to the next question or else you may encounter an answer.
 

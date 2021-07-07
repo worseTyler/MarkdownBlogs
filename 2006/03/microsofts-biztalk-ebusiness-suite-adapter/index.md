@@ -1,3 +1,12 @@
+---
+title: "Microsoft's BizTalk eBusiness Suite Adapter"
+date: "2006-03-28"
+categories: 
+  - "net"
+  - "blog"
+tags: 
+  - "net"
+---
 
 I have been working with Microsft's eBuisiness Suite and Oracle adapter (the one they purchased from iWay) for several months now and I would describe the experience as disappointing at best.  The core problem is that the adapter is built using the ODBC adapter.  This is a critical problem, however, because the vast majority of the Oracle eBusiness Suite Adapter APIs use REC TYPE parameters and ODBC doesn't support REC TYPE parameters.  You can't even generate the schema for these APIs.  In other words, Microsoft's adapter for connecting to eBusiness Suite is incompatible with Oracle's approach for putting data into eBusiness Suite.  For all practical purposes, this renders the adapter useless for the vast majority of scenarios.  In fact, the eBusiness Suite adapter, therefore, has no additional functionality beyond that provided by the Oracle adapter (and I am not exaggerating). By the way, the Oracle adapter is also built using ODBC and, therefore, it suffers from the exact same problem.
 
