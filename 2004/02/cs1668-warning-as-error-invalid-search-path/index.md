@@ -1,12 +1,4 @@
----
-title: "CS1668: Warning as Error: Invalid search path"
-date: "2004-02-08"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
+
 
 Initially this post began as a long question to Microsoft but as I began to describe the problem I realized the rather obvious solution.  Anyway, since it took me a little while to solve I decided to post it anyway:
 

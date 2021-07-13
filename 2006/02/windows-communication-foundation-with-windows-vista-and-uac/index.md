@@ -1,28 +1,16 @@
----
-title: "Windows Communication Foundation with Windows Vista and UAC"
-date: "2006-02-08"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
-
-If you log into Windows Vista as anything other than the Built-in Administrator and create a Windows Communication Foundation (WCF) service, running the service will result in the following exception:
-
-> System.ServiceModel.AddressAccessDeniedException: HTTP could not register URL http://+:8080/<...>.  Your process does not have access rights to this namespace (see [http://msdn.microsoft.com/library/default.asp?url=/library/en-us/http/http/namespace\_reservations\_registrations\_and\_routing.asp](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/http/http/namespace_reservations_registrations_and_routing.asp) for details). ---> System.Net.HttpListenerException: Access is denied
+> System.Net.HttpListenerException: Access is denied
 
 The issue is User Access Control (UAC), a new feature of Windows Vista that causes processes to run as standard user even if you are logged in with a user that is the member of the Administrators group.  Opening the port for WCF requires administrative access and, unless the process is elevated, no such access is available so opening the port results in the access denied message.
 
 To handle this error it is necessary to cause a Permit/Deny dialog to appear.  The same dialog appears when running administrative tools like Computer Management.
 
-![Windows Vista Permit/Deny Dialog](/wp-content/uploads/binary/WindowsCommunicationFoundationWCFWithWindowsVistaAndUAC/WindowsVistaPermitDenyDialog.JPG)
+ "Windows Communication Foundation with Windows Vista and UAC"
 
 Clicking the Permit button elevates the process, assuming the logged on user has the necessary permissions for the action.
 
 One way to turn on the Permit/Deny dialog is to place a manifest into the same directory as the application executable.  The manifest file is named using the full application name (including the EXE extension) with an additional ".MANIFEST" suffix (WCFService.exe.MANIFEST for example).  The content of the file is XML specifying that the application requires administrator permissions so the dialog needs to be displayed to elevate the process.
 
-> <?xml version="1.0" encoding="UTF-8" standalone="yes"?> <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0"> <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3"> <security> <requestedPrivileges> <requestedExecutionLevel level="requireAdministrator"> </requestedPrivileges> </security> </trustInfo> </assembly>
+> ``` <?xml version="1.0" encoding="UTF-8" standalone="yes"?> <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0"> <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3"> <security> <requestedPrivileges> <requestedExecutionLevel level="requireAdministrator"> </requestedPrivileges> </security> </trustInfo> </assembly> ```
 
 Note that it is not possible to supply a manifest file to run elevated without the dialog.
 

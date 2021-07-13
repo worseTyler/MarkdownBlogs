@@ -1,14 +1,6 @@
----
-title: "Enumerating Process.GetProcesses() fails on Vista"
-date: "2007-12-05"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
-It is hard to believe something as common as this could fail but it appears that enumerating System.Diagnostics.Process.GetProcesses() and calling a Process property fails on Vista.  Here is the test demonstrating the issue:
+
+It is hard to believe something as common as this could fail but it appears that enumerating ``` System.Diagnostics.Process.GetProcesses() ``` and calling a ``` Process ``` property fails on Vista.  Here is the test demonstrating the issue:
 
       \[TestMethod\]
       \[ExpectedException(typeof(System.ComponentModel.Win32Exception))\] public void EnumeratingGetProcessesThrowWin32Exception()
@@ -19,11 +11,11 @@ It is hard to believe something as common as this could fail but it appears that
           }
       }
 
-The message corresponding to the error is the ever helpful, "Access is denied" and it occurs regardless of whether you are running as an elevated process or not. The problem is caused by at least three processes when running elevated (as Administrator) or with UNC disabled:  audiodg, System, and Idle.  (audiodg process which is used as part of the digital rights management piece in Windows Vista.)  Calling virtually an property on these three processes throws a Win32Exception.
+The message corresponding to the error is the ever helpful, "Access is denied" and it occurs regardless of whether you are running as an elevated process or not. The problem is caused by at least three processes when running elevated (as Administrator) or with UNC disabled:  audiodg, ``` System ```, and ``` Idle ```.  (``` audiodg ``` process which is used as part of the digital rights management piece in Windows Vista.)  Calling virtually an property on these three processes throws a ``` Win32Exception ```.
 
 To eliminate processes that throw exceptions on their properties from the GetProcesses() return using a where query operator (C# 3.0):
 
-> foreach (Process process in
+> ``` foreach (Process process in
 >     System.Diagnostics.Process.GetProcesses().Where(        process =>
 >         {
 >             bool hasException = false;
@@ -34,7 +26,7 @@ To eliminate processes that throw exceptions on their properties from the GetPro
 >     )
 > {
 >         // ...
-> }
+> } ```
 
 As part of investigating this I wondered what Sysinternal's Process Explorer did. It just shows the exception error message, "Access is denied."
 

@@ -1,14 +1,4 @@
----
-title: "Exception Handling Improvements in C# 6.0"
-date: "2014-08-29"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-tags: 
-  - "csharp"
-  - "csharp6"
----
+
 
 There are two new exception-handling features in C# 6.0.  The first is an improvement in the async and await syntax and the second is support for exception filtering.
 
@@ -17,7 +7,7 @@ When C# 5.0 introduced the async and await (contextual) keywords, developers gai
 try
 {
     WebRequest webRequest =
-        WebRequest.Create("http://IntelliTect.com");
+        WebRequest.Create("https://IntelliTect.com");
 
     WebResponse response =
         await webRequest.GetResponseAsync();

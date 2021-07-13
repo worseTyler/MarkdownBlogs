@@ -1,16 +1,8 @@
----
-title: "Unattended Installation of Team Foundation Server 2008 on Windows 2008 with SQL Server 2008"
-date: "2008-12-15"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
+
 
 The following are my instructions for installing a new **Team Foundation Server 2008 with SP1** onto **Windows 2008** with **SQL Server 2008**. Throughout, I followed the [TFS install guide](https://www.microsoft.com/downloads/details.aspx?FamilyID=ff12844f-398c-4fe9-8b0d-9e84181d9923&displaylang=en) and tried to automate where it didn't distract me too much from the task at hand. I followed the Single-Server Team Foundation Server Installation.**Folder Layout**For the scripts to work successfully, you need the following placed into a local directory (probably without spaces in the name):
 
-> .\\ [dotnetfx35.exe](https://www.microsoft.com/downloads/details.aspx?FamilyId=AB99342F-5D1A-413D-8319-81DA479AB0D7&displaylang=en).\\SQLServer2008\\ (SQL Server 2008 install).\\TFS2008\\ (TFS 2008 install) .\\ [TFS90sp1-KB949786-ENU.exe](https://www.microsoft.com/downloads/details.aspx?familyid=9E40A5B6-DA41-43A2-A06D-3CEE196BFE3D&displaylang=en).\\ [TFSSetup.exe](/wp-content/uploads/binary/InstallingTeamFoundationServer2008onWind_7484/TFSSetup.zip) (A custom TFS 2008 Setup utility I created for unattended installation) .\\ WSS3wSP1.x86.exe
+> .\\ [dotnetfx35.exe](https://www.microsoft.com/downloads/details.aspx?FamilyId=AB99342F-5D1A-413D-8319-81DA479AB0D7&displaylang=en).\\SQLServer2008\\ (SQL Server 2008 install).\\TFS2008\\ (TFS 2008 install) .\\ [TFS90sp1-KB949786-ENU.exe](https://www.microsoft.com/downloads/details.aspx?familyid=9E40A5B6-DA41-43A2-A06D-3CEE196BFE3D&displaylang=en).\\ [TFSSetup.exe](https://intellitect.com/wp-content/uploads/binary/InstallingTeamFoundationServer2008onWind_7484/TFSSetup.zip) (A custom TFS 2008 Setup utility I created for unattended installation) .\\ WSS3wSP1.x86.exe
 
 **Prerequisites**Start with a mostly virgin Windows 2008 server. I say mostly because I joined the machine to the domain and installed all Windows Updates. In addition, I created a single TFSSERVICE domain account.**Installation**
 
@@ -34,7 +26,7 @@ The following are my instructions for installing a new **Team Foundation Server 
     
 5. Installed Windows SharePoint Services 3.0 with SP1
     
-    IF NOT DEFINED TFSSERVICEPASSWORD ( SET /P TFSSERVICEPASSWORD=Enter the TFS Service password: )WSS3wSP1.x86.exe /Extract:"%TEMP%\\WSS3wSP1" /passive /quiet"%TEMP%\\WSS3wSP1\\setup.exe" /config "%~dp0Wss4TfsSingleServerConfig.xml"CHOICE /T 1 /D Y /M Waiting...RD /Q /S "%TEMP%\\WSS3wSP1SET PSCONFIG="%COMMONPROGRAMFILES%\\Microsoft Shared\\web server extensions\\12\\bin\\psconfig.exe"%PSCONFIG% -cmd configdb -create -server localhost -database SharePoint\_Config -user %USERDOMAIN%\\TFSSERVICE -password %TFSSERVICEPASSWORD% -admincontentdatabase SharePoint\_Admin\_Content%PSCONFIG% -cmd adminvs -provision -port 2500 -windowsauthprovider onlyusentlmSET STSADM="%COMMONPROGRAMFILES%\\Microsoft Shared\\web server extensions\\12\\bin\\stsadm.exe"%STSADM% -o extendvs -exclusivelyusentlm -url http://%COMPUTERNAME%.%USERDNSDOMAIN% -ownerlogin %USERDOMAIN%\\tfsservice -owneremail "tfs@%USERDNSDOMAIN%" -sitetemplate sts -description "Team Foundation Server"%STSADM% -o siteowner -url "http://%COMPUTERNAME%.%USERDNSDOMAIN%" -secondarylogin %USERDOMAIN%\\%USERNAME% %PSCONFIG% -cmd adminvs -provision -port 2500 -windowsauthprovider onlyusentlm
+    IF NOT DEFINED TFSSERVICEPASSWORD ( SET /P TFSSERVICEPASSWORD=Enter the TFS Service password: )WSS3wSP1.x86.exe /Extract:"%TEMP%\\WSS3wSP1" /passive /quiet"%TEMP%\\WSS3wSP1\\setup.exe" /config "%~dp0Wss4TfsSingleServerConfig.xml"CHOICE /T 1 /D Y /M Waiting...RD /Q /S "%TEMP%\\WSS3wSP1SET PSCONFIG="%COMMONPROGRAMFILES%\\Microsoft Shared\\web server extensions\\12\\bin\\psconfig.exe"%PSCONFIG% -cmd configdb -create -server localhost -database SharePoint\_Config -user %USERDOMAIN%\\TFSSERVICE -password %TFSSERVICEPASSWORD% -admincontentdatabase SharePoint\_Admin\_Content%PSCONFIG% -cmd adminvs -provision -port 2500 -windowsauthprovider onlyusentlmSET STSADM="%COMMONPROGRAMFILES%\\Microsoft Shared\\web server extensions\\12\\bin\\stsadm.exe"%STSADM% -o extendvs -exclusivelyusentlm -url https://%COMPUTERNAME%.%USERDNSDOMAIN% -ownerlogin %USERDOMAIN%\\tfsservice -owneremail "tfs@%USERDNSDOMAIN%" -sitetemplate sts -description "Team Foundation Server"%STSADM% -o siteowner -url "https://%COMPUTERNAME%.%USERDNSDOMAIN%" -secondarylogin %USERDOMAIN%\\%USERNAME% %PSCONFIG% -cmd adminvs -provision -port 2500 -windowsauthprovider onlyusentlm
     
     This script extracts WSSwSP1 to a temp directory and then executes the setup unattended using the Wss4TfsSingleServerConfig.xml file with ServerRole Web Frond End (WFE). The WSS setup doesn't perform any configuration. Instead, the psconfig.exe and stsadm.exe configure the server following the install. Note that I use port 2500 as my SharePoint central administration port (something I have standardized on). In addition, I use a fully qualified name for the WSS url. The Wss4TfsSingleServerConfig.xml contains the following:
     
@@ -44,7 +36,7 @@ The following are my instructions for installing a new **Team Foundation Server 
     
     > .\\TFS90sp1-KB949786-ENU.exe /extract:"%TEMP%\\TFS2008SP1"msiexec /a .\\TFS2008\\at\\vs\_setup.msi /p "%TEMP%\\TFS2008SP1\\TFS90sp1-KB949786.msp" TARGETDIR="%CD%\\TFS2008wSP1\\AT" /L\*vx c:\\temp\\install.logCHOICE /T 1 /D Y /M Waiting... RD /Q /S "%TEMP%\\TFS2008SP1"
     
-7. Since there are no unattended command line switches for the Team Foundation Server install, I created a custom executable called [TFSSetup.exe](/wp-content/uploads/binary/InstallingTeamFoundationServer2008onWind_7484/TFSSetup.zip) that I created to automate an unattended install of Team Foundation Server SP1. A few things to note about the custom executable:
+7. Since there are no unattended command line switches for the Team Foundation Server install, I created a custom executable called [TFSSetup.exe](https://intellitect.com/wp-content/uploads/binary/InstallingTeamFoundationServer2008onWind_7484/TFSSetup.zip) that I created to automate an unattended install of Team Foundation Server SP1. A few things to note about the custom executable:
     
     - It accepts the license terms and assumes the product key is defaulted.
         
@@ -54,7 +46,7 @@ The following are my instructions for installing a new **Team Foundation Server 
         
     - It assumes the TFS Service name is %USERDOMAIN%\\TFSSERVICE and that the password is stored in the environment variable TFSSERVICEPASSWORD (if it is not, the program will prompt for the password).
         
-    - The SharePoint settings are http:\\\\%COMPUTERNAME%:2500 for the admin site and http:\\\\%COMPUTERNAME%.%USERDNSDOMAIN%/Sites for the Sites URL.
+    - The SharePoint settings are https:\\\\%COMPUTERNAME%:2500 for the admin site and https:\\\\%COMPUTERNAME%.%USERDNSDOMAIN%/Sites for the Sites URL.
         
     - Alerts are not enabled.
         
@@ -71,6 +63,6 @@ The following are my instructions for installing a new **Team Foundation Server 
 
 > This error occurred because I included both the dbuser and dppassword when executing psconfig.exe configdb. Upon removing both those parameters, the error was avoided.
 
-**Error**: The SQL Server Browser service is stopped.**Error**: The SQL Server Browser service is not set to start automatically.**Error**: TF220041: The specified Windows SharePoint Services site URL ( http://<DefaultSiteURL>/Sites) is not the default site collection site: (Sites).The default site collection site might have been renamed or removed. Make sure that the site exists and verify the correct URL,and then attempt installation. If the problem persists, you can choose to install and configure Windows SharePoint Services aspart of the Team Foundation Server installation process.
+**Error**: The SQL Server Browser service is stopped.**Error**: The SQL Server Browser service is not set to start automatically.**Error**: TF220041: The specified Windows SharePoint Services site URL ( https://<DefaultSiteURL>/Sites) is not the default site collection site: (Sites).The default site collection site might have been renamed or removed. Make sure that the site exists and verify the correct URL,and then attempt installation. If the problem persists, you can choose to install and configure Windows SharePoint Services aspart of the Team Foundation Server installation process.
 
 > This error occurs when you specify the Windows SharePoint Server URL without the "/Sites" suffix. Team Foundation Server 2008 does not work correctly against the root. You must specify includes the "/Sites" suffix to avoid this error.

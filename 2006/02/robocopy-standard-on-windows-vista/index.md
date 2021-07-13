@@ -1,80 +1,71 @@
----
-title: "Robocopy Standard on Windows Vista"
-date: "2006-02-11"
-categories: 
-  - "blog"
----
-
-It appears that RoboCopy.exe is a standard command line tool in Windows Vista and it includes additional options.  Previously this was only available via the windows resource kit.  The help command from the Windows Vista Robocopy returns:
-
-> \------------------------------------------------------------------------------- ROBOCOPY     ::     Robust File Copy for Windows     ::     Version XP027 -------------------------------------------------------------------------------
+ ```
 > 
-> Started : Fri Feb 10 15:53:25 2006
+> ``` Started : Fri Feb 10 15:53:25 2006 ```
 > 
-> Usage :: ROBOCOPY source destination \[file \[file\]...\] \[options\]
+> ``` Usage :: ROBOCOPY source destination \[file \[file\]...\] \[options\] ```
 > 
-> source :: Source Directory (drive:\\path or [\\\\server\\share\\path](file://server/share/path)). destination :: Destination Dir  (drive:\\path or [\\\\server\\share\\path](file://server/share/path)). file :: File(s) to copy  (names/wildcards: default is "\*.\*").
+> ``` source :: Source Directory (drive:\\path or ``` [``` \\\\server\\share\\path ```](file://server/share/path)``` ). destination :: Destination Dir  (drive:\\path or ``` [``` \\\\server\\share\\path ```](file://server/share/path)``` ). file :: File(s) to copy  (names/wildcards: default is "\*.\*"). ```
 > 
-> :: :: Copy options : :: /S :: copy Subdirectories, but not empty ones. /E :: copy subdirectories, including Empty ones. /LEV:n :: only copy the top n LEVels of the source directory tree.
+> ``` :: :: Copy options : :: /S :: copy Subdirectories, but not empty ones. /E :: copy subdirectories, including Empty ones. /LEV:n :: only copy the top n LEVels of the source directory tree. ```
 > 
-> /Z :: copy files in restartable mode. /B :: copy files in Backup mode. /ZB :: use restartable mode; if access denied use Backup mode. /EFSRAW :: copy all encrypted files in EFS RAW mode.
+> ``` /Z :: copy files in restartable mode. /B :: copy files in Backup mode. /ZB :: use restartable mode; if access denied use Backup mode. /EFSRAW :: copy all encrypted files in EFS RAW mode. ```
 > 
-> /COPY:copyflag\[s\] :: what to COPY for files (default is /COPY:DAT). (copyflags : D=Data, A=Attributes, T=Timestamps). (S=Security=NTFS ACLs, O=Owner info, U=aUditing info).
+> ``` /COPY:copyflag\[s\] :: what to COPY for files (default is /COPY:DAT). (copyflags : D=Data, A=Attributes, T=Timestamps). (S=Security=NTFS ACLs, O=Owner info, U=aUditing info). ```
 > 
-> /DCOPY:T :: COPY Directory Timestamps.
+> ``` /DCOPY:T :: COPY Directory Timestamps. ```
 > 
-> /SEC :: copy files with SECurity (equivalent to /COPY:DATS). /COPYALL :: COPY ALL file info (equivalent to /COPY:DATSOU). /NOCOPY :: COPY NO file info (useful with /PURGE).
+> ``` /SEC :: copy files with SECurity (equivalent to /COPY:DATS). /COPYALL :: COPY ALL file info (equivalent to /COPY:DATSOU). /NOCOPY :: COPY NO file info (useful with /PURGE). ```
 > 
-> /SECFIX :: FIX file SECurity on all files, even skipped files. /TIMFIX :: FIX file TIMes on all files, even skipped files.
+> ``` /SECFIX :: FIX file SECurity on all files, even skipped files. /TIMFIX :: FIX file TIMes on all files, even skipped files. ```
 > 
-> /PURGE :: delete dest files/dirs that no longer exist in source. /MIR :: MIRror a directory tree (equivalent to /E plus /PURGE).
+> ``` /PURGE :: delete dest files/dirs that no longer exist in source. /MIR :: MIRror a directory tree (equivalent to /E plus /PURGE). ```
 > 
-> /MOV :: MOVe files (delete from source after copying). /MOVE :: MOVE files AND dirs (delete from source after copying).
+> ``` /MOV :: MOVe files (delete from source after copying). /MOVE :: MOVE files AND dirs (delete from source after copying). ```
 > 
-> /A+:\[RASHCNET\] :: add the given Attributes to copied files. /A-:\[RASHCNET\] :: remove the given Attributes from copied files.
+> ``` /A+:\[RASHCNET\] :: add the given Attributes to copied files. /A-:\[RASHCNET\] :: remove the given Attributes from copied files. ```
 > 
-> /CREATE :: CREATE directory tree and zero-length files only. /FAT :: create destination files using 8.3 FAT file names only. /256 :: turn off very long path (> 256 characters) support.
+> ``` /CREATE :: CREATE directory tree and zero-length files only. /FAT :: create destination files using 8.3 FAT file names only. /256 :: turn off very long path (> 256 characters) support. ```
 > 
-> /MON:n :: MONitor source; run again when more than n changes seen. /MOT:m :: MOnitor source; run again in m minutes Time, if changed.
+> ``` /MON:n :: MONitor source; run again when more than n changes seen. /MOT:m :: MOnitor source; run again in m minutes Time, if changed. ```
 > 
-> /RH:hhmm-hhmm :: Run Hours - times when new copies may be started. /PF :: check run hours on a Per File (not per pass) basis.
+> ``` /RH:hhmm-hhmm :: Run Hours - times when new copies may be started. /PF :: check run hours on a Per File (not per pass) basis. ```
 > 
-> /IPG:n :: Inter-Packet Gap (ms), to free bandwidth on slow lines.
+> ``` /IPG:n :: Inter-Packet Gap (ms), to free bandwidth on slow lines. ```
 > 
-> :: :: File Selection Options : :: /A :: copy only files with the Archive attribute set. /M :: copy only files with the Archive attribute and reset it. /IA:\[RASHCNETO\] :: Include only files with any of the given Attributes set. /XA:\[RASHCNETO\] :: eXclude files with any of the given Attributes set.
+> ``` :: :: File Selection Options : :: /A :: copy only files with the Archive attribute set. /M :: copy only files with the Archive attribute and reset it. /IA:\[RASHCNETO\] :: Include only files with any of the given Attributes set. /XA:\[RASHCNETO\] :: eXclude files with any of the given Attributes set. ```
 > 
-> /XF file \[file\]... :: eXclude Files matching given names/paths/wildcards. /XD dirs \[dirs\]... :: eXclude Directories matching given names/paths.
+> ``` /XF file \[file\]... :: eXclude Files matching given names/paths/wildcards. /XD dirs \[dirs\]... :: eXclude Directories matching given names/paths. ```
 > 
-> /XC :: eXclude Changed files. /XN :: eXclude Newer files. /XO :: eXclude Older files. /XX :: eXclude eXtra files and directories. /XL :: eXclude Lonely files and directories. /IS :: Include Same files. /IT :: Include Tweaked files.
+> ``` /XC :: eXclude Changed files. /XN :: eXclude Newer files. /XO :: eXclude Older files. /XX :: eXclude eXtra files and directories. /XL :: eXclude Lonely files and directories. /IS :: Include Same files. /IT :: Include Tweaked files. ```
 > 
-> /MAX:n :: MAXimum file size - exclude files bigger than n bytes. /MIN:n :: MINimum file size - exclude files smaller than n bytes.
+> ``` /MAX:n :: MAXimum file size - exclude files bigger than n bytes. /MIN:n :: MINimum file size - exclude files smaller than n bytes. ```
 > 
-> /MAXAGE:n :: MAXimum file AGE - exclude files older than n days/date. /MINAGE:n :: MINimum file AGE - exclude files newer than n days/date. /MAXLAD:n :: MAXimum Last Access Date - exclude files unused since n. /MINLAD:n :: MINimum Last Access Date - exclude files used since n. (If n < 1900 then n = n days, else n = YYYYMMDD date).
+> ``` /MAXAGE:n :: MAXimum file AGE - exclude files older than n days/date. /MINAGE:n :: MINimum file AGE - exclude files newer than n days/date. /MAXLAD:n :: MAXimum Last Access Date - exclude files unused since n. /MINLAD:n :: MINimum Last Access Date - exclude files used since n. (If n < 1900 then n = n days, else n = YYYYMMDD date). ```
 > 
-> /XJ :: eXclude Junction points. (normally included by default).
+> ``` /XJ :: eXclude Junction points. (normally included by default). ```
 > 
-> /FFT :: assume FAT File Times (2-second granularity). /DST :: compensate for one-hour DST time differences.
+> ``` /FFT :: assume FAT File Times (2-second granularity). /DST :: compensate for one-hour DST time differences. ```
 > 
-> :: :: Retry Options : :: /R:n :: number of Retries on failed copies: default 1 million. /W:n :: Wait time between retries: default is 30 seconds.
+> ``` :: :: Retry Options : :: /R:n :: number of Retries on failed copies: default 1 million. /W:n :: Wait time between retries: default is 30 seconds. ```
 > 
-> /REG :: Save /R:n and /W:n in the Registry as default settings.
+> ``` /REG :: Save /R:n and /W:n in the Registry as default settings. ```
 > 
-> /TBD :: wait for sharenames To Be Defined (retry error 67).
+> ``` /TBD :: wait for sharenames To Be Defined (retry error 67). ```
 > 
-> :: :: Logging Options : :: /L :: List only - don't copy, timestamp or delete any files. /X :: report all eXtra files, not just those selected. /V :: produce Verbose output, showing skipped files. /TS :: include source file Time Stamps in the output. /FP :: include Full Pathname of files in the output. /BYTES :: Print sizes as bytes.
+> ``` :: :: Logging Options : :: /L :: List only - don't copy, timestamp or delete any files. /X :: report all eXtra files, not just those selected. /V :: produce Verbose output, showing skipped files. /TS :: include source file Time Stamps in the output. /FP :: include Full Pathname of files in the output. /BYTES :: Print sizes as bytes. ```
 > 
-> /NS :: No Size - don't log file sizes. /NC :: No Class - don't log file classes. /NFL :: No File List - don't log file names. /NDL :: No Directory List - don't log directory names.
+> ``` /NS :: No Size - don't log file sizes. /NC :: No Class - don't log file classes. /NFL :: No File List - don't log file names. /NDL :: No Directory List - don't log directory names. ```
 > 
-> /NP :: No Progress - don't display % copied. /ETA :: show Estimated Time of Arrival of copied files.
+> ``` /NP :: No Progress - don't display % copied. /ETA :: show Estimated Time of Arrival of copied files. ```
 > 
-> /LOG:file :: output status to LOG file (overwrite existing log). /LOG+:file :: output status to LOG file (append to existing log).
+> ``` /LOG:file :: output status to LOG file (overwrite existing log). /LOG+:file :: output status to LOG file (append to existing log). ```
 > 
-> /UNILOG:file :: output status to LOG file as UNICODE (overwrite existing log). /UNILOG+:file :: output status to LOG file as UNICODE (append to existing log).
+> ``` /UNILOG:file :: output status to LOG file as UNICODE (overwrite existing log). /UNILOG+:file :: output status to LOG file as UNICODE (append to existing log). ```
 > 
-> /TEE :: output to console window, as well as the log file.
+> ``` /TEE :: output to console window, as well as the log file. ```
 > 
-> /NJH :: No Job Header. /NJS :: No Job Summary.
+> ``` /NJH :: No Job Header. /NJS :: No Job Summary. ```
 > 
-> :: :: Job Options : :: /JOB:jobname :: take parameters from the named JOB file. /SAVE:jobname :: SAVE parameters to the named job file /QUIT :: QUIT after processing command line (to view parameters). /NOSD :: NO Source Directory is specified. /NODD :: NO Destination Directory is specified. /IF :: Include the following Files.
+> ``` :: :: Job Options : :: /JOB:jobname :: take parameters from the named JOB file. /SAVE:jobname :: SAVE parameters to the named job file /QUIT :: QUIT after processing command line (to view parameters). /NOSD :: NO Source Directory is specified. /NODD :: NO Destination Directory is specified. /IF :: Include the following Files. ```
 
 P.S. You can't simply copy this version to Windows XP/2003 and expect it to run.  There are additional dependencies.  Not that I tried this... just hypothetically speaking.  :)

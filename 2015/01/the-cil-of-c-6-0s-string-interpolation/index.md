@@ -1,14 +1,4 @@
----
-title: "The CIL of C# 6.0's String Interpolation"
-date: "2015-01-02"
-categories: 
-  - "net"
-  - "blog"
-  - "c"
-tags: 
-  - "csharp"
-  - "csharp6"
----
+
 
 One of the C# 6.0 features that will most simply and perhaps most predominantly affect the way you write C# code in the future is string interpolation.  Besides explaining composite string formatting (the old way - string.Format("{0} {1}", firstName, lastName) ) or obviously being relegated to a pre-C# 6.0 world, there is little reason to revert back from the string interpolation syntax.  Those of you previously writing code without the benefit of the new syntax, might be curious to learn how it is implemented.  In this regard I provide a brief introduction in my [C# 6.0 article included in the Special December 2014 issue of MSDN Magazine](https://msdn.microsoft.com/en-us/magazine/dn879355.aspx):
 

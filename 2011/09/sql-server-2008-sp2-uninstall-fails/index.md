@@ -1,11 +1,4 @@
----
-title: "SQL Server 2008 SP2 Uninstall Fails"
-date: "2011-09-06"
-categories: 
-  - "blog"
-tags: 
-  - "sql-server"
----
+
 
 Recently, I tried opening an MDF file from my SQL Server Express instance only to discover be prompted with the following error:
 
@@ -21,7 +14,7 @@ Executing SELECT @@Version on my SQL Server Express instance confirmed that inde
 
 No problem, I would just upgrade by running the SQL Server 2008 R2 Express install.  Unfortunately, this failed with the following message:
 
-> Could not open key: HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\\\WwanSvc\\Profiles
+> ``` Could not open key: HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\\\WwanSvc\\Profiles ```
 > 
 > (Yes, there were two slashes but regardless, the key was not to be found when I looked in the registry.)
 
@@ -33,7 +26,7 @@ Next I tried just uninstalling the Database Engine and related components (simil
 
 **Uninstall Solution:** The solution in the end was to [uninstall via the command line](https://msdn.microsoft.com/en-us/library/ms144259.aspx) which worked:
 
-> "C:\\Program Files\\Microsoft SQL Server\\100\\Setup Bootstrap\\SQLServer2008R2\\setup.exe" /ACTION=uninstall /FEATURES=SQL /INSTANCENAME=SQLExpress
+> ``` "C:\\Program Files\\Microsoft SQL Server\\100\\Setup Bootstrap\\SQLServer2008R2\\setup.exe" /ACTION=uninstall /FEATURES=SQL /INSTANCENAME=SQLExpress ```
 
 Of course moving on to the installation step was not trivial either.  Running the SQL Server 2008 R2 install failed with messages like:
 
@@ -41,7 +34,7 @@ Of course moving on to the installation step was not trivial either.  Running t
 
 In addition, the **Service Accounts** tab was blank (along with the **Collation** tab) … there was simply no text and, therefore, not way to specify the account under which SQL Server would run. (Fiddlesticks!!)  Interestingly, installing SQL Express with Advanced Services didn’t have this problem – it showed services accounts for SQL Server Reporting Services and Business Intelligence Services.
 
-The next step was to browse to the C:\\Program Files\\Microsoft SQL Server directory and delete all MSSQL10\*.SQLEXPRESS instances.  However, the installation continued to crash repeatedly before displaying the **Complete with failures** screen and the following so called “information:”
+The next step was to browse to the ``` C:\\Program Files\\Microsoft SQL Server ``` directory and delete all MSSQL10\*.SQLEXPRESS instances.  However, the installation continued to crash repeatedly before displaying the **Complete with failures** screen and the following so called “information:”
 
 - Your SQL Server 2008 R2 installation completed with failures.
 - Instance Name SQLEXPRESS for product SQL Server Database Services is already used. Each SQL Server instance must have a unique instance name.
@@ -51,6 +44,6 @@ The next step was to browse to the C:\\Program Files\\Microsoft SQL Server direc
 
 Installation using the command line failed as well.
 
-**Final Installation Resolution:** After many more installation/uninstallation attempts the final resolution was to delete the HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\Microsoft SQL Server\\SQLEXPRESS registry key (thanks to Alpha Wang for finding this). Without this entry, the SQLEXPRESS installation went through to completion.
+**Final Installation Resolution:** After many more installation/uninstallation attempts the final resolution was to delete the ``` HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\Microsoft SQL Server\\SQLEXPRESS ``` registry key (thanks to Alpha Wang for finding this). Without this entry, the SQLEXPRESS installation went through to completion.
 
 !$%@&#%&^\*$^&\*#$%@#^!!!

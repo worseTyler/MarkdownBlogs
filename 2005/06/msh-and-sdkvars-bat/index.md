@@ -1,16 +1,8 @@
----
-title: "MSH and Sdkvars.bat"
-date: "2005-06-24"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
 
-If MSH is the future command prompt provided by the OS I better embrace it now.  Toward that effort, I need to make it my primary console.  However, Sdkvars.bat, the batch file that sets up the Visual Studio 2005 command-line, doesn't work and as a result, I was going back to cmd.exe.
 
-The sdkvars.bat just sets some environment variables.  I could obviously just re-write the batch file in MSH but I decided on a slightly the more "(over) engineered" approach of trying to execute it.   I have placed the resulting [vs8.msh](/wp-content/uploads/binary/71e874ab-b8b9-4ec6-9523-4cdb02db84d3/vs8.zip) file into an enclosure on this post.  Not exactly pretty but ... hey.. its a "batch" file whose language is ugly to begin with, so I am not spending too much time trying to improve it.
+If MSH is the future command prompt provided by the OS I better embrace it now.  Toward that effort, I need to make it my primary console.  However, ``` Sdkvars.bat ```, the batch file that sets up the Visual Studio 2005 command-line, doesn't work and as a result, I was going back to cmd.exe.
+
+The ``` sdkvars.bat ``` just sets some environment variables.  I could obviously just re-write the batch file in MSH but I decided on a slightly the more "(over) engineered" approach of trying to execute it.   I have placed the resulting ``` [vs8.msh](https://intellitect.com/wp-content/uploads/binary/71e874ab-b8b9-4ec6-9523-4cdb02db84d3/vs8.zip) ``` file into an enclosure on this post.  Not exactly pretty but ... hey.. its a "batch" file whose language is ugly to begin with, so I am not spending too much time trying to improve it.
 
 For posterity, here's a little more on the process that got me there and what I learned on the way.
 

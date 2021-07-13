@@ -1,12 +1,4 @@
----
-title: "SQL Server 2008 Install Nightmare"
-date: "2008-12-09"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
+
 
 It all started with an installation of Visual Studio 2008 SP1, which included SQL Server Express 2005.  From there I wished to install SQL Server 2008 Standard on the default port and upgrade SQL Server 2005 Express to SQL Server 2008 express.  Unfortunately, this proved to be a troublesome desire.  I have no idea what the cause is exactly, except that I was not the only one on my team to have issues.
 
@@ -45,21 +37,21 @@ Pheww, now that we have completely uninstalled, lets review potential errors you
 - SQL Server Compact 3.5 SP1 Server Tools (Merge Replication Serve2r Side Config)
 - SQL Server Compact 3.5 SP1 Books Online and Samples
 
-**Error:** The following error has occurred: Could not open key: UNKNOWN\\Components\\CBFF54E0ED12B0946A1C52E5E82ABC38\\E7BEEF5F746F8AB9076051A5574.  Verify that you have sufficient access to that key, or contact your support personnel. (Errors could be for other GUIDs as well)
+**Error:** The following error has occurred: Could not open key: ``` UNKNOWN\\Components\\CBFF54E0ED12B0946A1C52E5E82ABC38\\E7BEEF5F746F8AB9076051A5574 ```.  Verify that you have sufficient access to that key, or contact your support personnel. (Errors could be for other GUIDs as well)
 
-**![The following error has occurred: Could not open key: UNKNOWN\Components\CBFF54E0ED12B0946A1C52E5E82ABC38\E7BEEF5F746F8AB9076051A5574. Verify that you have sufficient access to that key, or contact your support personnel.](/wp-content/uploads/binary/SQLServer2008InstallNightmare_F264/image23.png)**
+** "SQL Server 2008 Install Nightmare"**
 
-Errors could be for other GUIDs as well including UNKNOWN\\Components\\493032C95B52CBD448DD2B5A52C50E9A\\3EC761FD7E06AE4499CE52705CF173EA.
+Errors could be for other GUIDs as well including ``` UNKNOWN\\Components\\493032C95B52CBD448DD2B5A52C50E9A\\3EC761FD7E06AE4499CE52705CF173EA ```.
 
-> This error is a permissions error in the registry.  If you search the registry for the first GUID you will find the key is likely mapped to HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\<user SID>\\Components\\<GUID>.  Beneath this key is a sub key for the second GUID.  However, selecting the subkey will result in an access denied message.
+> This error is a permissions error in the registry.  If you search the registry for the first GUID you will find the key is likely mapped to ``` HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\<user SID>\\Components\\<GUID> ```.  Beneath this key is a sub key for the second GUID.  However, selecting the subkey will result in an access denied message.
 > 
 > To correct the problem:
 > 
 > 1\. Verify that you are running RegEdit as administrator (to avoid UAC issues with Windows Vista and Windows 3008+).
 > 
-> 2\. Edit the permission of the parent key(HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\<user SID>\\Components) and click the **Advanced** button. (Optionally, you could edit the permissions on the parent GUID (CBFF54E0ED12B0946A1C52E5E82ABC38 in my example) but the same problem is likely to exist with other keys so you may as well deal with this in mass.)
+> 2\. Edit the permission of the parent key(HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\<user SID>\\Components) and click the **Advanced** button. (Optionally, you could edit the permissions on the parent GUID (``` CBFF54E0ED12B0946A1C52E5E82ABC38 ``` in my example) but the same problem is likely to exist with other keys so you may as well deal with this in mass.)
 > 
-> [![image](/wp-content/uploads/binary/SQLServer2008InstallNightmare_F264/image_thumb.png)](/wp-content/uploads/binary/SQLServer2008InstallNightmare_F264/image.png)
+> [ "SQL Server 2008 Install Nightmare"
 > 
 > 3.  From the Advanced dialog, select the **Owner** tab and check the **Replace owner on subcontainers and objects** check box.  Also, verify that System is the owner (else add System and be sure to select it so it will become the owner).
 > 
@@ -77,7 +69,7 @@ Errors could be for other GUIDs as well including UNKNOWN\\Components\\493032C95
 
 > [Manually uninstall](/sql-server-2008-install-nightmare/#uninstall) SQL Server 2008 installation and try installing again.
 
-**Error:** Error 1316.A network error occurred while attempting to read file ssceruntime-enu.msi.
+**Error:** Error 1316.A network error occurred while attempting to read file ``` ssceruntime-enu.msi ```.
 
 > [Connect mentions this error](https://connect.microsoft.com/SQLServer/feedback/ViewFeedback.aspx?FeedbackID=363055).  I followed a similar procedure.
 > 
@@ -112,7 +104,7 @@ Errors could be for other GUIDs as well including UNKNOWN\\Components\\493032C95
 > 
 > > The unit test adapter failed to connect to the data source or to read the data. For more information on troubleshooting this error, see "[Troubleshooting Data-Driven Unit Tests](https://go.microsoft.com/fwlink/?LinkId=62412)" in the MSDN Library. Error details: Failed to generate a user instance of SQL Server due to a failure in starting the process for the user instance. The connection will be closed."
 > 
-> It took some sleuthing to determine the solution.  Firstly, I checked the error files located in my %USERPROFILE%\\Local Settings\\Application Data\\Microsoft\\Microsoft SQL Server Data\\SQLEXPRESS (the connecting user's SQL Express data directory) directory.  That indicated errors were in loading the modal.mdf and corresponding log file within afore mentioned directory.  However, when connecting to the SQL Express instance from SQL Server Management Studio, there were no such issues.  This was because the instances connected to by SQL Server Management Studio were in the %PROGRAMFILES%\\Microsoft SQL Server directory.
+> It took some sleuthing to determine the solution.  Firstly, I checked the error files located in my ``` %USERPROFILE%\\Local Settings\\Application Data\\Microsoft\\Microsoft SQL Server Data\\SQLEXPRESS ``` (the connecting user's SQL Express data directory) directory.  That indicated errors were in loading the modal.mdf and corresponding log file within afore mentioned directory.  However, when connecting to the SQL Express instance from SQL Server Management Studio, there were no such issues.  This was because the instances connected to by SQL Server Management Studio were in the ``` %PROGRAMFILES%\\Microsoft SQL Server ``` directory.
 > 
 > Generally, when a new MDF file is connected to by SQL Express, it copies the master, model, MSDB, and tempdb databases (mdf and log files) into the connecting user's SQL Express data directory.  (This is frequently why the first time connecting for each user takes longer.)  Such a copy was unnecessary in my case because the databases already existed.  Unfortunately, the databases were from the SQL Server Express 2005 instance, and not the upgraded database from SQL Server 2008 Express.
 > 
@@ -124,7 +116,7 @@ Errors could be for other GUIDs as well including UNKNOWN\\Components\\493032C95
 > 
 > Here's a cmd script for what is needed:
 > 
-> > SC.EXE stop "MSSQL$SQLEXPRESS" CHOICE /C:N /D:N /N /T:5 RD /S /Q "%USERPROFILE%\\Local Settings\\Application Data\\Microsoft\\Microsoft SQL Server Data\\SQLEXPRESS" SC.EXE start "MSSQL$SQLEXPRESS"
+> > SC.EXE stop "MSSQL$SQLEXPRESS" CHOICE /C:N /D:N /N /T:5 ``` RD /S /Q "%USERPROFILE%\\Local Settings\\Application Data\\Microsoft\\Microsoft SQL Server Data\\SQLEXPRESS" ``` SC.EXE start "MSSQL$SQLEXPRESS"
 
 **More Errors**:
 

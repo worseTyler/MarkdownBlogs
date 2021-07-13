@@ -1,9 +1,4 @@
----
-title: "LoadFrom Exception: \"An attempt was made to load a program with an incorrect format.\""
-date: "2013-08-26"
-categories: 
-  - "blog"
----
+
 
 While trying to load an assembly into PowerShell recently, an exception occurred,
 

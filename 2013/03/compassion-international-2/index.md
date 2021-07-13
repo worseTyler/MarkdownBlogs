@@ -1,11 +1,6 @@
----
-title: "How Compassion International works"
-date: "2013-03-29"
-categories: 
-  - "philanthropy"
----
 
-Compassion Int[![Compassion](/wp-content/uploads/2012/02/Compassion1.jpeg "Compassion Logo 2")](/philanthropy/compassion-2/ "Compassion International")ernational uses an individualistic and comprehensive long term strategy to help children and their families escape poverty.  Compassion does this using a three stage approach based on the age of the child in need.  The first stage of Compassion’s effort is called a Child Survival Program.  This first stage offers interested pregnant Moms otherwise unavailable pre-natal medical care and counseling so their children are given the best possible start in life.  This care and support continues for the Mom and the baby during the difficult new born months of life and continues throughout the toddler and pre-school years.  IntelliTect sponsors two Child Survival Programs; one in Tanzania and one in Kenya.
+
+Compassion Int[![Compassion](https://intellitect.com/wp-content/uploads/2012/02/Compassion1.webp "Compassion Logo 2")](/philanthropy/compassion-2/ "Compassion International")ernational uses an individualistic and comprehensive long term strategy to help children and their families escape poverty.  Compassion does this using a three stage approach based on the age of the child in need.  The first stage of Compassion’s effort is called a Child Survival Program.  This first stage offers interested pregnant Moms otherwise unavailable pre-natal medical care and counseling so their children are given the best possible start in life.  This care and support continues for the Mom and the baby during the difficult new born months of life and continues throughout the toddler and pre-school years.  IntelliTect sponsors two Child Survival Programs; one in Tanzania and one in Kenya.
 
 Once a child reaches school age, they are eligible for Compassion International’s Child Sponsorship programs.  These programs match sponsor families from Canada, the USA, western European countries and other developed countries around the world with children in less developed countries in Africa, the Americas, and Asia.  The key to this stage of Compassion’s program is the personal connection developed between the sponsor family and the child in need.   Compassion encourages personal contact like letters, visits if possible, and sometimes even phone calls which link the sponsor and the sponsored child.
 

@@ -1,11 +1,4 @@
----
-title: "A C# 6.0 Language Preview (MSDN)"
-date: "2014-05-01"
-categories: 
-  - "blog"
-  - "c"
-  - "msdn-essential-net"
----
+
 
 By the time you read this, Build—the Microsoft developer conference—will be over and developers will be thinking about how to respond to all that was presented: embrace immediately, watch with slight trepidation or ignore for the moment. For .NET/C# developers, the most significant announcement was undoubtedly the release of the next version of the C# compiler (“Roslyn”) as open source. Related to that are the language improvements themselves. Even if you don’t have plans to immediately adopt C# vNext—which I’ll refer to henceforth and unofficially as C# 6.0—at a minimum, you should be aware of its features and take note of those that might make it worth jumping right in.
 
@@ -397,7 +390,7 @@ When C# 5.0 introduced the async and await (contextual) keywords, developers gai
 try
 {
   WebRequest webRequest =
-    WebRequest.Create("http://IntelliTect.com");
+    WebRequest.Create("https://IntelliTect.com");
   WebResponse response =
     await webRequest.GetResponseAsync();
   // ...

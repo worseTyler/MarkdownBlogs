@@ -1,11 +1,7 @@
----
-title: "IntelliTect Giving Priorities and Values"
-date: "2014-10-27"
-categories: 
-  - "philanthropy"
----
 
-![Philanthropy](/wp-content/uploads/2015/01/Philanthropy.jpg)IntelliTect is deeply committed to using a significant portion of our profits to improve the quality of life for people with needs in our local community and around the world. We designate some of our time, expertise, and profits for projects in our own neighborhoods of Spokane and Spokane Valley, Washington. We also target debilitating poverty around the world by thoughtfully partnering with other organizations. The following guidelines help us determine what type of projects to fund and in which locations to focus our time and energy.
+
+ "IntelliTect Giving Priorities and Values"
+IntelliTect is deeply committed to using a significant portion of our profits to improve the quality of life for people with needs in our local community and around the world. We designate some of our time, expertise, and profits for projects in our own neighborhoods of Spokane and Spokane Valley, Washington. We also target debilitating poverty around the world by thoughtfully partnering with other organizations. The following guidelines help us determine what type of projects to fund and in which locations to focus our time and energy.
 
 - IntelliTect chooses to fund projects that focus on the most desperate poverty. People in the communities we partner with often survive on less than a few dollars a day. Many of them lack access to clean water, sufficient food, safe shelter, and sanitation facilities. Many have no income at all.
 - Our international projects improve access to basic life needs like water, food, shelter,sanitation, health care, education, justice and safety.

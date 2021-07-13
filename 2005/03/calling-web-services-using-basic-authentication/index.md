@@ -1,12 +1,4 @@
----
-title: "Calling Web Services Using Basic Authentication"
-date: "2005-03-24"
-categories: 
-  - "net"
-  - "blog"
-tags: 
-  - "net"
----
+
 
 Estimated reading time: 3 minutes
 
@@ -42,11 +34,11 @@ protected override System.Net.WebRequest GetWebRequest(Uri uri)
 }
 ```
 
-This overrides the GetWebRequest() method of the System.Web.Services.Protocols.SoapHttpClientProtocol class that the web service client code derived from.
+This overrides the ``` GetWebRequest() ``` method of the ``` System.Web.Services.Protocols.SoapHttpClientProtocol ``` class that the web service client code derived from.
 
-With [Visual Studio 2005](https://intellitect.com/accessibility-of-new-types-in-visual-studio-2005/) the generated code is a C# 2.0 partial class.  As a result, regenerating the web services client code does not over-write the additional method.  To enable this, add a class file to your project and give it the same namespace and name as the generated System.Web.Services.Protocols.SoapHttpClientProtocol derived class.  The key is to use the partial modifier on the class header so that the GetWebRequest() method is added to the generated class.  (**partial** class Michaelis.MockService{...})
+With Visual Studio 2005 the generated code is a C# 2.0 partial class.  As a result, regenerating the web services client code does not over-write the additional method.  To enable this, add a class file to your project and give it the same namespace and name as the generated ``` System.Web.Services.Protocols.SoapHttpClientProtocol ``` derived class.  The key is to use the partial modifier on the class header so that the ``` GetWebRequest() ``` method is added to the generated class.  (``` **partial** class Michaelis.MockService{...} ```)
 
-Regardless of using Visual Studio.NET 2005 or earlier, the client code requires that the network credentials are set and the PreAuthenticate property is assigned true.  Here is a sample client call:
+Regardless of using Visual Studio.NET 2005 or earlier, the client code requires that the network credentials are set and the ``` PreAuthenticate ``` property is assigned true.  Here is a sample client call:
 
 ```
 Michaelis.MockService service = new Michaelis.MockService();
@@ -70,32 +62,32 @@ service.Method();
 
 Comments on the post raised the question, "Why cant you just say request.Credentials = new NetworkCredential(username,password)."
 
-The reason relates to interoperating with WebMethods specifically.  When just setting Credentials, the HTTP header looks like this:
+The reason relates to interoperating with WebMethods specifically.  When just setting ``` Credentials ```, the HTTP header looks like this:
 
-> POST /soap/rpc HTTP/1.1  
+> ``` POST /soap/rpc HTTP/1.1  
 > User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; MS Web Services Client Protocol 2.0.50113.0)  
 > Content-Type: text/xml; charset=utf-8  
 > SOAPAction: ""  
 > Host: <servername>:<port>  
 > Content-Length: 779  
 > Expect: 100-continue  
-> Accept-Encoding: gzip
+> Accept-Encoding: gzip ```
 
-Notice, there is no Authentication item even though PreAuthenticate is set to true.
+Notice, there is no Authentication item even though ``` PreAuthenticate ``` is set to true.
 
 The reply back from WebMethods is as follows:
 
-> HTTP/1.0 500 Internal Server Error  
+> ``` HTTP/1.0 500 Internal Server Error  
 > Set-Cookie: ssnid=11747k5Rwchr3vW0s23vcaCP1wCA2NDc=555590; path=/;  
 > Content-Type: text/xml;charset=utf-8  
 > Connection: Keep-Alive  
-> Content-Length: 849
+> Content-Length: 849 ```
 
 The problem is that .NET is expecting a challenge response from WebMethods, specifically a 401 error of "Invalid credentials."  However, if the clientâ€™s credentials are not specified (there is not Authentication part to the header) then WebMethods returns an HTTP 500 status code (Internal Server Error) indicating that the request could not be fulfilled.
 
 To fix the problem you can either change the .NET client or else the WebMethods server.  In my original posting, I demonstrated how to control the .NET client.  The result was an HTTP header that includes the Authentication portion as shown below:
 
-> POST /soap/rpc HTTP/1.1  
+> ``` POST /soap/rpc HTTP/1.1  
 > User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; MS Web Services Client Protocol 2.0.50113.0)  
 > Authorization: BasicbGRwcm86bGRwcm8=  
 > Content-Type: text/xml; charset=utf-8  
@@ -103,7 +95,7 @@ To fix the problem you can either change the .NET client or else the WebMethods 
 > Host: spo-wm-py-srvr:5555  
 > Content-Length: 779  
 > Expect: 100-continue  
-> Accept-Encoding: gzip
+> Accept-Encoding: gzip ```
 
 However, it is also possible to change the WebMethods side (assuming you control that side) by creating an access controlled SOAP processor that checks the credentials for each client request against a specified ACL and returns an HTTP 401 status code even if there are no credentials passed.
 
@@ -111,6 +103,6 @@ By the way, the tool I use for tracing HTTP is [YATT](https://www.pocketsoap.com
 
 ### Want More?
 
-Check out this blog on fully-managed [passwordless authentication](http://intellitect.com/passwordless-authentication-azure-sql/)!
+Check out this blog on fully-managed [passwordless authentication](https://intellitect.com/passwordless-authentication-azure-sql/)!
 
-![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)
+![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.webp)

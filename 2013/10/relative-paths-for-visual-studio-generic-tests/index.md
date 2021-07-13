@@ -1,16 +1,4 @@
----
-title: "Relative Paths for Visual Studio Generic Tests"
-date: "2013-10-21"
-categories: 
-  - "net"
-  - "alm"
-  - "blog"
-  - "c"
-  - "devops"
-  - "visual-studio"
-tags: 
-  - "unit-testing"
----
+
 
 To make generic tests robust enough to run for all developers on your team and on the build server, you are likely going to want to avoid hard coding the path to the executable.  To do this successfully, you need to have a list of all the environment variables that are available when the test executes.  These can be obtained by creating a generic test with the **existing program** as %COMSPEC% (the fully pathed location for cmd.exe) and setting "/C set" as the **Commnd-line arguments**.  The result, with all standard environment variables pulled out, is as follows:
 
