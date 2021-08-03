@@ -20,7 +20,7 @@ As I mentioned, the file format itself is simplified down to the bare minimum. I
 
 **Figure 1 A Basic Sample CSProj/MSBuild File**
 
-```
+```csharp
 <Project>
   <PropertyGroup>
     <TargetFramework>netcoreapp1.0</TargetFramework>
@@ -46,13 +46,13 @@ Let’s review the structure and capabilities in detail:
 
 Simplified Header: To begin, notice that the root element is simply a Project element. Gone is the need for even the namespace and version attributes:
 
-```
+```csharp
 ToolsVersion="15.0" xmlns="https://schemas.microsoft.com/developer/msbuild/2003"
 ```
 
 (Though, they’re still created in the release candidate version tooling.) Similarly, even the need for importing the common properties is merely optional:
 
-```
+```csharp
 <Import Project=
   "$(MSBuildExtensionsPath)\\$(MSBuildToolsVersion)\\Microsoft.Common.props" />
 ```
@@ -61,7 +61,7 @@ Project References: From the project file, you can add entries to the item group
 
 - NuGet Packages:
 
-```
+```csharp
 <PackageReference Include="Microsoft.Extensions.Configuration">
   <Version>1.1.0</Version>
 </PackageReference>
@@ -69,13 +69,13 @@ Project References: From the project file, you can add entries to the item group
 
 - Project References:
 
-```
+```csharp
 <ProjectReference Include="..\\ClassLibrary\\ClassLibrary.csproj" />
 ```
 
 - Assembly References:
 
-```
+```csharp
 <Reference Include="MSBuild">
   <HintPath>...</HintPath>
 </Reference>
@@ -85,7 +85,7 @@ A direct assembly reference should be the exception as a NuGet reference is gene
 
 Wildcard Includes: Compiled code files and resource files can all be included via wildcards.
 
-```
+```csharp
 <Compile Include="\*\*\\\*.cs" />
 <EmbeddedResource Include="\*\*\\\*.resx" />
 <Compile Remove="CodeTemplates\\\*\*" />
@@ -96,7 +96,7 @@ However, you can still select specific files to ignore using the remove attribut
 
 Multi-Targeting: To identify which platform you’re targeting, along with the (optional) output type, you can use a property group with the TargetFramework elements:
 
-```
+```csharp
 <PropertyGroup>
   <TargetFramework>netcoreapp1.0</TargetFramework>
   <TargetFramework>netstandard1.3</TargetFramework>
@@ -111,7 +111,7 @@ No Project Type GUIDs: Note that it’s no longer necessary to include a project
 
 When it comes to Visual Studio 2017, Microsoft continues to provide a rich UI for editing the CSPROJ/MSBuild project file. **Figure 2**, for example, shows Visual Studio 2017 loaded with a CSPROJ file listing, slightly modified from **Figure 1**, that includes target framework elements for netcoreapp1.0 and net45, along with package references for Microsoft.Extensions.Configuration, Microsoft.NETCore.App, and Microsoft.NET.Sdk, plus an assembly reference to MSBuild, and a project reference to SampleLib.
 
- "Essential MSBuild-A Build Engine Overview for .NET Tooling (MSDN)"
+![ Figure 2 Solution Explorer is a Rich UI on Top of a CSProj File](https://intellitect.com/wp-content/uploads/2019/12/Figure-2-1.png "Essential MSBuild-A Build Engine Overview for .NET Tooling (MSDN)")
 
 Figure 2 Solution Explorer is a Rich UI on Top of a CSProj File
 
@@ -127,15 +127,15 @@ There’s built-in migration support within Visual Studio 2017 to convert projec
 
 I would be remiss to not point out that back in March 2016, Microsoft released MSBuild as open source on GitHub ([github.com/Microsoft/msbuild](https://github.com/Microsoft/msbuild)) and contributed it to the .NET Foundation ([dotnetfoundation.org](https://dotnetfoundation.org)). Establishing MSBuild as open source put it on track for platform portability to Mac and Linux—ultimately allowing it to become the underlying build engine for all the .NET Tooling.
 
-Other than the CSPROJ\\MSBuild file PackageReference element identified earlier, MSBuild version 15 doesn’t introduce many additional features beyond open source and cross platform. In fact, comparing the command-line help shows the options are identical. For those not already familiar with it, here’s a list of the most common options you should be familiar with from the general syntax MSBuild.exe \[options\] \[project file\]:
+Other than the CSPROJ\\MSBuild file PackageReference element identified earlier, MSBuild version 15 doesn’t introduce many additional features beyond open source and cross platform. In fact, comparing the command-line help shows the options are identical. For those not already familiar with it, here’s a list of the most common options you should be familiar with from the general syntax MSBuild.exe [options] [project file]:
 
 /target:<target>:Identifies the build target within the project file to execute along with any dependencies it might have (/t is the abbreviation).
 
 /property:<n>=<v>: Sets or overrides any project properties (identified in the ProjectGroup element of a project file). For example, you can use the property to change the configuration or the output directory, as in /property:Configuration=Release;OutDir=bin\\ (/p is the abbreviation).
 
-/maxcpucount\[:n\]: Specifies the number of CPUs to use. By default, msbuild runs on a single CPU (single-threaded). If synchronization isn’t a problem you can increase that by specifying the level of concurrency. If you specify the /maxcpucount option without providing a value, msbuild will use the number of processors on the computer.
+/maxcpucount[:n]: Specifies the number of CPUs to use. By default, msbuild runs on a single CPU (single-threaded). If synchronization isn’t a problem you can increase that by specifying the level of concurrency. If you specify the /maxcpucount option without providing a value, msbuild will use the number of processors on the computer.
 
-/preprocess\[:file\]: Generates an aggregated project file by inlining all the included targets. This can be helpful for debugging when there’s a problem.
+/preprocess[:file]: Generates an aggregated project file by inlining all the included targets. This can be helpful for debugging when there’s a problem.
 
 @file: Provides one (or more) response files that contains options. Such files have each command-line option on a separate line (comments prefixed with “#”). By default, MSBuild will import a file named msbuild.rsp from the first project or solution built. The response file is useful for identifying different build properties and targets depending on which environment (Dev, Test, Production) you’re building, for example.
 
@@ -167,9 +167,9 @@ While I like the idea of dotnet.exe, in the end it doesn’t seem to offer much 
 
 While Project.json functionality has migrated to CSPROJ, global.json is still fully supported. The file allows specification of project directories and package directories, and identifies the version of the SDK to use. Here’s a sample global.json file:
 
-```
+```javascript
 {
-  "projects": \[ "src", "test" \],
+  "projects": [ "src", "test" ],
   "packages": "packages",
   "sdk": {
     "version": "1.0.0-preview3",

@@ -12,8 +12,8 @@ The foreach statement syntax is simple and avoids the complication of having to 
 
 foreach with Arrays: The following demonstrates a simple foreach loop iterating over an array of integers and then printing out each integer to the console:
 
-```
-int\[\] array = new int\[\]{1, 2, 3, 4, 5, 6};
+```csharp
+int[] array = new int[]{1, 2, 3, 4, 5, 6};
 foreach (int item in array)
 {
   Console.WriteLine(item);
@@ -22,30 +22,30 @@ foreach (int item in array)
 
 From this code, the C# compiler creates a CIL equivalent of the for loop:
 
-```
-int\[\] tempArray;
-int\[\] array = new int\[\]{1, 2, 3, 4, 5, 6};
+```csharp
+int[] tempArray;
+int[] array = new int[]{1, 2, 3, 4, 5, 6};
 tempArray = array;
 for (int counter = 0; (counter < tempArray.Length); counter++)
 {
-  int item = tempArray\[counter\];
+  int item = tempArray[counter];
   Console.WriteLine(item);
 }
 ```
 
-In this example, note that foreach relies on the support for the Length property and the index operator (\[\]). With the Length property, the C# compiler can use the for statement to iterate through each element in the array.
+In this example, note that foreach relies on the support for the Length property and the index operator ([]). With the Length property, the C# compiler can use the for statement to iterate through each element in the array.
 
 foreach with IEnumerable<T>: Although the preceding code works well on arrays where the length is fixed and the index operator is always supported, not all types of collections have a known number of elements. Furthermore, many of the collection classes, including Stack<T>, Queue<T> and Dictionary<TKey and TValue>, don’t support retrieving elements by index. Therefore, a more general approach of iterating over collections of elements is needed. The iterator pattern provides this capability. Assuming you can determine the first, next, and last elements, knowing the count and supporting retrieval of elements by index is unnecessary.
 
 The System.Collections.Generic.IEnumerator<T> and nongeneric System.Collections.IEnumerator interfaces are designed to enable the iterator pattern for iterating over collections of elements, rather than the length-index pattern shown previously. A class diagram of their relationships appears in **Figure 1**.
 
- "C# foreach Internals and Custom Iterators with yield"
+![Figure 1 A Class Diagram of the IEnumerator and IEnumerator Interfaces](https://intellitect.com/wp-content/uploads/2019/12/Figure-1-1.png "C# foreach Internals and Custom Iterators with yield")
 
 **Figure 1 A Class Diagram of the IEnumerator<T> and IEnumerator Interfaces**
 
 IEnumerator, which IEnumerator<T> derives from, includes three members. The first is bool MoveNext. Using this method, you can move from one element within the collection to the next, while at the same time detecting when you’ve enumerated through every item. The second member, a read-only property called Current, returns the element currently in process. Current is overloaded in IEnumerator<T>, providing a type-specific implementation of it. With these two members on the collection class, it’s possible to iterate over the collection simply using a while loop:
 
-```
+```csharp
 System.Collections.Generic.Stack<int> stack =
   new System.Collections.Generic.Stack<int>();
 int number;
@@ -70,7 +70,7 @@ To overcome this problem, the collection classes don’t support IEnumerator<T> 
 
 **Figure 2 A Separate Enumerator Maintaining State During an Iteration**
 
-```
+```csharp
 System.Collections.Generic.Stack<int> stack =
   new System.Collections.Generic.Stack<int>();
 int number;
@@ -92,7 +92,7 @@ Cleaning up Following Iteration: Given that the classes that implement the IEnum
 
 **Figure 3 Compiled Result of foreach on Collections**
 
-```
+```csharp
 System.Collections.Generic.Stack<int> stack =
   new System.Collections.Generic.Stack<int>();
 System.Collections.Generic.Stack<int>.Enumerator
@@ -127,7 +127,7 @@ Notice that because the IDisposable interface is supported by IEnumerator<T>, th
 
 **Figure 4 Error Handling and Resource Cleanup with using**
 
-```
+```csharp
 System.Collections.Generic.Stack<int> stack =
   new System.Collections.Generic.Stack<int>();
 int number;
@@ -159,7 +159,7 @@ Iterator Syntax: An iterator provides a shorthand implementation of iterator int
 
 **Figure 5 Iterator Interfaces Pattern**
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 public class BinaryTree<T>:
@@ -213,7 +213,7 @@ The yield return statement yields a value each time an iterator encounters it; c
 
 **Figure 6 Yielding Some C# Keywords Sequentially**
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 public class CSharpBuiltInTypes: IEnumerable<string>
@@ -263,7 +263,7 @@ The results of **Figure 6** appear in **Figure 7**, which is a listing of the C#
 
 **Figure 7 A List of Some C# Keywords Output from the Code in Figure 6**
 
-```
+```csharp
 object
 byte
 uint
@@ -286,7 +286,7 @@ Clearly, more explanation is required but I’m out of space for this month so I
 
 **Figure 8 Using yield return to Implement an IEnumerable<T> Property**
 
-```
+```csharp
 IEnumerable<(string City, string Country)> CountryCapitals
 {
   get

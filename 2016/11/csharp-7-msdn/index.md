@@ -12,7 +12,7 @@ Take a look at the PathInfo class in **Figure 1**.
 
 **Figure 1 PathInfo Class with a Deconstructor with Associated Tests**
 
-```
+```csharp
 public class PathInfo
 {
   public string DirectoryName { get; }
@@ -47,7 +47,7 @@ Obviously, you can call the Deconstruct method as you would have in C# 1.0. Howe
 
 **Figure 2 Deconstructor Invocation and Assignment**
 
-```
+```csharp
 PathInfo pathInfo = new PathInfo(@"\\\\test\\unc\\path\\to\\something.ext");
 {
   // Example 1: Deconstructing declaration and assignment.
@@ -69,7 +69,7 @@ PathInfo pathInfo = new PathInfo(@"\\\\test\\unc\\path\\to\\something.ext");
 
 Notice how, for the first time, C# is allowing simultaneous assignment to multiple variables of different values. This is not the same as the null assigning declaration in which all variables are initialized to the same value (null):
 
-```
+```csharp
 string directoryName, filename, extension = null;
 ```
 
@@ -79,7 +79,7 @@ As you’d expect, the type of the out parameters must match the type of the var
 
 Note that at this time, the C# 7.0 tuple-like syntax requires that at least two variables appear within the parentheses. For example, (FileInfo path) = pathInfo; is not allowed even if a deconstructor exists for:
 
-```
+```csharp
 public void Deconstruct(out FileInfo file)
 ```
 
@@ -93,9 +93,9 @@ With C# 7.0 there’s now a special streamlined syntax for working with tuples, 
 
 **Figure 3 Declaring, Instantiating and Using the C# 7.0 Tuple Syntax**
 
-```
-\[TestMethod\]
-public void Constructor\_CreateTuple()
+```csharp
+[TestMethod]
+public void Constructor_CreateTuple()
 {
   (string DirectoryName, string FileName, string Extension) pathData =
     (DirectoryName: @"\\\\test\\unc\\path\\to",
@@ -119,8 +119,8 @@ public void Constructor\_CreateTuple()
   Assert.AreEqual<Type>(
     typeof(ValueTuple<string, string, string>), pathData.GetType());
 }
-\[TestMethod\]
-public void ValueTuple\_GivenNamedTuple\_ItemXHasSameValuesAsNames()
+[TestMethod]
+public void ValueTuple_GivenNamedTuple_ItemXHasSameValuesAsNames()
 {
   var normalizedPath =
     (DirectoryName: @"\\\\test\\unc\\path\\to", FileName: "something",
@@ -149,7 +149,7 @@ Let’s take a look at the semantic intent. Notice in **Figure 3** that the C# 7
 
 Now, while the elements for a C# 7.0 tuple are strongly typed, the names themselves aren’t distinguishing in the type definition. Therefore, you can assign two tuples with disparate name aliases and all you’ll get is a warning that informs you the name on the right-hand side will be ignored:
 
-```
+```csharp
 // Warning: The tuple element name 'AltDirectoryName1' is ignored
 // because a different name is specified by the target type...
 (string DirectoryName, string FileName, string Extension) pathData =
@@ -159,7 +159,7 @@ Now, while the elements for a C# 7.0 tuple are strongly typed, the names themsel
 
 Similarly, you can assign tuples to other tuples that may not have all alias element names defined:
 
-```
+```csharp
 // Warning: The tuple element name 'directoryName', 'FileNAme' and 'Extension'
 // are ignored because a different name is specified by the target type...
 (string, string, string) pathData =
@@ -198,7 +198,7 @@ The problem with each of these approaches is that the syntax is fairly verbose a
 
 **Figure 4 Type Casting Without Pattern Matching**
 
-```
+```csharp
 // Eject without pattern matching.
 public void Eject(Storage storage)
 {
@@ -223,7 +223,7 @@ public void Eject(Storage storage)
 
 **Figure 5 Type Casting with Pattern Matching**
 
-```
+```csharp
 // Eject with pattern matching.
 public void Eject(Storage storage)
 {
@@ -246,7 +246,7 @@ The difference between the two isn’t anything radical, but when performed freq
 
 Note that the code in **Figure 5** starts out with a pattern-matching is operator with support for a null comparison operator, as well:
 
-```
+```csharp
 if (storage is null) { ... }
 ```
 
@@ -256,7 +256,7 @@ While supporting pattern matching with the is operator provides an improvement, 
 
 **Figure 6 Pattern Matching in a Switch Statement**
 
-```
+```csharp
 public void Eject(Storage storage)
 {
   switch(storage)
@@ -293,7 +293,7 @@ While it’s already possible to declare a delegate and assign it an expression,
 
 **Figure 7 A Local Function Example**
 
-```
+```csharp
 bool IsPalindrome(string text)
 {
   if (string.IsNullOrWhiteSpace(text)) return false;
@@ -303,8 +303,8 @@ bool IsPalindrome(string text)
     if (target.Length <= 1) return true;
     else
     {
-      return char.ToLower(target\[0\]) ==
-        char.ToLower(target\[target.Length - 1\]) &&
+      return char.ToLower(target[0]) ==
+        char.ToLower(target[target.Length - 1]) &&
         LocalIsPalindrome(
           target.Substring(1, target.Length - 2));
     }
@@ -319,9 +319,9 @@ The parameter validation scenario in **Figure 7** is one of the common local fun
 
 **Figure 8 Unit Testing Often Uses Local Functions**
 
-```
-\[TestMethod\]
-public void IsPalindrome\_GivenPalindrome\_ReturnsTrue()
+```csharp
+[TestMethod]
+public void IsPalindrome_GivenPalindrome_ReturnsTrue()
 {
   void AssertIsPalindrome(string text)
   {
@@ -350,7 +350,7 @@ To wrap up the topic, here are a few more points to be aware of for local functi
 
 Since C# 1.0 it has been possible to pass arguments into a function by reference (ref). The result is that any change to the parameter itself will get passed back to the caller. Consider the following Swap function:
 
-```
+```csharp
 static void Swap(ref string x, ref string y)
 ```
 
@@ -360,44 +360,44 @@ Starting in C# 7.0, you’re also able to pass back a reference via the function
 
 **Figure 9 Ref Return and Ref Local Declaration**
 
-```
-public ref byte FindFirstRedEyePixel(byte\[\] image)
+```csharp
+public ref byte FindFirstRedEyePixel(byte[] image)
 {
   //// Do fancy image detection perhaps with machine learning.
   for (int counter = 0; counter < image.Length; counter++)
   {
-    if(image\[counter\] == (byte)ConsoleColor.Red)
+    if(image[counter] == (byte)ConsoleColor.Red)
     {
-      return ref image\[counter\];
+      return ref image[counter];
     }
   }
   throw new InvalidOperationException("No pixels are red.");
 }
-\[TestMethod\]
-public void FindFirstRedEyePixel\_GivenRedPixels\_ReturnFirst()
+[TestMethod]
+public void FindFirstRedEyePixel_GivenRedPixels_ReturnFirst()
 {
-  byte\[\] image;
+  byte[] image;
   // Load image.
   // ...
     // Obtain a reference to the first red pixel.
   ref byte redPixel = ref FindFirstRedEyePixel(image);
   // Update it to be Black.
   redPixel = (byte)ConsoleColor.Black;
-  Assert.AreEqual<byte>((byte)ConsoleColor.Black, image\[redItems\[0\]\]);
+  Assert.AreEqual<byte>((byte)ConsoleColor.Black, image[redItems[0]]);
 }
 ```
 
 By returning a reference to the image, the caller is then able to update the pixel to a different color. Checking for the update via the array shows that the value is now black. The alternative of using a by reference parameter is, one might argue, less obvious and less readable:
 
-```
+```csharp
 public bool FindFirstRedEyePixel(ref byte pixel);
 ```
 
 There are two important restrictions on return by reference—both due to object lifetime. These are that object references shouldn’t be garbage collected while they’re still referenced, and they shouldn’t consume memory when they no longer have any references. First, you can only return references to fields, other reference-returning properties or functions, or objects that were passed in as parameters to the by reference-returning function. For example, FindFirst­RedEyePixel returns a reference to an item in the image array, which was a parameter to the function. Similarly, if the image was stored as a field within a class, you could return the field by reference:
 
-```
-byte\[\] \_Image;
-public ref byte\[\] Image { get {  return ref \_Image; } }
+```csharp
+byte[] _Image;
+public ref byte[] Image { get {  return ref _Image; } }
 ```
 
 Second, ref locals are initialized to a certain storage location in memory, and can’t be modified to point to a different location. (You can’t have a pointer to a reference and modify the reference—a pointer to a pointer for those of you with a C++ background.)
@@ -407,32 +407,32 @@ There are several return-by-reference characteristics of which to be cognizant:
 - If you’re returning a reference you obviously have to return it. This means, therefore, that in the example in Figure 9, even if no red-eye pixel exists, you still need to return a ref byte. The only workaround would be to throw an exception. In contrast, the by reference parameter approach allows you to leave the parameter unchanged and return a bool indicating success. In many cases, this might be preferable.
 - When declaring a reference local variable, initialization is required. This involves assigning it a ref return from a function or a reference to a variable:
 
-```
+```csharp
 ref string text;  // Error
 ```
 
 - Although it’s possible in C# 7.0 to declare a reference local variable, declaring a field of type ref isn’t allowed:
 
-```
-class Thing { ref string \_Text;  /\* Error \*/ }
+```csharp
+class Thing { ref string _Text;  /\* Error \*/ }
 ```
 
 - You can’t declare a by reference type for an auto-implemented property:
 
-```
+```csharp
 class Thing { ref string Text { get;set; }  /\* Error \*/ }
 ```
 
 - Properties that return a reference are allowed:
 
-```
-class Thing { string \_Text = "Inigo Montoya"; 
-  ref string Text { get { return ref \_Text; } } }
+```csharp
+class Thing { string _Text = "Inigo Montoya"; 
+  ref string Text { get { return ref _Text; } } }
 ```
 
 - A reference local variable can’t be initialized with a value (such as null or a constant). It must be assigned from a by reference returning member or a local variable/field:
 
-```
+```csharp
 ref int number = null; ref int number = 42;  // ERROR
 ```
 
@@ -442,14 +442,14 @@ Since the first release of C#, the invocation of methods containing out paramete
 
 **Figure 10 Inline Declaration of Out Arguments**
 
-```
+```csharp
 public long DivideWithRemainder(
   long numerator, long denominator, out long remainder)
 {
   remainder = numerator % denominator;
   return (numerator / denominator);
 }
-\[TestMethod\]
+[TestMethod]
 public void DivideTest()
 {
   Assert.AreEqual<long>(21,
@@ -464,14 +464,14 @@ Notice how in the DivideTest method, the call to DivideWith­Remainder from with
 
 Unlike previous versions, C# 7.0 includes a numeric binary literal format, as the following example demonstrates:
 
-```
+```csharp
 long LargestSquareNumberUsingAllDigits =
-  0b0010\_0100\_1000\_1111\_0110\_1101\_1100\_0010\_0100;  // 9,814,072,356
+  0b0010_0100_1000_1111_0110_1101_1100_0010_0100;  // 9,814,072,356
 long MaxInt64 { get; } =
-  9\_223\_372\_036\_854\_775\_807;  // Equivalent to long.MaxValue
+  9_223_372_036_854_775_807;  // Equivalent to long.MaxValue
 ```
 
-Notice also the support for the underscore “\_” as a digit separator. It’s used simply to improve readability and can be placed anywhere between the digits of the number—binary, decimal or hexadecimal.
+Notice also the support for the underscore “_” as a digit separator. It’s used simply to improve readability and can be placed anywhere between the digits of the number—binary, decimal or hexadecimal.
 
 ### Generalized Async Return Types
 
@@ -485,18 +485,18 @@ C# 6.0 introduced expression-bodied members for functions and properties, enabli
 
 **Figure 11 Using Expression-Bodied Members in Accessors and Constructors**
 
-```
+```csharp
 class TemporaryFile  // Full IDisposible implementation
                      // left off for elucidation.
 {
   public TemporaryFile(string fileName) =>
     File = new FileInfo(fileName);
   ~TemporaryFile() => Dispose();
-  Fileinfo \_File;
+  Fileinfo _File;
   public FileInfo File
   {
-    get => \_File;
-    private set => \_File = value;
+    get => _File;
+    private set => _File = value;
   }
   void Dispose() => File?.Delete();
 }
@@ -512,7 +512,7 @@ Caution: This feature is not implemented in Visual Studio 2017 RC.
 
 The Temporary class in **Figure 11** can be enhanced to include parameter validation within the expression-bodied members; therefore, I can update the constructor to be:
 
-```
+```csharp
 public TemporaryFile(string fileName) =>
   File = new FileInfo(filename ?? throw new ArgumentNullException());
 ```

@@ -6,7 +6,7 @@ For the past several months, I have been participating with the DevOps Metrics t
 
 During the presentation, I outlined the challenge of applying taxonomy to DevOps metrics. To begin with, consider an unorganized list of metrics:
 
- "DevOps Metrics"
+![](https://intellitect.com/wp-content/uploads/2015/10/Word-Art-300x151.jpeg) [Created with Tagul.com](https://tagul.com/ "DevOps Metrics")
 
 For those of you looking for a list you can cut and paste, here you go:
 
@@ -34,4 +34,4 @@ A core problem with metrics, is that their importance is relevant to your perspe
 
 Ultimately, I find it useful to review all the possible metrics you can get your hands on and consider each one as a potential option, weighing the work required to gather the metric with the value that it provides.  In evaluating the possible metrics, consider whether a measurement is transparent, relevant, automated, comparative, and whether it will be examined:
 
-[ "DevOps Metrics"
+[![](https://intellitect.com/wp-content/uploads/2015/10/Principles-of-Measurement-1024x487.png)](https://intellitect.com/wp-content/uploads/2015/10/Principles-of-Measurement.png "DevOps Metrics")

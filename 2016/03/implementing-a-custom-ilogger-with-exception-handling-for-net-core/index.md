@@ -4,8 +4,8 @@ Estimated reading time: 2 minutes
 
 This article corresponds with the MSDN article: [_Essential .NET - Logging with .NET Core_](https://msdn.microsoft.com/magazine/mt694089). [This GitHub repo](https://github.com/IntelliTect-Samples/2016.04.01-EssentialNetLoggingWithNetCore) contains the code referenced in the article. Not, in particular, the unit test `LogCritical_Exception_Success` for an example of handling an exception using the custom logger.
 
-```
-  public void LogCritical\_Exception\_Success()
+```csharp
+  public void LogCritical_Exception_Success()
   {
         string message = "The amount of caffeine has reach critical levels.";
         CustomLogger.CustomLogger customLogger = null;
@@ -19,7 +19,7 @@ This article corresponds with the MSDN article: [_Essential .NET - Logging with 
 
 The Custom Logger implementation is straightforward:
 
-```
+```csharp
  public class CustomLogger : ILogger 
   {
         public Queue LogDataQueue = new Queue();
@@ -56,7 +56,7 @@ The Custom Logger implementation is straightforward:
 
 Here is the the extension method for adding a custom logger provider:
 
-```
+```csharp
   public static class CustomLoggerFactoryExtensions
   {
         public static ILoggerFactory AddCustomLogger(
@@ -67,12 +67,11 @@ Here is the the extension method for adding a custom logger provider:
             return factory;
         }
   }
-﻿
 ```
 
 The custom logger provider:
 
-```
+```csharp
   public class CustomLoggerProvider : ILoggerProvider
   {
         public CustomLoggerProvider() { }
@@ -98,7 +97,7 @@ The custom logger provider:
 
 The provider event args:
 
-```
+```csharp
   public class CustomLoggerProviderEventArgs
   {
         public CustomLogger CustomLogger { get; }
@@ -112,24 +111,23 @@ The provider event args:
 
 One uses the ApplicationLogging static class to set up the custom logger with the following pattern:
 
-```
+```csharp
   public static class ApplicationLogging
   {
         public static ILoggerFactory LoggerFactory { get; } = new LoggerFactory();
         public static ILogger CreateLogger() =>
             LoggerFactory.CreateLogger();
   }
-/\*        The following pattern will set up the custom logger
+\*        The following pattern will set up the custom logger
             CustomLogger.CustomLogger customLogger = null;
             CustomLoggerProvider logProvider =
                 new CustomLoggerProvider((sender, eventArgs) => customLogger = eventArgs.CustomLogger);
             ApplicationLogging.LoggerFactory.AddProvider(logProvider);
-\*/
-﻿
+*/
 ```
 
 ### Have a Question?
 
 Check out my other [tutorials](/configuring-windows-smtp-server-on-windows-2008-for-relay/) and leave any questions in the comment section below!
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.png)

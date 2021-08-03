@@ -14,13 +14,13 @@ For even more benefit, the team is discussing the possibility of leveraging the 
 
 (Ironically, C# 2.0 added nullable value types because there are numerous occasions—such as data retrieved from a database—where it’s necessary to let an integer contain null. And now, in C# 7, the team is looking to support the opposite for reference types.)
 
-One interesting consideration with reference type support for things non-nullable (for example, string! text) is what the implementation would be in Common Intermediate Language (CIL). The two most popular proposals are whether to map it to a NonNullable<T> type syntax or to leverage attributes as in \[Nullable\] string text. The latter is currently the preferred approach.
+One interesting consideration with reference type support for things non-nullable (for example, string! text) is what the implementation would be in Common Intermediate Language (CIL). The two most popular proposals are whether to map it to a NonNullable<T> type syntax or to leverage attributes as in [Nullable] string text. The latter is currently the preferred approach.
 
 ### Tuples
 
 Tuples is another feature under consideration for C# 7. This is a topic that has come up on multiple occasions for earlier versions of the language, but still hasn’t quite made it to production. The idea is that it would be possible to declare types in sets such that a declaration can contain more than one value and, similarly, methods can return more than one value. Consider the following sample code to understand the concept:
 
-```
+```csharp
 public class Person
 {
   public readonly (string firstName, string lastName) Names; // a tuple
@@ -33,11 +33,11 @@ public class Person
 
 As the listing shows, with tuples support, you can declare a type as a tuple—having two (or more) values. This can be leveraged anywhere a data type can be leveraged—including as a field, parameter, variable declaration or even a method return. For example, the following code snippet would return a tuple from a method:
 
-```
+```csharp
 public (string FirstName, string LastName) GetNames(string! fullName)
 {
-  string\[\] names = fullName.Split(" ", 2);
-  return (names\[0\], names\[1\]);
+  string[] names = fullName.Split(" ", 2);
+  return (names[0], names[1]);
 }
 public void Main()
 {
@@ -53,31 +53,31 @@ There are numerous options that could go along with tuples. Here are a few under
 
 - Tuples could have named or unnamed properties, as in:
 
-```
+```csharp
 var name = ("Inigo", "Montoya")
 ```
 
 and:
 
-```
+```csharp
 var name = (first: "John", last: "Doe")
 ```
 
 - The result could be an anonymous type or explicit variables, as in:
 
-```
+```csharp
 var name = (first: "John", last: "Doe")
 ```
 
 or:
 
-```
+```csharp
 (string first, string last) = GetNames("Inigo Montoya")
 ```
 
 - You can access the individual tuple items by name, as in:
 
-```
+```csharp
 Console.WriteLine($”My name is { names.first } { names.last }.”);
 ```
 
@@ -89,7 +89,7 @@ Although there are complications with tuples, for the most part they follow stru
 
 Pattern matching is also a frequent topic within the C# 7 design team’s discussion. Perhaps one of the more understandable renderings of this would be expanded switch (and if) statements that supported expression patterns in the case statements, rather than just constants. (To correspond with the expanded case statement, the switch expression type wouldn’t be limited to types that have corresponding constant values, either). With pattern matching, you could query the switch expression for a pattern, such as whether the switch expression was a specific type, a type with a particular member, or even a type that matched a specific “pattern” or expression. For example, consider how obj might be of type Point with an x value greater than 2:
 
-```
+```csharp
 object obj;
 // ...
 switch(obj) {
@@ -130,7 +130,7 @@ Similarly, the is operator could support pattern matching, allowing not only a t
 
 In a continuation of the abbreviated “constructor” declaration syntax considered (but ultimately rejected) in C# 6.0, there is support for embedding the constructor declaration within the class definition, a concept known as “records.” For example, consider the following declaration:
 
-```
+```csharp
 class Person(string Name, int Age);
 ```
 
@@ -138,7 +138,7 @@ This simple statement would automatically generate the following:
 
 - A constructor:
 
-```
+```csharp
 public Person(string Name, int Age)
 {
   this.Name = Name;
@@ -157,20 +157,20 @@ One of the more problematic issues associated with records is how to handle seri
 
 In association with the records is support for with expressions. With expressions allow the instantiation of a new object based on an existing object. Given the person object declaration, for example, you could create a new instance via the following with expression:
 
-```
+```csharp
 Person inigo = new Person("Inigo Montoya", 42);
 Person humperdink = inigo with { Name = "Prince Humperdink" };
 ```
 
 The generated code corresponding to the with expression would be something like:
 
-```
+```csharp
 Person humperdink = new Person(Name: "Prince Humperdink", Age: inigo.42 );
 ```
 
 An alternative suggestion, however, is that rather than depending on the signature of the constructor for the with expression, it might be preferable to translate it to the invocation of a With method, as in:
 
-```
+```csharp
 Person humperdink = inigo.With(Name: "Prince Humperdink", Age: inigo.42);
 ```
 

@@ -24,7 +24,7 @@ I find the initial meeting is critical in setting the tone to help maximize your
 
 Surprisingly, I found there’s not much to it.
 
- "Demystifying the Requirements-Gathering Environment"
+![requirements-gathering](https://intellitect.com/wp-content/uploads/2021/04/chris-has-no-legs-1024x717.jpeg "Demystifying the Requirements-Gathering Environment")
 
 Chris Finlayson, senior software architect, practices creating a requirements-gathering environment while on a call with a client.
 
@@ -50,4 +50,4 @@ Additionally, when you use these takeaways, the audience will generally be more 
 
 Feel free to leave any questions or comments below! Check out _[Agile Demystified: 7 Metrics to Assess Your Agile Practices](/demystified-agile/)_ or _[Software Solutions Demystified: Buy or Build with Confidence](/demystified-buy-or-build/)_.
 
-[ "Demystifying the Requirements-Gathering Environment"
+[![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)](/join-our-team/ "Demystifying the Requirements-Gathering Environment")

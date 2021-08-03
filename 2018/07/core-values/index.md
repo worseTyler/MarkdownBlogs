@@ -1,6 +1,6 @@
 
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2018/07/Twitter-Quotes-300x150.webp)
+![](https://intellitect.com/wp-content/uploads/2018/07/Twitter-Quotes-300x150.png)
 
 Our core values drive how we do business.
 
@@ -22,4 +22,4 @@ Just like the strongest rope available for tug of war, we strive to give our cli
 
 _Written by Rachael Gartman._
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [ "When Ropes Snap - Our Core Values at Work"
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T "When Ropes Snap - Our Core Values at Work")

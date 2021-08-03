@@ -2,8 +2,8 @@
 
 Since 2006, IntelliTect has been a custom development partner for Avista Utilities. We have been a strategic collaborator in the development and project management of a long-awaited customer portal that will bridge the communication gap between Avista, their customers, and the community they serve.
 
-\[caption id="attachment\_33019" align="alignnone" width="1996"\]![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2018/01/2.-MDM-GL-Group-Pic-clear-e1515792648770.webp) The integrated Avista team celebrates a successful “Go Live” event in October.  
-Photo Credit: Heads and Tails Photography.\[/caption\]
+[caption id="attachment_33019" align="alignnone" width="1996"]![](https://intellitect.com/wp-content/uploads/2018/01/2.-MDM-GL-Group-Pic-clear-e1515792648770.jpg) The integrated Avista team celebrates a successful “Go Live” event in October.  
+Photo Credit: Heads and Tails Photography.[/caption]
 
 Avista's most recent project was a joint effort with their contract companies – IntelliTect being one of them. It spanned over two years and involved over 125 employees across 20 integrated teams. The project was centered around meter data management (MDM) and laid the groundwork for the larger initiative to leverage technology for smart meters.
 
@@ -13,7 +13,7 @@ Early on in the project, the integrated team was struggling with the management 
 
  
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2018/01/Myriad-Graphic-2-e1515792825555.webp)
+![](https://intellitect.com/wp-content/uploads/2018/01/Myriad-Graphic-2-e1515792825555.jpg)
 
  
 
@@ -34,4 +34,4 @@ We were fortunate to work with several brilliant minds at Avista and were thankf
 
 Next year, Avista will begin replacing over 400,000 meters with smart meters. We look forward to continuing to provide technical leadership, architecture, and integration services for Avista over the coming years.
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [ "IntelliTect Today: Smart Meters for the Inland Northwest"
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T "IntelliTect Today: Smart Meters for the Inland Northwest")

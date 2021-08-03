@@ -14,11 +14,11 @@ As is fairly well understood, throwing a particular exception type enables the c
 
 **Figure 1 Catching Different Exception Types**
 
-```
+```csharp
 using System;
 public sealed class Program
 {
-  public static void Main(string\[\] args)
+  public static void Main(string[] args)
     try
     {
        // ...
@@ -76,7 +76,7 @@ In C# 5.0, a mechanism was added that enables the throwing of a previously throw
 
 **Figure 2 Using ExceptionDispatchInfo to Rethrow an Exception**
 
-```
+```csharp
 using System
 using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;

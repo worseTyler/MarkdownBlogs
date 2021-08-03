@@ -1,6 +1,6 @@
 
 
- "Quickly Configure ASP.NET Core API to work with Vue CLI 3!"
+![" "](https://intellitect.com/wp-content/uploads/2018/10/Aspdotnet-1024x768.jpg "Quickly Configure ASP.NET Core API to work with Vue CLI 3!")
 
 ## Use Vue CLI 3 with all the functionality of ASP.NET Core.
 
@@ -10,7 +10,7 @@
 
 In this tutorial, we will use the .NET WebAPI template to generate an API back-end and Vue CLI 3 to create the front-end and get them to work together.
 
-Here is a link to my working version on GitHub [https://github.com/ykravtsov/vue\_app](https://github.com/ykravtsov/vue_app).
+Here is a link to my working version on GitHub [https://github.com/ykravtsov/vue_app](https://github.com/ykravtsov/vue_app).
 
 ### Prerequisites
 
@@ -25,17 +25,17 @@ Here is a link to my working version on GitHub [https://github.com/ykravtsov/vu
 - We're going to set up the .NET webAPI template for the API back-end and the Vue CLI template for the front-end
     - Open a console and run these commands:
 
-```
-dotnet new webapi -o vue\_app
-vue create vue\_app
+```csharp
+dotnet new webapi -o vue_app
+vue create vue_app
 ```
 
 - Choose the merge option and follow the prompt for setting up Vue
 - Install two node libraries needed for the ASP Hot Modal Reloading (HMR) then open the project in VS Code
     - Note: choose npm or Yarn to install the two node libraries needed for ASP HMR
 
-```
-cd vue\_app
+```csharp
+cd vue_app
 
 npm install -D aspnet-webpack webpack-hot-middleware
 # or
@@ -48,7 +48,7 @@ Since we are going to be using the ASP.NET HMR, we’re going to redirect Vue to
 
 - Start by creating a file in the root directory named `vue.config.js` and add this content:
 
-```
+```csharp
 module.exports = {
     outputDir: 'wwwroot',
     baseUrl: "/",
@@ -62,7 +62,7 @@ module.exports = {
 - We are going to configure the ASP HMR
     - replace the code in Startup.cs with this:
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -78,7 +78,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace vue\_app
+namespace vue_app
 {
     public class Startup
     {
@@ -92,7 +92,7 @@ namespace vue\_app
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version\_2\_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -105,7 +105,7 @@ namespace vue\_app
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
                     HotModuleReplacement = true,
-                    ConfigFile = Path.Combine(env.ContentRootPath, @"node\_modules\\@vue\\cli-service\\webpack.config.js")
+                    ConfigFile = Path.Combine(env.ContentRootPath, @"node_modules\\@vue\\cli-service\\webpack.config.js")
                 });
             }
             else
@@ -142,23 +142,23 @@ Now, let's go through what we just pasted into Setup.
 
 The code below sets up ASP HMR and points to the webpack file that Vue CLI 3 generates.
 
-```
+```csharp
 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
 {
     HotModuleReplacement = true,
-    ConfigFile = Path.Combine(env.ContentRootPath, @"node\_modules\\@vue\\cli-service\\webpack.config.js")
+    ConfigFile = Path.Combine(env.ContentRootPath, @"node_modules\\@vue\\cli-service\\webpack.config.js")
 });
 ```
 
 This enables serving static files:
 
-```
+```csharp
 app.UseStaticFiles();
 ```
 
 This tells the router to use the MVC controller if it exists:
 
-```
+```csharp
 app.UseMvc(routes =>
 {
     routes.MapRoute(
@@ -169,7 +169,7 @@ app.UseMvc(routes =>
 
 This last part will send all the other routes that weren't matched by MVC to our SPA unless it starts with /api, in which case we want to throw a 404 error.
 
-```
+```csharp
 // here you can see we make sure it doesn't start with /api, if it does, it'll 404 within .NET if it can't be found
 app.MapWhen(x => !x.Request.Path.Value.StartsWith("/api"), builder =>
 {
@@ -184,11 +184,11 @@ app.MapWhen(x => !x.Request.Path.Value.StartsWith("/api"), builder =>
 
 - `Crate HomeController.cs` in the Controllers folder and add this content:
 
-```
+```csharp
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
-namespace vue\_app.Controllers
+namespace vue_app.Controllers
 {
     public class HomeController : Controller
     {
@@ -199,7 +199,7 @@ namespace vue\_app.Controllers
 
         public IActionResult Error()
         {
-            ViewData\["RequestId"\] = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+            ViewData["RequestId"] = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
             return View();
         }
     }

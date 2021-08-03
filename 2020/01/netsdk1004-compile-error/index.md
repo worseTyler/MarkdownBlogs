@@ -2,7 +2,7 @@
 
 ## What Does the NETSDK1004 Message Mean?
 
-```
+```csharp
 Error NETSDK1004: "Assets file 'C:project.assets.json' not found. Run a NuGet package restore to generate this file.
 ```
 
@@ -12,13 +12,13 @@ It occurred when I was refactoring the CSPROJ files within my solution. In the p
 
 The SDK attribute causes the above error along with multiple occurrences of this associated warning:
 
-```
+```csharp
 warning MSB4011: "C:\Program Files\dotnet\sdk\3.1.100\Sdks\Microsoft.NET.Sdk\Sdk\Sdk.targets" cannot be imported again. It was already imported at "…\Directory.Build.props". This is most likely a build authoring error. This subsequent import will be ignored.
 ```
 
 Pull out the `SDK` attribute and the error goes away. Here's the corrected **Directory.Build.props** file:
 
-```
+```csharp
 <Project>
      <PropertyGroup>
          <Nullable>enable</Nullable>
@@ -35,4 +35,4 @@ If you are working with a solution and all projects are C# 8.0, I recommend you 
 
 Check out our blog _[How to Publish NuGets with Azure DevOps](https://intellitect.com/azure-devops-nugets/)_ for more information on NuGet packages!
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.png)

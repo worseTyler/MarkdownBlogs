@@ -35,7 +35,7 @@ Two required resource dictionaries need to be [merged into the Application Resou
 
 Let’s start with the resource dictionary that provides styles for most of the default WPF controls and custom controls.
 
-```
+```csharp
 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
 ```
 
@@ -43,7 +43,7 @@ Then, we need to decide if our app will use the light or dark theme as well as t
 
 The `BundledTheme` resource dictionary is included in the `materialDesign` xlmns:
 
-```
+```csharp
 <Application x:Class="Example.App"
              xmlns="https://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="https://schemas.microsoft.com/winfx/2006/xaml"
@@ -53,7 +53,7 @@ The `BundledTheme` resource dictionary is included in the `materialDesign` xlm
 
 Add the resource dictionary and choose colors:
 
-```
+```csharp
 <ResourceDictionary.MergedDictionaries>
                 <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="DeepPurple" SecondaryColor="Lime" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
@@ -62,7 +62,7 @@ Add the resource dictionary and choose colors:
 
 Finally, when done the complete App.xaml should look something like this:
 
-```
+```csharp
 <Application x:Class="Example.App"
              xmlns="https://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="https://schemas.microsoft.com/winfx/2006/xaml"
@@ -81,7 +81,7 @@ Finally, when done the complete App.xaml should look something like this:
 
 If you would prefer to use your own custom colors for the theme, you can do this with the `CustomColorTheme` resource dictionary (also included in the `materialDesign` xlmns). A final App.xaml should look something like this:
 
-```
+```csharp
 <Application x:Class="Example.App"
              xmlns="https://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="https://schemas.microsoft.com/winfx/2006/xaml"
@@ -102,7 +102,7 @@ If you would prefer to use your own custom colors for the theme, you can do this
 
 Most controls in your application pick up the style and color themes from the MDIX library. However, to make the window render the correct colors, we need to set some default properties (you can see an example of this in the [demo application](https://github.com/ButchersBoy/MaterialDesignInXamlToolkit/blob/master/MainDemo.Wpf/MainWindow.xaml)). Set the Background property to the resource MaterialDesignPaper, and TextElement.Foreground to the resource MaterialDesignBody. Additionally, both of these should use DynamicResource so they automatically update if the theme changes.
 
-```
+```csharp
 <Window x:Class="MaterialDesignColors.WpfExample.MainWindow"
         xmlns="https://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="https://schemas.microsoft.com/winfx/2006/xaml"
@@ -118,7 +118,7 @@ Many of the controls in the MDIX library have additional styles beyond the defau
 
 Let’s use a button as an example. By default, buttons use the primary color theme for display. We can quickly change it to use one of the other theme colors.
 
- "5 Steps to Getting Started with Material Design In XAML"
+![Material Design in XAML button styles](https://intellitect.com/wp-content/uploads/2018/07/MDIXButtonPreviews.png "5 Steps to Getting Started with Material Design In XAML")
 
 Style keys from left to right: MaterialDesignRaisedLightButton, MaterialDesignRaisedButton, MaterialDesignRaisedDarkButton, MaterialDesignRaisedAccentButton.
 
@@ -128,7 +128,7 @@ Most importantly, we must include these styles because they are not automaticall
 
 First, we include the additional button styles by merging the resource dictionary.
 
-```
+```csharp
 <Window.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
@@ -140,14 +140,14 @@ First, we include the additional button styles by merging the resource dictionar
 
 Now we can set the style of the button to use the MaterialDesignRaisedAccentButton style.
 
-```
+```csharp
 <Button
     Style="{StaticResource MaterialDesignRaisedAccentButton}"
     Width="100"
     Content="ACCENT"/>
 ```
 
- "5 Steps to Getting Started with Material Design In XAML"
+![Including Material Design in XAML button style in WPF application.](https://intellitect.com/wp-content/uploads/2018/07/MDIXUsingStyleExample.gif "5 Steps to Getting Started with Material Design In XAML")
 
 In this tutorial, we saw how easy it is to integrate Material Design in XAML into a WPF application. I have been working with, and contributing to this library for over a year and have loved the results.
 
@@ -169,4 +169,4 @@ There are several resources available. There is a [wiki](https://github.com/Butc
 
 Check out my blog _[Material Design in XAML - How to make sense of the Dialog Host](/material-design-in-xaml-dialog-host/)_.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.png)

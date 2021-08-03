@@ -23,7 +23,7 @@ For the remainder of the article, let’s consider each of these goals and how C
 
 To begin, there needs to be a syntax for distinguishing when a reference type should expect null and when it shouldn’t. The obvious syntax for allowing null is using the ? as a nullable declaration—both for a value type and a reference type. By including support on reference types, the developer is given a way to opt-in for null with, for example:
 
-```
+```csharp
 string? text = null;
 ```
 
@@ -31,13 +31,13 @@ The addition of this syntax explains why the critical nullable improvement is su
 
 Given the nullable reference types syntax, what’s the non-nullable reference type syntax? While this:
 
-```
+```csharp
 string! text = "Inigo Montoya"
 ```
 
 may seem a fine choice, it introduces the question of what is meant by simply:
 
-```
+```csharp
 string text = GetText();
 ```
 
@@ -58,7 +58,7 @@ Unfortunately, this means changing the language and issuing a warning when you a
 
 Of course, once the feature is enabled, the warnings will appear, presenting you with the choice. Choose explicitly whether the reference type is intended to allow nulls, or not. If it’s not, then remove the null assignment, thus removing the warning. However, this potentially introduces a warning later on because the variable isn’t assigned and you’ll need to assign it a non-null value. Alternatively, if null is explicitly intended (representing “unknown” for example), then change the declaration type to be nullable, as in:
 
-```
+```csharp
 string? text = null;
 ```
 
@@ -68,7 +68,7 @@ Given a way to declare types as either nullable or non-nullable, it’s now up t
 
 **Figure 1 Examples of Static Flow Analysis Results**
 
-```
+```csharp
 string text1 = null;
 // Warning: Cannot convert null to non-nullable reference
 string? text2 = null;
@@ -88,7 +88,7 @@ As discussed earlier, the static flow analysis should flag when a non-nullable t
 
 Given the possible fallibility of the static flow analysis, what if your check for null (perhaps with a call such as object.ReferenceEquals(s, null) or string.IsNullOrEmpty()) is not recognized by the compiler? When the programmer knows better that a value isn’t going to be null, they can dereference following the ! operator (for example, text!) as in:
 
-```
+```csharp
 string? text;...
 if(object.ReferenceEquals(text, null))
 {  var type = text!.GetType()
@@ -97,7 +97,7 @@ if(object.ReferenceEquals(text, null))
 
 Without the exclamation point, the compiler will warn of a possible null invocation. Similarly, when assigning a nullable value to a non-nullable value you can decorate the assigned value with an exclamation point to inform the compiler that you, the programmer, know better:
 
-```
+```csharp
 string moreText = text!;
 ```
 
@@ -107,7 +107,7 @@ In this way, you can override the static flow analysis just like you can use an 
 
 The introduction of the nullability modifier for reference types doesn’t introduce a new type. Reference types are still nullable and compiling string? results in IL that’s still just System.String. The difference at the IL level is the decoration of nullable modified types with an attribute of:
 
-```
+```csharp
 System.Runtime.CompilerServices.NullableAttribute
 ```
 
@@ -129,7 +129,7 @@ There are three main additional areas of enhancement under consideration for C# 
 
 Async Streams: Support for asynchronous streams enables await syntax to iterate over a collection of tasks (Task<bool>). For example, you can invoke
 
-```
+```csharp
 foreach await (var data in asyncStream)
 ```
 

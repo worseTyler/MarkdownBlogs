@@ -10,7 +10,7 @@ Each of the above scenarios are not (as of the time of this writing) straightfor
 
 The requirement is to support a user account creation/management screen for pharmacist login accounts as shown in figure 1. Each pharmacist is associated with a particular clinic (e.g. Walgreens, CVS) and specific locations (e.g. CVS store #1, CVS store #2). When setting up a user account, selecting the clinic refreshes the grid of clinic locations.
 
-[ "Using the Kendo Grid in an Unorthodox Manner"
+[![Figure 1: User Management Screen with a Grid](https://intellitect.com/wp-content/uploads/2015/08/Screen-Shot-2015-08-12-at-12.55.41-PM.png)](https://intellitect.com/wp-content/uploads/2015/08/Screen-Shot-2015-08-12-at-12.55.41-PM.png "Using the Kendo Grid in an Unorthodox Manner")
 
 Figure 1: User Management Screen with a Grid
 
@@ -26,15 +26,11 @@ The best technique I was able to find that accomplished all of these tasks is de
 
 The technique used here is to bind to a boolean value along with a custom javascript:
 
-```
+```javascript
 columns.Bound(x => x.IsAssociated).ClientTemplate(
-
-                         "<input name=ClinicLocations\[#=index(data)#\].IsAssociated type='checkbox' value='true' #=IsAssociated==true? checked='checked': ''# class='chkbx'/>").
-
+   "<input name=ClinicLocations[#=index(data)#].IsAssociated type='checkbox' value='true' #=IsAssociated==true? checked='checked': ''# class='chkbx'/>").
 function checkAll(ele) {
-
    $(".chkbx").prop("checked", $("#masterCheckBox").prop("checked"));
-
 }
 ```
 
@@ -42,7 +38,7 @@ function checkAll(ele) {
 
 The technique used here is to override the clinic’s dropdown onchange event
 
-```
+```javascript
 .Events(x => x.Change("clinicChanged")) //Submits the form to refresh the grid
 
 function clinicChanged(e) {
@@ -59,7 +55,7 @@ function clinicChanged(e) {
 
 The .cshtml snippet for the dropdown and grid is as follows:
 
-```
+```csharp
 <div id="clinicSelect">
        <div>
            <div class="editor-label">
@@ -91,10 +87,10 @@ The .cshtml snippet for the dropdown and grid is as follows:
                  {
                      columns.Bound(p => p.Id).
                          ClientTemplate("<input type='hidden' 
-                            name=ClinicLocations\[#=index(data)#\]
+                            name=ClinicLocations[#=index(data)#]
                             .Id value='#= Id #' />").Hidden();
                      columns.Bound(x => x.IsAssociated).ClientTemplate(
-                         "<input name=ClinicLocations\[#=index(data)#\]." +
+                         "<input name=ClinicLocations[#=index(data)#]." +
                          "IsAssociated type='checkbox' 
                             value='true' #=IsAssociated==true?" +
                          "checked='checked': ''# class='chkbx'/>").
@@ -102,10 +98,10 @@ The .cshtml snippet for the dropdown and grid is as follows:
                            id='masterCheckBox' 
                            onclick=' checkAll(this) ' /></text>).Width(50);
                      columns.Bound(x => x.Name).ClientTemplate("#=Name#
-                           <input name=ClinicLocations\[#=index(data)#\].Name " +
+                           <input name=ClinicLocations[#=index(data)#].Name " +
                                    "type='hidden' value='#=Name#'/>");
                      columns.Bound(x => x.Address).ClientTemplate(
-                        "#=Address#<input name=ClinicLocations\[#=index(data)#\]
+                        "#=Address#<input name=ClinicLocations[#=index(data)#]
                          .Address " + "type='hidden' value='#=Address#'/>");
                  }).DataSource(dataSource=>dataSource.Ajax()
                  .ServerOperation(false))
@@ -117,7 +113,7 @@ The .cshtml snippet for the dropdown and grid is as follows:
 
 The javascript functions required are:
 
-```
+```javascript
 function onSave() {
    $("#RefreshClinicLocations").val(false);
    $("#createUserForm").submit();

@@ -1,6 +1,6 @@
 
 
-###  "Potential New Features of C# 8.0 Exposed"
+### ![Mark at Visual Studio Live, Chicago. ](https://intellitect.com/wp-content/uploads/2018/11/Mark-VS-Live-Chicago-2018-300x225.jpeg "Potential New Features of C# 8.0 Exposed")
 Can't satisfy your thirst for C# knowledge?
 
 ### Hang around Mark Michaelis long enough and you'll get up to speed in no time!
@@ -13,11 +13,11 @@ Didn't get to attend one of his speaking engagements? Here's a recording of his 
 
  
 
-https://youtu.be/c5nsvjQ1I\_g
+https://youtu.be/c5nsvjQ1I_g
 
 ### Want more? Here are the slides from his talks.
 
-[Essential C# 8 Slides](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2018/10/EssentialCsharp8Slides.pdf)
+[Essential C# 8 Slides](https://intellitect.com/wp-content/uploads/2018/10/EssentialCsharp8Slides.pdf)
 
 ### Have a specific question about C# 8.0?
 

@@ -12,7 +12,7 @@ I recommend watching the full video (above) for an in-depth explanation of Visua
 
 #### Convert to Interpolated String
 
- "Visual Studio 2019 Refactoring Galore (Video)"
+![Screenshot showing how to convert to interpolated string](https://intellitect.com/wp-content/uploads/2019/11/Convert-to-Interpolated-string.jpeg "Visual Studio 2019 Refactoring Galore (Video)")
 
 You can right-click (Ctrl+.) on the format method and convert it to interpolated string because it's easier to read, assuming you're not doing localization.
 
@@ -28,13 +28,13 @@ _\*Note - It does not update resource files either. All other namespaces stay th
 
 #### Document Health Indicator
 
- "Visual Studio 2019 Refactoring Galore (Video)"
+![Screenshot showing the locations of the document health indicator.](https://intellitect.com/wp-content/uploads/2019/11/Document-Health-Indicator.png "Visual Studio 2019 Refactoring Galore (Video)")
 
 There's now an indicator of how good your source code is doing. It appears in a couple of places, and you can navigate between the warnings.
 
 #### Code cleanup
 
- "Visual Studio 2019 Refactoring Galore (Video)"
+![Screenshot showing code cleanup options](https://intellitect.com/wp-content/uploads/2019/11/Code-Cleanup.jpeg "Visual Studio 2019 Refactoring Galore (Video)")
 
 There's a new dropdown for code cleanup that you can configure. You would think that it would be extensible. It will be, but it isn't available right now.
 
@@ -96,17 +96,17 @@ Instead, I recommend installing the code analysis packages. Be careful when you 
 
 Interaction with Git has been improved.
 
- "Visual Studio 2019 Refactoring Galore (Video)"
+![Screenshot of new Pull request page.](https://intellitect.com/wp-content/uploads/2019/11/Pull-requests-github-integration.png "Visual Studio 2019 Refactoring Galore (Video)")
 
 Emojis can now be embedded in your source code.
 
- "Visual Studio 2019 Refactoring Galore (Video)"
+![Screenshot showing emoji functionality.](https://intellitect.com/wp-content/uploads/2019/11/Review-Pull-requests.png "Visual Studio 2019 Refactoring Galore (Video)")
 
 Check out [this blog](https://devblogs.microsoft.com/visualstudio/code-reviews-using-the-visual-studio-pull-requests-extension/) for a deeper dive into pull requests.
 
 #### Time Travel Debugging (TTD)
 
- "Visual Studio 2019 Refactoring Galore (Video)"
+![Screenshots showing time travel debugging setup.](https://intellitect.com/wp-content/uploads/2019/11/Time-Travel-Debugging.png "Visual Studio 2019 Refactoring Galore (Video)")
 
 If you run windbg, it will launch TTD that will allow you to debug unmanaged code on your machine and will save the entire dump of the file. It's a great feature if you have a hard to find bug.
 
@@ -133,7 +133,7 @@ In C# 8, a string type can be configured to not null by default unless it's deco
 
 To avoid such broken code, you need to opt in to the nullability feature by setting a Nullability element to "enable" within your csproj.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/11/EnablingNullability-1024x405.webp)
+![](https://intellitect.com/wp-content/uploads/2019/11/EnablingNullability-1024x405.png)
 
 Rather than enabling your entire project for nullability, you can also pinpoint the functionality to a block of code.
 

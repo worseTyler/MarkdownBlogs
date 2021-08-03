@@ -4,7 +4,7 @@
 
 **_Whether you’ve worked with them for years or have never met our_ _featured employee, this column will continue to introduce you to the many faces of IntelliTect. For this issue, we featured a bright innovator who caught the coding bug as a sophomore in high school: Andrew Scott._**
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2017/02/Andrew-SWR.webp)
+![](https://intellitect.com/wp-content/uploads/2017/02/Andrew-SWR.jpg)
 
 “Maybe the solution is infeasible, but we won’t know until we really dig deep into the problem space,” Andrew said when explaining his views on innovation.
 
@@ -32,4 +32,4 @@ An extremely analytical engineer, Andrew loves unraveling tricky problems but kn
 
 Want to check out Andrew’s _TellMeWhen_ addon? [Click here](https://www.curseforge.com/wow/addons/tellmewhen)!
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [ "Employee Spotlight: Andrew Scott"
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T "Employee Spotlight: Andrew Scott")

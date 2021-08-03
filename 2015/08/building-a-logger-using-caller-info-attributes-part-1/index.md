@@ -8,7 +8,7 @@ At IntelliTect, we find ourselves working on a myriad of different projects, usi
 
 [Caller Info Attributes](https://msdn.microsoft.com/en-us/library/hh534540(VS.110).aspx) is a C# feature introduced in C# 5. These attributes allow developers to create methods with optional parameters that tell the compiler to pass the caller’s file, line number, and member name to the method. This proves to be extremely valuable when building a logger. A simple example from MSDN shows how to use these attributes:
 
-```
+```csharp
 // using System.Runtime.CompilerServices
 // using System.Diagnostics;
 
@@ -18,9 +18,9 @@ public void DoProcessing()
 }
 
 public void TraceMessage(string message,
-       \[CallerMemberName\] string memberName = "",
-       \[CallerFilePath\] string sourceFilePath = "",
-       \[CallerLineNumber\] int sourceLineNumber = 0)
+       [CallerMemberName] string memberName = "",
+       [CallerFilePath] string sourceFilePath = "",
+       [CallerLineNumber] int sourceLineNumber = 0)
 {
    Trace.WriteLine("message: " + message);
    Trace.WriteLine("member name: " + memberName);

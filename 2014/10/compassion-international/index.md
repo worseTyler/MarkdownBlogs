@@ -1,12 +1,12 @@
 
 
- "IntelliTect Partners with Compassion International"
+![campassion](https://intellitect.com/wp-content/uploads/2015/01/campassion.jpg "IntelliTect Partners with Compassion International")
 
 IntelliTect partners with Compassion International to bring basic life needs, education and counseling to children and their moms around the world. Some of our employees have chosen to join Compassion International's worldwide [child-sponsorship program](https://www.compassion.com/sponsor_a_child/default.htm "Compassion Child Sponsorship Home Page") that matches families with a child in poverty. These employees trade letters, pictures and special gifts back and forth between themselves and their sponsor children.
 
 As a company, IntelliTect has been the sole sponsor of two of Compassion International Child Survival Programs in sub-Saharan Africa since 2011. These Child Survival Programs combat the high rate of infant mortality by teaching skills and strategies to mothers and families so they can raise their infant children successfully. These programs also provide necessary food and materials to help ensure the health of these very young children.
 
-![Tanzania Mom Compassion](https://intellitect.com/wp-content/uploads/2013/02/Tanzania-Mom-Compassion.webp "Tanzania Mom and Child")
+![Tanzania Mom Compassion](https://intellitect.com/wp-content/uploads/2013/02/Tanzania-Mom-Compassion.jpg "Tanzania Mom and Child")
 
 Specifically, IntelliTect provides the funding for the PAG Mtwivila Child Survival Program in Mtwivila Iringa, Tanzania and Emmabwi Child Survival Program in Emmabwi, Kenya**.** Combined, these programs give training and material resources to more than 75 Moms and 80 children pre-natal through age four.
 

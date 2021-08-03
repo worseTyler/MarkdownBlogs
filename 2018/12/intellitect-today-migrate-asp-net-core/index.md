@@ -4,7 +4,7 @@
 
 Mark Michaelis, CEO of IntelliTect, has traveled throughout the US teaching developers how to take their existing code and upgrade it to the efficient ASP.NET Core framework that requires users to install only what they need to host websites.
 
- "ASP.NET Core: Mark Michaelis’ 5 Key Reasons to Migrate"
+![Mark at Visual Studo Live in Chicago](https://intellitect.com/wp-content/uploads/2018/11/Mark-VS-Live-Chicago-2018-1024x768.jpeg "ASP.NET Core: Mark Michaelis’ 5 Key Reasons to Migrate")
 
 Mark Michaelis is presenting at Visual Studio Live in Chicago, Illinois, on September 18, 2018.
 

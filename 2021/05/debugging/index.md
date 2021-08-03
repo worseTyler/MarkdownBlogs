@@ -22,10 +22,10 @@ As a result of previously updating the library to use C# 9, I also slipped in so
 
 I designed XAMLTest as a UI testing library, so it contains a class called `TestRecorder` to capture screenshots to make historical debugging visual failures a bit easier. To determine the file path to store the screenshots, it uses the [`CallerFilePathAttribute`](https://docs.microsoft.com/dotnet/api/system.runtime.compilerservices.callerfilepathattribute?view=net-5.0) and the [`CallerMemeberNameAttribute`](https://docs.microsoft.com/dotnet/api/system.runtime.compilerservices.callermembernameattribute?view=net-5.0). The constructor for `TestRecorder` looks like this:
 
-```
+```csharp
 public TestRecorder(IApp app,
-    \[CallerFilePath\] string callerFilePath = "",
-    \[CallerMemberName\] string unitTestMethod = "")
+    [CallerFilePath] string callerFilePath = "",
+    [CallerMemberName] string unitTestMethod = "")
 {
     …
 }
@@ -33,9 +33,9 @@ public TestRecorder(IApp app,
 
 These attributes have existed for a while in C#. They will cause the compiler to look up the relevant information at compile-time and inject the appropriate strings into that constructor’s caller. This function of the compiler is quite handy as this constructor is expected to be called from a unit test:
 
-```
-\[TestMethod\]
-public async Task SaveScreenshot\_SavesImage()
+```csharp
+[TestMethod]
+public async Task SaveScreenshot_SavesImage()
 {
     IApp app = new Simulators.App();
     TestRecorder testRecorder = new TestRecorder(app);
@@ -45,21 +45,21 @@ public async Task SaveScreenshot\_SavesImage()
 
 After it compiles, the code will functionally look something like this:
 
-```
-\[TestMethod\]
-public async Task SaveScreenshot\_SavesImage()
+```csharp
+[TestMethod]
+public async Task SaveScreenshot_SavesImage()
 {
     IApp app = new Simulators.App();
-    TestRecorder testRecorder = new TestRecorder(app, @"C:\\DirectorPath\\TestRecorderTests.cs", "SaveScreenshot\_SavesImage");
+    TestRecorder testRecorder = new TestRecorder(app, @"C:\\DirectorPath\\TestRecorderTests.cs", "SaveScreenshot_SavesImage");
     …
 }
 ```
 
 The below test also happens to be one of the tests that started failing.
 
-```
-\[TestMethod\]
-public async Task SaveScreenshot\_SavesImage()
+```csharp
+[TestMethod]
+public async Task SaveScreenshot_SavesImage()
 {
     IApp app = new Simulators.App();
     TestRecorder testRecorder = new(app);
@@ -86,7 +86,7 @@ I added more logging statements and ran more pipeline builds. Sure enough, when 
 
 I target both .NET Core 3.1 and .NET 5, so I knew I had at least two SDKs installed.
 
- "Debugging Frustrations: A Senior Developer's Story"
+![SDKs](https://intellitect.com/wp-content/uploads/2021/04/Screenshot-31.png "Debugging Frustrations: A Senior Developer's Story")
 
 I also noted that I had a 3.0.0 version of .NET Core and a preview version of 5.0.2 installed.
 

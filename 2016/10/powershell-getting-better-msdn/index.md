@@ -1,10 +1,9 @@
 
-PSGallery    Untrusted            https://www.powershellgallery.com/api/v2/
-```
+PSGallery Untrusted https://www.powershellgallery.com/api/v2/
 
 As a result, Find-Module works without issue. However, Install-Module will prompt you with an untrusted repository warning. To avoid this, assuming you do indeed trust the repository, you can set it to trusted with the command:
 
-```
+```powershell
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 ```
 
@@ -12,29 +11,29 @@ Apt-Get for Windows with PowerShell Package Management Those of you who have spe
 
 Just as there are repositories, like PowerShell Gallery, for PowerShell modules, PowerShell 5.0 also includes support for managing programs—called packages—in Windows. One such package manager is Chocolatey (chocolatey.org) and you can add it as a package repository using the following command:
 
-```
+```powershell
 Get-PackageProvider -Name chocolatey
 ```
 
 This allows you to use PowerShell to find packages that have been deployed into Chocolatey. For example, if you want to install Visual Studio Code all you have to do is enter the commands:
 
-```
+```powershell
 Find-Package V\*S\*Code | Install-Package
 ```
 
 As shown, wild cards are supported. Other Package commands to be familiar with are available using the following command, with the results shown in **Figure 3**:
 
-```
+```powershell
 Get-Help "-package" | Select-Object Name,Synopsis
 ```
 
- "Essential .NET: PowerShell Just Keeps Getting Better (MSDN)"
+![ Figure 3 Available Windows PowerShell Package Commands](https://intellitect.com/wp-content/uploads/2019/12/Figure-3.png "Essential .NET: PowerShell Just Keeps Getting Better (MSDN)")
 
 Figure 3 Available Windows PowerShell Package Commands
 
 As you can see, you can both get and uninstall a package. Get-Package lists all the programs (and more) available from the Control Panel Programs and Features. Therefore, if you wanted to uninstall Notepad2, for example, you could use the command:
 
-```
+```powershell
 Get-Package Notepad2\* | Uninstall-Package
 ```
 
@@ -46,7 +45,7 @@ One thing to consider is that not only can the Chocolatey repos­itory be access
 
 Another PowerShell 5.0 feature that’s worth mentioning is the ability to generate a set of methods that access an OData data source such as Visual Studio Team Services (VSTS). **Figure 4** demonstrates running the Export-ODataEndpointProxy on an OData service, a public sample Northwind OData service in this case.
 
- "Essential .NET: PowerShell Just Keeps Getting Better (MSDN)"
+![ Figure 4 Generating and Invoking an OData Proxy](https://intellitect.com/wp-content/uploads/2019/12/Figure-4.png "Essential .NET: PowerShell Just Keeps Getting Better (MSDN)")
 
 Figure 4 Generating and Invoking an OData Proxy
 
@@ -58,7 +57,7 @@ Another new command to appear in PowerShell 5.0 is ConvertFrom-String. It’s de
 
 Consider, for example, SysInternal’s handle.exe program, (which you can install using the Install-Package Handle command—­leveraging package management as discussed in the previous section). As you’d expect from a command-line utility, it writes out text to stdout—in this case a list of open handles associated with a name. In PowerShell, however, you’ve grown accustomed to working with objects. And, to convert the text output into an object, you use the ConvertFrom-String function, as shown in **Figure 5**.
 
- "Essential .NET: PowerShell Just Keeps Getting Better (MSDN)"
+![ Figure 5 Utilizing ConvertFrom-String to Parse stdout into an Object](https://intellitect.com/wp-content/uploads/2019/12/Figure-5.png "Essential .NET: PowerShell Just Keeps Getting Better (MSDN)")
 
 Figure 5 Utilizing ConvertFrom-String to Parse stdout into an Object
 
@@ -76,22 +75,22 @@ Finally, here’s a rundown on the new class and enumeration support. In PowerSh
 
 **Figure 6 Declaring Classes and Enums in Windows PowerShell**
 
-```
+```powershell
 enum CustomProcessType {
   File
   Section
 }
 class CustomProcess {
-  \[string\]$ProcessName;
-  hidden \[string\]$PIDLabel;
-  \[int\]$PID;
-  hidden \[string\]$TypeLabel;
-  \[CustomProcessType\]$Type;
-  \[int\]$Handle;
-  \[string\]$Path;
+  [string]$ProcessName;
+  hidden [string]$PIDLabel;
+  [int]$PID;
+  hidden [string]$TypeLabel;
+  [CustomProcessType]$Type;
+  [int]$Handle;
+  [string]$Path;
   CustomProcess(
-    \[string\]$processName,\[string\]$pidLabel,\[int\]$pid,
-    \[string\]$typeLabel,\[string\]$type,\[int\]$handle,\[string\]$path) {
+    [string]$processName,[string]$pidLabel,[int]$pid,
+    [string]$typeLabel,[string]$type,[int]$handle,[string]$path) {
     $this.ProcessName = $processName;
     $this.PIDLabel=$pidLabel;
     $this.PID=$pid;
@@ -104,7 +103,7 @@ class CustomProcess {
   GetProcess() {
     Get-Process -Id $this.PID
   }
-  static StopProcess(\[CustomProcess\]$process) {
+  static StopProcess([CustomProcess]$process) {
     Stop-Process -Id $process.PID
   }
 }
@@ -125,7 +124,7 @@ By no means is this a complete list of new features in PowerShell 5.0. Other not
 - Integration of archive (.zip file support) through the Compress-Archive and Expand-Archive commands.
 - Get-Clipboard and Set-Clipboard commands that also work with the pipe operator.
 - Out-File, Add-Content and Set-Content include a –NoNewline parameter, allowing for file content that omits the new-line character.
-- The New-TemporaryFile command works similar to \[System.IO.Path\]::GetTempFileName (though not identically). Like its .NET equivalent, New-TemporaryFile doesn’t delete the temporary file, so be sure to save the output so you can remove the file once you’re done with it.
+- The New-TemporaryFile command works similar to [System.IO.Path]::GetTempFileName (though not identically). Like its .NET equivalent, New-TemporaryFile doesn’t delete the temporary file, so be sure to save the output so you can remove the file once you’re done with it.
 - SymbolicLinks can now be managed directly from the PowerShell cmdlets New-Item and Remove-Item.
 - PowerShell Integrated Scripting Environment (ISE) now supports logging via the Start/Stop/Search-Transcript functions, which previously errored when called from PowerShell ISE.
 

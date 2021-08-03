@@ -1,7 +1,6 @@
 
 
- 
-
+```csharp
 public class Person : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
@@ -11,24 +10,24 @@ public class Person : INotifyPropertyChanged
         Name = name;
     }
 
-    private string \_Name;
+    private string _Name;
     public string Name
     {
         get
         {
-            return \_Name;
+            return _Name;
         }
         set
         {
-            if (\_Name != value)
+            if (_Name != value)
             {
-                \_Name = value;
+                _Name = value;
                 OnPropertyChanged();
             }
         }
     }
 
-    private void OnPropertyChanged(\[CallerMemberName\]string property = null)
+    private void OnPropertyChanged([CallerMemberName]string property = null)
     {
         PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if (propertyChanged != null)
@@ -40,11 +39,11 @@ public class Person : INotifyPropertyChanged
     // ...
 }
 
-\[TestClass\]
+[TestClass]
 public class PersonTests
 {
 
-    \[TestMethod\]
+    [TestMethod]
     public void VerifyThisMethodHasTestMethodAttribute()
     {
         bool called = false;
@@ -58,3 +57,4 @@ public class PersonTests
         IsTrue(called);
     }    
 }
+```

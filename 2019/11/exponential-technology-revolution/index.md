@@ -16,7 +16,7 @@ To grasp the technology revolution, consider the relatively recent exponential t
 
 #### Figure 1 The Exponential Growth of Photography
 
- "Today’s Exponential Tech Revolution - Thriving in Industry 5.0?"
+![Industry 5.0 is full of exponential growth!](https://intellitect.com/wp-content/uploads/2019/11/Photo-Growth-Charts-1024x576.jpg "Today’s Exponential Tech Revolution - Thriving in Industry 5.0?")
 
 The problem with charts like this, and the numbers underlying them, is that they illuminate exponential trends in hindsight, only after they’ve already happened. Forecasting exponential growth is difficult because we’re hard-wired to think linearly—we struggle to grasp the magnitude of exponential trends. 
 
@@ -38,7 +38,7 @@ The breadth of even the shortlist in **Figure 2** is almost shocking. And when y
 
 Historically, industrial revolutions are characterized by changes in labor—the way we work. Electricity was the crucial invention required for both the second and third industrial revolutions—and without it, we wouldn’t have a fourth revolution either. But, what electricity enabled in the second and third industrial revolutions pales in comparison to what data, cloud computing, AI, ML, IoT, Big Data, nanotechnology, and quantum computing generated in the Fourth Industrial Revolution. In Industry 5.0, people work alongside robots and smart machines, enhancing productivity and merging technical computing abilities with human resourcefulness and intelligence. Each new revolution has involved a radical change in labor. 
 
- "Today’s Exponential Tech Revolution - Thriving in Industry 5.0?"
+![The industrial revolutions and exponential technology - Now we're in Industry 4.0 to Industry 5.0.](https://intellitect.com/wp-content/uploads/2019/11/Industry-4-5-1024x765.jpg "Today’s Exponential Tech Revolution - Thriving in Industry 5.0?")
 
 The proliferation of the Internet radically changed the speed of technological advancement starting in the 1990s. Still, the real gain is upon us as devices start collecting vast amounts of behavioral data and analyzing it with AI.
 

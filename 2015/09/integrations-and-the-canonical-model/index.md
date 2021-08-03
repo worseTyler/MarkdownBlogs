@@ -16,7 +16,7 @@ Consider you have the following applications in your enterprise: Enterprise Reso
 
 In the above example, let's pretend the CIS system exchanges its AP data in the form of an apple, and the ERP system in the form of an orange. In order to send data from one system to the other, we will need to convert apples to oranges, or the reverse. In order to accomplish this magical feat, we will need to implement some sort of transformation. The initial desire may be to directly transform the SoR's schema to each of the subscribers, but I strongly caution that approach. In development terms, this sounds easy enough, but don't get caught creating a point-to-point integration. Point-to-point integrations impose a tight coupling between systems.  When one system changes, a change will be required with the “other” system, even if originating change has no impact on the “other” system.
 
-[ "Integrations and the Canonical Model"
+[![Screen Shot 2015-09-23 at 4.51.09 PM](https://intellitect.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-23-at-4.51.09-PM.png)](https://intellitect.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-23-at-4.51.09-PM.png "Integrations and the Canonical Model")
 
  
 
@@ -30,7 +30,7 @@ In the above example, let's pretend the CIS system exchanges its AP data in the 
 
 Instead, it is better to create your own canonical schema based on the SoR, but which lives in a different namespace. This will help manage changes to the SoR's schema, which may have no impact on any downstream mapping processes.
 
-[ "Integrations and the Canonical Model"
+[![Screen Shot 2015-09-23 at 4.51.25 PM](https://intellitect.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-23-at-4.51.25-PM.png)](https://intellitect.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-23-at-4.51.25-PM.png "Integrations and the Canonical Model")
 
 Assumptions:
 

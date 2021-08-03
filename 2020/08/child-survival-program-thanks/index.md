@@ -6,7 +6,7 @@ Often, the letters need to remain private for safety or security reasons. But wh
 
 Here’s a letter that was recently received from Sarah, a mother in Compassion International's Child Survival Program in Africa.
 
- "Thank You: From a Child Survival Program Mother"
+![A mother and son in the Child Survival Program](https://intellitect.com/wp-content/uploads/2020/08/Survival-Program-Sarah-and-Nelson-1024x640.png "Thank You: From a Child Survival Program Mother")
 
 Above: Sarah, a mother in the survival program, holds her son, Nelson.
 
@@ -34,4 +34,4 @@ Interested in helping moms like Sarah? Connect with [Compassion International](h
 
 For more info on IntelliTect's involvement with this program, check out [this article](https://intellitect.com/spotlight-child-survival-program/).
 
-[ "Thank You: From a Child Survival Program Mother"
+[![click here to sign up for Intellovations, our quarterly newsletter so you never miss out!](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-1024x235.jpg)](https://bit.ly/2Nhro9T "Thank You: From a Child Survival Program Mother")

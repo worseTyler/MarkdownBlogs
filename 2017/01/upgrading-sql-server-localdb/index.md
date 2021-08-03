@@ -28,7 +28,7 @@ The first step is pretty self explanatory, and a web search will take you to the
 
 The following approach will cause all your existing databases to disconnect from your instance. The instance name will be the same, but you will need to reconnect them if you are not connecting via a filename in your connection string. If you have your application set up to recreate the database, this will likely fail because the default filename for the database already exists, it just isn't attached to your LocalDb instance.
 
-The default location for databases is: C:\\Users\\\[account name\]\\AppData\\Local\\Microsoft\\Microsoft SQL Server Local DB\\Instances\\\[instance name\]
+The default location for databases is: C:\\Users\\[account name]\\AppData\\Local\\Microsoft\\Microsoft SQL Server Local DB\\Instances\\[instance name]
 
 You can just reattach the databases you need with SQL Server Management Studio.
 
@@ -38,13 +38,13 @@ These command should be run from a command window (cmd.exe). The location doesn'
 
 The following command will give you a list of instances.
 
-```
+```powershell
 C:\\>sqllocaldb info
 ```
 
 These are the commands to stop, delete, create, and start your instance. This will cause all your databases to detach, see note above.
 
-```
+```powershell
 C:\\>sqllocaldb stop MSSQLLocalDB
 LocalDB instance "MSSQLLocalDB" stopped.
 
@@ -64,4 +64,4 @@ Note: the create command will create a new instance of LocalDb with the latest v
 
 Learn more about SQL and read about updating your SQL database [here](/updating-sql-database-use-temporal-tables-entity-framework-migration/)!
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.png)

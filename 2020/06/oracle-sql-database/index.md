@@ -8,28 +8,28 @@ Recently, I was with my coworker, Chris Finlayson, and we were looking at some s
 
 Fast forward a couple of Google searches, and we found the verbiage for searching for a column name in an Oracle SQL database:
 
-```
+```sql
 select \*
-from all\_tab\_columns
-where column\_name like '%{SomeColumnName}%';
+from all_tab_columns
+where column_name like '%{SomeColumnName}%';
 ```
 
 For curious minds, the MS SQL syntax is:
 
-```
+```sql
 select \*
- from information\_schema.columns
- where column\_name like ‘%{SomeColumnName}%’;
+ from information_schema.columns
+ where column_name like ‘%{SomeColumnName}%’;
 ```
 
 ### Additional Filters within the Oracle SQL Database
 
 You can narrow down your search if you filter by the schema owner. For example, if I needed to find the location of where an account number is stored in a customer information system, I might write something like:
 
-```
+```sql
 select \*
- from all\_tab\_columns
- where column\_name like '%ACCOUNT%'
+ from all_tab_columns
+ where column_name like '%ACCOUNT%'
  and owner = ‘CUSTOMER’;
 ```
 

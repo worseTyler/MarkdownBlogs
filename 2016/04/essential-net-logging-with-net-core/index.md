@@ -1,6 +1,6 @@
 
 
-In the February issue, I delved into the new configuration API included in the newly named .NET Core 1.0 platform (see [bit.ly/1OoqmkJ](https://bit.ly/1OoqmkJ)). (I assume most readers have heard about the recently renamed .NET Core 1.0, which was formerly referred to as .NET Core 5 and part of the ASP.NET 5 platform \[see [bit.ly/1Ooq7WI](https://bit.ly/1Ooq7WI)\].) In that article I used unit testing in order to explore the Microsoft.Extensions.Configuration API. In this article I take a similar approach, except with Microsoft.Extensions.Logging. The key difference in my approach is that I’m testing it from a .NET 4.6 CSPROJ file rather than an ASP.NET Core project. This emphasizes the fact that .NET Core is available for you to consider using immediately—even if you haven’t migrated to ASP.NET Core projects.
+In the February issue, I delved into the new configuration API included in the newly named .NET Core 1.0 platform (see [bit.ly/1OoqmkJ](https://bit.ly/1OoqmkJ)). (I assume most readers have heard about the recently renamed .NET Core 1.0, which was formerly referred to as .NET Core 5 and part of the ASP.NET 5 platform [see [bit.ly/1Ooq7WI](https://bit.ly/1Ooq7WI)].) In that article I used unit testing in order to explore the Microsoft.Extensions.Configuration API. In this article I take a similar approach, except with Microsoft.Extensions.Logging. The key difference in my approach is that I’m testing it from a .NET 4.6 CSPROJ file rather than an ASP.NET Core project. This emphasizes the fact that .NET Core is available for you to consider using immediately—even if you haven’t migrated to ASP.NET Core projects.
 
 Logging? Why on earth do we need a new logging framework? We already have NLog, Log4Net, Loggr, Serilog and the built-in Microsoft.Diagnostics.Trace/Debug/TraceSource, just to name a few. As it turns out, the fact that there are so many logging frameworks is actually one of the driving factors that make Microsoft.Exten­sions.Logging relevant. As a developer faced with the myriad of choices, you’re likely to select one knowing you might have to switch to another one later. Therefore, you’re probably tempted to write your own logging API wrapper that invokes whichever particular logging framework you or your company chooses this week. Similarly, you might use one particular logging framework in your application, only to find that one of the libraries you’re leveraging is using another, causing you to have to write a listener that takes the messages from one to the other.
 
@@ -12,8 +12,8 @@ The root of the logging activity begins with a log factory, as shown in **Figure
 
 **Figure 1 How to Use Microsoft.Extensions.Logging**
 
-```
-public static void Main(string\[\] args = null)
+```csharp
+public static void Main(string[] args = null)
 {
   ILoggerFactory loggerFactory = new LoggerFactory()
     .AddConsole()
@@ -28,7 +28,7 @@ As the code demonstrates, to begin you instantiate a Microsoft.Extensions.Loggin
 
 The extension methods are simply convenient shortcuts for the more general way to add a provider—ILoggerFactory.AddProvider­(ILoggerProvider provider). The shortcut is that the AddProvider method requires an instance of the log provider—likely one whose constructor requires a log-level filter expression—while the extension methods provide defaults for such expressions. For example, the constructor signature for ConsoleLoggerProvider is:
 
-```
+```csharp
 public ConsoleLoggerProvider(Func<string, LogLevel, bool> filter,
   bool includeScopes);
 ```
@@ -37,7 +37,7 @@ This first parameter is a predicate expression that allows you to define whether
 
 For example, you could call AddProvider with a specific Console­LoggerProvider instance that was constructed from a filter of all messages higher (more significant) than LogLevel.Information:
 
-```
+```csharp
 loggerFactory.AddProvider(
   new ConsoleLoggerProvider(
     (text, logLevel) => logLevel >= LogLevel.Verbose , true));
@@ -47,7 +47,7 @@ loggerFactory.AddProvider(
 
 It’s important to be cognizant that, unfortunately, there’s some inconsistency between log providers as to whether a high log-level value is more or less significant. Does a log level of 6 indicate a critical error occurred or is it just a verbose diagnostic message? Microsoft.Extensions.Logging.LogLevel uses high values to indicate higher priority with the following LogLevel enum declaration:
 
-```
+```csharp
 public enum LogLevel
 {
   Debug = 1,
@@ -68,8 +68,8 @@ Note that you can add multiple providers to the log factory, even multiple provi
 
 As **Figure 1** demonstrates, the root of all logging begins with a log factory from which you can request an ILogger via the ILoggerFactory.CreateLogger<T> method. The generic type T in this method is to identify the class in which the code executes, so it’s possible to write out the class name in which the logger is writing messages. In other words, by calling loggerFactory.CreateLogger<Program>, you essentially initiate a logger specific to the Program class so that each time a message is written, it’s also possible to write the execution context as being within the Program class. Thus, the console output of **Figure 1** is:
 
-```
-info: SampleWebConsoleApp.Program\[0\]
+```csharp
+info: SampleWebConsoleApp.Program[0]
       This is a test of the emergency broadcast system.
 ```
 
@@ -77,12 +77,12 @@ This output is based on the following:
 
 - “info” results from the fact that this is a LogInformation method call.
 - “SampleWebConsoleApp.Program” is determined from T.
-- “\[0\]” is the eventId—a value I didn’t specify so it defaults to 0.
+- “[0]” is the eventId—a value I didn’t specify so it defaults to 0.
 - “This is a test of the emergency broadcast system.” is the messages argument passed to LogInformation.
 
 Because the value Program indicates class-level context, you’ll likely want to instantiate a different logger instance for each class from which you want to log. For example, if Program creates and calls into a Controller class instance, you’ll want to have a new logger instance within the Controller class that was created via another method call where T is now Controller:
 
-```
+```csharp
 loggerFactory.CreateLogger<Controller>()
 ```
 
@@ -90,7 +90,7 @@ As you may notice, this requires access to the same logger factory instance on w
 
 The solution is to save a single static ILoggerFactory as a static property that’s available for all classes when instantiating their object’s specific ILoggger instance. For example, consider adding an ApplicationLogging static class that includes a static ILoggerFactory instance:
 
-```
+```csharp
 public static class ApplicationLogging
 {
   public static ILoggerFactory LoggerFactory {get;} = new LoggerFactory();
@@ -103,13 +103,13 @@ The obvious concern in such a class is whether the LoggerFactory is thread-safe.
 
 **Figure 2 The Microsoft.Extensions.Logging.LoggerFactory AddProvider Implementation**
 
-```
+```csharp
 public void AddProvider(ILoggerProvider provider)
 {
-  lock (\_sync)
+  lock (_sync)
   {
-    \_providers = \_providers.Concat(new\[\] { provider }).ToArray();
-    foreach (var logger in \_loggers)
+    _providers = _providers.Concat(new[] { provider }).ToArray();
+    foreach (var logger in _loggers)
     {
       logger.Value.AddProvider(provider);
     }
@@ -121,7 +121,7 @@ Because the only data in the ILogger instance is determined from the generic typ
 
 **Figure 3 Adding an ILogger Instance to Each Object That Needs Logging**
 
-```
+```csharp
 public class Controller
 {
   ILogger Logger { get; } =
@@ -143,18 +143,18 @@ public class Controller
 
 ### Understanding Scopes
 
-Frequently, providers support the concept of “scope” such that you could (for example) log how your code traverses a call chain. Continuing the example, if Program invokes a method on a Controller class, that class in turn instantiates its own logger instance with its own context of type T. However, rather than simply displaying a message context of info: SampleWebConsoleApp.Program\[0\] followed by info: SampleWebConsoleApp.Controller\[0\], you might wish to log that Program-invoked Controller and possibly even include the method names themselves. To achieve this, you activate the concept of scope within the provider. **Figure 3** provides an example within the Initialize method via the invocation of Logger.BeginScopeImpl.
+Frequently, providers support the concept of “scope” such that you could (for example) log how your code traverses a call chain. Continuing the example, if Program invokes a method on a Controller class, that class in turn instantiates its own logger instance with its own context of type T. However, rather than simply displaying a message context of info: SampleWebConsoleApp.Program[0] followed by info: SampleWebConsoleApp.Controller[0], you might wish to log that Program-invoked Controller and possibly even include the method names themselves. To achieve this, you activate the concept of scope within the provider. **Figure 3** provides an example within the Initialize method via the invocation of Logger.BeginScopeImpl.
 
 Using the logging pattern while leveraging the scope activation will result in a Program class that might look a little like **Figure 4**.
 
 **Figure 4 An Updated Implementation of Program**
 
-```
+```csharp
 public class Program
 {
   static ILogger Logger { get; } =
     ApplicationLogging.CreateLogger<Program>();
-  public static void Main(string\[\] args = null)
+  public static void Main(string[] args = null)
   {
     ApplicationLogging.LoggerFactory.AddConsole(true);
     Logger.LogInformation(
@@ -175,22 +175,22 @@ The output of **Figure 3** combined with **Figure 4** is shown in **Figure 5**.
 
 **Figure 5 Console Logging Output with Scopes Included**
 
-```
-info: SampleWebConsoleApp.Program\[0\]
+```csharp
+info: SampleWebConsoleApp.Program[0]
       This is a test of the emergency broadcast system.
-info: SampleWebConsoleApp.Program\[0\]
+info: SampleWebConsoleApp.Program[0]
       => Main
       Begin using controller
-info: SampleWebConsoleApp.Controller\[0\]
+info: SampleWebConsoleApp.Controller[0]
       => Main => Initialize
       Initialize the data
-info: SampleWebConsoleApp.Controller\[0\]
+info: SampleWebConsoleApp.Controller[0]
       => Main => Initialize
       Initialize the UI
-info: SampleWebConsoleApp.Program\[0\]
+info: SampleWebConsoleApp.Program[0]
       => Main
       End using controller
-info: SampleWebConsoleApp.Program\[0\]
+info: SampleWebConsoleApp.Program[0]
       Shutting down...
 ```
 
@@ -202,14 +202,14 @@ To make available some of the most prominent third-party logging frameworks, Mic
 
 **Figure 6 Configuring NLog as a Microsoft.Extensions.Logging Provider**
 
-```
-\[TestClass\]
+```csharp
+[TestClass]
 public class NLogLoggingTests
 {
   ILogger Logger {get;}
     = ApplicationLogging.CreateLogger<NLogLoggingTests>();
-  \[TestMethod\]
-  public void LogInformation\_UsingMemoryTarget\_LogMessageAppears()
+  [TestMethod]
+  public void LogInformation_UsingMemoryTarget_LogMessageAppears()
   {
     // Add NLog provider
     ApplicationLogging.LoggerFactory.AddNLog(
@@ -235,7 +235,7 @@ Once added to the LoggerFactory and configured, the code is identical to any oth
 
 Of course, one of the most common reasons to log is to record when an exception is thrown—more specifically, when the exception is being handled rather than re-thrown or when the exception is entirely unhandled (see [bit.ly/1LYGBVS](https://bit.ly/1LYGBVS)). As you’d expect, Microsoft.Extensions.Logging has specific methods for handling an exception. Most such methods are implemented in Microsoft.Extensions.Logging.LoggerExtensions as extension methods to ILogger. And, it’s from this class that each method specific to a particular log level (ILogger.LogInformation, ILogger.LogDebug, ILogger.LogCritical and so forth) is implemented. For example, if you want to log a LogLevel.Critical message regarding an exception (perhaps before gracefully shutting down the application), you’d call:
 
-```
+```csharp
 Logger.LogCritical(message,
   new InvalidOperationException("Yikes..."));
 ```

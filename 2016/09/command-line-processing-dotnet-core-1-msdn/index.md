@@ -8,7 +8,7 @@ The bulk of the command-line functionality is found within the Microsoft.Extensi
 
 **Figure 1 Sample Command Lines**
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/12/Figure-1-3.webp)
+![](https://intellitect.com/wp-content/uploads/2019/12/Figure-1-3.png)
 
 As described next, there are multiple argument types, one of which is called an “Argument.” The overloading of the term argument to refer to the values specified on the command line versus the command-line configuration data can lead to significant ambiguity. Therefore, for the remainder of the article, I’ll distinguish between a generic argument of any kind—specified after the executable name—and the argument type called “Argument” (title case) by the casing. Similarly, I’ll distinguish the other argument types, Option and Command, using title case rather than the lowercase terms that generically refer to the argument. Please take note of this as it will be important throughout the remainder of the article.
 
@@ -24,20 +24,20 @@ Programming the command line after referencing the .NET Core Microsoft.Extension
 
 Given an instance of the CommandLineApplication, you configure arguments using the Option, Argument, and Command methods. Imagine, for example, you want to support a command-line syntax as follows, where items in square brackets are optional and those in angle brackets are user-specified values or arguments:
 
-```
-Program.exe <-g|--greeting|-$ <greeting>> \[name <fullname>\] 
-     \[-?|-h|--help\] \[-u|--uppercase\]
+```powershell
+Program.exe <-g|--greeting|-$ <greeting>> [name <fullname>] 
+     [-?|-h|--help] [-u|--uppercase]
 ```
 
 **Figure 2** configures the basic parsing capability.
 
 **Figure 2 Configuring the Command Line**
 
-```
-public static void Main(params string\[\] args)
+```csharp
+public static void Main(params string[] args)
 {
-    // Program.exe <-g|--greeting|-$ <greeting>> \[name <fullname>\]
-    // \[-?|-h|--help\] \[-u|--uppercase\]
+    // Program.exe <-g|--greeting|-$ <greeting>> [name <fullname>]
+    // [-?|-h|--help] [-u|--uppercase]
   CommandLineApplication commandLineApplication =
     new CommandLineApplication(throwOnUnexpectedArg: false);
   CommandArgument names = null;
@@ -84,7 +84,7 @@ The next step in **Figure 2** is configuring the “name” Command. The keyword
 
 Notice in configuring the names Argument I specifically identify that it will support multipleValues. In so doing, I allow more than one value to be specified—multiple names in this case. Each of these values appears following the “name” argument identifier until another argument or option identifier appears. The first two parameters of the Argument function are name, referring to the Argument’s name so you can identify it from a list of Arguments, and description.
 
-One last thing to point out in the name Command configuration is the fact that you need to save the return from the Argument function (and the Option function if there’s any). This is necessary so you can later retrieve the arguments associated with the names Argument. Without saving a reference, you end up having to search through the commandLineApplication.Commands\[0\].Arguments collection in order to retrieve the Argument data.
+One last thing to point out in the name Command configuration is the fact that you need to save the return from the Argument function (and the Option function if there’s any). This is necessary so you can later retrieve the arguments associated with the names Argument. Without saving a reference, you end up having to search through the commandLineApplication.Commands[0].Arguments collection in order to retrieve the Argument data.
 
 One elegant way to save all the command-line data is to place it into a separate class that’s decorated with the attributes from theASP.NET Scaffolding repo ([github.com/aspnet/Scaffolding](https://github.com/aspnet/Scaffolding)), specifically the src/Microsoft.VisualStudio.Web.CodeGeneration.Core/CommandLine folder.
 
@@ -106,8 +106,8 @@ Built into the CommandLineApplication is a ShowHelp function that displays the h
 
 **Figure 3 ShowHelp Display Output**
 
-```
-Usage:  \[options\] \[command\]
+```powershell
+Usage:  [options] [command]
 Options:
   -$|-g |--greeting <greeting>  The greeting to display. 
                                 The greeting supports a format string 
@@ -117,7 +117,7 @@ Options:
   -? | -h | --help              Show help information
 Commands:
   name 
-Use " \[command\] --help" for more information about a command.
+Use " [command] --help" for more information about a command.
 ```
 
 Unfortunately, the help displayed doesn’t identify whether an option or command is, in fact, optional. In other words, the help text assumes and displays (via square brackets) that all options and commands are optional.
@@ -126,7 +126,7 @@ Although you can call ShowHelp explicitly, for example when handling a custom co
 
 Similarly, there’s a ShowVersion method for displaying the version of your application. Like ShowHelp, it’s configured via one of two methods:
 
-```
+```csharp
 public CommandOption VersionOption(
   string template, string shortFormVersion, string longFormVersion = null).
 public CommandOption VersionOption(

@@ -2,11 +2,11 @@
 
 At IntelliTect, we’re proud of our culture and are excited to try out new activities as a team. Josh Ward, an active member of our Culture Club and one of our senior software engineers, regularly organizes mini-lunch game-breaks at the office. In September, he treated an intrepid group of IntelliTect explorers to a very fun scavenger hunt.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/11/Today-1-Winning-team-1024x768.webp)
+![](https://intellitect.com/wp-content/uploads/2019/11/Today-1-Winning-team-1024x768.jpg)
 
 We started the event by playing small games as people were arriving. Once everyone was ready, Josh, with a talk-show-host twinkle in his eye, tasked attendees with finding (and taking photos of) various landmarks and items in a relatively small radius around Riverpark Square.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/11/Today-2-riverfront2-225x300.webp)
+![](https://intellitect.com/wp-content/uploads/2019/11/Today-2-riverfront2-225x300.jpg)
 
 It sounded easy, but a lot of the items were quite challenging to decipher and locate. Everyone seemed to enjoy the challenge and location of the hunt.
 
@@ -22,4 +22,4 @@ Recently, I even hosted a PC gaming night for our team. I love that I work for a
 
 And if you haven’t yet, sign up today for our quarterly newsletter: [Intellovations](https://bit.ly/2Nhro9T).
 
-[ "IntelliTect Today - Finding the Fun as a Team"
+[![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-1024x235.jpg)](https://bit.ly/2Nhro9T "IntelliTect Today - Finding the Fun as a Team")

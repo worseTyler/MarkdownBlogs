@@ -28,7 +28,7 @@ Open the Credential Manager in Windows by searching for “Credential Manager”
 
 Click “Add a Generic Credential.”
 
-Add your Internet or network address: git:https://\[your vs site name\].[visualstudio.com](https://visualstudio.com).
+Add your Internet or network address: git:https://[your vs site name].[visualstudio.com](https://visualstudio.com).
 
 Your user name is “Personal Access Token” (yes, this is the user name).
 
@@ -42,4 +42,4 @@ Note: You may have to periodically clean these items out if things stop working 
 
 _What other issues would you like the IntelliTect team to break down for you?_
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [ "Fix your Git Credential Nightmare in 4 Basic Steps"
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T "Fix your Git Credential Nightmare in 4 Basic Steps")

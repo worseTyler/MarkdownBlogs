@@ -12,24 +12,24 @@ To familiarize yourself with retrieving configuration settings, take a look at *
 
 **Figure 1 Configuration Basics Using the InMemoryConfigurationProvider and ConfigurationBinder Extension Methods**
 
-```
+```csharp
 public class Program
 {
   static public string DefaultConnectionString { get; } =
     @"Server=(localdb)\\\\mssqllocaldb;Database=SampleData-0B3B0919-C8B3-481C-9833-
-    36C21776A565;Trusted\_Connection=True;MultipleActiveResultSets=true";
+    36C21776A565;Trusted_Connection=True;MultipleActiveResultSets=true";
   static IReadOnlyDictionary<string, string> DefaultConfigurationStrings{get;} =
     new Dictionary<string, string>()
     {
-      \["Profile:UserName"\] = Environment.UserName,
-      \[$"AppConfiguration:ConnectionString"\] = DefaultConnectionString,
-      \[$"AppConfiguration:MainWindow:Height"\] = "400",
-      \[$"AppConfiguration:MainWindow:Width"\] = "600",
-      \[$"AppConfiguration:MainWindow:Top"\] = "0",
-      \[$"AppConfiguration:MainWindow:Left"\] = "0",
+      ["Profile:UserName"] = Environment.UserName,
+      [$"AppConfiguration:ConnectionString"] = DefaultConnectionString,
+      [$"AppConfiguration:MainWindow:Height"] = "400",
+      [$"AppConfiguration:MainWindow:Width"] = "600",
+      [$"AppConfiguration:MainWindow:Top"] = "0",
+      [$"AppConfiguration:MainWindow:Left"] = "0",
     };
   static public IConfiguration Configuration { get; set; }
-  public static void Main(string\[\] args = null)
+  public static void Main(string[] args = null)
   {
     ConfigurationBuilder configurationBuilder =
       new ConfigurationBuilder();
@@ -37,7 +37,7 @@ public class Program
       configurationBuilder.AddInMemoryCollection(
         DefaultConfigurationStrings);
       Configuration = configurationBuilder.Build();
-      Console.WriteLine($"Hello {Configuration\["Profile:UserName"\]}");
+      Console.WriteLine($"Hello {Configuration["Profile:UserName"]}");
       ConsoleWindow consoleWindow =
         Configuration.Get<ConsoleWindow>("AppConfiguration:MainWindow");
       ConsoleWindow.SetConsoleWindow(consoleWindow);
@@ -49,13 +49,13 @@ Accessing the configuration begins easily with an instance of the ConfigurationB
 
 As mentioned earlier, a configuration is simply a hierarchical list of name-value pairs in which the nodes are separated by a colon. Therefore, to retrieve a particular value, you simply access the Configuration indexer with the corresponding item’s key:
 
-```
-Console.WriteLine($"Hello {Configuration\["Profile:UserName"\]}");
+```csharp
+Console.WriteLine($"Hello {Configuration["Profile:UserName"]}");
 ```
 
 However, accessing a value isn’t limited to only retrieving strings. You can, for example, retrieve values via the ConfigurationBinder’s Get<T> extension methods. For instance, to retrieve the main window screen buffer size you can use:
 
-```
+```csharp
 Configuration.Get<int>("AppConfiguration:MainWindow:ScreenBufferSize", 80);
 ```
 
@@ -65,7 +65,7 @@ Notice there’s an optional argument following the key, for which you can speci
 
 Configuration values are not limited to scalars. You can retrieve POCO objects or even entire object graphs. To retrieve an instance of the ConsoleWindow whose members map to the AppConfiguration:MainWindow configuration section, **Figure 1** uses:
 
-```
+```csharp
 ConsoleWindow consoleWindow =
   Configuration.Get<ConsoleWindow>("AppConfiguration:MainWindow")
 ```
@@ -74,7 +74,7 @@ Alternatively, you could define a configuration graph such as AppConfiguration, 
 
 **Figure 2 A Sample Configuration Object Graph**
 
-```
+```csharp
 class AppConfiguration
 {
   public ProfileConfiguration Profile { get; set; }
@@ -122,8 +122,8 @@ To specify each of the providers, add them to the configuration builder (via the
 
 **Figure 3 Adding Multiple Configuration Providers—the Last One Specified Takes Precedence**
 
-```
-public static void Main(string\[\] args = null)
+```csharp
+public static void Main(string[] args = null)
 {
   ConfigurationBuilder configurationBuilder =
     new ConfigurationBuilder();
@@ -137,7 +137,7 @@ public static void Main(string\[\] args = null)
     .AddEnvironmentVariables("EssentialDotNetConfiguration")
     .AddCommandLine(
       args, GetSwitchMappings(DefaultConfigurationStrings));
-  Console.WriteLine($"Hello {Configuration\["Profile:UserName"\]}");
+  Console.WriteLine($"Hello {Configuration["Profile:UserName"]}");
   AppConfiguration appConfiguration =
     Configuration.Get<AppConfiguration>(nameof(AppConfiguration));
 }
@@ -157,7 +157,7 @@ For the JsonConfigurationProvider, you can either require the file to exist or m
 
 **Figure 4 JSON Configuration Data for the JsonConfigurationProvider**
 
-```
+```javascript
 {
   "AppConfiguration": {
     "MainWindow": {
@@ -168,16 +168,16 @@ For the JsonConfigurationProvider, you can either require the file to exist or m
     },
     "ConnectionString":
       "Server=(localdb)\\\\\\\\mssqllocaldb;Database=Database-0B3B0919-C8B3-481C-9833-
-      36C21776A565;Trusted\_Connection=True;MultipleActiveResultSets=true"
+      36C21776A565;Trusted_Connection=True;MultipleActiveResultSets=true"
   }
 }
 ```
 
-The CommandLineConfigurationProvider requires you to specify the arguments when it’s registered with the configuration builder. Arguments are specified by a string array of name-value pairs, with each pair of the format /<name>=<value>, in which the equals sign is required. The leading slash is also required but the second parameter of the AddCommandLine(string\[\] args, Dictionary<string,string> switchMappings), function allows you to provide aliases that must be prefixed with either a - or --. For example, a dictionary of values will allow a command line of “program.exe -LogFile="c:\\programdata\\Application Data\\Program.txt” to load into the AppConfiguration:LogFile configuration element:
+The CommandLineConfigurationProvider requires you to specify the arguments when it’s registered with the configuration builder. Arguments are specified by a string array of name-value pairs, with each pair of the format /<name>=<value>, in which the equals sign is required. The leading slash is also required but the second parameter of the AddCommandLine(string[] args, Dictionary<string,string> switchMappings), function allows you to provide aliases that must be prefixed with either a - or --. For example, a dictionary of values will allow a command line of “program.exe -LogFile="c:\\programdata\\Application Data\\Program.txt” to load into the AppConfiguration:LogFile configuration element:
 
 ```
-\["-DBConnectionString"\]="AppConfiguration:ConnectionString",
-  \["-LogFile"\]="AppConfiguration:LogFile"
+["-DBConnectionString"]="AppConfiguration:ConnectionString",
+  ["-LogFile"]="AppConfiguration:LogFile"
 ```
 
 Before finishing off the configuration basics, here are a few additional points to note:
@@ -187,7 +187,7 @@ Before finishing off the configuration basics, here are a few additional points 
     - CommandLineConfigurationProviders doesn’t allow for switch-based command-line arguments—arguments that don’t include an assigned value. Specifying a key of “/Maximize,” for example, isn’t allowed.
     - While you can pass Main’s args to a new CommandLineConfigurationProvider instance, you can’t pass Environment.GetCommandLineArgs without first removing the process name. (Note that Environment.GetCommandLineArgs behaves differently when a debugger is attached. Specifically, executable names with spaces are split into individual arguments when there’s no debugger attached.
 - An exception will be issued when you specify a command-line switch prefix of - or -- for which there’s no corresponding switch mapping.
-- Although configurations can be updated (Configuration\["Profile:UserName"\]="Inigo Montoya"), the updated value is not persisted back into the original store. For example, when you assign a JSON provider configuration value, the JSON file won’t be updated. Similarly, an environment variable wouldn’t get updated when its configuration item is assigned.
+- Although configurations can be updated (Configuration["Profile:UserName"]="Inigo Montoya"), the updated value is not persisted back into the original store. For example, when you assign a JSON provider configuration value, the JSON file won’t be updated. Similarly, an environment variable wouldn’t get updated when its configuration item is assigned.
 - The EnvironmentVariableConfigurationProvider optionally allows for a key prefix to be specified. In such cases, it will load only those environment variables with the specified prefix. In this way, you can automatically limit the configuration entries to those within an environment variable “section” or, more broadly, those that are relevant to your application.
 - Environment variables with a colon delimiter are supported. For example, assigning SET AppConfiguration:ConnectionString=Console on the command line is allowed.
 - All configuration keys (names) are case-insensitive.
@@ -197,7 +197,7 @@ Before finishing off the configuration basics, here are a few additional points 
 
 Both the modularity and the object-oriented structure of the configuration API are well thought out—providing discoverable, modular and easily extensible classes and interfaces with which to work (see **Figure 5**).
 
- "Essential .NET: Configuration in .NET Core (MSDN)"
+![Figure 5 Configuration Provider Class Model](https://intellitect.com/wp-content/uploads/2019/12/Figure-5-2.png "Essential .NET: Configuration in .NET Core (MSDN)")
 
 Figure 5 Configuration Provider Class Model
 
@@ -219,8 +219,8 @@ On occasion, you’ll want to retrieve settings that are encrypted rather than s
 
 Obviously, retrieving settings is somewhat pointless if you can’t also set them. To do this, use the user-secret.cmd tool as follows:
 
-```
-user-secret set <secretName> <value> \[--project <projectPath>\]
+```javascript
+user-secret set <secretName> <value> [--project <projectPath>]
 ```
 
 The --project option allows you to associate the setting with the userSecretsId value stored in your project.json file (created by default by the ASP.NET 5 new project wizard). If you don’t have the user-secret tool, you’ll need to add it via the developer command prompt using the DNX utility (currently dnu.exe).

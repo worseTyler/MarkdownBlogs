@@ -20,7 +20,7 @@ For this particular Xamarin Forms application we were building, we used [moq](ht
 
 The interface we developed looked something like this:
 
-```
+```csharp
 public interface IXamarinFormsDevice
 {
     void BeginInvokeOnMainThread(Action action);
@@ -35,7 +35,7 @@ public interface IXamarinFormsDevice
 
 We then implemented a wrapper class that implemented this interface.  The wrapper simply forwards calls to Xamarin.Forms.Device.
 
-```
+```csharp
 public class FormsDeviceWrapper : IXamarinFormsDevice
 {
    public TargetPlatform OS
@@ -69,14 +69,13 @@ public class FormsDeviceWrapper : IXamarinFormsDevice
 
 At this point, you may be wondering why we went through the trouble of creating this interface, when all our interface implementation does is call the Xamarin.Forms.Device implementation.  The answer to this is simple, it gave us a way to unit test any code that uses the Xamarin.Forms.Device class.  In our code, rather than directly using Xamarin.Forms.Device, we used the interface (via dependency injection using [SimpleIOC](https://msdn.microsoft.com/en-us/magazine/jj991965.aspx)), like this:
 
-```
+```csharp
    IXamarinFormsDevice formsDevice = SimpleIoc.Default.GetInstance();
-
 ```
 
 We could then use the interface in our code, like this:
 
-```
+```csharp
    if(formsDevice.OS == TargetPlatform.iOS)
    {
       // do something iOS specific
@@ -87,7 +86,7 @@ We could then use the interface in our code, like this:
 
 Let’s take a look at some sample code to show how we can unit test our code effectively, now that our code is using our new interface, rather than Xamarin.Forms.Device directly.  For this contrived example, let’s assume that we have a label on our Xamarin forms page, in which we want to show a different message for each device type:
 
-```
+```csharp
 public static string GetLabel(IXamarinFormsDevice formsDevice)
 {
    switch (formsDevice.OS)
@@ -121,9 +120,9 @@ public static string GetLabel(IXamarinFormsDevice formsDevice)
 
 Using moq, it is now quite easy to write a test for this method:
 
-```
-\[TestMethod\]
-public void GetLabel\_iOS()
+```csharp
+[TestMethod]
+public void GetLabel_iOS()
 {
    Mock mockFormsDevice = new Mock();
    mockFormsDevice.SetupGet(x => x.OS).Returns(() => TargetPlatform.iOS);
@@ -131,8 +130,8 @@ public void GetLabel\_iOS()
    Assert.AreEqual('Hello iOS!', label);
 }
 
-\[TestMethod\]
-public void GetLabel\_Android()
+[TestMethod]
+public void GetLabel_Android()
 {
    Mock mockFormsDevice = new Mock();
    mockFormsDevice.SetupGet(x => x.OS).Returns(() => TargetPlatform.Android);
@@ -140,8 +139,8 @@ public void GetLabel\_Android()
    Assert.AreEqual('Hello Android!', label);
 }
 
-\[TestMethod\]
-public void GetLabel\_Windows()
+[TestMethod]
+public void GetLabel_Windows()
 {
    Mock<IXamarinFormsDevice> mockFormsDevice = new Mock<IXamarinFormsDevice>();
    mockFormsDevice.SetupGet(x => x.OS).Returns(() => TargetPlatform.Windows);
@@ -149,8 +148,8 @@ public void GetLabel\_Windows()
    Assert.AreEqual("Hello Windows!", label);
 }
 
-\[TestMethod\]
-public void GetLabel\_WindowsPhone()
+[TestMethod]
+public void GetLabel_WindowsPhone()
 {
    Mock<IXamarinFormsDevice> mockFormsDevice = new Mock<IXamarinFormsDevice>();
    mockFormsDevice.SetupGet(x => x.OS).Returns(() => TargetPlatform.WinPhone);

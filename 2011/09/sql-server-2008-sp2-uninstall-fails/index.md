@@ -14,7 +14,7 @@ Executing SELECT @@Version on my SQL Server Express instance confirmed that inde
 
 No problem, I would just upgrade by running the SQL Server 2008 R2 Express install.  Unfortunately, this failed with the following message:
 
-> ``` Could not open key: HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\\\WwanSvc\\Profiles ```
+> Could not open key: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\\\WwanSvc\\Profiles
 > 
 > (Yes, there were two slashes but regardless, the key was not to be found when I looked in the registry.)
 
@@ -44,6 +44,6 @@ The next step was to browse to the ``` C:\\Program Files\\Microsoft SQL Server `
 
 Installation using the command line failed as well.
 
-**Final Installation Resolution:** After many more installation/uninstallation attempts the final resolution was to delete the ``` HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\Microsoft SQL Server\\SQLEXPRESS ``` registry key (thanks to Alpha Wang for finding this). Without this entry, the SQLEXPRESS installation went through to completion.
+**Final Installation Resolution:** After many more installation/uninstallation attempts the final resolution was to delete the ``` HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Microsoft SQL Server\\SQLEXPRESS ``` registry key (thanks to Alpha Wang for finding this). Without this entry, the SQLEXPRESS installation went through to completion.
 
 !$%@&#%&^\*$^&\*#$%@#^!!!

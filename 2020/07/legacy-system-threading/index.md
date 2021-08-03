@@ -1,4 +1,99 @@
-+++++++++++++++++++++++++ 
+## Using an older .NET framework? Check out these system.threading tips to directly manipulate threads without the task abstraction.
+
+While writing the 7th edition of _[Essential C# 8.0](/essentialcsharp/)_, I realized that it was time to pull out the content on system.threading- focusing instead on Parallel Extensions (`System.Threading.Tasks`).
+
+Parallel Extensions is generally preferred because it allows you to manipulate a higher-level abstraction - namely the task (`System.Threading.Tasks.Task`) and the resulting libraries Task Parallel Library (TPL) and Parallel LINQ (PLINQ), rather than working directly with managed threads. Unfortunately, if you are working with older versions of the framework prior to the .NET Framework 4.0), or you have a programming problem not directly addressed by the task threading abstractions then you will need to instead work with `System.Threading.Thread` and it related APIs. In this article, I cover some of the basic APIs for directly manipulating threads without the task abstraction.
+
+### Asynchronous Operations with `System.Threading.Thread`
+
+The operating system implements threads and provides various unmanaged APIs to create and manage those threads. The Common Language Runtime (CLR) wraps these unmanaged threads and exposes them in managed code via the `System.Threading.Thread` class, an instance of which represents a point of control in the program. As mentioned earlier, you can think of a thread as a worker that independently follows the instructions that make up your program. 
+
+**Listing 1** provides an example. The independent point of control is represented by an instance of Thread that runs concurrently. A thread needs to know which code to run when it starts up, so its constructor takes a delegate that refers to the code that is to be executed. In this case, we convert a method group, `DoWork`, to the appropriate delegate type, `ThreadStart`. We then start the thread running by calling `Start()`. While the new thread is running, the main thread attempts to print 10,000 hyphens to the console. We instruct the main thread to then wait for the worker thread to complete its work by calling `Join()`. The result is shown in **Output 1**. 
+
+#### Listing 1: Starting a Method Using System.Threading.Thread
+
+```csharp
+using System; 
+using System.Threading; 
+
+public class RunningASeparateThread 
+{ 
+  public const int Repetitions = 1000; 
+
+  public static void Main() 
+  { 
+      ThreadStart threadStart = DoWork; 
+      Thread thread = new Thread(threadStart); 
+      thread.Start(); 
+      for(int count = 0; count < Repetitions; count++) 
+      { 
+          Console.Write('-'); 
+      } 
+      thread.Join(); 
+  } 
+
+  public static void DoWork() 
+  { 
+      for(int count = 0; count < Repetitions; count++) 
+      { 
+          Console.Write('+'); 
+      } 
+  } 
+} 
+```
+
+#### Output 1 
+
+```
+++++++++++++++++++++++++++++++++---------------------------------------- 
+
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------++++++ 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
++++++++++++++++++++++++++++++------------------------------------------- 
+
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+
+-------------------------------------------------------+++++++++++++++++ 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++++++++++++++++------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+
+-----------------------------------------------+++++++++++++++++++++++++ 
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
@@ -56,7 +151,7 @@ To mitigate these problems, the BCL provides a thread pool. Instead of allocatin
 
 **Listing 2: Using `ThreadPool` Instead of Instantiating Threads Explicitly** 
 
-```
+```csharp
 using System; 
 using System.Threading; 
  

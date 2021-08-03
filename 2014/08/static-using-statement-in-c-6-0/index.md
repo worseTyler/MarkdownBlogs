@@ -2,6 +2,7 @@
 
 Another C# 6.0 “syntactic sugar” feature is the introduction of _using_ _static_.  With this feature, it’s possible to eliminate an explicit reference to the type when invoking a static method.  Furthermore, using static lets you introduce only the extension methods on a specific class, rather than all extension methods within a namespace.  The code of **Listing 1** below provides a “Hello World” example of using static on System.Console.
 
+```csharp
 using System;
 using System.Console;
 public class Program
@@ -26,6 +27,7 @@ public class Program
         }
     }
 }
+```
 
 In this example, the Console qualifier was dropped a total of 9 times.  Admittedly, the example is contrived, but even so, the point is clear.  Frequently a type prefix on a static member (including properties) doesn’t add significant value and eliminating it results in code that’s easier to write and read.
 

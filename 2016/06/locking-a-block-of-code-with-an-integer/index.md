@@ -2,7 +2,7 @@
 
 I was talking with a developer recently who was convinced that you could use a static integer variable to lock a block of code merely by casting it to an object, like this
 
-```
+```csharp
 private static int Number = 0;
 …
 lock( (object) Number ) { … }
@@ -12,7 +12,7 @@ First it must be noted that an integer cannot be used by itself in a lock statem
 
 The purpose of the lock statement is to protect a block of code so that only one thread can execute it at a time. In order for lock() to work, all threads sharing the code must reference the same object reference in the lock statement. In the following code where a static object it used, this is clearly the case.
 
-```
+```csharp
 private static object LockObject = new object();
 …
 lock( LockObject ) { … }
@@ -22,14 +22,14 @@ Let’s examine the integer example. What is really being passed into the lock s
 
 We can test this with a simple program. Let’s look at the code in a C# Console application.
 
-```
+```csharp
 using System;
 using System.Threading;
 namespace IntLockTest
 {
     class Program
     {
-        static void Main(string\[\] args)
+        static void Main(string[] args)
         {
             var t1 = new Thread( IntLockTest ) { Name = "IntLock-1" };
             var t2 = new Thread( IntLockTest ) { Name = "IntLock-2" };
@@ -58,7 +58,7 @@ namespace IntLockTest
 
 Here we make two calls to IntLockTest on separate threads. Within the lock statement block we increment a counter and display that value along with the name of the calling thread. The output looks like this.
 
-```
+```csharp
 Enter IntLockTest Thread IntLock-1
 Delay IntLockTest Thread IntLock-1 sleeping (concurrent = 1)
 Enter IntLockTest Thread IntLock-2
@@ -71,7 +71,7 @@ As you can see, thread IntLock-2 enters the (assumed to be) locked block and inc
 
 For the record, I would never actually use a boxed value type as a locking object. Instead, I recommend using an object allocated specifically for that purpose, something like this,
 
-```
+```csharp
 private static object LockObject = new object();
 …
 lock( LockObject ) { … }
@@ -79,14 +79,14 @@ lock( LockObject ) { … }
 
 But for the purpose of this article, I will show that locking with an integer can be done if it is boxed at the class level. So let’s box the integer in a static reference and try that instead.
 
-```
+```csharp
 using System;
 using System.Threading;
 namespace IntLockTest
 {
    class Program
    {
-       static void Main(string\[\] args)
+       static void Main(string[] args)
        {
            var t1 = new Thread( BoxedIntLockTest ) { Name = "BoxedIntLock-1" };
            var t2 = new Thread( BoxedIntLockTest ) { Name = "BoxedIntLock-2" };
@@ -116,7 +116,7 @@ namespace IntLockTest
 
 Here is the new output.
 
-```
+```csharp
 Enter IntLockTest Thread BoxedIntLock-1
 Delay IntLockTest Thread BoxedIntLock-1 sleeping (concurrent = 1)
 Enter IntLockTest Thread BoxedIntLock-2

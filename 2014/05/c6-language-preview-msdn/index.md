@@ -18,7 +18,7 @@ To begin, consider the unit test in **Figure 1**.
 
 **Figure 1 Assigning a Collection via a Collection Initializer (Added in C# 3.0)**
 
-```
+```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 // ...
@@ -41,7 +41,7 @@ public void DictionaryIndexWithoutDotDollar()
 
 Although it’s somewhat obscured by the syntax, **Figure 1** is nothing more than a name-value collection. As such, the syntax could be significantly cleaner: <index> = <value>. C# 6.0 makes this possible through the C# object initializers and a new index member syntax. The following shows int-based element initializers:
 
-```
+```csharp
 var cppHelloWorldProgram = new Dictionary<int, string>
 {
   [10] = "main() {",
@@ -53,7 +53,7 @@ Assert.AreEqual(3, cppHelloWorldProgram.Count);
 
 Note that although this code uses an integer for the index, Dictionary<TKey,TValue> can support any type as an index (as long as it supports IComparable<T>). The next example presents a string for the index data type and uses an indexed member initializer to specify element values:
 
-```
+```csharp
 Dictionary<string, string> builtInDataTypes =
   new Dictionary<string, string> {
     ["Byte"] = "0 to 255",
@@ -71,7 +71,7 @@ Accompanying the new index member initialization is a new $ operator. This strin
 
 **Figure 2 Initializing a Collection with an Indexed Member Assignment as Part of the Element Initializer**
 
-```
+```csharp
 [TestMethod]
 public void DictionaryIndexWithDotDollar()
 {
@@ -88,7 +88,7 @@ public void DictionaryIndexWithDotDollar()
 }
 ```
 
-To understand the $ operator, take a look at the AreEqual function call. Notice the Dictionary member invocation of “$Boolean” on the builtInDataTypes variable—even though there’s no “Boolean” member on Dictionary. Such an explicit member isn’t required because the $ operator invokes the indexed member on the dictionary, the equivalent of calling buildInDataTypes\["Boolean"\].
+To understand the $ operator, take a look at the AreEqual function call. Notice the Dictionary member invocation of “$Boolean” on the builtInDataTypes variable—even though there’s no “Boolean” member on Dictionary. Such an explicit member isn’t required because the $ operator invokes the indexed member on the dictionary, the equivalent of calling buildInDataTypes["Boolean"].
 
 As with any string-based operator, there’s no compile-time verification that the string index element (for example, “Boolean”) exists in the dictionary. As a result, any valid C# (case-sensitive) member name can appear after the $ operator.
 
@@ -96,7 +96,7 @@ To fully appreciate the syntax of indexed members, consider the predominance of 
 
 **Figure 3 Leveraging the Indexed Method with JSON Data**
 
-```
+```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json.Linq;
 // ...
@@ -134,7 +134,7 @@ Initializing a class today can be cumbersome at times. Consider, for example, th
 
 With C# 6.0, there’s a syntax shortcut: auto-property initializers. You can now assign to auto-properties directly, as shown here:
 
-```
+```csharp
 class Queue<T>
 {
   private List<T> InternalCollection { get; } = 
@@ -152,7 +152,7 @@ Along the same lines as property initializers, C# 6.0 provides syntactic shortcu
 
 **Figure 4 A Common Constructor Pattern**
 
-```
+```csharp
 [Serializable]
 public class Patent
 {
@@ -205,7 +205,7 @@ To remove some of the ceremony around this pattern, without losing the flavor of
 
 **Figure 5 Using a Primary Constructor**
 
-```
+```csharp
 [Serializable]
 public class Patent(string title, string yearOfPublication)
 {
@@ -242,14 +242,14 @@ public class Patent(string title, string yearOfPublication)
 
 In combination with property initializers, primary constructor syntax simplifies C# constructor syntax:
 
-- Auto-properties, whether read-only (see the Inventors property with only a getter) or read-write, (see the YearOfPublication property with both a setter and a getter), support property initialization such that the initial value of the property can be assigned as part of the property declaration. The syntax matches what’s used when assigning fields a default value at declaration time (declaration assigned \_Title, for example).
+- Auto-properties, whether read-only (see the Inventors property with only a getter) or read-write, (see the YearOfPublication property with both a setter and a getter), support property initialization such that the initial value of the property can be assigned as part of the property declaration. The syntax matches what’s used when assigning fields a default value at declaration time (declaration assigned _Title, for example).
 - By default, primary constructor parameters aren’t accessible outside of an initializer. For example, there’s no yearOfPublication field declared on the class.
 - When leveraging property initializers on read-only properties (getter only), there’s no way to provide validation. (This is due to the fact that in the underlying IL implementation, the primary constructor parameter is assigned to the backing field. Also noteworthy is the fact that the backing field will be defined as read-only in the IL if the auto-property has only a getter.)
 - If specified, the primary constructor will (and must) always execute last in the constructor chain (therefore, it can’t have a this(…) initializer).
 
 For another example, consider the declaration of a struct, which guidelines indicate should be immutable. The following shows a property-based implementation (versus the atypical public field approach):
 
-```
+```csharp
 struct Pair(string first, string second, string name)
 {
   public Pair(string first, string second) : 
@@ -268,7 +268,7 @@ Note that in the implementation of Pair, there’s a second constructor that inv
 
 Whether the primary constructor is on a custom struct or class data type, the call to the base constructor is either implicit (therefore invoking the base class’s default constructor) or explicit, by calling a specific base class constructor. In the latter case, for a custom exception to invoke a specific System.Exception constructor, the target constructor is specified after the primary constructor:
 
-```
+```csharp
 class UsbConnectionException : 
   Exception(string message, Exception innerException,
   HidDeviceInfo hidDeviceInfo) :base(message, innerException)
@@ -283,7 +283,7 @@ There’s one significant caveat to consider in regard to primary constructors a
 
 Although somewhat tentative at the moment, there’s a related feature called the field parameter under consideration. The inclusion of an access modifier in the primary constructor parameter (such as private string title) will cause the parameter to be captured into class scope as a field with the name of title—matching the name and casing of the parameter). As such, title is available from within the Title property or any other instance class member. Furthermore, the access modifier allows the entire field syntax to be specified—including additional modifiers such as readonly, or even attributes like these:
 
-```
+```csharp
 public class Person(
   [field: NonSerialized] private string firstName, string lastName)
 ```
@@ -298,7 +298,7 @@ Another C# 6.0 “syntactic sugar” feature is the introduction of using static
 
 **Figure 6 Simplifying Code Clutter with Using Static**
 
-```
+```csharp
 using System;
 using System.Console;
 public class Program
@@ -342,7 +342,7 @@ To address these and similar annoyances, C# 6.0 introduces declaration expressio
 
 **Figure 7 Declaration Expression Examples**
 
-```
+```csharp
 public string FormatMessage(string attributeName)
 {
   string result;
@@ -374,7 +374,7 @@ Wherever possible the compiler will enable the use of implicitly typed variables
 Enum.TryParse(attributeName, out FileAttributes attributeValue)
 ```
 
-In the second declaration expression example in **Figure 7**, an explicit declaration of string\[\] appears to identify the data type as an array (rather than a List<string>, for example). The guideline is standard to the general use of var: Consider avoiding implicitly typed variables when the resulting data type isn’t obvious.
+In the second declaration expression example in **Figure 7**, an explicit declaration of string[] appears to identify the data type as an array (rather than a List<string>, for example). The guideline is standard to the general use of var: Consider avoiding implicitly typed variables when the resulting data type isn’t obvious.
 
 The declaration expression examples in **Figure 7** could all be coded by simply declaring the variables in a statement prior to their assignment.
 
@@ -386,7 +386,7 @@ When C# 5.0 introduced the async and await (contextual) keywords, developers gai
 
 **Figure 8 Await Calls from Within a Catch Block**
 
-```
+```csharp
 try
 {
   WebRequest webRequest =
@@ -405,7 +405,7 @@ The other exception improvement in C# 6.0—support for exception filters—brin
 
 **Figure 9 Leveraging Exception Filters to Pinpoint Which Exception to Catch**
 
-```
+```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
@@ -432,9 +432,9 @@ Note that unlike some of the other C# 6.0 features discussed earlier (such as th
 
 ### Additional Numeric Literal Formats
 
-Though it’s not yet implemented in the March Preview, C# 6.0 will introduce a digit separator, the underscore (\_), as a means of separating the digits in a numerical literal (decimal, hex or binary). The digits can be broken into whatever grouping makes sense for your scenario. For example, the maximum value of an integer could be grouped into thousands:
+Though it’s not yet implemented in the March Preview, C# 6.0 will introduce a digit separator, the underscore (_), as a means of separating the digits in a numerical literal (decimal, hex or binary). The digits can be broken into whatever grouping makes sense for your scenario. For example, the maximum value of an integer could be grouped into thousands:
 
-```
+```csharp
 int number = 2_147_483_647;
 ```
 
@@ -444,7 +444,7 @@ The digit separator is likely to be especially helpful for the new C# 6.0 numeri
 
 **Figure 10 Assigning Binary Literals for Enum Values**
 
-```
+```csharp
 [Serializable][Flags]
 [System.Runtime.InteropServices.ComVisible(true)]
 public enum FileAttributes
@@ -468,7 +468,7 @@ public enum FileAttributes
 
 Now, with binary numeric literals, you can show more clearly which flags are set and not set. This replaces the hex notation shown in comments or the compile time calculated shift approach:
 
-```
+```csharp
 Encrypted = 1<<14.
 ```
 

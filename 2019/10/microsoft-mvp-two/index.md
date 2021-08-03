@@ -6,13 +6,13 @@ Also, in recognition of his exceptional technical community leadership, Mark Mic
 
 **Congrats!!!**
 
- "We have two Microsoft MVPs!"
+![Mark and Kevin take a selfie on the beach.](https://intellitect.com/wp-content/uploads/2019/10/Mark-and-Kevin.jpg "We have two Microsoft MVPs!")
 
 Mark and Kevin relaxing on the beach in Puerto Rico before they head to a client site.
 
 ### What's a Microsoft MVP?
 
- "We have two Microsoft MVPs!"
+![Microsoft MVP logo](https://intellitect.com/wp-content/uploads/2010/03/Microsoft-MVP-1024x576-1024x576.png "We have two Microsoft MVPs!")
 
 According to [mvp.microsoft.com](https://mvp.microsoft.com/en-US/Overview), "MVPs are technology experts who passionately share their knowledge with the community. They are always on the 'bleeding edge' and have an unstoppable urge to get their hands on new, exciting technologies. They have very deep knowledge of Microsoft products and services, while also being able to bring together diverse platforms, products and solutions, to solve real-world problems.
 
@@ -20,7 +20,7 @@ MVPs make up a global community of over 4,000 technical experts and community le
 
 ### What's a Microsoft RD?
 
- "We have two Microsoft MVPs!"
+![Microsoft RD logo](https://intellitect.com/wp-content/uploads/2013/01/msrd-logo-96px-alpha-300x85.png "We have two Microsoft MVPs!")
 
 A Microsoft RD isn't an employee of Microsoft. According to [rd.microsoft.com](https://rd.microsoft.com/en-us/about/), the goal of the program is to provide "Microsoft leaders with the customer insights and real-world voices it needs to continue empowering developers and IT professionals with the world's most innovative and impactful tools, services, and solutions."
 
@@ -30,7 +30,7 @@ There are only 160 RDs around the world. Like all RDs, Mark was chosen specifica
 
 Join IntelliTect's Visual Studio 2019 Event in Spokane, Washington, and learn about VS 2019, .NET 3, Xamarin and Azure from Mark, Kevin and the rest of the IntelliTect team. [Click here](https://bit.ly/2lR4EVP) for more info or to register for this event.
 
-[ "We have two Microsoft MVPs!"
+[![Invite graphic for the 2019 Visual Studio event.](https://intellitect.com/wp-content/uploads/2019/10/2-weeks-1024x768.jpg)](https://bit.ly/2lR4EVP "We have two Microsoft MVPs!")
 
 #### More About Kevin
 

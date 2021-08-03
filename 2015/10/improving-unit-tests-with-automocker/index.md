@@ -4,7 +4,7 @@ In my [previous post](/unit-testing-with-mocks/), I presented an example of usin
 
 First, we will create another dependency to represent a service that returns some data:
 
-```
+```csharp
 public interface IDataService
 {
    IEnumerable<string> RetrieveData();
@@ -13,31 +13,31 @@ public interface IDataService
 
 Now we will add a new method to the ViewModel class:
 
-```
+```csharp
 public class ViewModel
 {
-   private readonly IDialogService \_DialogService;
-   private readonly IMessenger \_Messenger;
-   private readonly IDataService \_DataService;
+   private readonly IDialogService _DialogService;
+   private readonly IMessenger _Messenger;
+   private readonly IDataService _DataService;
    
    public ViewModel( IDialogService dialogService, IMessenger messenger, IDataService dataService )
    {
-       \_DialogService = dialogService;
-       \_Messenger = messenger;
-       \_DataService = dataService;
+       _DialogService = dialogService;
+       _Messenger = messenger;
+       _DataService = dataService;
    }
    
    public void Execute()
    {
-       if ( \_DialogService.ShowMessage( "Agree to continue?" ) )
+       if ( _DialogService.ShowMessage( "Agree to continue?" ) )
        {
-           \_Messenger.Send( "Success message" );
+           _Messenger.Send( "Success message" );
        }
    }
    
    public IEnumerable<string> RetrieveData()
    {
-       return \_DataService.RetrieveData();
+       return _DataService.RetrieveData();
    }
 }
 ```
@@ -46,7 +46,7 @@ This dependency change (adding IDataService to the constructor) causes our previ
 
 Using AutoMocker, the arrange portion of our [previous unit tests](/unit-testing-with-mocks/) can be changed from:
 
-```
+```csharp
 //Arrange
 var dialogServiceMock = new Mock<IDialogService>();
 var messengerMock = new Mock<IMessenger>();
@@ -56,7 +56,7 @@ var viewModel = new ViewModel( dialogServiceMock.Object, messengerMock.Object );
 
 to:
 
-```
+```csharp
 //Arrange
 var mocker = new AutoMocker();
 var viewModel = mocker.CreateInstance<ViewModel>();
@@ -68,8 +68,8 @@ Now our previous two unit tests are now only coupled to dependencies that are us
 
 Now we can add a unit test for the RetrieveData method:
 
-```
-\[TestMethod\]
+```csharp
+[TestMethod]
 public void WhenRetrievingDataItOnlyCallsDataService()
 {
    //Arrange
@@ -77,13 +77,13 @@ public void WhenRetrievingDataItOnlyCallsDataService()
    var viewModel = mocker.CreateInstance<ViewModel>();
    var dataService = mocker.GetMock<IDataService>();
    
-   dataService.Setup( x => x.RetrieveData() ).Returns( new\[\] { "Data1", "Data2" } ).Verifiable();
+   dataService.Setup( x => x.RetrieveData() ).Returns( new[] { "Data1", "Data2" } ).Verifiable();
    
    //Act
    IEnumerable<string> retrievedData = viewModel.RetrieveData();
    
    //Assert
-   CollectionAssert.AreEqual( new\[\] { "Data1", "Data2" }, retrievedData.ToArray() );
+   CollectionAssert.AreEqual( new[] { "Data1", "Data2" }, retrievedData.ToArray() );
    mocker.VerifyAll();
 }
 
@@ -93,8 +93,8 @@ This test passes, because it fails to properly assert that no other calls were m
 
 This will update our unit test to be:
 
-```
-\[TestMethod\]
+```csharp
+[TestMethod]
 public void WhenRetrievingDataItOnlyCallsDataService()
 {
    //Arrange
@@ -105,7 +105,7 @@ public void WhenRetrievingDataItOnlyCallsDataService()
 
 If you would prefer to specify your own mock (or actual object) for AutoMocker to use, you can do so by passing the appropriate object to AutoMocker’s Use method.
 
-```
+```csharp
 var mocker = new AutoMocker();
 
 var dataServiceMock = new Mock<IDataService>( MockBehavior.Strict );

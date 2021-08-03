@@ -12,7 +12,7 @@ Check out my **full talk** on Xamarin at IntelliTect's 2019 event.
 
 [Xamarin.Forms](https://docs.microsoft.com/en-us/xamarin/get-started/what-is-xamarin-forms) is all about sharing the code across a common UI. Anyone can write a class library. Xamarin.Forms shares the UI code and logic but the UI is native to each platform.
 
- "Xamarin.Forms 4 and Its Time-saving New Features (Video)"
+![An infographic on how Xamarin.Forms works taken from https://docs.microsoft.com/en-us/xamarin/get-started/what-is-xamarin-forms.](https://intellitect.com/wp-content/uploads/2019/10/xamarin-forms-architecture.png "Xamarin.Forms 4 and Its Time-saving New Features (Video)")
 
 This [Microsoft](https://docs.microsoft.com/en-us/xamarin/get-started/what-is-xamarin-forms) infographic breaks down how Xamarin.Forms works.
 

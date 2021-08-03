@@ -3,7 +3,6 @@
 ## Examine medical data and cure problems using computer algorithms without violating HIPPA.
 
 
-
 Machine learning is an area of quantitative science that allows computers to run algorithms to create predictions or disentangle causality. We are no longer limited by the ideas that the human brain can formulate because machine learning can uncover unconsidered possibilities. Medical breakthroughs are happening by data mining vast quantities of information and relying on computers to determine correlation. If the medical community partners with business intelligence architects, we can unlock medical knowledge in such a way that lives can be saved and cures can be found.
 
 My company, IntelliTect, is a high-end software architecture and development consulting firm based in Spokane, WA. Recently, we started using machine learning to forecast production needs on a solar farm using weather data and historical energy production reports. Our algorithm allows utilities to more accurately predict when to purchase energy and helps our customers avoid paying last minute inflated rates unnecessarily.

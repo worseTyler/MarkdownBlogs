@@ -8,15 +8,15 @@
 
 Mark Michaelis, IntelliTect’s CEO, met the executive director of NAOMI in January of 2011 after he finished a presentation at the Spokane Community College. In a follow-up conversation, the executive director provided an overview of how NAOMI was providing housing in Spokane to homeless women and their children.
 
- "Charity Spotlight: NAOMI Community"
+![Mom and baby girl pose at NAOMI](https://intellitect.com/wp-content/uploads/2019/08/NAOMI-4-1024x683.jpg "Charity Spotlight: NAOMI Community")
 
 NAOMI families enjoy the annual Back To School BBQ and the opportunity to get family portraits from Mark Michaelis.
 
--  "Charity Spotlight: NAOMI Community"
+- ![Mom and son pose at NAOMI](https://intellitect.com/wp-content/uploads/2019/08/NAOMI-1-1024x683.jpg "Charity Spotlight: NAOMI Community")
     
--  "Charity Spotlight: NAOMI Community"
+- ![Mom and three kids pose at NAOMI](https://intellitect.com/wp-content/uploads/2019/08/NAOMI-3-1024x682.jpg "Charity Spotlight: NAOMI Community")
     
-- ![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/08/NAOMI-2-1024x683.webp)
+- ![](https://intellitect.com/wp-content/uploads/2019/08/NAOMI-2-1024x683.jpg)
     
 
 In addition to IntelliTect’s financial commitment over the years, Mark has served on NAOMI’s board of directors and volunteered for various workdays, including occasionally assisting as their resident photographer at several events. Lastly, and perhaps where he provides the most support, is as an advisor to the executive director. They meet one to two times per month and discuss the various challenges that NAOMI may be facing.
@@ -31,7 +31,7 @@ NAOMI was founded by Karen Fournier who took homeless women into her own home an
 
 IntelliTect founders, Mark and Elisabeth were recently honored to receive a partnership award from NAOMI for their partnership and assistance over the past decade.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/08/Naomi-Award-1024x683.webp)
+![](https://intellitect.com/wp-content/uploads/2019/08/Naomi-Award-1024x683.jpg)
 
 IntelliTect founders, Mark and Elisabeth pose with NAOMI’s executive director, Angela Slabaugh and her daughter after they received IntelliTect’s partnership award this past June. The award reads, “Thank you, Intellitect, for transforming lives in Spokane Valley through your partnership!”
 

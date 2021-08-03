@@ -34,7 +34,7 @@ This concept can be expanded to many kinds of classes and situations to make cod
 
 Using the `IConsole` example I mentioned earlier, let’s say I have a given class that makes lots of calls to `System.Console.ReadLine()` and `System.Console.WriteLine()`, and I want to test it. Let’s assume I want to write unit tests for this class below.
 
-```
+```csharp
 public class SportsTeam
 {
     public string Sport { get; set; }
@@ -72,7 +72,7 @@ The purpose of this interface will be to replace all instances of `System.Consol
 
 Let’s start by creating an `IConsole` interface that contains methods meant to mimic the functionality of `System.Console`.
 
-```
+```csharp
 public interface IConsole
 {
     void Write(string value);
@@ -83,7 +83,7 @@ public interface IConsole
 
 Note: We only require the functionality that we need for our current project from `System.Console` in this interface. Here is what a production use implementation of `IConsole` will look like.
 
-```
+```csharp
 public class ProductionConsole : IConsole
 {
     public void Write(string value)
@@ -107,7 +107,7 @@ The above code shows the production implementation of this `IConsole` interface 
 
 We make this change in our `SportsTeam` class by implementing a private, read-only auto property of type `IConsole` named “Console,” which will be set at the classes instantiation via a parameter passed into the constructor. Since our `IConsole` interface contains methods with the same names and functionality as the ones in `System.Console` that we are using, this implementation barely changes our actual code. The only change is that instead of calling `System.Console.Write()`, we save ourselves some typing by calling a method on our private property using `Console.Write()`. If we had originally imported `System` into class, there would have been no changes to the core methods.
 
-```
+```csharp
 public class SportsTeam
 {
     public string Sport { get; set; }
@@ -145,7 +145,7 @@ So far, we’ve completely decoupled `SportsTeam` from `System.Console`, which m
 
 Now let’s see at what a testable version of our `IConsole` interface will look like.
 
-```
+```csharp
 public class TestableConsole : IConsole
 {
     public TestableConsole()
@@ -183,23 +183,23 @@ Note: `WrittenLines` is a list of strings rather than a singular string. With th
 
 To unit test our `SportsTeam` class code, we need to instantiate our class, but when we do, we need to pass in our testable version of the `IConsole` interface.
 
-```
-\[TestClass\]
+```csharp
+[TestClass]
 public class SportsTeamTests
 {
-    \[TestMethod\]
-    public void PrintTeamInfo\_PrintsCorrectInformation()
+    [TestMethod]
+    public void PrintTeamInfo_PrintsCorrectInformation()
     {
         var testConsole = new TestableConsole();
         var myTeam = new SportsTeam("Hockey", "Bruins", testConsole);
 
         myTeam.PrintTeamInfo();
 
-        Assert.AreEqual<string>("Hockey - Bruins", testConsole.WrittenLines\[0\]);
+        Assert.AreEqual<string>("Hockey - Bruins", testConsole.WrittenLines[0]);
     }
 
-    \[TestMethod\]
-    public void UpdateTeam\_TeamIsUpdated()
+    [TestMethod]
+    public void UpdateTeam_TeamIsUpdated()
     {
         var testConsole = new TestableConsole();
         var myTeam = new SportsTeam("Hockey", "Bruins", testConsole);
@@ -210,7 +210,7 @@ public class SportsTeamTests
 
         Assert.AreEqual<string>("Rangers", myTeam.TeamName);
         Assert.AreEqual<string>("Enter new team name --> ", 
-            testConsole.WrittenLines\[0\]);
+            testConsole.WrittenLines[0]);
     }
 }
 ```
@@ -221,10 +221,10 @@ In the case of `UpdateTeam_TeamIsUpdated`, we specify what line the method would
 
 NOTE: this is how `SportsTeam` would look if it were called from a production setting using our `ProductionConsole` that just extends `System.Console`.
 
-```
+```csharp
 class Program
 {
-    static void Main(string\[\] args)
+    static void Main(string[] args)
     {
         var productionConsole = new ProductionConsole();
         SportsTeam myTeam = new SportsTeam("Hockey", "Bruins", productionConsole);
@@ -254,4 +254,4 @@ _Written by Raymond Shiner._
 
 Ask a question about decoupling or comment below.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.png)

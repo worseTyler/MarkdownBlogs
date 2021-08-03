@@ -28,7 +28,7 @@ Let's see what we can accomplish with some demos! Here's the **full video** from
 
 In this talk, we'll cover serverless functionality via demos as well as some new Azure capabilities. We'll quickly build a simple microservices-based solution leveraging Azure features.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/11/Serverless-Microservice-1024x562.webp)
+![](https://intellitect.com/wp-content/uploads/2019/11/Serverless-Microservice-1024x562.png)
 
 #### Service Bus
 

@@ -6,19 +6,19 @@ In my last two articles, Logging with .NET Core ([bit.ly/1Vv3Q39](https://bit.ly
 
 With .NET, instantiating an object is trivial with a call to the constructor via the new operator (that is, new MyService or whatever the object type is you wish to instantiate).  Unfortunately, an invocation like this forces a tightly coupled connection (a hard-coded reference) of the client (or application) code to the object instantiated, along with a reference to its assembly/NuGet package.  For common .NET types this isn’t a problem.  However, for types offering a “service,” such as logging, configuration, payment, notification, or even dependency injection, the dependency may be unwanted if you want to switch the implementation of the service you use.  For example, in one scenario a client might use NLog for logging, while in another they might choose Log4Net or Serilog.  And, the client using NLog might prefer not to dirty up their project with Serilog, so a reference to both logging services would be undesirable (see **Figure 1**).
 
-[ "Essential .NET: .NET Core Dependency Injection (MSDN)"
+[![Figure 1 Strongly Coupling the Client to the Logging Service Implementation](https://intellitect.com/wp-content/uploads/2016/05/di-host.png)](https://intellitect.com/wp-content/uploads/2016/05/di-host.png "Essential .NET: .NET Core Dependency Injection (MSDN)")
 
 Figure 1 Strongly Coupling the Client to the Logging Service Implementation
 
 To solve the problem of hard- coding a reference to the service implementation, dependency injection provides a level of indirection such that rather than instantiating the service directly with the new operator, the client (or application) will instead ask a service collection or “factory” for the instance, as shown in **Figure 2**. Furthermore, rather than asking the service collection for a specific type (thus creating a tightly coupled reference), you ask for an interface (such as ILoggerFactory) with the expectation that the service provider (in this case, NLog, Log4Net, or Serilog) will implement the interface.
 
-[ "Essential .NET: .NET Core Dependency Injection (MSDN)"
+[![Figure 2 Sequence Diagram Demonstrating Dependency Injection and IoC](https://intellitect.com/wp-content/uploads/2016/05/di-sequence-diagram-300x195.png)](https://intellitect.com/wp-content/uploads/2016/05/di-sequence-diagram.png "Essential .NET: .NET Core Dependency Injection (MSDN)")
 
 Figure 2 Sequence Diagram Demonstrating Dependency Injection and IoC
 
 The result is that while the client will directly reference the abstract assembly (Logging.Abstractions), defining the service interface, no references to the direct implementation will be needed, as shown in **Figure 3**.
 
-[ "Essential .NET: .NET Core Dependency Injection (MSDN)"
+[![Figure 3 Decoupling the Client/Library from the Specific Logging Implementaiton via Dependency Injection](https://intellitect.com/wp-content/uploads/2016/05/di-host-2.png)](https://intellitect.com/wp-content/uploads/2016/05/di-host-2.png "Essential .NET: .NET Core Dependency Injection (MSDN)")
 
 Figure 3 Decoupling the Client/Library from the Specific Logging Implementation via Dependency Injection
 
@@ -26,13 +26,13 @@ We call the pattern of decoupling the actual instance returned to the client inv
 
 One especially common need for dependency injection is in unit tests.  Consider a shopping cart service that, in turn, depends on a payment service.  Imagine writing the shopping cart service that leverages the payment service and trying to unit test the shopping cart service without actually invoking a real payment service.  What you want to invoke instead is a mock payment service.  To achieve this with dependency injection, your code would request an instance of the payment service interface from the dependency injection framework rather than calling, for example, new PaymentService.  Then, all that’s needed is for the unit test to “configure” the framework to return a mock payment service, as shown in **Figure 4**.
 
-[ "Essential .NET: .NET Core Dependency Injection (MSDN)"
+[![Figure 4 Unit Testing with Dependency Injection](https://intellitect.com/wp-content/uploads/2016/05/di-unit-testing.png)](https://intellitect.com/wp-content/uploads/2016/05/di-unit-testing.png "Essential .NET: .NET Core Dependency Injection (MSDN)")
 
 Figure 4 Unit Testing with Dependency Injection
 
 In contrast, the production host could configure the shopping cart to use one of the (possibly many) payment service options. And, perhaps most importantly, the references would be only to the payment abstraction, rather than to each specific implementation (see **Figure 5**).
 
-[ "Essential .NET: .NET Core Dependency Injection (MSDN)"
+[![Figure 5 Unit Testing with Dependency Injection so a Mock Type Instance Can Be Used](https://intellitect.com/wp-content/uploads/2016/05/di-unit-tests-host.png)](https://intellitect.com/wp-content/uploads/2016/05/di-unit-tests-host.png "Essential .NET: .NET Core Dependency Injection (MSDN)")
 
 Figure 5 Unit Testing with Dependency Injection so a Mock Type Instance Can Be Used
 
@@ -52,7 +52,7 @@ If no type is registered with the collection service when calling GetService, it
 
 As you can see, the code is trivially simple.  However, what’s missing is how to obtain an instance of the service provider on which to invoke GetService.  The solution is simply to first instantiate ServiceCollection’s default constructor, then register the type you want the service to provide.  An example is shown in **Figure 6**, in which you can assume each class (Host, Application, and PaymentService) are implemented in separate assemblies.  Furthermore, while the Host assembly knows which loggers to use, there is no reference to loggers in Application or PaymentService.  Similarly, the Host assembly has no reference to the PaymentServices assembly.  Interfaces are also implemented in separate “abstraction” assemblies.  For example, the ILogger interface is defined in Microsoft.Extensions.Logging.Abstractions assembly.
 
-```
+```csharp
 public class Host
 {
     public static void Main()
@@ -152,7 +152,7 @@ Regardless of which lifetime you register your TService with, the TService itsel
 
 ## A Word On ActivatorUtilities
 
-Microsoft.Framework.DependencyInjection.Abstractions also includes a static helper class that provides a few useful methods in dealing with constructor parameters that aren’t registered with the IServiceProvider, a custom ObjectFactory delegate, or situations where you want to create a default instance in the event that a call to GetService returns null.  You can find examples where this utility class is used in both the MVC framework and the SignalR library.  In the first case, a method with a signature of CreateInstance<T>(IServiceProvider provider, params object\[\] parameters) exists which allows you to pass in constructor parameters to a type registered with the dependency injection framework for arguments that are not registered.  You may also have a performance requirement that lambda functions required to generate your types be compiled lambdas.  The CreateFactory(Type instanceType, Type\[\] argumentTypes) method that returns an ObjectFactory can be useful in this case.  The first argument is the type sought by a consumer, and the second argument is all the constructor types, in order, that match the constructor of the first type that you wish to use.  In it's implementation, these pieces are condensed down to a compiled lambda that will be very performant when called multiple times.  Finally, the GetServiceOrCreateInstance<T>(IServiceProvider provider) method provides an easy way to provide a default instance of a type that may have been optionally registered in a different place.  One use for this in the real world would be in a "freemium" type software where a default bare-bones implementation of an interface would be needed in the "free" mode, while a more feature-rich implementation would be registered after paying for a "premium" mode.
+Microsoft.Framework.DependencyInjection.Abstractions also includes a static helper class that provides a few useful methods in dealing with constructor parameters that aren’t registered with the IServiceProvider, a custom ObjectFactory delegate, or situations where you want to create a default instance in the event that a call to GetService returns null.  You can find examples where this utility class is used in both the MVC framework and the SignalR library.  In the first case, a method with a signature of CreateInstance<T>(IServiceProvider provider, params object[] parameters) exists which allows you to pass in constructor parameters to a type registered with the dependency injection framework for arguments that are not registered.  You may also have a performance requirement that lambda functions required to generate your types be compiled lambdas.  The CreateFactory(Type instanceType, Type[] argumentTypes) method that returns an ObjectFactory can be useful in this case.  The first argument is the type sought by a consumer, and the second argument is all the constructor types, in order, that match the constructor of the first type that you wish to use.  In it's implementation, these pieces are condensed down to a compiled lambda that will be very performant when called multiple times.  Finally, the GetServiceOrCreateInstance<T>(IServiceProvider provider) method provides an easy way to provide a default instance of a type that may have been optionally registered in a different place.  One use for this in the real world would be in a "freemium" type software where a default bare-bones implementation of an interface would be needed in the "free" mode, while a more feature-rich implementation would be registered after paying for a "premium" mode.
 
 ## Dependency Injection for the Dependency Injection Implementation
 

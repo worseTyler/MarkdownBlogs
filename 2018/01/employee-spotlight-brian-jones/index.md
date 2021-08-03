@@ -24,4 +24,4 @@ Brian and his wife, Kristin, were married in Spokane, WA in 1995. They have thre
 
 If you'd like to get to know Brian more, grab a soccer ball, head to the nearest indoor field, and wait. He'll be there soon.
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [ "Employee Spotlight: Brian Jones"
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T "Employee Spotlight: Brian Jones")

@@ -4,9 +4,9 @@
 
 ### Constraints are a solution for serving Angular apps from a hybrid MVC application.
 
-We recently had a unique challenge of serving up an angular app from an MVC application. This app needed to serve other MVC pages along with the angular site. Additionally, the routes that would serve the angular site would be configurable by the user in the format of /\[site\]/\[page\].
+We recently had a unique challenge of serving up an angular app from an MVC application. This app needed to serve other MVC pages along with the angular site. Additionally, the routes that would serve the angular site would be configurable by the user in the format of /[site]/[page].
 
-Our app had a dynamic list of sites, and each site could have a set of pages. However, this was entirely handled by the angular site's routing. When a URL was requested that started with a valid \[site\], the angular page needed to be returned. If the \[page\] didn’t exist, that was the angular app's responsibility.
+Our app had a dynamic list of sites, and each site could have a set of pages. However, this was entirely handled by the angular site's routing. When a URL was requested that started with a valid [site], the angular page needed to be returned. If the [page] didn’t exist, that was the angular app's responsibility.
 
 The routing in ASP.NET Core was set-up at startup, so doing traditional routes didn't make sense because it would require a restart of the app every time a new site was added by the user. We turned to routing constraints to solve this issue.
 
@@ -14,7 +14,7 @@ The routing in ASP.NET Core was set-up at startup, so doing traditional routes d
 
 A constraint allows you to provide code to validate a route before it is assigned to a controller. First, we set this up in our startup.cs configure method. This included the standard MVC routing so that other URLs will be served. Note that static files were served before this routing code is executed.
 
-```
+```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
     // ...
@@ -45,12 +45,12 @@ The configuration of the 'site' route (above) accepted two URL parts: ‘site’
 
 In our case, the constraint class looked like this.
 
-```
+```csharp
 public class SiteRouteConstraint : IRouteConstraint
 {
     public bool Match(HttpContext httpContext, IRouter route, string routeKey, RouteValueDictionary values, RouteDirection routeDirection)
     {
-        var site = values\[routeKey\]?.ToString();
+        var site = values[routeKey]?.ToString();
         return SiteService.SiteExists(site);
     }
 }
@@ -62,7 +62,7 @@ Here the routeKey was the string 'site' which was configured in the startup. The
 
 As you may have noticed in the Configure method, the controller and action have been set irrespective of the site and page. This was because the angular routing handled this for us. We needed to make sure that the URL on the client browser didn't get changed by MVC as a redirect. We compiled our angular application to our wwwroot folder. Next, we needed to serve the file. Here is the SiteController class we used to return the index.html file from the root of our wwwroot folder.
 
-```
+```csharp
 public class SiteController : Controller
 {
     public IActionResult Index()

@@ -24,7 +24,7 @@ For this example, let’s assume your architecture has a single SQL server and y
 
 From the root of the repository, create “env” and “modules” folders, then create a “sql” folder underneath the module’s folder. Underneath the env folder, create folders for each of the environments: dev, test, and prod. Create a “region” folder in each environment’s folder.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/08/Terraform-Project-Structure-Image-1.gif)
+![](https://intellitect.com/wp-content/uploads/2019/08/Terraform-Project-Structure-Image-1.gif)
 
 Environment folders contain the script files that are unique to each environment. Reference global resources (such as a traffic manager) at this level. Reference resources that are specific to a particular region from within the region module.
 

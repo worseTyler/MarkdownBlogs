@@ -6,22 +6,22 @@ Live templates appear in the regular intellisense menu. When selected they inser
 
 For example simply typing in “ctor”
 
-[ "Reducing Boilerplate Code with ReSharper Templates"
+[![1](https://intellitect.com/wp-content/uploads/2015/11/1.png)](https://intellitect.com/wp-content/uploads/2015/11/1.png "Reducing Boilerplate Code with ReSharper Templates")
 
 And pressing Enter, will produce:
 
-[ "Reducing Boilerplate Code with ReSharper Templates"
+[![2](https://intellitect.com/wp-content/uploads/2015/11/2.png)](https://intellitect.com/wp-content/uploads/2015/11/2.png "Reducing Boilerplate Code with ReSharper Templates")
 
 This is just one example of a live code template. There are many that come pre-installed with ReSharper. What makes this an amazing feature is that we can create our own templates to meet our needs. Let’s take a look at a practical example.
 
 I do a lot of MVVM work and favor using the [MVVM Light](https://www.mvvmlight.net/) framework. For those unfamiliar with MVVM Light, the code to create a bindable property looks like this:
 
-```
-private string \_MyProperty;
+```csharp
+private string _MyProperty;
 public string MyProperty
 {
-   get { return \_MyProperty; }
-   set { Set( ref \_MyProperty, value); }
+   get { return _MyProperty; }
+   set { Set( ref _MyProperty, value); }
 }
 ```
 
@@ -29,20 +29,20 @@ You will quickly notice that there is a lot of redundant information in this pro
 
 Open the Template Explorer, from the ReSharper>>Tools menu, and click the New Template option.
 
-[ "Reducing Boilerplate Code with ReSharper Templates"
+[![3](https://intellitect.com/wp-content/uploads/2015/11/3.png)](https://intellitect.com/wp-content/uploads/2015/11/3.png "Reducing Boilerplate Code with ReSharper Templates")
 
 The first thing to do is set a shortcut and a description. The shortcut is the text that you will type into your code to invoke the template. It is also worth pointing out that you are not limited to C# templates. **You can create templates that are available in a variety of languages and coding contexts.** Click on the Availability link to see all of the possibilities for your template.
 
-[ "Reducing Boilerplate Code with ReSharper Templates"
+[![4](https://intellitect.com/wp-content/uploads/2015/11/4.png)](https://intellitect.com/wp-content/uploads/2015/11/4.png "Reducing Boilerplate Code with ReSharper Templates")
 
 To add the contents of the template we will enter the code from above, replacing the duplicated parts with template parameters. Parameters are declared by surrounding the name with dollar signs. As you enter parameters they will start to show up on the right in the parameter’s list. In this area you can change the order that parameters will be filled in when the template is invoked, if the parameter should be editable, and if the parameter’s default value should be populated from a macro.
 
 In this example, we want to edit the $Type$ parameter first, but to keep things together I have modified the parameter to edit the second occurrence of the parameter (note the M-O2). Then the template will prompt to fill in the $PropertyName$ parameter. The $FieldName$ parameter will not be editable. Editable parameters will prompt for a value. In this case, rather than prompting for a value we simply select a macro to populate its value with the value in $PropertyName$.
 
-[ "Reducing Boilerplate Code with ReSharper Templates"
+[![5](https://intellitect.com/wp-content/uploads/2015/11/5.png)](https://intellitect.com/wp-content/uploads/2015/11/5.png "Reducing Boilerplate Code with ReSharper Templates")
 
 Below you can see the template in action:
 
-[ "Reducing Boilerplate Code with ReSharper Templates"
+[![6](https://intellitect.com/wp-content/uploads/2015/11/6.gif)](https://intellitect.com/wp-content/uploads/2015/11/6.gif "Reducing Boilerplate Code with ReSharper Templates")
 
 Live code templates can significantly reduce the amount of boilerplate code that you have to write. Since they are so easy to create and use, [try creating your own](https://www.jetbrains.com/resharper/help/Templates__Index.html).

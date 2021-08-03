@@ -4,7 +4,7 @@ Two things happened around the time I finished up writing a wrapper for Microsof
 
 The main decision point I found was: does this provide additional, needed functionality to the source library without adding unnecessary fragility, obfuscation, or busywork whenever the source library is called or modified? So for example, the wrapper I wrote for UITestControl abstracts away a lot of the required calls for MSTest to find a UI element, but those calls pretty much never change for the average application. So the original call looked like this:
 
-```
+```csharp
 public WinButton CalculatorButton()
 {
    parent = FindWinWindowUnderTest();
@@ -17,7 +17,7 @@ public WinButton CalculatorButton()
 
 Calling the wrapper that automatically sets the parent window (unless you pass in an override) and the return type so you can use this for any WinControl or WpfControl type:
 
-```
+```csharp
 public WinButton CalculatorButton()
 {
    return FindControlByName( "someCalcButton", c => new WinButton( c ) );
@@ -26,7 +26,7 @@ public WinButton CalculatorButton()
 
 On top of that, the wrapper adds additional error checking to make the calls more robust. The important part here is that in testing applications with both WPF and WinForms controls, I have never needed to modify my calls beyond what the wrapper I wrote provides. A simple override handles a program that creates new windows. Beyond that, it’s busywork to specify that the window title really is the same for every call. Compare that to a wrapper class I found for Selenium that condensed:
 
-```
+```csharp
 public static IWebElement FindLoginButton
 {
    get { return Browser.Driver.FindElement(By.Id(“someLoginButton”)); }
@@ -35,7 +35,7 @@ public static IWebElement FindLoginButton
 
 To:
 
-```
+```csharp
 public static IWebElement FindLoginButton
 {
    get { return FindElementById(“someLoginButton”);

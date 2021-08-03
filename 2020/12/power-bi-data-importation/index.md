@@ -24,10 +24,53 @@ Phase one happens during the selection of database from “Get Data”
 - During this phase, only schema and table descriptions are selected.
 - SQL examples:
 
-```
-select r.\[ROUTINE\_SCHEMA\], r.\[ROUTINE\_NAME\], r.\[ROUTINE\_TYPE\], p.create\_date \[CREATED\_DATE\], p.modify\_date \[MODIFIED\_DATE\], cast(e.value as nvarchar(max)) \[DESCRIPTION\] from \[INFORMATION\_SCHEMA\].\[ROUTINES\] r join sys.schemas s on s.name = r.\[ROUTINE\_SCHEMA\] join sys.objects p on p.name = r.\[ROUTINE\_NAME\] and p.schema\_id = s.schema\_id and p.parent\_object\_id = 0 left outer join (select null major\_id, null minor\_id, null class, null name, null value) e on p.object\_id = e.major\_id and e.minor\_id = 0 and e.class = 1 and e.name = 'MS\_Description'
+```sql
+SELECT r.[routine_schema],
+       r.[routine_name],
+       r.[routine_type],
+       p.create_date                  [CREATED_DATE],
+       p.modify_date                  [MODIFIED_DATE],
+       Cast(e.value AS NVARCHAR(max)) [DESCRIPTION]
+FROM   [INFORMATION_SCHEMA].[routines] r
+       JOIN sys.schemas s
+         ON s.NAME = r.[routine_schema]
+       JOIN sys.objects p
+         ON p.NAME = r.[routine_name]
+            AND p.schema_id = s.schema_id
+            AND p.parent_object_id = 0
+       LEFT OUTER JOIN (SELECT NULL major_id,
+                               NULL minor_id,
+                               NULL class,
+                               NULL NAME,
+                               NULL value) e
+                    ON p.object_id = e.major_id
+                       AND e.minor_id = 0
+                       AND e.class = 1
+                       AND e.NAME = 'MS_Description'
 
-select t.\[TABLE\_CATALOG\], t.\[TABLE\_SCHEMA\], t.\[TABLE\_NAME\], t.\[TABLE\_TYPE\], tv.create\_date \[CREATED\_DATE\], tv.modify\_date \[MODIFIED\_DATE\], cast(e.value as nvarchar(max)) \[DESCRIPTION\] from \[INFORMATION\_SCHEMA\].\[TABLES\] t join sys.schemas s on s.name = t.\[TABLE\_SCHEMA\] join sys.objects tv on tv.name = t.\[TABLE\_NAME\] and tv.schema\_id = s.schema\_id and tv.parent\_object\_id = 0 left outer join (select null major\_id, null minor\_id, null class, null name, null value) e on tv.object\_id = e.major\_id and e.minor\_id = 0 and e.class = 1 and e.name = 'MS\_Description'
+SELECT t.[table_catalog],
+       t.[table_schema],
+       t.[table_name],
+       t.[table_type],
+       tv.create_date                 [CREATED_DATE],
+       tv.modify_date                 [MODIFIED_DATE],
+       Cast(e.value AS NVARCHAR(max)) [DESCRIPTION]
+FROM   [INFORMATION_SCHEMA].[tables] t
+       JOIN sys.schemas s
+         ON s.NAME = t.[table_schema]
+       JOIN sys.objects tv
+         ON tv.NAME = t.[table_name]
+            AND tv.schema_id = s.schema_id
+            AND tv.parent_object_id = 0
+       LEFT OUTER JOIN (SELECT NULL major_id,
+                               NULL minor_id,
+                               NULL class,
+                               NULL NAME,
+                               NULL value) e
+                    ON tv.object_id = e.major_id
+                       AND e.minor_id = 0
+                       AND e.class = 1
+                       AND e.NAME = 'MS_Description' 
 ```
 
 #### Phase 2
@@ -38,10 +81,61 @@ This phase occurs when entering Power Query Editor (Transform Data)
 - This phase samples the database for use in Power Query filtering and transformations.
 - SQL examples:
 
-```
-select \[$Ordered\].\[SalesOrderID\], \[$Ordered\].\[RevisionNumber\], \[$Ordered\].\[OrderDate\], \[$Ordered\].\[DueDate\], \[$Ordered\].\[ShipDate\], \[$Ordered\].\[Status\], \[$Ordered\].\[OnlineOrderFlag\], \[$Ordered\].\[SalesOrderNumber\], \[$Ordered\].\[PurchaseOrderNumber\], \[$Ordered\].\[AccountNumber\], \[$Ordered\].\[CustomerID\], \[$Ordered\].\[ShipToAddressID\], \[$Ordered\].\[BillToAddressID\], \[$Ordered\].\[ShipMethod\], \[$Ordered\].\[CreditCardApprovalCode\], \[$Ordered\].\[SubTotal\], \[$Ordered\].\[TaxAmt\], \[$Ordered\].\[Freight\], \[$Ordered\].\[TotalDue\], \[$Ordered\].\[Comment\], \[$Ordered\].\[rowguid\], \[$Ordered\].\[ModifiedDate\] from ( select \[\_\].\[SalesOrderID\], \[\_\].\[RevisionNumber\], \[\_\].\[OrderDate\], \[\_\].\[DueDate\], \[\_\].\[ShipDate\], \[\_\].\[Status\], \[\_\].\[OnlineOrderFlag\], \[\_\].\[SalesOrderNumber\], \[\_\].\[PurchaseOrderNumber\], \[\_\].\[AccountNumber\], \[\_\].\[CustomerID\], \[\_\].\[ShipToAddressID\], \[\_\].\[BillToAddressID\], \[\_\].\[ShipMethod\], \[\_\].\[CreditCardApprovalCode\], \[\_\].\[SubTotal\], \[\_\].\[TaxAmt\], \[\_\].\[Freight\], \[\_\].\[TotalDue\], \[\_\].\[Comment\], \[\_\].\[rowguid\], \[\_\].\[ModifiedDate\] from \[SalesLT\].\[SalesOrderHeader\] as \[\_\] where \[\_\].\[SalesOrderID\] = 71946 ) as \[$Ordered\] order by \[$Ordered\].\[SalesOrderID\]
+```sql
+SELECT [$Ordered].[salesorderid],
+       [$Ordered].[revisionnumber],
+       [$Ordered].[orderdate],
+       [$Ordered].[duedate],
+       [$Ordered].[shipdate],
+       [$Ordered].[status],
+       [$Ordered].[onlineorderflag],
+       [$Ordered].[salesordernumber],
+       [$Ordered].[purchaseordernumber],
+       [$Ordered].[accountnumber],
+       [$Ordered].[customerid],
+       [$Ordered].[shiptoaddressid],
+       [$Ordered].[billtoaddressid],
+       [$Ordered].[shipmethod],
+       [$Ordered].[creditcardapprovalcode],
+       [$Ordered].[subtotal],
+       [$Ordered].[taxamt],
+       [$Ordered].[freight],
+       [$Ordered].[totaldue],
+       [$Ordered].[comment],
+       [$Ordered].[rowguid],
+       [$Ordered].[modifieddate]
+FROM   (SELECT [_].[salesorderid],
+               [_].[revisionnumber],
+               [_].[orderdate],
+               [_].[duedate],
+               [_].[shipdate],
+               [_].[status],
+               [_].[onlineorderflag],
+               [_].[salesordernumber],
+               [_].[purchaseordernumber],
+               [_].[accountnumber],
+               [_].[customerid],
+               [_].[shiptoaddressid],
+               [_].[billtoaddressid],
+               [_].[shipmethod],
+               [_].[creditcardapprovalcode],
+               [_].[subtotal],
+               [_].[taxamt],
+               [_].[freight],
+               [_].[totaldue],
+               [_].[comment],
+               [_].[rowguid],
+               [_].[modifieddate]
+        FROM   [SalesLT].[salesorderheader] AS [_]
+        WHERE  [_].[salesorderid] = 71946) AS [$Ordered]
+ORDER  BY [$Ordered].[salesorderid]
 
-select top 4096 \[$Ordered\].\[SystemInformationID\], \[$Ordered\].\[Database Version\], \[$Ordered\].\[VersionDate\], \[$Ordered\].\[ModifiedDate\] from \[dbo\].\[BuildVersion\] as \[$Ordered\] order by \[$Ordered\].\[SystemInformationID\]
+SELECT TOP 4096 [$Ordered].[systeminformationid],
+                [$Ordered].[database version],
+                [$Ordered].[versiondate],
+                [$Ordered].[modifieddate]
+FROM   [dbo].[buildversion] AS [$Ordered]
+ORDER  BY [$Ordered].[systeminformationid] 
 ```
 
 #### Phase 3
@@ -51,13 +145,36 @@ The third phase runs when closing Power Query and applying changes
 - Of all the phases, it’s the most expensive operation because it includes the complete selection from all the tables.
 - SQL examples:
 
-```
-Select \[$Ordered\].\[SalesOrderID\], \[$Ordered\].\[RevisionNumber\], \[$Ordered\].\[OrderDate\], \[$Ordered\].\[DueDate\], \[$Ordered\].\[ShipDate\], \[$Ordered\].\[Status\], \[$Ordered\].\[OnlineOrderFlag\], \[$Ordered\].\[SalesOrderNumber\], \[$Ordered\].\[PurchaseOrderNumber\], \[$Ordered\].\[AccountNumber\], \[$Ordered\].\[CustomerID\], \[$Ordered\].\[ShipToAddressID\], \[$Ordered\].\[BillToAddressID\], \[$Ordered\].\[ShipMethod\], \[$Ordered\].\[CreditCardApprovalCode\], \[$Ordered\].\[SubTotal\], \[$Ordered\].\[TaxAmt\], \[$Ordered\].\[Freight\], \[$Ordered\].\[TotalDue\], \[$Ordered\].\[Comment\], \[$Ordered\].\[rowguid\], \[$Ordered\].\[ModifiedDate\] from \[SalesLT\].\[SalesOrderHeader\] as \[$Ordered\] order by \[$Ordered\].\[SalesOrderID\]
+```sql
+SELECT [$Ordered].[salesorderid],
+       [$Ordered].[revisionnumber],
+       [$Ordered].[orderdate],
+       [$Ordered].[duedate],
+       [$Ordered].[shipdate],
+       [$Ordered].[status],
+       [$Ordered].[onlineorderflag],
+       [$Ordered].[salesordernumber],
+       [$Ordered].[purchaseordernumber],
+       [$Ordered].[accountnumber],
+       [$Ordered].[customerid],
+       [$Ordered].[shiptoaddressid],
+       [$Ordered].[billtoaddressid],
+       [$Ordered].[shipmethod],
+       [$Ordered].[creditcardapprovalcode],
+       [$Ordered].[subtotal],
+       [$Ordered].[taxamt],
+       [$Ordered].[freight],
+       [$Ordered].[totaldue],
+       [$Ordered].[comment],
+       [$Ordered].[rowguid],
+       [$Ordered].[modifieddate]
+FROM   [SalesLT].[salesorderheader] AS [$Ordered]
+ORDER  BY [$Ordered].[salesorderid]
 ```
 
 Metrics: Database-Throughput-Unit (DTU) utilization graph on SQL database. DTU measures are a combination of CPU, I/O, and log flushes/second.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2020/11/image001.webp)
+![](https://intellitect.com/wp-content/uploads/2020/11/image001.png)
 
 Chart of DTU by Stage
 
@@ -74,7 +191,7 @@ Explored methods of importing data into Power BI:
 
 #### DTI Utilization vs Methods of Import
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2020/11/image002-1024x688.webp)
+![](https://intellitect.com/wp-content/uploads/2020/11/image002-1024x688.png)
 
 Chart of DTU Utilization vs Methods of Import
 
@@ -88,14 +205,14 @@ This behavior is consistent with what we found earlier, because Power BI skips t
 
 Query folding is the process used by Power Query to send transformations to the source database. First, the database performs these transformations, then data is imported into Power BI. These transformations, where applicable, can be viewed in Power Query under “View Native Query.” Query folding is important for performance because it can drastically decrease the amount of data that is imported into Power BI.
 
- "Power BI: A Detailed Examination of Data Importation"
+![Query folding: screenshot showing view native query.](https://intellitect.com/wp-content/uploads/2020/11/image003.png "Power BI: A Detailed Examination of Data Importation")
 
 Query folding will be disabled and as a result “View Native Query” will no longer be an option under two conditions:
 
 1. It is disabled when using unsupported sources, such as flat files.
 2. It is disabled when applying certain transformations, such as “removing rows with errors.”
 
- "Power BI: A Detailed Examination of Data Importation"
+![screenshot showing query folding options.](https://intellitect.com/wp-content/uploads/2020/11/image004.png "Power BI: A Detailed Examination of Data Importation")
 
 It’s important to point out that using a custom SQL import statement **will prevent folding**. In his blog, [_Query Folding in Power Query to Improve Performance_](https://www.mssqltips.com/sqlservertip/3635/query-folding-in-power-query-to-improve-performance/), Koen Verbeeck, writes, “If you write your own SQL statement to fetch the data, any subsequent transformation on that data will not use query folding.”
 

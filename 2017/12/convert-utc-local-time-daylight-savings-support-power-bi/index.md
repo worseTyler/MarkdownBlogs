@@ -14,10 +14,10 @@ The client’s accounting team needs to report on and analyze ticket purchases. 
 
 A simple PowerQuery expression can transform Coordinated Universal Time to any local time:
 
-```
+```csharp
 DateTimeZone.RemoveZone(
   DateTimeZone.ToLocal(
-    DateTime.AddZone(\[EventStartDateTime\], 0)
+    DateTime.AddZone([EventStartDateTime], 0)
   )
 )
 ```
@@ -30,18 +30,18 @@ To resolve the Daylight Savings Time issue, we need to determine if a date is in
 
 My table of Daylight Savings Times:
 
-![Table of US Daylight Savings Times](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2017/12/dst-table-1024x342.webp "Table of US Daylight Savings Times")
+![Table of US Daylight Savings Times](https://intellitect.com/wp-content/uploads/2017/12/dst-table-1024x342.png "Table of US Daylight Savings Times")
 
 The Power Query function:
 
-```
+```csharp
 let
   Source = (DateToCheck) => let
     CountOfRows = if DateToCheck is null
       then 0
     else let Source = DaylightSavings,
       DateToCheckDate = DateTime.From(DateToCheck),
-      StartDates = Table.SelectRows(Source, each \[DSTStartDateInUTC\] <= DateToCheckDate),   EndDates = Table.SelectRows(StartDates, each \[DstEndDateInUTC\] > DateToCheckDate),
+      StartDates = Table.SelectRows(Source, each [DSTStartDateInUTC] <= DateToCheckDate),   EndDates = Table.SelectRows(StartDates, each [DstEndDateInUTC] > DateToCheckDate),
       CountOfRows = Table.RowCount(EndDates)
     in
       CountOfRows
@@ -59,11 +59,11 @@ The value of the function is then used when offsetting UTC to local time. If the
 
 The next function makes it easy to adjust our Pacific Time conversion to consider Daylight Savings Time. Our custom column formula now looks like this:
 
-```
+```csharp
   DateTimeZone.RemoveZone(
     DateTimeZone.SwitchZone(
-      DateTime.AddZone(\[CreationDate\], 0),
-      -8 + CheckDaylightSavings(\[CreationDate\])
+      DateTime.AddZone([CreationDate], 0),
+      -8 + CheckDaylightSavings([CreationDate])
     )
   )
 ```
@@ -83,4 +83,4 @@ There are other approaches I’ve seen from [implementing an Azure Function](htt
 
 If you’d like my code, have other approaches, or questions or feedback on this approach, please post a comment.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)

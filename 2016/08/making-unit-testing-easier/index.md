@@ -9,16 +9,16 @@ In this post I would like to present two classes that I have found very helpful 
    
 In any MVVM project, it is important to unit test your view model classes. Quite often, you will want to verify that some interaction raises the [PropertyChanged event](https://msdn.microsoft.com/en-us/library/system.componentmodel.inotifypropertychanged(v=vs.110).aspx). Often times this results in code that looks like this:
 
-```
+```csharp
 public async Task LoadDataAsync()
 {
     IsLoading = true;
-    var data = await \_dataService.LoadData();
+    var data = await _dataService.LoadData();
     //TODO: use data
     IsLoading = false;
 }
 
-\[TestMethod\]
+[TestMethod]
 public async Task IsLoadingIsSetWhileLoadingData()
 {
     //Arrange
@@ -35,7 +35,7 @@ public async Task IsLoadingIsSetWhileLoadingData()
     await viewModel.LoadDataAsync();
  
     //Assert
-    CollectionAssert.AreEqual( new\[\] { true, false }, isLoadingValues );
+    CollectionAssert.AreEqual( new[] { true, false }, isLoadingValues );
 }
 ```
 
@@ -43,8 +43,8 @@ This works but can quickly get repetitive as we test more properties we want to 
    
 This is how the unit test could be written:
 
-```
-\[TestMethod\]
+```csharp
+[TestMethod]
 public async Task IsLoadingIsSetWhileLoadingData()
 {
     //Arrange
@@ -56,13 +56,13 @@ public async Task IsLoadingIsSetWhileLoadingData()
     await viewModel.LoadDataAsync();
        
     //Assert
-    CollectionAssert.AreEqual( new\[\] { true, false }, isLoadingChanges.ToList() );
+    CollectionAssert.AreEqual( new[] { true, false }, isLoadingChanges.ToList() );
 }
 ```
 
 Now all we need to do is implement the the WatchPropertyChanges extension method.
 
-```
+```csharp
 public static IPropertyChanges WatchPropertyChanges(
 this INotifyPropertyChanged propertyChanged, string propertyName )
 {
@@ -75,15 +75,15 @@ this INotifyPropertyChanged propertyChanged, string propertyName )
 
 Here is the implementation of PropertyChangedEnumerable.
 
-```
-private readonly List \_values = new List();
-private readonly Func \_getPropertyValue;
-private readonly string \_propertyName;
+```csharp
+private readonly List _values = new List();
+private readonly Func _getPropertyValue;
+private readonly string _propertyName;
         	
  
 public PropertyChangedEnumerable( INotifyPropertyChanged propertyChanged, string propertyName )
 {
-    \_propertyName = propertyName;
+    _propertyName = propertyName;
  
     const BindingFlags flags = BindingFlags.Instance | BindingFlags.GetProperty | BindingFlags.Public;
     var propertyInfo = propertyChanged.GetType().GetProperty( propertyName, flags );
@@ -91,23 +91,23 @@ public PropertyChangedEnumerable( INotifyPropertyChanged propertyChanged, string
  
     var instance = Expression.Constant( propertyChanged );
     var propertyExpression = Expression.Property( instance, propertyInfo );
-    \_getPropertyValue = Expression.Lambda<Func>( propertyExpression ).Compile();
+    _getPropertyValue = Expression.Lambda<Func>( propertyExpression ).Compile();
  
     propertyChanged.PropertyChanged += OnPropertyChanged;
 }
  
 private void OnPropertyChanged( object sender, PropertyChangedEventArgs e )
 {
-    if ( string.Equals( \_propertyName, e.PropertyName, StringComparison.Ordinal ) )
+    if ( string.Equals( _propertyName, e.PropertyName, StringComparison.Ordinal ) )
     {
-        var value = \_getPropertyValue();
-        \_values.Add( value );
+        var value = _getPropertyValue();
+        _values.Add( value );
     }
 }
  
 public IEnumerator GetEnumerator()
 {
-    return \_values.GetEnumerator();
+    return _values.GetEnumerator();
 }
 ```
 
@@ -119,8 +119,8 @@ The complete implementation can be found [here](https://github.com/Keboo/UnitTes
    
 We can expand the above property changed event listener to be used for any event not just INPC events. We can rewrite the unit test above to be:
 
-```
-\[TestMethod\]
+```csharp
+[TestMethod]
 public async Task CanWatchPropertyChangedEvents()
 {
     //Arrange
@@ -139,7 +139,7 @@ public async Task CanWatchPropertyChangedEvents()
 
 Once again we wrap the core functionality in a simple extension method that takes in the name of the event that we care about.
 
-```
+```csharp
 public static Event WatchEvent(this T @object, string eventName) where T : class
 {
     if (@object == null) throw new ArgumentNullException(nameof(@object));
@@ -151,7 +151,7 @@ public static Event WatchEvent(this T @object, string eventName) where T : class
 
 The Event object that it returns simply collects the parameters (sender and event args in most cases) that are passed when the event is raised. The WatchEvent overload is where the bulk of the work is done.
 
-```
+```csharp
 private static Event WatchEvent( object source, string eventName )
 {
     var eventInfo = typeof( T ).GetEvent( eventName ) ?? source?.GetType().GetEvent( eventName );
@@ -170,7 +170,7 @@ private static Event WatchEvent( object source, string eventName )
     var methodInvoke = Expression.Call( instance, eventInvokedMethod, array );
     var eventHandler = Expression.Lambda( eventInfo.EventHandlerType, methodInvoke, parameters );
     //This expression is roughly equivalent to:
-    //event += (p1, p2, ..., pn) => rv.EventInvoked(new\[\] {(object)p1, (object)p2, ..., (object)pn});
+    //event += (p1, p2, ..., pn) => rv.EventInvoked(new[] {(object)p1, (object)p2, ..., (object)pn});
     eventInfo.AddEventHandler( source, eventHandler.Compile() );
  
     return rv;

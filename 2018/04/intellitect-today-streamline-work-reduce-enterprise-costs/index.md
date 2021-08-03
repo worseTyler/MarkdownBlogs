@@ -24,4 +24,4 @@ These products were designed to simplify the Oracle Customer Care and Billing (C
 
  
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [ "IntelliTect Today: Innovative Products Streamline Work & Reduce Enterprise Costs"
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T "IntelliTect Today: Innovative Products Streamline Work & Reduce Enterprise Costs")

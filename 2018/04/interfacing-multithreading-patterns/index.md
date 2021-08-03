@@ -35,105 +35,56 @@ Listing 1 demonstrates the pattern by using the `System.Net.WebRequest` class to
 
 ### Listing 1: Using the APM Pattern with `WebRequest`
 
-```
+```csharp
 using System;
-
 using System.IO;
-
 using System.Net;
-
 using System.Linq;
-
 public class Program
-
 {
-
-  public static void Main(string\[\] args)
-
+  public static void Main(string[] args)
   {
-
       string url = "https://www.IntelliTect.com";
-
       if (args.Length > 0)
-
       {
-
-          url = args\[0\];
-
+          url = args[0];
       }
-
       Console.Write(url);
-
       WebRequest webRequest =
-
           WebRequest.Create(url);
-
       IAsyncResult asyncResult =
-
           webRequest.BeginGetResponse(null, null);
-
       // Indicate busy using dots; ideally (at least in a non-Console
-
       // implementation) should use a callback rather than a wait.
-
       while (
-
           !asyncResult.AsyncWaitHandle.WaitOne(100))
-
       {
-
           Console.Write('.');
-
       }
-
       // Retrieve the results when finished downloading.
-
       WebResponse response =
-
           webRequest.EndGetResponse(asyncResult);
-
       using (StreamReader reader =
-
           new StreamReader(response.GetResponseStream()))
-
       {
-
           // Note: ReadToEnd() is blocking. A production implementation
-
           //should offload this to another thread.
-
           int length = reader.ReadToEnd().Length;
-
           Console.WriteLine(FormatBytes(length));
-
       }
-
   }
-
   static public string FormatBytes(long bytes)
-
   {
-
-      string\[\] magnitudes =
-
-          new string\[\] { "GB", "MB", "KB", "Bytes" };
-
+      string[] magnitudes =
+          new string[] { "GB", "MB", "KB", "Bytes" };
       long max =
-
           (long)Math.Pow(1024, magnitudes.Length);
-
       return string.Format("{1:##.##} {0}",
-
           magnitudes.FirstOrDefault(
-
               magnitude =>
-
                   bytes > (max /= 1024) )?? "0 Bytes",
-
               (decimal)bytes / (decimal)max).Trim();
-
   }
-
 }
 ```
 
@@ -155,8 +106,8 @@ The `EndX` method serves four purposes. First, calling `EndX` will block further
 
 Together, the combination of the `BeginX` and `EndX` APM methods should match the synchronous version of the signature. Therefore, the return parameter on `EndX` should match the return parameters on the `X` method (`GetResponse()` in this case). Furthermore, the input parameters on the `BeginX` method also need to match. In the case of `WebRequest.GetResponse()` there are no parameters, but let’s consider a fictitious synchronous method:
 
-```
-bool TryDoSomething(string url, ref string data, out string\[\] links)
+```csharp
+bool TryDoSomething(string url, ref string data, out string[] links)
 ```
 
 The parameters map from the synchronous method to the APM methods, as shown in Figure 1.
@@ -164,7 +115,7 @@ The parameters map from the synchronous method to the APM methods, as shown in F
 ### **Figure 1: APM Parameter Distribution  
 **
 
-# ![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2018/04/Figure-c.1.webp)
+# ![](https://intellitect.com/wp-content/uploads/2018/04/Figure-c.1.jpg)
 
 All input parameters map to the `BeginX` method. Similarly, the return parameter maps to the `EndX` return parameter. Also, notice that since the ref and out parameters return results, they are included in the `EndX` method signature. In contrast, url is just an input parameter, so it is not included in the `EndX` method.
 
@@ -174,137 +125,72 @@ There are two additional parameters on the `BeginX` method that were not include
 
 ### Listing 2: Invoking an APM Method with Callback and State
 
-```
+```csharp
 using System;
-
 using System.IO;
-
 using System.Net;
-
 using System.Linq;
-
 using System.Threading;
-
 public class Program
-
 {
-
-  public static void Main(string\[\] args)
-
+  public static void Main(string[] args)
   {
-
       string url = "https://www.intelliTechture.com";
-
       if (args.Length > 0)
-
       {
-
-          url = args\[0\];
-
+          url = args[0];
       }
-
       Console.Write(url);
-
       WebRequest webRequest = WebRequest.Create(url);
-
       WebRequestState state =
-
           new WebRequestState(webRequest);
-
       IAsyncResult asyncResult =
-
           webRequest.BeginGetResponse(
-
               GetResponseAsyncCompleted, state);
-
       // Indicate busy using dots.
-
       while (
-
           !asyncResult.AsyncWaitHandle.WaitOne(100))
-
       {
-
           Console.Write('.');
-
       }
-
       state.ResetEvent.Wait();
-
   }
-
   // Retrieve the results when finished downloading.
-
   private static void GetResponseAsyncCompleted(
-
       IAsyncResult asyncResult)
-
   {
-
       WebRequestState completedState =
-
           (WebRequestState)asyncResult.AsyncState;
-
       HttpWebResponse response =
-
           (HttpWebResponse)completedState.WebRequest
-
               .EndGetResponse(asyncResult);
-
       Stream stream = response.GetResponseStream();
-
       StreamReader reader = new StreamReader(stream);
-
       // Note: ReadToEnd() is blocking. A production implementation
-
       //should offload this to another thread.
-
       int length = reader.ReadToEnd().Length;
-
       Console.WriteLine(FormatBytes(length));
-
       completedState.ResetEvent.Set();
-
       completedState.Dispose();
-
   }
-
   // ...
-
 }
-
 class WebRequestState : IDisposable
-
 {
-
   public WebRequestState(WebRequest webRequest)
-
   {
-
       WebRequest = webRequest;
-
   }
-
   public WebRequest WebRequest { get; private set; }
-
-  private ManualResetEventSlim \_ResetEvent =
-
+  private ManualResetEventSlim _ResetEvent =
       new ManualResetEventSlim();
-
   public ManualResetEventSlim ResetEvent
-
-      { get { return \_ResetEvent; } }
-
+      { get { return _ResetEvent; } }
   public void Dispose()
-
   {
-
       ResetEvent.Dispose();
-
       GC.SuppressFinalize(this);
-
   }
-
 }
 ```
 
@@ -316,95 +202,51 @@ The state parameter is used to pass additional data to the callback when it exec
 
 ### Listing 3: Passing State Using Closure on an Anonymous Method
 
-```
+```csharp
 using System;
-
 using System.IO;
-
 using System.Net;
-
 using System.Linq;
-
 using System.Threading;
-
 public class Program
-
 {
-
-  public static void Main(string\[\] args)
-
+  public static void Main(string[] args)
   {
-
       string url = "https://www.intelliTechture.com";
-
       if (args.Length > 0)
-
       {
-
-          url = args\[0\];
-
+          url = args[0];
       }
-
       Console.Write(url);
-
       WebRequest webRequest = WebRequest.Create(url);
-
       ManualResetEventSlim resetEvent =
-
           new ManualResetEventSlim();
-
       IAsyncResult asyncResult =
-
           webRequest.BeginGetResponse(
-
               (completedAsyncResult) =>
-
               {
-
                   HttpWebResponse response =
-
                   (HttpWebResponse)webRequest.EndGetResponse(
-
                       completedAsyncResult);
-
               Stream stream =
-
                   response.GetResponseStream();
-
               StreamReader reader =
-
                   new StreamReader(stream);
-
               int length = reader.ReadToEnd().Length;
-
               Console.WriteLine(FormatBytes(length));
-
               resetEvent.Set();
-
               resetEvent.Dispose();
-
           },
-
           null);
-
       // Indicate busy using dots.
-
       while (
-
           !asyncResult.AsyncWaitHandle.WaitOne(100))
-
       {
-
           Console.Write('.');
-
       }
-
       resetEvent.Wait();
-
   }
-
   // ...
-
 }
 ```
 
@@ -424,301 +266,154 @@ The TPL includes a set of overloads on `FromAsync` for invoking APM methods. Lis
 
 ### Listing 4: Using the TPL to Call the APM
 
-```
+```csharp
 using System;
-
 using System.IO;
-
 using System.Net;
-
 using System.Linq;
-
 using System.Threading.Tasks;
-
 public class Program
-
 {
-
   static private object ConsoleSyncObject =
-
       new object();
-
-  public static void Main(string\[\] args)
-
+  public static void Main(string[] args)
   {
-
-      string\[\] urls = args;
-
+      string[] urls = args;
       if (args.Length == 0)
-
       {
-
-          urls = new string\[\] 
-
+          urls = new string[] 
               {
-
                   "https://www.habitat-spokane.org",
-
                   "https://www.partnersintl.org",
-
                   "https://www.iassist.org",
-
                   "https://www.fh.org",
-
                   "https://www.worldvision.org"
-
               };
-
       }
-
-      Task\[\] tasks = new Task\[urls.Length\];
-
+      Task[] tasks = new Task[urls.Length];
       for (int line = 0; line < urls.Length; line++)
-
       {
-
-          tasks\[line\] = DisplayPageSizeAsync(
-
-              urls\[line\], line);
-
+          tasks[line] = DisplayPageSizeAsync(
+              urls[line], line);
       }
-
       while (!Task.WaitAll(tasks, 50))
-
       {
-
           DisplayProgress(tasks);
-
       }
-
       Console.SetCursorPosition(0, urls.Length);
-
   }
-
   private static Task<WebResponse>
-
       DisplayPageSizeAsync(string url, int line)
-
   {
-
       WebRequest webRequest = WebRequest.Create(url);
-
       WebRequestState state =
-
           new WebRequestState(webRequest, line);
-
       Write(state, url + " ");
-
       return Task<WebResponse>.Factory.FromAsync(
-
               webRequest.BeginGetResponse,
-
               GetResponseAsyncCompleted, state);
-
   }
-
   private static WebResponse GetResponseAsyncCompleted(
-
       IAsyncResult asyncResult)
-
   {
-
       WebRequestState completedState =
-
               (WebRequestState)asyncResult.AsyncState;
-
       HttpWebResponse response =
-
           (HttpWebResponse)completedState.WebRequest
-
               .EndGetResponse(asyncResult);
-
       Stream stream =
-
           response.GetResponseStream();
-
       using (StreamReader reader =
-
           new StreamReader(stream))
-
       {
-
           int length = reader.ReadToEnd().Length;
-
           Write(
-
               completedState, FormatBytes(length));
-
       }
-
       return response;
-
   }
-
   private static void Write(
-
       WebRequestState completedState, string text)
-
   {
-
       lock (ConsoleSyncObject)
-
       {
-
           Console.SetCursorPosition(
-
               completedState.ConsoleColumn,
-
               completedState.ConsoleLine);
-
           Console.Write(text);
-
           completedState.ConsoleColumn +=
-
               text.Length;
-
       }
-
   }
-
   private static void DisplayProgress(
-
-      Task\[\] tasks)
-
+      Task[] tasks)
   {
-
       for (int i = 0; i < tasks.Length; i++)
-
       {
-
-          if (!tasks\[i\].IsCompleted)
-
+          if (!tasks[i].IsCompleted)
           {
-
              DisplayProgress(
-
-                (WebRequestState)tasks\[i\]
-
+                (WebRequestState)tasks[i]
                 .AsyncState);
-
           }
-
       }
-
   }
-
 private static void DisplayProgress(
-
       WebRequestState state)
-
   {
-
       lock (ConsoleSyncObject)
-
       {
-
           int left = state.ConsoleColumn;
-
           int top = state.ConsoleLine;
-
           if (left >= Console.BufferWidth -
-
               int.MaxValue.ToString().Length)
-
           {
-
               left = state.Url.Length;
-
               Console.SetCursorPosition(left, top);
-
               Console.Write("".PadRight(
-
                   Console.BufferWidth –
-
                       state.Url.Length));
-
               state.ConsoleColumn = left;
-
           }
-
           Write(state, ".");
-
       }
-
   }
-
   static public string FormatBytes(long bytes)
-
   {
-
-      string\[\] magnitudes =
-
-          new string\[\] { "GB", "MB", "KB", "Bytes" };
-
+      string[] magnitudes =
+          new string[] { "GB", "MB", "KB", "Bytes" };
       long max =
-
           (long)Math.Pow(1024, magnitudes.Length);
-
       return string.Format("{1:##.##} {0}",
-
           magnitudes.FirstOrDefault(
-
               magnitude =>
-
                   bytes > (max /= 1024) )?? "0 Bytes",
-
               (decimal)bytes / (decimal)max).Trim();
-
   }
-
 }
-
 class WebRequestState
-
 {
-
     public WebRequestState(
-
         WebRequest webRequest, int line)
-
     {
-
         WebRequest = webRequest;
-
         ConsoleLine = line;
-
         ConsoleColumn = 0;
-
     }
-
     public WebRequestState(WebRequest webRequest)
-
     {
-
         WebRequest = webRequest;
-
     }
-
     public WebRequest WebRequest { get; private set; }
-
     public string Url
-
     {
-
         get
-
         {
-
             return WebRequest.RequestUri.ToString();
-
         }
-
     }
-
     public int ConsoleLine { get; set; }
-
     public int ConsoleColumn { get; set; }
-
 }
 ```
 
@@ -746,61 +441,34 @@ Another option when calling `TaskFactory.FromAsync()` is to pass the `EndX` meth
 
 ### Listing 5: Using the TPL to Call an APM Method Using `ContinueWith()`
 
-```
+```csharp
 // ...
-
   private static Task
-
       DisplayPageSizeAsync(string url, int line)
-
   {
-
       WebRequest webRequest = WebRequest.Create(url);
-
       WebRequestState state =
-
           new WebRequestState(webRequest, line);
-
       Write(state, url + " ");
-
       return Task<WebResponse>.Factory.FromAsync(
-
               webRequest.BeginGetResponse,
-
               webRequest.EndGetResponse, state)
-
           .ContinueWith(
-
               (antecedent, antecedentState) =>
-
           {
-
               Stream stream =
-
                   antecedent.Result.
-
                       GetResponseStream();
-
               using (StreamReader reader =
-
                   new StreamReader(stream))
-
               {
-
                   int length =
-
                       reader.ReadToEnd().Length;
-
                   Write(state,
-
                       FormatBytes(length).ToString());
-
               }
-
           }, state);
-
   }
-
 // ...
 ```
 
@@ -812,51 +480,29 @@ Given that `TAP` is essentially designed for handling the continuation tasks, an
 
 ### Listing 6: Using `TAP` to Call the APM
 
-```
+```csharp
 // ...
-
   private async static Task
-
       DisplayPageSizeAsync(string url, int line)
-
   {
-
       WebRequestState state =
-
           new WebRequestState(url, line);
-
       Write(state, url + " ");
-
       WebRequest webRequest = WebRequest.Create(url);
-
       WebResponse webResponse =
-
           await Task<WebResponse>.Factory.FromAsync(
-
               webRequest.BeginGetResponse,
-
               webRequest.EndGetResponse, state);
-
       Stream stream =
-
           webResponse.GetResponseStream();
-
       using (StreamReader reader =
-
           new StreamReader(stream))
-
       {
-
           int length = reader.ReadToEnd().Length;
-
           Write(state,
-
               FormatBytes(length).ToString());
-
       }
-
   }
-
 // ...
 ```
 
@@ -872,11 +518,9 @@ Listing 4 includes a `ConsoleSyncObject` of type object as the synchronization l
 
 One specific implementation of the APM pattern is “asynchronous delegate invocation,” which leverages special `C#` compiler-generated code on all delegate data types. Given a delegate instance of `Func<string, int>`, for example, there is an APM pair of methods available on the instance:
 
-```
+```csharp
 System.IAsyncResult BeginInvoke(
-
 string arg, AsyncCallback callback, object @object)
-
 int EndInvoke(IAsyncResult result
 ```
 
@@ -892,55 +536,28 @@ With asynchronous delegate invocation, you do not code using an explicit referen
 
 ### Listing 7: Asynchronous Delegate Invocation
 
-```
+```csharp
 using System;
-
-public class Program
-
-{
-
-public static void Main(string\[\] args)
-
-{
-
-Console.WriteLine("Application started....");
-
-Console.WriteLine("Starting thread....");
-
-Func<int,string> workerMethod =
-
-PiCalculator.Calculate;
-
-IAsyncResult asyncResult =
-
-workerMethod.BeginInvoke(500, null, null);
-
-// Display periods as progress bar.
-
-while(!asyncResult.AsyncWaitHandle.WaitOne(
-
-100, false))
-
-{
-
-Console.Write('.');
-
-}
-
-Console.WriteLine();
-
-Console.WriteLine("Thread ending....");
-
-Console.WriteLine(
-
-workerMethod.EndInvoke(asyncResult));
-
-Console.WriteLine(
-
-"Application shutting down....");
-
-}
-
+public class Program {
+  public static void Main(string[] args) {
+    Console.WriteLine("Application started....");
+    Console.WriteLine("Starting thread....");
+    Func < int, string > workerMethod =
+      PiCalculator.Calculate;
+    IAsyncResult asyncResult =
+      workerMethod.BeginInvoke(500, null, null);
+    // Display periods as progress bar.
+    while (!asyncResult.AsyncWaitHandle.WaitOne(
+        100, false)) {
+      Console.Write('.');
+    }
+    Console.WriteLine();
+    Console.WriteLine("Thread ending....");
+    Console.WriteLine(
+      workerMethod.EndInvoke(asyncResult));
+    Console.WriteLine(
+      "Application shutting down....");
+  }
 }
 ```
 
@@ -974,7 +591,7 @@ The example in Listing 5 passed an integer and received a `string—the` signatu
 
 ### Figure 2: Delegate Parameter Distribution to `BeginInvoke()` and `EndInvoke()`
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2018/04/Figure-c.2.webp)
+![](https://intellitect.com/wp-content/uploads/2018/04/Figure-c.2.jpg)
 
 _(Although commonly encountered, this example intentionally doesn’t use Func or Action because generics don’t allow ref and out modifiers on type parameters.)_
 
@@ -990,14 +607,14 @@ Thus far we’ve assumed that an asynchronous method will return a task; the cal
 
 A method that uses the EAP typically has a name that ends in Async, returns void, and has no out parameters. EAP methods also typically take an object or generic parameter that contains caller-determined state that is associated with the asynchronous work, and sometimes they take a cancellation token if the asynchronous work is cancellable. For example, if we had an EAP method that computes a given number of digits of pi and returns them in a string, the signature of the method might be
 
-```
+```csharp
 void CalculateAsync(int digits)
+```
 
 or
 
-void CalculateAsync(
-
-int digits, object state, CancellationToken ct)
+```csharp
+void CalculateAsync(int digits, object state, CancellationToken ct)
 ```
 
 What is clearly missing from these signatures is the result. The asynchronous methods we’ve seen so far would return a `Task<string>` that could be used to fetch the asynchronously computed value after the computation has finished. In contrast, the EAP methods have no return value.
@@ -1008,133 +625,66 @@ In Listing 8, we show one way to use task-based asynchrony as an implementation 
 
 ### Listing 8: Event-Based Asynchronous Pattern
 
-```
+```csharp
 using System;
-
 using System.ComponentModel;
-
 using System.Threading;
-
 using System.Threading.Tasks;
-
 using AddisonWesley.Michaelis.EssentialCSharp.Shared;
-
-partial class PiCalculation
-
-{
-
-public void CalculateAsync<TState>(
-
-int digits,
-
-CancellationToken cancelToken
-
-= default(CancellationToken),
-
-TState userState
-
-= default(TState))
-
-{
-
-SynchronizationContext.
-
-SetSynchronizationContext(
-
-AsyncOperationManager.
-
-SynchronizationContext);
-
-// Ensure the continuation runs on the current thread, so that
-
-// the event will be raised on the same thread that
-
-// called this method in the first place.
-
-TaskScheduler scheduler =
-
-TaskScheduler.
-
-FromCurrentSynchronizationContext();
-
-Task.Run(
-
-() =>
-
-{
-
-return PiCalculator.Calculate(digits);
-
-}, cancelToken)
-
-.ContinueWith(
-
-continueTask =>
-
-{
-
-Exception exception =
-
-continueTask.Exception == null ?
-
-continueTask.Exception :
-
-continueTask.Exception.
-
-InnerException;
-
-CalculateCompleted(
-
-typeof(PiCalculator),
-
-new CalculateCompletedEventArgs(
-
-continueTask.Result,
-
-exception,
-
-cancelToken.IsCancellationRequested,
-
-userState));
-
-}, scheduler);
-
-}
-
-public event
-
-EventHandler<CalculateCompletedEventArgs>
-
-CalculateCompleted = delegate { };
-
-public class CalculateCompletedEventArgs
-
-: AsyncCompletedEventArgs
-
-{
-
-public CalculateCompletedEventArgs(
-
-string value,
-
-Exception error,
-
-bool cancelled,
-
-object userState) : base(
-
-error, cancelled, userState)
-
-{
-
-Result = value;
-
-}
-
-public string Result { get; private set; }
-
-}
-
+partial class PiCalculation {
+  public void CalculateAsync < TState > (
+    int digits,
+    CancellationToken cancelToken =
+    default (CancellationToken),
+    TState userState =
+    default (TState)) {
+    SynchronizationContext.
+    SetSynchronizationContext(
+      AsyncOperationManager.SynchronizationContext);
+    // Ensure the continuation runs on the current thread, so that
+    // the event will be raised on the same thread that
+    // called this method in the first place.
+    TaskScheduler scheduler =
+      TaskScheduler.
+    FromCurrentSynchronizationContext();
+    Task.Run(
+        () => {
+          return PiCalculator.Calculate(digits);
+        }, cancelToken)
+      .ContinueWith(
+        continueTask => {
+          Exception exception =
+            continueTask.Exception == null ?
+            continueTask.Exception :
+            continueTask.Exception.
+          InnerException;
+          CalculateCompleted(
+            typeof (PiCalculator),
+            new CalculateCompletedEventArgs(
+              continueTask.Result,
+              exception,
+              cancelToken.IsCancellationRequested,
+              userState));
+        }, scheduler);
+  }
+  public event
+  EventHandler < CalculateCompletedEventArgs >
+    CalculateCompleted = delegate {};
+  public class CalculateCompletedEventArgs
+    : AsyncCompletedEventArgs {
+      public CalculateCompletedEventArgs(
+        string value,
+        Exception error,
+        bool cancelled,
+        object userState): base(
+        error, cancelled, userState) {
+        Result = value;
+      }
+      public string Result {
+        get;
+        private set;
+      }
+    }
 }
 ```
 
@@ -1152,217 +702,100 @@ Listing 9 is an example of this pattern—again calculating pi to the number of 
 
 ### Listing 9: Using the Background Worker API
 
-```
+```csharp
 using System;
-
 using System.Threading;
-
 using System.ComponentModel;
-
 using System.Text;
-
-public class PiCalculator
-
-{
-
-public static BackgroundWorker calculationWorker =
-
-new BackgroundWorker();
-
-public static AutoResetEvent resetEvent =
-
-new AutoResetEvent(false);
-
-public static void Main()
-
-{
-
-int digitCount;
-
-Console.Write(
-
-"Enter the number of digits to calculate:");
-
-if (int.TryParse(
-
-Console.ReadLine(), out digitCount))
-
-{
-
-Console.WriteLine("ENTER to cancel");
-
-// C# 2.0 syntax for registering delegates.
-
-calculationWorker.DoWork += CalculatePi;
-
-// Register the ProgressChanged callback.
-
-calculationWorker.ProgressChanged +=
-
-UpdateDisplayWithMoreDigits;
-
-calculationWorker.WorkerReportsProgress =
-
-true;
-
-// Register a callback for when the calculation completes.
-
-calculationWorker.RunWorkerCompleted +=
-
-new RunWorkerCompletedEventHandler(
-
-Complete);
-
-calculationWorker.
-
-WorkerSupportsCancellation = true;
-
-// Begin calculating pi for up to digitCount digits.
-
-calculationWorker.RunWorkerAsync(
-
-digitCount);
-
-Console.ReadLine();
-
-// If cancel is called after the calculation
-
-// has completed, it doesn't matter.
-
-calculationWorker.CancelAsync();
-
-// Wait for Complete() to run.
-
-resetEvent.WaitOne();
-
+public class PiCalculator {
+  public static BackgroundWorker calculationWorker =
+    new BackgroundWorker();
+  public static AutoResetEvent resetEvent =
+    new AutoResetEvent(false);
+  public static void Main() {
+    int digitCount;
+    Console.Write(
+      "Enter the number of digits to calculate:");
+    if (int.TryParse(
+        Console.ReadLine(), out digitCount)) {
+      Console.WriteLine("ENTER to cancel");
+      // C# 2.0 syntax for registering delegates.
+      calculationWorker.DoWork += CalculatePi;
+      // Register the ProgressChanged callback.
+      calculationWorker.ProgressChanged +=
+        UpdateDisplayWithMoreDigits;
+      calculationWorker.WorkerReportsProgress =
+        true;
+      // Register a callback for when the calculation completes.
+      calculationWorker.RunWorkerCompleted +=
+        new RunWorkerCompletedEventHandler(
+          Complete);
+      calculationWorker.
+      WorkerSupportsCancellation = true;
+      // Begin calculating pi for up to digitCount digits.
+      calculationWorker.RunWorkerAsync(
+        digitCount);
+      Console.ReadLine();
+      // If cancel is called after the calculation
+      // has completed, it doesn't matter.
+      calculationWorker.CancelAsync();
+      // Wait for Complete() to run.
+      resetEvent.WaitOne();
+    } else {
+      Console.WriteLine(
+        "The value entered is an invalid integer.");
+    }
+  }
+  private static void CalculatePi(
+    object sender, DoWorkEventArgs eventArgs) {
+    int digits = (int) eventArgs.Argument;
+    StringBuilder pi =
+      new StringBuilder("3.", digits + 2);
+    calculationWorker.ReportProgress(
+      0, pi.ToString());
+    // Calculate rest of pi, if required.
+    if (digits > 0) {
+      for (int i = 0; i < digits; i += 9) {
+        // Calculate next i decimal places.
+        int nextDigit =
+          PiDigitCalculator.StartingAt(
+            i + 1);
+        int digitCount =
+          Math.Min(digits - i, 9);
+        string ds =
+          string.Format("{0:D9}", nextDigit);
+        pi.Append(ds.Substring(0, digitCount));
+        // Show current progress.
+        calculationWorker.ReportProgress(
+          0, ds.Substring(0, digitCount));
+        // Check for cancellation.
+        if (
+          calculationWorker.CancellationPending) {
+          // Need to set Cancel if you want to
+          // distinguish how a worker thread completed--
+          // i.e., by checking
+          //RunWorkerCompletedEventArgs.Cancelled.
+          eventArgs.Cancel = true;
+          break;
+        }
+      }
+    }
+    eventArgs.Result = pi.ToString();
+  }
+  private static void UpdateDisplayWithMoreDigits(
+    object sender,
+    ProgressChangedEventArgs eventArgs) {
+    string digits = (string) eventArgs.UserState;
+    Console.Write(digits);
+  }
+  static void Complete(
+    object sender,
+    RunWorkerCompletedEventArgs eventArgs) {
+    // ...
+  }
 }
-
-else
-
-{
-
-Console.WriteLine(
-
-"The value entered is an invalid integer.");
-
-}
-
-}
-
-private static void CalculatePi(
-
-object sender, DoWorkEventArgs eventArgs)
-
-{
-
-int digits = (int)eventArgs.Argument;
-
-StringBuilder pi =
-
-new StringBuilder("3.", digits + 2);
-
-calculationWorker.ReportProgress(
-
-0, pi.ToString());
-
-// Calculate rest of pi, if required.
-
-if (digits > 0)
-
-{
-
-for (int i = 0; i < digits; i += 9)
-
-{
-
-// Calculate next i decimal places.
-
-int nextDigit =
-
-PiDigitCalculator.StartingAt(
-
-i + 1);
-
-int digitCount =
-
-Math.Min(digits - i, 9);
-
-string ds =
-
-string.Format("{0:D9}", nextDigit);
-
-pi.Append(ds.Substring(0, digitCount));
-
-// Show current progress.
-
-calculationWorker.ReportProgress(
-
-0, ds.Substring(0, digitCount));
-
-// Check for cancellation.
-
-if (
-
-calculationWorker.CancellationPending)
-
-{
-
-// Need to set Cancel if you want to
-
-// distinguish how a worker thread completed--
-
-// i.e., by checking
-
-//RunWorkerCompletedEventArgs.Cancelled.
-
-eventArgs.Cancel = true;
-
-break;
-
-}
-
-}
-
-}
-
-eventArgs.Result = pi.ToString();
-
-}
-
-private static void UpdateDisplayWithMoreDigits(
-
-object sender,
-
-ProgressChangedEventArgs eventArgs)
-
-{
-
-string digits = (string)eventArgs.UserState;
-
-Console.Write(digits);
-
-}
-
-static void Complete(
-
-object sender,
-
-RunWorkerCompletedEventArgs eventArgs)
-
-{
-
-// ...
-
-}
-
-}
-
-public class PiDigitCalculator
-
-{
-
-// ...
-
+public class PiDigitCalculator {
+  // ...
 }
 ```
 
@@ -1385,49 +818,22 @@ If an unhandled exception occurs while the background worker thread is executing
 
 ### Listing 10: Handling Unhandled Exceptions from the Worker Thread
 
-```
+```csharp
 // ...
-
 static void Complete(
-
-object sender, RunWorkerCompletedEventArgs eventArgs)
-
-{
-
-Console.WriteLine();
-
-if (eventArgs.Cancelled)
-
-{
-
-Console.WriteLine("Cancelled");
-
+  object sender, RunWorkerCompletedEventArgs eventArgs) {
+  Console.WriteLine();
+  if (eventArgs.Cancelled) {
+    Console.WriteLine("Cancelled");
+  } else if (eventArgs.Error != null) {
+    // IMPORTANT: check error to retrieve any exceptions.
+    Console.WriteLine(
+      "ERROR: {0}", eventArgs.Error.Message);
+  } else {
+    Console.WriteLine("Finished");
+  }
+  resetEvent.Set();
 }
-
-else if (eventArgs.Error != null)
-
-{
-
-// IMPORTANT: check error to retrieve any exceptions.
-
-Console.WriteLine(
-
-"ERROR: {0}", eventArgs.Error.Message);
-
-}
-
-else
-
-{
-
-Console.WriteLine("Finished");
-
-}
-
-resetEvent.Set();
-
-}
-
 // ...
 ```
 
@@ -1443,125 +849,53 @@ When programming against Windows Forms, the process of checking whether UI invoc
 
 ### Listing 11: Accessing the User Interface via `Invoke()`
 
-```
+```csharp
 using System;
-
 using System.Drawing;
-
 using System.Threading;
-
 using System.Windows.Forms;
-
-class Program : Form
-
-{
-
-private System.Windows.Forms.ProgressBar \_ProgressBar;
-
-\[STAThread\]
-
-static void Main()
-
-{
-
-Application.Run(new Program());
-
-}
-
-public Program()
-
-{
-
-InitializeComponent();
-
-// Use Task.Factory.StartNew for .NET 4.0.
-
-Task task = Task.Run((Action)Increment);
-
-}
-
-void UpdateProgressBar()
-
-{
-
-if (\_ProgressBar.InvokeRequired)
-
-{
-
-MethodInvoker updateProgressBar =
-
-UpdateProgressBar;
-
-\_ProgressBar.BeginInvoke(updateProgressBar);
-
-}
-
-else
-
-{
-
-\_ProgressBar.Increment(1);
-
-}
-
-}
-
-private void Increment()
-
-{
-
-for (int i = 0; i < 100; i++)
-
-{
-
-UpdateProgressBar();
-
-Thread.Sleep(100);
-
-}
-
-if (InvokeRequired)
-
-{
-
-// Close cannot be called directly from a non-UI thread.
-
-Invoke(new MethodInvoker(Close));
-
-}
-
-else
-
-{
-
-Close();
-
-}
-
-}
-
-private void InitializeComponent()
-
-{
-
-\_ProgressBar = new ProgressBar();
-
-SuspendLayout();
-
-\_ProgressBar.Location = new Point(13, 17);
-
-\_ProgressBar.Size = new Size(267, 19);
-
-ClientSize = new Size(292, 53);
-
-Controls.Add(this.\_ProgressBar);
-
-Text = "Multithreading in Windows Forms";
-
-ResumeLayout(false);
-
-}
-
+class Program: Form {
+  private System.Windows.Forms.ProgressBar _ProgressBar;
+  [STAThread]
+  static void Main() {
+    Application.Run(new Program());
+  }
+  public Program() {
+    InitializeComponent();
+    // Use Task.Factory.StartNew for .NET 4.0.
+    Task task = Task.Run((Action) Increment);
+  }
+  void UpdateProgressBar() {
+    if (_ProgressBar.InvokeRequired) {
+      MethodInvoker updateProgressBar =
+        UpdateProgressBar;
+      _ProgressBar.BeginInvoke(updateProgressBar);
+    } else {
+      _ProgressBar.Increment(1);
+    }
+  }
+  private void Increment() {
+    for (int i = 0; i < 100; i++) {
+      UpdateProgressBar();
+      Thread.Sleep(100);
+    }
+    if (InvokeRequired) {
+      // Close cannot be called directly from a non-UI thread.
+      Invoke(new MethodInvoker(Close));
+    } else {
+      Close();
+    }
+  }
+  private void InitializeComponent() {
+    _ProgressBar = new ProgressBar();
+    SuspendLayout();
+    _ProgressBar.Location = new Point(13, 17);
+    _ProgressBar.Size = new Size(267, 19);
+    ClientSize = new Size(292, 53);
+    Controls.Add(this._ProgressBar);
+    Text = "Multithreading in Windows Forms";
+    ResumeLayout(false);
+  }
 }
 ```
 
@@ -1579,103 +913,43 @@ Listing 12 demonstrates this approach with a static `UIAction` object. Whenever 
 
 ### Listing 12: Safely Invoking User Interface Objects
 
-```
+```csharp
 using System;
-
 using System.Windows;
-
 using System.Windows.Threading;
-
-public static class UIAction
-
-{
-
-public static void Invoke<T>(
-
-Action<T> action, T parameter)
-
-{
-
-Invoke(() => action(parameter));
-
-}
-
-public static void Invoke(Action action)
-
-{
-
-DispatcherObject dispatcher =
-
-Application.Current;
-
-if (dispatcher == null
-
-|| dispatcher.CheckAccess()
-
-|| dispatcher.Dispatcher == null
-
-)
-
-{
-
-action();
-
-}
-
-else
-
-{
-
-SafeInvoke(action);
-
-}
-
-}
-
-// We want to catch all exceptions here so we can rethrow them.
-
-private static void SafeInvoke(Action action)
-
-{
-
-Exception exceptionThrown = null;
-
-Action target = () =>
-
-{
-
-try
-
-{
-
-action();
-
-}
-
-catch (Exception exception)
-
-{
-
-exceptionThrown = exception;
-
-}
-
-};
-
-Application.Current.Dispatcher.Invoke(target);
-
-if (exceptionThrown != null)
-
-{
-
-// Use ExceptionDispatchInfo.Throw() for .NET 4.5+.
-
-throw exceptionThrown;
-
-}
-
-}
-
+public static class UIAction {
+  public static void Invoke < T > (
+    Action < T > action, T parameter) {
+    Invoke(() => action(parameter));
+  }
+  public static void Invoke(Action action) {
+    DispatcherObject dispatcher =
+      Application.Current;
+    if (dispatcher == null ||
+      dispatcher.CheckAccess() ||
+      dispatcher.Dispatcher == null
+    ) {
+      action();
+    } else {
+      SafeInvoke(action);
+    }
+  }
+  // We want to catch all exceptions here so we can rethrow them.
+  private static void SafeInvoke(Action action) {
+    Exception exceptionThrown = null;
+    Action target = () => {
+      try {
+        action();
+      } catch (Exception exception) {
+        exceptionThrown = exception;
+      }
+    };
+    Application.Current.Dispatcher.Invoke(target);
+    if (exceptionThrown != null) {
+      // Use ExceptionDispatchInfo.Throw() for .NET 4.5+.
+      throw exceptionThrown;
+    }
+  }
 }
 ```
 

@@ -6,11 +6,11 @@ Azure DevOps is an amazing platform for managing the software development lifecy
 
 In Azure DevOps there are two types of pipelines - [Build pipelines, and Release pipelines](https://docs.microsoft.com/azure/devops/pipelines/).
 
- "How to publish NuGets with Azure DevOps"
+![Two types of pipelines visual.](https://intellitect.com/wp-content/uploads/2020/02/nuget-1.png "How to publish NuGets with Azure DevOps")
 
 _Note: If you have the Multi-stage pipelines preview feature turned on then these will display as “[Pipelines (Build) and Release](https://docs.microsoft.com/azure/devops/project/navigation/preview-features)”._
 
- "How to publish NuGets with Azure DevOps"
+![Pic of what the multi-stage pipeline feature looks like](https://intellitect.com/wp-content/uploads/2020/02/nuget-2.png "How to publish NuGets with Azure DevOps")
 
 It is important to understand that the build pipeline is responsible for compiling your code, running tests, and eventually producing a NuGet package. The release pipeline is responsible for taking that NuGet package and pushing it out to various hosting providers such as [nuget.org](https://www.nuget.org/). 
 
@@ -20,7 +20,7 @@ As a practical example, we will look at the pipelines used by the [IntelliTect.A
 
 Setting up a build pipeline is generally simple and straightforward. Azure DevOps has several pre-built templates to get started quickly. If this is your first time creating a build pipeline, I recommend you take a look through [this tutorial](https://docs.microsoft.com/azure/devops/pipelines/create-first-pipeline). The most common way to define a build pipeline is with a YAML file. Such as this one:
 
-```
+```yaml
 trigger:
 - master
  
@@ -38,8 +38,8 @@ The code snippets in the steps below, represent individual tasks that will be pl
 
 The first task in our build pipeline will need to install the latest NuGet command line utility. The following code will download and install the NuGet CLI. It is worth mentioning if you don’t specify a version for the task, you may get an older version of the NuGet CLI. At the time of writing, the [latest version is 5.4.0](https://www.nuget.org/downloads). In most cases you will want to use the latest release.
 
-```
-\- task: NuGetToolInstaller@0
+```yaml
+- task: NuGetToolInstaller@0
   displayName: 'Use latest NuGet'
   inputs:
     versionSpec: '5.4.0'
@@ -49,8 +49,8 @@ The first task in our build pipeline will need to install the latest NuGet comma
 
 The next task will restore all NuGet packages in the solution. This task may not be required if you restore NuGet dependencies as part of your build.
 
-```
-\- task: NuGetCommand@2
+```yaml
+- task: NuGetCommand@2
   displayName: 'NuGet Restore'
   inputs:
     command: 'restore'
@@ -62,8 +62,8 @@ The next task will restore all NuGet packages in the solution. This task may not
 
 The following tasks are responsible for making sure that the code compiles and all of the tests pass. Notice that the configuration and version are set from variables. We’ll come back to these when we get to versioning.
 
-```
-\- task: VSBuild@1
+```yaml
+- task: VSBuild@1
   displayName: 'Build'
   inputs:
     solution: '\*\*/\*.sln'
@@ -82,8 +82,8 @@ The following tasks are responsible for making sure that the code compiles and a
 
 Now that the code compiles and the tests pass, we can begin the process of packaging up the code into a NuGet package. There are [several ways to create a NuGet package](https://docs.microsoft.com/nuget/create-packages/overview-and-workflow), but one of the simplest options is to use the [dotnet pack](https://docs.microsoft.com/nuget/create-packages/creating-a-package-dotnet-cli) command. Note that we create the NuGet package with the “-ci-$(Build.BuildId)” suffix. We'll cover the reason for this in the versioning and publishing sections below.
 
-```
-\- task: PowerShell@2
+```yaml
+- task: PowerShell@2
   displayName: 'dotnet pack'
   inputs:
     targetType: 'inline'
@@ -95,8 +95,8 @@ Now that the code compiles and the tests pass, we can begin the process of packa
 
 It is important to note that the build pipeline should not publish the NuGet package to a package repository. “Publish” in this context simply saves the NuGet package as an artifact, or output file, of the build pipeline. It then becomes available for other pipelines to use as an input, as we’ll see in the release pipeline section.
 
-```
-\- task: PublishBuildArtifacts@1
+```yaml
+- task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
@@ -109,7 +109,7 @@ It is generally best to let the build pipeline help manage the version of your p
 
 In the dotnet pack command we added earlier, we created the pre-release NuGet package using a suffix of “-ci-(Build.BuildId)” appended to the version number. Using the build ID as a suffix ensures that each build creates a unique NuGet package. The base version number is stored in a variable at the top of the build pipeline configuration YAML file. Storing the base version in this way makes the version number part of source control; alternatively, you can create it as a [pipeline variable](https://docs.microsoft.com/azure/devops/pipelines/process/variables) in the library within a [variable group](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups) if you would prefer to have this data live outside of source control.
 
-```
+```yaml
 variables:
   version: '0.1.6'
 ```
@@ -120,17 +120,17 @@ You can see the completed pipeline [here](https://github.com/IntelliTect/CodingS
 
 The release is composed of [stages](https://docs.microsoft.com/azure/devops/pipelines/process/stages), where each stage distributes the NuGet package created by the build pipeline to a NuGet repository. For our purposes, we’ll use two: [Azure DevOps Artifacts](https://docs.microsoft.com/azure/devops/artifacts) and [NuGet.org](https://www.nuget.org/). Let’s look at the configuration for each piece.
 
- "How to publish NuGets with Azure DevOps"
+![Configuration of ADO and NuGet artifacts](https://intellitect.com/wp-content/uploads/2020/02/nuget-3.png "How to publish NuGets with Azure DevOps")
 
 #### Artifacts
 
 The release pipeline Artifacts are the NuGet package(s) that we created (published) in the build pipeline. The key setting is the Continuous deployment trigger.
 
- "How to publish NuGets with Azure DevOps"
+![Pic showing the continuous deployment trigger.](https://intellitect.com/wp-content/uploads/2020/02/nuget-4.gif "How to publish NuGets with Azure DevOps")
 
 It is important to make sure that you are not triggering releases on all builds, as this could accidentally distribute builds created from pull requests. A common setup is to only trigger releases on builds from a particular branch (such as master) and restrict direct access to this branch so changes must go through a code review process.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2020/02/nuget-5.webp)
+![](https://intellitect.com/wp-content/uploads/2020/02/nuget-5.png)
 
 #### Azure DevOps Artifacts
 
@@ -138,17 +138,17 @@ The first release stage pushes out the NuGet package to Azure DevOps Artifacts (
 
 This stage only has a single job with a single NuGet task that pushes the NuGet package to the feed.
 
- "How to publish NuGets with Azure DevOps"
+![Screenshot of enabled and disabled triggers](https://intellitect.com/wp-content/uploads/2020/02/nuget-6.png "How to publish NuGets with Azure DevOps")
 
 #### NuGet.org
 
 Now we need to publish our NuGet package to a public feed for others to consume. Because this is a public feed, it is best practice to require manual approval on this stage before allowing it to continue and publish to NuGet.org. To do this, we add a pre-deployment approval condition as pictured below.
 
- "How to publish NuGets with Azure DevOps"
+![NuGet Push screenshot](https://intellitect.com/wp-content/uploads/2020/02/nuget-7.gif "How to publish NuGets with Azure DevOps")
 
 Depending on your process you may have several pre-releases published to Azure DevOps Artifacts. Each of these will be queued, pending approval, on the next stage (NuGet.org). To release the latest version, and avoid the need to cancel older releases, set the “Deployment queue settings” option to “Deploy latest and cancel the others”. 
 
- "How to publish NuGets with Azure DevOps"
+![Gif of NuGet.org screenshots](https://intellitect.com/wp-content/uploads/2020/02/nuget-8.gif "How to publish NuGets with Azure DevOps")
 
 Remember that our build process is producing [pre-release NuGet packages](https://docs.microsoft.com/nuget/create-packages/prerelease-packages). Before we publish the NuGet package, we need to change the version number to make a release NuGet package. To do this, we’ll use a [dotnet global tool](https://docs.microsoft.com/dotnet/core/tools/global-tools) called [nupkgwrench](https://github.com/emgarten/NupkgWrench) (NuGet Package Wrench). This tool has lots of useful commands and utilities for manipulating NuGet packages.
 
@@ -160,7 +160,7 @@ nupkgwrench release \*_/_.nupkg
 
 Finally, our last step will push the full release package to NuGet.org.
 
- "How to publish NuGets with Azure DevOps"
+![Gif displaying deployment cue settings](https://intellitect.com/wp-content/uploads/2020/02/nuget-9.gif "How to publish NuGets with Azure DevOps")
 
 ### Conclusion
 

@@ -8,9 +8,9 @@ To better appreciate this benefit, consider the example of a UI event for a butt
 
 ### Listing 1: Synchronous High-Latency Invocation in WPF
 
-```
+```csharp
 using System; 
-private void PingButton\_Click( 
+private void PingButton_Click( 
   object sender, RoutedEventArgs e) 
 {
    StatusLabel.Content = "Pinging…";
@@ -19,7 +19,6 @@ private void PingButton\_Click(
    PingReply pingReply =
        ping.Send("www.IntelliTect.com");
    StatusLabel.Text = pingReply.Status.ToString(); }
-
 ```
 
 Given that StatusLabel is a WPF `System.Windows.Controls.TextBlock` control and we have updated the Content property twice within the `PingButton_Click()` subscriber, it would be a reasonable assumption that first “Pinging…” would be displayed until `Ping.Send()` returned, and then the label would be updated with the status of the `Send()` reply.
@@ -32,30 +31,18 @@ To fix this problem using TAP, we change the code highlighted in Listing 2.
 
 ### Listing 2: Synchronous High-Latency Invocation in WPF Using await
 
-```
+```csharp
 using System;
-
-async private void PingButton\_Click(
-
+async private void PingButton_Click(
   object sender, RoutedEventArgs e)
-
 {
-
   StatusLabel.Content = "Pinging...";
-
   UpdateLayout();
-
   Ping ping = new Ping();
-
   PingReply pingReply =
-
       await ping.SendPingAsync("www.IntelliTect.com");
-
   StatusLabel.Text = pingReply.Status.ToString();
-
 }
-
-
 ```
 
 This change offers two advantages:

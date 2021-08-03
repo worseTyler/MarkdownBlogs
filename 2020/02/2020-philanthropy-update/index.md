@@ -6,7 +6,7 @@ This past decade, we continued giving freedom to the hopeless through our partne
 
 This past year, we continued to financially support the neediest in Spokane, Washington—like the women and children at [NAOMI Community](https://www.naomicommunity.org/) and the newly arrived refugee families through [Spokane World Relief](https://worldreliefspokane.org/). Refugees who settled in Spokane from Bhutan, Afghanistan, Iraq, Kenya, Rwanda, Burundi, Uganda, and Somalia all benefited from job training, language skills, and citizenship classes. Because of IntelliTect’s financial partnership with Spokane World Relief, their basic needs were met.
 
- "2020 Philanthropy Update"
+![kids pose with their new backpacks from NAOMI](https://intellitect.com/wp-content/uploads/2019/08/NAOMI-backpack-1024x683.jpg "2020 Philanthropy Update")
 
 Children at NAOMI Community receive backpacks and school supplies. Photo Courtesy Nathan Slabaugh.
 

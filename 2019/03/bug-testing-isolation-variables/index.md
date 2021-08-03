@@ -1,6 +1,6 @@
 
 
-##  "Painless Bug Testing through the Isolation of Variables"
+## ![Painless Bug Testing through the Isolation of Variables. Graphic with bugs behind it.](https://intellitect.com/wp-content/uploads/2019/02/IsolatingVariablesMain-300x225.png "Painless Bug Testing through the Isolation of Variables")
 
 ## Do you know why it’s crucial to catch your broken functionality before sending it to production?
 
@@ -26,10 +26,10 @@ Find some excellent concrete examples [here](https://martinfowler.com/articles/p
 
 One benefit to isolating these various systems is that, should a defect occur, we can provide better results (whether it be a bug report or something else) because we can identify the layers affected by a defect. If we think of bug testing and bug reports in a progression of least informational to most, teams tend to fall into one of the following categories:
 
-1. **No testing/No bug reports:** Either the team doesn’t test, or there is a critical disconnect between developers and defect reports. "Painless Bug Testing through the Isolation of Variables"
-2. **Unfocused testing/Inaccurate bug reports:** In this case, bug reports aren’t indicative of the actual problem. These tests and bug reports are prone to producing red herrings and require the developer to spend inordinate amounts of time investigating issues that end up either not being issues or take more time to reproduce than they do to fix. "Painless Bug Testing through the Isolation of Variables"
-3. **Good testing/Good bug reports:** Tests are focused on fulfilling a need (testing for a business requirement, testing for a functional requirement, etc.) and bug reports have accurate reproduction steps for how the issue occurred and approximately when the problem started. "Painless Bug Testing through the Isolation of Variables"
-4. **Great testing:** Tests effectively isolate different functionality in the application, and as a result, bug reports can isolate the exact layer that failed, when the failure started, and list accurate reproduction steps. "Painless Bug Testing through the Isolation of Variables"
+1. **No testing/No bug reports:** Either the team doesn’t test, or there is a critical disconnect between developers and defect reports.![Screenshot showing repo steps used when there's no testing.](https://intellitect.com/wp-content/uploads/2019/02/1-NoTesting-1024x616.png "Painless Bug Testing through the Isolation of Variables")
+2. **Unfocused testing/Inaccurate bug reports:** In this case, bug reports aren’t indicative of the actual problem. These tests and bug reports are prone to producing red herrings and require the developer to spend inordinate amounts of time investigating issues that end up either not being issues or take more time to reproduce than they do to fix.![Screenshot showing repo steps used when the testing is unfocused..](https://intellitect.com/wp-content/uploads/2019/02/2-UnfocusedTesting-1024x616.png "Painless Bug Testing through the Isolation of Variables")
+3. **Good testing/Good bug reports:** Tests are focused on fulfilling a need (testing for a business requirement, testing for a functional requirement, etc.) and bug reports have accurate reproduction steps for how the issue occurred and approximately when the problem started.![Screenshot showing repo steps used when the testing is good.](https://intellitect.com/wp-content/uploads/2019/02/3-GoodTesting-1024x617.png "Painless Bug Testing through the Isolation of Variables")
+4. **Great testing:** Tests effectively isolate different functionality in the application, and as a result, bug reports can isolate the exact layer that failed, when the failure started, and list accurate reproduction steps.![Screenshot showing repo steps used when the testing is great..](https://intellitect.com/wp-content/uploads/2019/02/4-GreatTesting-1024x616.png "Painless Bug Testing through the Isolation of Variables")
 
 ### Strive for good testing or great testing.
 

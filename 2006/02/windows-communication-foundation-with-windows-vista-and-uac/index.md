@@ -4,13 +4,26 @@ The issue is User Access Control (UAC), a new feature of Windows Vista that caus
 
 To handle this error it is necessary to cause a Permit/Deny dialog to appear.  The same dialog appears when running administrative tools like Computer Management.
 
- "Windows Communication Foundation with Windows Vista and UAC"
+![Windows Vista Permit/Deny Dialog](https://intellitect.com/wp-content/uploads/binary/WindowsCommunicationFoundationWCFWithWindowsVistaAndUAC/WindowsVistaPermitDenyDialog.JPG "Windows Communication Foundation with Windows Vista and UAC")
 
 Clicking the Permit button elevates the process, assuming the logged on user has the necessary permissions for the action.
 
 One way to turn on the Permit/Deny dialog is to place a manifest into the same directory as the application executable.  The manifest file is named using the full application name (including the EXE extension) with an additional ".MANIFEST" suffix (WCFService.exe.MANIFEST for example).  The content of the file is XML specifying that the application requires administrator permissions so the dialog needs to be displayed to elevate the process.
 
-> ``` <?xml version="1.0" encoding="UTF-8" standalone="yes"?> <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0"> <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3"> <security> <requestedPrivileges> <requestedExecutionLevel level="requireAdministrator"> </requestedPrivileges> </security> </trustInfo> </assembly> ```
+```
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+	<trustInfo
+		xmlns="urn:schemas-microsoft-com:asm.v3">
+		<security>
+			<requestedPrivileges>
+				<requestedExecutionLevel level="requireAdministrator">
+				</requestedPrivileges>
+			</security>
+		</trustInfo>
+	</assembly> 
+</xml>
+```
 
 Note that it is not possible to supply a manifest file to run elevated without the dialog.
 

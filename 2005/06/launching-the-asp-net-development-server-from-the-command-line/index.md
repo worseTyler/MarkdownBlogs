@@ -4,7 +4,7 @@ By default, Visual Studio 2005 does not run or debug web projects using IIS.  R
 
 The web hosting process is provided as part of the 2.0 framework using a program called ``` WebDev.WebServer.EXE ```, which is located in the framework directory (``` %WINDIR%\\Microsoft.NET\\Framework\\v2.0.XXXXX ```).  Rather than relying on Visual Studio 2..5 to launch it, however, you can do so manually as follows:
 
-> ``` WebDev.WebServer \[/port:<port number>\] /path:<physical path> \[/vpath:<virtual path>\] ```
+> ``` WebDev.WebServer [/port:<port number>] /path:<physical path> [/vpath:<virtual path>] ```
 
 On its' own the command line won't return until the process is stopped, however.  Therefore, you will want to launch it using "``` start /b ```" rather than waiting for it to exit.
 

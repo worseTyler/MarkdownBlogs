@@ -16,9 +16,9 @@ One way to eliminate this step is by creating a “release” called “Current�
 
 Here are the steps in more detail:
 
-1. To create a new release for Current, use the Areas and Iterations dialog and add a new Child Node. [ "Transitioning between Sprints/Iterations with Team Foundation Server (TFS)"
-Once created, we position Current as first in the list. The dialog below shows Current and Sprint 1 as a member, indicating that Sprint 1 is the current sprint. [ "Transitioning between Sprints/Iterations with Team Foundation Server (TFS)"
-2. Next, all the queries defined under Current Sprint are modified to use the “under Current” clause. This modification only needs to be made one time when the project template is being configured. Below is a screen shot after modifying the Sprint Backlog query. [ "Transitioning between Sprints/Iterations with Team Foundation Server (TFS)"
+1. To create a new release for Current, use the Areas and Iterations dialog and add a new Child Node. ![Open Areas and Iterations Dialog](https://intellitect.com/wp-content/uploads/2012/02/SNAGHTML341951e4.png "Open Areas and Iterations Dialog")
+Once created, we position Current as first in the list. The dialog below shows Current and Sprint 1 as a member, indicating that Sprint 1 is the current sprint. ![Insert Current release node into Areas and Iterations dialog](https://intellitect.com/wp-content/uploads/2012/02/image.png "Insert Current release node into Areas and Iterations dialog")
+2. Next, all the queries defined under Current Sprint are modified to use the “under Current” clause. This modification only needs to be made one time when the project template is being configured. Below is a screen shot after modifying the Sprint Backlog query. ![Update TFS work item query to use Current release node.](https://intellitect.com/wp-content/uploads/2012/02/image1.png "EditQueryToUseCurrentReleaseNode")
 3. When moving from one sprint to the next, simply change the sprint hierarchy so that the new sprint (Sprint 2 for example) appears below the “Current” release and the previous sprint (Sprint 1) is returned to the correct release structure.
 
 With these changes in place, the queries will just work as is when you transition from one sprint to the next.  Furthermore, this technique is valid and expected to work for TFS Preview, TFS11, Microsoft Visual Studio Scrum 1.0, and MSF for Agile.

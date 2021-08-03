@@ -20,7 +20,7 @@ To begin, update your .NET application, adding or updating a package reference t
   
 For example, with EF Core, you should see the following references in your .csproj:
 
-```
+```csharp
 <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.1" />
 <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
 <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.1" />
@@ -32,7 +32,7 @@ It's important to note if you’re using some other means of database access (fo
 
 If you’re using any other libraries that connect to your database, see if those libraries are using `Microsoft.Data.SqlClient` version 2.0+ already, or if they otherwise have the ability to be configured to do just that. For example, to configure [Hangfire](https://www.hangfire.io/) to use `Microsoft.Data.SqlClient`, configure it as follows in your `Startup.cs`:
 
-```
+```csharp
 services.AddHangfire(config => config    
     .UseSqlServerStorage(() => new Microsoft.Data.SqlClient.SqlConnection(        
         Configuration.GetConnectionString("DefaultConnection")    
@@ -43,7 +43,7 @@ services.AddHangfire(config => config
 
 Open your App Service in the Azure Portal. Then, navigate to the “Identity” tab in the sidebar. Under the “System assigned” tab, flip the Status to “On” and save. Click Yes to any confirmation prompt that appears.
 
- "Fully-managed Passwordless Authentication for Azure SQL Database"
+![Flipping System assigned tab to On in App Service in Azure Portal](https://intellitect.com/wp-content/uploads/2021/01/image.png "Fully-managed Passwordless Authentication for Azure SQL Database")
 
 Now, your App Service is running with access to the credentials of an AAD Service Principal. This Service Principal has the same name as the app service and can be assigned to any access group that you need.
 
@@ -51,7 +51,7 @@ Now, your App Service is running with access to the credentials of an AAD Servic
 
 Next, navigate to your organization’s Azure Active Directory (AAD) resource in the Azure Portal. Open the “Groups” page under the “Manage” heading in the sidebar.
 
- "Fully-managed Passwordless Authentication for Azure SQL Database"
+![Opening Groups in AAD in Azure Portal](https://intellitect.com/wp-content/uploads/2021/01/image-1.png "Fully-managed Passwordless Authentication for Azure SQL Database")
 
 Navigating to the Group administration area in the Azure Portal
 
@@ -59,7 +59,7 @@ On the Groups page, click “New group” to create a new group. Use this group 
 
 _Note that creating a new group in AAD requires specific permissions. If you do not have such permissions, ask an administrator to make the group for you and to assign you as an owner of that group. As an owner, you will then be able to manage membership._
 
- "Fully-managed Passwordless Authentication for Azure SQL Database"
+![Naming group in AAD](https://intellitect.com/wp-content/uploads/2021/01/image-2.png "Fully-managed Passwordless Authentication for Azure SQL Database")
 
 Adding a new group to an AAD tenant
 
@@ -67,7 +67,7 @@ Next, create an appropriate name and description for the group. Assign group own
 
 Following, under "Members" click the hyperlink. Then, search for and select the system-assigned identity created for your App Service in Step 2. This identity has the same name as your App Service resource – in this example, “`my-app-service-group-db-auth`”.
 
- "Fully-managed Passwordless Authentication for Azure SQL Database"
+![Adding members to the group in AAD](https://intellitect.com/wp-content/uploads/2021/01/image-4.png "Fully-managed Passwordless Authentication for Azure SQL Database")
 
 Adding your app service's identity to the new AAD group.
 
@@ -75,7 +75,7 @@ Adding your app service's identity to the new AAD group.
 
 Additionally, you can search for and add any other users you want to have server-level admin access to your database. These users will be able to log into the database using SQL Server Management Studio (SSMS) by selecting the “Azure Active Directory – Universal with MFA” authentication method. Ensure that all users with access to your databases – production or not – have multi-factor authentication enabled and enforced by your organization.
 
- "Fully-managed Passwordless Authentication for Azure SQL Database"
+![SQL Server multi-factor authentication in a Database Engine](https://intellitect.com/wp-content/uploads/2021/01/image-5.png "Fully-managed Passwordless Authentication for Azure SQL Database")
 
 Connecting to the database using your own user account in SSMS
 
@@ -86,7 +86,7 @@ After selecting users, click “Create” on the new group page.
 
 Navigate to your SQL Server resource in Azure (this is the server that contains your database, not the database resource itself). Open the “Active Directory admin” section. Then, set the admin to your AAD group we created earlier that already includes the App Service System-assigned identity.
 
- "Fully-managed Passwordless Authentication for Azure SQL Database"
+![Assigning an AAD admin to an Azure SQL Server](https://intellitect.com/wp-content/uploads/2021/01/image-6.png "Fully-managed Passwordless Authentication for Azure SQL Database")
 
 Assigning an AAD admin to an Azure SQL Server
 

@@ -20,16 +20,16 @@ Start by creating a new class library and add the [Fody NuGet package](https://w
 
 Unload the project and edit the csproj file. Delete the Import that includes the Fody.targets file along with the Error check that ensures the file exists.
 
-```
+```powershell
 <Import Project="..\\packages\\Fody.1.29.4\\build\\dotnet\\Fody.targets" Condition="Exists('..\\packages\\Fody.1.29.4\\build\\dotnet\\Fody.targets')" />
 
-<Error Condition="!Exists('..\\packages\\Fody.1.29.4\\build\\dotnet\\Fody.targets')" Text="$(\[System.String\]::Format('$(ErrorText)', '..\\packages\\Fody.1.29.4\\build\\dotnet\\Fody.targets'))" />
+<Error Condition="!Exists('..\\packages\\Fody.1.29.4\\build\\dotnet\\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\\packages\\Fody.1.29.4\\build\\dotnet\\Fody.targets'))" />
 
 ```
 
 Fody loads its add-ins from the packages directory by looking for packages that have “.Fody” in the name. To facilitate testing, the assembly needs to be copied to the packages directory. Uncomment the AfterBuild target and add the following (adjust the package name to match your project):
 
-```
+```powershell
 <Target Name="AfterBuild">
 
   <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SolutionDir)\\packages\\Example.Fody.1.0.0" />
@@ -44,26 +44,25 @@ Create a new ModuleWeaver.cs file. This class will be instantiated and invoked b
 
 This forms the basic weaver project, it should look like this:
 
- "Creating a Fody Add-in"
+![image01](https://intellitect.com/wp-content/uploads/2016/09/image01-232x300.png "Creating a Fody Add-in")
 
 We will start by determining exactly what we want our method to look like when we are done.
 
 Consider the following method:
 
-```
+```csharp
 private static int Add( int a, int b )
 {
     return a + b;
 }
-﻿
 ```
 
 Ideally we want the resulting method to look like:
 
-```
+```csharp
 private static int Add( int a, int b )
 {
-    System.Diagnostics.Debug.WriteLine(string.Format("DEBUG: Add({0})", new object\[\] {a, b}));
+    System.Diagnostics.Debug.WriteLine(string.Format("DEBUG: Add({0})", new object[] {a, b}));
     return a + b;
 }
 ﻿
@@ -71,7 +70,7 @@ private static int Add( int a, int b )
 
 Examining IL for this method using ILSpy:
 
-```
+```csharp
 .method private hidebysig static
 int32 Add (
 int32 a,
@@ -82,92 +81,91 @@ int32 b
 // Code size 49 (0x31)
 .maxstack 5
 .locals init (
-\[0\] int32
+[0] int32
 )
 
-IL\_0000: nop
-IL\_0001: ldstr "DEBUG: Add({0})"
-IL\_0006: ldc.i4.2
-IL\_0007: newarr \[mscorlib\]System.Object
-IL\_000c: dup
-IL\_000d: ldc.i4.0
-IL\_000e: ldarg.0
-IL\_000f: box \[mscorlib\]System.Int32
-IL\_0014: stelem.ref
-IL\_0015: dup
-IL\_0016: ldc.i4.1
-IL\_0017: ldarg.1
-IL\_0018: box \[mscorlib\]System.Int32
-IL\_001d: stelem.ref
-IL\_001e: call string \[mscorlib\]System.String::Format(string, object\[\])
-IL\_0023: call void \[System\]System.Diagnostics.Debug::WriteLine(string)
-IL\_0028: nop
-IL\_0029: ldarg.0
-IL\_002a: ldarg.1
-IL\_002b: add
-IL\_002c: stloc.0
-IL\_002d: br.s IL\_002f
+IL_0000: nop
+IL_0001: ldstr "DEBUG: Add({0})"
+IL_0006: ldc.i4.2
+IL_0007: newarr [mscorlib]System.Object
+IL_000c: dup
+IL_000d: ldc.i4.0
+IL_000e: ldarg.0
+IL_000f: box [mscorlib]System.Int32
+IL_0014: stelem.ref
+IL_0015: dup
+IL_0016: ldc.i4.1
+IL_0017: ldarg.1
+IL_0018: box [mscorlib]System.Int32
+IL_001d: stelem.ref
+IL_001e: call string [mscorlib]System.String::Format(string, object[])
+IL_0023: call void [System]System.Diagnostics.Debug::WriteLine(string)
+IL_0028: nop
+IL_0029: ldarg.0
+IL_002a: ldarg.1
+IL_002b: add
+IL_002c: stloc.0
+IL_002d: br.s IL_002f
 
-IL\_002f: ldloc.0
-IL\_0030: ret
+IL_002f: ldloc.0
+IL_0030: ret
 }
 
 ```
 
-The IL of the original method without the Debug.WriteLine call consisted of IL instructions IL\_0028 through IL\_0030. So the instructions that we will inject with our weaver are those from IL\_0000 through IL\_0023.
+The IL of the original method without the Debug.WriteLine call consisted of IL instructions IL_0028 through IL_0030. So the instructions that we will inject with our weaver are those from IL_0000 through IL_0023.
 
 We will need to invoke three methods to make this work. To do this we will need to get MethodInfo objects for each of those methods. To avoid looking them up multiple times, we will create static references to each of them.
 
-```
-private static readonly MethodInfo \_stringJoinMethod;
-private static readonly MethodInfo \_stringFormatMethod;
-private static readonly MethodInfo \_debugWriteLineMethod;
+```csharp
+private static readonly MethodInfo _stringJoinMethod;
+private static readonly MethodInfo _stringFormatMethod;
+private static readonly MethodInfo _debugWriteLineMethod;
 
 static ModuleWeaver()
 {
-    //Find string.Join(string, object\[\]) method
-    \_stringJoinMethod = typeof( string )
+    //Find string.Join(string, object[]) method
+    _stringJoinMethod = typeof( string )
         .GetMethods()
         .Where( x => x.Name == nameof( string.Join ) )
         .Single( x =>
             {
                 var parameters = x.GetParameters();
                 return parameters.Length == 2 &&
-                       parameters\[0\].ParameterType == typeof( string ) &&
-                       parameters\[1\].ParameterType == typeof( object\[\] );
+                       parameters[0].ParameterType == typeof( string ) &&
+                       parameters[1].ParameterType == typeof( object[] );
             } );
 
     //Find string.Format(string, object) method
-    \_stringFormatMethod = typeof( string )
+    _stringFormatMethod = typeof( string )
         .GetMethods()
         .Where( x => x.Name == nameof( string.Format ) )
         .Single( x =>
             {
                 var parameters = x.GetParameters();
                 return parameters.Length == 2 &&
-                       parameters\[0\].ParameterType == typeof( string ) &&
-                       parameters\[1\].ParameterType == typeof( object );
+                       parameters[0].ParameterType == typeof( string ) &&
+                       parameters[1].ParameterType == typeof( object );
             } );
 
     //Find Debug.WriteLine(string) method
-    \_debugWriteLineMethod = typeof( System.Diagnostics.Debug )
+    _debugWriteLineMethod = typeof( System.Diagnostics.Debug )
         .GetMethods()
         .Where( x => x.Name == nameof( System.Diagnostics.Debug.WriteLine ) )
         .Single( x =>
             {
                 var parameters = x.GetParameters();
                 return parameters.Length == 1 &&
-                       parameters\[0\].ParameterType == typeof( string );
+                       parameters[0].ParameterType == typeof( string );
             } );
 }
-﻿
 ```
 
 We will now turn our attention to the ModuleWeaver.Execute method. When invoked, Fody will have set the ModuleDefinition property to be our assembly. Any changes that you make to the ModuleDefinition will be automatically saved at the end of the Execute method.
 
 We want to inject code into all of the methods within our assembly, so we will start off our Execute method by simply iterating over all of the methods.
 
-```
+```csharp
 public void Execute()
 {
     foreach ( TypeDefinition type in ModuleDefinition.Types )
@@ -183,7 +181,7 @@ public void Execute()
 
 The MethodDefinition.Body property contains the collection of IL instructions. You can manipulate the instructions in this collection directly, or you can take advantage of the simple ILProcessor class provided by Mono.Cecil.
 
-```
+```csharp
 private void ProcessMethod( MethodDefinition method )
 {
     ILProcessor processor = method.Body.GetILProcessor();
@@ -209,30 +207,29 @@ For each method, we insert a [Nop](https://msdn.microsoft.com/en-us/library/syst
 
 The GetInstructions method is where we build up the enumerable of IL instructions that we determined we needed from above.
 
-```
+```csharp
 private IEnumerable<Instruction> GetInstructions( MethodDefinition method )
 {
     yield return Instruction.Create( OpCodes.Ldstr, $"DEBUG: {method.Name}({{0}})" );
     yield return Instruction.Create( OpCodes.Ldstr, "," );
 
-    yield return Instruction.Create( OpCodes.Ldc\_I4, method.Parameters.Count );
+    yield return Instruction.Create( OpCodes.Ldc_I4, method.Parameters.Count );
     yield return Instruction.Create( OpCodes.Newarr, ModuleDefinition.ImportReference( typeof( object ) ) );
 
     for ( int i = 0; i < method.Parameters.Count; i++ )
     {
         yield return Instruction.Create( OpCodes.Dup );
-        yield return Instruction.Create( OpCodes.Ldc\_I4, i );
-        yield return Instruction.Create( OpCodes.Ldarg, method.Parameters\[i\] );
-        if ( method.Parameters\[i\].ParameterType.IsValueType )
-            yield return Instruction.Create( OpCodes.Box, method.Parameters\[i\].ParameterType );
-        yield return Instruction.Create( OpCodes.Stelem\_Ref );
+        yield return Instruction.Create( OpCodes.Ldc_I4, i );
+        yield return Instruction.Create( OpCodes.Ldarg, method.Parameters[i] );
+        if ( method.Parameters[i].ParameterType.IsValueType )
+            yield return Instruction.Create( OpCodes.Box, method.Parameters[i].ParameterType );
+        yield return Instruction.Create( OpCodes.Stelem_Ref );
     }
 
-    yield return Instruction.Create( OpCodes.Call, ModuleDefinition.ImportReference( \_stringJoinMethod ) );
-    yield return Instruction.Create( OpCodes.Call, ModuleDefinition.ImportReference( \_stringFormatMethod ) );
-    yield return Instruction.Create( OpCodes.Call, ModuleDefinition.ImportReference( \_debugWriteLineMethod ) );
+    yield return Instruction.Create( OpCodes.Call, ModuleDefinition.ImportReference( _stringJoinMethod ) );
+    yield return Instruction.Create( OpCodes.Call, ModuleDefinition.ImportReference( _stringFormatMethod ) );
+    yield return Instruction.Create( OpCodes.Call, ModuleDefinition.ImportReference( _debugWriteLineMethod ) );
 }
-﻿
 ```
 
 There are a few key details to point out.
@@ -247,13 +244,13 @@ That is everything, we now have a weaver that will now produce Debug output at t
 
 To give our weaver a test drive, we need another assembly for it to process. To keep things simple, we will add a new console application, with only a single method call:
 
-```
+```csharp
 using static System.Console;
 namespace AssemblyToProcess
 {
     public static class Program
     {
-        static void Main( string\[\] args )
+        static void Main( string[] args )
         {
             WriteLine( Add( 2, 4 ) );
             ReadLine();
@@ -265,14 +262,15 @@ namespace AssemblyToProcess
         }
     }
 }
-﻿
 ```
 
+```
 Console Output:  
 6  
 Debug Output:  
-DEBUG: Main(System.String\[\])  
+DEBUG: Main(System.String[])  
 DEBUG: Add(2,4)
+```
 
 ## Final thoughts
 

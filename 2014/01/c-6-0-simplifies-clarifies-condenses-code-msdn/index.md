@@ -2,7 +2,7 @@
 
 C# 6.0 isn’t a radical revolution in C# programming. Unlike the introduction of generics in C# 2.0, C# 3.0 and its groundbreaking way to program collections with LlNQ, or the simplification of asynchronous programming patterns in C# 5.0, C# 6.0 isn’t going to transform development. That said, C# 6.0 will change the way you write C# code in specific scenarios, due to features that are so much more efficient you’ll likely forget there was another way to code them. It introduces new syntax shortcuts, reduces the amount of ceremony on occasion, and ultimately makes writing C# code leaner. In this article I’m going to delve into the details of the new C# 6.0 feature set that make all this possible. Specifically, I’ll focus on the items outlined in the Mind Map shown in **Figure 1**.
 
- "C# 6 Simplifies, Clarifies & Condenses Your Code (MSDN)"
+![ Figure 1 C# 6.0 Mind Map](https://intellitect.com/wp-content/uploads/2019/12/Figure-1-5.png "C# 6 Simplifies Clarifies & Condenses Your Code (MSDN)")
 
 Figure 1 C# 6.0 Mind Map
 
@@ -14,7 +14,7 @@ Many of the C# 6.0 features can be leveraged in the most basic of Console progra
 
 **Figure 2 The Using Static Directive Reduces Noise Within Your Code**
 
-```
+```csharp
 using System;
 using static System.ConsoleColor;
 using static System.IO.Directory;
@@ -66,7 +66,7 @@ The obvious caution with the using static directive is to take care that clarity
 
 **Figure 3 Ambiguous Exists Invocation (with the nameof Operator)**
 
-```
+```csharp
 private static void Encrypt(string filename)
   {
     if (!Exists(filename)) // LOGIC ERROR: Using Directory rather than File
@@ -88,7 +88,7 @@ Although extension methods won’t get placed into global scope, C# 6.0 still al
 
 **Figure 4 Only Extension Methods from ParallelEnumerable Are in Scope**
 
-```
+```csharp
 using static System.Linq.ParallelEnumerable;
 using static System.IO.Console;
 using static System.Threading.Interlocked;
@@ -114,7 +114,7 @@ In general, the best practice is to limit usage of the using static directive to
 
 **Figure 5 Using the nameof Operator for INotifyPropertyChanged.PropertyChanged**
 
-```
+```csharp
 public class Person : INotifyPropertyChanged
 {
   public event PropertyChangedEventHandler PropertyChanged;
@@ -171,7 +171,7 @@ By leveraging the nameof operator, it’s possible to eliminate the vast majorit
 
 **Figure 6 Composite String Formatting Versus String Interpolation**
 
-```
+```csharp
 [TestMethod]
 public void InterpolateString()
 {
@@ -196,7 +196,7 @@ String interpolation is transformed at compile time to invoke an equivalent stri
 
 **Figure 7 Using String Interpolation in Place of string.Format**
 
-```
+```csharp
 public Person(string firstName, string lastName, int? age=null)
 {
   Name = $"{firstName} {lastName}";
@@ -219,7 +219,7 @@ Notice that in the second case, the throw statement, both string interpolation a
 
 Although eliminated in **Figure 2** for clarity, virtually every Main method that accepts arguments requires checking the parameter for null prior to invoking the Length member to determine how many parameters were passed in. More generally, it’s a very common pattern to check for null before invoking a member in order to avoid a System.NullReferenceException (which almost always indicates an error in the programming logic). Because of the frequency of this pattern, C# 6.0 introduces the “?.” operator known as the null-conditional operator:
 
-```
+```csharp
 public static void Main(string[] args)
 {
   switch (args?.Length)
@@ -231,11 +231,11 @@ public static void Main(string[] args)
 
 The null-conditional operator translates to checking whether the operand is null prior to invoking the method or property (Length in this case). The logically equivalent explicit code would be (although in the C# 6.0 syntax the value of args is only evaluated once):
 
-```
+```csharp
 (args != null) ? (int?)args.Length : null
 ```
 
-What makes the null-conditional operator especially convenient is that it can be chained. If, for example, you invoke string\[\] names = person?.Name?.Split(' '), Split will only be invoked if both person and person.Name are not null. When chained, if the first operand is null, the expression evaluation is short-circuited, and no further invocation within the expression call chain will occur. Beware, however, you don’t unintentionally neglect additional null-conditional operators. Consider, for example, names = person?.Name.Split(' '). If there’s a person instance but Name is null, a NullReferenceException will occur upon invocation of Split. This doesn’t mean you must use a chain of null-conditional operators, but rather that you should be intentional about the logic. In the Person case, for example, if Name is validated and can never be null, no additional null-conditional operator is necessary.
+What makes the null-conditional operator especially convenient is that it can be chained. If, for example, you invoke string[] names = person?.Name?.Split(' '), Split will only be invoked if both person and person.Name are not null. When chained, if the first operand is null, the expression evaluation is short-circuited, and no further invocation within the expression call chain will occur. Beware, however, you don’t unintentionally neglect additional null-conditional operators. Consider, for example, names = person?.Name.Split(' '). If there’s a person instance but Name is null, a NullReferenceException will occur upon invocation of Split. This doesn’t mean you must use a chain of null-conditional operators, but rather that you should be intentional about the logic. In the Person case, for example, if Name is validated and can never be null, no additional null-conditional operator is necessary.
 
 An important thing to note about the null-conditional operator is that, when utilized with a member that returns a value type, it always returns a nullable version of that type. For example, args?.Length returns an int?, not simply an int. Although perhaps a little peculiar (in comparison to other operator behavior), the return of a nullable value type occurs only at the end of the call chain. The result is that calling the dot (“.”) operator on Length only allows invocation of int (not int?) members. However, encapsulating args?.Length in parenthesis—forcing the int? result via parentheses operator precedence—will invoke the int? return and make the Nullable<T> specific members (HasValue and Value) available.
 
@@ -243,7 +243,7 @@ The null-conditional operator is a great feature on its own. However, using it i
 
 With C# 6.0, the code snippet changes from:
 
-```
+```csharp
 PropertyChangedEventHandler propertyChanged = PropertyChanged;
 if (propertyChanged != null)
 {
@@ -253,7 +253,7 @@ if (propertyChanged != null)
 
 to simply:
 
-```
+```csharp
 PropertyChanged?.Invoke(propertyChanged(
   this, new PropertyChangedEventArgs(nameof(Name)));
 ```
@@ -264,7 +264,7 @@ Null-conditional operators can also be used in combination with an index operato
 
 **Figure 8 A Console Color Configuration Example**
 
-```
+```csharp
 string jsonText =
     @"{
       'ForegroundColor':  {
@@ -286,7 +286,7 @@ string jsonText =
 
 It’s important to note that, unlike most collections within MSCORLIB, JObject doesn’t throw an exception if an index is invalid. If, for example, ForegroundColordoesn’t exist, JObject returns null rather than throwing an exception. This is significant because using the null-conditional operator on collections that throw an IndexOutOfRangeException is almost always unnecessary and may imply safety when no such safety exists. Returning to the snippet showing the Main and args example, consider the following:
 
-```
+```csharp
 public static void Main(string[] args)
 {
   string directoryPath = args?[0];
@@ -305,7 +305,7 @@ To understand how the default constructor is leveraged, consider the example of 
 
 **Figure 9 Declaring a Default Constructor on a Value Type**
 
-```
+```csharp
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -380,7 +380,7 @@ Getter-only auto-properties are available in both structs and class declarations
 
 A second auto-property feature introduced in C# 6.0 is support for initializers. For example, I can add a static DefaultConfig auto-property with initializer to ConsoleConfiguration:
 
-```
+```csharp
 // Instance property initialization not allowed on structs.
 static private Lazy<ConsoleConfiguration> DefaultConfig{ get; } =
   new Lazy<ConsoleConfiguration>(() => new ConsoleConfiguration());
@@ -394,13 +394,13 @@ Note that auto-property initializers aren’t allowed on instance members of str
 
 Another feature introduced in C# 6.0 is expression bodied members. This feature exists for both properties and methods and allows the use of the arrow operator (=>) to assign an expression to either a property or method in place of a statement body. For example, because the DefaultConfig property in the previous example is both private and of type Lazy<T>, retrieving the actual default instance of ConsoleConfiguration requires a GetDefault method:
 
-```
+```csharp
 static public ConsoleConfiguration GetDefault() => DefaultConfig.Value;
 ```
 
 However, in this snippet, notice there’s no statement block type method body. Rather, the method is implemented with only an expression (not a statement) prefixed with the lambda arrow operator. The intent is to provide a simple one-line implementation without all the ceremony, and one that’s functional with or without parameters in the method signature:
 
-```
+```csharp
 private static void LogExceptions(ReadOnlyCollection<Exception> innerExceptions) =>
   LogExceptionsAsync(innerExceptions).Wait();
 ```
@@ -409,7 +409,7 @@ In regard to properties, note that the expression bodies work only for read-only
 
 **Figure 10 Expression Bodied Auto-Properties**
 
-```
+```csharp
 public class Person
 {
   public Person(string name)
@@ -435,13 +435,13 @@ Furthermore, expression-bodied properties can also be used on index members, ret
 
 Dictionary type collections are a great means for defining a name value pair. Unfortunately, the syntax for initialization is somewhat suboptimal:
 
-```
+```csharp
 { {"First", "Value1"}, {"Second", "Value2"}, {"Third", "Value3"} }
 ```
 
 To improve this, C# 6.0 includes a new dictionary assignment type syntax:
 
-```
+```csharp
 Dictionary<string, ConsoleColor> colorMap =
   new Dictionary<string, ConsoleColor>
 {
@@ -459,7 +459,7 @@ Not to be outdone, exceptions also had a couple of minor language tweaks in C# 6
 
 **Figure 11 Using Await Within Catch and Finally Blocks**
 
-```
+```csharp
 public static async Task<int> EncryptFilesAsync(string directoryPath, string searchPattern = "*")
 {
   ConsoleColor color = Console.ForegroundColor;

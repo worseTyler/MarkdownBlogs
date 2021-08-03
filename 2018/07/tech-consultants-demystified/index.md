@@ -40,4 +40,4 @@ We’re experts in this stack. Mark is more than a Regional Director with Micros
 
 Do you agree? Comment below.
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [ "Tech Consultants Demystified"
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T "Tech Consultants Demystified")

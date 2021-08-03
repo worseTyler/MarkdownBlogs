@@ -6,7 +6,7 @@ New economic challenges, social upheaval, political turmoil, and rising untold h
 
 > **In contrast to our situations, estimates suggest that the world has lost a decade or more of progress in the fight against extreme poverty.**
 
-### Poverty is on the Rise in the Developing World[\[1\]](#_ftn1)
+### Poverty is on the Rise in the Developing World[[1]](#_ftn1)
 
 Before the pandemic, it was commonplace for many people in the developing world to meet their most basic needs. See Mark Michaelis’ [Demystifying Poverty article](https://intellitect.com/demystified-economic-stereotypes/) to better understand the various levels of poverty. For many, enough food, clean water, and safe shelter remained out of their grasp.
 
@@ -16,7 +16,7 @@ This past summer, Mark and I spoke with non-government organization (NGO) leader
 
 Developing countries are suffering from steep and sustained unemployment with no bailout in sight. Medical supplies are waning, and staffing shortages continue to increase. Infrastructure is breaking down, and the schools remain closed. Without the technology for online learning, education has come to a halt for most students.
 
- "Developing Countries: Struggling to Survive the Pandemic"
+![Farmers in the Congo are observing social disancing guidelines](https://intellitect.com/wp-content/uploads/2020/11/Eric-Covid-2.png "Developing Countries: Struggling to Survive the Pandemic")
 
 Having received COVID-19 pevention instruction from World Relief, this Agriculture for Life group in Congo is sure to observe social distancing recommendations to promote health and safety. Photo Credit: World Relief International - Congo
 
@@ -32,7 +32,7 @@ Many aid organizations are talking about a decade or more of lost progress becau
 
 NGOs will need to prepare for a very long journey. The removal of pandemic-related travel restrictions and the ability to return to the communities that need the most help will only be the beginning. Once they’re allowed to return to work, aid organizations will need to reestablish their organizational support. NGOs will need to hire new aid workers, obtain permission to reestablish offices in local communities, and acquire new aid funding. Getting these communities back to where they were in 2019 will take years.
 
- "Developing Countries: Struggling to Survive the Pandemic"
+![Social distancing in a classroom in Congo](https://intellitect.com/wp-content/uploads/2020/11/Eric-Covid.png "Developing Countries: Struggling to Survive the Pandemic")
 
 Our work to address sexual and gender-based violence continues in Congo. Social distancing is maintained despite the relatively close quarters. Photo Credit: World Relief International - Congo
 
@@ -46,4 +46,4 @@ Readers can donate to help support people facing hardships due to COVID-19 in de
 
 * * *
 
-[\[1\]](#_ftn1ref) In his book, _[Factfulness](https://www.amazon.com/Factfulness-Reasons-World-Things-Better/dp/1250107814)_, Hans Rosling suggests the preferred term “Level 1” for those in extreme poverty. We used the phrase “developing world” since the new terminology does not yet have predominant understandinp
+[[1]](#_ftn1ref) In his book, _[Factfulness](https://www.amazon.com/Factfulness-Reasons-World-Things-Better/dp/1250107814)_, Hans Rosling suggests the preferred term “Level 1” for those in extreme poverty. We used the phrase “developing world” since the new terminology does not yet have predominant understandinp

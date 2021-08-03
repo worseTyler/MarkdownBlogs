@@ -1,6 +1,6 @@
 
 
-## ![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2018/11/XamarinForms-1.webp)
+## ![](https://intellitect.com/wp-content/uploads/2018/11/XamarinForms-1.jpg)
 
 Using Xamarin Forms is a quick win according to [Kevin Bost](/kevin-bost/), Xamarin certified senior developer at IntelliTect and C# instructor at Eastern Washington University.
 

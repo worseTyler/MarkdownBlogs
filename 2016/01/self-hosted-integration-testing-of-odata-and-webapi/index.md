@@ -1,6 +1,6 @@
 
 
-# Full-stack testing of OData 4.0 and Web API 2.2 ASP.Net MVC controllers "Self-Hosted Integration Testing Of OData and WebApi"
+# Full-stack testing of OData 4.0 and Web API 2.2 ASP.Net MVC controllers![image02](https://intellitect.com/wp-content/uploads/2015/12/image02-1024x576.jpg "Self-Hosted Integration Testing Of OData and WebApi")
 
 ## Why Are Unit Tests of OData Web API Controllers Insufficient?
 
@@ -25,7 +25,7 @@ The OData query syntax is very verbose and highly structured. A developer can ge
 
 After the VSIX is installed, in the Add New Item dialog, you will have the ability to add an OData Client:
 
- "Self-Hosted Integration Testing Of OData and WebApi"
+![image05](https://intellitect.com/wp-content/uploads/2015/12/image05.png "Self-Hosted Integration Testing Of OData and WebApi")
 
 Once added, open the .tt file and edit the MetadataDocumentUri constant to point at a running instance of your web API. You can also specify a root namespace for your client as well as some other settings, including some methods to customize the naming. Run the T4 template and a complete proxy for your OData v4 web API controllers will be generated.
 
@@ -35,15 +35,15 @@ You will have to remember to regenerate this client any time your contract chang
 
 The Microsoft.Owin.Hosting NuGet package provides a simple static WebApp.Start method that has a signature like:
 
-```
+```csharp
 public static IDisposable Start(string url, Action startup);
 ```
 
- "Self-Hosted Integration Testing Of OData and WebApi"
+![image00](https://intellitect.com/wp-content/uploads/2015/12/image00-300x208.png "Self-Hosted Integration Testing Of OData and WebApi")
 
 We can take advantage of injecting a `Action`  that has a Ninject kernel of our own making so that controllers created in this instance of our web app will get whatever mock objects we want to pass in. This also allows us to configure the OData service route to our liking (without security, for example). In the Tests project, there is a simple static TestHelpers class with a method for wiring this up to a passed in Ninject kernel:
 
-```
+```csharp
 internal static void ConfigureWebApi( IAppBuilder app, IKernel kernel )    {
       var config = new HttpConfiguration
       {
@@ -62,7 +62,7 @@ Notice that we are referencing an EDM model generator back in the web project so
 
 Inside a unit test, we can now stand up a testable instance of our entire web app (including the OData WebApi controllers) in this fashion:
 
-```
+```csharp
 var kernel = new StandardKernel();
 kernel.Bind().ToConstant( someMock.Object );
 using ( WebApp.Start( "https://localhost:1234/", app => TestHelpers.ConfigureWebApi( app, kernel ) ) )
@@ -76,7 +76,7 @@ In the example code in GitHub, the ConfigureWebApi method also has an overload t
 
 ## Writing Useful Integration Tests
 
- "Self-Hosted Integration Testing Of OData and WebApi"
+![image01](https://intellitect.com/wp-content/uploads/2015/12/image01-300x225.jpg "Self-Hosted Integration Testing Of OData and WebApi")
 
 Now that we have the ability to encapsulate the web API inside of a unit test and make full-stack calls all the way down to the persistence layer, the tendency will be to write tests for everything. Initially, this will seem like you are increasing quality, but quickly you will realize that you have a fragile rat’s nest of deterministic tests that randomly fail if not run in the right order and you are spending more time tracing broken tests than actually writing new code. This is not a good place to be in. Instead, assume that your data persistence layer is solid (or just include some broad read-only smoke tests to make the bosses happy), and test against mock data service objects that are isolated and always return predictable results.
 

@@ -16,4 +16,4 @@ Currently, IntelliTect is re-evaluating our philanthropy mission and are conside
 
 If you have questions about IntelliTect’s philanthropy or want to contribute to it, please talk with Mark or email me at [Eric.Edmonds@IntelliTect.com](mailto:Eric.Edmonds@IntelliTect.com).
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [ "2018 Philanthropy Update"
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T "2018 Philanthropy Update")

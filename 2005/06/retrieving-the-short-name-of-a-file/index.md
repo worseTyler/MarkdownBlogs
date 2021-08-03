@@ -6,18 +6,33 @@ I wanted the program to be "instant" and, since I sometimes wanted short name on
 
 The source code is shown below.  The entire project source code and executable may be downloaded from the [enclosure](https://intellitect.com/wp-content/uploads/binary/7e8537f6-6d57-4f3e-8f92-4e5dad5f6db3/ShortName.zip).
 
-> #include #include ``` #if ``` \_UNICODE ``` #define ``` cout wcout ``` #endif ```
-> 
-> ``` using ``` ``` namespace ``` std;
-> 
-> ``` int ``` \_tmain(``` int ``` argc, \_TCHAR\* argv\[\]) { TCHAR lpszShortPath\[1024\]; ``` if ```(argc > 0) { GetShortPathName(argv\[1\], lpszShortPath, 1024); TCHAR szBuf\[80\]; LPVOID lpMsgBuf; DWORD dw ``` \= ``` GetLastError();
-> 
-> ``` if ```(dw > 0) { FormatMessage( FORMAT\_MESSAGE\_ALLOCATE\_BUFFER ``` | ``` FORMAT\_MESSAGE\_FROM\_SYSTEM, NULL, dw, MAKELANGID(LANG\_NEUTRAL, SUBLANG\_DEFAULT), (LPTSTR) &lpMsgBuf, 0, NULL );
-> 
-> wsprintf(szBuf, \_T(``` "ERROR(%d): %s - '%s'" ```), dw, lpMsgBuf, argv\[1\]);
-> 
-> cout << szBuf;
-> 
-> LocalFree(lpMsgBuf); } ``` else ``` { cout << lpszShortPath; } ExitProcess(dw); } }
+```clike
+#include #include  #if  _UNICODE  #define  cout wcout  #endif
+
+using namespace std;
+
+int\ _tmain(int argc, _TCHAR\ * argv[]) {
+  TCHAR lpszShortPath[1024];
+  if (argc 0) {
+    GetShortPathName(argv[1], lpszShortPath, 1024);
+    TCHAR szBuf[80];
+    LPVOID lpMsgBuf;
+    DWORD dw = GetLastError();
+
+    if (dw 0) {
+      FormatMessage(FORMAT\ _MESSAGE\ _ALLOCATE\ _BUFFER | FORMAT\ _MESSAGE\ _FROM\ _SYSTEM, NULL, dw, MAKELANGID(LANG\ _NEUTRAL, SUBLANG\ _DEFAULT), (LPTSTR) & lpMsgBuf, 0, NULL);
+
+      wsprintf(szBuf, _T("ERROR(%d): %s - '%s'"), dw, lpMsgBuf, argv[1]);
+
+      cout << szBuf;
+
+      LocalFree(lpMsgBuf);
+    } else {
+      cout << lpszShortPath;
+    }
+    ExitProcess(dw);
+  }
+}
+```
 
 P.S. It is strange not to select the ".NET" category for a computer related post.

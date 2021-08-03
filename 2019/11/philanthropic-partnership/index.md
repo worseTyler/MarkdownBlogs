@@ -2,7 +2,7 @@
 
 ## Partnership Creates Life-saving Transformations in Uganda
 
- "Your Partnership Matters (Video)"
+![Picture of women in Uganda that have been helped by our philanthropic partners.](https://intellitect.com/wp-content/uploads/2019/11/Uganda-IJM-1024x684.jpg "Your Partnership Matters (Video)")
 
 Photo courtesy: International Justice Mission®
 
@@ -14,7 +14,7 @@ It’s important to note that these partnerships are a direct result of our clie
 
 We wanted to share an update that we recently received about an ongoing program with the International Justice Mission (IJM) that helps widows suffering extreme gender violence in Uganda. [Click here](https://www.ijm.org/Uganda) for more info on this project.
 
- "Your Partnership Matters (Video)"
+![IJM logo](https://intellitect.com/wp-content/uploads/2019/11/IJM_Logo_Vertical_Blue_PNG-798x1024.png "Your Partnership Matters (Video)")
 
 > “Thank you for your tremendous generosity that means so much to our team at IJM and is truly life-changing for our survivors…and for those that will never have to know the terror and oppression of violence and threats in the first place, thanks to your care.”
 > 

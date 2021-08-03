@@ -31,4 +31,4 @@ Please leave your questions in the comments below, and check out our [blog on as
 
 _Written by Mark Salvino._
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.png)

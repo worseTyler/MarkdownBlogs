@@ -8,7 +8,7 @@ In this article, I’ll introduce the new features and provide an update on the 
 
 Even the newest .NET developers are likely familiar with the NullReferenceException. This is an exception that almost always indicates a bug because the developer didn’t perform sufficient null checking before invoking a member on a (null) object. Consider this example:
 
-```
+```csharp
 public static string Truncate(string value, int length)
 {
   string result = value;
@@ -22,7 +22,7 @@ public static string Truncate(string value, int length)
 
 If it wasn’t for the check for null, the method would throw a NullReferenceException. Although it’s simple, having to check the string parameter for null is somewhat verbose. Often, that verbose approach is likely unnecessary given the frequency of the comparison. C# 6.0 includes a new null-conditional operator that helps you write these checks more succinctly:
 
-```
+```csharp
 public static string Truncate(string value, int length)
 {          
   return value?.Substring(0, Math.Min(value.Length, length));
@@ -34,9 +34,9 @@ public void Truncate_WithNull_ReturnsNull()
 }
 ```
 
-As the Truncate\_WithNull\_ReturnsNull method demonstrates, if in fact the value of the object is null, the null-conditional operator will return null. This begs the question of what happens when the null-conditional operator appears within a call chain, as in the next example:
+As the Truncate_WithNull_ReturnsNull method demonstrates, if in fact the value of the object is null, the null-conditional operator will return null. This begs the question of what happens when the null-conditional operator appears within a call chain, as in the next example:
 
-```
+```csharp
 public static string AdjustWidth(string value, int length)
 {
   return value?.Substring(0, Math.Min(value.Length, length)).PadRight(length);
@@ -54,13 +54,13 @@ The null-conditional operator conditionally checks for null before invoking the 
 
 If the null-conditional returns null when the invocation target is null, what’s the resulting data type for an invocation of a member that returns a value type—given a value type can’t be null? For example, the data type returned from value?. Length can’t simply be int. The answer, of course, is a nullable (int?). In fact, an attempt to assign the result simply to an int will produce a compile error:
 
-```
+```csharp
 int length = text?.Length; // Compile Error: Cannot implicitly convert type 'int?' to 'int'
 ```
 
 The null-conditional has two syntax forms. First, is the question mark prior to the dot operator (?.). The second is to use the question mark in combination with the index operator. For example, given a collection, instead of checking for null explicitly before indexing into the collection, you can do so using the null conditional operator:
 
-```
+```csharp
 public static IEnumerable<T> GetValueTypeItems<T>(
   IList<T> collection, params int[] indexes)
   where T : struct
@@ -73,21 +73,21 @@ public static IEnumerable<T> GetValueTypeItems<T>(
 }
 ```
 
-This example uses the null-conditional index form of the operator ?\[…\], causing indexing into collection only to occur if collection isn’t null. With this form of the null-conditional operator, the T? item = collection?\[index\] statement is behaviorally equivalent to:
+This example uses the null-conditional index form of the operator ?[…], causing indexing into collection only to occur if collection isn’t null. With this form of the null-conditional operator, the T? item = collection?[index] statement is behaviorally equivalent to:
 
-```
+```csharp
 T? item = (collection != null) ? collection[index] : null.
 ```
 
 Note that the null-conditional operator can only retrieve items. It won’t work to assign an item. What would that mean, given a null collection, anyway?
 
-Note the implicit ambiguity when using ?\[…\] on a reference type. Because reference types can be null, a null result from the ?\[…\] operator is ambiguous about whether the collection was null or the element itself was, in fact, null.
+Note the implicit ambiguity when using ?[…] on a reference type. Because reference types can be null, a null result from the ?[…] operator is ambiguous about whether the collection was null or the element itself was, in fact, null.
 
 One particularly useful application of the null-conditional operator resolves an idiosyncrasy of C# that has existed since C# 1.0—checking for null before invoking a delegate. Consider the C# 2.0 code in **Figure 1**.
 
 **Figure 1 Checking for Null Before Invoking a Delegate**
 
-```
+```csharp
 class Theremostat
 {
   event EventHandler<float> OnTemperatureChanged;
@@ -117,7 +117,7 @@ class Theremostat
 
 Leveraging the null-conditional operator, the entire set implementation is reduced to simply:
 
-```
+```csharp
 OnTemperatureChanged?.Invoke(this, value)
 ```
 
@@ -127,7 +127,7 @@ C# developers have wondered if this would be improved for the last four releases
 
 Another common pattern where the null-conditional operator could be prevalent is in combination with the coalesce operator. Instead of checking for null on linesOfCode before invoking Length, you can write an item count algorithm as follows:
 
-```
+```csharp
 List<string> linesOfCode = ParseSourceCodeFile("Program.cs");
 return linesOfCode?.Count ?? 0;
 ```
@@ -138,7 +138,7 @@ In this case, any empty collection (no items) and a null collection are both nor
 - Short-circuit additional invocations in the call chain if the operand is null
 - Return a nullable type (System.Nullable<T>) if the target member returns a value type
 - Support delegate invocation in a thread safe manner
-- Is available as both a member operator (?.) and an index operator (?\[…\])
+- Is available as both a member operator (?.) and an index operator (?[…])
 
 ### Auto-Property Initializers
 
@@ -151,7 +151,7 @@ Any .NET developer who has ever properly implemented a struct has undoubtedly be
 
 All of this is just to “properly” implement an immutable property. This behavior is then repeated for all properties on the type. So doing the right thing requires significantly more effort than the brittle approach. C# 6.0 comes to the rescue with a new feature called auto-property initializers (CTP3 also includes support for initialization expressions). The auto-property initializer allows assignment of properties directly within their declaration. For read-only properties, it takes care of all the ceremony required to ensure the property is immutable. Consider, for example, the FingerPrint class in this example:
 
-```
+```csharp
 public class FingerPrint
 {
   public DateTime TimeStamp { get; } = DateTime.UtcNow;
@@ -166,7 +166,7 @@ As the code shows, property initializers allow for assigning the property an ini
 
 Initializers can be any expression. For example, by leveraging the conditional operator, you can default the initialization value:
 
-```
+```csharp
 public string Config { get; } = string.IsNullOrWhiteSpace(
   string connectionString =
     (string)Properties.Settings.Default.Context?["connectionString"])?
@@ -185,7 +185,7 @@ To address this idiosyncrasy, C# 6.0 provides access to a “program element” 
 
 **Figure 2 Extracting the Parameter Name with a Nameof Expression**
 
-```
+```csharp
 void ThrowArgumentNullExceptionUsingNameOf(string param1)
 {
   throw new ArgumentNullException(nameof(param1));
@@ -208,7 +208,7 @@ As the test method demonstrates, the ArgumentNullException’s ParamName propert
 
 **Figure 3 Retrieving Other Program Elements**
 
-```
+```csharp
 namespace CSharp6.Tests
 {
   [TestClass]
@@ -245,7 +245,7 @@ Auto-property initializers are especially useful in combination with primary con
 
 With the prevalence of Web services, multiple-tier applications, data services, Web API, JSON and similar technologies, one common form of class is the data transfer object (DTO). The DTO generally doesn’t have much implementation behavior, but focuses on data storage simplicity. This focus on simplicity makes primary constructors compelling. Consider, for example, the immutable Pair data structure shown in this example:
 
-```
+```csharp
 struct Pair<T>(T first, T second)
 {
   public T First { get; } = first;
@@ -260,7 +260,7 @@ Primary constructor bodies specify behavior on the primary constructor. This hel
 
 **Figure 4 Implementing a Primary Constructor Body**
 
-```
+```csharp
 struct Pair<T>(T first, T second)
 {
   {
@@ -293,7 +293,7 @@ However, like field initializers translated to statements executing as part of a
 
 There are several additional concepts related to primary constructors that are important to remember. Only the primary constructor can invoke the base constructor. You do this using the base (contextual) keyword following the primary constructor declaration:
 
-```
+```csharp
 class UsbConnectionException(
   string message, Exception innerException, HidDeviceInfo hidDeviceInfo):
     Exception  (message, innerException)
@@ -304,7 +304,7 @@ class UsbConnectionException(
 
 If you specify additional constructors, the constructor call chain must invoke the primary constructor last. This means a primary constructor can’t have a this initializer. All other constructors must have them, assuming the primary constructor isn’t also the default constructor:
 
-```
+```csharp
 public class Patent(string title, string yearOfPublication)
 {
   public Patent(string title, string yearOfPublication,
@@ -324,7 +324,7 @@ Expression bodied functions are another syntax simplification in C# 6.0. These a
 
 For example, an override of ToString could be added to the Pair<T> class:
 
-```
+```csharp
 public override string ToString() => string.Format("{0}, {1}", First, Second);
 ```
 
@@ -332,7 +332,7 @@ There’s nothing particularly radical about expression bodied functions. As wit
 
 The expression bodied simplification isn’t limited to functions. You can also implement read-only (getter only) properties using expressions—expression bodied properties. For example, you can add a Text member to the FingerPrint class:
 
-```
+```csharp
 public string Text =>
   string.Format("{0}: {1} - {2} ({3})", TimeStamp, Process, Config, User);
 ```
@@ -344,7 +344,7 @@ There are several features no longer planned for C# 6.0:
 - The indexed property operator ($) is no longer available and isn’t expected for C# 6.0.
 - The index member syntax isn’t working in CTP3, although it’s expected to return in a later release of C# 6.0:
 
-```
+```csharp
 var cppHelloWorldProgram = new Dictionary<int, string>
 {
 [10] = "main() {",
@@ -354,7 +354,7 @@ var cppHelloWorldProgram = new Dictionary<int, string>
 ```
 
 - Field arguments in primary constructors are no longer part of C# 6.0.
-- Both the binary numeric literal and the numeric separator (‘\_’) within a numeric literal aren’t currently certain to make it by release to manufacturing.
+- Both the binary numeric literal and the numeric separator (‘_’) within a numeric literal aren’t currently certain to make it by release to manufacturing.
 
 There are a number of features not discussed here because they were already covered in the May article, but static using statements (see [intellitect.com/static-using-statement-in-c-6-0/](/static-using-statement-in-c-6-0/)), declaration expressions (see [intellitect.com/declaration-expressions-in-c-6-0/](/declaration-expressions-in-c-6-0/)) and exception handling improvements (see [intellitect.com/csharp-exception-handling/](/csharp-exception-handling/)) are features that have remained stable.
 

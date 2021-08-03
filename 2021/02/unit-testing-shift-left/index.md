@@ -10,7 +10,7 @@ At its most basic, shifting left simply means testing should be performed as 
 
 Rather than dictating firm rules, this guide aims to explain the “why” behind various testing strategies and provide guidance on when each should be used. For our purposes, it is helpful to think of different testing strategies as existing Io a spectrum rather than existing as fixed buckets. Often testing can be less than ideal and some flexibility of the boundaries is necessary.  
 
- "A Guide to Practical Unit Testing – Shift Left"
+![Spectrum of testing methods ](https://intellitect.com/wp-content/uploads/2021/01/image-24.png "A Guide to Practical Unit Testing – Shift Left")
 
 ### The Software Life Cycle 
 

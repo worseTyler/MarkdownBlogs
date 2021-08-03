@@ -16,7 +16,7 @@ By using his code and shaping it for a web environment I was able to create a cl
 
 Here is the code for the AssemblyInfo class that exposes a Date property to return the linker date.
 
-```
+```csharp
 using System;
 using System.IO;
 using System.Reflection;
@@ -28,7 +28,7 @@ namespace YourNamespaceHere
     /// </summary>
     public static class AssemblyInfo
     {
-        private static DateTime? \_Date = null;
+        private static DateTime? _Date = null;
 
         /// <summary>
         /// Gets the linker date from the assembly header.
@@ -37,11 +37,11 @@ namespace YourNamespaceHere
         {
             get
             {
-                if (\_Date == null)
+                if (_Date == null)
                 {
-                    \_Date = GetLinkerTime(Assembly.GetExecutingAssembly());
+                    _Date = GetLinkerTime(Assembly.GetExecutingAssembly());
                 }
-                return \_Date.Value;
+                return _Date.Value;
             }
         }
 
@@ -54,16 +54,16 @@ namespace YourNamespaceHere
         private static DateTime GetLinkerTime(Assembly assembly)
         {
             var filePath = assembly.Location;
-            const int c\_PeHeaderOffset = 60;
-            const int c\_LinkerTimestampOffset = 8;
+            const int c_PeHeaderOffset = 60;
+            const int c_LinkerTimestampOffset = 8;
 
-            var buffer = new byte\[2048\];
+            var buffer = new byte[2048];
 
             using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
                 stream.Read(buffer, 0, 2048);
 
-            var offset = BitConverter.ToInt32(buffer, c\_PeHeaderOffset);
-            var secondsSince1970 = BitConverter.ToInt32(buffer, offset + c\_LinkerTimestampOffset);
+            var offset = BitConverter.ToInt32(buffer, c_PeHeaderOffset);
+            var secondsSince1970 = BitConverter.ToInt32(buffer, offset + c_LinkerTimestampOffset);
             var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
             var linkTimeUtc = epoch.AddSeconds(secondsSince1970);
@@ -76,9 +76,9 @@ namespace YourNamespaceHere
 
 ### Updating Your View with the Build Date
 
-This method can then easily be called in your \_layout.cshtml page to show the date of the deployment on every page. In addition, you can also choose to show it on an about page or other location of your choice. If you want consistent formatting for multiple locations, you could create another method that provides a formatted string.
+This method can then easily be called in your _layout.cshtml page to show the date of the deployment on every page. In addition, you can also choose to show it on an about page or other location of your choice. If you want consistent formatting for multiple locations, you could create another method that provides a formatted string.
 
-```
+```csharp
 @(YourNamespaceHere.AssemblyInfo.Date.ToString("yyyy-MM-dd HH-mm"))
 
 ```
@@ -89,7 +89,7 @@ I hope this helps you better communicate with your users about which version of 
 
 Builds in VS now contain information that makes the values in these fields gibberish. Fortunately, this can be easily fixed with a change to your .csproj file. in the first <PropertyGroup> section add the following element:
 
-```
+```csharp
 <Deterministic>False</Deterministic>
 
 ```

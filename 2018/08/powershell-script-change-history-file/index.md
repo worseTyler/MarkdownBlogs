@@ -1,6 +1,6 @@
 
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2018/08/Powershell-blog.webp)
+![](https://intellitect.com/wp-content/uploads/2018/08/Powershell-blog.jpg)
 
 ## External code audit? Need a list of TFS file changes during a specific time frame?
 
@@ -26,7 +26,7 @@ The CSV format has the following columns:
 
 There are a number of command line parameters:
 
-- server: URL of the server. https://\[host\]:\[port\]/tfs/\[collectionname\]
+- server: URL of the server. https://[host]:[port]/tfs/[collectionname]
 - fromDate: Date to start looking for changes. M/D/YYYY. 11/1/2017
 - toDate: Date to stop looking for changes. M/D/YYYY. 12/1/2017
 - path: Project and path to search for changes in. Electron/dev
@@ -35,7 +35,7 @@ There are a number of command line parameters:
 
 ### [](https://github.com/IntelliTect/TfsHistory#example)Example
 
-```
+```powershell
 .\\tfshistory.ps1 -server https://tfs:8080 -fromDate 11/1/2017 -toDate 11/30/2017 -path Electron/Dev -maxCount 500 -outFile results.csv
 
 .\\tfshistory.ps1 -server https://tfs:8080 -fromDate 11/1/2017 -toDate 11/30/2017 -path Electron/Dev

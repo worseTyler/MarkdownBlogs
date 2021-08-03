@@ -30,13 +30,13 @@ Many .NET developers are familiar with ClickOnce, Microsoft’s simple deploymen
 
 Let’s take a look at deploying a simple Hello World application.
 
-```
+```csharp
 <Window x:Class="HellowWorld.WPF.MainWindow"
         xmlns="https://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="https://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="https://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" Loaded="MainWindow\_OnLoaded"
+        mc:Ignorable="d" Loaded="MainWindow_OnLoaded"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" TextElement.FontSize="20">
         <TextBlock x:Name="CurrentVersion" Text="Loading..."/>
@@ -48,7 +48,7 @@ Let’s take a look at deploying a simple Hello World application.
 
 First, install the Squirrel.Windows NuGet package:
 
-```
+```powershell
 PM> Install-Package Squirrel.Windows
 ```
 
@@ -56,8 +56,8 @@ Next, we need to add in the code to check for updates.  Unlike ClickOnce, there
 
 For this application, we will just do a single update check when the window loads.
 
-```
-private async void MainWindow\_OnLoaded(object sender, RoutedEventArgs e)
+```csharp
+private async void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
 {
     using (var updateManager = new UpdateManager(@"C:\\SquirrelReleases"))
     {
@@ -86,7 +86,7 @@ Now that the app is written we need to release it. Squirrel uses NuGet packages 
 
 Create a simple nuspec file:
 
-```
+```csharp
 <?xml version="1.0"?>
 <package >
   <metadata>
@@ -116,7 +116,7 @@ Most of the values function exactly the same as a NuGet package, but there are a
 
 To create the NuGet package, run:
 
-```
+```csharp
 .\\nuget pack nuget\\HelloWorld.nuspec
 ```
 
@@ -124,7 +124,7 @@ This will generate a NuGet package “HelloWorld.1.0.0.nupkg” in our project d
 
 Finally, we need to run the NuGet package through Squirrel to create a release.
 
-```
+```csharp
 Squirrel --releasify HelloWorld.1.0.0.nupkg --releaseDir "C:\\SquirrelReleases"
 ```
 
@@ -132,13 +132,13 @@ Note: If this process fails, you may need to restart Visual Studio to get the Pa
 
 The output directory now contains four files:
 
-![](https://intellitect.com/wp-content/uploads/2017/07/DeployingYourAppWithSquirel-3.webp)
+![](https://intellitect.com/wp-content/uploads/2017/07/DeployingYourAppWithSquirel-3.png)
 
 The Setup.exe contains a full copy of the NuGet package. So distributing this one file will be enough to install the application. The name of the file is not significant, and you can rename it to whatever you like.
 
 The RELEASES file contains the list of releases that are available to be installed. This is just a simple text file that contains SHA1 hash, filename, and file size of all of the packages.
 
-```
+```csharp
 77A4810CCFFF6772E21E4C499C696D909A9CE932 HelloWorld-1.0.0-full.nupkg 1165627
 ```
 
@@ -148,7 +148,7 @@ There is also a Setup.msi that gets created for [doing machine wide installs](ht
 
 Running the Setup.exe file allows the application to get installed and launched.
 
-![](https://intellitect.com/wp-content/uploads/2017/07/DeployingYourAppWithSquirel-2-300x201.webp)
+![](https://intellitect.com/wp-content/uploads/2017/07/DeployingYourAppWithSquirel-2-300x201.png)
 
 ### Update Simulation
 
@@ -160,13 +160,13 @@ Now let’s simulate an update to see Squirrel at work
 
 The output directory now contains a few additional files.
 
-![](https://intellitect.com/wp-content/uploads/2017/07/DeployingYourAppWithSquirel-1.webp)
+![](https://intellitect.com/wp-content/uploads/2017/07/DeployingYourAppWithSquirel-1.png)
 
 The Setup.exe is updated to contain the latest full NuGet package. Anyone who runs it will get the latest version (in this case 1.0.1) of the application. If you need to keep old Setup.exe files around to install older versions quickly, be sure to rename your existing Setup.exe file before running the Squirrel releasify command.
 
 The RELEASES file has been updated to contain additional entries for the new packages.
 
-```
+```csharp
 77A4810CCFFF6772E21E4C499C696D909A9CE932 HelloWorld-1.0.0-full.nupkg 1165627
 8759B8C13E089CBE1A28EA3D6B0886B84D5B52C9 HelloWorld-1.0.1-delta.nupkg 9234
 9360C6F390BB38C5FDCC2FF2A3A9EA56919867F8 HelloWorld-1.0.1-full.nupkg 1165626
@@ -178,11 +178,11 @@ The _UpdateApp_ extension method that we used in this application always downloa
 
 Re-running the application verifies that an update has been applied.
 
-![](https://intellitect.com/wp-content/uploads/2017/07/DeployingYourAppWithSquirel-5-300x201.webp)
+![](https://intellitect.com/wp-content/uploads/2017/07/DeployingYourAppWithSquirel-5-300x201.png)
 
 Re-launching the application one more time shows that we are now running the latest version.
 
-![](https://intellitect.com/wp-content/uploads/2017/07/DeployingYourAppWithSquirel-4-300x201.webp)
+![](https://intellitect.com/wp-content/uploads/2017/07/DeployingYourAppWithSquirel-4-300x201.png)
 
 ### Highlights of Squirrel
 
@@ -198,4 +198,4 @@ Squirrel also comes with lots of little features (many to alleviate some of the 
 
 Check out my blog on [how to publish NuGets with Azure DevOps](/azure-devops-nugets/) for more information on the uses of NuGet packages.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)

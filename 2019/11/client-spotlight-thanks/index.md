@@ -4,7 +4,7 @@ As we approach Thanksgiving at IntelliTect, we’re thankful for our new corpora
 
 Often, our individual team members are appreciative for the client teams they work with on a daily basis. Here are just a few team members bragging about the clients and teams they work with:
 
- "Thank You!"
+![Phil Spokas](https://intellitect.com/wp-content/uploads/2015/01/Phil-SWR.jpg "Thank You!")
 
 > I really appreciate the Microsoft Azure DevOps CAT team support. Ricardo, Dylan, Paul and Mickey in particular. They are very professional and are actively engaged in improving customer practices with or without Azure DevOps.
 > 
@@ -14,7 +14,7 @@ Often, our individual team members are appreciative for the client teams they wo
 > 
 > Sean Scura, SDET
 
- "Thank You!"
+![IntelliTect employee Sean Scura](https://intellitect.com/wp-content/uploads/2019/07/Sean-SWR-1024x1024.jpg) ![Allen Monroe](https://intellitect.com/wp-content/uploads/2017/05/Allen-SWR.jpg "Thank You!")
 
 > I’m so thankful for my client’s team because I have complete trust that we will execute and support each other, over and over.
 > 
@@ -24,7 +24,7 @@ Often, our individual team members are appreciative for the client teams they wo
 > 
 > Cameron Osborn, software engineer
 
- "Thank You!"
+![IntelliTect employee Cameron Osborn](https://intellitect.com/wp-content/uploads/2019/07/Cameron-SWR-1024x1024.jpg) ![IntelliTect employee Brian Uptagrafft](https://intellitect.com/wp-content/uploads/2019/07/Brian-U-SWR-1024x1024.jpg "Thank You!")
 
 > The team at n2y is very genuine, affable and quick to help each other out. Victoria goes above and beyond. She’s knowledgeable, friendly and always eager to assist with anything the team needs to keep moving forward.
 > 
@@ -34,4 +34,4 @@ Often, our individual team members are appreciative for the client teams they wo
 > 
 > Chris Finlayson, senior software architect
 
- "Thank You!"
+![Chris Finlayson](https://intellitect.com/wp-content/uploads/2015/01/Chris-SWR.jpg) [![click here to sign up for Intellovations, our quarterly newsletter so you never miss out!](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-768x176.jpg)](https://bit.ly/2Nhro9T "Thank You!")

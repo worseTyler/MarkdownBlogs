@@ -7,95 +7,49 @@ The implementation of Equals() and GetHashCode() used to be complex, but with C#
 
 With C# 7.0 tuples, overiding Equals() and GetHashCode() turns out to be quite simple as demonstrated in **Figure 1**.
 
-```
-public struct Arc
-
-{
-
-  public Arc (double radius, double startAngle, double sweepAngle)
-
-  {
-
+```csharp
+public struct Arc {
+  public Arc(double radius, double startAngle, double sweepAngle) {
     Radius = radius;
-
     StartAngle = startAngle;
-
     SweepAngle = sweepAngle;
-
   }
-
   public double Radius;
-
   public double StartAngle;
-
   public double SweepAngle;
-
-  public double Length
-
-  {
-
-      get
-
-      {
-
-          return Math.Abs(StartAngle - SweepAngle)
-
-              / 360 \* 2 \* Math.PI \* Radius;
-
-      }
-
+  public double Length {
+    get {
+      return Math.Abs(StartAngle - SweepAngle) /
+        360\ * 2\ * Math.PI\ * Radius;
+    }
   }
-
-       
-
-  public void Rotate(double degrees)
-
-  {
-
+  public void Rotate(double degrees) {
     StartAngle += degrees;
-
     SweepAngle += degrees;
-
   }
-
   // override object.Equals
-
-  public override bool Equals(object obj)
-
-  {
-
-    return (obj is Arc)
-
-      && Equals((Arc)obj);
-
+  public override bool Equals(object obj) {
+    return (obj is Arc) &&
+      Equals((Arc) obj);
   }
-
-        // Implemented IEquitable<T>
-
-  public bool Equals(Arc arc)
-
-  {
-
+  // Implemented IEquitable<T>
+  public bool Equals(Arc arc) {
     return (Radius, StartAngle, SweepAngle).Equals(
       (arc.Radius, arc.StartAngle, arc.SweepAngle));
   }
-
   // override object.GetHashCode
   public override int GetHashCode() =>
     (Radius, StartAngle, SweepAngle).GetHashCode();
-
-  public static bool operator ==(
-    Arc lhs, Arc rhs) =>lhs.Equals(rhs);
-
-  public static bool operator !=(
-    Arc lhs, Arc rhs) =>!lhs.Equals(rhs);
-
+  public static bool operator == (
+    Arc lhs, Arc rhs) => lhs.Equals(rhs);
+  public static bool operator != (
+    Arc lhs, Arc rhs) => !lhs.Equals(rhs);
 }
 ```
 
 For Equals, one member can check that the type is the same, while a second member groups each of the identifying members into a tuple and compares them to the target parameter of the same type, like this:
 
-```
+```csharp
 public bool Equals(Arc arc) =>
 
 return (Radius, StartAngle, SweepAngle).Equals(

@@ -16,33 +16,34 @@ table td { word-break: break-word !important; }<br /> table tr td:nth-child(2) {
 
 ### Test Source Code
 
-				 `#nullable enable
-string? nullableText = "Inigo";
-Assert.IsTrue(nullableText is object && nullableText is { });
-nullableText = null;
-Assert.IsFalse(nullableText is object || nullableText is { });
- 
-string notNullableText = "Inigo";
-Assert.IsTrue(notNullableText is object && notNullableText is { });
-notNullableText = null!;  // Initentionally ignore the null assignment
-Assert.IsFalse(notNullableText is object || notNullableText is { });
- 
-int? nullableNumber = 42;
-Assert.IsTrue(nullableNumber is object && nullableNumber is { });
-nullableNumber = null;
-Assert.IsFalse(nullableNumber is object || nullableNumber is { });
-int notNullableNumber = 42;
+```csharp
+#nullable enable
+string ? nullableText = "Inigo";
+Assert.IsTrue(nullableText is object && nullableText is {});
+nullableText = null;
+Assert.IsFalse(nullableText is object || nullableText is {});
+
+string notNullableText = "Inigo";
+Assert.IsTrue(notNullableText is object && notNullableText is {});
+notNullableText = null!; // Initentionally ignore the null assignment
+Assert.IsFalse(notNullableText is object || notNullableText is {});
+
+int ? nullableNumber = 42;
+Assert.IsTrue(nullableNumber is object && nullableNumber is {});
+nullableNumber = null;
+Assert.IsFalse(nullableNumber is object || nullableNumber is {});
+int notNullableNumber = 42;
 Assert.IsTrue(
-    // CS0183 - The given expression is always of the provided('object') type
-    #pragma warning disable 0183
-    notNullableNumber is object
-    #pragma warning restore 0183
-    && notNullableNumber is { });
-// notNullableNumber = null;  // Error: Can't assing null to non-nullable value type` 
+  // CS0183 - The given expression is always of the provided('object') type
+  #pragma warning disable 0183 notNullableNumber is object #pragma warning restore 0183 &&
+  notNullableNumber is {});
+// notNullableNumber = null;  
+// Error: Can't assing null to non-nullable value type
+``` 
 			
 
 ### Ready for more?
 
 Check out this video on the [improvements and new features released in C# 9.0](/video-essential-c-sharp-9/)!
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)

@@ -1,20 +1,20 @@
 
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/07/Microsoft-dotnet.webp)When Microsoft announced .NET 5 at Microsoft Build 2019 in May, it marked an important step forward for developers working across desktop, Web, mobile, cloud and device platforms. In fact, .NET 5 is that rare platform update that unifies divergent frameworks, reduces code complexity and significantly advances cross-platform reach.
+![](https://intellitect.com/wp-content/uploads/2019/07/Microsoft-dotnet.png)When Microsoft announced .NET 5 at Microsoft Build 2019 in May, it marked an important step forward for developers working across desktop, Web, mobile, cloud and device platforms. In fact, .NET 5 is that rare platform update that unifies divergent frameworks, reduces code complexity and significantly advances cross-platform reach.
 
 This is no small task. Microsoft is proposing to merge the source code streams of several key frameworks—.NET Framework, .NET Core and Xamarin/Mono. The effort will even unify threads that separated at inception at the turn of the century, and provide developers one target framework for their work.
 
 The source code flow concept in **Figure 1** shows how the timeline for each framework syncs up, and ultimately merges into a single thread as .NET 5 in November 2020. (Note that .NET Framework has been shortened to .NET FW in the image.) When released, .NET 5 will eclipse .NET Framework 4.8, Mono 5.0, and .NET Core 3.0.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/11/net5-figure-1.webp)
+![](https://intellitect.com/wp-content/uploads/2019/11/net5-figure-1.png)
 
 **Figure 1 Source Code Flow Concept from .NET, Mono, and Shared Source Initiative to .NET 5** (click for larger version)
 
-Admittedly, **Figure 1** is more conceptual than reality, with source code forking (more likely just copying) rather than branching, and features (like Windows Presentation Foundation \[WPF\] or Windows Forms) migrating rather than merging. Still, the infographic provides a reasonably transparent view of the ancestral history of the .NET source code, showing its evolution from the three major branches all the way to .NET 5.
+Admittedly, **Figure 1** is more conceptual than reality, with source code forking (more likely just copying) rather than branching, and features (like Windows Presentation Foundation [WPF] or Windows Forms) migrating rather than merging. Still, the infographic provides a reasonably transparent view of the ancestral history of the .NET source code, showing its evolution from the three major branches all the way to .NET 5.
 
 The result of this work is a unified platform with the .NET 5 framework executing on all platforms (desktop, Web, cloud, mobile and so on). **Figure 2** depicts this unified architecture.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/11/net-5-figure-2.webp)
+![](https://intellitect.com/wp-content/uploads/2019/11/net-5-figure-2.png)
 
 **Figure 2 .NET 5—a Unified Platform**
 
@@ -74,11 +74,11 @@ The lack of WCF server support is no doubt disappointing to some. However, Micro
 
 Even as Microsoft makes plans to unify its developer frameworks under .NET 5, the company has announced that it’s adopting a regular cadence for its unified .NET releases (see **Figure 3**). Going forward, you can expect general availability versions of .NET to be released in Q4 of each year. Of these releases, every second version will be a Long Term Support (LTS) release, which Microsoft will support for a minimum of three years or one year after a subsequent LTS release, whichever is longer. In other words, you’ll always have at least three years to upgrade your application to the next LTS release. See [bit.ly/2Kfkkw0](https://bit.ly/2Kfkkw0) for more information on the .NET Core support policy, and what can be reasonably expected to become the .NET 5 and beyond support policy.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/11/net-5-figure-3.webp)
+![](https://intellitect.com/wp-content/uploads/2019/11/net-5-figure-3.png)
 
 **Figure 3 .NET Release Schedule**
 
-At this point, .NET 5 is still just an announcement—a declaration of intent, if you like. There’s lots of work to be done. Even so, the announcement is remarkable. When .NET Core was first released, the goal was to provide a cross-platform .NET version that could highlight Azure (perhaps especially the Platform-as-a-Service \[PaaS\] portions of Azure and support for .NET on Linux and within Linux containers).
+At this point, .NET 5 is still just an announcement—a declaration of intent, if you like. There’s lots of work to be done. Even so, the announcement is remarkable. When .NET Core was first released, the goal was to provide a cross-platform .NET version that could highlight Azure (perhaps especially the Platform-as-a-Service [PaaS] portions of Azure and support for .NET on Linux and within Linux containers).
 
 In the original concept, the idea that all of .NET Framework could be ported to .NET Core wasn’t considered realistic. Around the time of the .NET Core 2.0 release, that began to change. Microsoft realized that it needed to define a framework standard for all .NET framework versions, to enable code running on one framework to be portable to another.
 

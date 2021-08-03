@@ -25,125 +25,68 @@ The other two timers are very similar. \`System.Timers.Timer\` is a wrapper for 
 
 Using \`System.Windows.Forms.Timer\` is a relatively obvious choice for user interface programming with Windows Forms. The only caution is that a long-running operation on the user interface thread may delay the arrival of a timer’s expiration. Choosing between the other two options is less obvious, and generally, the difference between the two is insignificant. If hosting within an `IContainer` is necessary, \`System.Timers.Timer\` is the right choice. However, if no specific \`System.Timers.Timer\` feature is required, choose \`System.Threading.Timer\` by default, simply because it is a slightly lighter-weight implementation.
 
-Listing D.1 and Listing D.2 provide sample code for using \`System .Timers.Timer\` and \`System.Threading.Timer\`, respectively. Their code is very similar, including the fact that both support instantiation within a using statement because both support \`IDispose\`. The output for both listings is identical, and it appears in Output D.1. The purpose of each is to display a timestamp in association with a counting value indicating the number of times the timer fired. Once complete, the output verifies that the timer thread is not the same as the Main thread along with the final value of the count.
+Listing D.1 and Listing D.2 provide sample code for using \`System.Timers.Timer\` and \`System.Threading.Timer\`, respectively. Their code is very similar, including the fact that both support instantiation within a using statement because both support \`IDispose\`. The output for both listings is identical, and it appears in Output D.1. The purpose of each is to display a timestamp in association with a counting value indicating the number of times the timer fired. Once complete, the output verifies that the timer thread is not the same as the Main thread along with the final value of the count.
 
 ### Listing D.1: Using \`System.Timers.Timer\`
 
-```
+```csharp
 using System;
-
 using System.Timers;
-
 using System.Threading;
-
 // Because Timer exists in both the System.Timers and
-
 // System.Threading namespaces, you disambiguate "Timer"
-
 // using an alias directive.
-
 using Timer = System.Timers.Timer;
-
 class UsingSystemTimersTimer
-
 {
-
-    private static int \_Count=0;
-
-    private static readonly ManualResetEvent \_ResetEvent =
-
+    private static int _Count=0;
+    private static readonly ManualResetEvent _ResetEvent =
        new ManualResetEvent(false);
-
-    private static int \_AlarmThreadId;
-
+    private static int _AlarmThreadId;
     public static void Main()
-
     {
-
         using( Timer timer = new Timer() )
-
         {
-
             // Initialize Timer
-
             timer.AutoReset = true;
-
             timer.Interval = 1000;
-
             timer.Elapsed +=
-
                 new ElapsedEventHandler(Alarm);
-
             timer.Start();
-
             // Wait for Alarm to fire for the 10th time.
-
-            \_ResetEvent.WaitOne();
-
+            _ResetEvent.WaitOne();
          }
-
         // Verify that the thread executing the alarm
-
         // Is different from the thread executing Main
-
-        if(\_AlarmThreadId ==
-
+        if(_AlarmThreadId ==
             Thread.CurrentThread.ManagedThreadId)
-
         {
-
             throw new ApplicationException(
-
                 "Thread Ids are the same.");
-
         }
-
-        if(\_Count < 9)
-
+        if(_Count < 9)
         {
-
             throw new ApplicationException(
-
-                " \_Count < 9");
-
+                " _Count < 9");
         };
-
         Console.WriteLine(
-
         Console.WriteLine(
-
-            "Final Count = {0}", \_Count);
-
+            "Final Count = {0}", _Count);
     }
-
     static void Alarm(
-
         object sender, ElapsedEventArgs eventArgs)
-
     {
-
-        \_Count++;
-
+        _Count++;
         Console.WriteLine("{0}:- {1}",
-
             eventArgs.SignalTime.ToString("T"),
-
-            \_Count);
-
-        if (\_Count >= 9)
-
+            _Count);
+        if (_Count >= 9)
         {
-
-            \_AlarmThreadId =
-
+            _AlarmThreadId =
                 Thread.CurrentThread.ManagedThreadId;
-
-            \_ResetEvent.Set();
-
+            _ResetEvent.Set();
         }
-
     }
-
 }
 ```
 
@@ -153,107 +96,50 @@ One noteworthy characteristic of \`System.Threading.Timer\` is that it takes the
 
 ### Listing D.2: Using `System.Threading.Timer`
 
-```
+```csharp
 using System;
-
 using System.Threading;
-
-class UsingSystemThreadingTimer
-
-{
-
-private static int \_Count=0;
-
-private static readonly AutoResetEvent \_ResetEvent =
-
-new AutoResetEvent(false);
-
-private static int \_AlarmThreadId;
-
-public static void Main()
-
-{
-
-// Timer(callback, state, dueTime, period)
-
-using( Timer timer =
-
-new Timer(Alarm, null, 0, 1000) )
-
-{
-
-// Wait for Alarm to fire for the 10th time.
-
-\_ResetEvent.WaitOne();
-
-}
-
-// Verify that the thread executing the alarm
-
-// Is different from the thread executing Main
-
-if(\_AlarmThreadId ==
-
-Thread.CurrentThread.ManagedThreadId)
-
-{
-
-throw new ApplicationException(
-
-"Thread Ids are the same.");
-
-}
-
-if(\_Count < 9)
-
-{
-
-throw new ApplicationException(
-
-" \_Count < 9");
-
-};
-
-Console.WriteLine(
-
-"(Alarm Thread Id) {0} != {1} (Main Thread Id)",
-
-\_AlarmThreadId,
-
-Thread.CurrentThread.ManagedThreadId);
-
-Console.WriteLine(
-
-"Final Count = {0}", \_Count);
-
-}
-
-static void Alarm(object state)
-
-{
-
-\_Count++;
-
-Console.WriteLine("{0}:- {1}",
-
-DateTime.Now.ToString("T"),
-
-\_Count);
-
-if (\_Count >= 9)
-
-{
-
-\_AlarmThreadId =
-
-Thread.CurrentThread.ManagedThreadId;
-
-\_ResetEvent.Set();
-
-}
-
-}
-
+class UsingSystemThreadingTimer {
+  private static int _Count = 0;
+  private static readonly AutoResetEvent _ResetEvent =
+    new AutoResetEvent(false);
+  private static int _AlarmThreadId;
+  public static void Main() {
+    // Timer(callback, state, dueTime, period)
+    using(Timer timer =
+      new Timer(Alarm, null, 0, 1000)) {
+      // Wait for Alarm to fire for the 10th time.
+      _ResetEvent.WaitOne();
+    }
+    // Verify that the thread executing the alarm
+    // Is different from the thread executing Main
+    if (_AlarmThreadId ==
+      Thread.CurrentThread.ManagedThreadId) {
+      throw new ApplicationException(
+        "Thread Ids are the same.");
+    }
+    if (_Count < 9) {
+      throw new ApplicationException(
+        " _Count < 9");
+    };
+    Console.WriteLine(
+      "(Alarm Thread Id) {0} != {1} (Main Thread Id)",
+      _AlarmThreadId,
+      Thread.CurrentThread.ManagedThreadId);
+    Console.WriteLine(
+      "Final Count = {0}", _Count);
+  }
+  static void Alarm(object state) {
+    _Count++;
+    Console.WriteLine("{0}:- {1}",
+      DateTime.Now.ToString("T"),
+      _Count);
+    if (_Count >= 9) {
+      _AlarmThreadId =
+        Thread.CurrentThread.ManagedThreadId;
+      _ResetEvent.Set();
+    }
+  }
 }
 ```
 
@@ -261,25 +147,15 @@ Thread.CurrentThread.ManagedThreadId;
 
 ```
 12:19:36 AM:- 1
-
 12:19:37 AM:- 2
-
 12:19:38 AM:- 3
-
 12:19:39 AM:- 4
-
 12:19:40 AM:- 5
-
 12:19:41 AM:- 6
-
 12:19:42 AM:- 7
-
 12:19:43 AM:- 8
-
 12:19:44 AM:- 9
-
 (Alarm Thread Id) 4 != 1 (Main Thread Id)
-
 Final Count = 9
 ```
 
@@ -289,4 +165,4 @@ You can change the interval or time due after instantiation on `System.Threading
 
 Leave your comments and questions below! Watch this [video](/video-essential-c-sharp-9/) to learn about the newest features of C#.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.png)

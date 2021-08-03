@@ -20,7 +20,7 @@ How volatile a feature is has a drastic impact on automation. If a feature has n
 
 Another way to minimize rework is to use good coding and testing practices. This can help handle unforeseen feature volatility and will help reduce the need to babysit existing tests. As an example, separating your control searching logic from the actual test allows the two components to be swapped out independently as needed.
 
-```
+```csharp
 TestCase1()
 {
    LaunchApplication();
@@ -41,14 +41,14 @@ This way, if the username textbox changes, you only have to change the Login met
 
 A pragmatic approach to automated testing can ensure longevity and continual improvement of the tests. There are circumstances where creating an automated test is a poor investment. Budgets, timelines, competing resources, uncommon implementations, and code written outside the team all have an affect on if or how much to automate. I see this most often with solutions that involve off-the-shelf implementations and vendors, where the development team might not have access to adding IDs to controls, and the control hierarchy is abstracted away behind some interface or go-between. In these cases, the amount of automation may need to be stripped down to bare-minimum, high-priority flows. Imagine a website login screen, where you want to automate clicking the "Login" button. It's the difference between the (pseudo) code:
 
-```
+```csharp
 //Find the Login button
 FindById("btn-login");
 ```
 
 And:
 
-```
+```csharp
 //Save off the buttons’ parent container, because it is also used for the cancel button
 var loginParent = FindByType("LoginModule");
 //Find the button containers

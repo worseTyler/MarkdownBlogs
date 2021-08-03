@@ -26,4 +26,4 @@ We want to be the Brunelleschis of today, innovating and improving. That’s why
 
 _Written by Rachael Gartman._
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [ "Innovation Through the Ages"
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T "Innovation Through the Ages")

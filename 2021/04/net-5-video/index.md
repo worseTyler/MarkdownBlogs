@@ -4,7 +4,7 @@
 
 For the past several years, Microsoft has invested heavily in .NET Core, their open-source, cross-platform development solution. As a result, those working with the original .NET Framework have been receiving fewer updates. While .NET Core and .NET Framework are language compatible, there have been significant gaps in Core’s feature set. With .NET 5, Microsoft unified these frameworks and charted a clear path ahead for developers.
 
- ".NET 5 VIDEO: A New Era in .NET"
+![Graphic showing the evolution of Microsoft's various .NET frameworks, including .NET 5.](https://intellitect.com/wp-content/uploads/2021/04/dotnet5.png ".NET 5 VIDEO: A New Era in .NET")
 
 This diagram shows how .NET Framework, .NET Standard, C#, and .NET Core align and how .NET Core has evolved through three versions to .NET 5 and beyond. During this time, .NET Standard provided a compatibility layer between .NET Framework and .NET Core. Note that .NET 4 was skipped to avoid confusion with the current .NET Framework 4.x versions.
 
@@ -16,7 +16,7 @@ This diagram shows how .NET Framework, .NET Standard, C#, and .NET Core align an
 
 With the release of .NET 5, [Microsoft has dropped the Core moniker and has clearly defined the path ahead for various applications](https://docs.microsoft.com/en-us/dotnet/core/dotnet-five#net-50-doesnt-replace-net-standard). Additionally, .NET 5 will support most full framework and .NET Core application types, also called workloads. While not all project types are cross-platform like WinForms, many other project types are now available.
 
-https://youtu.be/jELkzoS\_TT0
+https://youtu.be/jELkzoS_TT0
 
 .NET 5 has a shorter support lifecycle than other versions of .NET. Some versions, such as .NET 6, will be marked as Long-Term Support (LTS) and have support for three years after release. The quality of all releases is equal, but only even-numbered versions will have LTS.
 
@@ -45,4 +45,4 @@ If you are in an unsupported case like Web Forms, you have two options. One, mig
 
 If you have been waiting to migrate to .NET 5, the time is now! Check out [Mark Michaelis’ article on reasons to migrate to ASP.NET Core.](/intellitect-today-migrate-asp-net-core/)
 
-[ ".NET 5 VIDEO: A New Era in .NET"
+[![](https://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.png)](/join-our-team/ ".NET 5 VIDEO: A New Era in .NET")

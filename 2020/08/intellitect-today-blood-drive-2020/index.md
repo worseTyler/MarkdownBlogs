@@ -12,7 +12,7 @@ Their passion to “prevent and alleviate human suffering wherever it may be fou
 
 Our goal is to find thirty-seven people to join us, and you can be one of them. Meeting our blood drive goal is vital because it helps ensure hospitals can meet patient needs. Patients are counting on us now more than ever.
 
-[ "IntelliTect Today: Help Save Lives with Our Blood Drive"
+[![Sign up for IntelliTect's Blood Drive](https://intellitect.com/wp-content/uploads/2020/08/TWITTER_OPTION-2_259601_BPLPortal_Graphics_912x512-AR2.png)](https://www.redcrossblood.org/give.html/drive-results?zipSponsor=IntelliTect "IntelliTect Today: Help Save Lives with Our Blood Drive")
 
 As a bonus, you will be tested for COVID antibodies and get a five dollar Amazon gift card!
 
@@ -28,7 +28,7 @@ Stephanie is leading this initiative in honor of her dad, Howard Riebe. On a reg
 
 Howard keeps seeing commercials talking about the high demand and need for donations. He was a donor for almost thirty years and had received a “ten gallon T-shirt” long before he had to stop donating. Howard refused to accept that he was no longer eligible to give, so Stephanie told her dad that she’d try to get a person or two to donate.
 
- "IntelliTect Today: Help Save Lives with Our Blood Drive"
+![Being a blood donor has always been a passion for Howard.](https://intellitect.com/wp-content/uploads/2020/08/Steph-and-dad-1024x855.jpg "IntelliTect Today: Help Save Lives with Our Blood Drive")
 
 Stephanie and her dad hug just before quarantine goes into effect at his retirement home in March, 2020.
 
@@ -58,4 +58,4 @@ We’re encouraging the few employees that work at the office to stay at home du
 
 You can still [sign up](https://www.redcrossblood.org/give.html/drive-results?zipSponsor=IntelliTect) and snag one of our remaining sixteen spots. Please consider helping us make a difference in Spokane, Washington. 
 
-[ "IntelliTect Today: Help Save Lives with Our Blood Drive"
+[![click here to sign up for Intellovations, our quarterly newsletter so you never miss out!](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-1024x235.jpg)](https://bit.ly/2Nhro9T "IntelliTect Today: Help Save Lives with Our Blood Drive")

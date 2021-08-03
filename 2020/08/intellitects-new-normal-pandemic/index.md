@@ -8,7 +8,7 @@ This response to the pandemic takes on several forms for us.
 
 While most of our team continues to work from home, we’ve begun construction in the basement of IntelliTect. Once everyone returns to the office, we’ll be beyond capacity, so this work-from-home season seems the most appropriate time.
 
- "IntelliTect's New Normal During the Pandemic"
+![Remodeling the basement during the pandemic](https://intellitect.com/wp-content/uploads/2020/08/window-work-scaled.jpg "IntelliTect's New Normal During the Pandemic")
 
 Contractors Mike (left) and Robert (right) cut into layers of brick to help bring some light into the basement.
 
@@ -28,7 +28,7 @@ While we miss our ‘hallway conversations,’ our team is finding ways to foste
 
 At IntelliTect, I have been impressed with how well our team is working via Microsoft Teams and Zoom. It goes to show we’re adaptable.
 
- "IntelliTect's New Normal During the Pandemic"
+![team meeting during COVID-19](https://intellitect.com/wp-content/uploads/2020/08/Pizza-party.jpg "IntelliTect's New Normal During the Pandemic")
 
 Senior Software Engineer, John Leach, cooks pizza for our first ever socially-distanced pizza lunch.
 
@@ -46,7 +46,7 @@ In Spokane, multiple organizations have found ways to stay connected.
 
 #### Spokane Hoopfest
 
- "IntelliTect's New Normal During the Pandemic"
+![Hoopfest pandemic](https://intellitect.com/wp-content/uploads/2020/08/stephanie-hoopfest-1024x683.jpg "IntelliTect's New Normal During the Pandemic")
 
 Our office manager, Stephanie Perko, smiles with her Hoopfest team, 2legit2quit.
 
@@ -54,7 +54,7 @@ Our office manager, Stephanie Perko, smiles with her Hoopfest team, 2legit2quit.
 
 #### Bloomsday
 
- "IntelliTect's New Normal During the Pandemic"
+![Running Bloomsday](https://intellitect.com/wp-content/uploads/2020/08/chris-bloomsday-1024x735.jpg "IntelliTect's New Normal During the Pandemic")
 
 One of our architects, Chris Finlayson, is getting ready to run Bloomsday with a couple of block-heads.
 
@@ -62,7 +62,7 @@ One of our architects, Chris Finlayson, is getting ready to run Bloomsday with a
 
 #### Spokane Civic Theatre
 
- "IntelliTect's New Normal During the Pandemic"
+![Spokane Civic Theatre artwork](https://intellitect.com/wp-content/uploads/2020/08/Zac-and-season-art.jpg "IntelliTect's New Normal During the Pandemic")
 
 Zac Jones, our Senior UI Architect, stands in front of some of the Civic's season art that he designed for the 2016-2017 season.
 
@@ -78,4 +78,4 @@ Alas, this is going to be the new norm for a while.  Even so, I’m thankful to
 
 \- Mark Michaelis, President and CEO, IntelliTect
 
- "IntelliTect's New Normal During the Pandemic"
+![click here to sign up for Intellovations, our quarterly newsletter so you never miss out!](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-1024x235.jpg "IntelliTect's New Normal During the Pandemic")

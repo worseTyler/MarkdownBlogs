@@ -30,7 +30,7 @@ See [Acquire a PAT](https://docs.microsoft.com/en-us/azure/devops/extend/publish
 
 The command line Publish task will run through a Visual Studio Marketplace Service Connection as well as utilize the PAT to do the verification as mentioned in **Step 3**. For help setting up a Visual Studio Marketplace Service Connection, see this [Create a Service Connection](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml) Microsoft Doc.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2020/07/required-Marketplace-service-connection-942x1024.webp)
+![](https://intellitect.com/wp-content/uploads/2020/07/required-Marketplace-service-connection-942x1024.jpg)
 
 ### Step 5: Install Azure DevOps Extension Tasks  
 
@@ -42,11 +42,11 @@ Now we can finally add the task, called PublishVisualStudioExtension@3 to the pi
 
 Once you have the above extension installed, edit the YAML of your pipeline. Then, add the Publish Visual Studio Extension via the available task templates in the DevOps YAML editor.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2020/07/task.webp)
+![](https://intellitect.com/wp-content/uploads/2020/07/task.jpg)
 
 Select the Marketplace connection added in **Step 4**.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2020/07/configureVisualStudioPublishtask.webp)
+![](https://intellitect.com/wp-content/uploads/2020/07/configureVisualStudioPublishtask.jpg)
 
 The VSIX File and Manifest File fields need to be paths. The default DevOps variable $(Build.SourcesDirectory) refers to the root of your checked-out repo on the machine. It can be used to build a path to the default bin/release folder of the build task. Likewise, you can use the variable as part of the paths to your manifest as well as the VSIX extension that was made in the build task. See the below example code.
 
@@ -66,11 +66,11 @@ The screenshot below shows the final configuration of the Publish Visual Studio 
 
 Note the use of the default DevOps variable $(Build.SourcesDirectory) to get at the bin\\release folder where the VSIX extension is placed by default (along with the `publishManifest` file from **Step 2**).
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2020/07/publishTask-1-1024x472.webp)
+![](https://intellitect.com/wp-content/uploads/2020/07/publishTask-1-1024x472.jpg)
 
 The final YAML task:
 
-```
+```yaml
 variables:
 - name: builtVSIX
   value: '$(Build.SourcesDirectory)\\IntelliTect.Snippets\\bin\\Release\\IntelliTect.Snippets.vsix'
@@ -78,8 +78,8 @@ variables:
   value: '$(Build.SourcesDirectory)\\IntelliTect.Snippets\\bin\\Release\\publishManifest.json'
 ```
 
-```
-\- task: PublishVisualStudioExtension@3
+```yaml
+- task: PublishVisualStudioExtension@3
   inputs:
     connectedServiceName: 'VisualStudio marketplace Service connection'
     vsixFile: '$(builtVSIX)'
@@ -102,4 +102,4 @@ _Note: The extension example in this post is intended for basic code-snippet sha
 
 Check out Kevin Bost’s blog, _[How to Publish NuGets with Azure DevOps](https://intellitect.com/azure-devops-nugets/)_. Learn about the features DevOps Release pipelines have to offer.
 
-[ "6 Steps to Automate Publishing a VSIX Extension with DevOps"
+[![click here to sign up for Intellovations, our quarterly newsletter so you never miss out!](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-1024x235.jpg)](https://bit.ly/2Nhro9T "6 Steps to Automate Publishing a VSIX Extension with DevOps")

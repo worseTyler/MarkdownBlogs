@@ -2,7 +2,7 @@
 
 ## 
 
- "Effortlessly Scaffold Your App with Docker - Part 1"
+![Effortlessly Scaffold Your App With Docker Part one graphic](https://intellitect.com/wp-content/uploads/2019/03/Scaffold-your-App-wDocker_pt1-e1551822522344-1024x761.png "Effortlessly Scaffold Your App with Docker - Part 1")
 
 Dockerize your next ASP.NET Core, Postgres and Angular app to easily get up and running.
 
@@ -41,8 +41,8 @@ Start the timer, and let's code!
 Pick a spot in your file system, and make the root project directory.
 
 ```
-mkdir gadget\_depot
-cd gadget\_depot
+mkdir gadget_depot
+cd gadget_depot
 ```
 
 It'll be nice to keep the server code and client code entirely separate. The backend will be _merely_ an API service. No C# code will be responsible for presentation. All the UI code will be in its own module, set up to consume our API.
@@ -50,22 +50,22 @@ It'll be nice to keep the server code and client code entirely separate. The bac
 To indicate the independence of the frontend and backend, make two sub-directories in the root of the project.
 
 ```
-\# at the project root
+# at the project root
 mkdir Frontend
 mkdir Backend
 ```
 
-Now we need to scaffold out the boilerplate code for both of our projects. Nothing stops us from writing it all by hand, following the [completed code](https://github.com/the-fool/dotnet-postgres-docker) as a guide. However, Microsoft and Angular each provide tools for generating starter-templates. We'll use those tools ([.NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/) and \[[Angular CLI](https://cli.angular.io/)) to save us some time and tedium.
+Now we need to scaffold out the boilerplate code for both of our projects. Nothing stops us from writing it all by hand, following the [completed code](https://github.com/the-fool/dotnet-postgres-docker) as a guide. However, Microsoft and Angular each provide tools for generating starter-templates. We'll use those tools ([.NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/) and [[Angular CLI](https://cli.angular.io/)) to save us some time and tedium.
 
 ### **Scaffold .NET Core backend**
 
 Let's scaffold the backend first, using the `dotnet` program.
 
 ```
-\# at the project root
+# at the project root
 cd Backend
 # create a new solution
-docker run -v $(pwd):/app -w /app microsoft/dotnet dotnet new sln -n gadget\_depot
+docker run -v $(pwd):/app -w /app microsoft/dotnet dotnet new sln -n gadget_depot
 # create the webapi project
 mkdir GadgetDepot
 docker run -v $(pwd):/app -w /app microsoft/dotnet dotnet new webapi -o GadgetDepot
@@ -107,7 +107,7 @@ No surprise: We can also leverage Docker for creating our Angular app!
 Go back to the root of our project, and on into the frontend directory.
 
 ```
-\# go back to root from within Backend
+# go back to root from within Backend
 cd ..
 cd Frontend
 ```
@@ -131,11 +131,11 @@ _We're moving fast. If you haven't seen Docker-Compose, or Docker, there are a p
 In the root of the project, create a file `docker-compose.yml`.
 
 ```
-\# /docker-compose.yml
+# /docker-compose.yml
 version: "3"
 
 volumes:
-  local\_postgres\_data: {}
+  local_postgres_data: {}
 
 services:
   web:
@@ -147,16 +147,16 @@ services:
       - ./backend:/app
       - /app/GadgetDepot/bin
       - /app/GadgetDepot/obj
-    depends\_on:
+    depends_on:
       - db
 
   db:
     image: postgres:11.1
     environment:
-      POSTGRES\_PASSWORD: postgres
-      POSTGRES\_USERNAME: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USERNAME: postgres
     volumes:
-      - local\_postgres\_data:/var/lib/postgresql/data
+      - local_postgres_data:/var/lib/postgresql/data
 
   client:
     build: ./Frontend
@@ -179,7 +179,7 @@ Notice that `web` and `client` services specify a `build` property. This propert
 **For the backend:**
 
 ```
-\# ./Backend/Dockerfile
+# ./Backend/Dockerfile
 FROM microsoft/dotnet:latest
 
 COPY ./entrypoint.sh /
@@ -194,7 +194,7 @@ CMD /entrypoint.sh
 **For the frontend:**
 
 ```
-\# ./Frontend/Dockerfile
+# ./Frontend/Dockerfile
 FROM node:latest
 
 COPY ./entrypoint.sh /
@@ -219,11 +219,11 @@ For `./Backend/entrypoint.sh`
 set -e
 dotnet restore
 # test the DB connection
-until dotnet ef -s GadgetDepot -p GadgetDepot database update; do
->&2 echo "DB is starting up"
+until dotnet ef -s GadgetDepot -p GadgetDepot database update; do 
+&2 echo "DB is starting up"
 sleep 1
 done
->&2 echo "DB is up - executing command"
+&2 echo "DB is up - executing command"
 dotnet watch -p GadgetDepot run
 ```
 
@@ -243,7 +243,7 @@ Easy as pie!
 Now, for the grand finale, we can boot up our whole, orchestrated app with a single command in the root directory:
 
 ```
-\# in project root
+# in project root
 docker-compose up
 ```
 

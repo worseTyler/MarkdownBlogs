@@ -1,6 +1,6 @@
 
 
- "POSTPONED: You're Invited to Our Open House"
+![Come to our open house on Friday March 27th from 11:30am to 1:30 pm at 1720 W. 4th Ave in Spokane](https://intellitect.com/wp-content/uploads/2020/02/Open-House-wide-date-1024x307.jpg "POSTPONED: You're Invited to Our Open House")
 
 **\*\*\* Due to new government mandates and considering the safety of our team and our guests, we are postponing our celebration until it is safe to gather together.**
 

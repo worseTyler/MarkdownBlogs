@@ -2,7 +2,7 @@
 
 As developers, our "cheese" is constantly moving. Everything is expanding outward, and we must continually study and dissect subjects like .NET Core 3 and C# 8.0, so we aren't left behind.
 
- "The Evolutionary Changes of .NET Core 3 (Video)"
+![Picture of an Atari 800](https://intellitect.com/wp-content/uploads/2019/11/Atari-800.png "The Evolutionary Changes of .NET Core 3 (Video)")
 
 I discovered my love for writing software on an Atari 800 computer. At the time, the entire system was knowable. I thought that if I studied long enough then I'd know everything I needed to know.
 
@@ -36,7 +36,7 @@ Here are some highlights of what we're going to cover:
 
 It comes in two flavors - your Core Runtime and your SDK.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/11/Versioning.webp)
+![](https://intellitect.com/wp-content/uploads/2019/11/Versioning.png)
 
 **Major**: Significant changes occur to the product or a new product direction. Breaking changes were taken.
 

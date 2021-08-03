@@ -20,7 +20,7 @@ To begin, this post assumes that you have already set up [a project with MDIX](h
 
 We will start with a very simple example.
 
-```
+```csharp
 <Window x:Class="DialogHost.SimpleBlog.MainWindow"
        xmlns="https://schemas.microsoft.com/winfx/2006/xaml/presentation"
        xmlns:x="https://schemas.microsoft.com/winfx/2006/xaml"
@@ -49,7 +49,7 @@ We will start with a very simple example.
 
 Running application then looks like this:
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2018/08/image3.webp)
+![](https://intellitect.com/wp-content/uploads/2018/08/image3.png)
 
 Figure 1: Simple dialog host application.
 
@@ -57,7 +57,7 @@ The DialogHost consists of three individual UI components: the host control, the
 
 MaterialDesignEmbeddedDialogHost is [new in version 2.5.0](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit/pull/760) which is currently in beta.
 
- "Material Design in XAML - How to Make Sense of the DialogHost"
+![Figure 2: The layers of a DialogHost. 1. The host control wrapping the rest of the content. 2. The overlay. 3. The dialog content.](https://intellitect.com/wp-content/uploads/2018/08/image2.png "Material Design in XAML - How to Make Sense of the DialogHost")
 
 Figure 2: The layers of a DialogHost. 1. The host control wrapping the rest of the content. 2. The overlay. 3. The dialog content.
 
@@ -69,13 +69,13 @@ The DialogHost works well with applications using both MVVM and code-behind arch
 
 The DialogHost provides two [RoutedCommands](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/commanding-overview#creating-custom-commands) for showing and hiding dialogs; OpenDialogCommand and CloseDialogCommand, respectively. This is the simplest pure XAML option as it simply walks up the element tree until it encounters a DialogHost control. Set this as the Command property, and it will show the dialog.
 
-```
+```csharp
 <Button Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" … />
 ```
 
 Also, if you want to close a dialog, you can use the CloseDialogCommand.
 
-```
+```csharp
 <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" … />
 ```
 
@@ -83,7 +83,7 @@ Also, if you want to close a dialog, you can use the CloseDialogCommand.
 
 For simple programmatic control over the state of the dialog, the DialogHost provides an IsOpen property. Toggling the state of this property causes the dialog to show or hide. The IsOpen property can also pair with [data binding](https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/data-binding-wpf), making it easy to use in MVVM architecture.
 
-```
+```csharp
 <materialDesign:DialogHost IsOpen="{Binding IsDialogOpen}">
    <materialDesign:DialogHost.DialogContent>
        <TextBlock Text="A simple dialog" Margin="20"/>
@@ -93,14 +93,14 @@ For simple programmatic control over the state of the dialog, the DialogHost pro
 </materialDesign:DialogHost>
 ```
 
-```
+```csharp
 public class MainWindowViewModel : ViewModelBase
 {
-   private bool \_IsDialogOpen;
+   private bool _IsDialogOpen;
    public bool IsDialogOpen
    {
-       get => \_IsDialogOpen;
-       set => Set(ref \_IsDialogOpen, value);
+       get => _IsDialogOpen;
+       set => Set(ref _IsDialogOpen, value);
    }
 
    public ICommand ShowDialogCommand { get; }
@@ -119,18 +119,18 @@ public class MainWindowViewModel : ViewModelBase
 
 Or, use code behind:
 
-```
+```csharp
 <materialDesign:DialogHost x:Name="DialogHost">
    <materialDesign:DialogHost.DialogContent>
        <TextBlock Text="A simple dialog" Margin="20"/>
    </materialDesign:DialogHost.DialogContent>
-   <Button Click="ShowDialog\_OnClick" Content="Show Dialog"
+   <Button Click="ShowDialog_OnClick" Content="Show Dialog"
        HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0"/>
 </materialDesign:DialogHost>
 ```
 
-```
-private void ShowDialog\_OnClick(object sender, RoutedEventArgs e)
+```csharp
+private void ShowDialog_OnClick(object sender, RoutedEventArgs e)
 {
    DialogHost.IsOpen = true;
 }
@@ -140,7 +140,7 @@ private void ShowDialog\_OnClick(object sender, RoutedEventArgs e)
 
 To make the dialog close automatically if the user clicks on the overlay, set the CloseOnClickAway property to “True”.
 
-```
+```csharp
 <materialDesign:DialogHost CloseOnClickAway="True">
 
    ...
@@ -152,7 +152,7 @@ To make the dialog close automatically if the user clicks on the overlay, set th
 
 For even more control over dialogs, there are several static Show methods on the DialogHost class. All of these methods return Tasks and should be used as async methods. The dialog’s content was specified in XAML and then shown or hidden in the previous examples. When using the Show method, you must pass the content for the dialog. This allows for creating dynamic dialogs.
 
-```
+```csharp
 var dialogContent = new TextBlock
 {
    Text = "Dynamic Dialog!",
@@ -161,13 +161,13 @@ var dialogContent = new TextBlock
 await MaterialDesignThemes.Wpf.DialogHost.Show(dialogContent);
 ```
 
- "Material Design in XAML - How to Make Sense of the DialogHost"
+![Figure 3: A dynamic dialog](https://intellitect.com/wp-content/uploads/2018/08/image5.png "Material Design in XAML - How to Make Sense of the DialogHost")
 
 Figure 3: A dynamic dialog
 
 This approach certainly works but requires creating the dialog UI in code. A better approach is to declare the dialog’s UI as a [DataTemplate](https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/data-templating-overview) and pass a data object as the dialog’s content.
 
-```
+```csharp
 <materialDesign:DialogHost CloseOnClickAway="True">
    <materialDesign:DialogHost.DialogContentTemplate>
        <DataTemplate DataType="local:Person">
@@ -180,7 +180,7 @@ This approach certainly works but requires creating the dialog UI in code. A bet
 </materialDesign:DialogHost>
 ```
 
-```
+```csharp
 var person = new Person
 {
    FirstName = "John",
@@ -189,13 +189,13 @@ var person = new Person
 await MaterialDesignThemes.Wpf.DialogHost.Show(person);
 ```
 
- "Material Design in XAML - How to Make Sense of the DialogHost"
+![Figure 4: A dialog created from a DataTemplate](https://intellitect.com/wp-content/uploads/2018/08/image1.png "Material Design in XAML - How to Make Sense of the DialogHost")
 
 Figure 4: A dialog created from a DataTemplate
 
 The Show method also includes overloads with callback [delegates](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/) invoked when the dialog is opened or closed. You can also register for the DialogOpened and DialogClosed events directly on the DialogHost. The event arguments for these callbacks contain a DialogSession object. This session object can update the content of a dialog that has already been shown or close a visible dialog.
 
-```
+```csharp
 await MaterialDesignThemes.Wpf.DialogHost.Show(person,
    new DialogOpenedEventHandler((object sender, DialogOpenedEventArgs args) =>
    {
@@ -211,13 +211,13 @@ await MaterialDesignThemes.Wpf.DialogHost.Show(person,
 
 Finally, there are additional overloads for passing a dialog identifier. If there is only a single DialogHost instance, the Show method will automatically use it. However, in cases with more than one DialogHost instance, you must specify a dialog identifier. This unique id identifies which DialogHost control to use.
 
-```
+```csharp
 <materialDesign:DialogHost Identifier="MyDialogHost">
 ...
 </materialDesign:DialogHost>
 ```
 
-```
+```csharp
 await MaterialDesignThemes.Wpf.DialogHost.Show(person, "MyDialogHost");
 ```
 
@@ -225,7 +225,7 @@ await MaterialDesignThemes.Wpf.DialogHost.Show(person, "MyDialogHost");
 
 Dialogs shown with the static Show method can also return result values. These result values can be objects that you want.
 
-```
+```csharp
 object result = await MaterialDesignThemes.Wpf.DialogHost.Show(...);
 //Handle the result
 ```
@@ -250,4 +250,4 @@ At time of writing, the current release of Material Design in XAML is version 2.
 
 Check out my other blog on [XAML](https://intellitect.com/getting-started-material-design-in-xaml/) and make sure to leave any questions in the comments below!
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.png)

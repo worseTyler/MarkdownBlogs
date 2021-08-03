@@ -1,6 +1,6 @@
 
 
-## ![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/05/Scrum-master-checkin-1024x768.webp)
+## ![](https://intellitect.com/wp-content/uploads/2019/05/Scrum-master-checkin-1024x768.jpg)
 
 ## Simple tricks to improve the Sprint retrospective.
 

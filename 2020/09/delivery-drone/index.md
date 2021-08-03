@@ -8,7 +8,7 @@ A few years ago, I saw an article about [Zipline](https://flyzipline.com/), a me
 
 #### Creating a Delivery Drone
 
- "VPNs, Cliff Bars, and a Delivery Drone"
+![Launching the Drone](https://intellitect.com/wp-content/uploads/2020/09/Austen-Drone.jpg "VPNs Cliff Bars and a Delivery Drone")
 
 Preparing to launch the drone for a test flight.
 
@@ -38,7 +38,7 @@ I entered the rabbit hole of network address translation (NAT) but found a relat
 
 ZeroTier One is a service that allows for the creation of a virtual private network (VPN) across most types of NATs. It uses an IPv4 network behavior hack called UDP hole punching. Feel free to read about that [elsewhere](https://www.zerotier.com/2014/08/25/the-state-of-nat-traversal/), in more detail and accuracy, but here’s how I utilized ZeroTier One for my situation.
 
- "VPNs, Cliff Bars, and a Delivery Drone"
+![Prepping for launch](https://intellitect.com/wp-content/uploads/2020/09/Controls-1-1024x827.jpg "VPNs Cliff Bars and a Delivery Drone")
 
 Preparing my drone and control system for preflight checks.
 
@@ -62,7 +62,7 @@ Moments later, it promptly hurled into the ground.
 
 In fact, I crashed the plane twice over the next few months (ordering replacement parts then repairing it in between tests).
 
- "VPNs, Cliff Bars, and a Delivery Drone"
+![Plane and rockets](https://intellitect.com/wp-content/uploads/2020/09/Drone-Flying-1024x576.jpg "VPNs Cliff Bars and a Delivery Drone")
 
 Celebrating Fourth of July with some Estes model rocket "missiles"!
 

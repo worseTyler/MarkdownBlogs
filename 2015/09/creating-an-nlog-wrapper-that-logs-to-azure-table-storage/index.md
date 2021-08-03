@@ -8,7 +8,7 @@ As you will see, our logging class is going to be very simple. Note that for sim
 
 Note that in both of these cases, we can’t use a variable length params argument, because of the requirement that the CallerMemberName, CallerFilePath, and CallerLineNumber must be optional.
 
-```
+```csharp
 using System;
 using NLog;
 using NLog.Config;
@@ -16,13 +16,13 @@ namespace Intellitect.Logging
 {
    public static class Logger
    {
-      private static readonly NLog.Logger \_Logger = LogManager.GetCurrentClassLogger();
+      private static readonly NLog.Logger _Logger = LogManager.GetCurrentClassLogger();
       private static string GetCallerInfoString(string memberName, string sourceFilePath, int sourceLineNumber)
       {
          return string.Format("{0}({1}):{2}", sourceFilePath, sourceLineNumber, memberName);
       }
       /\*
-      Note that we cant use params string\[\] args here because the memberName, sourceFilePath, and sourceLineNumber
+      Note that we cant use params string[] args here because the memberName, sourceFilePath, and sourceLineNumber
       \* arguments MUST be optional in order to get file, member, and line number information.
       \*/
       public static void Trace(
@@ -31,12 +31,12 @@ namespace Intellitect.Logging
             object object2 = null,
             object object3 = null,
             object object4 = null,
-            \[System.Runtime.CompilerServices.CallerMemberName\] string memberName = "",
-            \[System.Runtime.CompilerServices.CallerFilePath\] string sourceFilePath = "",
-            \[System.Runtime.CompilerServices.CallerLineNumber\] int sourceLineNumber = 0)
+            [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
+            [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
+            [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
       {
          var messageString = string.Format(message, object1, object2, object3, object4);
-         \_Logger.Trace(string.Format("{0}:{1}", GetCallerInfoString(memberName, sourceFilePath, sourceLineNumber), messageString));
+         _Logger.Trace(string.Format("{0}:{1}", GetCallerInfoString(memberName, sourceFilePath, sourceLineNumber), messageString));
          System.Diagnostics.Trace.WriteLine(messageString);
       }
 
@@ -47,12 +47,12 @@ namespace Intellitect.Logging
             object object2 = null,
             object object3 = null,
             object object4 = null,
-            \[System.Runtime.CompilerServices.CallerMemberName\] string memberName = "",
-            \[System.Runtime.CompilerServices.CallerFilePath\] string sourceFilePath = "",
-            \[System.Runtime.CompilerServices.CallerLineNumber\] int sourceLineNumber = 0)
+            [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
+            [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
+            [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
       {
          var messageString = string.Format(message, object1, object2, object3, object4);
-         \_Logger.Error(exception, string.Format("{0}:{1}", GetCallerInfoString(memberName, sourceFilePath, sourceLineNumber), messageString));
+         _Logger.Error(exception, string.Format("{0}:{1}", GetCallerInfoString(memberName, sourceFilePath, sourceLineNumber), messageString));
          System.Diagnostics.Trace.WriteLine(messageString);
       }
    }
@@ -67,7 +67,7 @@ Now that we’ve essentially built the logger, let’s take a look at how we can
 
 In the project you are using the logger from, open app.confg (web.config if it’s a web project), and add the following, putting in the values for your storage account that you get from the Azure dashboard.
 
-```
+```csharp
 <appSettings>
     <add key="AzureStorageConnectionString" 
          value="DefaultEndpointsProtocol=https;AccountName=AccountNameFromAzureDashboard;AccountKey=AccountKeyFromAzureDashboard" />
@@ -82,7 +82,7 @@ From Visual Studio, select Tools->NuGet package manager from the menu. From the 
 
 In the project you are using the logger from, create a file called NLog.config, with the following contents. Note that you may replace “TestLogs” and “SomeKey” with whatever values you’d like to use.
 
-```
+```csharp
 <?xml version="1.0" encoding="utf-8" ?>
 <nlog xmlns="https://www.nlog-project.org/schemas/NLog.xsd"
         xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"

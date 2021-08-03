@@ -15,20 +15,20 @@ We will start with an empty ASP.NET Core 3.1 web application template, use the V
 
 In a command window, start a new ASP.NET Core web app and move to that web app directory.
 
-```
+```csharp
 dotnet new web -o VueApp
 cd VueApp
 ```
 
 Use the Vue CLI to create the Client App.
 
-```
+```csharp
 vue create client-app
 ```
 
 Add the required NuGet packages and open up the project in VS code.
 
-```
+```csharp
 dotnet add package VueCliMiddleware
 dotnet add package Microsoft.AspNetCore.SpaServices.Extensions
 code .
@@ -38,7 +38,7 @@ Hot Modal Reloading (HMR) will not work in HTTPS with a self-signed certificate,
 
 Modify startup.cs to use the VueCliMiddleware.
 
-```
+```csharp
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices;
@@ -94,4 +94,4 @@ Now, you can enjoy the Vue.
 
 Check out [my blog](https://intellitect.com/vue-cli-net-core-3-1/) for the steps to connect .NET Core 2.1 SDK to Vue.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)

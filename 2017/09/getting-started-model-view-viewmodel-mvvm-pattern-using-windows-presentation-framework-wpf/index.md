@@ -38,14 +38,14 @@ The Binding engine is what makes the MVVM pattern possible. Bindings are declare
 
 #### Binding Example
 
-```
+```csharp
 public class ViewModel
 {
     public string FirstName { get; set; }
 }
 ```
 
-```
+```csharp
 <TextBlock Text="{Binding Path=FirstName}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 ```
 
@@ -53,7 +53,7 @@ The above code is the start of implementing the MVVM pattern. The Binding sets t
 
 In the Window’s constructor we will set its DataContext. If no DataContext is specified on a UI element, it will inherit the DataContext of its parent. So, setting the DataContext on the Window will effectively set it for every element within the Window.
 
-```
+```csharp
 public MainWindow()
 {
     var viewModel = new ViewModel();
@@ -68,7 +68,7 @@ Now, running the application, the TextBlock shows “Kevin”.
 
 One of the best things about Bindings is they keep the UI in sync with the data in the view model. Let’s go and update the FirstName property.
 
-```
+```csharp
 {
     var viewModel = new ViewModel();
     viewModel.FirstName = "Kevin";
@@ -84,7 +84,7 @@ If we run the application the TextBox will still show “Kevin”, not the updat
 
 We can implement it like this:
 
-```
+```csharp
 public class ViewModel : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
@@ -96,7 +96,7 @@ public class ViewModel : INotifyPropertyChanged
 
 Now in the Window’s constructor we notify the view that the property has changed.
 
-```
+```csharp
 public MainWindow()
 {
     var viewModel = new ViewModel();
@@ -114,12 +114,12 @@ Now the binding properly updates to show “Mark”.
 
 However, remembering to raise the event every time you change a property’s value can get very tedious. Because this pattern is so common, many MVVM frameworks provide a base class for your view model classes similar to the following:
 
-```
+```csharp
 public abstract class ViewModelBase : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
 
-    protected bool SetProperty<T>(ref T field, T newValue, \[CallerMemberName\]string propertyName = null)
+    protected bool SetProperty<T>(ref T field, T newValue, [CallerMemberName]string propertyName = null)
     {
         if(!EqualityComparer<T>.Default.Equals(field, newValue))
         {
@@ -134,14 +134,14 @@ public abstract class ViewModelBase : INotifyPropertyChanged
 
 This allows us to re-write our FirstName property like this:
 
-```
+```csharp
 public class ViewModel : ViewModelBase
 {
-    private string \_firstName;
+    private string _firstName;
     public string FirstName
     {
-        get => \_firstName;
-        set => SetProperty(ref \_firstName, value);
+        get => _firstName;
+        set => SetProperty(ref _firstName, value);
     }
 }
 ```
@@ -170,7 +170,7 @@ As seen in our very simple example, we change the value of the first name when a
 
 First, we need to add a command property in our view model:
 
-```
+```csharp
 public class ViewModel : ViewModelBase
 {
     public ICommand ChangeNameCommand { get; }
@@ -180,23 +180,23 @@ public class ViewModel : ViewModelBase
 
 Next, we will add a button to the MainWindow and use a Binding to set its Command property to be the command in our view model.
 
-```
+```csharp
 <Button Content="Change Name" Command="{Binding Path=ChangeNameCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
 ```
 
 Now we just need to assign a new command object to our ChangeNameCommand property in our view model. Unfortunately WPF does not come with a default ICommand implementation suitable for use in a view model, however the interface is simple enough to implement:
 
-```
+```csharp
 public class DelegateCommand : ICommand
 {
-    private readonly Action<object> \_executeAction;
+    private readonly Action<object> _executeAction;
 
     public DelegateCommand(Action<object> executeAction)
     {
-        \_executeAction = executeAction;
+        _executeAction = executeAction;
     }
 
-    public void Execute(object parameter) => \_executeAction(parameter);
+    public void Execute(object parameter) => _executeAction(parameter);
 
     public bool CanExecute(object parameter) => true;
 
@@ -208,17 +208,17 @@ For instance, in this implementation, an Action delegate is invoked when the com
 
 We can now finish the code in the view model.
 
-```
+```csharp
 public class ViewModel : ViewModelBase
 {
     ...
     
-    private readonly DelegateCommand \_changeNameCommand;
-    public ICommand ChangeNameCommand => \_changeNameCommand;
+    private readonly DelegateCommand _changeNameCommand;
+    public ICommand ChangeNameCommand => _changeNameCommand;
 
     public ViewModel()
     {
-        \_changeNameCommand = new DelegateCommand(OnChangeName);
+        _changeNameCommand = new DelegateCommand(OnChangeName);
     }
 
     private void OnChangeName(object commandParameter)
@@ -231,25 +231,25 @@ public class ViewModel : ViewModelBase
 
 Running our simple application we can see that clicking the button does change the name.
 
-![](https://intellitect.com/wp-content/uploads/2017/09/learn-mvvm-image2.webp)
+![](https://intellitect.com/wp-content/uploads/2017/09/learn-mvvm-image2.png)
 
 Next, let’s go back and implement the CanExecute portions of the ICommand interface.
 
-```
+```csharp
 public class DelegateCommand : ICommand
 {
-    private readonly Action<object> \_executeAction;
-    private readonly Func<object, bool> \_canExecuteAction;
+    private readonly Action<object> _executeAction;
+    private readonly Func<object, bool> _canExecuteAction;
 
     public DelegateCommand(Action<object> executeAction, Func<object, bool> canExecuteAction)
     {
-        \_executeAction = executeAction;
-        \_canExecuteAction = canExecuteAction;
+        _executeAction = executeAction;
+        _canExecuteAction = canExecuteAction;
     }
 
-    public void Execute(object parameter) => \_executeAction(parameter);
+    public void Execute(object parameter) => _executeAction(parameter);
 
-    public bool CanExecute(object parameter) => \_canExecuteAction?.Invoke(parameter) ?? true;
+    public bool CanExecute(object parameter) => _canExecuteAction?.Invoke(parameter) ?? true;
 
     public event EventHandler CanExecuteChanged;
 
@@ -261,16 +261,16 @@ Similar to the execute method, this command will also take in a CanExecute deleg
 
 Back in our view model we will make the following additions.
 
-```
+```csharp
 public ViewModel()
 {
-    \_changeNameCommand = new DelegateCommand(OnChangeName, CanChangeName);
+    _changeNameCommand = new DelegateCommand(OnChangeName, CanChangeName);
 }
 
 private void OnChangeName(object commandParameter)
 {
     FirstName = "Walter";
-    \_changeNameCommand.InvokeCanExecuteChanged();
+    _changeNameCommand.InvokeCanExecuteChanged();
 }
 
 private bool CanChangeName(object commandParameter)
@@ -284,7 +284,7 @@ CanChangeName is invoked to determine if the command can be executed. In this ca
 
 Running the application we can see that the button properly disables after the name changes.
 
-![](https://intellitect.com/wp-content/uploads/2017/09/learn-mvvm-image1.webp)
+![](https://intellitect.com/wp-content/uploads/2017/09/learn-mvvm-image1.png)
 
 #### Related concepts for further reading
 
@@ -300,4 +300,4 @@ You can see the complete solution [here](https://github.com/Keboo/MaterialDesign
 
 Check out my blog _[Material Design in XAML – How to make sense of the Dialog Host](/material-design-in-xaml-dialog-host/)_.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)

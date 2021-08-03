@@ -31,9 +31,9 @@ Although I agree with some of the arguments above, I have fairly specific rules 
 
 I use var any time that the initialization of the variable clearly tells me what the variable will contain.
 
-```
+```csharp
 var count = 17;
-var primeNumbers = new \[\] { 1, 3, 5, 7, 11, 13, 17 };
+var primeNumbers = new [] { 1, 3, 5, 7, 11, 13, 17 };
 var customer = new Customer();
 var activeOrders = GetAllOrders().Where(o => o.Active);
 foreach (var activeOrder in activeOrders) { … }
@@ -43,7 +43,7 @@ Note that in all of these cases, the variable names are descriptive _and_ the in
 
 Cases where I do not use var, even though I still name the variable descriptively, are when the initializer is not clear.
 
-```
+```csharp
 decimal customerBalance = GetCustomerBalance();
 CustomerStatus customerStatus = GetCustomerStatus();
 ```
@@ -58,4 +58,4 @@ Michael Brennan, in his blog post [Why You Should Always Use the 'var' Keyword i
 
 Curious about how else variables are utilized? Check out our blog _[Painless Bug Testing through the Isolation of Variables](/bug-testing-isolation-variables/)_!
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.png)

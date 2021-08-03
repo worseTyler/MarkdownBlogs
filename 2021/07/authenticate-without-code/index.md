@@ -37,7 +37,7 @@ To start, we need to create a web application. For this example, I am using a .N
 
 Open a PowerShell terminal and type: `dotnet new mvc --name AppServiceAuthDemo`.
 
- "Authenticate Without Code Using AAD and Azure App Services"
+![Windows PowerShell](https://intellitect.com/wp-content/uploads/2021/06/image001-2.png "Authenticate Without Code Using AAD and Azure App Services")
 
 This creates a new web application. To open the web app in Visual Studio Code, type: `code -r AppServiceAuthDemo` and hit enter.
 
@@ -45,7 +45,7 @@ Now that we have the project open in VS Code let’s run the rest of our .NET co
 
 Open the VS Code terminal and ensure you are in the correct project directory before typing the dotnet run command. Your web app is now up and running! You can visit the site by navigating to the localhost URL displayed in the terminal (use ctrl+c to stop the web app).
 
- "Authenticate Without Code Using AAD and Azure App Services"
+![AppServiceAuthDemo](https://intellitect.com/wp-content/uploads/2021/06/image002.png "Authenticate Without Code Using AAD and Azure App Services")
 
 Now that you have a web application, the next step is to publish it to an Azure App Service. You can follow [this documentation](https://docs.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore?tabs=netcore31&pivots=development-environment-vscode#publish-your-web-app) for publishing using VS Code or [this documentation](https://docs.microsoft.com/en-us/visualstudio/deployment/quickstart-deploy-to-a-web-site?view=vs-2019&viewFallbackFrom=vs-2019%27) for steps on publishing using Visual Studio.
 
@@ -57,7 +57,7 @@ To set up authentication for your App Service, start by navigating to App Servic
 
 Select 'Microsoft' as your Identity provider from the drop-down. The rest of the settings can remain as default, but it is worthwhile to read through each configuration option to understand what they do. Before clicking 'Add_,'_ make sure that Authentication is set to Require authentication. If you set it to Allow unauthenticated access_,_ users won’t be prompted or required to sign in. While you can still authenticate with AAD, the sign-in endpoint auth/login/aad and sign-out endpoint /.auth/logout won’t prompt users to do so when they interact with your application unless you specifically modify your application to redirect to the authentication endpoints. Click 'Next: Permissions >' and specify any permissions you may need. For our purposes, you can leave the default permissions as is and click 'Add.'
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/06/image003.webp)
+![](https://intellitect.com/wp-content/uploads/2021/06/image003.png)
 
 Try selecting the site using an incognito browser. This should present you with a permissions consent dialog. You should only see this dialog the first time you log onto your web app (or if you add additional permissions to the web app). All it asks is for you to consent to the permissions granted in the previous step. Click 'Accept' and sign in.
 
@@ -65,7 +65,7 @@ Try selecting the site using an incognito browser. This should present you with 
 
 Hooray! You have successfully set up easy auth to your web app! You may be thinking, “well, great, but I don’t want my entire organization having access to this application; how do I restrict access with AAD?” In that case, keep reading as we cover how to restrict access to your web app further.
 
- "Authenticate Without Code Using AAD and Azure App Services"
+![AAD enterprise applications](https://intellitect.com/wp-content/uploads/2021/06/image004-1.png "Authenticate Without Code Using AAD and Azure App Services")
 
 1. In a new tab, navigate to your Azure Active Directory (AAD). On the left-hand side, you should see Enterprise applications and App registrations.
 2. Click on 'Enterprise applications**.'**
@@ -80,7 +80,7 @@ Hooray! You have successfully set up easy auth to your web app! You may be think
 8. Navigate back to your enterprise application group assignments in Azure and add yourself back as a valid user.
     1. Now, try navigating to the web app. You are prompted to log in again, but this time, you should access your web app as an authenticated user.
 
- "Authenticate Without Code Using AAD and Azure App Services"
+![BlogDemoSite](https://intellitect.com/wp-content/uploads/2021/06/image005.png "Authenticate Without Code Using AAD and Azure App Services")
 
 You have now set up your web app to require explicit assignments via its associated enterprise application.
 
@@ -94,16 +94,16 @@ For this part of the guide, we set up a simple get endpoint on your web app we c
 
 To start, open your Visual Studio project and create a new file called DemoController.cs, copy and paste the following code snippet in that file and save (be sure to update your namespace if needed).
 
-```
+```csharp
 using Microsoft.AspNetCore.Mvc;
 
 namespace AppServiceAuthDemo.Controllers
 {
-    \[Route("api/\[controller\]")\]
-    \[ApiController\]
+    [Route("api/[controller]")]
+    [ApiController]
     public class DemoController : ControllerBase
     {
-        \[HttpGet("SayHello")\]
+        [HttpGet("SayHello")]
         public ActionResult<string> SayHelloWorld()
         {
             return "Hello World!";
@@ -116,7 +116,7 @@ namespace AppServiceAuthDemo.Controllers
 
 Before continuing, double-check that you have added controllers to your Startup.cs. Your startup should contain the following lines of code:
 
-```
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
 services.AddRazorPages();
@@ -140,7 +140,7 @@ endpoints.MapControllers(); // Required for controllers
 
 Once you have added all of the above code to your app, start it up on localhost. Let’s configure Postman to send a GET request to the following endpoint _/api/demo/sayhello_. Since authentication is taken care of on your App Service, you should be able to access this endpoint and see `Hello World!` when running locally with no problems.
 
- "Authenticate Without Code Using AAD and Azure App Services"
+![Postman](https://intellitect.com/wp-content/uploads/2021/06/image006-1024x304.png "Authenticate Without Code Using AAD and Azure App Services")
 
 Open Postman and create a new “GET” tab. Configure the request not to use any authentication. Enter your localhost address and the controller’s endpoint and click 'send.' You should receive a 200 OK response, as shown below.
 
@@ -148,13 +148,13 @@ Next, re-publish the web app to the Azure App Service using the same steps you t
 
 After publishing, navigate to your web app hosted by your app service and navigate to that same GET endpoint using Postman. A 401 Unauthorized response should occur.
 
- "Authenticate Without Code Using AAD and Azure App Services"
+![Postman](https://intellitect.com/wp-content/uploads/2021/06/image007-1024x269.png "Authenticate Without Code Using AAD and Azure App Services")
 
 ### So, How Do We Get Authenticated?
 
 We can do this by setting up another app registration to use for authentication. First, we need to add an app role to the existing app registration. Navigate back to Azure Active Directory and open the App Registrations page. Then, search for the App Registration created by the Azure App Service earlier in this demo. The App Registration should have the same name as your App Service (unless you specified a different name upon creation). Once you find the app registration, navigate to Manage -> App Roles. Create a new app role; under Allowed member types, select 'Applications.' Make sure the app role is enabled and click 'Apply.'
 
- "Authenticate Without Code Using AAD and Azure App Services"
+![AAD App Registrations](https://intellitect.com/wp-content/uploads/2021/06/image008.png "Authenticate Without Code Using AAD and Azure App Services")
 
 Now we need to create a new app registration. Navigate back to 'App Registrations' and create a new app registration. Give it an easily identifiable name. I am calling mine AppServiceAuthDemoApp-Client. Navigate to Manage -> API Permissions -> Add a permission -> My APIs -> name of App Service app registration -> Application Permissions. Select the role you just created and click 'Add permissions.' **Be sure to grant admin consent** for the newly added permission.
 
@@ -163,9 +163,9 @@ Now we need to create a new app registration. Navigate back to 'App Registration
 You are now ready to request an access token using Postman. Open Postman and create a new POST request. Following this, configure your POST request’s body as form data with the following parameters:
 
 ```
-client\_id:{client ID}
-client\_secret:{client secret}
-grant\_type:client\_credentials
+client_id:{client ID}
+client_secret:{client secret}
+grant_type:client_credentials
 resource:{Application ID URI}
 
 ```
@@ -176,26 +176,26 @@ Send the POST request to the following URL _https://login.microsoftonline.com/{t
 
 The **client secret** is the corresponding secret for that ID (you need to create a client secret under Manage->Certificates & secrets).
 
-The **grant type** is just the string _client\_credentials_
+The **grant type** is just the string _client_credentials_
 
 The **resource** is the Application ID URI of the app registration you just made (e.g., _AppServiceAuthDemoApp-Client_). You can find this value on the overview page of your app registration. If there is no Application ID URI set, click the 'Add an Application ID URI' link and then 'Set' next to Application ID URI. Put the URL of your web app there.
 
- "Authenticate Without Code Using AAD and Azure App Services"
+![Application ID URI](https://intellitect.com/wp-content/uploads/2021/06/image009.png "Authenticate Without Code Using AAD and Azure App Services")
 
 Send the Postman request; you should get a bearer access token returned to you. Before we try accessing the _sayhello_ endpoint, we need to do one last thing. Navigate to your Azure App Service -> Settings -> Authentication. Edit the Identity provider you created at the beginning of this guide. Change the ‘Issuer URL’ to be _https://login.microsoftonline.com/{tenantID}_. Add the Application ID URI from Postman to the ‘Allowed token audiences.’
 
 Click 'save' and navigate back to Postman. On your GET request to the _sayhello_ endpoint, under the Authorization tab, select 'OAuth 2.0 'as your authorization type, then copy and paste your access token into the 'Current Token' section. Rerun your get request in Postman. You should now be able to access your web app’s endpoint.
 
- "Authenticate Without Code Using AAD and Azure App Services"
+![Postman Authorization](https://intellitect.com/wp-content/uploads/2021/06/image010-1024x346.png "Authenticate Without Code Using AAD and Azure App Services")
 
 ### That Is That!
 
 For more information on this process, visit the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad). In conclusion, the below diagram should sum up everything you created during this walk-through.
 
- "Authenticate Without Code Using AAD and Azure App Services"
+![Azure App Service diagram](https://intellitect.com/wp-content/uploads/2021/06/image011.png "Authenticate Without Code Using AAD and Azure App Services")
 
 ### Ready For More?
 
 Curious about related technologies? Check out this [video](/video-devcontainers/) from a past Spokane .NET Users Group meetup on creating DevContainers! Subscribe to our [YouTube channel](https://www.youtube.com/channel/UCZSEfrUQnLLohBWDKRRSohw?view_as=subscriber) for more videos.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)

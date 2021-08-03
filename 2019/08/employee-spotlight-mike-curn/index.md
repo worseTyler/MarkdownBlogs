@@ -2,7 +2,7 @@
 
 ### Enterprising SDET with a Passion for Improving
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2017/05/Mike-SWR.webp)
+![](https://intellitect.com/wp-content/uploads/2017/05/Mike-SWR.jpg)
 
 Mike Curn, senior SDET at IntelliTect
 
@@ -24,7 +24,7 @@ Over half of Mike’s core team at Avista is made up of IntelliTect team mem­be
 
 #### Mike's personal side...
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/08/IMG_20180506_115637726-1024x768.webp)
+![](https://intellitect.com/wp-content/uploads/2019/08/IMG_20180506_115637726-1024x768.jpg)
 
 Mike and Anna-Marie take a selfie at the Spartan race in Bigfork, MT.
 

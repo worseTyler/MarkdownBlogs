@@ -10,7 +10,7 @@ On occasion, you'll likely find it useful to combine data elements. Suppose, for
 
 The best option might be the C# 7.0 tuple, which, at its simplest, provides a syntax that allows you to combine the assignment of multiple variables, of varying types, in a single statement:
 
-```
+```csharp
 (string country, string capital, double gdpPerCapita) =
      ("Malawi", "Lilongwe", 226.50);
 ```
@@ -23,7 +23,7 @@ However, tuples have several other additional syntax possibilities, each shown i
 
 ## **Sample Code for Tuple Declaration and Assignment**
 
-![](https://intellitect.com/wp-content/uploads/2017/07/Figure-1.webp)
+![](https://intellitect.com/wp-content/uploads/2017/07/Figure-1.jpg)
 
 In the first four examples, and although the right-hand side represents a tuple, the left-hand side still represents individual variables that are assigned together using _tuple syntax_, which involves two or more elements separated by commas and associated with parentheses. (I use the term tuple syntax because the underlying data type the compiler generates on the left-hand side isn't technically a tuple.) The result is that although I start with values combined as a tuple on the right, the assignment to the left deconstructs the tuple into its constituent parts. In example 2, the left-hand-side assignment is to pre-declared variables. However, in examples 1, 3, and 4, the variables are declared within the tuple syntax. Given that I'm only declaring variables, the naming and casing convention follows the generally accepted Framework Design Guidelines—"DO use camelCase for local variable names," for example.
 
@@ -57,7 +57,7 @@ What's surprising (particularly for those familiar with the anonymous type imple
 
 For all the named tuple local variable examples, for example:
 
-```
+```csharp
 var countryInfo = (Name: "Malawi", Capital: "Lilongwe", GdpPerCapita: 226.50)
 ```
 
@@ -65,22 +65,19 @@ it's clearly possible that the names could be known by the compiler for the rema
 
 Determining the item names from when scoped within a member is reasonable for the compiler, but what happens when a tuple is exposed outside the member—such as a parameter or return from a method that's in a different assembly (for which there is possibly no source code available)? For all tuples that are part of the API (whether a public or private API), the compiler adds item names to the metadata of the member in the form of attributes. For example, this:
 
-```
-\[return: System.Runtime.CompilerServices.TupleElementNames(
-     new string\[\] {"First", "Second"})\]
+```csharp
+[return: System.Runtime.CompilerServices.TupleElementNames(
+     new string[] {"First", "Second"})]
 
 public System.ValueTuple<string, string> ParseNames(string fullName)
-
 {
-
   // ...
-
 }
 ```
 
 is the C# equivalent of what the compiler generates for the following:
 
-```
+```csharp
 public (string First, string Second) ParseNames(string fullName)
 ```
 

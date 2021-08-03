@@ -16,11 +16,11 @@ The face tag does not line up on photos where the camera was rotated. Either Exi
 
 Here is an example photo to demonstrate this issue, viewed first with Windows Photo Gallery (before using the tool) and then with Lightroom Classic (after using the tool):
 
- "ExifTool: Recovering All Microsoft People Tag Metadata"
+![Original photo with correct people tag.](https://intellitect.com/wp-content/uploads/2019/10/GrantW-Blog-GalleryImageWithMP.png "ExifTool: Recovering All Microsoft People Tag Metadata")
 
 This photo shows the original photo with the People Tag lining up correctly.
 
- "ExifTool: Recovering All Microsoft People Tag Metadata"
+![Photo after using the tool. People tag is in the wrong location.](https://intellitect.com/wp-content/uploads/2019/10/GrantW-Blog-LighroomImageWithMWG.png "ExifTool: Recovering All Microsoft People Tag Metadata")
 
 This photo shows the photo after it had been altered with the tool. The People Tag, while still there, is now in the wrong position on the photo.
 
@@ -51,17 +51,17 @@ Open the command prompt and navigate to the root directory of the jpgs you want 
 
 Run the rotation commands before and after the conversion command. Only running the rotation commands once will conditionally move the Region Info MP regions into the correct place for the new Region Info tags. Running the rotation commands again will move them back so that they are not ruined for other software that can read the Region Info MP tags. The conversion command will generate a Region Info tag on all jpg’s based on the existing MP Tags.
 
-_\*Note: Make back-ups manually before starting this process to avoid messing up images. These commands work recursively starting with the current directory where you are running the tool. The "overwrite\_original" flag stops ExifTool_ _from making a copy of the original files before mutating them. Generated copies aren’t entirely helpful in our case since we are running the tool several times, and we don’t want to end up with malformed copies when we’re finished._
+_\*Note: Make back-ups manually before starting this process to avoid messing up images. These commands work recursively starting with the current directory where you are running the tool. The "overwrite_original" flag stops ExifTool_ _from making a copy of the original files before mutating them. Generated copies aren’t entirely helpful in our case since we are running the tool several times, and we don’t want to end up with malformed copies when we’re finished._
 
 **Rotation Commands:**
 
-exiftool -config Rotate\_Regions.config -if "$Orientation eq 'Rotate 270 CW'" "-RegionInfoMP<RotateMPRegionCW180" -r -ext jpg . -overwrite\_original
+exiftool -config Rotate_Regions.config -if "$Orientation eq 'Rotate 270 CW'" "-RegionInfoMP<RotateMPRegionCW180" -r -ext jpg . -overwrite_original
 
-exiftool -config Rotate\_Regions.config -if "$Orientation eq 'Rotate 90 CW'" "-RegionInfoMP<RotateMPRegionCW180" -r -ext jpg . -overwrite\_original
+exiftool -config Rotate_Regions.config -if "$Orientation eq 'Rotate 90 CW'" "-RegionInfoMP<RotateMPRegionCW180" -r -ext jpg . -overwrite_original
 
 **Conversion Command:**
 
-exiftool -config convert\_regions.config "-regioninfo<myregion" -r -ext jpg . -overwrite\_original
+exiftool -config convert_regions.config "-regioninfo<myregion" -r -ext jpg . -overwrite_original
 
 Now all photos with existing people information can be understood by Adobe Lightroom Classic and other software that follows the MWG standard, while leaving the original Region Info MP tags intact.
 

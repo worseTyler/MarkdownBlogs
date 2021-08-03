@@ -8,10 +8,14 @@ The cause of the problem was a mismatch in the platform target of the assembly. 
 
 To correct the problem you either need to recompile the assembly using a more appropriate platform target (see the Visual Studio project's property Build tab) or you need to run the 32-bit version of PowerShell:
 
-`%windir%\syswow64\Windowspowershell\v1.0\powershell.exe`
+```powershell
+%windir%\syswow64\Windowspowershell\v1.0\powershell.exe
+```
 
 or, for ISE:
 
-`"%windir%\syswow64\Windowspowershell\v1.0\powershell_ise.exe"`
+```powershell
+"%windir%\syswow64\Windowspowershell\v1.0\powershell_ise.exe"
+```
 
 Windows 8+ runs the x64 version of PowerShell by default when launched from the Windows Menu and doesn't even show an x86 icon. To correct this, you need to show the Administrative Tools.

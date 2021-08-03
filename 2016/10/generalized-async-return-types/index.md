@@ -4,7 +4,7 @@ Ever since C# 5.0 when the async/await pattern was introduced, the only supporte
 
 Consider, for example, a function that returns the amount of space consumed by a directory.
 
-```
+```csharp
 public async Task<long> GetDirectorySize<T>(string path, string searchPattern)
 {
     if (!Directory.EnumerateFileSystemEntries(path, searchPattern).Any())
@@ -19,7 +19,7 @@ If the directory is empty, the known space is 0 and there is no need for an as
 
 C# 7.0 introduces the ability to define custom return types on async methods.  The key requirement is implementing the GetAwaiter  method.  The System.Threading.Tasks.ValueTask<T>  provides an example of such a customer type.  It is designed for the very scenario when the return value might be known immediately - cached from a previous invocation for example.  We can leverage this type in our GetDirectorySize()  implementation, for example, to instead return a ValueTask<long>.
 
-```
+```csharp
 public async ValueTask<long> GetDirectorySize<T>(string path, string searchPattern)
 {
     if (!Directory.EnumerateFileSystemEntries(path, searchPattern).Any())
@@ -34,8 +34,8 @@ Notice that no other changes are required.
 
 Note that internally, if you open the method up with an IL disassembler like ILDasm.exe the signature still returns a Task<T>:
 
-```
-\[AsyncStateMachine(typeof(CustomAsyncReturn.<GetDirectorySize>d\_\_3<>))\]
+```csharp
+[AsyncStateMachine(typeof(CustomAsyncReturn.<GetDirectorySize>d__3<>))]
 public Task<long> GetDirectorySize<T>(string path, string searchPattern)
 {
     // ...

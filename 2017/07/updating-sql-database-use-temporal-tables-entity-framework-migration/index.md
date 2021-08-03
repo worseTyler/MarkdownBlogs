@@ -15,7 +15,7 @@ Adding temporal tables to a migration was very simple:
 
 ### Migration Code
 
-```
+```csharp
 public partial class AddTemporalTables : Migration
 {
    List tablesToUpdate = new List
@@ -32,11 +32,11 @@ public partial class AddTemporalTables : Migration
       foreach (var table in tablesToUpdate)
       {
          string alterStatement = $@"ALTER TABLE {table} ADD SysStartTime datetime2(0) GENERATED ALWAYS AS ROW START HIDDEN
-         CONSTRAINT DF\_{table}\_SysStart DEFAULT GETDATE(), SysEndTime datetime2(0) GENERATED ALWAYS AS ROW END HIDDEN
-         CONSTRAINT DF\_{table}\_SysEnd DEFAULT CONVERT(datetime2 (0), '9999-12-31 23:59:59'),
-         PERIOD FOR SYSTEM\_TIME (SysStartTime, SysEndTime)";
+         CONSTRAINT DF_{table}_SysStart DEFAULT GETDATE(), SysEndTime datetime2(0) GENERATED ALWAYS AS ROW END HIDDEN
+         CONSTRAINT DF_{table}_SysEnd DEFAULT CONVERT(datetime2 (0), '9999-12-31 23:59:59'),
+         PERIOD FOR SYSTEM_TIME (SysStartTime, SysEndTime)";
          migrationBuilder.Sql(alterStatement);
-         alterStatement = $@"ALTER TABLE {table} SET (SYSTEM\_VERSIONING = ON (HISTORY\_TABLE = History.{table}));";
+         alterStatement = $@"ALTER TABLE {table} SET (SYSTEM_VERSIONING = ON (HISTORY_TABLE = History.{table}));";
          migrationBuilder.Sql(alterStatement);
       }
    }
@@ -45,11 +45,11 @@ public partial class AddTemporalTables : Migration
    {
       foreach (var table in tablesToUpdate)
       {
-         string alterStatement = $@"ALTER TABLE {table} SET (SYSTEM\_VERSIONING = OFF);";
+         string alterStatement = $@"ALTER TABLE {table} SET (SYSTEM_VERSIONING = OFF);";
          migrationBuilder.Sql(alterStatement);
-         alterStatement = $@"ALTER TABLE {table} DROP PERIOD FOR SYSTEM\_TIME";
+         alterStatement = $@"ALTER TABLE {table} DROP PERIOD FOR SYSTEM_TIME";
          migrationBuilder.Sql(alterStatement);
-         alterStatement = $@"ALTER TABLE {table} DROP DF\_{table}\_SysStart, DF\_{table}\_SysEnd";
+         alterStatement = $@"ALTER TABLE {table} DROP DF_{table}_SysStart, DF_{table}_SysEnd";
          migrationBuilder.Sql(alterStatement);
          alterStatement = $@"ALTER TABLE {table} DROP COLUMN SysStartTime, COLUMN SysEndTime";
          migrationBuilder.Sql(alterStatement);

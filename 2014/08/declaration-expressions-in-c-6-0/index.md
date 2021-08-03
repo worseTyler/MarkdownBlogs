@@ -7,6 +7,7 @@ It’s not uncommon that in the midst of writing a statement, you find you need 
 
 To address these and similar annoyances, C# 6.0 introduces _declaration expressions_.  This means you don’t have to limit variable declarations to statements only, but can use them as well within expressions.  The code in **Listing 1** below provides two examples:
 
+```csharp
 public string FormatMessage(string attributeName)
 {
     string result;
@@ -14,7 +15,7 @@ public string FormatMessage(string attributeName)
     {
         result = string.Format("'{0}' is not one of the possible {2} option combinations ({1})",
             attributeName, 
-            string.Join(",", string\[\] fileAtrributeNames = Enum.GetNames(typeof (FileAttributes))),
+            string.Join(",", string[] fileAtrributeNames = Enum.GetNames(typeof (FileAttributes))),
                 fileAtrributeNames.Length);
     }
     else
@@ -24,6 +25,7 @@ public string FormatMessage(string attributeName)
     }
     return result;
 }
+```
 
 In the first highlight within the code, the attributeValue variable is declared in-line with the call to Enum.TryParse() rather than in a separate declaration beforehand.  Similarly, the declaration of fileAttributeNames appears on the fly in the call to string.Join().  This enables access to the Length later in the same statement.  (Note that the fileAttributeNames.Length is substitution parameter {2} in the string.Format() call, even though it appears earlier in the format string—thus enabling fileAttributeNames to be declared prior to accessing it).
 
@@ -33,7 +35,7 @@ Wherever possible the compiler will enable the use of implicitly typed variables
 
 Enum.TryParse(attributeName, out FileAttributes attributeValue)
 
-In the second declaration expression example in **Listing 1**, an explicit declaration of string\[\] appears to identify the data type as an array (rather than a List<string>, for example).  The guideline is standard to the general use of var: Consider avoiding implicitly typed variables when the resulting data type is not obvious.
+In the second declaration expression example in **Listing 1**, an explicit declaration of string[] appears to identify the data type as an array (rather than a List<string>, for example).  The guideline is standard to the general use of var: Consider avoiding implicitly typed variables when the resulting data type is not obvious.
 
 The declaration expression examples in **Listing 1** could all be coded by simply declaring the variables in a statement prior to their assignment.
 

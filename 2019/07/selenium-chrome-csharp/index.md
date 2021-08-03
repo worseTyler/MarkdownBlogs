@@ -14,8 +14,8 @@ Cutting right to the chase, the two vital pieces of code are leveraging Chromeâ€
 
 MainWindow:
 
-```
-private void LaunchBrowser\_Click(object sender, RoutedEventArgs e)
+```powershell
+private void LaunchBrowser_Click(object sender, RoutedEventArgs e)
 {
       Process proc = new Process();
       proc.StartInfo.FileName = @"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
@@ -28,7 +28,7 @@ The highlighted portion is critical. It tells Chrome which port to use for remot
 
 PageUnderTest.cs
 
-```
+```csharp
 private IWebDriver Driver { get; set; }
 
 // Some basic Selenium calls weâ€™ll use in our tests
@@ -55,9 +55,9 @@ We point Selenium at a debugger address (port included). Now, we can â€œattachâ€
 
 You can now drive the Chrome instance started by our small WPF app:
 
-```
+```csharp
 // AttachToChromeTest.cs
-\[TestMethod\]
+[TestMethod]
 public void LaunchChromeAndAttach()
 {
     // Open WPF application, make sure a button is present, then click it to launch Chrome

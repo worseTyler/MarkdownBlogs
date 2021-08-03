@@ -8,7 +8,7 @@ When configuring remote systems using PowerShell, it often can involve lots of h
 
 IntelliTect senior software engineer, Steve Byerly, recently finished a project within PowerShell. Steve’s team used the Desired State Configuration (DSC) platform to configure machines, environments, and processes. Using DSC allowed them to define configurations from a single source of truth, as well as deploy multiple environments.
 
-https://youtu.be/Em\_w2JDn3aM
+https://youtu.be/Em_w2JDn3aM
 
 In this video, Steve walks through what’s needed to define Infrastructure as Code to reduce the amount of hands-on time required on this type of project.
 

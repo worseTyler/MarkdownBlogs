@@ -12,48 +12,48 @@ https://www.oracle.com/technetwork/topics/dotnet/downloads/index.html
 
 We can start by creating a console application in Visual Studio 2015. File -> New -> Project then under Windows choose Console Application and name ODP.NET.
 
- "Oracle Data Provider for .NET"
+![Screen Shot 2016-04-26 at 2.57.36 PM](https://intellitect.com/wp-content/uploads/2016/04/Screen-Shot-2016-04-26-at-2.57.36-PM.png "Oracle Data Provider for .NET")
 
 There are two NuGet packages we will need to install, and the first will be Entity Framework. Right-click the Solution at the top of the Solution Explorer and navigate to Manage NuGet Packages for Solution. In the search bar, type “Entity Framework”. In the screenshot below, I’m grabbing the latest stable version 6.1.3 for this walk-through. Select EF and check ODP.NET the name of our project in the right-hand panel of the NuGet - Solution tab in Visual Studio, and click Install.
 
- "Oracle Data Provider for .NET"
+![Manage Packages](https://intellitect.com/wp-content/uploads/2016/04/Manage-Packages.png "Oracle Data Provider for .NET")
 
 The second package that is needed is Oracle.ManagedDataAccess.EntityFramework by Oracle I will be getting version 12.1.2400.
 
- "Oracle Data Provider for .NET"
+![Oracle.ManagedDataAccess.EntityFramework](https://intellitect.com/wp-content/uploads/2016/04/Oracle.ManagedDataAccess.EntityFramework.png "Oracle Data Provider for .NET")
 
 Nuget will gather dependencies and discover that Oracle.ManagedDataAccess.EntityFramework also needs Oracle.ManagedDataAccess and will install that package for you as well.
 
 After installing our two NuGet packages, it is time to connect to our Oracle database with the help of the Oracle Developer tools we installed as a prerequisite of this walk-through. In VS go to Tools -> Connect to Database. Then, in the Add Connection form fill out the details to connect to your existing Oracle DB. In my case I need to fill out Username and Password, and then change Connection Type to EZ Connect and fill out Database host name, Port number, Database service name, and Data source name.
 
- "Oracle Data Provider for .NET"
+![Add Connection](https://intellitect.com/wp-content/uploads/2016/04/Add-Connection.png "Oracle Data Provider for .NET")
 
 After adding the connection, we are ready to add the Entity Data Model. Right-click on the ODP.NET project in solution explorer, navigate to Add -> New Item, select ADO.NET Entity Data Model, and name it OracleModel.
 
- "Oracle Data Provider for .NET"
+![Add New Item](https://intellitect.com/wp-content/uploads/2016/04/Add-New-Item.png "Oracle Data Provider for .NET")
 
 In the Entity Data Model wizard, select EF Designer from Database then hit next.
 
- "Oracle Data Provider for .NET"
+![Entity Data Model Wizard](https://intellitect.com/wp-content/uploads/2016/04/Entity-Data-Model-Wizard.png "Oracle Data Provider for .NET")
 
 Then choose your connection. You should see the DB we connected to earlier via the Database Explorer. Select whether or not you want to include or exclude sensitive data in your connection string.
 
- "Oracle Data Provider for .NET"
+![Entity Data Model Wizard 2](https://intellitect.com/wp-content/uploads/2016/04/Entity-Data-Model-Wizard-2.png "Oracle Data Provider for .NET")
 
 For the final step in the Entity Data Model Wizard, select the Tables/Views/Stored Procedures that you would like to include in your model then click Finish.
 
- "Oracle Data Provider for .NET"
+![Entity Data Model Wizard 3](https://intellitect.com/wp-content/uploads/2016/04/Entity-Data-Model-Wizard-3.png "Oracle Data Provider for .NET")
 
 Your .edmx will generate, which includes your context.
 
- "Oracle Data Provider for .NET"
+![edmx](https://intellitect.com/wp-content/uploads/2016/04/edmx.png "Oracle Data Provider for .NET")
 
 Now we are ready to connect to the context and make queries to our database. In your Program.cs you can add the following code and access your oracle database.
 
-```
+```csharp
 using (Entities context = new Entities())
 {
-    var test = context.HLAs.Where(x => x.HOME\_LOCATION ==
+    var test = context.HLAs.Where(x => x.HOME_LOCATION ==
                "Spokane/CdA").FirstOrDefault();
 }
 ﻿

@@ -13,7 +13,7 @@ The existing Binding class  is the glue that links any property on the binding�
 This is great when we only want to bind a single value, but what about when we have multiple values we want to use. This is the problem that a MultiBinding is designed to solve when combined with a string format or a converter.  
 This is where we will start with our own MultiBinding class.
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +24,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Proxy;
 using Xamarin.Forms.Xaml;
 
-\[ContentProperty(nameof(Bindings))\]
+[ContentProperty(nameof(Bindings))]
 public class MultiBinding : IMarkupExtension
 {
     public IList Bindings { get; } = new List();
@@ -47,10 +47,10 @@ Since we can’t derive from the Xamarin.Forms Binding (sealed class) nor Bindin
 
 In the ProvideValue method we will create the bindings and links that cause the MultiBinding to work. We will then monitor the dynamic BindableProperties we create for each binding in the Bindings collection and update our own internal value when any of them change. We will create a Binding using this internal value as its source and return it as the MultiBinding.
 
-```
-private BindableObject \_target;
-private readonly InternalValue \_internalValue = new InternalValue();
-private readonly IList \_properties = new List();
+```csharp
+private BindableObject _target;
+private readonly InternalValue _internalValue = new InternalValue();
+private readonly IList _properties = new List();
        
 public Binding ProvideValue(IServiceProvider serviceProvider)
 {
@@ -58,23 +58,23 @@ public Binding ProvideValue(IServiceProvider serviceProvider)
  
     //Get the object that the markup extension is being applied to
     var provideValueTarget = (IProvideValueTarget)serviceProvider?.GetService(typeof(IProvideValueTarget));
-    \_target = provideValueTarget?.TargetObject as BindableObject;
+    _target = provideValueTarget?.TargetObject as BindableObject;
  
-    if (\_target == null) return null;
+    if (_target == null) return null;
  
     foreach (Binding b in Bindings)
     {
         var property = BindableProperty.Create($"Property-{Guid.NewGuid().ToString("N")}", typeof (object),
-            typeof (MultiBinding), default(object), propertyChanged: (\_, o, n) => SetValue());
-        \_properties.Add(property);
-        \_target.SetBinding(property, b);
+            typeof (MultiBinding), default(object), propertyChanged: (_, o, n) => SetValue());
+        _properties.Add(property);
+        _target.SetBinding(property, b);
     }
     SetValue();
  
     var binding = new Binding
     {
         Path = nameof(InternalValue.Value),
-        Source = \_internalValue
+        Source = _internalValue
     };
  
     return binding;
@@ -82,35 +82,35 @@ public Binding ProvideValue(IServiceProvider serviceProvider)
  
 private void SetValue()
 {
-    if (\_target == null) return;
-    var values = \_properties.Select(\_target.GetValue).ToArray();
+    if (_target == null) return;
+    var values = _properties.Select(_target.GetValue).ToArray();
     if (!string.IsNullOrWhiteSpace(StringFormat))
     {
-        \_internalValue.Value = string.Format(StringFormat, values);
+        _internalValue.Value = string.Format(StringFormat, values);
         return;
     }
-    \_internalValue.Value = values;
+    _internalValue.Value = values;
 }
  
 private sealed class InternalValue : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
  
-    private object \_value;
+    private object _value;
     public object Value
     {
-        get { return \_value; }
+        get { return _value; }
         set
         {
-            if (!Equals(\_value, value))
+            if (!Equals(_value, value))
             {
-                \_value = value;
+                _value = value;
                 OnPropertyChanged();
             }
         }
     }
  
-    private void OnPropertyChanged(\[CallerMemberName\] string propertyName = null)
+    private void OnPropertyChanged([CallerMemberName] string propertyName = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
@@ -127,17 +127,17 @@ If we run the app, we can see the MultiBinding works with string formats, but th
 
 First we declare the converter interface. Most of the time MultiBindings are only used to convert from the source to the target, so we will only concern ourselves with one-way conversions.
 
-```
+```csharp
 public interface IMultiValueConverter
 {
-    object Convert(object\[\] values, Type targetType, object parameter, CultureInfo culture);
+    object Convert(object[] values, Type targetType, object parameter, CultureInfo culture);
 }
 
 ```
 
 Next, we will add properties for the converter and its parameter to the MultiBinding, and update the relevant portions of the ProvideValue method.
 
-```
+```csharp
 public IMultiValueConverter Converter { get; set; }
  
 public object ConverterParameter { get; set; }
@@ -154,7 +154,7 @@ public Binding ProvideValue(IServiceProvider serviceProvider)
         Path = nameof(InternalValue.Value),
         Converter = new MultiValueConverterWrapper(Converter, StringFormat),
         ConverterParameter = ConverterParameter,
-        Source = \_internalValue
+        Source = _internalValue
     };
  
     return binding;
@@ -163,45 +163,45 @@ public Binding ProvideValue(IServiceProvider serviceProvider)
 
 In an effort to mimic [WPF behavior](https://msdn.microsoft.com/en-us/library/system.windows.data.bindingbase.stringformat(v=vs.110).aspx), the converter is applied prior to the string format. We need to modify our SetValue method. Rather than applying the string format there, we will do it in our new MultiValueConverterWrapper.
 
-```
+```csharp
 private void SetValue()
 {
-    if (\_target == null) return;
-    \_internalValue.Value = \_properties.Select(\_target.GetValue).ToArray();
+    if (_target == null) return;
+    _internalValue.Value = _properties.Select(_target.GetValue).ToArray();
 }
 ```
 
 In this new structure we will always pass an array of values from our bound properties to the internal value. We then apply the string format and converter inside of the MultiValueConverterWrapper.
 
-```
+```csharp
 private sealed class MultiValueConverterWrapper : IValueConverter
 {
-    private readonly IMultiValueConverter \_multiValueConverter;
-    private readonly string \_stringFormat;
+    private readonly IMultiValueConverter _multiValueConverter;
+    private readonly string _stringFormat;
  
     public MultiValueConverterWrapper(IMultiValueConverter multiValueConverter, string stringFormat)
     {
-        \_multiValueConverter = multiValueConverter;
-        \_stringFormat = stringFormat;
+        _multiValueConverter = multiValueConverter;
+        _stringFormat = stringFormat;
     }
  
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        if (\_multiValueConverter != null)
+        if (_multiValueConverter != null)
         {
-            value = \_multiValueConverter.Convert(value as object\[\], targetType, parameter, culture);
+            value = _multiValueConverter.Convert(value as object[], targetType, parameter, culture);
         }
-        if (!string.IsNullOrWhiteSpace(\_stringFormat))
+        if (!string.IsNullOrWhiteSpace(_stringFormat))
         {
-            var array = value as object\[\];
+            var array = value as object[];
             // ReSharper disable once ConvertIfStatementToNullCoalescingExpression
             if (array != null)
             {
-                value = string.Format(\_stringFormat, array);
+                value = string.Format(_stringFormat, array);
             }
             else
             {
-                value = string.Format(\_stringFormat, value);
+                value = string.Format(_stringFormat, value);
             }
         }
         return value;
@@ -216,7 +216,7 @@ private sealed class MultiValueConverterWrapper : IValueConverter
 
 This allows us to create our own multi value converters that can translate an array of objects into our desired type. In the following example, our value converter simply selects the first non-null value from the array or the converter’s parameter if there are no non-null values. It then takes the value and applies a string format to it.
 
-```
+```csharp
 <VisualElement.Resources>
  <ResourceDictionary>
    <local:FirstNotNullConverter x:Key="FirstNotNullConverter" />
@@ -245,7 +245,7 @@ With that warning out of the way, let’s continue.
 
 Handling the case where the MultiBinding is used directly inside of a VisualElement’s trigger can be solved by accessing some internal members. The two classes that currently exist in Xamarin.Forms that implement the IProvideValueTarget interface also implement another internal interface IProvideParentValues interface.
 
-```
+```csharp
 namespace Xamarin.Forms.Xaml
 {
     internal interface IProvideParentValues : IProvideValueTarget
@@ -257,7 +257,7 @@ namespace Xamarin.Forms.Xaml
 
 Using reflection, we could retrieve the parent objects from our IProvideValueTarget. By doing this we can simply grab the first BindableObject that we find in the ParentObjects. This will effectively handle the case where the MultiBinding is used within a Setter that is a child of the target element:
 
-```
+```csharp
 <Label> 
   <Label.Triggers>
     <DataTrigger Binding="{Binding HasFullName}" Value="True" TargetType="Label">
@@ -276,7 +276,7 @@ Using reflection, we could retrieve the parent objects from our IProvideValueTar
 
 This does **not** solve the case where the setter is not a child of the element (such is the case when used inside of a style):
 
-```
+```csharp
 <Style TargetType="Label" x:Key="LabelStyle">
   <Setter Property="Text" TargetType="Label">
     <Setter.Value>
@@ -293,45 +293,45 @@ This does **not** solve the case where the setter is not a child of the element 
 
 This case is much more complicated. Because multiple elements can share a single style, when a setter’s value derives from [BindingBase](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingBase/) it creates a _shallow clone_ of the binding and applies the cloned binding to the target element. This is a problem for our current implementation because it would apply a shallow clone of the binding returned from the ProvideValue method. However, there is a solution.[Examining the manifest](https://msdn.microsoft.com/en-us/library/ceats605(v=vs.110).aspx) of the Xamarin.Forms.Core assembly we can see that contains several [InternalsVisibleToAttributes](https://msdn.microsoft.com/en-us/library/system.runtime.compilerservices.internalsvisibletoattribute(v=vs.110).aspx). Specifically we are going to pick on this one:
 
-```
-\[assembly: InternalsVisibleTo("Xamarin.Forms.Core.UnitTests")\]
+```csharp
+[assembly: InternalsVisibleTo("Xamarin.Forms.Core.UnitTests")]
 ```
 
 We can create our own proxy PCL project that has an Assembly name of “Xamarin.Forms.Core.UnitTests”. This project can be referenced by our main PCL project, and will have access to all of the internal members of the Xamarin.Forms.Core assembly.
 
- "MultiBinding in Xamarin.Forms"
+![Screen Shot 2016-03-15 at 11.40.37 AM](https://intellitect.com/wp-content/uploads/2016/03/Screen-Shot-2016-03-15-at-11.40.37-AM.png "MultiBinding in Xamarin.Forms")
 
 This now allows us to derive from [BindingBase](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingBase/) and implement a true MultiBindings class.
 
-```
-\[ContentProperty(nameof(Bindings))\]
+```csharp
+[ContentProperty(nameof(Bindings))]
 public class MultiBinding : BindingBase
 {
-    private readonly BindingExpression \_bindingExpression;
-    private readonly InternalValue \_internalValue = new InternalValue();
-    private readonly IList \_properties = new List();
-    private bool \_isApplying;
-    private IMultiValueConverter \_converter;
-    private object \_converterParameter;
+    private readonly BindingExpression _bindingExpression;
+    private readonly InternalValue _internalValue = new InternalValue();
+    private readonly IList _properties = new List();
+    private bool _isApplying;
+    private IMultiValueConverter _converter;
+    private object _converterParameter;
     public IList Bindings { get; } = new List();
     
     public IMultiValueConverter Converter
     {
-        get { return \_converter; }
+        get { return _converter; }
         set
         {
             ThrowIfApplied();
-            \_converter = value;
+            _converter = value;
         }
     }
     
     public object ConverterParameter
     {
-        get { return \_converterParameter; }
+        get { return _converterParameter; }
         set
         {
             ThrowIfApplied();
-            \_converterParameter = value;
+            _converterParameter = value;
         }
     }
     ...
@@ -340,17 +340,17 @@ public class MultiBinding : BindingBase
 
 Rather than using a markup extension we can simply derive from BindingBase directly. Because we are deriving from BindingBase we no longer need our own StringFormat property since it is declared on the base class. The Converter and ConverterParameter properties are now implemented with a backing field so that we can throw if they get modified after the binding is applied.
 
-```
+```csharp
 public MultiBinding()
 {
     Mode = BindingMode.OneWay;
-    \_bindingExpression = new BindingExpression(this, nameof(InternalValue.Value));
+    _bindingExpression = new BindingExpression(this, nameof(InternalValue.Value));
 }
 ```
 
 We also have access to the internal BindingExpression class. We will use it in a similar manner as Xamarin’s [Binding](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/) class to get similar behavior.
 
-```
+```csharp
 internal override void Apply(object context, BindableObject bindObj, BindableProperty targetProperty,
     bool fromBindingContextChanged = false)
 {
@@ -359,8 +359,8 @@ internal override void Apply(object context, BindableObject bindObj, BindablePro
 
     base.Apply(context, bindObj, targetProperty, fromBindingContextChanged);
 
-    \_isApplying = true;
-    Properties = new BindableProperty\[Bindings.Count\];
+    _isApplying = true;
+    Properties = new BindableProperty[Bindings.Count];
     int i = 0;
     foreach (BindingBase binding in Bindings)
     {
@@ -369,13 +369,13 @@ internal override void Apply(object context, BindableObject bindObj, BindablePro
             {
                 SetInternalValue(bindableObj);
             });
-        Properties\[i++\] = property;
+        Properties[i++] = property;
         bindObj.SetBinding(property, binding);
     }
-    \_isApplying = false;
+    _isApplying = false;
     SetInternalValue(bindObj);
 
-    \_bindingExpression.Apply(\_internalValue, bindObj, targetProperty);
+    _bindingExpression.Apply(_internalValue, bindObj, targetProperty);
 }
 
 internal override void Apply(bool fromTarget)
@@ -385,7 +385,7 @@ internal override void Apply(bool fromTarget)
     {
         binding.Apply(fromTarget);
     }
-    \_bindingExpression.Apply(fromTarget);
+    _bindingExpression.Apply(fromTarget);
 }
 
 internal override void Unapply(bool fromBindingContextChanged = false)
@@ -396,17 +396,17 @@ internal override void Unapply(bool fromBindingContextChanged = false)
         binding.Unapply(fromBindingContextChanged);
     }
     Properties = null;
-    \_bindingExpression?.Unapply();
+    _bindingExpression?.Unapply();
 }
 
 internal override object GetSourceValue(object value, Type targetPropertyType)
 {
     if (Converter != null)
-        value = Converter.Convert(value as object\[\], targetPropertyType, ConverterParameter, CultureInfo.CurrentUICulture);
+        value = Converter.Convert(value as object[], targetPropertyType, ConverterParameter, CultureInfo.CurrentUICulture);
     if (StringFormat != null && value != null)
     {
         // ReSharper disable once ConvertIfStatementToNullCoalescingExpression
-        if (value is object\[\] array)
+        if (value is object[] array)
         {
             value = string.Format(StringFormat, array);
         }
@@ -425,14 +425,14 @@ internal override object GetTargetValue(object value, Type sourcePropertyType)
 
 private void SetInternalValue(BindableObject source)
 {
-    if (source == null || \_isApplying) return;
-    \_internalValue.Value = source.GetValues(Properties);
+    if (source == null || _isApplying) return;
+    _internalValue.Value = source.GetValues(Properties);
 }
 ```
 
 The apply and unapply methods are invoked as the MultiBinding is applied to an object, or when its binding context changes. Because we now have knowledge of when we are being applied to an element, we can properly create our child properties and bindings. The child bindings use the actual context object, while the MultiBinding itself uses the InternalValue class as its source. Our previous MultiValueConverterWrapper is replaced by similar logic inside of the GetSourceValue method that is used to provide a value from the MultiBinding to the target property.
 
-```
+```csharp
 internal override BindingBase Clone()
 {
     var rv = new MultiBinding
@@ -441,7 +441,7 @@ internal override BindingBase Clone()
         ConverterParameter = ConverterParameter,
         StringFormat = StringFormat
     };
-    rv.\_internalValue.Value = \_internalValue.Value;
+    rv._internalValue.Value = _internalValue.Value;
 
     foreach (var binding in Bindings.Select(x => x.Clone()))
     {

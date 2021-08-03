@@ -10,13 +10,13 @@ Ultimately, however, we finally have an eclectic building in downtown Spokane th
 
  
 
-\[gallery size="medium" link="file" ids="35215,35156"\]
+[gallery size="medium" link="file" ids="35215,35156"]
 
 When we were finally at the point to move into the temporary ‘apartment office’ in one section of the building, Stephanie Perko, our office manager extraordinaire went to measure the space for desks and discovered a flood. This certainly wasn’t the only setback, but because we decided on a major renovation to our new main office, we needed this space available ASAP. Thankfully, [Startup Spokane](https://startupspokane.com/) had space for us to rent during this emergency construction period since we’d already given notice on our leased property.
 
 The apartment office, as we like to call it, at our new IntelliTect building is a cozy space to temporarily house us while we watch our main office begin to take shape. And as you can see from this small space, the construction company is doing a fantastic job.
 
-\[gallery size="medium" columns="1" ids="35158,35157,35160"\]
+[gallery size="medium" columns="1" ids="35158,35157,35160"]
 
 The design and construction of our building is unique in many ways. A good portion dates back to 1930, and earlier, when part of the property was home to apartments, and the rest boasted the architecture work of one of Spokane’s own civil engineers, Arthur Cowley, who was commissioned with the design of a cooperage works for Conrad Schneider in 1929. To our surprise and pleasure, the cask (or barrel-making) warehouse has some great architectural features that have been hidden over time through renovations.
 
@@ -24,19 +24,19 @@ The design and construction of our building is unique in many ways. A good porti
 
 This system of trusses was completely hidden above a maze of wires, ducting, and 90’s style ceiling tiles and light fixtures with carpet to match.
 
-\[gallery size="medium" columns="2" link="none" ids="35140,35173,35146,35145"\]
+[gallery size="medium" columns="2" link="none" ids="35140,35173,35146,35145"]
 
 Once we saw those rafters, we couldn’t just cover them back up, so the painstaking process of stripping old paint off was commissioned. Stephanie Perko explained:
 
 > **“It’s done with fine grains of sand. When it’s blasted, it has to be brushed BY HAND... TWICE. It’s been painstaking and time consuming. Sometimes water helps it to be easier to brush off, and I’ve walked in to see the guys in cut-out hefty bags. I asked them if they would like Disneyland ponchos, and they said they’re ok with the bags.”**
 
- "IntelliTect Today: Location, Location, Location"
+![Worker blasts ceiling with water to remove old paint from trusses and rafters](https://intellitect.com/wp-content/uploads/2019/04/IMG_27831_01-e1557378563483.jpg "IntelliTect Today: Location Location Location")
 
 She also asked if they hated this part of restoration work, and they told her it wasn’t fun, but seeing the finished product makes it all worth it. That’s definitely a sentiment we can stand behind here at IntelliTect. What we do is much like building and renovating!
 
 As you saw with the pre-renovation photos above, the main office space seemed a bit cramped, but we’ve really opened up this area.
 
-\[gallery columns="1" size="medium" ids="35137,35144,35143"\]
+[gallery columns="1" size="medium" ids="35137,35144,35143"]
 
 The renovations have included adding more light in what we’re calling the Creative Zone. By removing the drop ceiling and adding the skylights, there is an open, airy feel.
 
@@ -44,7 +44,7 @@ The renovations have included adding more light in what we’re calling the Crea
 
 In the process, the floors were uncovered to reveal a unique detail that is uncommon in construction: the floor is two-by-sixes laid on edge. While this might seem strange or wasteful, it makes sense based on the initial purpose of the building. Originally, it was designed as a cooperage works where casks of varying sizes, including barrels, were made and sold to local and distant breweries for wine, beer, oils, etc. The equipment and weight of materials used would likely require a sturdy floor, and in order to protect the basement level below, this was a great solution.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/04/104.CreativeZone.54-1024x768.webp)
+![](https://intellitect.com/wp-content/uploads/2019/04/104.CreativeZone.54-1024x768.jpeg)
 
 Besides the Creative Zone, there will be four conference rooms, three bathrooms and a kitchen/break room. As pictured in the apartment office portion that is already done (toward the top), you can see these spaces will be updated; bright, open and inviting.
 
@@ -56,17 +56,17 @@ Besides the Creative Zone, there will be four conference rooms, three bathrooms 
 
 **Meet the Team at Work**
 
-\[gallery columns="2" size="large" ids="35177,35166,35167,35168,35165,35152,35154,35153,35150,35149,35148,35138,35136,35151,35159,35161"\]
+[gallery columns="2" size="large" ids="35177,35166,35167,35168,35165,35152,35154,35153,35150,35149,35148,35138,35136,35151,35159,35161"]
 
 Some of the team discussing and dreaming.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/04/BR225.08-1024x768.webp)
+![](https://intellitect.com/wp-content/uploads/2019/04/BR225.08-1024x768.jpeg)
 
 It was a big change to see the various parts of the near past removed—the previous renovations—to see the hidden treasure behind. The process has been difficult and painful at times, but we are proud of what our building is becoming. We know that the final product will be worth it.
 
 > **"It is such a cool and quirky space that matches our ethos."** \- Grant Erickson
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/04/IMG_20190423_075007-1024x768.webp)
+![](https://intellitect.com/wp-content/uploads/2019/04/IMG_20190423_075007-1024x768.jpg)
 
 > **Anything worth doing is worth doing well.**
 
@@ -76,4 +76,4 @@ _Written by Rachael Gartman._
 
 And if you haven't yet, sign up today for our quarterly newsletter: [Intellovations](https://bit.ly/2Nhro9T)
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1.webp)
+![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1.jpg)

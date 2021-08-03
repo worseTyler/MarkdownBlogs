@@ -6,7 +6,7 @@ I recently made a web services call into WebMethods using basic authentication.
 
 Here's how it works.  I add a reference to the Web Service (Visual Studio generates the client code for calling the web service).  Then, to this generated class I need to add the following method:
 
-```
+```csharp
 protected override System.Net.WebRequest GetWebRequest(Uri uri)
 {
     HttpWebRequest request;
@@ -19,10 +19,10 @@ protected override System.Net.WebRequest GetWebRequest(Uri uri)
 
         if (networkCredentials != null)
         {
-            byte\[\] credentialBuffer = new UTF8Encoding().GetBytes(
+            byte[] credentialBuffer = new UTF8Encoding().GetBytes(
             networkCredentials.UserName + ":" +
             networkCredentials.Password);
-            request.Headers\["Authorization"\] =
+            request.Headers["Authorization"] =
             "Basic " + Convert.ToBase64String(credentialBuffer);
         }
         else
@@ -40,7 +40,7 @@ With Visual Studio 2005 the generated code is a C# 2.0 partial class.  As a re
 
 Regardless of using Visual Studio.NET 2005 or earlier, the client code requires that the network credentials are set and the ``` PreAuthenticate ``` property is assigned true.  Here is a sample client call:
 
-```
+```csharp
 Michaelis.MockService service = new Michaelis.MockService();
 
 // Create the network credentials and assign
@@ -64,38 +64,44 @@ Comments on the post raised the question, "Why cant you just say request.Credent
 
 The reason relates to interoperating with WebMethods specifically.  When just setting ``` Credentials ```, the HTTP header looks like this:
 
-> ``` POST /soap/rpc HTTP/1.1  
-> User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; MS Web Services Client Protocol 2.0.50113.0)  
-> Content-Type: text/xml; charset=utf-8  
-> SOAPAction: ""  
-> Host: <servername>:<port>  
-> Content-Length: 779  
-> Expect: 100-continue  
-> Accept-Encoding: gzip ```
+``` 
+POST /soap/rpc HTTP/1.1  
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; MS Web Services Client Protocol 2.0.50113.0)  
+Content-Type: text/xml; charset=utf-8  
+SOAPAction: ""  
+Host: <servername>:<port 
+Content-Length: 779  
+Expect: 100-continue  
+Accept-Encoding: gzip 
+```
 
 Notice, there is no Authentication item even though ``` PreAuthenticate ``` is set to true.
 
 The reply back from WebMethods is as follows:
 
-> ``` HTTP/1.0 500 Internal Server Error  
-> Set-Cookie: ssnid=11747k5Rwchr3vW0s23vcaCP1wCA2NDc=555590; path=/;  
-> Content-Type: text/xml;charset=utf-8  
-> Connection: Keep-Alive  
-> Content-Length: 849 ```
+``` 
+HTTP/1.0 500 Internal Server Error  
+Set-Cookie: ssnid=11747k5Rwchr3vW0s23vcaCP1wCA2NDc=555590; path=/;  
+Content-Type: text/xml;charset=utf-8  
+Connection: Keep-Alive  
+Content-Length: 849 
+```
 
-The problem is that .NET is expecting a challenge response from WebMethods, specifically a 401 error of "Invalid credentials."  However, if the clientâ€™s credentials are not specified (there is not Authentication part to the header) then WebMethods returns an HTTP 500 status code (Internal Server Error) indicating that the request could not be fulfilled.
+The problem is that .NET is expecting a challenge response from WebMethods, specifically a 401 error of "Invalid credentials."  However, if the client's credentials are not specified (there is not Authentication part to the header) then WebMethods returns an HTTP 500 status code (Internal Server Error) indicating that the request could not be fulfilled.
 
 To fix the problem you can either change the .NET client or else the WebMethods server.  In my original posting, I demonstrated how to control the .NET client.  The result was an HTTP header that includes the Authentication portion as shown below:
 
-> ``` POST /soap/rpc HTTP/1.1  
-> User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; MS Web Services Client Protocol 2.0.50113.0)  
-> Authorization: BasicbGRwcm86bGRwcm8=  
-> Content-Type: text/xml; charset=utf-8  
-> SOAPAction: ""  
-> Host: spo-wm-py-srvr:5555  
-> Content-Length: 779  
-> Expect: 100-continue  
-> Accept-Encoding: gzip ```
+``` 
+POST /soap/rpc HTTP/1.1  
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; MS Web Services Client Protocol 2.0.50113.0)  
+Authorization: BasicbGRwcm86bGRwcm8=  
+Content-Type: text/xml; charset=utf-8  
+SOAPAction: ""  
+Host: spo-wm-py-srvr:5555  
+Content-Length: 779  
+Expect: 100-continue  
+Accept-Encoding: gzip 
+```
 
 However, it is also possible to change the WebMethods side (assuming you control that side) by creating an access controlled SOAP processor that checks the credentials for each client request against a specified ACL and returns an HTTP 401 status code even if there are no credentials passed.
 
@@ -105,4 +111,4 @@ By the way, the tool I use for tracing HTTP is [YATT](https://www.pocketsoap.com
 
 Check out this blog on fully-managed [passwordless authentication](https://intellitect.com/passwordless-authentication-azure-sql/)!
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)

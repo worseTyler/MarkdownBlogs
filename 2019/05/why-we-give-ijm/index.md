@@ -20,4 +20,4 @@ Targeting and reducing child slavery is hard. With our partner, IJM, IntelliTect
 
 Visit [IJM.org/Ghana](https://www.ijm.org/ghana) to get involved in this program or check out our [philanthropy page](/philanthropy/) to learn about other local and international groups that we are proud to call our partners.
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [ "Why We Give - Child Slavery Still Exists"
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T "Why We Give - Child Slavery Still Exists")

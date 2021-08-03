@@ -18,11 +18,11 @@ Sign in to an AAD account and use the User Profile Wizard tool to do the followi
 
 1. Select the local account you wish to clone. Click “Next.”
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/05/Step-1.webp)
+![](https://intellitect.com/wp-content/uploads/2021/05/Step-1.jpg)
 
 2\. Make sure the domain is correct in the “Enter the domain…” field. This field should be correctly auto-filled from the start.
 
- "AAD: How to Clone/Copy a Local Windows 10 Account to an Azure Active Directory Account"
+![Windows 10 and AAD: Make sure the domain is correct](https://intellitect.com/wp-content/uploads/2021/05/Step-2.jpg "AAD: How to Clone/Copy a Local Windows 10 Account to an Azure Active Directory Account")
 
 3\. Enter in the email of the Active Directory Account that you want to clone. Click “Next.”
 

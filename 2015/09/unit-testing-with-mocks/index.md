@@ -4,15 +4,14 @@ Unit testing is an integral part of the development process. However, when a cla
 
 Consider the following code as an example:
 
-```
+```csharp
 public interface IDialogService
 {
    bool ShowMessage( string message );
 }
-﻿
 ```
 
-```
+```csharp
 public interface IMessenger
 {
    void Send(string message);
@@ -20,23 +19,23 @@ public interface IMessenger
 
 ```
 
-```
+```csharp
 public class ViewModel
 {
-   private readonly IDialogService \_DialogService;
-   private readonly IMessenger \_Messenger;
+   private readonly IDialogService _DialogService;
+   private readonly IMessenger _Messenger;
 
    public ViewModel( IDialogService dialogService, IMessenger messenger )
    {
-      \_DialogService = dialogService;
-      \_Messenger = messenger;
+      _DialogService = dialogService;
+      _Messenger = messenger;
    }
 
    public void Execute()
    {
-      if ( \_DialogService.ShowMessage( "Agree to continue?"" ) )
+      if ( _DialogService.ShowMessage( "Agree to continue?"" ) )
       {
-         \_Messenger.Send("Success message");
+         _Messenger.Send("Success message");
       }
    }
 }
@@ -46,8 +45,8 @@ We have a simple ViewModel class that takes dependencies on two interfaces IDial
 
 In this case, we need to test our Execute method. There are two possible execution paths through the method, so we will have two unit tests (I favor using the [AAA pattern](https://www.c2.com/cgi/wiki?ArrangeActAssert) for unit tests).
 
-```
-\[TestMethod\]
+```csharp
+[TestMethod]
 public void WhenUserAgreesToContinueItSendsMessage()
 {
    //Arrange
@@ -81,8 +80,8 @@ For the actual running of the test the Execute method is invoked.
 
 Finally the only assertions we need to make on the test, is to simply assert that our expectations on our mock objects were met using the VerifyAll method. This will throw an exception (and fail the unit test) if the expectations did not occur.
 
-```
-\[TestMethod\]
+```csharp
+[TestMethod]
 public void WhenUserDoesNotAgreeToContinueItDoesNotSendMessage()
 {
    //Arrange

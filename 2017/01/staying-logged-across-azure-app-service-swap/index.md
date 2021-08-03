@@ -14,7 +14,7 @@ I needed a way to keep the same encryption keys across both the staging and prod
 
 The resulting code is as follows
 
-```
+```csharp
 // Add Data Protection so that cookies don't get invalidated when swapping slots.
 string storageUrl = Configuration.GetValue<string>("DataProtection:StorageUrl");
 string sasToken = Configuration.GetValue<string>("DataProtection:SasToken");
@@ -45,7 +45,7 @@ The first section just reads configuration variables from the configuration prov
 
 I also wanted to include a sample configuration, in this case in an appsetting.json format. This will give some idea of what the various setting should look like.
 
-```
+```javascript
 {
   "DataProtection": {
     "ApplicationName": "AppName",

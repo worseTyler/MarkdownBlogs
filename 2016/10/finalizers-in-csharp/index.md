@@ -6,7 +6,7 @@ Finalizers allow developers to write code that will clean up a class’s resourc
 
 The finalizer declaration is identical to the destructor syntax of C#’s predecessor—namely, C++. As shown below, the finalizer declaration is prefixed with a tilde before the name of the class.
 
-```
+```csharp
 using System.IO;
 
 class TemporaryFileStream

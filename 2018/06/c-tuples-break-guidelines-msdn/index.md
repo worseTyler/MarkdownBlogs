@@ -12,7 +12,7 @@ Let’s start the discussion with a focus on encapsulation and the benefits of p
 
 **Figure 1 Defining an Arc**
 
-```
+```csharp
 public struct Arc
 {
   public Arc (double radius, double startAngle, double sweepAngle)
@@ -83,12 +83,12 @@ public double SweepAngle { get; set; } = 180;
 
 is simpler than this:
 
-```
-private double \_SweepAngle = 180;
+```csharp
+private double _SweepAngle = 180;
 
 public double SweepAngle {
-  get { return \_SweepAngle; }
-  set { \_SweepAngle = value; }
+  get { return _SweepAngle; }
+  set { _SweepAngle = value; }
 }
 ```
 
@@ -96,7 +96,7 @@ The property initializer support is important because, without it, an automatica
 
 At this point lets return to the C# 7.0 tuple type ValueTuple<…>. Despite the guideline about exposed fields, ValueTuple <T1, T2>, for example, is defined as follows:
 
-```
+```csharp
 public struct ValueTuple<T1, T2>
   : IComparable<ValueTuple<T1, T2>>, ...
 {
@@ -118,9 +118,9 @@ The next guideline to consider is that of the mutable value type. Once again, th
 
 **Figure 2 Value Types Are Copied So The Caller Doesn’t Observe the Change**
 
-```
-\[TestMethod\]
-public void PassByValue\_Modify\_ChangeIsLost()
+```csharp
+[TestMethod]
+public void PassByValue_Modify_ChangeIsLost()
 {
   void Modify(Arc paramameter) { paramameter.Radius++; }
   Arc arc = new Arc(42, 0, 90);
@@ -133,7 +133,7 @@ What’s confusing is that in order for a developer to expect value copy behavio
 
 **Figure 3 Mutable Value Types Behave Unexpectedly**
 
-```
+```csharp
 public class PieShape
 {
   public Point Center { get; }
@@ -148,8 +148,8 @@ public class PieShape
 
 public class PieShapeTests
 {
-  \[TestMethod\]
-  public void Rotate\_GivenArcOnPie\_Fails()
+  [TestMethod]
+  public void Rotate_GivenArcOnPie_Fails()
   {
     PieShape pie = new PieShape(new Arc(42, 0, 90));
     Assert.AreEqual<double>(90, pie.Arc.SweepAngle);
@@ -163,13 +163,13 @@ Notice that, in spite of invocation Arc’s Rotate function, the Arc, in fact, n
 
 As before, tuples in C# 7.0 ignore this guideline and exposes public fields that, by definition, make ValueTuple<…> mutable. Despite this violation, ValueTuple<…> doesn’t suffer the same drawbacks as Arc. The reason is that the only way to modify the tuple is via the Item field. However, the C# compiler doesn’t allow the modification of a field (or property) returned from a containing type (whether the containing type is a reference type, value type or even an array or other type of collection). For example, the following code will not compile:
 
-```
+```csharp
 pie.Arc.Radius = 0;
 ```
 
 Nor will this code:
 
-```
+```csharp
 pie.Arc.Radius++;
 ```
 

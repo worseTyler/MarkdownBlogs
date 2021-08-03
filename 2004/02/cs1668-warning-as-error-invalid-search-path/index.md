@@ -8,7 +8,7 @@ The exact error that occured for me appears below:
 
 > **Compilation Error** **Description:** An error occurred during the compilation of a resource required to service this request. Please review the following specific error details and modify your source code appropriately. **Compiler Error Message:** CS1668: Warning as Error: Invalid search path 'C:\\Program Files\\Microsoft Visual Studio .NET Whidbey\\SDK\\v1.2\\Lib\\' specified in 'LIB environment variable' -- 'The system cannot find the path specified. ' **Source Error:**
 > 
-> \[No relevant source lines\]
+> [No relevant source lines]
 > 
 > Source File:    Line: 0
 

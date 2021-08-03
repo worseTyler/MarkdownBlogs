@@ -27,115 +27,61 @@ The following six steps will help you master this tool by providing a sample of 
 
 Here's the output from running the above commands.
 
-```
+```csharp
 .assembly extern System.Runtime
-
 {
-
 .publickeytoken = ( B0 3F 5F 7F 11 D5 0A 3A )
-
 .ver 4:2:0:0
-
 }
-
 .assembly extern System.Console
-
 {
-
 .publickeytoken = ( B0 3F 5F 7F 11 D5 0A 3A )
-
 .ver 4:1:0:0
-
 }
-
 .assembly 'HelloWorld'
-
 {
-
-.custom instance void \[System.Runtime\]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 )
-
-.custom instance void \[System.Runtime\]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78 63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )
-
-.custom instance void \[System.Runtime\]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 18 2E 4E 45 54 43 6F 72 65 41 70 70 2C 56 65 72 73 69 6F 6E 3D 76 32 2E 30 01 00 54 0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C 61 79 4E 61 6D 65 00 )
-
-.custom instance void \[System.Runtime\]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 0A 48 65 6C 6C 6F 57 6F 72 6C 64 00 00 )
-
-.custom instance void \[System.Runtime\]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 05 44 65 62 75 67 00 00 )
-
-.custom instance void \[System.Runtime\]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 13 50 61 63 6B 61 67 65 20 44 65 73 63 72 69 70 74 69 6F 6E 00 00 )
-
-.custom instance void \[System.Runtime\]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )
-
-.custom instance void \[System.Runtime\]System.Reflection.AssemblyInformationalVersionAttribute::.ctor(string) = ( 01 00 05 31 2E 30 2E 30 00 00 )
-
-.custom instance void \[System.Runtime\]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0A 48 65 6C 6C 6F 57 6F 72 6C 64 00 00 )
-
-.custom instance void \[System.Runtime\]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0A 48 65 6C 6C 6F 57 6F 72 6C 64 00 00 )
-
+.custom instance void [System.Runtime]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 )
+.custom instance void [System.Runtime]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78 63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )
+.custom instance void [System.Runtime]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 18 2E 4E 45 54 43 6F 72 65 41 70 70 2C 56 65 72 73 69 6F 6E 3D 76 32 2E 30 01 00 54 0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C 61 79 4E 61 6D 65 00 )
+.custom instance void [System.Runtime]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 0A 48 65 6C 6C 6F 57 6F 72 6C 64 00 00 )
+.custom instance void [System.Runtime]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 05 44 65 62 75 67 00 00 )
+.custom instance void [System.Runtime]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 13 50 61 63 6B 61 67 65 20 44 65 73 63 72 69 70 74 69 6F 6E 00 00 )
+.custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )
+.custom instance void [System.Runtime]System.Reflection.AssemblyInformationalVersionAttribute::.ctor(string) = ( 01 00 05 31 2E 30 2E 30 00 00 )
+.custom instance void [System.Runtime]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0A 48 65 6C 6C 6F 57 6F 72 6C 64 00 00 )
+.custom instance void [System.Runtime]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0A 48 65 6C 6C 6F 57 6F 72 6C 64 00 00 )
 .hash algorithm 0x00008004
-
 .ver 1:0:0:0
-
 }
-
 .module 'HelloWorld.dll'
-
 // MVID: {b715e71d-d629-4da3-bb80-91ca22b56227}
-
 .imagebase 0x00400000
-
 .file alignment 0x00000200
-
 .stackreserve 0x00100000
-
 .subsystem 0x0003  // WindowsCui
-
 .corflags 0x00000001  // ILOnly
-
-.class private auto ansi beforefieldinit HelloWorld extends \[System.Runtime\]System.Object
-
+.class private auto ansi beforefieldinit HelloWorld extends [System.Runtime]System.Object
 {
-
 .method private hidebysig static void Main() cil managed
-
 {
-
 .entrypoint
-
 // Code size 13
-
 .maxstack 8
-
-IL\_0000: nop
-
-IL\_0001: ldstr "Hello. My name is Inigo Montoya."
-
-IL\_0006: call void \[System.Console\]System.Console::WriteLine(string)
-
-IL\_000b: nop
-
-IL\_000c: ret
-
+IL_0000: nop
+IL_0001: ldstr "Hello. My name is Inigo Montoya."
+IL_0006: call void [System.Console]System.Console::WriteLine(string)
+IL_000b: nop
+IL_000c: ret
 } // End of method System.Void HelloWorld::Main()
-
 .method public hidebysig specialname rtspecialname instance void .ctor() cil managed
-
 {
-
 // Code size 8
-
 .maxstack 8
-
-IL\_0000: ldarg.0
-
-IL\_0001: call instance void \[System.Runtime\]System.Object::.ctor()
-
-IL\_0006: nop
-
-IL\_0007: ret
-
+IL_0000: ldarg.0
+IL_0001: call instance void [System.Runtime]System.Object::.ctor()
+IL_0006: nop
+IL_0007: ret
 } // End of method System.Void HelloWorld::.ctor()
-
 } // End of class HelloWorld
 ```
 

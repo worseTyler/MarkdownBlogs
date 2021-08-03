@@ -35,7 +35,7 @@ Adding PostgreSQL to .NET is a relatively simple procedure:
 
 To teach .NET how to interface with PostgreSQL, we're going to add the [Npgsql](https://www.npgsql.org/efcore/index.html) library by adding the reference to Npgsql to your `.Backend/GadgetDepot/GadgetDepot.csproj` file:
 
-```
+```csharp
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
@@ -65,7 +65,7 @@ Next, we need to give our app a connection string for the dockerized PostgreSQL 
 
 Update your `appsettings.json` to resemble the following:
 
-```
+```csharp
 {
   "Logging": {
     "LogLevel": {
@@ -88,7 +88,7 @@ The last bit of code needed to set up our PostgreSQL connection in the .NET app 
 
 We'll add this adapter service to the `Startup` class in the `Backend/GadgetDepot/Startup.cs` file. Update the `ConfigureServices` method in your `Startup` class so that it includes the call to the `IServiceCollection.AddEntityFrameworkNpgsql` method, making use of the connection string we created above.
 
-```
+```csharp
 public class Startup
 {
   public Startup(IConfiguration configuration)
@@ -100,7 +100,7 @@ public class Startup
 
   public void ConfigureServices(IServiceCollection services)
   {
-    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version\_2\_1);
+    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
     //
     // Add this following call to provide PostgreSQL support
@@ -142,7 +142,7 @@ Time to build out the REST API for our gadgets. This section isn't really about 
 
 For our requirements, a gadget is just a name and nothing else. To model it in our app, go to the `GadgetDepot/Models` directory and add a new class `Gadget` in `Gadget.cs`:
 
-```
+```csharp
 namespace GadgetDepot.Models
 {
     public class Gadget
@@ -159,7 +159,7 @@ That'll do just fine. Next, we need to integrate this model declaration with our
 
 Create the file `Backend/GadgetDepot/ApiDbContext.cs`, and write our custom Gadget Depot `DbContext` to include the `Gadget` model:
 
-```
+```csharp
 using Microsoft.EntityFrameworkCore;
 using GadgetDepot.Models;
 
@@ -178,10 +178,10 @@ This class declares that our app's persistence layer has a set of gadgets that w
 
 To use this context, swap out the `DbContext` that we declared in the `Startup` class. Be sure to add a `using GadgetDepot.Models` at the head of the file, then make the change to the `ConfigureServices` method in the `GadgetDepot.Startup` class:
 
-```
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-  services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version\_2\_1);
+  services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
   services.AddEntityFrameworkNpgsql().AddDbContext<ApiDbContext>(options =>
       options.UseNpgsql(Configuration.GetConnectionString("DbContext")));
@@ -201,7 +201,7 @@ docker run -v $(pwd):/app -w /app microsoft/dotnet dotnet ef database update
 
 As a final flourish, we can insert some test gadgets into the database.  Create the file `Backend/GadgetDepot/DbInitializer.cs` with the following class:
 
-```
+```csharp
 using GadgetDepot.Models;
 using System.Linq;
 
@@ -230,7 +230,7 @@ We can make this method run at startup by inserting a call to `Initialize` in th
 
 Alter your `Backend/GadgetDepot/Program.cs` file to mimic the following:
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -246,7 +246,7 @@ namespace GadgetDepot
 {
   public class Program 
   {
-    public static void Main(string\[\] args)
+    public static void Main(string[] args)
     {
       var host = CreateWebHostBuilder(args).Build();
       using(var scope = host.Services.CreateScope())
@@ -269,7 +269,7 @@ namespace GadgetDepot
       host.Run();
     }
 
-    public static IWebHostBuilder CreateWebHostBuilder(string\[\] args) =>
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
       WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>();
   }
@@ -288,7 +288,7 @@ We'll just copy in the code so we can get our Gadget Depot app delivered on sche
 
 Create the file `Backend/GadgetDepot/Controllers/GadgetController.cs`:
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -297,21 +297,21 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GadgetDepot.Controllers 
 {
-  \[Route("api/\[controller\]")\]
-  \[ApiController\]
+  [Route("api/[controller]")]
+  [ApiController]
   public class GadgetsController : ControllerBase
   {
-    ApiDbContext \_ctx;
+    ApiDbContext _ctx;
 
     public GadgetsController(ApiDbContext ctx)
     {
-      \_ctx = ctx;
+      _ctx = ctx;
     }
 
-    \[HttpGet\]
+    [HttpGet]
     public ActionResult<IEnumerable<Gadget>> Get()
     {
-      return \_ctx.Gadgets.ToList();
+      return _ctx.Gadgets.ToList();
     }
   }
 }
@@ -329,7 +329,7 @@ Truth be told, it's not going to be much of an app at all, and Angular is certai
 
 Change the `src/app/app.component.ts` file so that the main component will connect to the REST API backend:
 
-```
+```typescript
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -350,12 +350,12 @@ interface Gadget {
   \`
 })
 export class AppComponent implements OnInit {
-  gadgets: string\[\] = \[\];
+  gadgets: string[] = [];
 
   constructor(private https: HttpClient) { }
 
   ngOnInit() {
-    this.http.get<Gadget\[\]>('https://localhost:5000/api/gadgets')
+    this.http.get<Gadget[]>('https://localhost:5000/api/gadgets')
       .subscribe(gs => {
         this.gadgets = gs.map(g => g.name);
       });
@@ -387,4 +387,4 @@ In our first [blog](https://intellitect.com/docker-scaffold/) in our series, we 
 
 _Written by Thomas Ruble._
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)

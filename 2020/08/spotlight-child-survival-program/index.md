@@ -6,13 +6,13 @@ The IntelliTect team is humbled to be a small part of the hard work and uncondit
 
 Partnering with Compassion for the past eight years, IntelliTect has helped fund multiple child survival programs in the neediest regions of rural Kenya and Tanzania (see map below). 
 
- "Spotlight: Child Survival Programs"
+![Map of the Child Survival Program Sites that IntelliTect has helped fund in the past year](https://intellitect.com/wp-content/uploads/2020/08/Map-of-the-CSP-sites-intellitect-has-funded.jpg "Spotlight: Child Survival Programs")
 
 This map shows the locations of Compassion's Child Survival Programs that IntelliTect has helped fund in the past year.
 
 These programs are coordinated by Compassion around the world. Local leaders carefully design the programs to protect the health of mothers and their children from pregnancy until their children are around age five. IntelliTect has provided consistent and reliable funding for the staff as well as training, medicine, food, and other supplies at these CSP locations.  
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2020/08/Survival-Program-Sarah-and-Nelson-1024x640.webp)
+![](https://intellitect.com/wp-content/uploads/2020/08/Survival-Program-Sarah-and-Nelson-1024x640.png)
 
 “May God bless you for the support you give to the Survival program.”
 
@@ -38,4 +38,4 @@ It is a blessing for the IntelliTect team to witness these women work so hard. T
 
 Interested in helping moms like Sarah? Connect with [Compassion International](https://www.compassion.com/help-babies-mothers-in-poverty.htm) to get started.
 
-[ "Spotlight: Child Survival Programs"
+[![click here to sign up for Intellovations, our quarterly newsletter so you never miss out!](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-1024x235.jpg)](https://bit.ly/2Nhro9T "Spotlight: Child Survival Programs")

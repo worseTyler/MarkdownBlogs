@@ -8,7 +8,7 @@ For the past three years, I, along with senior software architects Kevin Bost an
 
 For me, teaching C# at the university provides an opportunity to encourage students in my passion for software engineering. Students continue to show up week after week. It's humbling. It is my hope that their dedication to learning will provide them with a great foundation in their careers once they graduate. More importantly, there is a major shortage of developers in the job market today. Participating in the solution to that problem by providing direction and teaching needed skills is an honor.
 
- "Communicating Passion to a New Generation of Students"
+![Picture of Mark, Michael and Kevin.](https://intellitect.com/wp-content/uploads/2019/02/Page-2-Teachers-copy-1024x768.jpg "Communicating Passion to a New Generation of Students")
 
 Three of Eastern Washington’s newest adjunct professors (pictured from left to right - Mark Michaelis, Michael Stokesbarry, and Kevin Bost) pose with their textbook, written by Mark.
 
@@ -46,4 +46,4 @@ I am excited to see where this influx of talented developers takes the company. 
 
 If you’re local and have an interest in computer science, we’d love to see you in class. If not, consider checking out [Kevin’s live streams](https://www.twitch.tv/kitokeboo), where he delves into all sorts of development-related topics. Or, if you’re ready to dive into C#, consider [my most recent book.](https://intellitect.com/essentialcsharp/)
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-1024x129.png)

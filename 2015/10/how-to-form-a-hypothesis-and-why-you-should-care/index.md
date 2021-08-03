@@ -36,7 +36,7 @@ A hypothesis is just an assumption with a predication thrown in.
 
 Usually they come in the form of:
 
-**If \[X\] happens, then the result will be \[Y\].**
+**If [X] happens, then the result will be [Y].**
 
 Let’s return to the app example. We want to figure out if people are actually interested in our app. One way to gauge public interest is to build a simple landing page that takes email registrations. The landing page markets the app and if people are interested, they will give out their email so that they can be notified when the app is ready to purchase. Now the goal becomes 1) get them to your landing page and 2) once they’re at your landing page, get their email. One hypothesis might be: _If we advertise on Twitter, then 10% (or more) of all people who view the marketing message will go to our website._ Another hypothesis might be: _20% (or more) of the users who come to our landing page will register_. Now, keep in mind these are simple examples that are full of assumptions.
 

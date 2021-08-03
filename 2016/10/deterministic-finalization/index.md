@@ -8,7 +8,7 @@ Providing a method for deterministic finalization is important because it elimin
 
 Because of the importance of deterministic finalization, the base class library includes a specific interface for the pattern and C# integrates the pattern into the language. The `IDisposable` interface defines the details of the pattern with a single method called `Dispose()`, which developers call on a resource class to “dispose” of the consumed resources. Listing 9.21 demonstrates the `IDisposable` interface and some code for calling it.
 
-```
+```csharp
 using System;
 using System.IO;
 
@@ -89,7 +89,7 @@ class TemporaryFileStream: IDisposable
 
 From `Program.Search()`, there is an explicit call to `Dispose()` after using the TemporaryFileStream. `Dispose()` is the method responsible for cleaning up the resources (in this case, a file) that are not related to memory and, therefore, subject to cleanup implicitly by the garbage collector. Nevertheless, the execution here contains a hole that would prevent execution of `Dispose()`—namely, the chance that an exception will occur between the time when `TemporaryFileStream` is instantiated and the time when `Dispose()` is called. If this happens, `Dispose()` will not be invoked and the resource cleanup will have to rely on the finalizer. To avoid this problem, callers need to implement a try/finally block. Instead of requiring programmers to code such a block explicitly, C# provides a using statement expressly for the purpose (Listing 9.22).
 
-```
+```csharp
 class Program
 {
  // ...

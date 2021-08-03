@@ -12,24 +12,24 @@ The code in this article was previously found in a public GitHub repository at ,
 
 Our Account model will start out with Required attributes for each property.
 
-```
+```csharp
 public class Account
 {
-    \[Required\]
+    [Required]
     public string Name { get; set; }
     
-    \[Required\]
+    [Required]
     public decimal Balance { get; set; }
 }
 ```
 
 At this point if you attempt to enter $1,340.12 in the Balance field you will receive this message, which is returned when the SimpleTypeModelBinder fails to convert the string "$1,340.12" to a decimal.
 
- "Custom Model Binding in ASP.Net Core"
+![not_valid_value_currency](https://intellitect.com/wp-content/uploads/2016/01/not_valid_value_currency.png "Custom Model Binding in ASP.Net Core")
 
 The result we are looking for is to validate the input as currency rather than a decimal, but we may have other needs for scrubbing input before model binding takes place so we’ll use an interface that describes our Scrub action.
 
-```
+```csharp
 public interface IScrubberAttribute
 {
     object Scrub(string modelValue, out bool success);
@@ -38,20 +38,20 @@ public interface IScrubberAttribute
 
 Next we’ll add our CurrencyScrubberAttribute that will do the work of parsing the user input to see if it is a valid currency format. C#’s decimal.TryParse has an overload that takes a NumberStyle and CultureInfo, which is how we’ll do our currency validation. You’ll notice this only works with US currency ($) at this time, but would just require setting CultureInfo to handle other currencies. Our Scrub method has an out parameter that sends back a boolean value indicating success or failure. The model binder will use this parameter to indicate whether or not the binding for this property has succeeded.
 
-```
-\[AttributeUsage(AttributeTargets.Property)\]
+```csharp
+[AttributeUsage(AttributeTargets.Property)]
 public class CurrencyScrubberAttribute : Attribute, IScrubberAttribute
 {
-    private static NumberStyles \_currencyStyle = NumberStyles.Currency;
-    private CultureInfo \_culture = new CultureInfo("en-US");
+    private static NumberStyles _currencyStyle = NumberStyles.Currency;
+    private CultureInfo _culture = new CultureInfo("en-US");
 
     public object Scrub(string modelValue, out bool success)
     {
         var modelDecimal = 0M;
         success = decimal.TryParse(
             modelValue,
-            \_currencyStyle,
-            \_culture,
+            _currencyStyle,
+            _culture,
             out modelDecimal
         );
 
@@ -62,9 +62,9 @@ public class CurrencyScrubberAttribute : Attribute, IScrubberAttribute
 
 Using our new CurrencyScrubberAttribute, the Balance property now looks like this:
 
-```
-\[Required\]
-\[CurrencyScrubber\]
+```csharp
+[Required]
+[CurrencyScrubber]
 public decimal Balance { get; set; }
 ```
 
@@ -72,7 +72,7 @@ Next we'll need to add a model binder.  In .Net Core 1.0 model binding is achie
 
 For our input scrubber our IModelBindingProvider looks like the following.  We will be looking for non-complex types which have an IScrubberAttribute.  If those conditions aren't met we return null and the framework moves on to the next provider.
 
-```
+```csharp
 public class ScrubbingModelBinderProvider : IModelBinderProvider
 {
     public IModelBinder GetBinder(ModelBinderProviderContext context)
@@ -97,18 +97,18 @@ public class ScrubbingModelBinderProvider : IModelBinderProvider
 
 Our model binder will be handling simple types that have an IScrubberAttribute, but if for any reason we aren't going to deal with the binding we will pass it to a SimpleTypeModelBinder to handle it.  If we do handle the model binding and the call to Scrub is successful then we'll pass back the new value and indicate the Task has completed.
 
-```
+```csharp
 public class ScrubbingModelBinder : IModelBinder
 {
-    IScrubberAttribute \_attribute;
-    SimpleTypeModelBinder \_baseBinder;
+    IScrubberAttribute _attribute;
+    SimpleTypeModelBinder _baseBinder;
 
     public ScrubbingModelBinder(Type type, IScrubberAttribute attribute)
     {
         if (type == null) throw new ArgumentNullException(nameof(type));
 
-        \_attribute = attribute as IScrubberAttribute;
-        \_baseBinder = new SimpleTypeModelBinder(type);
+        _attribute = attribute as IScrubberAttribute;
+        _baseBinder = new SimpleTypeModelBinder(type);
     }
 
     public Task BindModelAsync(ModelBindingContext bindingContext)
@@ -124,7 +124,7 @@ public class ScrubbingModelBinder : IModelBinder
             // Attempt to scrub the input value
             var valueAsString = valueProviderResult.FirstValue;
             var success = true;
-            var result = \_attribute.Scrub(valueAsString, out success);
+            var result = _attribute.Scrub(valueAsString, out success);
             if (success)
             {
                 bindingContext.Result = ModelBindingResult.Success(result);
@@ -133,15 +133,14 @@ public class ScrubbingModelBinder : IModelBinder
         }
 
         // If we haven't handled it, then we'll let the base SimpleTypeModelBinder handle it
-        return \_baseBinder.BindModelAsync(bindingContext);
+        return _baseBinder.BindModelAsync(bindingContext);
     }
 }
-﻿
 ```
 
 In Startup.cs we'll need to tell the framework about our IModelBinderProvider, and to make sure we get first choice on binding the model we'll put ours first.
 
-```
+```csharp
 services.AddMvc(config =>
 {
     config.ModelBinderProviders.Insert(0, new ScrubbingModelBinderProvider());

@@ -4,7 +4,7 @@ In my last column ([msdn.com/magazine/mt797654](https://www.msdn.com/magazine/mt
 
 **Figure 1 Yielding Some C# Keywords Sequentially**
 
-```
+```csharp
 using System.Collections.Generic;
 public class CSharpBuiltInTypes: IEnumerable<string>
 {
@@ -57,7 +57,7 @@ By placing a break point at the start of the GetEnumerator method in **Figure 1*
 
 In **Figure 2**, the foreach statement at the call site initiates a call to GetEnumerator on the CSharpBuiltInTypes instance called keywords. As you can see, it’s always safe to call GetEnumerator again; “fresh” enumerator objects will be created when necessary. Given the iterator instance (referenced by iterator), foreach begins each iteration with a call to MoveNext. Within the iterator, you yield a value back to the foreach statement at the call site. After the yield return statement, the GetEnumerator method seemingly pauses until the next MoveNext request. Back at the loop body, the foreach statement displays the yielded value on the screen. It then loops back around and calls MoveNext on the iterator again. Notice that the second time, control picks up at the second yield return statement. Once again, the foreach displays on the screen what CSharpBuiltInTypes yielded and starts the loop again. This process continues until there are no more yield return statements within the iterator. At that point, the foreach loop at the call site terminates because MoveNext returns false.
 
- "Essential .NET: Custom Iterators with Yield (MSDN)"
+![Sequence Diagram with Yield Return](https://intellitect.com/wp-content/uploads/2019/12/Figure-2.png "Essential .NET: Custom Iterators with Yield (MSDN)")
 
 Figure 2 Sequence Diagram with Yield Return
 
@@ -69,7 +69,7 @@ In **Figure 3**, the iteration over the Pair<T> data type loops twice: first thr
 
 **Figure 3** Using Yield to Implement BinaryTree<T>
 
-```
+```csharp
 public struct Pair<T>: IPair<T>,
   IEnumerable<T>
 {
@@ -117,7 +117,7 @@ It’s not necessary to hardcode each yield return statement, as I did in both C
 
 **Figure 4 Placing Yield Return Statements Within a Loop**
 
-```
+```csharp
 public class BinaryTree<T>: IEnumerable<T>
 {
   // ...
@@ -157,7 +157,7 @@ As observed with CSharpBuiltInTypes and Pair<T>, you can now iterate over Binary
 
 **Figure 5 Using foreach with BinaryTree<string>**
 
-```
+```csharp
 // JFK
 var jfkFamilyTree = new BinaryTree<string>(
   "John Fitzgerald Kennedy");
@@ -182,7 +182,7 @@ foreach (string name in jfkFamilyTree)
 
 And here are the results:
 
-```
+```csharp
 John Fitzgerald Kennedy
 Joseph Patrick Kennedy
 Patrick Joseph Kennedy
@@ -200,7 +200,7 @@ In 1972, Barbara Liskov and a team of scientists at MIT began researching progra
 
 Sometimes you might want to cancel further iteration. You can do so by including an if statement so that no further statements within the code are executed. However, you can also use yield break to cause MoveNext to return false and control to return immediately to the caller and end the loop. Here’s an example of such a method:
 
-```
+```csharp
 public System.Collections.Generic.IEnumerable<T>
   GetNotNullEnumerator()
 {
@@ -223,7 +223,7 @@ When the C# compiler encounters an iterator, it expands the code into the approp
 
 **Figure 6 C# Equivalent of Compiler-Generated C# Code for Iterators**
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 public class Pair<T> : IPair<T>, IEnumerable<T>
@@ -233,8 +233,8 @@ public class Pair<T> : IPair<T>, IEnumerable<T>
   // code by the compiler.
   public virtual IEnumerator<T> GetEnumerator()
   {
-    \_\_ListEnumerator result = new \_\_ListEnumerator(0);
-    result.\_Pair = this;
+    __ListEnumerator result = new __ListEnumerator(0);
+    result._Pair = this;
     return result;
   }
   public virtual System.Collections.IEnumerator
@@ -242,33 +242,33 @@ public class Pair<T> : IPair<T>, IEnumerable<T>
   {
     return new GetEnumerator();
   }
-  private sealed class \_\_ListEnumerator<T> : IEnumerator<T>
+  private sealed class __ListEnumerator<T> : IEnumerator<T>
   {
-    public \_\_ListEnumerator(int itemCount)
+    public __ListEnumerator(int itemCount)
     {
-      \_ItemCount = itemCount;
+      _ItemCount = itemCount;
     }
-    Pair<T> \_Pair;
-    T \_Current;
-    int \_ItemCount;
+    Pair<T> _Pair;
+    T _Current;
+    int _ItemCount;
     public object Current
     {
       get
       {
-        return \_Current;
+        return _Current;
       }
     }
     public bool MoveNext()
     {
-      switch (\_ItemCount)
+      switch (_ItemCount)
       {
         case 0:
-          \_Current = \_Pair.First;
-          \_ItemCount++;
+          _Current = _Pair.First;
+          _ItemCount++;
           return true;
         case 1:
-          \_Current = \_Pair.Second;
-          \_ItemCount++;
+          _Current = _Pair.Second;
+          _ItemCount++;
           return true;
         default:
           return false;
@@ -286,7 +286,7 @@ Previous iterator examples implemented IEnumerable<T>.Get­Enumerator, which is 
 
 **Figure 7 Using Yield Return in a Method That Returns IEnumerable<T>**
 
-```
+```csharp
 public struct Pair<T>: IEnumerable<T>
 {
   ...

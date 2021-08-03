@@ -44,7 +44,7 @@ Kubernetes (k8s) can solve all your container management woes. Kubernetes is an 
 
 **Control Plane**: The control plane, often called a primary, is the central controlling entity for the nodes. It manages the configuration for all the nodes and continuously works to achieve the desired state. Any persistent configuration data exists in the control plane in what’s called the “etcd.” It’s essentially a database that holds key-value pairs representing the desired state set by the deployer. The Kubernetes API also resides in the control plane and allows users to make changes to their configuration. The API is most commonly accessed through a command-line syntax called “Kubectl.”
 
- "Discover Kubernetes: a popular container orchestration solution"
+![Diagram of Kubernetes architecture.](https://intellitect.com/wp-content/uploads/2019/08/Kubernetes-graphic.png "Discover Kubernetes: a popular container orchestration solution")
 
 Kubernetes architecture overview graphic from [Andrew Martin's blog](https://kubernetes.io/blog/2018/07/18/11-ways-not-to-get-hacked/) on kubernetes.io.
 

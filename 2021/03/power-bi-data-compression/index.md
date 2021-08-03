@@ -58,7 +58,7 @@ References:  
 
 Also known as hash encoding, this encoding method builds a dictionary of distinct values of a column and replaces column values with indexes to the dictionary. 
 
- "Power BI’s Data Compression: Large Data Imports in Power BI"
+![Power BI dictionary encoding for data compression](https://intellitect.com/wp-content/uploads/2020/11/image.png "Power BI’s Data Compression: Large Data Imports in Power BI")
 
 This process has two distinct advantages. First, because column values are replaced with integers, they are smaller to store and only require the minimum number of bits necessary to store an index entry. This can be seen in the example above which only requires 2 bits per entry to represent the four colors. Second, the replacement of columns with integers essentially makes VertiPaq datatype independent, so optimization of datatype is mostly relevant to the reduction of pre-compressed data size. The primary determinant of dictionary encoding efficacy is the cardinality of a column or the number of distinct values. Examples of cardinality reduction include splitting a DateTime column into separate Date and Time columns which reduces the number of unique values within a single column, removing “Notes” columns, or changing granularity from seconds to minutes. 
 
@@ -70,7 +70,7 @@ Reference:  
 
 This encoding method pertains to columns with numerous repeating values. Instead of storing each instance of a repeated value, such as Q1 existing in the first 200 rows of a table, the xVelocity engine instead calculates and stores the number of times a value appears in a row, further compressing the data. 
 
- "Power BI’s Data Compression: Large Data Imports in Power BI"
+![Data compression in Power BI](https://intellitect.com/wp-content/uploads/2020/12/RunLengthEncoding-300x266.png "Power BI’s Data Compression: Large Data Imports in Power BI")
 
 This process is complementary to the prior encoding methods because run-length encoding can be applied to value-encoded data. Bear in mind, xVelocity will try to find the optimal column to sort by to maximize compression via run-length encoding and may spend up to 10 seconds per 1 million rows while determining the best column to use. Additionally, run-length encoding will likely result in the reordering of a table’s rows after loading. 
 

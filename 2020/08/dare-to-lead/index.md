@@ -82,4 +82,4 @@ Already read it? Let us know what you think about the book in the comments.
 
 Consider our previous blog, _[Agile Demystified: 7 Metrics to Assess Your Agile Practices](/demystified-agile/)_.
 
-[ "Dare to Lead: Leadership Without Armor"
+[![click here to sign up for Intellovations, our quarterly newsletter so you never miss out!](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-1024x235.jpg)](https://bit.ly/2Nhro9T "Dare to Lead: Leadership Without Armor")

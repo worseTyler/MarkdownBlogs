@@ -1,6 +1,6 @@
 
 
-Going all the way back to. NET Framework 1.0, I’ve been astounded that there’s been no simple way for developers to parse the command line of their applications. Applications start execution from the Main method, but the arguments are passed in as an array (string\[\] args) with no differentiation between which items in the array are commands, options, arguments and the like.
+Going all the way back to. NET Framework 1.0, I’ve been astounded that there’s been no simple way for developers to parse the command line of their applications. Applications start execution from the Main method, but the arguments are passed in as an array (string[] args) with no differentiation between which items in the array are commands, options, arguments and the like.
 
 I wrote about this problem in a previous article (“How to Contribute to Microsoft Open Source Software Projects,” [msdn.com/magazine/mt830359](https://msdn.com/magazine/mt830359)), and described my work with Microsoft’s Jon Sequeira. Sequeira has lead an open source team of developers to create a new command-line parser that can accept command-line arguments and parse them into an API called System.CommandLine, which does three things:
 
@@ -28,7 +28,7 @@ Prior to System.CommandLine, the lack of built-in parsing support meant that whe
 
 Imagine that you’re writing an image conversion program that converts an image file to a different format based on the output name specified. The command line could be something like this:
 
-```
+```csharp
 imageconv --input sunrise.CR2 --output sunrise.JPG
 ```
 
@@ -36,7 +36,7 @@ Given this command line (see “Passing Parameters to the .NET Core Executable�
 
 Fortunately, the new System.CommandLine API provides a significant improvement on this simple scenario, and does so in a way I haven’t previously seen. The simplification is that you can program a Main entry point with a signature that matches the command line. In other words, the signature for Main becomes:
 
-```
+```csharp
 static void Main(string input, string output)
 ```
 
@@ -44,7 +44,7 @@ That’s right, System.CommandLine enables the automatic conversion of the `--in
 
 Furthermore, arguments aren’t limited to strings. There’s a host of built-in converters (and support for custom converters) that allow you, for example, to use System.IO.FileInfo for the parameter type on input and output, like so:
 
-```
+```csharp
 static void Main(FileInfo input, FileInfo output)
 ```
 
@@ -54,11 +54,11 @@ The mapping between command-line arguments and Main method parameters is basic t
 
 **Figure 1 Sample Command Line for imageconv**
 
-```
+```csharp
 imageconv:
   Converts an image file from one format to another.
 Usage:
-  imageconv \[options\]
+  imageconv [options]
 Options:
   --input          The path to the image file that is to be converted.
   --output         The target name of the output after conversion.
@@ -73,7 +73,7 @@ The corresponding Main method that enables this updated command line is shown in
 
 **Figure 2 Main Method Supporting the Updated imageconv Command Line**
 
-```
+```csharp
 /// <summary>
 /// Converts an image file from one format to another.
 /// </summary>
@@ -90,7 +90,7 @@ Similarly, while there’s no version parameter on Main, System.CommandLine auto
 
 Another feature, command-line syntax verification, detects if a required argument (for which no default is specified on the parameter) is missing. If a required argument isn’t specified, System.Command­Line automatically issues an error that reads, “Required argument missing for option: --output.” Although somewhat counterintuitive, by default options with arguments are required. However, if the argument value associated with an option isn’t required, you can leverage C# default parameter value syntax. For example:
 
-```
+```csharp
 int xCropSize = 0
 ```
 
@@ -98,15 +98,15 @@ There’s also built-in support for parsing options regardless of the sequence i
 
 If you type an unrecognized option or command name, System.CommandLine automatically returns a command-line error that reads, “Unrecognized command or argument ….” However, if the name specified is similar to an existing option, the error will prompt with a typo correction suggestion.
 
-There are some built-in directives available to all command-line applications that use System.CommandLine. These directives are enclosed in square brackets and appear immediately following the application name. For example, the \[debug\] directive triggers a breakpoint that allows you to attach a debugger, while \[parse\] displays a preview of how tokens are parsed, as shown here:
+There are some built-in directives available to all command-line applications that use System.CommandLine. These directives are enclosed in square brackets and appear immediately following the application name. For example, the [debug] directive triggers a breakpoint that allows you to attach a debugger, while [parse] displays a preview of how tokens are parsed, as shown here:
 
-```
-imageconv \[parse\] --input sunrise.CR2 --output sunrise.JPG
+```csharp
+imageconv [parse] --input sunrise.CR2 --output sunrise.JPG
 ```
 
 In addition, automated testing via an IConsole interface and TestConsole class implementation is supported. To inject the TestConsole into the command-line pipeline, add an IConsole parameter to Main, like so:
 
-```
+```csharp
 public static void Main(
   FileInfo input, FileInfo output,
   int xCropSize = 0, int yCropSize = 0,
@@ -123,7 +123,7 @@ Using the Main method as the specification for the command line is just one of s
 
 System.CommandLine is architected around a core assembly that includes an API for configuring the command line and a parser that resolves the command-line arguments into a data structure. All the features listed in the previous section can be enabled via the core assembly, except for enabling a different method signature for Main. However, support for configuring the command line, specifically using a domain-specific language (such as a Main like method) is enabled by an app model. (The app model used for the Main like method implementation described earlier is code-named “DragonFruit.”) However, the System.CommandLine architecture enables support for additional app models (as shown in **Figure 3**).
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/11/parse-commandline-figure-3.webp)
+![](https://intellitect.com/wp-content/uploads/2019/11/parse-commandline-figure-3.png)
 
 **Figure 3 System.CommandLine Architecture**
 
@@ -133,13 +133,13 @@ For example, you could write an app model that uses a C# class model to define t
 
 When specifying command-line arguments in combination with the dotnet run command, the full command line would be:
 
-```
+```powershell
 dotnet run --project imageconv.csproj -- --input sunrise.CR2  --output sunrise.JPG
 ```
 
 If you’re running dotnet from the same directory in which the csproj file was located, however, the command line would read:
 
-```
+```powershell
 dotnet run -- --input sunrise.CR2 --output sunrise.JPG
 ```
 
@@ -147,7 +147,7 @@ The dotnet run command uses the “--” as the identifier, indicating that all 
 
 Starting with .NET Core 2.2, there’s also support for self-contained applications (even on Linux). With a self-contained application, you can launch it without using dotnet run and instead just rely on the resulting executable, like so:
 
-```
+```powershell
 imageconv.exe --input sunrise.CR2 --output sunrise.JPG
 ```
 
@@ -161,39 +161,39 @@ System.CommandLine includes classes that represent the constructs of a command l
 
 **Figure 4 Working with System.CommandLine Directly**
 
-```
+```csharp
 using System;
 using System.CommandLine;
 using System.CommandLine.Invocation;
 using System.IO;
 // etc...
 
-public static async Task<int> Main(params string\[\] args)
+public static async Task<int> Main(params string[] args)
 {
   RootCommand rootCommand = new RootCommand(
     description: "Converts an image file from one format to another.",
     treatUnmatchedTokensAsErrors: true);
 
   Option inputOption = new Option(
-    aliases: new string\[\] { "--input", "-i" },
+    aliases: new string[] { "--input", "-i" },
     description: "The path to the image file that is to be converted.",
     argument: new Argument<FileInfo>());
   rootCommand.AddOption(inputOption);
 
   Option outputOption = new Option(
-    aliases: new string\[\] { "--output", "-o" },
+    aliases: new string[] { "--output", "-o" },
     description: "The target name of the output file after conversion.",
     argument: new Argument<FileInfo>());
   rootCommand.AddOption(outputOption);
 
   Option xCropSizeOption = new Option(
-    aliases: new string\[\] { "--x-crop-size", "-x" },
+    aliases: new string[] { "--x-crop-size", "-x" },
     description: "The x dimension size to crop the picture. The default is 0 indicating no cropping is required.",
     argument: new Argument<FileInfo>());
   rootCommand.AddOption(xCropSizeOption);
 
   Option yCropSizeOption = new Option(
-    aliases: new string\[\] { "--y-crop-size", "-y" },
+    aliases: new string[] { "--y-crop-size", "-y" },
     description: "The Y dimension size to crop the picture. The default is 0 indicating no cropping is required.",
     argument: new Argument<FileInfo>());
   rootCommand.AddOption(yCropSizeOption);
@@ -230,16 +230,16 @@ In addition, while there are lots of knobs and buttons to control the command-li
 
 **Figure 5 Using Method-First Approach to Configure System.CommandLine**
 
-```
-public static async Task<int> Main(params string\[\] args)
+```csharp
+public static async Task<int> Main(params string[] args)
 {
   RootCommand rootCommand = new RootCommand(
     description: "Converts an image file from one format to another."
     , treatUnmatchedTokensAsErrors: true);
   MethodInfo method = typeof(Program).GetMethod(nameof(Convert));
   rootCommand.ConfigureFromMethod(method);
-  rootCommand.Children\["--input"\].AddAlias("-i");
-  rootCommand.Children\["--output"\].AddAlias("-o");
+  rootCommand.Children["--input"].AddAlias("-i");
+  rootCommand.Children["--output"].AddAlias("-o");
   return await rootCommand.InvokeAsync(args);
 }
 ```

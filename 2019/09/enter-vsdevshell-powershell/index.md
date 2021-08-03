@@ -26,12 +26,8 @@ In trying to isolate the naughty command prompt behavior, I discovered the new D
 
 The shortcut for the “Developer PowerShell for VS 2019” item lives in the folder C:ProgramDataMicrosoftWindowsStart MenuProgramsVisual Studio 2019Visual Studio Tools and executes the following command:
 
-```
-C:WindowsSysWOW64WindowsPowerShellv1.0powershell.exe -noe -c "&{Import-Module 
-```
-
-```
-Enter-VsDevShell ba5a33e2}"
+```powershell
+C:WindowsSysWOW64WindowsPowerShellv1.0powershell.exe -noe -c "&{Import-Module Enter-VsDevShell ba5a33e2}"
 ```
 
 The relative path to the module works because the “Start in” value of the shortcut is set to C:Program Files (x86)Microsoft Visual Studio2019Enterprise. These shortcut properties are all good and proper for most folks: copy the command section of the shortcut into your profile, make the path absolute to where you have installed Visual Studio, and continue merrily on your way. Of course, you will have to change the path and the InstanceId[4](#fn4) as you change editions or upgrade, but that’s not much of an onus for most people.
@@ -40,7 +36,7 @@ The relative path to the module works because the “Start in” value of the sh
 
 At this point, I was getting MSBuild in my path, and things were working again. I had previously noticed that new PowerShell consoles ended up in my “Projects location” folder in Visual Studio options, as seen in the screenshot below:
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/09/devenv_2019-08-28_08-36-27-1024x211.webp)
+![](https://intellitect.com/wp-content/uploads/2019/09/devenv_2019-08-28_08-36-27-1024x211.png)
 
 Visual Studio 2019 Options dialog
 
@@ -58,7 +54,7 @@ I discovered a parameter to the Enter-VsDevShell cmdlet called `-SkipAutomaticLo
 
 There are two different ParameterSets for calling the Enter-VsDevShell cmdlet. One set requires the InstanceId referenced in the shortcut, and one provides the InstallationPath to Visual Studio itself. Both tell the cmdlet where to start looking for things to add to your environment. Using this insight, I discovered a [blog post by Jason Tucker](https://medium.com/@jtucker/visual-studio-devshell-e3080f0341af) that explains how to use `vswhere.exe` to derive the installation path. I needed a future-proof and non-harmful way to add Visual Studio environment variables to my PowerShell consoles. The key was in combining these two approaches:
 
-```
+```powershell
 $installPath = &"C:Program Files (x86)Microsoft Visual StudioInstallervswhere.exe" -version 16.0 -property installationpath
 Import-Module (Join-Path $installPath "Common7ToolsMicrosoft.VisualStudio.DevShell.dll")
 Enter-VsDevShell -VsInstallPath $installPath -SkipAutomaticLocation
@@ -74,7 +70,7 @@ In retrospect, I’m glad I was curious enough to dig into this new functionalit
 
 Here is the current anemic help output from the cmdlet:
 
-```
+```powershell
 NAME
     Enter-VsDevShell
 SYNTAX
@@ -122,4 +118,4 @@ The `Enter-VsDevShell` cmdlet in the Microsoft module does not yet work with Pow
 
 Check out this [video](https://intellitect.com/powershell-dsc/) on Desired State Configuration (DSC) in PowerShell!
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-768x97.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/blog-job-ad-2-768x97.png)

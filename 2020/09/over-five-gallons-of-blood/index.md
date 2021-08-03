@@ -4,7 +4,7 @@
 
 Wow, what an amazing event – thanks to YOU!  
 
- "We Collected Over Five Gallons of Blood!"
+![CEO donating blood over five gallons - philanthropy](https://intellitect.com/wp-content/uploads/2020/09/Blood-Drive-Mark-768x935.jpg "We Collected Over Five Gallons of Blood!")
 
 Our CEO, Mark, steps in to donate when we had an opening and helped ensure all spots stayed filled.
 
@@ -12,7 +12,7 @@ IntelliTect was a first-time blood drive host, and while we were told collecting
 
 I’m so thrilled to tell you that volunteers from the [Red Cross](https://www.redcross.org) were in awe of our turnout. They recounted the units of blood and looked at each other in disbelief. We had collected over five gallons! The volunteers had never seen that much from a first-time donor.
 
- "We Collected Over Five Gallons of Blood!"
+![Friends donating blood over five gallons - philanthropy](https://intellitect.com/wp-content/uploads/2020/09/blood-drive-Ashlie-and-Derek-1024x768.jpg "We Collected Over Five Gallons of Blood!")
 
 Ashlie and Derek came to the intellitect office for the first time to donate on behalf of Stephanie's dad, Howard.
 
@@ -24,15 +24,15 @@ We had 46 donor reservation spots, with all of those spots filled the morning we
 
 ### A Family Affair
 
- "We Collected Over Five Gallons of Blood!"
+![Team and family donating blood over five gallons- philanthropy](https://intellitect.com/wp-content/uploads/2020/09/Blood-Drive-Phil-and-Emily-1024x768.jpg "We Collected Over Five Gallons of Blood!")
 
 Phil chats with his daughter, Emily, while she donates.
 
- "We Collected Over Five Gallons of Blood!"
+![Team and family donating blood - philanthropy](https://intellitect.com/wp-content/uploads/2020/09/Blood-Drive-Brian-and-Brady-1024x768.jpg "We Collected Over Five Gallons of Blood!")
 
 Brian and his son, Brady, donate together.
 
- "We Collected Over Five Gallons of Blood!"
+![Family donating blood over five gallons - philanthropy](https://intellitect.com/wp-content/uploads/2020/09/Blood-drive-Hanna-768x1024.jpg "We Collected Over Five Gallons of Blood!")
 
 Hanna, Mark and Elisabeth's daughter, relaxes with a good book while she donates.
 

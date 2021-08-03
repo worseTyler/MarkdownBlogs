@@ -4,6 +4,7 @@ There are two new exception-handling features in C# 6.0.  The first is an impro
 
 When C# 5.0 introduced the async and await (contextual) keywords, developers gained a relatively easy way to code the Task-based Asynchronous Pattern (TAP) in which the compiler takes on the laborious and complex work of transforming C# code into an underlying series of task continuations.  Unfortunately, the team wasn’t able to include support for using await from within catch and finally blocks in that release.   As it turned out, the need for such an invocation was even more common than initially expected.  Thus, C# 5.0 coders had to apply significant workarounds (such as leveraging the awaiter pattern).  C# 6.0 does away with this deficiency, however, and now allows await calls within both catch and finally blocks (they were already supported in try blocks), as shown below.
 
+```csharp
 try
 {
     WebRequest webRequest =
@@ -18,17 +19,19 @@ catch (WebException exception)
 {
     await WriteErrorToLog(exception);
 }
+```
 
 The other exception improvement in C# 6.0—support for exception filters—brings the language up to date with other .NET languages, namely Visual Basic.NET and F#. Here's an example.
 
+```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
 // ...
 
-\[TestMethod\]\[ExpectedException(typeof(Win32Exception))\]
-public void ExceptionFilter\_DontCatchAsNativeErrorCodeIsNot42()
+[TestMethod][ExpectedException(typeof(Win32Exception))]
+public void ExceptionFilter_DontCatchAsNativeErrorCodeIsNot42()
 {
     try
     {
@@ -40,6 +43,7 @@ public void ExceptionFilter\_DontCatchAsNativeErrorCodeIsNot42()
         Assert.Fail("No catch expected."); 
     }
 }
+```
 
 Notice the additional if expression that follows the catch expression.  The catch block now verifies that not only is the exception of type Win32Exception (or derives from it) but also verifies additional conditions—the particular value of the error code in this example.  In the unit test above, the expectation is the catch block will not catch the exception—even though the exception type matches—and instead, the exception will escape and be handled by the ExpectedException attribute on the test method.
 

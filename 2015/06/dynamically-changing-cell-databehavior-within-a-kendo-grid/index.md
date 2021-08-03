@@ -6,7 +6,7 @@ I was recently on a project that required various dynamic client-side behavior o
 
 An equivalent example for demonstration purposes is the following grid.
 
-![](https://intellitect.com/wp-content/uploads/2015/06/Kendo-Grid-1.webp)
+![](https://intellitect.com/wp-content/uploads/2015/06/Kendo-Grid-1.jpg)
 
 Assume the grid has the following rules:
 
@@ -19,13 +19,13 @@ I found many solutions to the first requirement centering around making a check,
 
 As for the second requirement, the trick is to leverage the grid’s Save event handler with the appropriate javascript. The C# and Typescript are below.
 
-![](https://intellitect.com/wp-content/uploads/2015/06/Kendo-Grid-2.webp)
+![](https://intellitect.com/wp-content/uploads/2015/06/Kendo-Grid-2.jpg)
 
 ### Typescript
 
 The typescript used below is nearly identical to the Javascript syntax:
 
-```
+```javascript
 /// <reference path="../typings/jquery/jquery.d.ts" />
 /// <reference path="../typings/kendo/kendo.all.d.ts" />
 
@@ -55,7 +55,7 @@ function getGrid(): kendo.ui.Grid {
 }
 
 function getEditor(e, columnId) {
-    return e.container.find("\[id=" + columnId + "\]");
+    return e.container.find("[id=" + columnId + "]");
 }
 
 //Returns one of the various kendo widgets for a cell
@@ -126,4 +126,4 @@ function mySaveHandler(e) {
 
 Check out some of my other blogs _[Using the Kendo Grid in an Unorthodox Manner](/using-the-kendo-grid-in-an-unorthodox-manner/)_ and _[Demystifying the Requirements-Gathering Environment](/demystifying-requirements-gathering/)_.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.webp)
+![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)

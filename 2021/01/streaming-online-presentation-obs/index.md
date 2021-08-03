@@ -6,7 +6,7 @@ _Updated: simplified the process to no longer need FFmpeg_
 
 [Open Broadcaster Software (OBS) Studio](https://obsproject.com/) is one of the most popular software solutions for streamers. With the significant rise in online presentations and virtual meetings, many have begun using OBS coupled with FFmpeg for their various streaming presentations. OBS is an excellent setup for screen sharing and streaming video.
 
- "Advanced Screen Sharing Techniques for Online Presentations"
+![The finished product. Kevin's video in the corner and the screen behind him](https://intellitect.com/wp-content/uploads/2021/01/Kevin-Screen-Share.png "Advanced Screen Sharing Techniques for Online Presentations")
 
 Here's what my finished product looks like. I focus on techincal streams and am often live-coding, but this setup works for any type of content.
 
@@ -32,11 +32,11 @@ Now you can move the sources around, change sizes, and crop (hold down Alt while
 
 The final result should look similar to this:
 
- "Advanced Screen Sharing Techniques for Online Presentations"
+![Designing your online presentations.](https://intellitect.com/wp-content/uploads/2021/01/Advanced1.png "Advanced Screen Sharing Techniques for Online Presentations")
 
 Next, go to Settings (lower right-hand corner of the OBA window or under the File menu at the top of your screen). Select Video and set both the Base and Output Resolution to be 1920x1080.
 
- "Advanced Screen Sharing Techniques for Online Presentations"
+![Screenshot of setting the video resolution.](https://intellitect.com/wp-content/uploads/2021/01/Advanced2.png "Advanced Screen Sharing Techniques for Online Presentations")
 
 ### Maintaining Control of Camera Input Priority
 
@@ -46,11 +46,11 @@ For this next step, I recommend working on a [separate desktop](https://support.
 
 Built into OBS is the ability to contain your output within a window called a projector. To access it, right-click anywhere in the preview area and select Windows Project (Preview).  
 
- "Advanced Screen Sharing Techniques for Online Presentations"
+![OBS Windows Project Preview](https://intellitect.com/wp-content/uploads/2021/03/obs-1.png "Advanced Screen Sharing Techniques for Online Presentations")
 
 If you created a separate desktop to hold this widow, go ahead and move it there now (Win+Tab then drag the window to the other desktop). Alternatively, if you have multiple screens, you can move the window off to a screen that will not be shared. The controls from the projector window can be accessed by right-clicking anywhere on the projector window (the “fit window to content” option is not available if the window is maximized). 
 
- "Advanced Screen Sharing Techniques for Online Presentations"
+![OBS fit window to content](https://intellitect.com/wp-content/uploads/2021/03/obs-2.png "Advanced Screen Sharing Techniques for Online Presentations")
 
 Once you have the window on the appropriate desktop, right-click, select the Fullscreen option, then select the appropriate monitor. Back inside of Microsoft Teams, you can now screen share and select the OBS projector window as the window that you would like to share. 
 

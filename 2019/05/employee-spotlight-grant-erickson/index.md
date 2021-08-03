@@ -16,7 +16,7 @@ Later in life, Grant coupled his love for programming with his passion for bette
 
 Not much later, Grant was helping his daughter’s youth group at a fundraising event and he thought, “I could automate this process.” So he created auctionrunner.org—an easy-to-use auction website that nonprofits could use to run silent auctions.
 
-![](https://intellitect.comhttps://intellitect.com/wp-content/uploads/2019/05/Quote-for-Grant.webp)Several of IntelliTect’s products were born this way. The ones that focus on improving a person’s situation—like IntelliTect’s philanthropic projects with the Vanessa Behan Crisis Nursery—that bring Grant the most joy. To solve their puzzle, Grant asked himself, “how do we think holistically about the entire process of a child being cared for by the staff at Vanessa Behan and how do we use the computer software to maximize relationships and minimize the paperwork?”
+![](https://intellitect.com/wp-content/uploads/2019/05/Quote-for-Grant.jpg)Several of IntelliTect’s products were born this way. The ones that focus on improving a person’s situation—like IntelliTect’s philanthropic projects with the Vanessa Behan Crisis Nursery—that bring Grant the most joy. To solve their puzzle, Grant asked himself, “how do we think holistically about the entire process of a child being cared for by the staff at Vanessa Behan and how do we use the computer software to maximize relationships and minimize the paperwork?”
 
 When not solving puzzles at work, Grant is at home with his family. His parents live in the house on one side of him; his in-laws, the other. Between the three families, they maintain several acres of produce and even raise a few cows.
 
@@ -28,4 +28,4 @@ People may be surprised to know that Grant is also the worship arts director at 
 
 Who should be our next Spotlight Employee? Comment below.
 
-###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [ "Employee Spotlight: Grant Erickson"
+###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T "Employee Spotlight: Grant Erickson")
