@@ -1,4 +1,4 @@
-
+## FTP Server Set Up Trouble 
 
 In order to begin posting my weblog to a Windows 2003 box I needed to install and configure an FTP server.  Unfortunately, getting this to actually work has been way more difficult than the instructions here indicate.  Here is what I did:
 
@@ -16,5 +16,5 @@ Tried to log in as user and got the following error:
 Tried a number of things including logging in as anonymous but still I am unable to log in.
 
 Arrrgghhhhh!! 
-hehe
+
 
