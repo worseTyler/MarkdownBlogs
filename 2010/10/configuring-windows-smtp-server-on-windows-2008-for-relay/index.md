@@ -1,20 +1,22 @@
-
-
+## **Configuring Windows SMTP Server on Windows 2008**
+#
 Estimated reading time: 6 minutes
 
 My SMTP mail server requires that email be sent with TLS encryption and on port 587.  This makes it problematic for Team Foundation Server (TFS) to send emails directly.  To work around the problem, I installed the Windows 2008 SMTP Server service and configured it for relaying to my real SMTP mail server. 
 
 ### Contents
 
-- [Install SMTP Server](#h-install-smtp-server)
-- [Configuring the SMTP Service to Auto-Start](#h-configuring-the-smtp-service-to-auto-start)
-- [Configuring the SMTP Service for Routing to Alternate SMTP Server](#h-configuring-the-smtp-service-for-routing-to-alternate-smtp-server)
-- [Internet Information Services (IIS) Manager (IIS 7.0)](#h-internet-information-services-iis-manager-iis-7-0)
-- [Internet Information Services (IIS) 6.0 Manager](#h-internet-information-services-iis-6-0-manager)
-- [Command Line](#h-command-line)
-- [Want More?](#h-want-more)
+- [**Configuring Windows SMTP Server on Windows 2008**](#configuring-windows-smtp-server-on-windows-2008)
+  - [Contents](#contents)
+- [Install SMTP Server](#install-smtp-server)
+- [Configuring the SMTP Service to Auto-Start](#configuring-the-smtp-service-to-auto-start)
+- [Configuring the SMTP Service for Routing to Alternate SMTP Server](#configuring-the-smtp-service-for-routing-to-alternate-smtp-server)
+- [Internet Information Services (IIS) Manager (IIS 7.0)](#internet-information-services-iis-manager-iis-70)
+- [Internet Information Services (IIS) 6.0 Manager](#internet-information-services-iis-60-manager)
+- [Command Line](#command-line)
+  - [Want More?](#want-more)
 
-### Install SMTP Server
+## Install SMTP Server
 
 To begin, launch Server Manager and add the **SMTP Server** feature.
 
@@ -31,7 +33,7 @@ The same can be done from the command line using:
 > <table border="1"><tbody><tr><td><pre>ServerManagerCmd –Install SMTP-Server 
 > </pre></td></tr></tbody></table>
 
-### Configuring the SMTP Service to Auto-Start
+## Configuring the SMTP Service to Auto-Start
 
 Unfortunately, the service is not configured to auto-start by default so you need to go into the services to change this:
 
@@ -43,11 +45,11 @@ To perform the same action from the command line use the following PowerShell co
 
 From DOS you could use sc.exe.
 
-### Configuring the SMTP Service for Routing to Alternate SMTP Server
+## Configuring the SMTP Service for Routing to Alternate SMTP Server
 
 Finally, you need to configure the SMTP Server to redirect to an alternate SMTP server (assuming it is not sending email directly).  This involves settings in both IIS 7.0 and IIS 6.  Open Internet Information Server (IIS 7.0) and select the server node
 
-### Internet Information Services (IIS) Manager (IIS 7.0)
+## Internet Information Services (IIS) Manager (IIS 7.0)
 
 1. From inside **Internet Information Services (IIS) Manager**, browse to the server’s **SMTP E-mail** feature and open it.  
     ![image](https://intellitect.com/wp-content/uploads/2010/10/image3.png "Configuring Windows SMTP Server on Windows 2008 for Relay")
@@ -60,7 +62,7 @@ To perform the same action from the command line use the following commands (Pow
 > 
 > Where appcmd.exe is located in %windir%\\System32\\inetsrv\\appcmd.exe.
 
-### Internet Information Services (IIS) 6.0 Manager
+## Internet Information Services (IIS) 6.0 Manager
 
 1. Launch **Internet Information Services (IIS) 6.0 Manager** locate the **[SMTP Virtual Server #]** node and open up the **Properties** dialog.  
     ![image](https://intellitect.com/wp-content/uploads/2010/10/image8.png "Configuring Windows SMTP Server on Windows 2008 for Relay")  
@@ -82,7 +84,7 @@ Unfortunately, I didn’t come up with the command line for this particular acti
 
 Even though figuring out the final command line seemed within reach, I had no information as to how the password was encrypted and stored into the file and without much to go on, I decided to move on.
 
-### Command Line
+## Command Line
 
 Combining all the command lines together (except for the IIS 6.0 configuration) yields the following:
 
