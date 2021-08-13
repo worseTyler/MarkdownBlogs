@@ -1,5 +1,5 @@
-
-
+## How-To: WebMethods Call Using Basic Authentication 
+# 
 Estimated reading time: 3 minutes
 
 I recently made a web services call into WebMethods using basic authentication.  This authentication meant that we needed to modify the WSDL generated classes to handle the authentication.

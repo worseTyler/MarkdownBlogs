@@ -1,5 +1,5 @@
-
-
+## Testing Command Lines 
+#
 In testing a command line I recently wanted to verify that the string passed on the command line was converted to the ```args[]``` array that was passed to ```Main(string[] args)```.  For example, given the command line
 
 ```Compress.exe /v:ReallyMakeItSmall myfile.txt "Read ME.txt"``` 

@@ -1,5 +1,5 @@
 ## Inaccuracies of Floats 
-
+#
 I have been playing around with the inaccuracies of floats and decided to share some of the simplest comparisons that might surprise folks that use the equality comparisons of floats indiscriminately.
 
 The following code listing pretty much captures the issues:

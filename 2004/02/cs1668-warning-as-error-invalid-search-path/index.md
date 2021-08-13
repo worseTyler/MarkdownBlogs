@@ -1,5 +1,5 @@
 ## Solution to 1.2 Framework and Update
-
+#
 Initially this post began as a long question to Microsoft but as I began to describe the problem I realized the rather obvious solution.  Anyway, since it took me a little while to solve I decided to post it anyway:
 
 If you previously had the 1.2 Framework installed and then you uninstalled it in order to install the most recent drops you may find that the "Lib" environment variable still contains the 1.2 path.  You need to update this environment variable to no longer include the 1.2 path and instead only have the path to the 1.1 Framework.  In my case this required updating both the system and user "Lib" environment variable.  (It appears you do not need to add the 2.0 path if you happen to have a more recent drop than the PDC bits.)

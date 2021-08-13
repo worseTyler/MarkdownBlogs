@@ -1,5 +1,5 @@
 ## Creating Efficiency for Unit Testing
-
+#
 While writing my Essential C# (Addison-Wesley) I am creating lots of console applications.  Unit testing these has been rather cumbersome.  I decided to create an attribute that can redirect the console input and output so that I can supply various inputs and then test the output.
 
 I went with MbUnit because of its ability to support [custom decorators](https://www.testdriven.net/wiki/default.aspx/MyWiki.ExtendingMbUnitWithYourTestDecorator).  Although MbUnit does support [ConsoleLikeFixtures](https://www.testdriven.net/wiki/default.aspx/MyWiki.ConsoleLikeFixture) and [ConsoleTesting](https://www.testdriven.net/wiki/default.aspx/MyWiki.TestingConsoleApplication) out of the box, I was looking to use decorators as follows:
