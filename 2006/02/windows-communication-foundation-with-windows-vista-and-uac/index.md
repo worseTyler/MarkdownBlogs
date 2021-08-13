@@ -1,3 +1,5 @@
+## Solution to Windows Vista "Access Denied"
+#
 > System.Net.HttpListenerException: Access is denied
 
 The issue is User Access Control (UAC), a new feature of Windows Vista that causes processes to run as standard user even if you are logged in with a user that is the member of the Administrators group.  Opening the port for WCF requires administrative access and, unless the process is elevated, no such access is available so opening the port results in the access denied message.

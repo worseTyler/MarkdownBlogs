@@ -1,5 +1,5 @@
-
-
+## How-To: Detecting Virtual Machine Execution 
+#
 Several months ago I cam across some C code that cleverly detected whether a process was running on a Virtual Machine or not.  It uses terms like "redpill" and "matrix" in order to symbolize context within a virtual machine or not.  The code places the ``` SIDT ``` assembler instruction into a string and then executes the instruction to determine whether it successfully modifies the expected register or not.  The problem is that the code no longer works with Windows 2003 SP1 and Windows XP SP2.
 
 The issue is caused by the addition of the Data Execution Protection (DEP) feature that current CPUs support and the service packs now recognize.  DEP is a security counter measure against buffer overflow holes.  It prevents the execution of instructions within memory assigned to data and instead only processes instructions specifically allocated within an execution block.  It is a pretty cool feature that required both processor and OS support.

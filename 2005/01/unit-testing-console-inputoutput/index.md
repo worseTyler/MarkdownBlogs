@@ -1,4 +1,4 @@
-## Creating Efficiency for Unit Testing
+##  Unit Testing Input & Output 
 #
 While writing my Essential C# (Addison-Wesley) I am creating lots of console applications.  Unit testing these has been rather cumbersome.  I decided to create an attribute that can redirect the console input and output so that I can supply various inputs and then test the output.
 
