@@ -1,6 +1,6 @@
+## Declaring Generic Interfaces With C#
 
-
-With the C# generics implementation that is currently under proposal is will be possible to declare generic interfaces, not just generic classes.  This is really cool as it avoids the ambiguity associated with returning an object such as in the System.Collections.IEnumerable interface.  In place of the non-generic interface we would use the generic System.Collections.Generics.IEnuerable version:
+With the C# generics implementation that is currently under proposal it will be possible to declare generic interfaces, not just generic classes.  This is really cool as it avoids the ambiguity associated with returning an object such as in the System.Collections.IEnumerable interface.  In place of the non-generic interface we would use the generic System.Collections.Generics.IEnuerable version:
 
 ```csharp
 public interface IEnumerable<T>
