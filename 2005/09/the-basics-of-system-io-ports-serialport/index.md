@@ -1,5 +1,5 @@
-
-
+## The Basics of System IO Ports
+#
 For the past two weeks I taught a C#/.NET course in Pullman, WA.  Last week they asked me to demonstrate how access the serial port using .NET.  This wasn't something I had done before but I borrowed a serial device and went to work.  I was pleased with how simple it was.  (The hardest part was figuring out the correct settings on the device, but I had some help with this - Thanks Jeff.)  The final code sample was a console base HyperTerminal type application.
 
 ```csharp
