@@ -1,5 +1,5 @@
 ## FTP Server Set Up Trouble 
-
+#
 In order to begin posting my weblog to a Windows 2003 box I needed to install and configure an FTP server.  Unfortunately, getting this to actually work has been way more difficult than the instructions here indicate.  Here is what I did:
 
 - Ran the through the How to Set Up an FTP Server in Windows Server 2003 instructions
