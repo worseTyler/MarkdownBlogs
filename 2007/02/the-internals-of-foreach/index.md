@@ -1,5 +1,5 @@
-
-
+## Advantages of a Foreach Loop
+#
 Many moons ago I discussed the foreach loop.  I expand on that post here as I continue my series for the MSDN C# Developer Center.
 
 The advantage of a foreach loop over a for loop is the fact that it is unnecessary to know the number of items within the collection when an iteration starts. This avoids iterating off the end of the collection using an index that is not available. As Bill Wagner pointed out in his [Custom Iterators](https://msdn2.microsoft.com/en-us/vcsharp/bb264519.aspx) article last week, a foreach loop also allows code to iterate over a collection without first loading the collection in entirety into memory. In this article I am going to explore how the foreach statement works under the covers. This sets the stage for a follow on discussion of how the yield statement works.
