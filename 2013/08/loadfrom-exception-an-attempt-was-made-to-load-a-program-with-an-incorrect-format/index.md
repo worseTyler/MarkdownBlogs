@@ -1,5 +1,5 @@
-
-
+## Correcting an Exception When Loading Program
+#
 While trying to load an assembly into PowerShell recently, an exception occurred,
 
 > "Exception calling "LoadFrom" with "1" argument(s): "Could not load file or assembly 'file:///...' or one of its dependencies. An attempt was made to load a program with an incorrect format."
