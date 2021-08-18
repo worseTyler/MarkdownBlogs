@@ -1,5 +1,5 @@
-
-
+## International Assistance Program: Sawla Children's Home
+#
 ![intnl-assist](https://intellitect.com/wp-content/uploads/2013/02/intnl-assist.jpg "Educating Children in Sawla Ghana")
 
 IntelliTect's latest project with [International Assistance Program](https://iassist.org/ "International Assistance Program") began when we heard the Sawla Children's Home in Sawla, Ghana needed a new building. Many of the children in the home were attending school for the first time and a larger home for orphans could offer more children the same opportunity. During 2012, IntelliTect and IAP joined with local Ghanaian leaders to build a new residential home on six acres that is also for agriculture. The enlarged Children's Home was completed in early 2013 and now serves over a hundred children. The agricultural land is being used to train school children in farming techniques and to provide food for the people attending the school.

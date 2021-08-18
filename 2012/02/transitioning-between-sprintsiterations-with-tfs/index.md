@@ -1,12 +1,11 @@
-
-
-### Post updated for  VisualStudio.com and Visual Studio 2013 Update 5:
+## VSO 2013 Update 5: Iterations
+#
 
 VisualStudio.com, or VSO, recently added support for the query token @CurrentIteration.  @CurrentIteration can be used in your queries to refer to the sprint or iteration that is currently in process.  This eliminates the need to create your own Current iteration as described in our original post below.  This update is also included in Visual Studio 2013 Update 5 for on premise TFS deployments.
 
 You can read more about this feature here: [https://www.visualstudio.com/en-us/news/2015-mar-10-vso.aspx](https://www.visualstudio.com/en-us/news/2015-mar-10-vso.aspx)
 
-### Transitioning between Sprints/Iterations when using prior versions of Team Foundation Server (TFS)
+### **Transitioning between Sprints/Iterations when using prior versions of Team Foundation Server (TFS)**
 
 Our previous approach to this still works if you are using any prior version of Team Foundation Server on premise:
 
