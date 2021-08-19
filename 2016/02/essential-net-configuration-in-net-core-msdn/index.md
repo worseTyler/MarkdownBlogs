@@ -1,5 +1,5 @@
-
-
+## Essential Net Configuration in ASP.NET 5
+#
 > _Note: Just prior to press time, Microsoft announced name changes to ASP.NET 5 and related stacks. ASP.NET 5 is now ASP.NET Core 1.0. Entity Framework (EF) 7 is now Entity Framework (EF) Core 1.0. The ASP.NET 5 and EF7 packages and namespaces will change, but otherwise the new nomenclature has no impact on the lessons of this article._
 
 Those of you working with ASP.NET 5 have no doubt noticed the new configuration support included in that platform and available in the Microsoft.Extensions.Configuration collection of NuGet packages. The new configuration allows a list of name-value pairs, which can be grouped into a multi-level hierarchy. For example, you can have a setting stored in SampleApp:Users:Inigo­Montoya:MaximizeMainWindow and another stored in SampleApp:AllUsers:Default:MaximizeMainWindow. Any stored value maps to a string, and there’s built-in binding support that allows you to deserialize settings into a custom POCO object. Those of you already familiar with the new configuration API probably first encountered it within ASP.NET 5. However, the API is in no way restricted to ASP.NET. In fact, all the listings in this article were created in a Visual Studio 2015 Unit Testing project with the Microsoft .NET Framework 4.5.1, referencing Microsoft.Extensions.Configuration packages from ASP.NET 5 RC1. (Go to [gitHub.com/IntelliTect/Articles](https://gitHub.com/IntelliTect/Articles) for the source code.)

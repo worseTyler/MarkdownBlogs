@@ -1,4 +1,5 @@
-
+## Improvements of PowerShell
+#
 PSGallery Untrusted https://www.powershellgallery.com/api/v2/
 
 As a result, Find-Module works without issue. However, Install-Module will prompt you with an untrusted repository warning. To avoid this, assuming you do indeed trust the repository, you can set it to trusted with the command:

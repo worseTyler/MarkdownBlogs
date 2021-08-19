@@ -1,6 +1,6 @@
-
-
-# Full-stack testing of OData 4.0 and Web API 2.2 ASP.Net MVC controllers![image02](https://intellitect.com/wp-content/uploads/2015/12/image02-1024x576.jpg "Self-Hosted Integration Testing Of OData and WebApi")
+## Full-stack testing of OData 4.0 and Web API 2.2 ASP.Net MVC controllers
+#
+![image02](https://intellitect.com/wp-content/uploads/2015/12/image02-1024x576.jpg "Self-Hosted Integration Testing Of OData and WebApi")
 
 ## Why Are Unit Tests of OData Web API Controllers Insufficient?
 

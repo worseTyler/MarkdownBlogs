@@ -1,5 +1,5 @@
-
-
+## Finalizers in C#
+#
 The following is an excerpt from Chapter 9 of [Essential C# 6](https://IntelliTect.com/EssentialCSharp6/).
 
 Finalizers allow developers to write code that will clean up a class’s resources. Unlike constructors that are called explicitly using the new operator, finalizers cannot be called explicitly from within the code. There is no new equivalent such as a delete operator. Rather, the garbage collector is responsible for calling a finalizer on an object instance. Therefore, **developers cannot determine at compile time exactly when the finalizer will execute**. All they know is that the finalizer will run sometime between when an object was last used and when the application shuts down normally. (Finalizers might not execute if the process is terminated abnormally. For instance, events such as the computer being turned off or a forced termination of the process will prevent the finalizer from running.)

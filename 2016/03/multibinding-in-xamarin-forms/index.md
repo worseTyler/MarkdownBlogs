@@ -1,5 +1,5 @@
-
-
+## Multibinding in Xamarin.Forms
+#
 The current release of Xamarin.Forms does not contain an implementation for a MultiBinding object. For those of us who have a strong WPF background, this is a feature that would be very beneficial. With a little work, it is possible for us to implement our own MultiBinding class using the current Xamarin.Forms framework.
 
 **Creating a basic MultiBinding**

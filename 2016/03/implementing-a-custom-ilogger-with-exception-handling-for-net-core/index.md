@@ -1,5 +1,5 @@
-
-
+## Implementing a Custom Logger With Exception Handling for .NET Core
+#
 Estimated reading time: 2 minutes
 
 This article corresponds with the MSDN article: [_Essential .NET - Logging with .NET Core_](https://msdn.microsoft.com/magazine/mt694089). [This GitHub repo](https://github.com/IntelliTect-Samples/2016.04.01-EssentialNetLoggingWithNetCore) contains the code referenced in the article. Not, in particular, the unit test `LogCritical_Exception_Success` for an example of handling an exception using the custom logger.

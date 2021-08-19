@@ -1,5 +1,5 @@
-
-
+## Using Powershells Invoke-RestMethod to Access VSTS OData
+#
 Given that Microsoft has abandoned their TFS CmdLets, one alternative is to access VSTS data is through the OData interface using the Invoke-RestMethod.
 
 Before you begin you need to setup Alternate authentication credentials by navigating to https://<yourtenant>.visualstudio.com/_details/security/altcreds.  Once these are established, you will likely want to save them to a local PowerShell variable so that they can be reused for each Invoke-RestMethod invocation.

@@ -1,5 +1,5 @@
-
-
+## Oracle Data Provider for .NET
+#
 Oracle Data Provider for .NET (ODP.NET) uses Object-relational mapping (ORM) to allow developers to write object-oriented code against a Model instead of writing direct queries into the database. With Entity Framework gaining full support from Microsoft and Microsoft developers, it is critical that there exists an ORM that works well with Entity Framework when required to work with an Oracle database.
 
 In the past, the only viable option available was an application called dotConnect from DevArt. However, dotConnect had a major downfall in that running dotConnect version 8.4 on build server A cannot build an application using dotConnect version 8.5. I am currently in a role where we are supporting a multitude of applications ranging from VB6 to MVC 5 so having a different build server for each version of Devart can be quite painful.

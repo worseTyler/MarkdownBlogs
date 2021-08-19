@@ -1,5 +1,5 @@
-
-
+## Search for Serialization Without Serialization of Other Properties When Deleted 
+#
 I was recently working on a project using Azure Mobile Services (AMS) as the backend for our Android and iOS mobile apps. Using the built-in offline sync feature of AMS, you can delete records on the backend and when the mobile app synchronizes its data, the record will be deleted from the mobile device. While taking a look at some performance issues with our implementation, I discovered that the mechanism to delete a record actually sends the entire record back with the Deleted flag set to true.
 
 ```csharp

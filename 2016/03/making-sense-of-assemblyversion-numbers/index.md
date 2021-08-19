@@ -1,7 +1,5 @@
-
-
 ## A Guide to AssemblyVersion and FileVersion
-
+#
 Estimated reading time: 7 minutes
 
 The components of a Microsoft DLL or EXE version number are Major, Minor, Build, and Revision. According to Microsoft, the components are used [by convention](https://msdn.microsoft.com/en-us/library/system.version.aspx#Anchor_6) as follows:
@@ -16,12 +14,13 @@ The components of a Microsoft DLL or EXE version number are Major, Minor, Build,
 
 ### Contents
 
-- [A Guide to AssemblyVersion and FileVersion](#h-a-guide-to-assemblyversion-and-fileversion)
-    - [Defining Version Numbers](#h-defining-version-numbers)
-    - [A Personal Example](#h-a-personal-example)
-    - [Another Point](#h-another-point)
-    - [Let's Take It a Step Further](#h-let-s-take-it-a-step-further)
-    - [Want More?](#h-want-more)
+- [A Guide to AssemblyVersion and FileVersion](#a-guide-to-assemblyversion-and-fileversion)
+  - [Contents](#contents)
+  - [Defining Version Numbers](#defining-version-numbers)
+  - [A Personal Example](#a-personal-example)
+  - [Another Point](#another-point)
+  - [Let's Take It a Step Further](#lets-take-it-a-step-further)
+  - [Want More?](#want-more)
 
 ### Defining Version Numbers
 
