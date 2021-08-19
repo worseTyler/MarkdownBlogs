@@ -1,5 +1,5 @@
-## Scrum From a QA Perspective
-#ss
+## Part 1: Scrum From a QA Perspective
+#
 I work QA but am not solely on a QA team; I am a member of a Scrum team. Like the other members, this means I am a part of the development team, I just happen to specialize in QA practices. This is the first position at which I feel like I have the capability to truly fulfill the role a QA engineer should be doing. Namely, I'm part of development, rather than post development. Being integrated and collaborating with the development team, rather than simply being an afterthought, has lead to some interesting challenges and great experiences:
 
 - Draw from the developers’ knowledge

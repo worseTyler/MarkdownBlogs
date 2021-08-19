@@ -1,4 +1,4 @@
-## Part 1: Building a Logger Using Caller Info Attributes
+## Logging and Tracing for NET Applications Part 1: Building a Logger Using Caller Info Attributes
 #
 Welcome to the first of a multi-part discussion on logging and tracing for .NET applications. In this post, we will discuss using a C# 5 feature to include detailed file, member, and line number information when tracing. In future posts, we’ll discuss integrating this method with NLog to output log information to various data sources, followed by a specific discussion of logging to Azure table storage, including a rich web based UI for viewing and filtering log messages.
 

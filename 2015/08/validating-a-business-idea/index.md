@@ -1,7 +1,5 @@
-
-
-## You came up with the next great idea! Now what?
-
+## Validating a Business Idea
+#
 How do you know what the next steps should be? What should you do?
 
 At a high level, **the next steps are to validate (or invalidate) all of the assumptions in the list below**. You validate assumptions by running experiments that produce data that causes you to either reject or accept your hypotheses. _Note that even if you do validate your assumptions, the environment is continually changing (whether it is your product, other competitors, and/or people’s preferences) and you have to keep validating_.

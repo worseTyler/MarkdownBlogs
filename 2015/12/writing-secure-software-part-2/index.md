@@ -1,5 +1,5 @@
-
-
+## Part 2: Writing Secure Software 
+#
 In my [last blog post](/writing-secure-software-part-1/), I discussed one possible process for developing secure software. We learned about potential security threats using the S.T.R.I.D.E. acronym, creating a threat model and identifying potential threats. Next, I’ll discuss prioritizing the potential threats you have identified and discuss ways to mitigate these threats.
 
 **Prioritizing Potential Threats**

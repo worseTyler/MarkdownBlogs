@@ -1,5 +1,5 @@
-
-
+## Part 2: Scrum From a QA Perspective 
+#
 There is an [excellent blog](https://www.stilldrinking.org/programming-sucks) that describes software development as engineering a bridge:
 
 _Imagine joining an engineering team. You're excited and full of ideas, probably just out of school and a world of clean, beautiful designs, awe-inspiring in their aesthetic unity of purpose, economy, and strength. You start by meeting Mary, project leader for a bridge in a major metropolitan area. Mary introduces you to Fred, after you get through the fifteen security checks installed by Dave because Dave had his sweater stolen off his desk once and Never Again. Fred only works with wood, so you ask why he's involved because this bridge is supposed to allow rush-hour traffic full of cars full of mortal humans to cross a 200-foot drop over rapids. Don't worry, says Mary, Fred's going to handle the walkways. What walkways? Well Fred made a good case for walkways and they're going to add to the bridge's appeal. Of course, they'll have to be built without railings, because there's a strict no railings rule enforced by Phil, who's not an engineer. Nobody's sure what Phil does, but it's definitely full of synergy and has to do with upper management, whom none of the engineers want to deal with so they just let Phil do what he wants. ... After the introductions are made, you are invited to come up with some new ideas, but you don't have any because you're a propulsion engineer and don't know anything about bridges._

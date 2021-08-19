@@ -1,7 +1,5 @@
-
-
-## **Hypotheses are \*not\* just for scientists**
-
+## **Hypotheses are \*Not\* Just for Scientists**
+#
 We subconsciously use hypotheses every day. A hypothesis is simply the identification of a particular assumption and the prediction of the expected outcome. Sound complicated? It isn’t.
 
 All types of decisions have implicit assumptions and hypotheses behind them.
