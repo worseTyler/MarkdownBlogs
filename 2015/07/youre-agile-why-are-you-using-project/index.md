@@ -1,5 +1,5 @@
-
-
+## Using Microsoft Project Vs. Scrum 
+#
 Recently, as I was putting together an enterprise scale SharePoint migration plan for a client, a colleague asked “Why are you using Microsoft Project? Why don’t you use a Scrum style Product Backlog instead?”
 
 An excellent question I thought and one I’ve encountered before. For the record, Scrum is my project management framework of choice for complex technical projects. That doesn’t mean it’s the only project management approach I use. I also regularly use Kanban when it fits, and, yes good old fashioned waterfall (meaning a classic work breakdown structure and gantt project plan) when appropriate.

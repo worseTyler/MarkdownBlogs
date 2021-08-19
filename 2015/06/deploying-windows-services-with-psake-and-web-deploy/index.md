@@ -1,5 +1,5 @@
-
-
+## Deploying Windows With Psake and Web Deploy 
+#
 ![Robot and human fist bump](https://intellitect.com/wp-content/uploads/2015/06/robot-300x203.jpg "Deploying Windows Services With Psake and Web Deploy")
 
 At IntelliTect, a common pattern of our client solutions are windows services that process work on either a scheduled basis or watch a file location. We often use a combination of the [Topshelf framework](https://topshelf-project.com/) with the [TopShelf.Quartz](https://www.nuget.org/packages/Topshelf.Quartz/) job scheduling package to solve these problems. These packages expose a useful fluent interface to schedule multiple jobs in a service instance and take care of the service events-- including installation on the command line. While this is helpful from a code perspective in reducing boilerplate and increasing simplicity, this design lacks an easy way to deploy new releases.

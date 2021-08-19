@@ -1,7 +1,5 @@
-
-
 ## Settling the Debate Surrounding `var` and C#
-
+#
 Estimated reading time: 4 minutes
 
 Many languages, particularly scripting languages, have a loosely typed variable type named var. In these languages, var can hold any type of data. If you place a number into a var then it will be interpreted as a number whenever possible. If you enter text it will be interpreted as a string, etc. ‘var’s can even hold various objects and will behave properly.
