@@ -1,5 +1,5 @@
-
-
+## Dynamically Changing Data Behavior Within a Kendo Grid
+#
 Estimated reading time: 3 minutes
 
 I was recently on a project that required various dynamic client-side behavior of a Kendo grid. There was specific behavior needed when the user entered a cell and when the value of a cell changed.

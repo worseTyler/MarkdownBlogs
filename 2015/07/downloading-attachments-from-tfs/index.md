@@ -1,5 +1,5 @@
-
-
+## Downloading Attachments From TFS
+#
 A few weeks ago I was supporting a client who had attached a significant number of files to various work items in a project and wanted to be able have them all in a folder. The time required to download these files by hand seemed daunting. Rumors around the office were that someone on the team might be able to do this with some code. As it turned out there were several teams that needed this and they had some specific requirements:
 
 1. Each team needed a different subset of work items based multiple values in multiple fields.

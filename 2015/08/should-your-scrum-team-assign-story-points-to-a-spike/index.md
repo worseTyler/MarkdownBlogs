@@ -1,5 +1,5 @@
-
-
+## Should Your Scrum Team Assign Story Points to a Spike?
+#
 Estimated reading time: 3 minutes
 
 Our team has been discussing the pros and cons of assigning points to a Spike and determining our approach.
