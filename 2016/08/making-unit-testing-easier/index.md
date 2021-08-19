@@ -1,5 +1,5 @@
-
-
+## Making Unit Testing Easier 
+#
 I love [unit tests](https://intellitect.com/improving-unit-tests-with-automocker/). Specifically, I love unit tests that are easy to maintain. When I spend more time setting up a test then doing actual testing, it is a very strong code smell. Sloppy unmaintainable code has no place in your projects, especially not in your unit test project.  
    
 In this post I would like to present two classes that I have found very helpful in keeping my unit tests simple and easy to maintain.  

@@ -1,5 +1,5 @@
-
-
+## Custom Model Binding in ASP.NET Core 1.0
+#
 Early on in my career I was an accountant, which meant a lot of dollar signs and commas in the numbers I worked with in my daily tasks. The typical website or application I used, if built according to normal expectations, gave a nice message telling me what I’d done wrong when I accidentally entered a currency formatted value in a text input expecting a decimal. That was frustrating when I might be copy/pasting a value into the input from another system, or simply entering a value and absent-mindedly adding a dollar sign and comma. How smart is that software if it can’t understand that $1,340.12 == 1340.12?
 
 For web applications, the first place most developers go when solving this issue is JavaScript. Possibly a CSS class added to the input identifying it as a currency value, with an event handler attached to the form submit that scrubs the input. Or when generating an Ajax call you can scrub it before adding it to the post data. But what if you want to stick with ASP.Net Core MVC  functionality and aren’t planning to use JavaScript for standard user input validation? Or if you are using a 3rd-party control to generate your user interface which doesn’t allow easily hooking into the form submit or Ajax calls? The solution we’re going to look at here is a custom model binder which will add currency input scrubbing by simply decorating a model property with an attribute.

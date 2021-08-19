@@ -1,5 +1,5 @@
-
-
+## Native Animation Effects in Xamarin.Forms
+#
 Xamarin.Forms (XF) provides a [cross platform API](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/) for doing animations. This makes it very easy to do simple animations of XF elements. There is, however, a downside. The XF animations do not make use of native platform APIs, rather they animate properties on the XF elements. This can cause significant overhead, since each change to the property will trigger a property changed event that the [native render](https://developer.xamarin.com/guides/xamarin-forms/custom-renderer/) will update the corresponding property on the native UI element. For small simple animations this is fine, but it does not take much before you will notice a significant degradation in performance between the XF animations and animations done with native APIs.
 
 [Xamarin.Forms 2.1](https://developer.xamarin.com/releases/xamarin-forms/xamarin-forms-2.1/2.1.0/) introduced [effects](https://developer.xamarin.com/guides/xamarin-forms/effects/) that can easily be attached to the elements we want to animate. Because this can be done using XAML, this approach also works well if you are following the [MVVM pattern](https://developer.xamarin.com/guides/xamarin-forms/user-interface/xaml-basics/data_bindings_to_mvvm/). We can use these effects as a bridge to implement our own animations that leverage native platform animations to get true native performance.

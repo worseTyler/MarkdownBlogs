@@ -1,5 +1,5 @@
-
-
+## Generalized Async Return Types
+#
 Ever since C# 5.0 when the async/await pattern was introduced, the only supported return types were [Task<TResult>](https://msdn.microsoft.com/en-us/library/dd321424(v=vs.110).aspx), [Task](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task(v=vs.110).aspx), and void (the latter only in exceptional cases). The problem with this limitation is that on occasions when the result is known immediately, it is still necessary to proceed with the formality of instantiating a Task even though no task is actually required to determine the result.
 
 Consider, for example, a function that returns the amount of space consumed by a directory.

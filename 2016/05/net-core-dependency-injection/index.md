@@ -1,8 +1,8 @@
-
-
+## .NET Core Dependency Injection
+#
 In my last two articles, Logging with .NET Core ([bit.ly/1Vv3Q39](https://bit.ly/1Vv3Q39)) and Configuration with .NET Core ([bit.ly/1OoqmkJ](https://bit.ly/1OoqmkJ)), I demonstrated how .NET Core functionality can be leveraged from both an ASP.NET Core project (project.json) as well as the more common .NET 4.6 C# project (\*.csproj).  In other words, taking advantage of the new framework is not limited to those who are writing ASP.NET Core projects.  In this column I’m going to continue to delve into .NET Core, this time with a focus on .NET Core dependency injection capabilities and how they enable an inversion of control (IoC) pattern.  As before, leveraging .NET Core functionality is possible from both “traditional” CSPROJ files and the emerging project.json type projects.  For the sample code, this time I’ll be using XUnit from a project.json project.
 
-## Why Dependency Injection?
+### **Why Dependency Injection?**
 
 With .NET, instantiating an object is trivial with a call to the constructor via the new operator (that is, new MyService or whatever the object type is you wish to instantiate).  Unfortunately, an invocation like this forces a tightly coupled connection (a hard-coded reference) of the client (or application) code to the object instantiated, along with a reference to its assembly/NuGet package.  For common .NET types this isn’t a problem.  However, for types offering a “service,” such as logging, configuration, payment, notification, or even dependency injection, the dependency may be unwanted if you want to switch the implementation of the service you use.  For example, in one scenario a client might use NLog for logging, while in another they might choose Log4Net or Serilog.  And, the client using NLog might prefer not to dirty up their project with Serilog, so a reference to both logging services would be undesirable (see **Figure 1**).
 
@@ -38,7 +38,7 @@ Figure 5 Unit Testing with Dependency Injection so a Mock Type Instance Can Be U
 
 Providing an instance of the “service” rather than the client directly instantiating it is the fundamental principle of dependency injection. And, in fact, some dependency injection frameworks allow a decoupling of the host from referencing the implementation by supporting a binding mechanism that’s based on configuration and reflection, rather than a compile-time binding. This decoupling of is known as the service locator pattern.
 
-## .NET Core Microsoft.Extensions.DependencyInjection
+### **.NET Core Microsoft.Extensions.DependencyInjection**
 
 To leverage the .NET Core framework, all you need is a reference to the Microsoft.Extensions.DependencyInjection.Abstractions NuGet package. This provides access to the IServiceCollection interface, which exposes a System.IServiceProvider from which you can call GetService<TService>. The type parameter, TService, identifies the type of the service to retrieve (generally an interface) and thus the application code obtains an instance:
 
@@ -128,7 +128,7 @@ You can think of the ServiceCollection type conceptually as a name-value pair, w
 
 Note that ServiceCollection doesn’t provide GetService or GetRequiredService methods directly.  Rather, those methods are available from the IServiceProvider that is returned from the ServiceCollection.BuildServiceProvider method.  Furthermore, the only services available from the provider are those added before the call to BuildServiceProvider.
 
-## Service Lifetime
+### **Service Lifetime**
 
 In **Figure 6** I invoke the IServiceCollection AddInstance<TService>(TService implementationInstance) extension method.  Instance is one of four different TService lifetime options available with .NET Core.  It establishes that not only will the call to GetService return an object of type TService, but also that the specific implementationInstance registered with AddInstance is what will be returned.  In other words, registering with AddInstance saves the specific implementationInstance instance so it can be returned with every call to GetService (or GetRequiredService) with the AddInstance method’s TService type parameter.
 
@@ -150,15 +150,15 @@ Earlier I referred to the ServiceCollection as conceptually like a name-value pa
 
 Regardless of which lifetime you register your TService with, the TService itself must be a reference type, not a value type.  Whenever you use a type parameter for TService (rather than passing Type as a parameter) the compiler will verify this with a generic class constraint.  One thing, however, that’s not verified is using a TService of type object.  You’ll want to be sure to avoid this, along with any other non-unique interfaces (such as IComparable perhaps).  The reason is that if you register something of type object, no matter what TService you specify in the GetService invocation, the object registered as a TService type will always be returned.
 
-## A Word On ActivatorUtilities
+### **A Word On ActivatorUtilities**
 
 Microsoft.Framework.DependencyInjection.Abstractions also includes a static helper class that provides a few useful methods in dealing with constructor parameters that aren’t registered with the IServiceProvider, a custom ObjectFactory delegate, or situations where you want to create a default instance in the event that a call to GetService returns null.  You can find examples where this utility class is used in both the MVC framework and the SignalR library.  In the first case, a method with a signature of CreateInstance<T>(IServiceProvider provider, params object[] parameters) exists which allows you to pass in constructor parameters to a type registered with the dependency injection framework for arguments that are not registered.  You may also have a performance requirement that lambda functions required to generate your types be compiled lambdas.  The CreateFactory(Type instanceType, Type[] argumentTypes) method that returns an ObjectFactory can be useful in this case.  The first argument is the type sought by a consumer, and the second argument is all the constructor types, in order, that match the constructor of the first type that you wish to use.  In it's implementation, these pieces are condensed down to a compiled lambda that will be very performant when called multiple times.  Finally, the GetServiceOrCreateInstance<T>(IServiceProvider provider) method provides an easy way to provide a default instance of a type that may have been optionally registered in a different place.  One use for this in the real world would be in a "freemium" type software where a default bare-bones implementation of an interface would be needed in the "free" mode, while a more feature-rich implementation would be registered after paying for a "premium" mode.
 
-## Dependency Injection for the Dependency Injection Implementation
+### **Dependency Injection for the Dependency Injection Implementation**
 
 ASP.NET leverages dependency injection to such an extent that, in fact, you can use dependency injection within the dependency injection framework itself.  In other words, you’re not limited to using the ServiceCollection implementation of the dependency injection mechanism found in Microsoft.Extensions.DependencyInjection.  Rather, as long as you have classes that implement IServiceCollection (which is defined in Microsoft.Extensions.DependencyInjection.Abstractions; see bit.ly/1SKdm1z) or IServiceProvider (defined within the System namespace of .NET core lib framework) you can substitute your own dependency injection framework or leverage one of the other well established dependency injection frameworks including Ninject ([ninject.org](https://ninject.org), with a shout out to @IanfDavis for his work maintaining this over the years) and Autofac ([autofac.org](https://autofac.org)).
 
-## Wrapping Up
+### **Wrapping Up**
 
 As with .NET Core Logging and Configuration, the .NET Core dependency injection mechanism provides a relatively simple implementation of its functionality.  While you’re unlikely to find  the more advanced dependency injection functionality of some of the other frameworks, the .NET Core version is lightweight and a great way to get started.  Furthermore (and again like Logging and Configuration), the .NET Core implementation can be replaced with a more mature implementation.  Thus, you might consider leveraging the .NET Core dependency injection framework as a “wrapper” through which you can plug in other dependency injection frameworks as the need arises in the future.  In this way, you don’t have to define your own “custom” dependency injection wrapper but can leverage .NET Core’s as a standard one for which any client/application can plug in a custom implementation.
 

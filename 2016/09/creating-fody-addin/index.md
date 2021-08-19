@@ -1,5 +1,5 @@
-
-
+## Creating Fody Add-ins
+#
 [Fody](https://github.com/Fody/Fody) is a fantastic framework for creating IL weavers. For those who are unfamiliar with IL weaving, it is the art (and at times a seemingly magical incantation) of modifying an assembly _post-compile_. In this article we will walk through creating a library that can modify an existing .NET assembly.
 
 Let’s start by looking at what actually happens when you compile C#. The compiler ([Roselyn](https://github.com/dotnet/roslyn)) performs a bunch of validation to ensure that your C# code is valid. It then generates an assembly of IL instructions. These IL instructions can are either [just-in-time (JIT) compiled](https://msdn.microsoft.com/en-us/library/ht8ecch6(v=vs.100).aspx) when the application is run or [compiled to native images](https://msdn.microsoft.com/en-us/library/ht8ecch6(v=vs.100).aspx) (using Ngen.exe).  It is these instructions that we will modify with our IL weaver.

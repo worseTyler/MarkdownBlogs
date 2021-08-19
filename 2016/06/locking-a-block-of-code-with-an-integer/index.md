@@ -1,5 +1,5 @@
-
-
+## Locking a Block of Code With an Integer
+#
 I was talking with a developer recently who was convinced that you could use a static integer variable to lock a block of code merely by casting it to an object, like this
 
 ```csharp

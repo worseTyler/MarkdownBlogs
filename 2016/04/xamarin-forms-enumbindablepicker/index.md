@@ -1,5 +1,5 @@
-
-
+## Solution to Absense of BindablePicker From Xamarin Forms 
+#
 One of the controls missing from Xamarin Forms is a “BindablePicker” that allows you to dynamically bind an ItemsSource and SelectedItem from your view model. Fortunately, the Xamarin forums provide a solution to this problem found here:
 
 https://forums.xamarin.com/discussion/30801/xamarin-forms-bindable-picker
