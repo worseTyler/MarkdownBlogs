@@ -1,4 +1,4 @@
-## Work Item To Changeset
+## Work Item to Changeset
 #
 Today I received an email asking how to associate a work item with a changeset after all the code was checked in (without performing the association.)
 

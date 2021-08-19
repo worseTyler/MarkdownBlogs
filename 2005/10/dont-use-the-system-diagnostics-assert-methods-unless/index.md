@@ -1,4 +1,4 @@
-## Why To Not Use The System Diagnostics Assert Methods
+## Why to Not Use the System Diagnostics Assert Methods
 #
 Assertions should never appear in release code.  Assertions are a debug mechanism for revealing bugs within code during development.  Failed assertions in release code indicate the bug was missed and allow the option of debugging at the assertion location.  _However, end users should not be presented with dialogs for debugging an application.  Therefore,_ _``` System.Diagnostics.**Trace**.Assert() ``` should be treated as obsolete._
 

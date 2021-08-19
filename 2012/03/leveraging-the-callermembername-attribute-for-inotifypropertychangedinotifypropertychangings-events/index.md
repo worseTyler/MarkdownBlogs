@@ -1,4 +1,4 @@
-## Leveraging The Caller Member Name 
+## Leveraging the Caller Member Name 
 #
 ```csharp
 public class Person : INotifyPropertyChanged

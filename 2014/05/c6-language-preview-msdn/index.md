@@ -1,5 +1,5 @@
-
-
+## C# Language Overview 
+#
 By the time you read this, Build—the Microsoft developer conference—will be over and developers will be thinking about how to respond to all that was presented: embrace immediately, watch with slight trepidation or ignore for the moment. For .NET/C# developers, the most significant announcement was undoubtedly the release of the next version of the C# compiler (“Roslyn”) as open source. Related to that are the language improvements themselves. Even if you don’t have plans to immediately adopt C# vNext—which I’ll refer to henceforth and unofficially as C# 6.0—at a minimum, you should be aware of its features and take note of those that might make it worth jumping right in.
 
 In this article, I’ll delve into the details of what’s available in C# 6.0 at the time of this writing (March 2014) or in the now open source bits downloadable from [roslyn.codeplex.com](https://roslyn.codeplex.com). I’ll refer to this as a single release that I’ll term the March Preview. The C#-specific features of this March Preview are implemented entirely in the compiler, without any dependency on an updated Microsoft .NET Framework or runtime. This means you can adopt C# 6.0 in your development without having to upgrade the .NET Framework for either development or deployment. In fact, installing the C# 6.0 compiler from this release involves little more than installing a Visual Studio 2013 extension, which in turn updates the MSBuild target files.

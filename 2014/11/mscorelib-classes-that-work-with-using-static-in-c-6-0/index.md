@@ -1,5 +1,5 @@
-
-
+## Using the New Static Feature in C# 6.0
+#
 While writing another MSDN magazine article on C# 6.0 (the third because the language continues to improve) I was looking for a good example of when to use the new “using static” feature.  Towards this effort, I used PowerShell to crawl through all the MSCORELIB types and output the ones meeting the following criteria:
 
 - The type is public

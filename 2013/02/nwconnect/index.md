@@ -1,4 +1,4 @@
-## Leadership For Northwest Connect
+## Leadership for Northwest Connect
 #
 ![Food Bank food photo](https://intellitect.com/wp-content/uploads/2013/02/Food-Bank-food-photo.jpg "Northwest Connect Food Bank")](https://www.nwconnect.org/index.php "Leadership for Northwest Connect")
 On the Northside of Spokane, in the Hillyard neighborhood, [Northwest Connect](https://www.nwconnect.org/ "Northwest Connect") offers people a local food bank, non food pantry items like soap, dish soap, shampoo and other toiletries as well as summer day programs for children. Because the Hillard neighborhood has the lowest per capita income of any neighborhood in Washington state, the work of Northwest Connect is especially important.
