@@ -1,5 +1,5 @@
-
-
+## C# 6.0 Simplifies Code
+#
 C# 6.0 isn’t a radical revolution in C# programming. Unlike the introduction of generics in C# 2.0, C# 3.0 and its groundbreaking way to program collections with LlNQ, or the simplification of asynchronous programming patterns in C# 5.0, C# 6.0 isn’t going to transform development. That said, C# 6.0 will change the way you write C# code in specific scenarios, due to features that are so much more efficient you’ll likely forget there was another way to code them. It introduces new syntax shortcuts, reduces the amount of ceremony on occasion, and ultimately makes writing C# code leaner. In this article I’m going to delve into the details of the new C# 6.0 feature set that make all this possible. Specifically, I’ll focus on the items outlined in the Mind Map shown in **Figure 1**.
 
 ![ Figure 1 C# 6.0 Mind Map](https://intellitect.com/wp-content/uploads/2019/12/Figure-1-5.png "C# 6 Simplifies Clarifies & Condenses Your Code (MSDN)")

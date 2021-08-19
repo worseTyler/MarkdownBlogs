@@ -1,5 +1,5 @@
-
-
+## IntelliTect Partnership With Campassion International 
+#
 ![campassion](https://intellitect.com/wp-content/uploads/2015/01/campassion.jpg "IntelliTect Partners with Compassion International")
 
 IntelliTect partners with Compassion International to bring basic life needs, education and counseling to children and their moms around the world. Some of our employees have chosen to join Compassion International's worldwide [child-sponsorship program](https://www.compassion.com/sponsor_a_child/default.htm "Compassion Child Sponsorship Home Page") that matches families with a child in poverty. These employees trade letters, pictures and special gifts back and forth between themselves and their sponsor children.
