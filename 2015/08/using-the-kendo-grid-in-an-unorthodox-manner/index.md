@@ -1,5 +1,5 @@
-
-
+## Using the Kendo Grid in an Unorthodox Manner
+#
 Recently I worked with a business requirement in which I wanted to leverage the Kendo Grid in an unorthodox manner. In particular, I wanted:
 
 - the grid on the form with other values,

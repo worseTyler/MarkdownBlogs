@@ -1,5 +1,5 @@
-
-
+## Designing C# 7
+#
 By the time you read this, the C# 7 design team will have been discussing, planning, experimenting and programming for about a year. In this installment, I’ll sample some of the ideas they’ve been exploring.
 
 In reviewing, be mindful that at this time these are still ideas for what to include in C# 7. Some of the ideas the team has simply talked about, while others have made it as far as experimental implementations. Regardless, none of the concepts are set; many may never see the light of day; and even those that are further down the road could be cut in the final stages of language finalization.

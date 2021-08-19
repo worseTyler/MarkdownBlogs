@@ -1,7 +1,5 @@
-
-
-# A Brief History Lesson
-
+## A Brief History Lesson
+#
 As a software developer, we spend a lot of our time using text editors. Most text editors follow the Emacs standard that [harkens all the way back to the 1970s](https://en.wikipedia.org/wiki/Emacs#History) and the venerable [PDP-10](https://en.wikipedia.org/wiki/PDP-10). Emacs’ WYSIWYG style of editing is best suited to a stream-of-consciousness and linear style of editing. The focus is, foremost, on being able to type all the letters and punctuation needed to capture your thoughts. Cursor movement, block selection and copy/paste all rely on either moving your hands off the home row or using modifier [keys like CTRL and ALT](https://www.catb.org/jargon/html/Q/quadruple-bucky.html). After all, the [keyboards](https://www.catb.org/jargon/html/S/space-cadet-keyboard.html) on the MIT LISP machines that Emacs was designed for allowed the user to type an astonishing 8000 different characters.
 
 [![Screen Shot 2015-09-23 at 3.17.38 PM](https://intellitect.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-23-at-3.17.38-PM.png)](https://intellitect.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-23-at-3.17.38-PM.png "How I Became A Vim Rockstar In Visual Studio")

@@ -1,5 +1,5 @@
-
-
+## Integrations and the Canoncial Model
+#
 **What is a canonical model?**
 
 A canonical model is a way to define a logical data model for a particular business object. Rather, a standard which defines how the data will be constructed. It should be as detailed as possible, and represent all of the entities and relationships which are used to construct the data. The model  will become the template for how data is exchanged between systems and services. An organization will eventually identify a number of canonical models, ideally with minimal overlap. There is some debate as to which form the canonical model should live, but for now, I will assume the canonical model will be maintained in XML and bound by an XML Schema Definition (XSD).

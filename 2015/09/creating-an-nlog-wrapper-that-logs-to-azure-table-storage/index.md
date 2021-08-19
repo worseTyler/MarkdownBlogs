@@ -1,5 +1,5 @@
-
-
+## Logging and Tracing for NET Applications Part 2: Creating an NLog Wrapper to Azure Table Storage
+#
 Welcome back to part two of our discussion on logging and tracing for .NET applications. In [part one](/building-a-logger-using-caller-info-attributes-part-1/), we discussed a feature introduced in C# 5 that allows us to log detailed file, member, and line number information when tracing. Today, we’ll show how to build a wrapper for NLog that can utilize this functionality. We’ll also demonstrate how we can redirect our NLog output to Azure table storage. This will set us up for the final part of our blog, which will be building a log viewer for viewing logs stored in Azure table storage.
 
 [NLog](https://www.nuget.org/packages/NLog/) is a logging platform for .NET with rich log routing and management capabilities. At Intellitect, we have used NLog for several large projects, and it has served us well. We have benefited from the configurable log routing to store our logs in the Windows Event Log, SQL Server, and simple text files. Today we will demonstrate adding another log storage destination, Windows Azure Table Storage. Before we can get to routing the logs, however, let’s build a logger in C# that wraps some of the common methods that are used when logging with NLog. Instead of wrapping NLog, we could of course fork the open source NLog project from GitHub and make our changes there, but to keep it simple, we will create a wrapper.

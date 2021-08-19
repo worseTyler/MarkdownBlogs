@@ -1,5 +1,5 @@
-
-
+## Part 1: Writing Secure Software
+#
 In today’s world of online theft and cyber attacks, writing secure software is more important than ever. For many developers, however, security is typically an afterthought, if it is considered at all. In the next few blogs, I’m going to walk through one possible process for developing secure software in an attempt to demystify the process.
 
 **Security by design**
