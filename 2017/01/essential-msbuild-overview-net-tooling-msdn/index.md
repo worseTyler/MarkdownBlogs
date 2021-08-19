@@ -1,5 +1,5 @@
-
-
+## .NET Core Build System 
+#
 Those of you who have been following .NET Core over the past few years (has it been that long?) know all too well that the “build system” has experienced a significant amount of flux, whether it be dropping built-in support for gulp or the demise of Project.json. For me as a columnist, these changes have been challenging as I didn’t want you, my dear readers, to spend too much time learning about features and details that ultimately were only going to be around for a few months. This is why, for example, all my .NET Core-related articles were built on Visual Studio .NET 4.6-based _._CSPROJ files that referenced NuGet packages from .NET Core rather than actually compiled .NET Core projects.
 
 This month, I’m pleased to report, the project file for .NET Core projects has stabilized into (would you believe) an MSBuild file. However, it’s not the same MSBuild file from earlier Visual Studio generations, but rather an improved—simplified—MSBuild file. It’s a file that (without getting into religious wars about curly vs. angle brackets) includes all the features of Project.json but with the accompanying tool support of the traditional MSBuild file we’ve come to know (and perhaps love?) since Visual Studio 2005. In summary, the features include open source, cross-platform compatibility, a simplified and human-editable format and, finally, full modern .NET tool support including wildcard file referencing.

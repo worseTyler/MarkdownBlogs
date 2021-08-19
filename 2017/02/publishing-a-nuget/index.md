@@ -1,5 +1,5 @@
-
-
+## Publishing a NuGet
+#
 Sharing your code as a NuGet is one of the best ways to ensure it gets used. Creating a NuGet package is quick and easy.
 
  
