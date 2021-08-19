@@ -1,5 +1,5 @@
-
-
+## Efficient Movement Through Branches With PowerShell Dynamic Parameters 
+#
 ![Tree branches](https://intellitect.com/wp-content/uploads/2016/10/tree-439171_640-300x225.jpg "Moving Quickly Among Branches With PowerShell Dynamic Parameters")
 
 Branches, anyone?
