@@ -1,5 +1,7 @@
 
 
+## Employee Spotlight: Brian Jones 
+#
 _Welcome to our first Employee Spotlight! Each issue will feature an employee of IntelliTect. Whether you've worked with them for years or have never met our featured employee, I hope this column will continue to introduce you to the many faces of IntelliTect._
 
 _For this issue, we featured someone who's been with IntelliTect long enough to accidentally call it "IntelliTechture" during our interview: Brian Jones._

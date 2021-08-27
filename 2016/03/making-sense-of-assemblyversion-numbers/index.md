@@ -1,3 +1,5 @@
+
+
 ## A Guide to AssemblyVersion and FileVersion
 #
 Estimated reading time: 7 minutes

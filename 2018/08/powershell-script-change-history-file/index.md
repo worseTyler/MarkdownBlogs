@@ -1,10 +1,10 @@
 
 
+## PowerShell Script
+#
 ![](https://intellitect.com/wp-content/uploads/2018/08/Powershell-blog.jpg)
 
-## External code audit? Need a list of TFS file changes during a specific time frame?
-
-## Consider using a PowerShell script.
+### External code audit? Need a list of TFS file changes during a specific time frame? Consider using a PowerShell script.
 
 While history in TFS can provide a list, it does it by changeset, not by file. To see it by file, only one file can be seen at a time. PowerShell script can get the change history of a project using TFS version control as a CSV file. This tool allows you to get a list of all changes including filename and date changed. It works for Team Foundation Version Control (TFVC).
 

@@ -1,10 +1,12 @@
 
 
+## IntelliTect's Core Values 
+#
 ![](https://intellitect.com/wp-content/uploads/2018/07/Twitter-Quotes-300x150.png)
 
 Our core values drive how we do business.
 
-## Software Innovation
+### Software Innovation
 
 Tug of war is a game for the ages, dating back thousands of years, in various iterations. With the historical endurance of this deceptively simple game, it might be a perfect analogy for what it takes to be an innovator in the software world. Our team discovered this the hard way at our annual summer bar-b-que when a weak rope snapped on two separate occasions, causing us to pause and reshape the tools of the game. In the end, we devised a way to send one side to victory and drag the other across the field.
 

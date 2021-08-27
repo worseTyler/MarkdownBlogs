@@ -1,3 +1,5 @@
+
+
 ## Solution to 1.2 Framework and Update
 #
 Initially this post began as a long question to Microsoft but as I began to describe the problem I realized the rather obvious solution.  Anyway, since it took me a little while to solve I decided to post it anyway:

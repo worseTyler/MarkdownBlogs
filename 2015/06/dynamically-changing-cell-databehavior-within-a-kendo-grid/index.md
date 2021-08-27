@@ -1,3 +1,5 @@
+
+
 ## Dynamically Changing Data Behavior Within a Kendo Grid
 #
 Estimated reading time: 3 minutes

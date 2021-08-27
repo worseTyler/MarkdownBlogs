@@ -1,5 +1,7 @@
 
 
+## Test Automation
+#
 With proper tools, technical approaches, and processes, automated testing improves software quality, time to market, and reduces overall costs. Starting early in the development process and maintaining a pragmatic approach will maximize chances of success. However, there is no “one size fits all” approach; proper approaches vary based on team resources and project needs. The correct approach will result in a tool that your team can use to produce quality code without the time and money associated with repeating manual tests, or not testing at all.
 
 #### Integrate with the Software Development Lifecycle

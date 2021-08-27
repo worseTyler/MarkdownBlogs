@@ -1,3 +1,5 @@
+
+
 ## Comparing System Timers 
 #
 I have seen a few samples of code involving the three timer classes provided with the .Net framework over the years.  Juval has such a sample, which he is updating to use ``` ISynchronizeInvoke.InvokeRequired ```.  Even within the MSDN documentation, however, I have never seen much guidance between when to use ``` System.Threading.Timer ``` and ``` System.Timers.Timer ```.  I decided to put together a table that outlines the characteristics of all three.

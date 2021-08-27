@@ -1,7 +1,7 @@
 
 
-## Need a FastTrack to get Your Team Up-to-Speed on Microsoft Products?
-
+## Need a Fasttrack to Get Your Team up-to-Speed on Microsoft Products?
+#
 ![](https://intellitect.com/wp-content/uploads/2018/07/Intellitect-today-graphic-e1532037296148.jpg)
 
 This past September, IntelliTect was selected by Microsoft to participate in the “DevOps FastTrack Airlift 2017” given by the Visual Studio Team Services (VSTS) team. We received updates on the VSTS products as well as details behind Microsoft’s own DevOps journey. Now, we conduct Migration and Lighthouse FastTrack engagements for Microsoft to bring their knowledge and insight to our clients.

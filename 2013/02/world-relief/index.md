@@ -1,3 +1,5 @@
+
+
 ## IntelliTect Joins Food for the Hungry
 #
 [![food_for_the_hungry](https://intellitect.com/wp-content/uploads/2013/02/food_for_the_hungry.gif "Food for the Hungry logo")](https://fh.org "Food for the Hungry in Central Africa")[Food for the Hungry](https://fh.org/ "Food for the Hungry") is best known for its work as a primary food and medicine distributor for USAid in Africa. During the past two years, IntelliTect has joined Food for the Hungry in an interesting partnership to sponsor high profile Christian music concerts around the United States. These concerts provide an opportunity for Food for the Hungry to offer people the chance to sponsor a child through Food for the Hungry's child sponsorship program. Thousands of children have been sponsored throughout the world as a result of these concerts.

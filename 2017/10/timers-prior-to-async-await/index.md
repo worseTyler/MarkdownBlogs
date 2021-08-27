@@ -1,7 +1,7 @@
 
 
 ## There Are Multiple Ways to Use `Task.Delay()` When a Timer is Required
-
+#
 Estimated reading time: 5 minutes
 
 For scenarios prior to `.NET 4.5`, several timer classes are available, including `System.Windows.Forms.Timer`, `System.Timers.Timer`, and `System.Threading.Timer`.
@@ -12,12 +12,13 @@ The other two timers are very similar. \`System.Timers.Timer\` is a wrapper for 
 
 ### Contents
 
-- [There are multiple ways to use Task.Delay() when a timer is required.](#h-there-are-multiple-ways-to-use-task-delay-when-a-timer-is-required)
-    - [Table D.1: Overview of the Various Timer Characteristics](#h-table-d-1-overview-of-the-various-timer-characteristics)
-    - [Listing D.1: Using \`System.Timers.Timer\`](#h-listing-d-1-using-system-timers-timer)
-    - [Listing D.2: Using System.Threading.Timer](#h-listing-d-2-using-system-threading-timer)
-    - [OUTPUT D.1](#h-output-d-1)
-    - [Want More?](#h-want-more)
+- [There Are Multiple Ways to Use `Task.Delay()` When a Timer is Required](#there-are-multiple-ways-to-use-taskdelay-when-a-timer-is-required)
+  - [Contents](#contents)
+  - [Table D.1: Overview of the Various Timer Characteristics](#table-d1-overview-of-the-various-timer-characteristics)
+  - [Listing D.1: Using \`System.Timers.Timer\`](#listing-d1-using-systemtimerstimer)
+  - [Listing D.2: Using `System.Threading.Timer`](#listing-d2-using-systemthreadingtimer)
+  - [OUTPUT D.1](#output-d1)
+  - [Want More?](#want-more)
 
 ### Table D.1: Overview of the Various Timer Characteristics
 

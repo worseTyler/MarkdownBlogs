@@ -1,10 +1,12 @@
 
 
+## C# 7.0 Tuples Explained 
+#
 Back in November, in the [Connect() special issue of MSDN Magazine](https://msdn.microsoft.com/magazine/mt790178), I provided an overview of C# 7.0 in which I introduced tuples. [Click here](https://msdn.microsoft.com/magazine/mt790184) for the overview. In this blog I delve into tuples again, covering the full breadth of the syntax options.
 
-## To begin, let's consider the question:
+### To begin, let's consider the question:
 
-## Why tuples?
+### Why tuples?
 
 On occasion, you'll likely find it useful to combine data elements. Suppose, for example, you're working with information about countries, such as the poorest country in the world in 2017: Malawi, whose capital is Lilongwe, with a GDP per capita of $226.50. You could obviously declare a class for this data, but it doesn't really represent your typical noun/object. It's seemingly more a collection of related pieces of data than it is an object. Surely, if you were going to have a Country object, for example, it would have considerably more data than just properties for the Name, Capital, and GDP per Capita. Alternatively, you could store each data element in individual variables, but the result would be no association between the data elements; $226.50 would have no association with Malawi except perhaps by a common suffix or prefix in the variable names. Another option would be to combine all the data into a single string—with the disadvantage that to work with each data element individually would require parsing it out. A final approach might be to create an anonymous type, but that too has limitations; enough, in fact, that tuples could potentially replace anonymous types entirely. We'll leave this topic until the end of the blog.
 

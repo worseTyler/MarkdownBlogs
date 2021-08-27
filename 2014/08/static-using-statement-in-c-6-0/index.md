@@ -1,3 +1,5 @@
+
+
 ## Static Using Statement in C# 6.0
 #
 Another C# 6.0 “syntactic sugar” feature is the introduction of _using_ _static_.  With this feature, it’s possible to eliminate an explicit reference to the type when invoking a static method.  Furthermore, using static lets you introduce only the extension methods on a specific class, rather than all extension methods within a namespace.  The code of **Listing 1** below provides a “Hello World” example of using static on System.Console.

@@ -1,3 +1,5 @@
+
+
 ## Staying Logged Across Azure App Service Swap 
 #
 I love being able to deploy to slots with Azure Standard and above App Services. These allow me a main production site, a slot for testing which has a separate database, and staging slot that shares a database with production.

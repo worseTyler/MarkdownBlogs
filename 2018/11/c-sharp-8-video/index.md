@@ -1,5 +1,7 @@
 
 
+## Mark Michaelis's Love for C#  
+#
 ### ![Mark at Visual Studio Live, Chicago. ](https://intellitect.com/wp-content/uploads/2018/11/Mark-VS-Live-Chicago-2018-300x225.jpeg "Potential New Features of C# 8.0 Exposed")
 Can't satisfy your thirst for C# knowledge?
 

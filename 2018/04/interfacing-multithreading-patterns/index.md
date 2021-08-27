@@ -1,8 +1,10 @@
 
 
-## Legacy Blog - Pre C# 5.0
+## Interfacing Multithreading Patterns
+#
+### Legacy Blog - Pre C# 5.0
 
-## Multithreading patterns are used to address the multithreading complexities of monitoring an asynchronous operation, thread pooling, avoiding deadlocks, and implementing atomicity and synchronization across operations and data access.
+ Multithreading patterns are used to address the multithreading complexities of monitoring an asynchronous operation, thread pooling, avoiding deadlocks, and implementing atomicity and synchronization across operations and data access.
 
 This is a thorough blog that combs through all you’d need to know about multithreading if you were working in a legacy version of C#. Although lengthy, it wasn’t split into multiple blogs since several of the listings are referred to throughout.
 

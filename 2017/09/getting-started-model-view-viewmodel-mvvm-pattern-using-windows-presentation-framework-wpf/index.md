@@ -1,7 +1,7 @@
 
 
 ## Master the Basics of MVVM to Simplify Building WPF Applications
-
+#
 Estimated reading time: 9 minutes
 
 The Windows Presentation Framework (WPF) takes full advantage of the Model-View-ViewModel (MVVM) pattern. Though it is possible to create WPF applications without using the MVVM pattern, a little investment in learning can make building WPF applications much simpler.
@@ -10,15 +10,16 @@ If you are just getting started with WPF, I suggest looking at this [getting sta
 
 ### Contents
 
-- [Master the Basics of MVVM to Simplify Building WPF Applications](#h-master-the-basics-of-mvvm-to-simplify-building-wpf-applications)
-    - [The Three Pieces of MVVM](#h-the-three-pieces-of-mvvm)
-    - [Bindings - Keeping it in context](#h-bindings-keeping-it-in-context)
-        - [Binding Example](#h-binding-example)
-        - [Related concepts for further reading](#h-related-concepts-for-further-reading)
-    - [Commands](#h-commands)
-        - [Commands Example](#h-commands-example)
-        - [Related concepts for further reading](#h-related-concepts-for-further-reading-1)
-    - [Want More WPF Tips and Tricks?](#h-want-more-wpf-tips-and-tricks)
+- [Master the Basics of MVVM to Simplify Building WPF Applications](#master-the-basics-of-mvvm-to-simplify-building-wpf-applications)
+  - [Contents](#contents)
+  - [The Three Pieces of MVVM](#the-three-pieces-of-mvvm)
+  - [Bindings - Keeping it in context](#bindings---keeping-it-in-context)
+    - [Binding Example](#binding-example)
+    - [Related concepts for further reading](#related-concepts-for-further-reading)
+  - [Commands](#commands)
+    - [Commands Example](#commands-example)
+    - [Related concepts for further reading](#related-concepts-for-further-reading-1)
+  - [Want More WPF Tips and Tricks?](#want-more-wpf-tips-and-tricks)
 
 ### The Three Pieces of MVVM
 

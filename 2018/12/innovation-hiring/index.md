@@ -1,12 +1,12 @@
 
 
-
-
-## The Legacy of Architecture
+## Looking for Innovation
+#
+### The Legacy of Architecture
 
 Brunelleschi, the famous architect and artist of the Renaissance, was an innovator who not only learned his trade, he improved upon it. He studied the grand architecture of the ancients of Rome and built upon that solid foundation of knowledge to create new and better design techniques, even inventing useful tools to make the building of the Duomo in Florence a reality.
 
-## Building More than Meets the Eye
+### Building More than Meets the Eye
 
 But did he work alone?
 

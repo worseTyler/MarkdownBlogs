@@ -1,3 +1,5 @@
+
+
 ## Reducing Boilerplate Code With ReSharper Templates 
 #
 We all like to be efficient. Writing boilerplate code (that stuff you have to write to make everything work) is one such task that I am always looking to reduce or eliminate. One of the easiest ways I have found is by using a feature in [ReSharper](https://www.jetbrains.com/resharper/) called [Code Templates](https://www.jetbrains.com/resharper/features/code_templates.html). There are several different types of templates, but I would like to highlight the live templates. For these examples I will be using ReShaper 10, but this feature has been around for several versions.

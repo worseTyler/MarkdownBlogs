@@ -1,6 +1,8 @@
 
 
-## The async/await pattern ensures that continuation works without switching back to the UI thread to update a control.
+## Async Awaits Windows UI
+#
+### The async/await pattern ensures that continuation works without switching back to the UI thread to update a control.
 
 One place where synchronization is especially important is in the context of UI and Web programming. With the Windows UI, for example, a message pump processes messages such as mouse click and move events. Furthermore, the UI is single-threaded, so that event interaction with any UI components (a text box, for example) must always occur from the single UI thread. One of the key advantages of the async/await pattern is that it leverages the synchronization context to ensure that continuation work—work that appears after the await statement—will always execute on the same synchronization task that invoked the await statement. This approach is of significant value because it eliminates the need to update a control through the UI thread.
 

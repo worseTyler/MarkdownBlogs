@@ -1,5 +1,7 @@
 
 
+## Unit Testing Xamarin Forms
+#
 In a recent application that IntelliTect developed for a client, we were tasked with building a Xamarin forms application that supported Windows, Android, and iOS.  Due to the cross-platform support inherent with using Xamarin, a large majority of our code was common amongst all three implementations.  As with most cross-platform projects, however, a small amount of code needed to be customized for each individual platform.  While our common code was generally straightforward to unit test, it became clear that we needed a solution for unit testing the platform specific pieces of code that we were writing (in the [PCL](https://developer.xamarin.com/guides/cross-platform/application_fundamentals/pcl/introduction_to_portable_class_libraries/) code). This article will demonstrate the approach we took to tackle this problem.
 
 While the majority of our code was shared, there were certain pieces of code that required special casing for different platforms, or potentially even for different device form factors (phone / tablet).  To do this special casing, Xamarin provides the [Xamarin.Forms.Device](https://developer.xamarin.com/guides/xamarin-forms/platform-features/device/) class that allows you to determine which platform and device idiom you are running on.  The Xamarin.Forms.Device class has several useful methods and properties that we used occasionally throughout our application.  Specifically, in our app we used the following properties and methods:

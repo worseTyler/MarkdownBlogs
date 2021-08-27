@@ -1,10 +1,12 @@
 
 
+## The Tough Decision: Buy or Build
+#
 Over the years, I’ve had the opportunity to make the important ‘buy or build’ decision many times. In retrospect, some commercial off-the-shelf (COTS) products have worked out wonderfully. Others have been less than stellar. I use the following matrix to help make my decision.
 
 ![](https://intellitect.com/wp-content/uploads/2018/12/COTS-Graphic.png)
 
-## Here are some key points to consider for your decision.
+### **Here are some key points to consider for your decision:**
 
 ### 1 - Make sure you understand your functional and non-functional requirements.
 

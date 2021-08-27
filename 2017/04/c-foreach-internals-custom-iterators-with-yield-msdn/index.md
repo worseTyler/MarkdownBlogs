@@ -1,5 +1,7 @@
 
 
+## Foreach Internals 
+#
 This month I’m going to explore the internals of a core construct of C# that we all program with frequently—the foreach statement. Given an understanding of the foreach internal behavior, you can then explore implementing the foreach collection interfaces using the yield statement, as I’ll explain.
 
 Although the foreach statement is easy to code, I’m surprised at how few developers understand how it works internally. For exam­ple, are you aware that foreach works differently for arrays than on IEnumberable<T> collections? How familiar are you with the relationship between IEnumerable<T> and IEnumerator<T>? And, if you do understand the enumerable interfaces, are you comfortable implementing them using yield?

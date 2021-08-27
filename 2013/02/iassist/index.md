@@ -1,3 +1,5 @@
+
+
 ## International Assistance Program: Sawla Children's Home
 #
 ![intnl-assist](https://intellitect.com/wp-content/uploads/2013/02/intnl-assist.jpg "Educating Children in Sawla Ghana")

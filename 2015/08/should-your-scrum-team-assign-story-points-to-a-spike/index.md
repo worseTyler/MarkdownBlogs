@@ -1,3 +1,5 @@
+
+
 ## Should Your Scrum Team Assign Story Points to a Spike?
 #
 Estimated reading time: 3 minutes

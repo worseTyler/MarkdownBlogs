@@ -1,7 +1,7 @@
 
 
 ## Need to Convert CIL Code into Text? Try ILDasm!
-
+#
 The C# compiler converts C# code to common intermediate language (CIL) code and not to machine code. The processor can directly understand machine code, but CIL code needs to be converted before the processor can execute it.
 
 Consider using the Intermediate Language Disassembler (ILDasm) when you need to convert CIL code into text. ILDasm is a CIL disassembler provided in C# that is used to view the assembly content of all classes and methods available in .NET application. It is available in Visual Studio and .NET SDK.

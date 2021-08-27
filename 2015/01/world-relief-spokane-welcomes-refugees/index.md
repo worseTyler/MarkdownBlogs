@@ -1,3 +1,5 @@
+
+
 ## World Relief Spokane Welcomes Refugees
 #
 ![world-relief](https://intellitect.com/wp-content/uploads/2015/01/world-relief.jpg "World Relief Spokane and IntelliTect Welcome Refugees")

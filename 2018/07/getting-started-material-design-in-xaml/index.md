@@ -1,7 +1,7 @@
 
 
 ## Add Aesthetically Appealing Material Design to Your Windows Presentation Framework Applications
-
+#
 Estimated reading time: 5 minutes
 
 [Material Design In XAML](https://materialdesigninxaml.net/) (MDIX) is a beautiful theme library that brings [Google’s Material Design](https://material.io/design/) to your Windows Presentation Framework (WPF) applications. In this tutorial, we look at how easy it is to get started and add some beautiful material design to your application.
@@ -10,14 +10,15 @@ If you have an existing WPF project, you can skip to step two.
 
 ### Contents
 
-- [Add Aesthetically Appealing Material Design to Your Windows Presentation Framework Applications](#h-add-aesthetically-appealing-material-design-to-your-windows-presentation-framework-applications)
-    - [Step 1: Create a WPF Project](#h-step-1-create-a-wpf-project)
-    - [Step 2: Add the Material Design in XAML NuGet](#h-step-2-add-the-material-design-in-xaml-nuget)
-    - [Step 3: Include the Theme Resources in App.xaml](#h-step-3-include-the-theme-resources-in-app-xaml)
-    - [Step 4: Setup the Defaults](#h-step-4-setup-the-defaults)
-    - [Step 5 (optional): Beyond the Default Styles](#h-step-5-optional-beyond-the-default-styles)
-    - [FAQ](#h-faq)
-    - [Want More?](#h-want-more)
+- [Add Aesthetically Appealing Material Design to Your Windows Presentation Framework Applications](#add-aesthetically-appealing-material-design-to-your-windows-presentation-framework-applications)
+  - [Contents](#contents)
+  - [Step 1: Create a WPF Project](#step-1-create-a-wpf-project)
+  - [Step 2: Add the Material Design in XAML NuGet](#step-2-add-the-material-design-in-xaml-nuget)
+  - [Step 3: Include the Theme Resources in App.xaml](#step-3-include-the-theme-resources-in-appxaml)
+  - [Step 4: Setup the Defaults](#step-4-setup-the-defaults)
+  - [Step 5 (optional): Beyond the Default Styles](#step-5-optional-beyond-the-default-styles)
+  - [FAQ](#faq)
+  - [Want More?](#want-more)
 
 ### Step 1: [Create a WPF Project](https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application#create-the-application-project)
 

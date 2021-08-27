@@ -1,3 +1,5 @@
+
+
 ## Implementing a Custom Logger With Exception Handling for .NET Core
 #
 Estimated reading time: 2 minutes

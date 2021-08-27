@@ -1,12 +1,14 @@
 
 
+## Writing Errors Without Stack Trace
+#
 Recently, I was trying to display the errors and warning from a DotNet Build. While the warnings all displayed correctly, the errors always included the stack trace:
 
 ![](https://intellitect.com/wp-content/uploads/2018/04/2018-04-16_21-25-30-1024x226.png)
 
 I was able to control the error output slightly by varying the global $ErrorView variable, but the only two options were NormalView or CategoryView, neither of which gave me the clean, message-only, look I desired.
 
-# Solution
+### Solution
 
 To resolve the problem I wrote a Write-ErrorMessage function. The essence of the function was to write out the error message using $Host.UI.WriteErrorLine() and to also call Write-Error -ErrorAction SilentlyContinue so as to populate the error stack, $error (see Listing 1).
 
@@ -47,7 +49,7 @@ The last four lines (above) verified the expected behavior which I ran both in P
 
 Note that one drawback to this approach was that  $Host.UI.WriteErrorLine()  didn't write to StdError so I couldn't redirect the error with something like  $Host.UI.WriteErrorLine() 2>&1. The reason was that $Host.UI.WriteErrorLine() is a UI method (like Write-Host ) and did not affect the pipeline.
 
-# Colorizing the Output
+### Colorizing the Output
 
 An alternative approach to solve this issue is to change the console color, write the text to the output and then change the color back. However, this doesn't populate the $error stack and likely has unintended consequences for output colorization later on in the pipeline.
 

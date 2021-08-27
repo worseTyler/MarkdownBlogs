@@ -1,5 +1,7 @@
 
 
+## Using SQL Server Temporal Tables 
+#
 In a couple of recent applications that IntelliTect developed for clients, we decided to use SQL Server Temporal Tables in order to track changes in the database over time. The apps we were working on were ASP.NET Core web applications, using Entity Framework Core (EF).  While we could have simply modified the databases using queries against the database server directly, we chose to perform an EF migration to add the system versioning.  This way, we could bring up a new database at any time using the standard EF migration pattern, without any extra external steps.
 
 Adding temporal tables to a migration was very simple:

@@ -1,3 +1,5 @@
+
+
 ## Subscribing to TFS Alerts 
 #
 Out of the box, Team Explorer includes the ability to subscribe to Project Alerts (available from the **Team->Project Alerts** menu in Visual Studio and from the Team Web->Settings Page):

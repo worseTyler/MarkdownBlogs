@@ -1,9 +1,7 @@
 
 
- 
-
-
-
+## 2018 IntelliTect Philanthropy
+#
 At its core, IntelliTect is a problem-solving company. So, it makes sense that we’ve dedicated significant time toward solving some of the world’s most pressing issues relating to poverty and injustice.
 
 Over the past decade, IntelliTect has partnered with African NGOs to build schools in war-ravaged South Sudan and bring justice to widows in Nigeria. Additionally, we’ve funded municipal wells in Tanzania, helped develop child survival programs in Kenya, supported counseling centers in Uganda and financed sanitation programs in the Kirindon region of Kenya. Our CEO and chief nerd, Mark Michaelis, has visited many of these project sites and personally seen the positive impact on the local people.

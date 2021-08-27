@@ -1,6 +1,7 @@
 
 
-## Need to do more complex routing with ASP.NET Core? Try Constraints.
+## Need to do more complex routing with ASP.NET Core? Try Constraints:
+#
 
 ### Constraints are a solution for serving Angular apps from a hybrid MVC application.
 

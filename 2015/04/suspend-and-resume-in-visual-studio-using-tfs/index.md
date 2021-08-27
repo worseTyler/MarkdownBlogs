@@ -1,3 +1,5 @@
+
+
 ## Suspend and Resume in Visual Studio Using TFS
 #
 In order to keep our release builds as bug-proof as possible, our development team expects that code reviews are to be completed before checking in the code changes. This presents a problem with Pending Changes in Visual Studio. Let’s say I modify a few files for a particular user story or bug. After I submit the code review, and depending on the availability or responsiveness of the other team members, there will likely be a delay before I can check the code into Team Foundation Server (TFS). If I need to work on another issue, I would now have a mixed set of modified files in my Pending Changes, possibly with changes in some of the same files. Fortunately, since Visual Studio 2012, Microsoft has a solution. It’s called _Suspended Work_.

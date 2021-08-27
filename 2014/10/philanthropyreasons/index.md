@@ -1,3 +1,5 @@
+
+
 ## IntelliTect's Philanthropy 
 #
 ![Philanthropy](https://intellitect.com/wp-content/uploads/2015/01/Philanthropy.jpg "IntelliTect Giving Priorities and Values")

@@ -1,7 +1,7 @@
 
 
-## **Microsoft will simplify Web API authentication in a soon-to-be-released update!**
-
+## **Microsoft Will Simplify Web API Authentication in a Soon-to-Be-Released Update!**
+#
 **UPDATE:** Michael Stokesbary spoke at the Spokane .NET Users Group about the now released update. [Click here](/video-asp-net-core-2-2/) for the video.
 
 This week’s release of ASP.NET 2.2 gave us some performance enhancements, ability to do health checks on the application and code analyzers to help you improve your web API discoverability. Expect an out of band release that creates a dependency on IdentityServer in the near future.

@@ -1,5 +1,7 @@
 
 
+## IntelliTect Today: Smart Meters
+#
 Since 2006, IntelliTect has been a custom development partner for Avista Utilities. We have been a strategic collaborator in the development and project management of a long-awaited customer portal that will bridge the communication gap between Avista, their customers, and the community they serve.
 
 [caption id="attachment_33019" align="alignnone" width="1996"]![](https://intellitect.com/wp-content/uploads/2018/01/2.-MDM-GL-Group-Pic-clear-e1515792648770.jpg) The integrated Avista team celebrates a successful “Go Live” event in October.  

@@ -1,3 +1,5 @@
+
+
 ## Essential Net Configuration in ASP.NET 5
 #
 > _Note: Just prior to press time, Microsoft announced name changes to ASP.NET 5 and related stacks. ASP.NET 5 is now ASP.NET Core 1.0. Entity Framework (EF) 7 is now Entity Framework (EF) Core 1.0. The ASP.NET 5 and EF7 packages and namespaces will change, but otherwise the new nomenclature has no impact on the lessons of this article._

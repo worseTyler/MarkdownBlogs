@@ -1,7 +1,7 @@
 
 
 ## An Engineer with a Fanatical Devotion to Quality
-
+#
 _**Whether you’ve worked with them for years or have never met our featured employee, this column will continue to introduce you to the many faces of IntelliTect. For this issue, we featured a skilled engineer who enjoys coding in the deep-end: Kelly Adams.**_
 
 

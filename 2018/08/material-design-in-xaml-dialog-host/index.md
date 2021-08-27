@@ -1,5 +1,7 @@
 
 
+## Material Design in XAML 
+#
 Estimated reading time: 6 minutes
 
 [Material Design In XAML](https://materialdesigninxaml.net/) (MDIX) is a beautiful theme library that brings [Google’s Material Design](https://material.io/design/) to your Windows Presentation Framework (WPF) applications. In this tutorial, we look at the XAML Dialog Host, one of its most powerful controls. XAML Dialog Host provides a simple way to display a dialog with information or prompt the user when required.
@@ -8,13 +10,16 @@ To begin, this post assumes that you have already set up [a project with MDIX](h
 
 ### Contents
 
-- [The Anatomy of a DialogHost](#h-the-anatomy-of-a-dialoghost)
-- [Showing and Closing a dialog](#h-showing-and-closing-a-dialog)
-- [Routed Commands](#h-routed-commands)
-- [IsOpen Property](#h-isopen-property)
-- [CloseOnClickAway Property](#h-closeonclickaway-property)
-- [Static DialogHost.Show Method](#h-static-dialoghost-show-method)
-- [Want More?](#h-want-more)
+- [Material Design in XAML](#material-design-in-xaml)
+  - [Contents](#contents)
+  - [The Anatomy of a DialogHost](#the-anatomy-of-a-dialoghost)
+  - [Showing and Closing a dialog](#showing-and-closing-a-dialog)
+  - [Routed Commands](#routed-commands)
+  - [IsOpen Property](#isopen-property)
+  - [CloseOnClickAway Property](#closeonclickaway-property)
+  - [Static DialogHost.Show Method](#static-dialoghostshow-method)
+  - [Returning Values](#returning-values)
+  - [Want More?](#want-more)
 
 ### The Anatomy of a DialogHost
 

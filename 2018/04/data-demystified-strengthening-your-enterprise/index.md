@@ -1,5 +1,7 @@
 
 
+## Strengthen Your Enterprise's Operational State
+#
 ![](https://intellitect.com/wp-content/uploads/2018/03/digital-azure-graphic.jpg)
 
 At IntelliTect, we use cloud services to extract, load and transform transactional data to create agile and scalable data warehouses capable of creating reports for any user. The advanced analytics we designed have been used in various industries throughout the Inland Northwest.
