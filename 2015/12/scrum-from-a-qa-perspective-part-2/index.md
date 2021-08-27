@@ -1,3 +1,5 @@
+
+
 ## Part 2: Scrum From a QA Perspective 
 #
 There is an [excellent blog](https://www.stilldrinking.org/programming-sucks) that describes software development as engineering a bridge:

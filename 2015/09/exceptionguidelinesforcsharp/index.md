@@ -1,3 +1,5 @@
+
+
 ## Exception Guidelines for C#
 #
 The following is a list of C# Exceptions Handling Guidelines taken from [Essential C#](/essentialcsharp/) by [Mark Michaelis](/mark).

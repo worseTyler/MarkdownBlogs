@@ -1,3 +1,5 @@
+
+
 ## Validating a Business Idea
 #
 How do you know what the next steps should be? What should you do?

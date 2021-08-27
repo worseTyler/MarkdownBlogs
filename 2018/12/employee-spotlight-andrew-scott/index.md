@@ -1,7 +1,7 @@
 
 
 ## An Analytical Thinker Who Crafts Innovative Solutions
-
+#
 **_Whether you’ve worked with them for years or have never met our_ _featured employee, this column will continue to introduce you to the many faces of IntelliTect. For this issue, we featured a bright innovator who caught the coding bug as a sophomore in high school: Andrew Scott._**
 
 ![](https://intellitect.com/wp-content/uploads/2017/02/Andrew-SWR.jpg)

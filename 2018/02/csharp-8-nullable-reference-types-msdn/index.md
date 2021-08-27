@@ -1,5 +1,7 @@
 
 
+## C# 8.0: Nullable Reference Types 
+#
 Nullable reference types—what? Aren’t all reference types nullable?
 
 I love C# and I find the careful language design fantastic. Nonetheless, as it currently stands, and even after 7 versions of C#, we still don’t have a perfect language. By that I mean that while it’s reasonable to expect there will likely always be new features to add to C#, there are also, unfortunately, some problems. And, by problems, I don’t mean bugs but, rather, fundamental issues. Perhaps one of the biggest problem areas—and one that’s been around since C# 1.0—surrounds the fact that reference types can be null and, in fact, reference types are null by default. Here are some of the reasons why nullable reference types are less than ideal:

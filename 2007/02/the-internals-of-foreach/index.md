@@ -1,3 +1,5 @@
+
+
 ## Advantages of a Foreach Loop
 #
 Many moons ago I discussed the foreach loop.  I expand on that post here as I continue my series for the MSDN C# Developer Center.

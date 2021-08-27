@@ -1,3 +1,5 @@
+
+
 ## MSH and Sdkvars.bat
 #
 If MSH is the future command prompt provided by the OS I better embrace it now.  Toward that effort, I need to make it my primary console.  However, ``` Sdkvars.bat ```, the batch file that sets up the Visual Studio 2005 command-line, doesn't work and as a result, I was going back to cmd.exe.

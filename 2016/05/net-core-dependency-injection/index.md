@@ -1,3 +1,5 @@
+
+
 ## .NET Core Dependency Injection
 #
 In my last two articles, Logging with .NET Core ([bit.ly/1Vv3Q39](https://bit.ly/1Vv3Q39)) and Configuration with .NET Core ([bit.ly/1OoqmkJ](https://bit.ly/1OoqmkJ)), I demonstrated how .NET Core functionality can be leveraged from both an ASP.NET Core project (project.json) as well as the more common .NET 4.6 C# project (\*.csproj).  In other words, taking advantage of the new framework is not limited to those who are writing ASP.NET Core projects.  In this column I’m going to continue to delve into .NET Core, this time with a focus on .NET Core dependency injection capabilities and how they enable an inversion of control (IoC) pattern.  As before, leveraging .NET Core functionality is possible from both “traditional” CSPROJ files and the emerging project.json type projects.  For the sample code, this time I’ll be using XUnit from a project.json project.

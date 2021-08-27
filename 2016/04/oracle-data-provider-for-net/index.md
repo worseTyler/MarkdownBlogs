@@ -1,3 +1,5 @@
+
+
 ## Oracle Data Provider for .NET
 #
 Oracle Data Provider for .NET (ODP.NET) uses Object-relational mapping (ORM) to allow developers to write object-oriented code against a Model instead of writing direct queries into the database. With Entity Framework gaining full support from Microsoft and Microsoft developers, it is critical that there exists an ORM that works well with Entity Framework when required to work with an Oracle database.

@@ -1,16 +1,18 @@
 
 
-# Struggling to get Git to connect to VisualStudio.com? Here's a possible solution.
+## Fix Your Git Credentials in 4 Steps
+#
+### Struggling to get Git to connect to VisualStudio.com? Here's a possible solution:
 
 _Tip: A proxy/firewall can be one of the causes of this frustration._
 
 A big shout out to Andrew Scott for working this with me.
 
-## 1\. Install the Git Credential Manager for Windows
+### 1\. Install the Git Credential Manager for Windows
 
 Go to [https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases](https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases), or you can also get this from the Git Installer for Windows at [https://git-scm.com/download/win.](https://git-scm.com/download/win)
 
-## 2\. Get your Personal Access Token
+### 2\. Get your Personal Access Token
 
 Go to [xxx.visualstudio.com](https://xxx.visualstudio.com) where 'xxx' is your Visual Studio Online tenant name.
 
@@ -22,7 +24,7 @@ Click “Create Token” at the bottom. Now you should see your token.
 
 **Copy this**. _Note: that your token will only display once._
 
-## 3\. Add your credential to the Windows Credential Manager
+### 3\. Add your credential to the Windows Credential Manager
 
 Open the Credential Manager in Windows by searching for “Credential Manager” from the Start menu.
 
@@ -34,7 +36,7 @@ Your user name is “Personal Access Token” (yes, this is the user name).
 
 Paste your personal access token as the “Password.”
 
-## 4\. Use Visual Studio or your tool of choice to clone your repo
+### 4\. Use Visual Studio or your tool of choice to clone your repo
 
 These steps should get you up and running!
 

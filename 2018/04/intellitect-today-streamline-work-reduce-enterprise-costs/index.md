@@ -1,5 +1,7 @@
 
 
+## IntelliTect Today: Streamline Work, Reduce Cost
+#
 Day-to-day operations and capital projects can be a drain on any budget. Our IntelliTect engineers created a suite of products that streamline required work throughout an enterprise. The suite provides environment and process management, configuration of complex applications, and allows for the duplication of accounts.
 
 This past February, our CEO Mark Michaelis and Grant Erickson, senior software architect, demonstrated this innovative suite of products at the 2018 Oracle Utilities User Group (OUUG) conference in New Orleans, Louisiana.

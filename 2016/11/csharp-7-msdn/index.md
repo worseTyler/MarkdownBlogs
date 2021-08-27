@@ -1,3 +1,5 @@
+
+
 ## Overview of C# 7
 #
 Back in December 2015, I discussed the designing of C# 7.0 ([msdn.com/magazine/mt595758](https://msdn.com/magazine/mt595758)). A lot has changed over the last year, but the team is now buttoning down C# 7.0 development, and Visual Studio 2017 Release Candidate is implementing virtually all of the new features. (I say virtually because until Visual Studio 2017 actually ships, there’s always a chance for further change.) For a brief overview, you can check out the summary table at itl.tc[/CSharp7FeatureSummary](/CSharp7FeatureSummary/). In this article, I’m going to explore each of the new features in detail.

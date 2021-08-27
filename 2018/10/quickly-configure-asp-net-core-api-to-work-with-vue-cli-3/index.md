@@ -1,8 +1,8 @@
 
 
+## Use Vue CLI 3 With the Functionality of ASP.NET Core
+#
 ![" "](https://intellitect.com/wp-content/uploads/2018/10/Aspdotnet-1024x768.jpg "Quickly Configure ASP.NET Core API to work with Vue CLI 3!")
-
-## Use Vue CLI 3 with all the functionality of ASP.NET Core.
 
 ### \*\*\*UPDATE\*\*\*
 

@@ -1,3 +1,5 @@
+
+
 ## Declaring Expressions in C# 6.0
 #
 It’s not uncommon that in the midst of writing a statement, you find you need to declare a variable specifically for that statement.  Consider two examples:

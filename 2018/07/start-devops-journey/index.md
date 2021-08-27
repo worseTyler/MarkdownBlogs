@@ -1,7 +1,7 @@
 
 
-## Is your team ready for DevOps?
-
+## Is Your Team Ready for DevOps?
+#
 ## ![](https://intellitect.com/wp-content/uploads/2018/04/DevOps-infinity-graphic.png)
 
 DevOps, or Development and Operations, is the integration of the people, process and tools required to deliver high-quality software in an agile manner from concept all the way to production.

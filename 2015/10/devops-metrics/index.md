@@ -1,3 +1,5 @@
+
+
 ## Metrics Related to DevOps
 #
 For the past several months, I have been participating with the DevOps Metrics team following the DevOps Forum 2015 earlier this year. The topic of discussion was Metrics related to DevOps and today I presented on the topic at the 2015 DevOps Enterprise Summit in San Francisco in a talk entitled Metrics that Matter.  The slides for this can be downloaded here:

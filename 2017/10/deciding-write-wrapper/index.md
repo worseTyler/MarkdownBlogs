@@ -1,5 +1,7 @@
 
 
+## Writing a Wrapper 
+#
 Two things happened around the time I finished up writing a wrapper for Microsoft's UITestControl class: I wondered if I should do the same thing for a web testing technology like Selenium, and I discovered that at least some discussions exist on if wrappers could be considered an [antipattern](https://stackoverflow.com/questions/2550961/wrappers-law-of-demeter-seems-to-be-an-anti-pattern). As I began to investigate writing a wrapper for Selenium, and looking at some existing examples from the team I was on, I quickly realized why there was some debate. I took a good long look back at the reasons why I originally wrote the UITestControl wrapper and decided that it was, in fact, a good decision. But I also learned to be more particular in deciding to write or use wrappers.
 
 The main decision point I found was: does this provide additional, needed functionality to the source library without adding unnecessary fragility, obfuscation, or busywork whenever the source library is called or modified? So for example, the wrapper I wrote for UITestControl abstracts away a lot of the required calls for MSTest to find a UI element, but those calls pretty much never change for the average application. So the original call looked like this:

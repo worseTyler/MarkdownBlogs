@@ -1,3 +1,5 @@
+
+
 ## New Attributes for Trace Logging in NET 4.5
 #
 There is a new set of .NET attributes in .NET 4.5 to help with gathering trace information.  Before .NET 4.5, tracing the line number, member name, and source file name required using the stack trace in combination with the PDB files.  In .NET 4.5, however, there is a new mechanism for doing this using attributes on optional parameters.  Consider the code below:

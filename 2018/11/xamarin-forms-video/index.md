@@ -1,7 +1,7 @@
 
 
 ## ![](https://intellitect.com/wp-content/uploads/2018/11/XamarinForms-1.jpg)
-
+#
 Using Xamarin Forms is a quick win according to [Kevin Bost](/kevin-bost/), Xamarin certified senior developer at IntelliTect and C# instructor at Eastern Washington University.
 
 Xamarin is Microsoft's platform for building mobile applications. Using a shared C# codebase, developers can build android and IOS apps at the same time using the Xamarin.Forms library. It isn't a common UI; it's shared code.

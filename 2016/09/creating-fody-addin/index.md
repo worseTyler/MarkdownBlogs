@@ -1,3 +1,5 @@
+
+
 ## Creating Fody Add-ins
 #
 [Fody](https://github.com/Fody/Fody) is a fantastic framework for creating IL weavers. For those who are unfamiliar with IL weaving, it is the art (and at times a seemingly magical incantation) of modifying an assembly _post-compile_. In this article we will walk through creating a library that can modify an existing .NET assembly.

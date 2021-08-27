@@ -1,3 +1,5 @@
+
+
 ## IntelliTect's Involvement With Spokane Valley Partners Resource Center
 #
 ![svp](https://intellitect.com/wp-content/uploads/2015/01/svp.jpg "IntelliTect and Spokane Valley Partners") 

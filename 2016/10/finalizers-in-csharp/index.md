@@ -1,3 +1,5 @@
+
+
 ## Finalizers in C#
 #
 The following is an excerpt from Chapter 9 of [Essential C# 6](https://IntelliTect.com/EssentialCSharp6/).

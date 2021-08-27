@@ -1,3 +1,5 @@
+
+
 ## Command-Line Processing With .NET Core
 #
 In this month’s Essential .NET column, I continue my investigation into the various features of .NET Core, this time with a fully released version (no longer in beta or a euphemistic release candidate). Specifically, I’m going to focus on its command-line utilities (which are found within the .NET Core Common library at [github.com/aspnet/Common](https://github.com/aspnet/Common)) and how to leverage them for parsing a command line. I confess I’m particularly excited to finally see command-line parsing support built into .NET Core as it’s something I’ve wished for since the .NET Framework 1.0. I’m hoping that a .NET Core built-in library might help standardize, even if only a little, the command-line format/structure between programs. It isn’t so important to me what the standard is as much as there be a convention that people default to, rather than everyone creating their own.

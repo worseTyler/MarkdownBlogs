@@ -1,7 +1,7 @@
 
 
 ## Application Deployment Made Easy
-
+#
 Estimated reading time: 7 minutes
 
 Many .NET developers are familiar with ClickOnce, Microsoft’s simple deployment solution for quickly packaging and deploying software that is easy for end-users to install. However, these conveniences come with limitations.
@@ -17,14 +17,15 @@ Many .NET developers are familiar with ClickOnce, Microsoft’s simple deploymen
 
 ### Contents
 
-- [Application Deployment Made Easy](#h-application-deployment-made-easy)
-    - [Integrating with Your Project](#h-integrating-with-your-project)
-    - [UpdateApp Method](#h-updateapp-method)
-    - [Nuspec File](#h-nuspec-file)
-    - [Create NuGet Package](#h-create-nuget-package)
-    - [Update Simulation](#h-update-simulation)
-    - [Highlights of Squirrel](#h-highlights-of-squirrel)
-    - [Want More?](#h-want-more)
+- [Application Deployment Made Easy](#application-deployment-made-easy)
+  - [Contents](#contents)
+  - [Integrating with Your Project](#integrating-with-your-project)
+  - [UpdateApp Method](#updateapp-method)
+  - [Nuspec File](#nuspec-file)
+  - [Create NuGet Package](#create-nuget-package)
+  - [Update Simulation](#update-simulation)
+  - [Highlights of Squirrel](#highlights-of-squirrel)
+  - [Want More?](#want-more)
 
 ### Integrating with Your Project
 

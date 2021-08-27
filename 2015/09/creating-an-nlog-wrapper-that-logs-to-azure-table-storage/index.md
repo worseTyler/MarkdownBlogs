@@ -1,3 +1,5 @@
+
+
 ## Logging and Tracing for NET Applications Part 2: Creating an NLog Wrapper to Azure Table Storage
 #
 Welcome back to part two of our discussion on logging and tracing for .NET applications. In [part one](/building-a-logger-using-caller-info-attributes-part-1/), we discussed a feature introduced in C# 5 that allows us to log detailed file, member, and line number information when tracing. Today, we’ll show how to build a wrapper for NLog that can utilize this functionality. We’ll also demonstrate how we can redirect our NLog output to Azure table storage. This will set us up for the final part of our blog, which will be building a log viewer for viewing logs stored in Azure table storage.

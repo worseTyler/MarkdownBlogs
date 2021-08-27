@@ -1,8 +1,7 @@
 
 
-## How do you pick the best development team?
-
-
+## How Do You Pick the Best Development Team?
+# 
 
 Developers use languages and technologies that most of the general population have never heard of. What should a company look for when searching for the perfect team to help create their next project?
 

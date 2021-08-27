@@ -1,3 +1,5 @@
+
+
 ## Nightmare of SQL 2008 Server Installment
 #
 It all started with an installation of Visual Studio 2008 SP1, which included SQL Server Express 2005.  From there I wished to install SQL Server 2008 Standard on the default port and upgrade SQL Server 2005 Express to SQL Server 2008 express.  Unfortunately, this proved to be a troublesome desire.  I have no idea what the cause is exactly, except that I was not the only one on my team to have issues.

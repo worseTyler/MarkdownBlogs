@@ -1,3 +1,5 @@
+
+
 ## Solution to Failure of SQL Server Express
 #
 Recently, I tried opening an MDF file from my SQL Server Express instance only to discover be prompted with the following error:

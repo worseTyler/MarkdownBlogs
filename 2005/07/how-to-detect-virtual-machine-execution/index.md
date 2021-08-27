@@ -1,3 +1,5 @@
+
+
 ## How-To: Detecting Virtual Machine Execution 
 #
 Several months ago I cam across some C code that cleverly detected whether a process was running on a Virtual Machine or not.  It uses terms like "redpill" and "matrix" in order to symbolize context within a virtual machine or not.  The code places the ``` SIDT ``` assembler instruction into a string and then executes the instruction to determine whether it successfully modifies the expected register or not.  The problem is that the code no longer works with Windows 2003 SP1 and Windows XP SP2.

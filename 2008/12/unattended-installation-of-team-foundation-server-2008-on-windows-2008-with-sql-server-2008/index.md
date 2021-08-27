@@ -1,3 +1,5 @@
+
+
 ## Installation of 2008's Team Foundation Server Onto Windows With SQL Server
 #
 The following are my instructions for installing a new **Team Foundation Server 2008 with SP1** onto **Windows 2008** with **SQL Server 2008**. Throughout, I followed the [TFS install guide](https://www.microsoft.com/downloads/details.aspx?FamilyID=ff12844f-398c-4fe9-8b0d-9e84181d9923&displaylang=en) and tried to automate where it didn't distract me too much from the task at hand. I followed the Single-Server Team Foundation Server Installation.**Folder Layout**For the scripts to work successfully, you need the following placed into a local directory (probably without spaces in the name):

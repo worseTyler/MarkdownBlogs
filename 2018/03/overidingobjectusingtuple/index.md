@@ -1,5 +1,7 @@
 
 
+## Overriding Objects Using Tuples
+#
 The implementation of Equals() and GetHashCode() used to be complex, but with C# 7.0 Tuples, the actual code is boilerplate.
 
 - For `Equals():` It’s necessary to compare all the contained identifying data structures while avoiding infinite recursion or null reference exceptions.

@@ -1,5 +1,7 @@
 
 
+## DevOps: Reality or Fiction 
+#
 ![](https://intellitect.com/wp-content/uploads/2018/04/2018-04-24_13-20-01-1024x552.png)Today I did an online presentation to Sierra Systems on the Topic of DevOps.  We had some great discussions regarding:
 
 - How do you move to DevOps from when you are starting with an immature team?

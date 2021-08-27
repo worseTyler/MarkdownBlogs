@@ -1,3 +1,5 @@
+
+
 ## Settling the Debate Surrounding `var` and C#
 #
 Estimated reading time: 4 minutes

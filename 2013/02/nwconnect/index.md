@@ -1,3 +1,5 @@
+
+
 ## Leadership for Northwest Connect
 #
 ![Food Bank food photo](https://intellitect.com/wp-content/uploads/2013/02/Food-Bank-food-photo.jpg "Northwest Connect Food Bank")](https://www.nwconnect.org/index.php "Leadership for Northwest Connect")

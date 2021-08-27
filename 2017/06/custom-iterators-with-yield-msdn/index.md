@@ -1,5 +1,7 @@
 
 
+## Custom Iterators With Yield
+#
 In my last column ([msdn.com/magazine/mt797654](https://www.msdn.com/magazine/mt797654)), I delved into the details of how the C# foreach statement works under the covers, explaining how the C# compiler implements the foreach capabilities in Common Intermediate Language (CIL). I also briefly touched on the yield keyword with an example (see **Figure 1**), but little to no explanation.
 
 **Figure 1 Yielding Some C# Keywords Sequentially**
