@@ -1,6 +1,8 @@
 
 
-## Learn how to configure an IoT stack all within .NET with Azure Web App Service, SignalR, Raspberry Pi, and ASP.NET!
+## Configuration of an IoT
+#
+**Learn how to configure an IoT stack all within .NET with Azure Web App Service, SignalR, Raspberry Pi, and ASP.NET!**
 
 In this Meetup talk, Austen and Grant walk you through everything you need to build a real-time IoT device solution on the Azure Web App Service. With the accompanying [GitHub repo](https://github.com/IntelliTect-Samples/RaspiDotNetIoT), you can follow along and create your custom IoT solution while getting a grasp on how to code with .NET on your Raspberry Pi and use ASP.NET and SignalR with it.
 

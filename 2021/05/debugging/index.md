@@ -1,7 +1,7 @@
 
 
 ## Don't Think Senior Developers Struggle? Think Again.
-
+#
 Whenever a bug arises, the key to success for developers at all levels is to remain humble during the debugging process.
 
 Way back in college, when I was first learning to program, I recall one of my professors telling the class, “printf isn’t broken; the bug is in your code.”

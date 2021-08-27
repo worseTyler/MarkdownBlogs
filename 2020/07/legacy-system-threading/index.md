@@ -1,4 +1,8 @@
-## Using an older .NET framework? Check out these system.threading tips to directly manipulate threads without the task abstraction.
+
+
+## Legacy System Threading 
+#
+**Using an older .NET framework? Check out these system.threading tips to directly manipulate threads without the task abstraction.**
 
 While writing the 7th edition of _[Essential C# 8.0](/essentialcsharp/)_, I realized that it was time to pull out the content on system.threading- focusing instead on Parallel Extensions (`System.Threading.Tasks`).
 

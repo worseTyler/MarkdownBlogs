@@ -1,7 +1,7 @@
 
 
 ## How Accurate is My Perceived Worldview?
-
+#
 While traveling overseas before COVID-19, I had my family read Hans Rosling's book, _Factfulness, Ten Reasons We're Wrong About the World – and Why Things Are Better Than You Think_. Before we began reading, each of us took the [Factfulness Quiz](https://factfulnessquiz.com/) – an activity I highly recommend.
 
 Consider [taking the quiz](https://factfulnessquiz.com/) before you continue reading.

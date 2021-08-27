@@ -1,7 +1,7 @@
 
 
-## A Biker with an Affinity for Mentoring
-
+## A Biker With an Affinity for Mentoring
+#
 "Thirty miles per hour – it turns out at that speed, you don't hit pavement," Kevin said. "You get launched into the park."
 
 ![Kevin on a motorcycle with his wife](https://intellitect.com/wp-content/uploads/2020/11/Kevin-motorcycle-1-1024x794.jpg "Employee Spotlight: Kevin Bost")

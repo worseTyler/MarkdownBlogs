@@ -1,7 +1,7 @@
 
 
 ## A Plant-tastic Software Engineer
-
+#
 Meg Woodford radiates positivity and warmth. Her sunny disposition and bright laugh are felt across the room, making IntelliTect a place of joy and warmth even on Spokane’s snowiest winter days.
 
 "I've recently become interested in being a plant mom," Meg said. "I've killed two of my plants, so that's not going so well."

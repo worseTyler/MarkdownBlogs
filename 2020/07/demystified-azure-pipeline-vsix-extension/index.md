@@ -1,6 +1,8 @@
 
 
-## Use Azure DevOps Extension Tasks to add a Visual Studio Extension Publishing Task to your pipeline.
+## Azure Pipeline
+#
+**Use Azure DevOps Extension Tasks to Add a Visual Studio Extension Publishing Task to Your pipeline.**
 
 Microsoft recently released the [Azure DevOps Extension Tasks](https://marketplace.visualstudio.com/items?itemName=ms-devlabs.vsts-developer-tools-build-tasks) tool for Azure DevOps that makes it easy to add a Visual Studio Extension publishing task to a pipeline, but I wasn’t able to find any layman’s documentation on setting it up.
 

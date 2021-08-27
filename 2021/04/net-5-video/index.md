@@ -1,7 +1,7 @@
 
 
 ## Developers, Start Your Migrations! .NET 5 Paves the Way for a Great Development Experience!
-
+#
 For the past several years, Microsoft has invested heavily in .NET Core, their open-source, cross-platform development solution. As a result, those working with the original .NET Framework have been receiving fewer updates. While .NET Core and .NET Framework are language compatible, there have been significant gaps in Core’s feature set. With .NET 5, Microsoft unified these frameworks and charted a clear path ahead for developers.
 
 ![Graphic showing the evolution of Microsoft's various .NET frameworks, including .NET 5.](https://intellitect.com/wp-content/uploads/2021/04/dotnet5.png ".NET 5 VIDEO: A New Era in .NET")

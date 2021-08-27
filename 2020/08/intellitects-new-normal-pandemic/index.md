@@ -1,6 +1,8 @@
 
 
-## The pandemic is redefining normal, forcing us to move out of our comfort zones, look for potential pivots, and optimize the circumstances into an opportunity.
+## New Normal: Pandemic
+#
+**The pandemic is redefining normal, forcing us to move out of our comfort zones, look for potential pivots, and optimize the circumstances into an opportunity.**
 
 This response to the pandemic takes on several forms for us.
 

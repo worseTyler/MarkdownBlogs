@@ -1,6 +1,8 @@
 
 
-### All industries around the globe are impacted by the COVID-19 Pandemic. This isn’t a new or shocking statement. Some businesses, like Netflix, are thriving. Others, like our favorite local restaurants, aren’t all so lucky. But, how do we lead during the crisis?
+## IntelliTect Today: Leadership During Covid-19
+#
+All industries around the globe are impacted by the COVID-19 Pandemic. This isn’t a new or shocking statement. Some businesses, like Netflix, are thriving. Others, like our favorite local restaurants, aren’t all so lucky. But, how do we lead during the crisis?
 
 Those of us fortunate enough to transition our onsite staff to an entirely work-from-home team are discovering a new form of management. Leadership during this COVID-19 crisis is incredibly difficult. We face a myriad of decisions for which the consequences of the choices are significant, the facts are foggy or absent entirely, and the mitigation options are minimal. Furthermore, the diversity of the challenges seem to be between survival and thriving.
 

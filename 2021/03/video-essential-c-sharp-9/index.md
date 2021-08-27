@@ -1,6 +1,8 @@
 
 
-## C# 9 released in November of 2020 and is packed with features to improve your development experience.
+## C# 9 Essentials
+#
+**C# 9 released in November of 2020 and is packed with features to improve your development experience.**
 
 The new record types of C# 9 greatly simplify creating simple classes and bring first-class support for immutable types. The release also improves the language through additions to the pattern matching syntax, allowing for more flexible matching expressions. Additionally, the release adds support covariant return types, code generators, and more.
 

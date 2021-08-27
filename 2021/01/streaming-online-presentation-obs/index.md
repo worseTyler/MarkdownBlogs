@@ -1,7 +1,7 @@
 
 
 ## Refine Your Streaming Skills on Open Broadcaster Software (OBS) Studio for the Best Presentation Possible
-
+#
 _Updated: simplified the process to no longer need FFmpeg_
 
 [Open Broadcaster Software (OBS) Studio](https://obsproject.com/) is one of the most popular software solutions for streamers. With the significant rise in online presentations and virtual meetings, many have begun using OBS coupled with FFmpeg for their various streaming presentations. OBS is an excellent setup for screen sharing and streaming video.

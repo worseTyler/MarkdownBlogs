@@ -1,6 +1,8 @@
 
 
-### With so many in-person events being canceled or moved online, there is a growing need for all of us to master the art of online presentations.
+## Online Presentations
+#
+With so many in-person events being canceled or moved online, there is a growing need for all of us to master the art of online presentations.
 
 For many of us, giving an online presentation can be nerve-wracking. At least once a week I present as part of my live stream. Though I do my best, this often results in easily avoided mistakes. To counteract this, I spent the last several months compiling a checklist of all of the things I like to do before delivering a presentation. This list is focused on the things I try to do before delivering an online presentation or doing a live streaming session on [Twitch](https://twitch.keboo.dev). The [full list](https://gist.github.com/Keboo/387332ebb3fa3e2b0790f253fb2d063f) can be found as a gist on GitHub and contains additional items when presenting in person.
 

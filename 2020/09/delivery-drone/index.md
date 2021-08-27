@@ -2,8 +2,8 @@
 
 https://www.youtube.com/watch?v=IsRW7IdYGq8
 
-# How I Constructed a Plane to Deliver Snacks
-
+## How I Constructed a Plane to Deliver Snacks
+#
 A few years ago, I saw an article about [Zipline](https://flyzipline.com/), a medical supply distribution company. They use an ingeniously designed plane system to deliver blood and other vital medical supplies to remote hospitals in Uganda. I thought that was the coolest use of RC aircraft drone I had seen! Indeed, their namesake “zippy,” a catapult launching system and super smart “clothes-line” aircraft arresting system, is quite the feat of automation. I thought it would be sweet to recreate their system, after all, software engineers never have enough side projects, do we? In all seriousness, passionate side projects are one of my favorite parts of the software engineering community.
 
 #### Creating a Delivery Drone
