@@ -1,8 +1,8 @@
 
 
-### NAOMI Frees Local Families from Isolation and Poverty
-
-#### **Curious about our Non-Profit Partners?**
+## NAOMI Frees Local Families from Isolation and Poverty
+#
+**Curious about our Non-Profit Partners?**
 
 [NAOMI Community](https://www.naomicommunity.org/) (formerly Hearth Homes) in Spokane Valley, Washington, actively pursues their vision of being a “community where every family is free from isolation and poverty.” This passion aligns beautifully with our [philanthropic vision](/philanthropy/) of giving freedom to those without hope through our partnership with organizations that are fighting to eliminate poverty and injustice both locally and worldwide.
 

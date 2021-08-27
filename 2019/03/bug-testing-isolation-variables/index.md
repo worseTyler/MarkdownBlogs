@@ -1,8 +1,9 @@
 
 
-## ![Painless Bug Testing through the Isolation of Variables. Graphic with bugs behind it.](https://intellitect.com/wp-content/uploads/2019/02/IsolatingVariablesMain-300x225.png "Painless Bug Testing through the Isolation of Variables")
 
-## Do you know why it’s crucial to catch your broken functionality before sending it to production?
+## ![Painless Bug Testing through the Isolation of Variables. Graphic with bugs behind it.](https://intellitect.com/wp-content/uploads/2019/02/IsolatingVariablesMain-300x225.png "Painless Bug Testing through the Isolation of Variables")
+#
+### Do you know why it’s crucial to catch your broken functionality before sending it to production?
 
 QA resources waste time through long, protracted test efforts that try to hammer all of their bug testing through the UI at the end of (or after) development. One of the main problems with this approach is that it becomes tough to isolate functionality so that we are only testing one thing at a time with a known codebase. Isolating variables can help produce more reliable, accurate results in testing.
 

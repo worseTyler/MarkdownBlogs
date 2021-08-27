@@ -1,7 +1,7 @@
 
 
-## Add Postgres To .NET Core
-
+## Add Postgres to .NET Core
+#
 Estimated reading time: 8 minutes
 
 We’ll break down what you need to know about Postgres and build out our API code in this installment on Docker. If you missed it, check out [part one](/docker-scaffold/).
@@ -18,18 +18,19 @@ Adding PostgreSQL to .NET is a relatively simple procedure:
 
 ### Contents
 
-- [Add Postgres To .NET Core](#h-add-postgres-to-net-core)
-    - [Add the Npgsql Dependency](#h-add-the-npgsql-dependency)
-    - [Configure .NET Database Connection](#h-configure-net-database-connection)
-    - [Add the Npgsql Entity Framework Service](#h-add-the-npgsql-entity-framework-service)
-    - [Build the API](#h-build-the-api)
-    - [Model a Gadget](#h-model-a-gadget)
-    - [Include Gadgets in the Database Context](#h-include-gadgets-in-the-database-context)
-    - [Initialize the Database](#h-initialize-the-database)
-    - [Write an API Controller for Gadgets](#h-write-an-api-controller-for-gadgets)
-    - [Build an Angular Web Client](#h-build-an-angular-web-client)
-    - [Wrap-up](#h-wrap-up)
-    - [Want More?](#h-want-more)
+- [Add Postgres to .NET Core](#add-postgres-to-net-core)
+  - [Contents](#contents)
+  - [Add the Npgsql Dependency](#add-the-npgsql-dependency)
+  - [Configure .NET Database Connection](#configure-net-database-connection)
+  - [Add the Npgsql Entity Framework Service](#add-the-npgsql-entity-framework-service)
+  - [Build the API](#build-the-api)
+  - [Model a Gadget](#model-a-gadget)
+  - [Include Gadgets in the Database Context](#include-gadgets-in-the-database-context)
+  - [Initialize the Database](#initialize-the-database)
+  - [Write an API Controller for Gadgets](#write-an-api-controller-for-gadgets)
+  - [Build an Angular Web Client](#build-an-angular-web-client)
+  - [Wrap-up](#wrap-up)
+  - [Want More?](#want-more)
 
 ### Add the Npgsql Dependency
 

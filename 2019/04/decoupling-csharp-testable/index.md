@@ -1,22 +1,23 @@
 
 
 ## How and Why to Implement Decoupling Classes in Your Code
-
+#
 Estimated reading time: 9 minutes
 
 Decoupling is a strategy for writing testable code when dealing with hard-to-test classes, and it can be an incredibly powerful tool to help you write clean, effective, and bug-free code.
 
 ### Contents
 
-- [How and Why to Implement Decoupling Classes in Your Code](#h-how-and-why-to-implement-decoupling-classes-in-your-code)
-    - [What Is Decoupling?](#h-what-is-decoupling)
-    - [Why Should I Decouple?](#h-why-should-i-decouple)
-    - [Decoupling in Action](#h-decoupling-in-action)
-    - [Implementing a Decoupling Interface](#h-implementing-a-decoupling-interface)
-    - [Creating a Testable Version of a Decoupling Interface](#h-creating-a-testable-version-of-a-decoupling-interface)
-    - [Unit Testing Decoupled Code](#h-unit-testing-decoupled-code)
-    - [Try it Yourself](#h-try-it-yourself)
-    - [Have Questions?](#h-have-questions)
+- [How and Why to Implement Decoupling Classes in Your Code](#how-and-why-to-implement-decoupling-classes-in-your-code)
+  - [Contents](#contents)
+  - [What Is Decoupling?](#what-is-decoupling)
+  - [Why Should I Decouple?](#why-should-i-decouple)
+  - [Decoupling in Action](#decoupling-in-action)
+  - [Implementing a Decoupling Interface](#implementing-a-decoupling-interface)
+  - [Creating a Testable Version of a Decoupling Interface](#creating-a-testable-version-of-a-decoupling-interface)
+  - [Unit Testing Decoupled Code](#unit-testing-decoupled-code)
+  - [Try it Yourself](#try-it-yourself)
+  - [Have Questions?](#have-questions)
 
 ### What Is Decoupling?
 

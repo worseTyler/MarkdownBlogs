@@ -1,7 +1,7 @@
 
 
-## Now's the time to switch to Visual Studio 2019 (VS 2019).
-
+## Now's the time to switch to Visual Studio 2019 (VS 2019)
+#
 Check out my video that was recorded at our Visual Studio 2019 event and get a crash course on the new features of VS 2019.
 
 <iframe src="https://www.youtube.com/embed/gboTs-Dv04w" allowfullscreen width="560" height="315"></iframe>

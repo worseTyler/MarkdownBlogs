@@ -1,6 +1,8 @@
 
 
-### Need to recover your Windows Photo Gallery metadata so that you can easily sort your photos in current editing software? Find out why you need ExifTool.
+## Necesity of ExifTool 
+#
+_Need to recover your Windows Photo Gallery metadata so that you can easily sort your photos in current editing software? Find out why you need ExifTool._
 
 Windows Photo Gallery’s People Tags feature recognized facial regions within an image and allowed users to tag it with a name. By doing so, Photo Gallery saved metadata to the image so they could be sorted by the people tagged. While the feature was useful, Microsoft announced they would no longer support the product or make it available for download after January 10, 2017. When these tagged images are moved into another modern photo editing software such as Adobe Lightroom Classic, the metadata may no longer be recognized. Before retagging the affected photos, consider the following solutions.
 

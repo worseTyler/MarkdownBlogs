@@ -1,7 +1,7 @@
 
 
 ## A Puzzler Who Uses Software to Maximize Relationships
-
+#
 **_Whether you’ve worked with them for years or have never met our featured employee, this column will continue to introduce you to the many faces of IntelliTect. For this issue, we featured a developer with a keen sense for solving complex puzzles: Grant Erickson, CTO._**
 
 

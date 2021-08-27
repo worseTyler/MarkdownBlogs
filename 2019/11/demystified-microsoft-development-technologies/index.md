@@ -1,6 +1,8 @@
 
 
-### Watch our free videos for a crash course on current development technologies.
+## Crash Courses in Current Development Technologies
+#
+_Watch our free videos for a crash course on current development technologies._
 
 ![Picture of Mark Michaelis speaking at IntelliTect's 2019 Visual Studio event.](https://intellitect.com/wp-content/uploads/2019/11/VS2019-event-1024x768.jpg "Microsoft Development Technologies Demystified")
 

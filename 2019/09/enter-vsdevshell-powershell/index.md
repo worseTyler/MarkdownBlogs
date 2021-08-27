@@ -1,7 +1,7 @@
 
 
-## A New Way to Add Visual Studio Tools to Your PowerShell Environment with Enter-VsDevShell
-
+## A New Way to Add Visual Studio Tools to Your PowerShell Environment With Enter-VsDevShell
+#
 ### PowerShell All the Things
 
  For many years I’ve enjoyed using a PowerShell console as my go-to CLI for interacting with .NET projects and solutions. So one of the first things I do when provisioning a new developer machine is grab a copy of my PowerShell profile from my [GitHub repository](https://github.com/adamskt/danja-zown). Even though I’ve been using Ubuntu as my main platform for development and have consequently gotten into ZSH and BASH scripting, I still use PowerShell daily, but now with a new cmdlet: Enter-VsDevShell.

@@ -1,8 +1,7 @@
 
 
-## **Building Culture with Location**
-
-
+## Building Culture with Location
+#
 
 For the last few years, the IntelliTect team has been working to relocate to a more permanent environment—a place to call our own in which we can permanently invest. With today’s commercial real estate market, finding a building that suited our needs was no small feat. Even after purchasing–easement issues, abatements and an unexpected flooding problem all quickly revealed the challenges around owning a building.
 

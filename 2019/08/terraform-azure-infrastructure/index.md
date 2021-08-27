@@ -1,7 +1,7 @@
 
 
-### Learn to use Terraform to manage and scale up architecture of your growing project.
-
+## Learn to Use Terraform to Manage and Scale Up Architecture 
+#
 Managing huge amounts of infrastructure can be difficult and time-consuming, especially in an agile development world where requirements continuously change. Using [Infrastructure as Code (IaC)](https://docs.microsoft.com/en-us/dotnet/architecture/cloud-native/infrastructure-as-code) to deploy and scale out environments, while applying proven software development practices, can help alleviate the developer’s burden of hitting an ever-moving target. Just like any good software development project, the structure of the project should scale as needed.
 
 ### Consider [Terraform](https://www.terraform.io/) by HashiCorp

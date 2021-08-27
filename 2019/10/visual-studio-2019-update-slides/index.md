@@ -1,6 +1,8 @@
 
 
-### Curious about the new features in Visual Studio 2019?
+## Visual Studio 2019: New Features
+#
+**Curious about the new features in Visual Studio 2019?**
 
 I recently gave a talk that has the answers you need.
 

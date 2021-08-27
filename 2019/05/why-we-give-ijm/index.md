@@ -1,8 +1,7 @@
 
 
 ## How We’re Helping Fight Child Slavery in West Africa
-
-
+#
 
 ### **Slavery still exists.**
 

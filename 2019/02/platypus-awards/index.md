@@ -1,6 +1,7 @@
 
 
-## How does IntelliTect view success?
+## How Does IntelliTect View Success?
+#
 
 During a recent employee meeting, our CEO, Mark Michaelis explained how he sees success and that it isn’t some mythical destination. So often, great developers seem impossible to find and are referred to as unicorns because, even in fairytales, there are scarcely any of them. And while it's important to strive for excellence, focusing on the unobtainable, isn’t ideal. Instead, why not bring your own unique and useful skills to a team that will appreciate your viewpoint, drive and determination to stand out in the world of software development?
 

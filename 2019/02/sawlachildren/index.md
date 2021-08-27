@@ -1,7 +1,7 @@
 
 
-## Ghana children’s home achieves self-sufficiency through ongoing support
-
+## Ghana Children’s Home Achieves Self-Sufficiency Through Ongoing Support
+#
 
 
 The fight for global justice isn’t just about giving a handout; it’s about providing a hand up that lifts individuals and whole communities out of their poverty situations. At IntelliTect, we want to do more for communities than give those in need a meal; we want to provide the tools they need to take care of themselves on a daily basis.

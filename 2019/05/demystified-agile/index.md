@@ -1,5 +1,7 @@
 
 
+## Evolution of Agile Development
+#
 Agile development has evolved to become the norm for software projects. Many organizations are practicing agile with fantastic results. However, sometimes results are less than stellar. Assess your company’s agile practices with this quick checklist. Score 1 point for every answer you agree with.
 
 ## **![](https://intellitect.com/wp-content/uploads/2019/05/Agile-1.png)**

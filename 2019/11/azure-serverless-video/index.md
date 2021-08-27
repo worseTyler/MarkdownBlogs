@@ -1,6 +1,8 @@
 
 
-### Hybrid and multi-cloud scenarios are present in all companies to some degree, so consider utilizing Azure serverless technologies within Azure to migrate simple to complex projects to the cloud.
+## Azure Serverless
+#
+**Hybrid and multi-cloud scenarios are present in all companies to some degree, so consider utilizing Azure serverless technologies within Azure to migrate simple to complex projects to the cloud.**
 
 If you're not leveraging the cloud in your company, then you're behind. Azure serverless can help your company stay current or maybe even get ahead.
 

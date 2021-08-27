@@ -1,6 +1,8 @@
 
 
-### Need to scale large applications? Learn why Kubernetes is a great Docker add-on.
+## Scaling Large Applications With Kubernetes
+#
+**Need to scale large applications? Learn why Kubernetes is a great Docker add-on.**
 
 Creating an application is a big deal, but that’s not the only step in the development process. Often people forget about the sometimes difficult act of deploying their product to the end-user.
 

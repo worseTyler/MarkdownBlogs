@@ -1,5 +1,7 @@
 
 
+## Client Spotlight
+#
 As we approach Thanksgiving at IntelliTect, we’re thankful for our new corporate headquarters and a growing IntelliTect team. We are grateful for all of our new business across the country and our ongoing clients that we’ve partnered with for years.
 
 Often, our individual team members are appreciative for the client teams they work with on a daily basis. Here are just a few team members bragging about the clients and teams they work with:
