@@ -1,7 +1,7 @@
 
 
 ## Testing Early to Reduce the Cost of Bugs 
-
+#
 Testing is a topic that has been written about in-depth. It is well understood that bugs in software are very costly. Cost can be measured in many ways, but the key metric we will look at in this blog is time (developer time, testing time, support time, etc.). Over the years, many people have attempted to quantify the exact time-cost of a bug. Though results can vary, it is cheaper to find and fix a bug earlier than later in the software development life cycle. In this post, we will look at various testing strategies, such as shifting left, to reduce the cost of bugs. 
 
 ### Shifting Left 

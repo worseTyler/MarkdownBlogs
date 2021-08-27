@@ -1,7 +1,7 @@
 
 
 ## Helping Those in the Least Reached and Least Resourced Nations
-
+#
 During this time of crisis, charities around the world are stepping up like never before. One of IntelliTect's long-time charity partnerships, Partners International, is also rising to the call.
 
 Partners is a Spokane-based organization that emphasizes working closely with local people to solve the problems most important to them. Like so many charities, Partners is striving to stay safe during the pandemic. In a [video](https://www.partnersintl.org/covid-19-response/) about their response to the Pandemic, President and CEO Larry D. Andrews said, “Many of our ministry partners are serving in extremely vulnerable locations. But, the work of the ministry is fully continuing, despite the risk. Regardless of the situation or disaster, our Ministry Partners proclamation of the Gospel of Jesus as our hope, our healer, and our comforter will continue.”

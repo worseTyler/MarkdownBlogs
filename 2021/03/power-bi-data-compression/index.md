@@ -1,7 +1,7 @@
 
 
 ## Optimization of Power BI to Maximize Advantages of Encoding Methods
-
+#
 This guide explores data compression regarding Power BI, specifically relating to xVelocity engine functionality and data importation limitations.  In this discussion, I focus on **10 GB uncompressed data** and **1 GB compressed data**. 
 
 ### Limitations of 10 GB Uncompressed Data 

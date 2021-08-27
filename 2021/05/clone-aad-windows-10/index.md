@@ -1,7 +1,7 @@
 
 
 ## Reduce Friction: Migrate to Azure Active Directory (AAD) and Keep Your Previous Accounts’ Data and Profiles
-
+#
 I recently joined a small office of Windows 10 computers to Azure Active Directory (AAD join) to improve security and workflow for the company by following Microsoft’s recommended best practices. I needed to figure out how to do this without taking the extra time to manually back up each of the computers' existing employee accounts.
 
 Microsoft has not implemented a way to seamlessly AAD Join a Windows 10 computer to an AAD already used with a local account. The current joining process creates a new AAD account on the machine which is not helpful because the new account is empty and not associated with the user's existing account with all their data and work. An employee will wonder why you wasted a bunch of time to “AAD Join” their computer.

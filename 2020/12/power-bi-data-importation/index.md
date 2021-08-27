@@ -1,7 +1,7 @@
 
 
 ## Clarifying the Use of Queries and Methods for Data Importation with Power BI
-
+#
 Power BI is an industry leader in self-service analytics. This service delivers large-scale business intelligence into the hands of the end user by leveraging familiar tools found in Excel and Analysis Services into a single streamlined application. Power BI takes advantage of data importation and query optimization techniques such as query folding and VertiPaq compression.
 
 However, the more Power BI tries to simplify the user experience, the less direct control users have on what happens behind the scenes. To help clarify the process of Power BI data importation, this blog will address three important areas of the service:

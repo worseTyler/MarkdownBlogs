@@ -1,7 +1,7 @@
 
 
-We're Affecting Positive Change in Spokane, Washington!
-
+## We're Affecting Positive Change in Spokane, Washington!
+#
 This past decade, we continued giving freedom to the hopeless through our partnership with organizations that fight to eliminate poverty and injustice both locally and worldwide. We’re excited to see what this next decade will hold.
 
 This past year, we continued to financially support the neediest in Spokane, Washington—like the women and children at [NAOMI Community](https://www.naomicommunity.org/) and the newly arrived refugee families through [Spokane World Relief](https://worldreliefspokane.org/). Refugees who settled in Spokane from Bhutan, Afghanistan, Iraq, Kenya, Rwanda, Burundi, Uganda, and Somalia all benefited from job training, language skills, and citizenship classes. Because of IntelliTect’s financial partnership with Spokane World Relief, their basic needs were met.

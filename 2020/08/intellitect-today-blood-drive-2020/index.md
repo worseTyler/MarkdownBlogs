@@ -1,6 +1,8 @@
 
 
-## “My 80-year-old dad kept attempting to break quarantine to get out and donate blood. I really wanted to do something to put his mind at ease, and help too.”
+## IntelliTect Today: Blood Drive 2020
+#
+**“My 80-year-old dad kept attempting to break quarantine to get out and donate blood. I really wanted to do something to put his mind at ease, and help too.”**
 
 The IntelliTect team is proudly partnering with the Red Cross to hold what we expect to be the first of many blood drives at our office in Spokane, Washington.
 

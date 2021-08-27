@@ -1,7 +1,7 @@
 
 
-## Making a difference in Kenya and Tanzania, one mother at a time.
-
+## Making a Difference in Kenya and Tanzania: One Mother at a Time
+#
 The IntelliTect team is humbled to be a small part of the hard work and unconditional love pouring out through Compassion International’s multiple Child Survival Programs (CSP's) in Sub-Saharan Africa.
 
 Partnering with Compassion for the past eight years, IntelliTect has helped fund multiple child survival programs in the neediest regions of rural Kenya and Tanzania (see map below). 

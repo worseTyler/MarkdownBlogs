@@ -1,6 +1,8 @@
 
 
-## Springing Past the Pandemic Winter into the Future. Discover Our New Team, Our Scholarship Program, and Our Coding Classes!
+## IntelliTect Today: Passionate Hard Work
+#
+**Springing Past the Pandemic Winter into the Future. Discover Our New Team, Our Scholarship Program, and Our Coding Classes!**
 
 We are starting to see signs of spring in Spokane, Washington, not only in the climate but perhaps more importantly, as we emerge from the pandemic winter. To our team, the end of this long year means a return to all the aspects of IntelliTect that make our company culture so strong. Cheers to team lunches, parties, ideation sessions, and mid-day ping-pong matches!
 

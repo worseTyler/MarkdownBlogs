@@ -1,7 +1,7 @@
 
 
 ## Understanding AAD Authentication and the Advantages of Implementing Role-Based Authorization
-
+#
 Authentication can be challenging to set up and maintain. In most cases, it's not very cost-effective or feasible to set up an authentication service from scratch and actively maintain it. Thankfully, several authentication services (such as Google, Facebook, and Microsoft) are available for developers. This blog discusses Microsoft’s [Azure App Service's Authentication](https://azure.microsoft.com/en-us/services/app-service/#features) (formerly known as Authentication and Authorization) using Azure Active Directory (AAD).
 
 The “new” Authentication service, often referred to by its codename “Easy Auth,”  acts as a gateway in front of your Azure App Service’s site/API. It simply gives you a zero-code solution for authentication for your site/APIs. As its name implies, "Easy Auth" is only for Authentication at this point. It allows for basic authorization in the form of letting you mark whether a page or API requires a user to sign in to access it; however, you can use third-party code to get role-based authorization functioning with it.

@@ -1,6 +1,8 @@
 
 
-## **Aid Organizations Adjust to Shifting Health Guidelines: How You Can Help**
+## Developing Countries During Covid-19
+#
+**Aid Organizations Adjust to Shifting Health Guidelines: How You Can Help?**
 
 New economic challenges, social upheaval, political turmoil, and rising untold health problems are the new normal for many in the Western World. In spite of these difficulties, most of us are still living fairly comfortable lives. We have enough food, our water is clean and readily available, and our other basic needs are being met.
 

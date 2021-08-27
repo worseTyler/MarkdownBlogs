@@ -1,7 +1,7 @@
 
 
-## Crafting the Perfect Stream through OBS Using Creative Backgrounds 
-
+## Crafting the Perfect Stream Through OBS Using Creative Backgrounds 
+#
 Estimated reading time: 6 minutes
 
 As exciting as it is to stream or record your content with OBS (Open Broadcaster Software), it can be even better with other participants in the video stream which can be done by using a greenscreen. In my [last blog post](https://intellitect.com/streaming-online-presentation-obs-ffmpeg/), I talked about ways to share your content through OBS using a virtual camera.

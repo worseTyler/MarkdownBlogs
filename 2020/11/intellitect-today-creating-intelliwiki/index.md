@@ -1,6 +1,8 @@
 
 
-## Becoming a Stronger Team While Designing Our First App Coming Soon to the Microsoft Teams App Store
+## IntelliTect Today: Creating IntelliWiki
+#
+**Becoming a Stronger Team While Designing Our First App Coming Soon to the Microsoft Teams App Store**
 
 When the pandemic hit, we knew many of our customers would shift their technology priorities so that their company could weather the storm. The IntelliTect leadership refused to lay any of our team members off during this uncertain time. Instead, they decided to create projects that would help our team become more efficient and allow for more effective communication.
 

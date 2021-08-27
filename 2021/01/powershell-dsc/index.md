@@ -1,6 +1,8 @@
 
 
-## Learn to configure computers using PowerShell but with better syntax, less effort, and fewer errors.
+## PowerShell Simplification
+#
+**Learn to configure computers using PowerShell but with better syntax, less effort, and fewer errors.**
 
 When configuring remote systems using PowerShell, it often can involve lots of hands-on time settings up environments, spinning up cloud instances, and running various scripts.
 

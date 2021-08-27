@@ -1,6 +1,8 @@
 
 
-## Successfully manage version numbers and CI/CD pipelines with this tutorial on how to publish NuGets with Azure DevOps.
+## Azure DevOps NuGets
+#
+**Successfully manage version numbers and CI/CD pipelines with this tutorial on how to publish NuGets with Azure DevOps.**
 
 Azure DevOps is an amazing platform for managing the software development lifecycle. For those of us who live in the .NET world, this often means producing and distributing libraries as NuGet packages. There are already [many tutorials](https://intellitect.com/publishing-a-nuget/) that cover the basics of how to do this. If you need to, check those out then come back to learn how to publish NuGets with Azure DevOps.
 

@@ -1,7 +1,7 @@
 
 
 ## What Does the NETSDK1004 Message Mean?
-
+#
 ```csharp
 Error NETSDK1004: "Assets file 'C:project.assets.json' not found. Run a NuGet package restore to generate this file.
 ```

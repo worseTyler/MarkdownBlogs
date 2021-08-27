@@ -1,7 +1,7 @@
 
 
-## How to find columns and tables in an Oracle SQL Database when you don’t know the schema.
-
+## How-To: Finding Columns and Tables in an Oracle SQL Database When Schema Undefined 
+#
 One of the great things about working at IntelliTect is we have the opportunity to get a lot of “cross-pollination” in ideas - even ideas concerning the Oracle SQL database.
 
 Recently, I was with my coworker, Chris Finlayson, and we were looking at some stuff for one of our clients. I was lamenting how I was struggling to find a data point in an off-the-shelf application’s database (DB) for a different client earlier that morning. Chris mentioned that he knew of a way to search a SQL database’s metadata for column names. It took us a few seconds to realize he was thinking [MS SQL](https://www.microsoft.com/en-us/sql-server) while I was talking [Oracle SQL](https://www.oracle.com/database/technologies/appdev/sqldeveloper-landing.html), but outside of semantics difference, we discovered that both have the same capability.

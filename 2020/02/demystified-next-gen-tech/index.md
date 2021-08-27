@@ -1,7 +1,7 @@
 
 
 ## The Future Looks Grand
-
+#
 There are several future lines of development I am looking forward to coming to fruition. Technologically, we seem to be near several inflection points that will radically change our lives in the future. The following is a quick list of some next-gen high points I’m excited about.
 
 ### 3D Metal Printing

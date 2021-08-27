@@ -1,7 +1,7 @@
 
 
-## Define the Problem and Voice Client-Clarifying Questions with Confidence
-
+## Define Problems and Voice Client-Clarifying Questions With Confidence
+#
 A non-trivial part of a successful software consultant’s job is understanding what the client’s problem is. A significant impediment to that problem is walking away from discussions and requirements gathering meetings _knowing_ you don’t understand the issue but feel uncomfortable addressing it.
 
 This article will describe techniques you can use to foster a comfortable environment for yourself when working for a client.

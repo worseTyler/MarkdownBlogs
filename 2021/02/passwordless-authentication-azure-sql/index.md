@@ -1,7 +1,7 @@
 
 
 ## Six Steps to Eliminate Password Storage
-
+#
 Managing the server administrator passwords for your Azure SQL Databases can be cumbersome and insecure. To that end, password authentication to a database is difficult to audit and represents a single point of failure in your company's security posture, especially when it comes to production databases.
 
 The allow-list-based firewall that Azure provides for all databases by default provides some level of protection. However, if you have to allow your company's public IP address in order to grant access to DBAs and other users on your network, your attack surface is still wider than it should be if a database password were to be compromised.

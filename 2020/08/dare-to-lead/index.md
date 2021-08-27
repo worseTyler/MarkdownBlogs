@@ -1,7 +1,7 @@
 
 
-## **Are you causing your team harm by following outdated advice?**
-
+## **Are You Causing Your Team Harm by Following Outdated Advice?**
+#
 “Impossible,” you think to yourself after finishing the latest chapter of _Dare to Lead_, Brene Brown’s lauded leadership book. You trust your friend Meg’s recommendations, and she told you that you needed to read it, and you are.
 
 So be it.

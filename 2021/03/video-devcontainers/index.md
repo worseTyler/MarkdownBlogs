@@ -1,7 +1,7 @@
 
 
-## Quickly Create a Development Environment with DevContainers
-
+## Quickly Create a Development Environment With DevContainers
+#
 The goal behind DevContainers is not to solve the "works on my machine" problem. Rather, it allows developers to create a consistent development environment for projects. It's important to note that these environments can be reused or shared with other team members.
 
 Check out the full video from the March 2021 Spokane .NET Users Group on Developing with DevContainers.
