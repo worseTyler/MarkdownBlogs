@@ -1,7 +1,7 @@
 
 
-### Implementing an integrated Cyber-Physical system utilizing open standards and inexpensive components
-
+## Implementing an Integrated Cyber-Physical System Utilizing Open Standards and Inexpensive Components
+#
 Cyber-physical systems are transforming the way we view and interact with everyday objects and processes and have led the way into the [](/intellovations) [4](/demystified-industry-4-0/)[th](/demystified-industry-4-0/) [Industrial Revolution](/demystified-industry-4-0/). These systems hold the promise of revolutionary advances in fields from medicine to public safety to manufacturing. Who would have imagined internet-connected parking meters just a few decades ago? From 80s-style imprint credit card readers to touchless payments with immediate purchase alerts, cyber-physical systems are everywhere.
 
 ### **A State of The Art Office Space**

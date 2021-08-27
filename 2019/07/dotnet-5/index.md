@@ -1,6 +1,10 @@
 
 
-![](https://intellitect.com/wp-content/uploads/2019/07/Microsoft-dotnet.png)When Microsoft announced .NET 5 at Microsoft Build 2019 in May, it marked an important step forward for developers working across desktop, Web, mobile, cloud and device platforms. In fact, .NET 5 is that rare platform update that unifies divergent frameworks, reduces code complexity and significantly advances cross-platform reach.
+
+
+![](https://intellitect.com/wp-content/uploads/2019/07/Microsoft-dotnet.png)
+#
+When Microsoft announced .NET 5 at Microsoft Build 2019 in May, it marked an important step forward for developers working across desktop, Web, mobile, cloud and device platforms. In fact, .NET 5 is that rare platform update that unifies divergent frameworks, reduces code complexity and significantly advances cross-platform reach.
 
 This is no small task. Microsoft is proposing to merge the source code streams of several key frameworks—.NET Framework, .NET Core and Xamarin/Mono. The effort will even unify threads that separated at inception at the turn of the century, and provide developers one target framework for their work.
 

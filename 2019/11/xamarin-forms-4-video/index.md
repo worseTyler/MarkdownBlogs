@@ -1,6 +1,6 @@
 
-
-### What's new and available for mobile applications like Xamarin.Forms 4? Oh, so much!
+## What's New in Xaramin.Forms 4
+#
 
 Shell, Hot Reload, Hot Restart and Visual are just four of the new features in Xamarin.Forms 4 that will simplify and drastically reduce development time.
 

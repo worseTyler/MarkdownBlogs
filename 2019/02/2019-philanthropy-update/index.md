@@ -1,8 +1,7 @@
 
 
 ## Why We Do What We Do
-
-
+#
 
 IntelliTect’s commitment to finding innovative solutions to the world’s most difficult problems extend beyond software development into social justice and anti-poverty work. Last year, IntelliTect provided financial support to several non-governmental organizations (NGOs) working toward ending slavery ([click here to learn more](https://www.ijm.org/slavery)), giving legal protection to women suffering extreme gender violence ([click here for more project-related info](https://www.ijm.org/partner-offices/uganda/)), and offering tangible support for international refugees as they first arrive in Spokane ([click here for a previous blog](https://intellitect.com/world-relief-spokane-welcomes-refugees/)).
 

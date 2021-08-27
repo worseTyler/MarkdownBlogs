@@ -1,5 +1,7 @@
 
 
+## Recognzing Amazing Individuals
+#
 We are so proud to announce that Kevin Bost, one of our senior developers, is a Microsoft Most Valuable Professional (MVP) as a result of his contribution to Developer Technologies!
 
 Also, in recognition of his exceptional technical community leadership, Mark Michaelis has been awarded the MVP Award. This is the 23rd year in a row! Mark also renewed his Microsoft Regional Director (RD) status for the 12th year in a row!

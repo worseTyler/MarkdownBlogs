@@ -1,6 +1,7 @@
 
 
 ## Teaching C# at Eastern Washington University
+# 
 
 Three adjunct professors from IntelliTect continue to teach tomorrow’s engineers industry-standard tooling and languages in the computer science program at Eastern Washington University (EWU).
 

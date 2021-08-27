@@ -1,7 +1,7 @@
 
 
-### Enterprising SDET with a Passion for Improving
-
+## Enterprising SDET With a Passion for Improving
+#
 ![](https://intellitect.com/wp-content/uploads/2017/05/Mike-SWR.jpg)
 
 Mike Curn, senior SDET at IntelliTect

@@ -1,6 +1,5 @@
 
 
-## 
 
 ![Effortlessly Scaffold Your App With Docker Part one graphic](https://intellitect.com/wp-content/uploads/2019/03/Scaffold-your-App-wDocker_pt1-e1551822522344-1024x761.png "Effortlessly Scaffold Your App with Docker - Part 1")
 

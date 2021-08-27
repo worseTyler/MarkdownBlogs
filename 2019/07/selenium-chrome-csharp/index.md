@@ -1,6 +1,8 @@
 
 
-## You're testing a desktop application with Selenium. How do you verify an item on the page after the browser launches?
+## Verifying With Selenium 
+#
+**You're testing a desktop application with Selenium. How do you verify an item on the page after the browser launches?**
 
 I recently came up against this use case and couldn’t find a clear answer for C#. Every once in a great while, the need arises to have Selenium communicate to a browser that is already launched, sitting at some page. While the bulk of examples available involve launching the browser with Selenium and then attaching with a different driver, I couldn’t find a way to verify something on the page if Selenium _didn’t_ launch the browser.
 

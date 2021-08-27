@@ -1,5 +1,8 @@
 
 
+
+## IntelliTect Today: Scavenger Fun
+#
 At IntelliTect, we’re proud of our culture and are excited to try out new activities as a team. Josh Ward, an active member of our Culture Club and one of our senior software engineers, regularly organizes mini-lunch game-breaks at the office. In September, he treated an intrepid group of IntelliTect explorers to a very fun scavenger hunt.
 
 ![](https://intellitect.com/wp-content/uploads/2019/11/Today-1-Winning-team-1024x768.jpg)

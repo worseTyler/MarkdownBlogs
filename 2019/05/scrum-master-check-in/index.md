@@ -2,8 +2,8 @@
 
 ## ![](https://intellitect.com/wp-content/uploads/2019/05/Scrum-master-checkin-1024x768.jpg)
 
-## Simple tricks to improve the Sprint retrospective.
-
+## Simple Tricks to Improve the Sprint Retrospective.
+#
 ### **New to Scrum? No problem.**
 
 Scrum is an agile methodology that allows developers to create working software early and often. Scrum Masters are servant leaders; we seek to guide one or many agile development teams through the Scrum process by facilitating Scrum ceremonies, removing team impediments, and orchestrating continuous improvement. It is our goal to enable our team to be self-organizing and ‘agile’ in how they handle requested changes. For a basic understanding of how we utilize Scrum at Intellitect, check out [our development process](/developmentprocess/).

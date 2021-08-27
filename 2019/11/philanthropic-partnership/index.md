@@ -1,7 +1,7 @@
 
 
 ## Partnership Creates Life-saving Transformations in Uganda
-
+#
 ![Picture of women in Uganda that have been helped by our philanthropic partners.](https://intellitect.com/wp-content/uploads/2019/11/Uganda-IJM-1024x684.jpg "Your Partnership Matters (Video)")
 
 Photo courtesy: International Justice Mission®

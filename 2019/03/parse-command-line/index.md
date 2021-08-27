@@ -1,5 +1,7 @@
 
 
+## Parsing the Command Line
+#
 Going all the way back to. NET Framework 1.0, I’ve been astounded that there’s been no simple way for developers to parse the command line of their applications. Applications start execution from the Main method, but the arguments are passed in as an array (string[] args) with no differentiation between which items in the array are commands, options, arguments and the like.
 
 I wrote about this problem in a previous article (“How to Contribute to Microsoft Open Source Software Projects,” [msdn.com/magazine/mt830359](https://msdn.com/magazine/mt830359)), and described my work with Microsoft’s Jon Sequeira. Sequeira has lead an open source team of developers to create a new command-line parser that can accept command-line arguments and parse them into an API called System.CommandLine, which does three things:

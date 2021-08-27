@@ -1,7 +1,7 @@
 
 
-## Determine Which Mechanism Is Most Effective to Check for Null or Not Null
-
+## Determine Which Mechanism Is Most Effective to Check for Null 
+#
 It turns out there are numerous ways to check for null or not null, which begs the questions, which should you use?
 
 Not surprisingly, it depends.

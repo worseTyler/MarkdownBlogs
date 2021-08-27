@@ -1,6 +1,8 @@
 
 
-### Are you curious about the organizations we choose to partner with in our global fight for justice?
+## Philanthropic Partners
+#
+Are you curious about the organizations we choose to partner with in our global fight for justice?
 
 Our efforts to understand and alleviate the problems related to poverty, injustice, educational inequality, health and sanitation depend largely on the expertise of our philanthropic partners.
 

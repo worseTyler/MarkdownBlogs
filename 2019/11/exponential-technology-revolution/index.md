@@ -1,6 +1,8 @@
 
 
-## The World is Changing in Profound and Radical Ways. Where do you sit in the technology curve? 
+## Exponential Technology Revolution 
+#
+_The World is Changing in Profound and Radical Ways. Where do you sit in the technology curve?_ 
 
 ###### \*UPDATE - 2021 statistics and Industry 5.0 info added. Also, scroll for full video from my presentation: _Thriving in the Cyber-Physical Revolution._
 

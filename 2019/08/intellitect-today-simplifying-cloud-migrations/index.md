@@ -1,7 +1,7 @@
 
 
-### Helping Clients Reach Their Goals, One Airline Mile at a Time.
-
+## Helping Clients Reach Their Goals, One Airline Mile at a Time
+#
 In the fast-paced environment that businesses currently op­erate in, a robust Cloud combined with DevOps is critical for any business intent on staying ahead of the rapidly rising innovation curve. IntelliTect has assisted several clients in a variety of industries with their cloud migration process.
 
 #### Starting with Microsoft FastTrack
