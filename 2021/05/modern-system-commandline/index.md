@@ -14,4 +14,4 @@ As part of the presentation, we leverage [.NET Interactive Notebooks](https://gi
 
 Check out Mark Michaelis' article _[Essential .NET: Parse the Command Line with System.CommandLine](/parse-command-line/)_, originally posted in MSDN Magazine.
 
-Don't miss another meetup! Join us at the next [Spokane .NET Users Group](https://www.meetup.com/Spokane-NET-User-Group/) event.
+Don't miss another meet up! Join us at the next [Spokane .NET Users Group](https://www.meetup.com/Spokane-NET-User-Group/) event.

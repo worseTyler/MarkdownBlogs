@@ -18,4 +18,4 @@ In this video, Steve walks through what’s needed to define Infrastructure as C
 
 ### Want more?
 
-Join the [Spokane DevOps Meetup](https://www.meetup.com/Spokane-DevOps-Meetup/) and participate in future free events. Or, check out [this blog](/enter-vsdevshell-powershell/) to learn how to add Visual Studio tools to your PowerShell environment.
+Join the [Spokane DevOps Meet up](https://www.meetup.com/Spokane-DevOps-Meetup/) and participate in future free events. Or, check out [this blog](/enter-vsdevshell-powershell/) to learn how to add Visual Studio tools to your PowerShell environment.

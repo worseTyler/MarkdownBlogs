@@ -8,7 +8,7 @@ _Updated: simplified the process to no longer need FFmpeg_
 
 ![The finished product. Kevin's video in the corner and the screen behind him](https://intellitect.com/wp-content/uploads/2021/01/Kevin-Screen-Share.png "Advanced Screen Sharing Techniques for Online Presentations")
 
-Here's what my finished product looks like. I focus on techincal streams and am often live-coding, but this setup works for any type of content.
+Here's what my finished product looks like. I focus on technical streams and am often live-coding, but this setup works for any type of content.
 
 The trouble is, OBS is a streaming and recording program and isn't considered a major communication platform. Many events and venues utilize products that their coordinators already are familiar with and consider convenient, such as Microsoft Teams.
 

@@ -12,7 +12,7 @@ A few years ago, I saw an article about [Zipline](https://flyzipline.com/), a me
 
 Preparing to launch the drone for a test flight.
 
-First, I wanted to start with the delivery plane part. Like the philanthropic mission of Zipline, I too envisioned a noble cause for my delivery plane: I thought it would be sweet to be out running or biking and have a drone deliver me a Cliff Bar.
+First, I wanted to start with the delivery plane part. Like the philanthropic mission of Zip line, I too envisioned a noble cause for my delivery plane: I thought it would be sweet to be out running or biking and have a drone deliver me a Cliff Bar.
 
 #### Slashing the Budget
 
