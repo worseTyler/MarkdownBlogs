@@ -6,7 +6,7 @@
 
 At IntelliTect, a common pattern of our client solutions are windows services that process work on either a scheduled basis or watch a file location. We often use a combination of the [Topshelf framework](https://topshelf-project.com/) with the [TopShelf.Quartz](https://www.nuget.org/packages/Topshelf.Quartz/) job scheduling package to solve these problems. These packages expose a useful fluent interface to schedule multiple jobs in a service instance and take care of the service events-- including installation on the command line. While this is helpful from a code perspective in reducing boilerplate and increasing simplicity, this design lacks an easy way to deploy new releases.
 
-Since working for IntelliTect (and specifically working with [Mark Michaelis](/mark-michaelis/) and [Kevin Bost](/kevin-bost/)), I've become a big fan of both PowerShell and the [psake build automation tool](https://github.com/psake/psake). Now that Nuget supports [solution-level packages](https://docs.nuget.org/release-notes/nuget-1.7#add-solution-level-packages.config-file), adding psake to a project couldn't be easier. Similar to the Ruby on Rails automation tool "rake", psake augments the PowerShell language with a simple task notation and immutable properties. Tasks are chained together to form dependency trees, and if a task fails, subsequent tasks are not run. Psake also provides helpful wrappers around msbuild and other result-code-returning command line executibles.
+Since working for IntelliTect (and specifically working with [Mark Michaelis](/mark-michaelis/) and [Kevin Bost](/kevin-bost/)), I've become a big fan of both PowerShell and the [psake build automation tool](https://github.com/psake/psake). Now that Nuget supports [solution-level packages](https://docs.nuget.org/release-notes/nuget-1.7#add-solution-level-packages.config-file), adding psake to a project couldn't be easier. Similar to the Ruby on Rails automation tool "rake", psake augments the PowerShell language with a simple task notation and immutable properties. Tasks are chained together to form dependency trees, and if a task fails, subsequent tasks are not run. Psake also provides helpful wrappers around msbuild and other result-code-returning command line executables.
 
 ![Two workers lower a cement girder into position](https://intellitect.com/wp-content/uploads/2015/06/6946761849_710befb078_z-300x199.jpg "Deploying Windows Services With Psake and Web Deploy")
 
@@ -65,7 +65,7 @@ if ($psake.build_success -eq $false) { exit 1 } else { exit 0 }
 
 ### Properties
 
-The passed-in configuration name is then used as an indexer into a hashtable that holds environment-specific details about the deployment. Also in the Properties, I like to store some other static values, like the locations of the msdeploy and mstest executibles. Here is an example Properties section:
+The passed-in configuration name is then used as an indexer into a hashtable that holds environment-specific details about the deployment. Also in the Properties, I like to store some other static values, like the locations of the msdeploy and mstest executables. Here is an example Properties section:
 
 ```powershell
 properties {

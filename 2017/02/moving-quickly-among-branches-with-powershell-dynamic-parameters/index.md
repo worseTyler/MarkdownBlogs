@@ -10,7 +10,7 @@ I am currently working on a large integration project that uses a PowerShell scr
 
 Enter PowerShell Dynamic Parameters and Void Tools' ["Everything"](https://www.voidtools.com/) search tools.
 
-## Here is my recipe:
+### Here is my recipe:
 
 First, install Everything ([using chocolatey](https://chocolatey.org/packages/Everything)).
 
@@ -30,7 +30,7 @@ Also configure it to expose its web interface on a local port.
 
 Activate HTTP server
 
-## Now for some PowerShell magic!
+### Now for some PowerShell magic!
 
 We will be querying Everything with the [Invoke-RestMethod Cmdlet](https://technet.microsoft.com/en-us/library/hh849971.aspx). We need to create a query that Everything can execute, and that will return the location of each script we care about. In my case, I wanted to find every instance of "Framework.ps1" that was a child of a folder called "Build" under a certain root path. On the Everything local web page, I experimented until I came up with criteria (documented [here](https://www.voidtools.com/support/everything/searching/)) that return the correct results: "path:D\\src\\Branch1 folder:Build child:Framework.ps1". Once completed, we need to encode it for use in an HTTP query string, and then invoke the RESTful service that Everything exposes. This API is documented [here](https://www.voidtools.com/support/everything/http/). Here is what I created (the $root argument is the root folder to start searching in):
 
@@ -61,7 +61,7 @@ function Get-Workspace {
     
 ```
 
-Next, we take advantage of the DynamicParam block to query the webservice and build up a new ValidateSet based on the results. We need to initialize a new [ParameterAttribute](https://msdn.microsoft.com/en-us/library/system.management.automation.parameterattribute(v=vs.85).aspx) manually with our ParameterSetName and other defaults:
+Next, we take advantage of the DynamicParam block to query the web service and build up a new ValidateSet based on the results. We need to initialize a new [ParameterAttribute](https://msdn.microsoft.com/en-us/library/system.management.automation.parameterattribute(v=vs.85).aspx) manually with our ParameterSetName and other defaults:
 
 ```powershell
   DynamicParam {
@@ -101,6 +101,6 @@ Finally, we construct a [RuntimeDefinedParameter](https://msdn.microsoft.com/en-
 
 In the Begin block of our function, we pull the value out of the $PSBoundParameters ambient variable, and in the Process block, change directory to that location. For brevity, I added an alias to a shorter command in my $Profile. Here is the [complete listing](https://gist.github.com/adamskt/21771391845cdd79397fc71ec6f54fd4).
 
-## Next Steps
+### Next Steps
 
 Bonus points would be awarded for interfacing with TFS (or your version control system of choice) to get the root folders of your workspace branches dynamically, instead of having a hard-coded ValidateSet. Once you have a basic understanding of the intricate gears in the PowerShell parameter system, you can't help but arrive at the conclusion that PowerShell is awesome.

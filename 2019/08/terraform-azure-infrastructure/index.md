@@ -36,7 +36,7 @@ Having some basic coding conventions while working in a large project can help s
 
 When creating the Terraform script files, there are five conventions that I recommend following:
 
-- [](https://www.terraform.io/docs/configuration/locals.html)The main.tf file stores [local values](https://www.terraform.io/docs/configuration/locals.html) for each module. Typically, only local variables reference [input variables](https://www.terraform.io/docs/configuration/variables.html), and athough the local variables often duplicate the input variables, it separates the external view of the module from its internal implementation.
+- [](https://www.terraform.io/docs/configuration/locals.html)The main.tf file stores [local values](https://www.terraform.io/docs/configuration/locals.html) for each module. Typically, only local variables reference [input variables](https://www.terraform.io/docs/configuration/variables.html), and although the local variables often duplicate the input variables, it separates the external view of the module from its internal implementation.
 - Inside of each of the environment folders, there is a providers.tf file that contains the needed [provider references](https://www.terraform.io/docs/providers/azurerm/index.html) in one place while allowing for easy updates.
 - [Input variables](https://www.terraform.io/docs/configuration/variables.html) are specified in a vars.tf file for each module.
 - [Output values](https://www.terraform.io/docs/configuration/variables.html) are specified in an outputs.tf file for each module.

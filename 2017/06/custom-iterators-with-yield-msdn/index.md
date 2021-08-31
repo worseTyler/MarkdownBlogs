@@ -313,7 +313,7 @@ Note that you return IEnumerable<T>, not IEnumerator<T>. This is different from 
 
 ### Yield Statement Requirements
 
-You can use the yield return statement only in members that return an IEnumerator<T> or IEnumerable<T> type, or their nongeneric equivalents. Members whose bodies include a yield return statement may not have a simple return. If the member uses the yield return statement, the C# compiler generates the necessary code to maintain the state of the iterator. In contrast, if the member uses the return statement instead of yield return, the programmer is responsible for maintaining his own state machine and returning an instance of one of the iterator interfaces. Further, just as all code paths in a method with a return type must contain a return statement accompanied by a value (assuming they don’t throw an exception), all code paths in an iterator must contain a yield return statement if they are to return any data.
+You can use the yield return statement only in members that return an IEnumerator<T> or IEnumerable<T> type, or their non generic equivalents. Members whose bodies include a yield return statement may not have a simple return. If the member uses the yield return statement, the C# compiler generates the necessary code to maintain the state of the iterator. In contrast, if the member uses the return statement instead of yield return, the programmer is responsible for maintaining his own state machine and returning an instance of one of the iterator interfaces. Further, just as all code paths in a method with a return type must contain a return statement accompanied by a value (assuming they don’t throw an exception), all code paths in an iterator must contain a yield return statement if they are to return any data.
 
 The following additional restrictions on the yield statement result in compiler errors if they’re violated:
 
@@ -323,7 +323,7 @@ The following additional restrictions on the yield statement result in compiler 
 
 ### Wrapping Up
 
-Overwhelmingly, generics was the cool feature launched in C# 2.0, but it wasn’t the only collection-related feature introduced at the time. Another significant addition was the iterator. As I outlined in this article, iterators involve a contextual keyword, yield, that C# uses to generate underlying CIL code that implements the iterator pattern used by the foreach loop. Furthermore, I detailed the yield syntax, explaining how it fulfills the GetEnumerator implementation of IEnumerable<T>, allows for breaking out of a loop with yield break and even supports a C# method that returns an IEnumeable<T>.
+Overwhelmingly, generics was the cool feature launched in C# 2.0, but it wasn’t the only collection-related feature introduced at the time. Another significant addition was the iterator. As I outlined in this article, iterators involve a contextual keyword, yield, that C# uses to generate underlying CIL code that implements the iterator pattern used by the foreach loop. Furthermore, I detailed the yield syntax, explaining how it fulfills the GetEnumerator implementation of IEnumerable<T>, allows for breaking out of a loop with yield break and even supports a C# method that returns an IEnumerable<T>.
 
 Much of this column derives from my “Essential C#” book (IntelliTect.com/EssentialCSharp), which I am currently in the midst of updating to “Essential C# 7.0.” For more information on this topic, check out Chapter 16.
 

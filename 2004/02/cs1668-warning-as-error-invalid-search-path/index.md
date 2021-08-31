@@ -7,7 +7,7 @@ Initially this post began as a long question to Microsoft but as I began to desc
 
 If you previously had the 1.2 Framework installed and then you uninstalled it in order to install the most recent drops you may find that the "Lib" environment variable still contains the 1.2 path.  You need to update this environment variable to no longer include the 1.2 path and instead only have the path to the 1.1 Framework.  In my case this required updating both the system and user "Lib" environment variable.  (It appears you do not need to add the 2.0 path if you happen to have a more recent drop than the PDC bits.)
 
-The exact error that occured for me appears below:
+The exact error that occurred for me appears below:
 
 > **Compilation Error** **Description:** An error occurred during the compilation of a resource required to service this request. Please review the following specific error details and modify your source code appropriately. **Compiler Error Message:** CS1668: Warning as Error: Invalid search path 'C:\\Program Files\\Microsoft Visual Studio .NET Whidbey\\SDK\\v1.2\\Lib\\' specified in 'LIB environment variable' -- 'The system cannot find the path specified. ' **Source Error:**
 > 

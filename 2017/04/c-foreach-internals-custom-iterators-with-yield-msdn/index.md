@@ -4,11 +4,11 @@
 #
 This month I’m going to explore the internals of a core construct of C# that we all program with frequently—the foreach statement. Given an understanding of the foreach internal behavior, you can then explore implementing the foreach collection interfaces using the yield statement, as I’ll explain.
 
-Although the foreach statement is easy to code, I’m surprised at how few developers understand how it works internally. For exam­ple, are you aware that foreach works differently for arrays than on IEnumberable<T> collections? How familiar are you with the relationship between IEnumerable<T> and IEnumerator<T>? And, if you do understand the enumerable interfaces, are you comfortable implementing them using yield?
+Although the foreach statement is easy to code, I’m surprised at how few developers understand how it works internally. For exam­ple, are you aware that foreach works differently for arrays than on IEnumerable<T> collections? How familiar are you with the relationship between IEnumerable<T> and IEnumerator<T>? And, if you do understand the enumerable interfaces, are you comfortable implementing them using yield?
 
 ### What Makes a Class a Collection
 
-By definition, a collection within the Microsoft .NET Framework is a class that, at a minimum, implements IEnumerable<T> (or the nongeneric type IEnumerable). This interface is critical because implementing the methods of IEnumerable<T> is the minimum needed to support iterating over a collection.
+By definition, a collection within the Microsoft .NET Framework is a class that, at a minimum, implements IEnumerable<T> (or the non generic type IEnumerable). This interface is critical because implementing the methods of IEnumerable<T> is the minimum needed to support iterating over a collection.
 
 The foreach statement syntax is simple and avoids the complication of having to know how many elements there are. The runtime doesn’t directly support the foreach statement, however. Instead, the C# compiler transforms the code as described in the next sections.
 
@@ -39,7 +39,7 @@ In this example, note that foreach relies on the support for the Length property
 
 foreach with IEnumerable<T>: Although the preceding code works well on arrays where the length is fixed and the index operator is always supported, not all types of collections have a known number of elements. Furthermore, many of the collection classes, including Stack<T>, Queue<T> and Dictionary<TKey and TValue>, don’t support retrieving elements by index. Therefore, a more general approach of iterating over collections of elements is needed. The iterator pattern provides this capability. Assuming you can determine the first, next, and last elements, knowing the count and supporting retrieval of elements by index is unnecessary.
 
-The System.Collections.Generic.IEnumerator<T> and nongeneric System.Collections.IEnumerator interfaces are designed to enable the iterator pattern for iterating over collections of elements, rather than the length-index pattern shown previously. A class diagram of their relationships appears in **Figure 1**.
+The System.Collections.Generic.IEnumerator<T> and non generic System.Collections.IEnumerator interfaces are designed to enable the iterator pattern for iterating over collections of elements, rather than the length-index pattern shown previously. A class diagram of their relationships appears in **Figure 1**.
 
 ![Figure 1 A Class Diagram of the IEnumerator and IEnumerator Interfaces](https://intellitect.com/wp-content/uploads/2019/12/Figure-1-1.png "C# foreach Internals and Custom Iterators with yield")
 
@@ -151,7 +151,7 @@ foreach without IEnumerable: C# doesn’t require that IEnumerable/IEnumerable<T
 
 ### Introducing Iterators
 
-Now that you understand the internals of the foreach implementation, it’s time to discuss how iterators are used to create custom implementations of the IEnumerator<T>, IEnumerable<T> and corresponding nongeneric interfaces for custom collections. Iterators provide clean syntax for specifying how to iterate over data in collection classes, especially using the foreach loop, allowing the end users of a collection to navigate its internal structure without knowledge of that structure.
+Now that you understand the internals of the foreach implementation, it’s time to discuss how iterators are used to create custom implementations of the IEnumerator<T>, IEnumerable<T> and corresponding non generic interfaces for custom collections. Iterators provide clean syntax for specifying how to iterate over data in collection classes, especially using the foreach loop, allowing the end users of a collection to navigate its internal structure without knowledge of that structure.
 
 The problem with the enumeration pattern is that it can be cumbersome to implement manually because it must maintain all the state necessary to describe the current position in the collection. This internal state might be simple for a list collection type class; the index of the current position suffices. In contrast, for data structures that require recursive traversal, such as binary trees, the state can be quite complicated. To mitigate the challenges associated with implementing this pattern, C# 2.0 added the yield contextual keyword to make it easier for a class to dictate how the foreach loop iterates over its contents.
 
@@ -207,7 +207,7 @@ public struct Pair<T>: IEnumerable<T>
 }
 ```
 
-Yielding Values from an Iterator: The iterator interfaces are like functions, but instead of returning a single value, they yield a sequence of values, one at a time. In the case of BinaryTree<T>, the iterator yields a sequence of values of the type argument provided for T. If the nongeneric version of IEnumerator is used, the yielded values will instead be of type object.
+Yielding Values from an Iterator: The iterator interfaces are like functions, but instead of returning a single value, they yield a sequence of values, one at a time. In the case of BinaryTree<T>, the iterator yields a sequence of values of the type argument provided for T. If the non generic version of IEnumerator is used, the yielded values will instead be of type object.
 
 To correctly implement the iterator pattern, you need to maintain some internal state to keep track of where you are while enumerating the collection. In the BinaryTree<T> case, you track which elements within the tree have already been enumerated and which are still to come. Iterators are transformed by the compiler into a “state machine” that keeps track of the current position and knows how to “move itself” to the next position.
 

@@ -16,7 +16,7 @@ At IntelliTect, we had an all-company meeting where I explained our position and
 
 ### **Don’t be Afraid to Ask for Help From Your Team**
 
-For IntelliTect, this request manifests in several ways. Firstly, when we have unbillable resources, I request that people put in extra effort. Now is the time to work harder and capitalize on the time by building new processes and potentially even new products. My ask is for people to give their all. We have asked for renewed effort in ideation, for example. We also started our third book discussion, this one online. Ultimately, I’m asking for patience as we navigate unknown waters.
+For IntelliTect, this request manifests in several ways. Firstly, when we have un-billable resources, I request that people put in extra effort. Now is the time to work harder and capitalize on the time by building new processes and potentially even new products. My ask is for people to give their all. We have asked for renewed effort in ideation, for example. We also started our third book discussion, this one online. Ultimately, I’m asking for patience as we navigate unknown waters.
 
 ### When Needed, Sacrifice More than Your Team
 

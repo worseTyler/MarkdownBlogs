@@ -196,6 +196,6 @@ For more information on this process, visit the [Microsoft documentation](https:
 
 ### Ready For More?
 
-Curious about related technologies? Check out this [video](/video-devcontainers/) from a past Spokane .NET Users Group meetup on creating DevContainers! Subscribe to our [YouTube channel](https://www.youtube.com/channel/UCZSEfrUQnLLohBWDKRRSohw?view_as=subscriber) for more videos.
+Curious about related technologies? Check out this [video](/video-devcontainers/) from a past Spokane .NET Users Group meet-up on creating DevContainers! Subscribe to our [YouTube channel](https://www.youtube.com/channel/UCZSEfrUQnLLohBWDKRRSohw?view_as=subscriber) for more videos.
 
 ![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)

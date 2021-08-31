@@ -102,7 +102,7 @@ As mentioned, the key aspect of the APM pattern is the pair of `BeginX` and `End
 
 In Listing 1, we also use the IAsyncResult’s `WaitHandle` to determine when the asynchronous method completes. As we iteratively poll the `WaitHandle`, we print out periods to the console indicating that the download is running. Following that, we call `EndGetResponse()`.
 
-The `EndX` method serves four purposes. First, calling `EndX` will block further execution until the work requested completes successfully (or an error occurs and throws an exception). Second, if method X returns data, this data is accessible from the `EndX` method call. Third, if an exception occurs while performing the requested work, the exception will be rethrown on the call to `EndX`, ensuring that the exception is visible to the calling code as though it had occurred on a synchronous invocation. Finally, if any resource needs cleanup due to X’s invocation, `EndX` will be responsible for cleaning up these resources.
+The `EndX` method serves four purposes. First, calling `EndX` will block further execution until the work requested completes successfully (or an error occurs and throws an exception). Second, if method X returns data, this data is accessible from the `EndX` method call. Third, if an exception occurs while performing the requested work, the exception will be re-thrown on the call to `EndX`, ensuring that the exception is visible to the calling code as though it had occurred on a synchronous invocation. Finally, if any resource needs cleanup due to X’s invocation, `EndX` will be responsible for cleaning up these resources.
 
 ### APM Signatures
 
@@ -955,6 +955,6 @@ public static class UIAction {
 }
 ```
 
-One additional feature in the `UIAction` of Listing 12 is the marshalling of any exceptions on the UI thread that may have occurred. `SafeInvoke()` wraps all requested delegate calls in a try/catch block; if an exception is thrown, it saves the exception and then rethrows it once the context returns to the calling thread. In this way, `UIAction` avoids throwing unhandled exceptions on the UI thread.
+One additional feature in the `UIAction` of Listing 12 is the marshalling of any exceptions on the UI thread that may have occurred. `SafeInvoke()` wraps all requested delegate calls in a try/catch block; if an exception is thrown, it saves the exception and then re-throws it once the context returns to the calling thread. In this way, `UIAction` avoids throwing unhandled exceptions on the UI thread.
 
 ## Questions or comments on Multithreading? Post them below.

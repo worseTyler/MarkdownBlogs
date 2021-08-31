@@ -55,7 +55,7 @@ in
 
 The function selects rows from the table where the UTC DateToCheck parameter provided is between a DST Start Date and DST End Date. If the table is configured correctly, at most one row will be returned when a date is in a DST period, and no rows will be returned when the DateToCheck is not within a DST start and end date range.
 
-Note that the date time function parameter, DateToCheck, does not have a type declaration making it of type any. In Power Query, the any type can be null while DateTime is not nullable. As some of the source datetime values are null the any type for the parameter is required.
+Note that the date time function parameter, DateToCheck, does not have a type declaration making it of type any. In Power Query, the any type can be null while DateTime is not nullable. As some of the source date-time values are null the any type for the parameter is required.
 
 The value of the function is then used when offsetting UTC to local time. If the original date time is in a DST range, an additional hour will be added to the offset.
 

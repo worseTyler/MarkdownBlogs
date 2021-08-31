@@ -10,7 +10,7 @@ Imagine a switch to turn a whole office with all settings perfectly aligned to t
 
 We are nearing the completion of a six-month [building project](/intellitect-today-new-building/) for IntelliTect’s new corporate office. At IntelliTect, we strive to cultivate a culture of innovation by pressing into leading-edge technology, so we were excited about integrating cyber-physical technology and wanted to push the envelope with our project.
 
-Cyber-physical systems are simple physical devices with integrated networks that compute to achieve a more holistic tangible outcome. In our context, this could be a smart door lock where keycodes are managed online, along with a trackable history. It could be a heating system that uses weather data to determine the best heating and cooling algorithms. But for our purposes, we wanted to see how far we could take building integration.
+Cyber-physical systems are simple physical devices with integrated networks that compute to achieve a more holistic tangible outcome. In our context, this could be a smart door lock where key codes are managed online, along with a trackable history. It could be a heating system that uses weather data to determine the best heating and cooling algorithms. But for our purposes, we wanted to see how far we could take building integration.
 
 #### Dreaming of Possibilities
 
@@ -34,7 +34,7 @@ The vision was threefold:
 
 Based on the state of non-billionaire building automation, we had an ambitious challenge. Many of the pieces have come together nicely. And although we've gone through many ups and downs of pushing technology in new ways during the implementation process, some components didn’t meet our requirements. However, the market is headed in a direction to deliver them in the near future.
 
-We were able to construct an initial solution by combining our vision and a disparate set of devices with some clever software. By utilizing OpenHab, an open-source Internet of Things (IoT) control system, we created our underlying infrastructure and user experience. As a result, we've consolidated all of our devices and overlayed them with a web-based user interface. The key feature OpenHab provided was the ability to write logic between the touch screen and the actual devices. Subsequently, this allowed for things like arming the alarm only after ensuring all the doors were closed and giving enough time for the person to leave the building.
+We were able to construct an initial solution by combining our vision and a disparate set of devices with some clever software. By utilizing OpenHab, an open-source Internet of Things (IoT) control system, we created our underlying infrastructure and user experience. As a result, we've consolidated all of our devices and overlaid them with a web-based user interface. The key feature OpenHab provided was the ability to write logic between the touch screen and the actual devices. Subsequently, this allowed for things like arming the alarm only after ensuring all the doors were closed and giving enough time for the person to leave the building.
 
 #### Our Path Forward
 

@@ -1,6 +1,6 @@
 
 
-## Need a Fasttrack to Get Your Team up-to-Speed on Microsoft Products?
+## Need a Fast-Track to Get Your Team up-to-Speed on Microsoft Products?
 #
 ![](https://intellitect.com/wp-content/uploads/2018/07/Intellitect-today-graphic-e1532037296148.jpg)
 

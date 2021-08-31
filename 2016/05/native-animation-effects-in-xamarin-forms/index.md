@@ -6,7 +6,7 @@ Xamarin.Forms (XF) provides a [cross platform API](https://developer.xamarin.com
 
 [Xamarin.Forms 2.1](https://developer.xamarin.com/releases/xamarin-forms/xamarin-forms-2.1/2.1.0/) introduced [effects](https://developer.xamarin.com/guides/xamarin-forms/effects/) that can easily be attached to the elements we want to animate. Because this can be done using XAML, this approach also works well if you are following the [MVVM pattern](https://developer.xamarin.com/guides/xamarin-forms/user-interface/xaml-basics/data_bindings_to_mvvm/). We can use these effects as a bridge to implement our own animations that leverage native platform animations to get true native performance.
 
-# Xamarin.Forms PCL project
+### Xamarin.Forms PCL project
 
 To begin, we will create an empty page with some content to animate up and down when a button is clicked. In this case the Overlay is half the size of the page, and starts off the bottom of the screen.
 
@@ -83,7 +83,7 @@ Finally, we attach the effect to the Overlay.
 </RelativeLayout>
 ```
 
-# Xamarin.iOS
+### Xamarin.iOS
 
 The effect on iOS is very straightforward. The effect simply watches for the IsShown attached property to change and then starts the appropriate animation.
 
@@ -166,7 +166,7 @@ private async Task AnimateOut()
 }
 ```
 
-# Xamarin.Android
+### Xamarin.Android
 
 The animation effect on Android is very similar to the one for iOS; duplicate parts have been omitted for brevity.  
 Android requires a bit more setup to perform the same slide animation. The [value animator](https://developer.android.com/reference/android/animation/ValueAnimator.html) will produce a stream of values that can be used to animate a view. Once again looking at the visual element tracker for Android we see that it [updates the TranslationY property on the ViewGroup](https://github.com/xamarin/Xamarin.Forms/blob/2d9288eee6e6f197364a64308183725e7bd561f9/Xamarin.Forms.Platform.Android/VisualElementTracker.cs). This is the property that we will update during the animation. Then, after it completes, update the TranslationY on the XF element.  

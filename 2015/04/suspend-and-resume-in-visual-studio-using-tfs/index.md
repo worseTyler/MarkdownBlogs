@@ -8,7 +8,7 @@ Under the Team Explorer tab in Visual Studio there is a collection of options in
 
 [![Suspend Description](https://intellitect.com/wp-content/uploads/2015/04/Suspend-Description.png)](https://intellitect.com/wp-content/uploads/2015/04/Suspend-Description.png "Suspend and Resume in Visual Studio using TFS")
 
-Although an active Work Item (TFS User Story or Bug) is not required in order to use the _Suspended Work_ feature, Visual Studio does relate Work Items if you do. If you want to relate one or more work items, those under _Available Work Items_ can be dragged up to _In Progress Work_ and vice versa. A history comment will appear on each listed work item whenever the associated code is shelved, unshelved, and finally checked in.
+Although an active Work Item (TFS User Story or Bug) is not required in order to use the _Suspended Work_ feature, Visual Studio does relate Work Items if you do. If you want to relate one or more work items, those under _Available Work Items_ can be dragged up to _In Progress Work_ and vice versa. A history comment will appear on each listed work item whenever the associated code is shelved, un-shelved, and finally checked in.
 
 [![Suspend Shelf](https://intellitect.com/wp-content/uploads/2015/04/Suspend-Shelf.png)](https://intellitect.com/wp-content/uploads/2015/04/Suspend-Shelf.png "Suspend and Resume in Visual Studio using TFS")
 
@@ -24,7 +24,7 @@ When the code review is complete, there are three possibilities for recovering t
 
 If there are no current edits, as shown in the image on the right, the only option will be to ‘Resume’ the suspended work.
 
-To check in the reviewed code, the user would select ‘Switch’ or ‘Resume’ and the suspended work would be recovered along with the previous state of Visual Studio. The code can then be checked in. The shelveset will be deleted automatically. If ‘Switch’ is chosen, then the current work is suspended before the selected work set is restored. After check-in is complete, then the previous work [for instance, 2 edit(s)] can be ‘Resumed’.
+To check in the reviewed code, the user would select ‘Switch’ or ‘Resume’ and the suspended work would be recovered along with the previous state of Visual Studio. The code can then be checked in. The shelve set will be deleted automatically. If ‘Switch’ is chosen, then the current work is suspended before the selected work set is restored. After check-in is complete, then the previous work [for instance, 2 edit(s)] can be ‘Resumed’.
 
 This process also works for other scenarios. Say you’re working on a change and get interrupted with a more important task: you can suspend your current work and take on the new task. When finished, you can resume your previous work exactly where you left off; bookmarks, breakpoints and all.
 

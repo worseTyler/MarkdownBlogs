@@ -44,7 +44,7 @@ He recently joined our team after working for Google on Google Classroom and Goo
 
 #### Pair-Programming Helped Our Team Grow
 
-Stephen found that working on an internal project was also a beneficial onboarding technique. In the process of ramping up new people, Stephen worked directly with members of his team rather than giving them individual projects. Because of COVID, he was often screen sharing, and as a result of pair-programming, he was inadvertently teaching his team new shortcuts such as advanced features of the Chrome developer tools.
+Stephen found that working on an internal project was also a beneficial on-boarding technique. In the process of ramping up new people, Stephen worked directly with members of his team rather than giving them individual projects. Because of COVID, he was often screen sharing, and as a result of pair-programming, he was inadvertently teaching his team new shortcuts such as advanced features of the Chrome developer tools.
 
 These simple tricks, surfaced during these collaborative sessions, end up “being another tool in their tool belt that they can use forever,” Stephen said. “It makes them 1 percent better, and if you just keep adding to that 1 percent, they can be significantly better over time.”
 

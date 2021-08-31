@@ -4,7 +4,7 @@
 #
 There are two new exception-handling features in C# 6.0.  The first is an improvement in the async and await syntax and the second is support for exception filtering.
 
-When C# 5.0 introduced the async and await (contextual) keywords, developers gained a relatively easy way to code the Task-based Asynchronous Pattern (TAP) in which the compiler takes on the laborious and complex work of transforming C# code into an underlying series of task continuations.  Unfortunately, the team wasn’t able to include support for using await from within catch and finally blocks in that release.   As it turned out, the need for such an invocation was even more common than initially expected.  Thus, C# 5.0 coders had to apply significant workarounds (such as leveraging the awaiter pattern).  C# 6.0 does away with this deficiency, however, and now allows await calls within both catch and finally blocks (they were already supported in try blocks), as shown below.
+When C# 5.0 introduced the async and await (contextual) keywords, developers gained a relatively easy way to code the Task-based Asynchronous Pattern (TAP) in which the compiler takes on the laborious and complex work of transforming C# code into an underlying series of task continuations.  Unfortunately, the team wasn’t able to include support for using await from within catch and finally blocks in that release.   As it turned out, the need for such an invocation was even more common than initially expected.  Thus, C# 5.0 coders had to apply significant workarounds (such as leveraging the awaited pattern).  C# 6.0 does away with this deficiency, however, and now allows await calls within both catch and finally blocks (they were already supported in try blocks), as shown below.
 
 ```csharp
 try

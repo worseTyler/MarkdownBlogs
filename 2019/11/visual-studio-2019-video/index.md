@@ -64,7 +64,7 @@ You can work on bleeding-edge or older versions. Appropriately, they will go int
 
 This flexibility now includes customizing multiple dot releases so that you can work on projects for various customers within the version that they request.
 
-_\*Note - Visual Studio installs with the Azure Powershell module, and that has been updated to the AZ module. Those are not compatible with each other, so be sensitive to what you're installing._
+_\*Note - Visual Studio installs with the Azure PowerShell module, and that has been updated to the AZ module. Those are not compatible with each other, so be sensitive to what you're installing._
 
 #### Theme Customization
 
@@ -143,7 +143,7 @@ Want more on C# 8 features before you move on? Check out [this video](https://yo
 
 I know of at least two teams that are trying to look at data of reported bugs and associate that data with their fixed bugs so that they can determine patterns to fix future bugs through machine learning.
 
-Intellisense utilizes C# 7 or 8 features to alert you to potential bugs.
+IntelliSense utilizes C# 7 or 8 features to alert you to potential bugs.
 
 ### Wrap Up
 

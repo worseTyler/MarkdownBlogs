@@ -129,9 +129,9 @@ By no means is this a complete list of new features in PowerShell 5.0. Other not
 - Out-File, Add-Content and Set-Content include a –NoNewline parameter, allowing for file content that omits the new-line character.
 - The New-TemporaryFile command works similar to [System.IO.Path]::GetTempFileName (though not identically). Like its .NET equivalent, New-TemporaryFile doesn’t delete the temporary file, so be sure to save the output so you can remove the file once you’re done with it.
 - SymbolicLinks can now be managed directly from the PowerShell cmdlets New-Item and Remove-Item.
-- PowerShell Integrated Scripting Environment (ISE) now supports logging via the Start/Stop/Search-Transcript functions, which previously errored when called from PowerShell ISE.
+- PowerShell Integrated Scripting Environment (ISE) now supports logging via the Start/Stop/Search-Transcript functions, which previously error when called from PowerShell ISE.
 
-Furthermore, while not supported immediately in the open source release of PowerShell, Microsoft fully intends to support Open SSH such that it will be a remoting transport option in PowerShell, as well as in Windows Remote Management, not long after this article is published.
+Furthermore, while not supported immediately in the open source release of PowerShell, Microsoft fully intends to support Open SSH such that it will be a reemitting transport option in PowerShell, as well as in Windows Remote Management, not long after this article is published.
 
 All this to say, PowerShell just keeps getting better and better. If you haven’t learned it yet, get going.
 

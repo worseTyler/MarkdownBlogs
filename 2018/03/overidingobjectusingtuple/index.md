@@ -7,7 +7,7 @@ The implementation of Equals() and GetHashCode() used to be complex, but with C#
 - For `Equals():` It’s necessary to compare all the contained identifying data structures while avoiding infinite recursion or null reference exceptions.
 - For `GetHashCode():` It’s necessary to combine the unique hash code of each of the non-null contained identifying data structures in an exclusive OR operation.
 
-With C# 7.0 tuples, overiding Equals() and GetHashCode() turns out to be quite simple as demonstrated in **Figure 1**.
+With C# 7.0 tuples, overriding Equals() and GetHashCode() turns out to be quite simple as demonstrated in **Figure 1**.
 
 ```csharp
 public struct Arc {

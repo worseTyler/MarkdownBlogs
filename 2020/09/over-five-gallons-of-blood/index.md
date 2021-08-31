@@ -36,7 +36,7 @@ Brian and his son, Brady, donate together.
 
 Hanna, Mark and Elisabeth's daughter, relaxes with a good book while she donates.
 
-We DID have some cancellations, and I was grateful for the number of people that were on standby. We didn't have one vacant spot the entire event and ended up having to turn away donors due to lack of time. Also, I was even more thankful for our donors' preperation from the moment they walked through the building.
+We DID have some cancellations, and I was grateful for the number of people that were on standby. We didn't have one vacant spot the entire event and ended up having to turn away donors due to lack of time. Also, I was even more thankful for our donors' preparation from the moment they walked through the building.
 
 The Red Cross left after the last appointment, with **FORTY-FOUR** units of blood, that's over five gallons!
 

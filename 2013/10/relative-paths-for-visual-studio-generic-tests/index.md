@@ -49,6 +49,6 @@ Where I have substituted the following values:
 <UserProfile>: The directory of the users local profile.
 ```
 
-Of these, the most important in my experience is %TestLocation% as this identifies the directory of the test project, and therefore, you can find relative directories from that.  For example, if you want to find a file located in the nuget packages directory you would use
+Of these, the most important in my experience is %TestLocation% as this identifies the directory of the test project, and therefore, you can find relative directories from that.  For example, if you want to find a file located in the nugget packages directory you would use
 
 > %TestLocation%\\..\\packages\\

@@ -36,7 +36,7 @@ So let’s start with their example with connectionStrings and add a dev connect
 
 [![Screen Shot 2015-09-24 at 4.57.17 PM](https://intellitect.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-24-at-4.57.17-PM.png)](https://intellitect.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-24-at-4.57.17-PM.png "Web.config Transforms")
 
-In our config transform for our Test environment we will want the connection string pointing to the Test database not the Dev database. So to accomplish this we can use either example given in the comment in Visual Studio. I have chosen to use the first example and use the SetAttributes transform. Below you can see where I changed the DataSource and Catalog to the test database and added the SetAtrributes transform to match on name.
+In our config transform for our Test environment we will want the connection string pointing to the Test database not the Dev database. So to accomplish this we can use either example given in the comment in Visual Studio. I have chosen to use the first example and use the SetAttributes transform. Below you can see where I changed the DataSource and Catalog to the test database and added the Set Attributes transform to match on name.
 
 [![Screen Shot 2015-09-24 at 4.57.32 PM](https://intellitect.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-24-at-4.57.32-PM.png)](https://intellitect.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-24-at-4.57.32-PM.png "Web.config Transforms")  
 Now that we have the transform in place for the connection string, we can preview what our web.config would look like if this transform was applied. To do this, right click on Web.Test.Config and select Preview Transform. The results are shown below..

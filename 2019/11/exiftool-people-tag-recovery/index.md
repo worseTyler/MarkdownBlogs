@@ -1,6 +1,6 @@
 
 
-## Necesity of ExifTool 
+## Necessity of ExifTool 
 #
 _Need to recover your Windows Photo Gallery metadata so that you can easily sort your photos in current editing software? Find out why you need ExifTool._
 

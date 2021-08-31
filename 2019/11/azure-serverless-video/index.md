@@ -1,12 +1,12 @@
 
 
-## Azure Serverless
+## Azure Server-less
 #
-**Hybrid and multi-cloud scenarios are present in all companies to some degree, so consider utilizing Azure serverless technologies within Azure to migrate simple to complex projects to the cloud.**
+**Hybrid and multi-cloud scenarios are present in all companies to some degree, so consider utilizing Azure server-less technologies within Azure to migrate simple to complex projects to the cloud.**
 
-If you're not leveraging the cloud in your company, then you're behind. Azure serverless can help your company stay current or maybe even get ahead.
+If you're not leveraging the cloud in your company, then you're behind. Azure server-less can help your company stay current or maybe even get ahead.
 
-Utilizing Azure serverless saves time and enhances developer productivity by eliminate the need for you, the developer, to provision the operating systems and hardware required to run your code. You don't have to worry about the servers running your code because Azure abstracts them away. In addition, every service has security and "intelligent" suggestions for improving performance and reducing spend and increasing security built int.
+Utilizing Azure server-less saves time and enhances developer productivity by eliminate the need for you, the developer, to provision the operating systems and hardware required to run your code. You don't have to worry about the servers running your code because Azure abstracts them away. In addition, every service has security and "intelligent" suggestions for improving performance and reducing spend and increasing security built int.
 
 _\*NOTE - You can augment applications with add ons and separately deployed services._
 
@@ -16,19 +16,19 @@ Providing cloud services isn't the primary function of Azure's main competitors:
 
 Microsoft Azure provides:
 
-- Thousands of services and solutions, including Azure serverless solutions
+- Thousands of services and solutions, including Azure server-less solutions
 - Spends $1 billion on security annually
 - Has 54 regions worldwide that support data sovereignty requirements as well as Government Cloud specifically for use by government institutions
 
 Azure is always improving, is the primary focus of its parent company and is simple to work with.
 
-Let's see what we can accomplish with some demos! Here's the **full video** from my Azure serverless talk.
+Let's see what we can accomplish with some demos! Here's the **full video** from my Azure server-less talk.
 
 <iframe src="https://www.youtube.com/embed/A-Yp-QCyswI" allowfullscreen width="560" height="315"></iframe>
 
 ### What We'll Cover:
 
-In this talk, we'll cover serverless functionality via demos as well as some new Azure capabilities. We'll quickly build a simple microservices-based solution leveraging Azure features.
+In this talk, we'll cover server-less functionality via demos as well as some new Azure capabilities. We'll quickly build a simple micro services-based solution leveraging Azure features.
 
 ![](https://intellitect.com/wp-content/uploads/2019/11/Serverless-Microservice-1024x562.png)
 
@@ -52,7 +52,7 @@ Azure Storage Queues are another option for sending and receiving messages. Stor
 
 #### Azure Functions
 
-[Functions](https://azure.microsoft.com/en-us/services/functions/) is an event-driven serverless compute platform for application development that can also solve complex orchestration issues.
+[Functions](https://azure.microsoft.com/en-us/services/functions/) is an event-driven server-less compute platform for application development that can also solve complex orchestration issues.
 
 <iframe src="https://www.youtube.com/embed/AQGY6P3vx_s" allowfullscreen width="560" height="315"></iframe>
 
@@ -62,17 +62,17 @@ This tool is cheap, easy and comes with a lot of CPU time right out of the box. 
 
 Be aware that it's so easy to work with that you can create an unmanageable solution-sprawl unless you're thinking ahead. Remember, there are other services for big-ticket enterprise architecture projects.
 
-Azure Functions suppor with multiple languages, including C#, Java, PowerShell, JavaScript, Python, F# and others.
+Azure Functions support with multiple languages, including C#, Java, PowerShell, JavaScript, Python, F# and others.
 
 _\*Note - the Function host lags a bit behind currently available technology. Core 3.0 support is in preview._
 
 #### Logic Apps
 
-Azure [Logic Apps](https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview) is a workflow engine hosted in Azure. Microsoft Flow (now "Power Automate") is built on top of Auzre Logic Apps. Flow is part of Office 365 and is the replacement for SharePoint workflows.
+Azure [Logic Apps](https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview) is a workflow engine hosted in Azure. Microsoft Flow (now "Power Automate") is built on top of Azure Logic Apps. Flow is part of Office 365 and is the replacement for SharePoint workflows.
 
 <iframe src="https://www.youtube.com/embed/8vlesV_awTM" allowfullscreen width="560" height="315"></iframe>
 
-Logic Apps is a serverless component that requires no code but is still fairly sophisticated.
+Logic Apps is a server-less component that requires no code but is still fairly sophisticated.
 
 _\*Note - A little known secret is that with an extension, Logic Apps can be edited in Visual Studio._
 
@@ -103,7 +103,7 @@ This security is also prevalent in App Service. A few years ago, security was "b
 
 Consider adding the critical service, [App Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview), especially when deploying to Azure because it monitors your live web app and provides real-time, sophisticated analytics and events.
 
-### Want More Azure Serverless?
+### Want More Azure Server-less?
 
 That was as much Azure as can fit in a short presentation, but a talk on Azure isn't complete without mentioning Containers, Kubernetes or Micro Services, so consider further exploration by:
 

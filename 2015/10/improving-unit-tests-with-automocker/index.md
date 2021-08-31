@@ -1,6 +1,6 @@
 
 
-## Further Discussion on Improving Unit Tests With Automocker
+## Further Discussion on Improving Unit Tests With AutoMocker
 #
 In my [previous post](/unit-testing-with-mocks/), I presented an example of using mock objects to improve unit testing. In this post, I would like to expand upon my previous example to make the tests more robust in order to handle signature changes to the ViewModel’s constructor.
 

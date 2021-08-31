@@ -14,6 +14,6 @@ Unfortunately, Michael didn't have time to cover Raspberry Pi deployment. He dis
 
 ### Want More?
 
-Subscribe to our [youtube channel](https://www.youtube.com/channel/UCZSEfrUQnLLohBWDKRRSohw?view_as=subscriber) for more videos from local meetups that are sponsored by IntelliTect.
+Subscribe to our [youtube channel](https://www.youtube.com/channel/UCZSEfrUQnLLohBWDKRRSohw?view_as=subscriber) for more videos from local meet ups that are sponsored by IntelliTect.
 
 Curious about related technologies? Check out [this blog](/kubernetes/) on Kubernetes, or [this blog](/docker-scaffold/) on Docker.

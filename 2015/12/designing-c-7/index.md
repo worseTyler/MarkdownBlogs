@@ -120,7 +120,7 @@ public static bool operator is (Point self out int x, out int y) {...}
 
 Note that without the where expression, case Point(490, 42) could never be reached, causing the compiler to issue an error or warning.
 
-One of the limiting factors of the switch statement is that it doesn’t return a value, but rather executes a code block. An added feature of pattern matching might be support for a switchexpression that returns a value, as in:
+One of the limiting factors of the switch statement is that it doesn’t return a value, but rather executes a code block. An added feature of pattern matching might be support for a switch expression that returns a value, as in:
 
 ```
 string text = match (e) { pattern => expression; ... ; default => expression }

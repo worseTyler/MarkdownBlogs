@@ -22,7 +22,7 @@ The philosophy when I joined the team was that a Spike always got assigned 3 poi
 ### Reasons to Not Point a Spike
 
 - Completing a Spike does not directly deliver value to the customer.
-- Spikes should be assigned a short timebox limit. If the spike drags on, it can actually slow down the iteration.
+- Spikes should be assigned a short time box limit. If the spike drags on, it can actually slow down the iteration.
 - Story points are a way of estimating complexity and size to the customer. Over time the customer may be able to learn what is expected out of an iteration. So if you start doing more spikes than story points, the customer could become confused.
 
 I believe that Spikes should have story-point estimates. I also think it’s important that each task included in the Spike have a time estimate. If a Spike task starts to drag on, it should be brought up in the daily standup then the whole team will decide on the value of the Spike and if it can or cannot be complete in the estimated time. All that being said, I believe Spikes should be used sparingly; whenever possible, roll a spike up into a user story.
