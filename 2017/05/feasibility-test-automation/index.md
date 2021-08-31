@@ -37,7 +37,7 @@ Login(string userName, string password)
 }
 ```
 
-This way, if the username textbox changes, you only have to change the Login method, instead of every single test that tries to log in.
+This way, if the username text box changes, you only have to change the Login method, instead of every single test that tries to log in.
 
 #### Deal with Fragility and Complexity Pragmatically
 

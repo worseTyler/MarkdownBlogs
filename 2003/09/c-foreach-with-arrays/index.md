@@ -2,7 +2,7 @@
 
 ## C# Compiler Optimization
 #
-It is commonly shown that a foreach loop compiles into the CIL (Common Intermediate Language) equivalent of the enmerator pattern.  In other words, the code snippet shown here:
+It is commonly shown that a foreach loop compiles into the CIL (Common Intermediate Language) equivalent of the enumerator pattern.  In other words, the code snippet shown here:
 
 ```csharp
 ArrayList array = new ArrayList();

@@ -150,7 +150,7 @@ _\*Note - this only works in .NET Core - not Full Framework._
 
 Who wouldn't? This topic is much more detailed than a single hour talk or short blog can cover. Here's the [link to all the code](https://github.com/IntelliTect-Samples/2019-10-23.VisualStudio2019Launch) for IntelliTect's Visual Studio 2019 event.
 
-For continued learning, consider joining a local .NET Users Group to connect with developers of varying skill levels. [Click here](https://www.meetup.com/Spokane-NET-User-Group/) for the Spokane .NET Users Group meetup page.
+For continued learning, consider joining a local .NET Users Group to connect with developers of varying skill levels. [Click here](https://www.meetup.com/Spokane-NET-User-Group/) for the Spokane .NET Users Group meet up page.
 
 There are multiple blogs and videos that can help. Here are some recent blogs that IntelliTect team members have written:
 

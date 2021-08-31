@@ -1,6 +1,6 @@
 
 
-## Integrations and the Canoncial Model
+## Integrations and the Canonical Model
 #
 **What is a canonical model?**
 

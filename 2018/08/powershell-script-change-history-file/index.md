@@ -6,9 +6,9 @@
 
 ### External code audit? Need a list of TFS file changes during a specific time frame? Consider using a PowerShell script.
 
-While history in TFS can provide a list, it does it by changeset, not by file. To see it by file, only one file can be seen at a time. PowerShell script can get the change history of a project using TFS version control as a CSV file. This tool allows you to get a list of all changes including filename and date changed. It works for Team Foundation Version Control (TFVC).
+While history in TFS can provide a list, it does it by change set, not by file. To see it by file, only one file can be seen at a time. PowerShell script can get the change history of a project using TFS version control as a CSV file. This tool allows you to get a list of all changes including filename and date changed. It works for Team Foundation Version Control (TFVC).
 
-This is a simple script that calls the TFS API to get the history of all files in the project. It pulls the changesets and then expands to all files touched. The results are exported to a file (default name is FileHistory.csv) in a CSV format in the current folder.
+This is a simple script that calls the TFS API to get the history of all files in the project. It pulls the change sets and then expands to all files touched. The results are exported to a file (default name is FileHistory.csv) in a CSV format in the current folder.
 
 ### [](https://github.com/IntelliTect/TfsHistory#output-format)Output Format
 
@@ -30,7 +30,7 @@ There are a number of command line parameters:
 - fromDate: Date to start looking for changes. M/D/YYYY. 11/1/2017
 - toDate: Date to stop looking for changes. M/D/YYYY. 12/1/2017
 - path: Project and path to search for changes in. Electron/dev
-- maxCount: Maximum number of changesets to bring back (default: 1000)
+- maxCount: Maximum number of change sets to bring back (default: 1000)
 - outFile: Filename for results. (default: FileHistory.csv)
 
 ### [](https://github.com/IntelliTect/TfsHistory#example)Example

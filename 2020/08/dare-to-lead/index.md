@@ -8,7 +8,7 @@ So be it.
 
 Glancing out of your office window, you see the cubicles filled with your teams, two agile development groups with separate products. They’re happily coding away, turning user stories into valuable features.
 
-A large burndown chart on the wall does show scope creep, which means “Team A” (the name you notably chose even though Scrum says to let teams self-organize – you didn’t want some frivolous name like Scrummy McScrumteam to be selected) won’t finish all the features of this sprint. You think to yourself, “That was the business unit’s fault for not defining the story properly with the product owner!”
+A large burn down chart on the wall does show scope creep, which means “Team A” (the name you notably chose even though Scrum says to let teams self-organize – you didn’t want some frivolous name like Scrummy McScrumteam to be selected) won’t finish all the features of this sprint. You think to yourself, “That was the business unit’s fault for not defining the story properly with the product owner!”
 
 ### **A** New Kind of Management Advice
 

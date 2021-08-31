@@ -1,8 +1,8 @@
 
 
-## Transitioning Bewteen Versions of ASP.NET
+## Transitioning Between Versions of ASP.NET
 #
-**Discover how to get from an ASP.NET Core 2.1 project to the newest version of ASP.NET Core 3 in this video from the November 2019 Spokane .NET Users Group meetup.**
+**Discover how to get from an ASP.NET Core 2.1 project to the newest version of ASP.NET Core 3 in this video from the November 2019 Spokane .NET Users Group meet up.**
 
 In this talk, I uncover the basic changes required to convert an existing application from [ASP.NET](https://ASP.NET) Core 2.1 to [ASP.NET](https://ASP.NET) Core 3.1. After the initial conversion, I make additional changes so the application can take advantage of the new endpoint routing functionality and discuss what middleware changes need to be made in order for that to work.
 

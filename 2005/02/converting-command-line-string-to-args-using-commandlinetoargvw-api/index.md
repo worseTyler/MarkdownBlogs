@@ -6,7 +6,7 @@ In testing a command line I recently wanted to verify that the string passed on 
 
 ```Compress.exe /v:ReallyMakeItSmall myfile.txt "Read ME.txt"``` 
 
-What does the call to  Main(string args[])  resolve  args  to?  There are two ways to test this.  Firstly, you can start a the proces with the corresponding commandline and then test the args array.  But this is cumbersome because data needs to be passed between the new process and the test process.
+What does the call to  Main(string args[])  resolve  args  to?  There are two ways to test this.  Firstly, you can start a the process with the corresponding command line and then test the args array.  But this is cumbersome because data needs to be passed between the new process and the test process.
 
 The alternate solution is to use the ```CommandLineToArgW()``` API. This API converts a string into is ```args```. The problem, however, is that it is a rather cumbersome API to call.  The declaration is as follows:
 

@@ -45,7 +45,7 @@ Strange, since all I wanted was to install the SQL Server 2008 Tools.  Here are
 
 Errors could be for other GUIDs as well including ``` UNKNOWN\\Components\\493032C95B52CBD448DD2B5A52C50E9A\\3EC761FD7E06AE4499CE52705CF173EA ```.
 
-This error is a permissions error in the registry.  If you search the registry for the first GUID you will find the key is likely mapped to ``` HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\<user SID>\\Components\\<GUID> ```.  Beneath this key is a sub key for the second GUID.  However, selecting the subkey will result in an access denied message.
+This error is a permissions error in the registry.  If you search the registry for the first GUID you will find the key is likely mapped to ``` HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\<user SID>\\Components\\<GUID> ```.  Beneath this key is a sub key for the second GUID.  However, selecting the sub key will result in an access denied message.
 
 To correct the problem:
 
@@ -59,7 +59,7 @@ To correct the problem:
 
 4. Next click **Apply**.
 
-4.  You may be presented with an error dialog, "Registry Editor could not set owner on the key currently selected, or some of its subkeys."  You can safely ignore this warning as long as you are then able to view the subkey.  If not :(, you may have to follow the same process but in safe mode or download [Process Explorer](https://technet.microsoft.com/en-us/sysinternals/bb896653.aspx) and search for any process that is holding onto the key so that you can shut it down.  (The idea that a process is preventing you from viewing the key is a stretch in my mind but I have had heard the Platform team of Microsoft's product support group suggest this.)
+4.  You may be presented with an error dialog, "Registry Editor could not set owner on the key currently selected, or some of its sub keys."  You can safely ignore this warning as long as you are then able to view the sub key.  If not :(, you may have to follow the same process but in safe mode or download [Process Explorer](https://technet.microsoft.com/en-us/sysinternals/bb896653.aspx) and search for any process that is holding onto the key so that you can shut it down.  (The idea that a process is preventing you from viewing the key is a stretch in my mind but I have had heard the Platform team of Microsoft's product support group suggest this.)
 
 5.  Lastly, select the "Effective Permissions" tab and verify that both your own User Id and the System user have **Full Control**.  If not, add both users via the **Permissions** tab.
 

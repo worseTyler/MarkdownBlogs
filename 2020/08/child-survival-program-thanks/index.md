@@ -28,7 +28,7 @@ _Nelson is active and enjoys playing with toys at the center, which makes him ve
 
 _Yours faithfully,_
 
-S_arah Kwendo_
+Sarah Kwendo
 
 ### You Can Help, Too!
 

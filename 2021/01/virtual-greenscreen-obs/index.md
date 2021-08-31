@@ -4,9 +4,9 @@
 #
 Estimated reading time: 6 minutes
 
-As exciting as it is to stream or record your content with OBS (Open Broadcaster Software), it can be even better with other participants in the video stream which can be done by using a greenscreen. In my [last blog post](https://intellitect.com/streaming-online-presentation-obs-ffmpeg/), I talked about ways to share your content through OBS using a virtual camera.
+As exciting as it is to stream or record your content with OBS (Open Broadcaster Software), it can be even better with other participants in the video stream which can be done by using a green screen. In my [last blog post](https://intellitect.com/streaming-online-presentation-obs-ffmpeg/), I talked about ways to share your content through OBS using a virtual camera.
 
-In this blog post, I expand on my previous blog to show adding in a virtual greenscreen and including additional participants with NDI® (Network Device Interface) sources. I am running the Windows Microsoft Teams app version 1.3.00.32283 (64-bit). 
+In this blog post, I expand on my previous blog to show adding in a virtual green screen and including additional participants with NDI® (Network Device Interface) sources. I am running the Windows Microsoft Teams app version 1.3.00.32283 (64-bit). 
 
 ### Contents
 
@@ -46,11 +46,11 @@ Importantly, you will need to do this each time you join a Teams call if you wi
 
 [Teams recommends](https://www.microsoft.com/microsoft-365/microsoft-teams/background-blur) that you use a background with “an aspect ratio of 16:9 and a resolution of at least 1920 x 1080”. Here is a sample image that can be used for the background. 
 
-![Sample image of greenscreen for Teams](https://intellitect.com/wp-content/uploads/2021/01/image.jpeg "Mastering Virtual Greenscreen with OBS and Microsoft Teams")
+![Sample image of green screen for Teams](https://intellitect.com/wp-content/uploads/2021/01/image.jpeg "Mastering Virtual Greenscreen with OBS and Microsoft Teams")
 
-Alternatively, you can create your own greenscreen image by opening an image editor and setting the image size to 1920 x 1080. Typically, the greenscreen color is RGB (8,255,8) or in Hex (#08FF08). [Set this as your background image](https://support.microsoft.com/office/change-your-background-for-a-teams-meeting-f77a2381-443a-499d-825e-509a140f4780). Also, you will need to turn on your camera in Teams. If there are other participants in the meeting that you would like to include in your OBS scene, ask them to set it as their background image too. In the end, your video in Teams should look something like this. 
+Alternatively, you can create your own green screen image by opening an image editor and setting the image size to 1920 x 1080. Typically, the green screen color is RGB (8,255,8) or in Hex (#08FF08). [Set this as your background image](https://support.microsoft.com/office/change-your-background-for-a-teams-meeting-f77a2381-443a-499d-825e-509a140f4780). Also, you will need to turn on your camera in Teams. If there are other participants in the meeting that you would like to include in your OBS scene, ask them to set it as their background image too. In the end, your video in Teams should look something like this. 
 
-![Using a greenscreen in Teams](https://intellitect.com/wp-content/uploads/2021/01/image-11.png "Mastering Virtual Greenscreen with OBS and Microsoft Teams")
+![Using a green screen in Teams](https://intellitect.com/wp-content/uploads/2021/01/image-11.png "Mastering Virtual Greenscreen with OBS and Microsoft Teams")
 
 ### Add the NDI Source to OBS 
 
@@ -66,7 +66,7 @@ Repeat this process for any additional participants that you want to include in 
 
 ### Add Chroma Key to the NDI Source 
 
-Finally, we need to remove the virtual greenscreen. To do this, right-click on the NDI Source and select Filters. 
+Finally, we need to remove the virtual green screen. To do this, right-click on the NDI Source and select Filters. 
 
 ![Selecting Filters within NDI](https://intellitect.com/wp-content/uploads/2021/01/image-17.png "Mastering Virtual Greenscreen with OBS and Microsoft Teams")
 
@@ -74,7 +74,7 @@ In the _lower_ Effects Filters section, add a new Chroma Key filter. For mine, 
 
 ![Adding new Chroma Key filter in lower Effects Filters](https://intellitect.com/wp-content/uploads/2021/01/image-15.png "Mastering Virtual Greenscreen with OBS and Microsoft Teams")
 
-Since we are using a fixed image, the default settings should properly remove the greenscreen background. 
+Since we are using a fixed image, the default settings should properly remove the green screen background. 
 
 ![Remove green screen](https://intellitect.com/wp-content/uploads/2021/01/image-16.png "Mastering Virtual Greenscreen with OBS and Microsoft Teams")
 
@@ -84,9 +84,9 @@ The result will be that you have NDI video source within OBS that you can then 
 
 ![Professional look using an NDI video source within OBS](https://intellitect.com/wp-content/uploads/2021/01/image-18.png "Mastering Virtual Greenscreen with OBS and Microsoft Teams")
 
-### You're Ready to Stream with a Greenscreen
+### You're Ready to Stream with a Green Screen
 
-That’s all there is to it. Now, you can gain a virtual greenscreen using Microsoft Teams to perform the background subtraction. Remember to re-enable NDI broadcasting each time you join a Teams call to see the NDI Sources within Teams. Then, you can combine this technique with my [previous blog post](https://intellitect.com/streaming-online-presentation-obs-ffmpeg/) to host several participants.   
+That’s all there is to it. Now, you can gain a virtual green screen using Microsoft Teams to perform the background subtraction. Remember to re-enable NDI broadcasting each time you join a Teams call to see the NDI Sources within Teams. Then, you can combine this technique with my [previous blog post](https://intellitect.com/streaming-online-presentation-obs-ffmpeg/) to host several participants.   
 
 ### Have Suggestions?
 

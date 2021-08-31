@@ -18,9 +18,9 @@ This past summer, Mark and I spoke with non-government organization (NGO) leader
 
 Developing countries are suffering from steep and sustained unemployment with no bailout in sight. Medical supplies are waning, and staffing shortages continue to increase. Infrastructure is breaking down, and the schools remain closed. Without the technology for online learning, education has come to a halt for most students.
 
-![Farmers in the Congo are observing social disancing guidelines](https://intellitect.com/wp-content/uploads/2020/11/Eric-Covid-2.png "Developing Countries: Struggling to Survive the Pandemic")
+![Farmers in the Congo are observing social distancing guidelines](https://intellitect.com/wp-content/uploads/2020/11/Eric-Covid-2.png "Developing Countries: Struggling to Survive the Pandemic")
 
-Having received COVID-19 pevention instruction from World Relief, this Agriculture for Life group in Congo is sure to observe social distancing recommendations to promote health and safety. Photo Credit: World Relief International - Congo
+Having received COVID-19 prevention instruction from World Relief, this Agriculture for Life group in Congo is sure to observe social distancing recommendations to promote health and safety. Photo Credit: World Relief International - Congo
 
 Harvests have been reduced due to the reduction of workers available to gather crops and the new food distribution limitations. As a result, malnutrition is on the rise.
 
@@ -48,4 +48,4 @@ Readers can donate to help support people facing hardships due to COVID-19 in de
 
 * * *
 
-[[1]](#_ftn1ref) In his book, _[Factfulness](https://www.amazon.com/Factfulness-Reasons-World-Things-Better/dp/1250107814)_, Hans Rosling suggests the preferred term “Level 1” for those in extreme poverty. We used the phrase “developing world” since the new terminology does not yet have predominant understandinp
+[[1]](#_ftn1ref) In his book, _[Factfulness](https://www.amazon.com/Factfulness-Reasons-World-Things-Better/dp/1250107814)_, Hans Rosling suggests the preferred term “Level 1” for those in extreme poverty. We used the phrase “developing world” since the new terminology does not yet have predominant understanding

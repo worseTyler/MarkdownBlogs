@@ -12,6 +12,6 @@ Want to know more? Check out Kevin's talk at the Spokane .Net User Group on Nove
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/X6v6w4HmWJ8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
 
-Want to follow along? Here's the [slide deck](https://github.com/Keboo/SawmillCalculator/raw/master/Slide%20Deck.pptx) and the [GitHub repo](https://github.com/Keboo/SawmillCalculator) that Kevin used at the meetup.
+Want to follow along? Here's the [slide deck](https://github.com/Keboo/SawmillCalculator/raw/master/Slide%20Deck.pptx) and the [GitHub repo](https://github.com/Keboo/SawmillCalculator) that Kevin used at the meet up.
 
 Ask your questions in the comments!

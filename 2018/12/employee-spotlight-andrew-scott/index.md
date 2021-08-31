@@ -10,11 +10,11 @@
 
 He discovered the value of trial and error in high school when he fixed a broken AddOn to World of Warcraft (WoW) with minimal coding skills. Looking back, he can laugh at how amateur his skills were, but he enjoyed the process.
 
-When a new WoW expansion was released, another favorite addon, TellMeWhen, stopped working and Andrew fixed it. He shared the fixes with other users and eventually started adding new features as well. Eventually, he reached out to the admins of the site where the abandoned addon was hosted and received ownership of the project.
+When a new WoW expansion was released, another favorite add-on, TellMeWhen, stopped working and Andrew fixed it. He shared the fixes with other users and eventually started adding new features as well. Eventually, he reached out to the admins of the site where the abandoned add-on was hosted and received ownership of the project.
 
-Over the past eight years, there have been over 13 million downloads of Andrew’s TellMeWhen addon!
+Over the past eight years, there have been over 13 million downloads of Andrew’s TellMeWhen add-on!
 
-Andrew admits that he just happened upon programming by coincidence through playing WoW; before that, he thought about becoming a pharmacist or an IT support technician, but after he got the itch for programming through his work on WoW addons, his career path shifted.
+Andrew admits that he just happened upon programming by coincidence through playing WoW; before that, he thought about becoming a pharmacist or an IT support technician, but after he got the itch for programming through his work on WoW add-ons, his career path shifted.
 
 > “Andrew has the unique ability to not only learn new concepts rapidly but also to identify the best architecture to solve a challenge. He continues to surprise me with his keen observations and unique solutions to difficult problems. If skill and speed are a necessity for your project, you definitely want Andrew.” Grant Erickson, CTO
 
@@ -30,6 +30,6 @@ Andrew keeps life simple and spends much of his downtime at home with family. Wh
 
 An extremely analytical engineer, Andrew loves unraveling tricky problems but knows that some projects just need hands on a keyboard, and that’s fine. He maintains his belief that, “if the IntelliTect team picks up a project where there is a lot of chance to innovate, then we’re certainly able to execute. I stay here because I like what I do. I don’t know if I would want to be anywhere else.”
 
-Want to check out Andrew’s _TellMeWhen_ addon? [Click here](https://www.curseforge.com/wow/addons/tellmewhen)!
+Want to check out Andrew’s _TellMeWhen_ add-on? [Click here](https://www.curseforge.com/wow/addons/tellmewhen)!
 
 ###### [Sign up for our quarterly newsletter](https://bit.ly/2Nhro9T) [![](https://intellitect.com/wp-content/uploads/2017/07/Click-here-to-sign-up-1-300x69.jpg)](https://bit.ly/2Nhro9T "Employee Spotlight: Andrew Scott")

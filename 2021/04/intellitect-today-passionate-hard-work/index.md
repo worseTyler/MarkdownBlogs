@@ -24,7 +24,7 @@ In other college-related news, we continue to [teach computer science](/intellit
 
 #### Summer School Crash Course
 
-Over the summer, we are considering the same class regiment in a guerilla format, an all-day class that covers the same material in a month or less. If this is something that may interest you or a student you know, please email us at [info@IntelliTect.com](mailto:info@IntelliTect.com). We will follow up with more information as we solidify our plans.
+Over the summer, we are considering the same class regiment in a guerrilla format, an all-day class that covers the same material in a month or less. If this is something that may interest you or a student you know, please email us at [info@IntelliTect.com](mailto:info@IntelliTect.com). We will follow up with more information as we solidify our plans.
 
 ### Growing the IntelliTect Team
 

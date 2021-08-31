@@ -7,7 +7,7 @@ At IntelliTect, we’re proud of our culture and are excited to try out new acti
 
 ![](https://intellitect.com/wp-content/uploads/2019/11/Today-1-Winning-team-1024x768.jpg)
 
-We started the event by playing small games as people were arriving. Once everyone was ready, Josh, with a talk-show-host twinkle in his eye, tasked attendees with finding (and taking photos of) various landmarks and items in a relatively small radius around Riverpark Square.
+We started the event by playing small games as people were arriving. Once everyone was ready, Josh, with a talk-show-host twinkle in his eye, tasked attendees with finding (and taking photos of) various landmarks and items in a relatively small radius around River Park Square.
 
 ![](https://intellitect.com/wp-content/uploads/2019/11/Today-2-riverfront2-225x300.jpg)
 

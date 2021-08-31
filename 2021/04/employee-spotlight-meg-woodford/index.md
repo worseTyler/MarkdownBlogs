@@ -18,7 +18,7 @@ While a green thumb award is years away, Meg deserves recognition for being a qu
 
 Meg's first exposure to programming came through building custom computers with her dad and learning how to swap out parts to create master machines.
 
-"My dad is a pilot, but he hobbied in computers on the side and would build computers pretty often," Meg said. "So, from a young age, I would always be assisting and building computers with him."
+"My dad is a pilot, but he had hobbies in computers on the side and would build computers pretty often," Meg said. "So, from a young age, I would always be assisting and building computers with him."
 
 Working with her dad acted as the springboard for Meg's programming work, creating a curiosity for coding that led her to write plugins for the popular video game Minecraft and work as a freelance web designer using WordPress and HTML.
 

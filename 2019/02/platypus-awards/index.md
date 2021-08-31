@@ -7,7 +7,7 @@ During a recent employee meeting, our CEO, Mark Michaelis explained how he sees 
 
 Mark went on to talk about the ways specific IntelliTect team members excel at work and demonstrate excellence daily, and then he changed the PowerPoint slide behind him to reveal a rather large picture of a… Platypus?
 
-![Slide that instigated the platypus awards with a picture of a platypus that says "Everyone is a Patypus"](https://intellitect.com/wp-content/uploads/2019/02/Platypus-slide-new.jpg "Why We Celebrate the Platypus Awards")
+![Slide that instigated the platypus awards with a picture of a platypus that says "Everyone is a Platypus"](https://intellitect.com/wp-content/uploads/2019/02/Platypus-slide-new.jpg "Why We Celebrate the Platypus Awards")
 
 It took a moment as we all stared at the screen trying to understand how “Everyone is a Platypus” and whether or not that was a good thing. Until then, it seemed none of us (aside from Mark, perhaps) had ever really considered this semi-aquatic, poisonous, egg-laying mammal to be that remarkable of a character.
 

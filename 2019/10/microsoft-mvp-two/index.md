@@ -1,6 +1,6 @@
 
 
-## Recognzing Amazing Individuals
+## Recognizing Amazing Individuals
 #
 We are so proud to announce that Kevin Bost, one of our senior developers, is a Microsoft Most Valuable Professional (MVP) as a result of his contribution to Developer Technologies!
 

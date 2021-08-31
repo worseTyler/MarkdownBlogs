@@ -7,7 +7,7 @@ A few weeks ago I was supporting a client who had attached a significant number 
 1. Each team needed a different subset of work items based multiple values in multiple fields.
 2. They needed the filename to contain both the work item number and the name of the file for traceability.
 
-Additionally, the work item types in TFS were completely customized with many custom fields and values. I searched around the internet for a premade solution, but of course couldn’t find one at the time, and hence this blog post. This post targets an on-premise TFS server using Active Directory authentication.
+Additionally, the work item types in TFS were completely customized with many custom fields and values. I searched around the internet for a pre-made solution, but of course couldn’t find one at the time, and hence this blog post. This post targets an on-premise TFS server using Active Directory authentication.
 
 ## Set Up References
 

@@ -18,7 +18,7 @@ Currently, he divides his time between pair programming and CI/CD initia­tives 
 > 
 > Mark Michaelis, CEO
 
-When not busy with clients, Mike blogs for IntelliTect. Check out his recent blog about using the power of Chrome to verify existing browser sessions during testing with Selenium at intel­litect.com/selenium-chrome-csharp/.
+When not busy with clients, Mike blogs for IntelliTect. Check out his recent blog about using the power of Chrome to verify existing browser sessions during testing with Selenium at Intel­liTect.com/selenium-chrome-csharp/.
 
 Over half of Mike’s core team at Avista is made up of IntelliTect team mem­bers. “I really like the people,” Mike said. “The people that I work with, not even on a day to day basis, but the people at IntelliTect, I’ve learned so much from them and they’ve been so helpful. They’re all-around great people that make this a place I want to continue to work at.”
 

@@ -72,7 +72,7 @@ I should perhaps delete the entire post but I think my carelessness requires a c
 2. Deleted the  "Trace.Assert((decimal)4.2F != 4.2M);."  "Trace.Assert(!4.2M.Equals(4.2F));" was what I should have posted.
 3. I updated the variable names to be slightly better.
 4. Deleted: "Even though floatNumber and doubleNumber2 are assigned the same values in IL they still don't evaluate as equal."  This was incorrect.  They are not assigned the same value in IL, only in C#.
-5. Delete: "Any time you compare one <of thesetypes against another the Equals(object value) method is called and it returns false if the data type is not the same. "  It didn't really fit as I didn't use the Equals() method in any of my code and generally the Equals() method is overloaded with a parameter that takes the class type.
+5. Delete: "Any time you compare one <of these types against another the Equals(object value) method is called and it returns false if the data type is not the same. "  It didn't really fit as I didn't use the Equals() method in any of my code and generally the Equals() method is overloaded with a parameter that takes the class type.
 6. Deleted: "If you remove the calculations and simply assign 4.2F ...."  This was just incorrect (see colophon).
 
 **Colophon:** The root cause of all the errors was the fact that I was using csc.exe for compiling and not VS.NET.  As a result, I forgot the /D:TRACE switch so assertions were ignored.  I am amazed that only one of the assertions in the end was invalid but regardless I should have been more careful.

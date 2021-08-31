@@ -1,5 +1,5 @@
 
-## What's New in Xaramin.Forms 4
+## What's New in Xamarin.Forms 4
 #
 
 Shell, Hot Reload, Hot Restart and Visual are just four of the new features in Xamarin.Forms 4 that will simplify and drastically reduce development time.
@@ -75,7 +75,7 @@ It doesn't have to be tied to:
 
 - Item source
 - Binding context
-- Prepopulated items
+- Pre-populated items
 
 For those that have worked in Universal Windows Platform (UWP) and Windows Presentation Foundation (WPF), I'm sure you're thinking, "Finally, this is what we've had for a while now!"
 

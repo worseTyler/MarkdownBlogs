@@ -10,7 +10,7 @@ This issue easily corrects. When encountered, the error will look like this on t
 
 ![](https://intellitect.com/wp-content/uploads/2017/04/Screen-Shot-2018-04-06-at-10.58.53-AM.png)
 
-The issue is that the C# 7.0 compiler is trying to generate the underlying CIL code that supports the tuples with the `System.ValueTuple<...>` type that corresponds to the arity of your C# 7.0 tuple code.
+The issue is that the C# 7.0 compiler is trying to generate the underlying CIL code that supports the tuples with the `System.ValueTuple<...>` type that corresponds to the rarity of your C# 7.0 tuple code.
 
 To fix the issue, you need to reference the System.ValueTuple NuGet package either via Visual Studio's NuGet manager or via the Package Manager Console.
 

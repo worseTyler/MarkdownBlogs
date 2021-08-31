@@ -8,7 +8,7 @@
 
 Kevin and his wife, Heather, love taking motorcycle trips.
 
-Kevin Bost hurtled through the air, a limp ragdoll in a helmet. Time slowed. He drew closer and closer to the prickly hickory bushes on the side of the road. As he flew past Spokane's iconic red wagon, Kevin braced for the impending impact.
+Kevin Bost hurtled through the air, a limp rag-doll in a helmet. Time slowed. He drew closer and closer to the prickly hickory bushes on the side of the road. As he flew past Spokane's iconic red wagon, Kevin braced for the impending impact.
 
 ### Wonder how Kevin Got Here?
 

@@ -47,7 +47,7 @@ namespace IntelliTrace.Runtime.CompilerServices
 
 Note the ```static public void Write(string message, [CallerLineNumber] int lineNumber = 0, [CallerMemberName] string memberName = null, [CallerFilePath] string fileName = null)``` method signature and how it uses the parameter attributes ```CallerLineNumber```,```CallerMemberName```, and ```CallerFilePath``` from the ```System.Runtime.CompilerServices``` namespace.  By placing the "CallerInfo" attributes on the parameters - which must also be set as default parameters, the parameters are set with corresponding values automatically (ignoring the default attributes specified in the method signature). As a result, the ```Tracer.Write()``` method then has access to "stack" information at compile time, rather than having to iterate over the stack at runtime (possibly a significant performance hit depending on the frequency).
 
-The data associated with the CallerInfo attributes is injected into the IL code at compile time. Decompiling the IL code reveals the caller invocation sets the optional paramters as follows:
+The data associated with the CallerInfo attributes is injected into the IL code at compile time. Decompiling the IL code reveals the caller invocation sets the optional parameters as follows:
 
 ```csharp
 Tracer.Write("Test message", 0x1b, 

@@ -35,7 +35,7 @@ exit
 
 ### Message Queuing
 
-The servers required the Message Queuing feature, Powershell has a nice way of achieving this.
+The servers required the Message Queuing feature, PowerShell has a nice way of achieving this.
 
 ```powershell
 Import-Module Servermanager

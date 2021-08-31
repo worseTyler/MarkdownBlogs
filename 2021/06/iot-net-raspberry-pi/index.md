@@ -24,6 +24,6 @@ In the end, we have an internet “RC” controller for a servo motor, but you c
 
 ### Want More?
 
-Check out Michael Stokesbarry's [meetup](/video-devcontainers/) on Developing with DevContainers using a Raspberry Pi. Also, join the [Spokane .NET Users Group](https://www.meetup.com/Spokane-DevOps-Meetup/) so you don't miss another meetup!
+Check out Michael Stokesbarry's [meetup](/video-devcontainers/) on Developing with DevContainers using a Raspberry Pi. Also, join the [Spokane .NET Users Group](https://www.meetup.com/Spokane-DevOps-Meetup/) so you don't miss another meet up!
 
 ![](https://intellitect.com/wp-content/uploads/2021/04/Blog-job-ad-1024x127.png)
